@@ -29,6 +29,14 @@ concurrency:
   group: snow-fetch
   cancel-in-progress: false
 
+# Every request to a resort's server carries a User-Agent naming this project
+# and pointing at this URL, so their ops team can identify the traffic and reach
+# us. Set it as a repository variable (Settings > Secrets and variables >
+# Actions > Variables) named SKI_BOT_CONTACT_URL. Unset, the bot advertises
+# example.invalid, which is not a real host - see tools/bot-identity.mjs.
+env:
+  SKI_BOT_CONTACT_URL: ${{ vars.SKI_BOT_CONTACT_URL }}
+
 jobs:
   fetch:
     runs-on: ubuntu-latest

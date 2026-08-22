@@ -21,6 +21,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ERROR_STREAK_THRESHOLD } from './fetch-snow.mjs';
+import { USER_AGENT, contactUrlIsPlaceholder } from './bot-identity.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const REPORTS_PATH = path.join(ROOT, 'data', 'snow-reports.json');
@@ -51,6 +52,11 @@ async function main() {
     .sort((a, b) => (b.consecutiveErrors ?? 0) - (a.consecutiveErrors ?? 0));
 
   if (human) {
+    console.log(`Identifying as: ${USER_AGENT}`);
+    if (contactUrlIsPlaceholder) {
+      console.log('  ^ SKI_BOT_CONTACT_URL is unset - that contact URL is not reachable.');
+    }
+    console.log('');
     if (!broken.length) {
       console.log(`No adapter has failed ${ERROR_STREAK_THRESHOLD} runs in a row.`);
       return;

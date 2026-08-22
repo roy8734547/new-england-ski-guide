@@ -22,7 +22,7 @@
 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { USER_AGENT } from './fetch-snow.mjs';
+import { USER_AGENT, warnIfPlaceholderContact } from './bot-identity.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = path.join(ROOT, 'private', 'trail-maps');
@@ -38,6 +38,7 @@ export function assertPrivate(targetPath) {
 }
 
 async function main() {
+  warnIfPlaceholderContact();
   assertPrivate(OUT_DIR);
   console.log(`fetch-trailmaps: placeholder. Would download into ${path.relative(ROOT, OUT_DIR)}`);
   console.log(`fetch-trailmaps: user agent ${USER_AGENT}`);

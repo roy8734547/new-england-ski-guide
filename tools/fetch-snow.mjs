@@ -39,16 +39,15 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { USER_AGENT, warnIfPlaceholderContact } from './bot-identity.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ADAPTERS_DIR = path.join(ROOT, 'tools', 'adapters');
 const OUT_PATH = path.join(ROOT, 'data', 'snow-reports.json');
 
-// TODO: replace with the deployed site URL once hosting is settled. The contact
-// URL is not decoration - it is how a resort's ops team reaches us to complain,
-// and it must be real before this runs against production on a schedule.
-export const USER_AGENT =
-  'NewEnglandSkiGuideBot/0.1 (+https://example.invalid/about; static site, snow reports)';
+// Re-exported so existing importers keep working, but bot-identity.mjs is the
+// single definition. See that file for why the contact URL is configuration.
+export { USER_AGENT } from './bot-identity.mjs';
 
 /** Two hours, per the project's own rate limit. */
 export const MIN_INTERVAL_MS = 2 * 60 * 60 * 1000;
@@ -303,6 +302,8 @@ function throttled(previous, adapter, force) {
 }
 
 async function main() {
+  warnIfPlaceholderContact();
+
   const args = process.argv.slice(2);
   const flag = (name) => args.includes(`--${name}`);
   const value = (name) => {

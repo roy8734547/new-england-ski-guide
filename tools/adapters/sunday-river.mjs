@@ -82,7 +82,7 @@ export default async function fetchSundayRiver({ get, meta: adapterMeta }) {
   const browser = await chromium.launch();
   try {
     const page = await browser.newPage({
-      userAgent: (await import('../fetch-snow.mjs')).USER_AGENT,
+      userAgent: (await import('../bot-identity.mjs')).USER_AGENT,
     });
     await page.goto(meta.reportUrl, { waitUntil: 'networkidle', timeout: 45_000 });
 

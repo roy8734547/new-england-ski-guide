@@ -20,6 +20,55 @@ node --version    # must be >= 20
 npm ci            # installs cheerio, needed by the HTML-parsing snow adapters
 ```
 
+## Required before this repo goes public
+
+**Set a real bot contact URL.** Every request the snow fetcher and the trail map
+downloader make to a resort's server carries a User-Agent naming this project and
+pointing at a contact page:
+
+```
+NewEnglandSkiGuideBot/0.1 (+https://your-site.example/about; static site, snow reports)
+```
+
+That URL is the entire basis on which automated fetching against somebody else's server is
+defensible. It is how a resort's operations team identifies unfamiliar traffic, and how they
+ask us to stop instead of silently blocking the IP. Out of the box it points at
+`https://example.invalid/about`, which is **not a real host**, and every tool prints a warning
+saying so.
+
+1. **Locally** — copy `.env.example` to `.env` and set the value. `.env` is gitignored.
+
+   ```powershell
+   Copy-Item .env.example .env
+   # then edit .env
+   ```
+
+   PowerShell does not read `.env` automatically, so for a one-off run:
+
+   ```powershell
+   $env:SKI_BOT_CONTACT_URL = "https://your-site.example/about"
+   npm run fetch:snow
+   ```
+
+2. **In CI** — add a repository variable named `SKI_BOT_CONTACT_URL` under
+   **Settings → Secrets and variables → Actions → Variables**. The workflow already reads it
+   into the job environment. It is a variable rather than a secret: it is a public URL, and
+   masking it in logs would make debugging harder for no benefit.
+
+3. **Point it at a page that exists** and explains what the bot does. The site's `/about`
+   page is the obvious target once it is built.
+
+Check what the tools will send:
+
+```powershell
+node tools/report-broken-adapters.mjs --human
+```
+
+The first line is the exact User-Agent, with a warning underneath if it is still the
+placeholder.
+
+The single definition lives in `tools/bot-identity.mjs`; nothing else defines a User-Agent.
+
 ## Running the site locally (Windows)
 
 ```powershell
