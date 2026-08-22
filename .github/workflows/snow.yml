@@ -1,0 +1,124 @@
+name: Fetch snow reports
+
+# Every two hours through the New England season. The month field restricts this
+# to November through April, so the workflow simply does not fire from May to
+# October - no runtime guard needed and no wasted minutes.
+#
+# Cron is UTC. :15 past every second hour keeps us off the top-of-hour spike when
+# every scheduled job on GitHub fires at once.
+on:
+  schedule:
+    - cron: '15 */2 * 11,12,1,2,3,4 *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Ignore the 2-hour per-host throttle'
+        type: boolean
+        default: false
+      slug:
+        description: 'Fetch a single resort only (adapter slug)'
+        type: string
+        required: false
+
+permissions:
+  contents: write   # commit the refreshed report
+  issues: write     # open an issue when an adapter stays broken
+
+# Never let two runs race on the same file.
+concurrency:
+  group: snow-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # cheerio is needed by the tier-2 adapters. `npm ci` requires the lockfile,
+      # which is committed.
+      - name: Install tooling dependencies
+        run: npm ci --no-audit --no-fund
+
+      # The tier-3 browser adapters need a real browser. Only CI installs it:
+      # it is a ~300MB download and local contributors should not be forced into
+      # it for the handful of resorts that have no JSON or static HTML to parse.
+      # Without this step those adapters fail soft and CI would file an issue
+      # about a browser that was never installed.
+      - name: Install Playwright for the browser tier
+        run: |
+          npm install --no-save --no-audit --no-fund playwright
+          npx playwright install --with-deps chromium
+
+      - name: Fetch snow reports
+        run: |
+          args=""
+          if [ "${{ inputs.force }}" = "true" ]; then args="$args --force"; fi
+          if [ -n "${{ inputs.slug }}" ]; then args="$args --slug ${{ inputs.slug }}"; fi
+          node tools/fetch-snow.mjs $args
+
+      # Only commits when the file actually changed, so the history stays
+      # meaningful instead of an empty commit every two hours.
+      - name: Commit if changed
+        id: commit
+        run: |
+          git config user.name  'snow-bot'
+          git config user.email 'snow-bot@users.noreply.github.com'
+          git add data/snow-reports.json
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No change to data/snow-reports.json."
+          else
+            git commit -m 'data: refresh snow reports'
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # An adapter that errors once caught a bad minute. One that errors three
+      # runs running is broken, and somebody has to go and look at it.
+      - name: Check for broken adapters
+        id: broken
+        run: node tools/report-broken-adapters.mjs >> "$GITHUB_OUTPUT"
+
+      - name: Open or update an issue for broken adapters
+        if: steps.broken.outputs.broken != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BROKEN: ${{ steps.broken.outputs.broken }}
+          DETAIL: ${{ steps.broken.outputs.detail }}
+        run: |
+          TITLE="Snow adapters failing: $BROKEN"
+          # One open issue per set of broken adapters. If it already exists we
+          # comment on it rather than filing a duplicate every two hours.
+          EXISTING=$(gh issue list --state open --label snow-adapter \
+                       --search "$BROKEN in:title" --json number,title \
+                       --jq ".[] | select(.title == \"$TITLE\") | .number" | head -1)
+
+          BODY=$(printf '%s\n' \
+            "One or more snow report adapters have returned \`status: error\` on three or more consecutive runs." \
+            "" \
+            "$DETAIL" \
+            "" \
+            "Adapters break when a resort redesigns their report page. To investigate:" \
+            "" \
+            '```' \
+            "npm ci" \
+            "node tools/fetch-snow.mjs --slug <slug> --force --dry-run" \
+            '```' \
+            "" \
+            "Until it is fixed the site degrades to a link to the resort's official report, so nothing is broken for visitors." \
+            "" \
+            "_Filed automatically by [\`snow.yml\`](../blob/main/.github/workflows/snow.yml) — run [$GITHUB_RUN_ID](../actions/runs/$GITHUB_RUN_ID)._")
+
+          if [ -n "$EXISTING" ]; then
+            echo "Commenting on existing issue #$EXISTING"
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" \
+              --label snow-adapter || \
+            gh issue create --title "$TITLE" --body "$BODY"
+          fi
