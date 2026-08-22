@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "slug": "mad-river-glen",
+    "name": "Mad River Glen",
+    "aka": ["MRG", "Ski It If You Can", "General Stark Mountain"],
+    "state": "VT",
+    "region": "Central Vermont",
+    "town": "Waitsfield",
+    "lat": 44.1842,
+    "lon": -72.9289,
+    "website": "https://www.madriverglen.com"
+  },
+  "size": {
+    "verticalDrop": 2037,
+    "skiableAcres": 115,
+    "trailCount": 60,
+    "liftCount": 5,
+    "longestRun": 1,
+    "summitElevation": 3637,
+    "baseElevation": 1600,
+    "annualSnowfallAvg": 228,
+    "snowmakingPercent": 15,
+    "nightSkiing": null,
+    "source": "https://www.madriverglen.com/quick-facts/",
+    "verifiedOn": "2026-08-20",
+    "fieldSources": {
+      "baseElevation": {
+        "source": "https://www.onthesnow.com/vermont/mad-river-glen/ski-resort",
+        "verifiedOn": "2026-08-20"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/vermont/mad-river-glen/ski-resort",
+        "verifiedOn": "2026-08-20"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 20,
+    "percentIntermediate": 35,
+    "percentAdvanced": 45,
+    "percentExpert": null,
+    "glades": true,
+    "moguls": null,
+    "terrainParks": null,
+    "difficultyNotes": "Mad River Glen publishes a three-tier split labelled '20% novice, 35% intermediate, 45% expert'. Per the schema, the top tier of a three-way split is recorded in percentAdvanced and percentExpert is null - MRG's 'expert' is not a fourth tier carved out of a larger advanced number. Read the 45% as harder than the same figure would be almost anywhere else. The 115 skiable acres counts marked trails only; the resort separately advertises access to nearly 2,000 acres of tree skiing, which is not included in that number and is not patrolled the way a marked trail is.",
+    "source": "https://www.madriverglen.com/quick-facts/",
+    "verifiedOn": "2026-08-20",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Mad River Glen season pass",
+      "type": "none",
+      "access": "Season pass only - Mad River Glen is not on Ikon, Epic or Indy",
+      "blackouts": null,
+      "verifiedOn": "2026-08-20",
+      "source": "https://www.madriverglen.com/season_passes/"
+    },
+    {
+      "name": "Plattekill Mountain reciprocal",
+      "type": "other",
+      "access": "50% off full-day tickets at Plattekill midweek, 30% off weekends",
+      "blackouts": "Holidays excluded",
+      "verifiedOn": "2026-08-20",
+      "source": "https://www.madriverglen.com/season_passes/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": 125,
+    "seasonPassAdult": 1249,
+    "currency": "USD",
+    "notes": "2026-27 rates. The $125 is the online adult full-day price; Mad River Glen states window prices are higher but does not publish them, so both window fields are null rather than estimated. Half day from 12:30pm is $90 and a midweek non-holiday 2pm ticket is $39. The adult season pass is tiered by purchase window - $959 in the spring sale (Apr 1-14), $1,089 in the fall sale (Sep 8-30), $1,249 after Sep 30 - and the standard post-deadline rate is what is recorded here. Co-op shareholders pay $819 / $929 / $1,059 respectively and get 15% off day tickets. Note that 'adult' at MRG means ages 30-64. All prices exclude Vermont's 6% sales tax.",
+    "verifiedOn": "2026-08-20",
+    "source": "https://www.madriverglen.com/lift-tickets/",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://www.madriverglen.com/season_passes/",
+        "verifiedOn": "2026-08-20"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Mad River Glen is the last unreconstructed ski area in the East, and it is that way on purpose. It is owned by roughly 2,500 shareholders who vote on how it is run, it bans snowboarding by a margin that has held for decades, it makes snow on 15% of the mountain, and the lift to the summit is a single chair from 1948 that carries one person at a time and takes fifteen minutes. Every one of those facts is a deliberate choice to be worse at being a modern ski resort in exchange for being better at something else. What you get is 2,037 feet of vertical that has never been widened, smoothed or bulldozed. The trails follow the fall line the way somebody cut them in the 1940s — narrow, twisting, dropping over ledges, with the natural terrain left in rather than graded out. The tree skiing off Paradise and through the Glades is genuinely the best lift-served woods in New England and it is not close. The price is reliability. With almost no snowmaking, MRG lives and dies on natural snow: in a good year it is the most rewarding mountain in the region, and in a lean January it is a rock-strewn survival exercise with half the terrain roped. Do not book a trip here months in advance. Watch the forecast, and go when it snows. This is a mountain for people who already know how to ski and want to be challenged rather than accommodated, and it is openly indifferent to everyone else. That indifference is the whole point.",
+    "snowQuality": "MRG claims 228 inches and the summit probably gets it, but the number matters less here than at any other mountain in Vermont because there is no snowmaking safety net to fall back on — 15% coverage, all of it below 2,200 feet, which means the top of the mountain is entirely natural. The upside is that what falls stays natural: no manmade base underneath, no groomer flattening it at 4am on most of the good terrain, so a storm skis like a storm for days rather than hours. The tree skiing holds soft snow long after the open trails have been scraped. The downside is brutal and predictable. A thin December, a January rain event, or a two-week dry spell and the ledges come through, the woods close, and there is nothing the mountain can do about it. Check the conditions report before you commit to the drive, and take it literally.",
+    "crowds": "Lift capacity is the crowd control. The single chair moves about 450 people an hour, which is a fraction of what a modern quad does, and on a powder Saturday the line for it can run 30 to 45 minutes — the longest wait for the smallest uphill capacity anywhere in Vermont. Regulars solve this by riding the Sunnyside double, which accesses much of the same terrain with a fraction of the wait, and treating the single as a once-or-twice-a-day pilgrimage rather than a lap machine. Midweek the place is nearly empty. The upside of the low capacity is that even on a busy day the mountain itself never feels crowded: 60 trails and 2,000 acres of trees absorb everyone the lifts can deliver, and fresh snow lasts into the afternoon in a way it never does at a resort with high-speed lifts. You wait a long time and then you have the run to yourself, which is the trade MRG has always made.",
+    "difficulty": "Take the 45% top-tier figure seriously and then add to it. MRG's ratings are the strictest in New England — a blue here is a black at most Vermont resorts, and the black diamonds are narrow, ledgy, ungroomed and frequently thin. Paradise is the trail people come for and it involves a genuine ice-bulge drop that is a real committed move, not a marketing photo. There is very little in the way of an intermediate cruise: the mountain's idea of a moderate run is still narrow, twisting and lumpy, and a self-described intermediate from a groomed-blue background will find the whole place hostile. What MRG does not have is much sustained steepness by Western standards; the difficulty is technical rather than vertical, coming from tight lines, natural obstacles and inconsistent snow rather than raw pitch. Ski it when it is soft. On a firm day the ledges are unforgiving and the consequences of a fall are real.",
+    "keyTrails": [
+      {
+        "name": "Paradise",
+        "note": "The most famous trail at Mad River Glen and the one the reputation rests on. Ungroomed, ledgy, with a committing drop through an ice bulge partway down. Needs real snow cover to be sane, and it is the first thing people ask you about."
+      },
+      {
+        "name": "Chute",
+        "note": "Narrow, steep, straight down the fall line off the single chair, exactly as somebody cut it eighty years ago. The purest expression of what MRG means by a trail."
+      },
+      {
+        "name": "Antelope",
+        "note": "About as close as the mountain gets to a cruiser, and still narrower and more rolling than a groomed blue anywhere else. The run people use to get their legs back."
+      },
+      {
+        "name": "The Glades",
+        "note": "The tree skiing between the marked trails is the actual product here, and it is the best lift-served woods in New England. Unpatrolled in the way marked trails are, and unskiable until the underbrush is genuinely buried."
+      },
+      {
+        "name": "Fall Line",
+        "note": "Named accurately. Short, steep, bumped-up and directly beneath the single chair, so the entire lift watches."
+      }
+    ],
+    "tidbits": [
+      "Mad River Glen is the only cooperatively owned ski area in America, bought by its skiers in December 1995 and run by roughly 2,500 individual shareholders.",
+      "It is one of three ski areas in the United States that ban snowboarding outright, alongside Alta and Deer Valley; the co-op has voted to keep the ban, which would need a two-thirds majority to overturn.",
+      "The single chair has been carrying skiers up General Stark Mountain one at a time since 1948.",
+      "Snowmaking covers just 15% of the mountain and all of it sits below 2,200 feet, so the entire upper mountain is natural snow only.",
+      "Shareholders account for roughly 35-40% of the mountain's revenue."
+    ],
+    "bestFor": [
+      "Expert tree skiing",
+      "Natural snow purists",
+      "Skiing without lift-line music",
+      "Powder days, decided last-minute"
+    ],
+    "watchOutFor": [
+      "Almost no snowmaking",
+      "45-minute single chair lines",
+      "No snowboarding, at all",
+      "Strict trail ratings",
+      "Terrain closures in a lean year"
+    ]
+  },
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/mad-river-glen",
+      "gist": "Praises the expert terrain and the uncommercialised, skier-owned feel, but marks it down hard for minimal snowmaking causing wide terrain closures and for slow, low-capacity lifts. Their conclusion is that the skiing is exceptional when the snow is good and that planning a trip in advance is a gamble.",
+      "rating": 49,
+      "ratingScale": 100
+    }
+  ],
+  "links": {
+    "officialSnowReport": "https://www.madriverglen.com/conditions/",
+    "trailMap": "https://www.madriverglen.com/trail-maps/",
+    "webcams": "https://www.madriverglen.com/live-web-cam/",
+    "lodging": null,
+    "twitter": "https://twitter.com/madriverglen",
+    "instagram": "https://www.instagram.com/madriverglen/"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Mad River Glen quick facts (stats, terrain split, co-op ownership)",
+        "url": "https://www.madriverglen.com/quick-facts/",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "Mad River Glen lift tickets (2026-27 online rates)",
+        "url": "https://www.madriverglen.com/lift-tickets/",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "Mad River Glen season passes (tiered pricing, Plattekill reciprocal, no mega-pass)",
+        "url": "https://www.madriverglen.com/season_passes/",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "OnTheSnow Mad River Glen resort overview (base elevation, longest run)",
+        "url": "https://www.onthesnow.com/vermont/mad-river-glen/ski-resort",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "General Stark Mountain summit coordinates",
+        "url": "https://en.wikipedia.org/wiki/General_Stark_Mountain",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "Wikipedia Mad River Glen (snowboarding ban, co-op history)",
+        "url": "https://en.wikipedia.org/wiki/Mad_River_Glen",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "PeakRankings review of Mad River Glen",
+        "url": "https://www.peakrankings.com/content/mad-river-glen",
+        "accessedOn": "2026-08-20"
+      }
+    ],
+    "verifiedOn": "2026-08-20",
+    "lastEditedBy": "claude-code"
+  }
+}

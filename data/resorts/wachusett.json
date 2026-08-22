@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "slug": "wachusett",
+    "name": "Wachusett Mountain",
+    "aka": ["Wachusett Mountain Ski Area", "Wa Wa Wachusett"],
+    "state": "MA",
+    "region": "Central Massachusetts",
+    "town": "Princeton",
+    "lat": 42.4889,
+    "lon": -71.8875,
+    "website": "https://www.wachusett.com"
+  },
+  "size": {
+    "verticalDrop": 1000,
+    "skiableAcres": 125,
+    "trailCount": 27,
+    "liftCount": 8,
+    "longestRun": 1.5,
+    "summitElevation": 2006,
+    "baseElevation": 1006,
+    "annualSnowfallAvg": 71,
+    "snowmakingPercent": 100,
+    "nightSkiing": true,
+    "source": "https://www.wachusett.com/the-mountain/mountain-stats/",
+    "verifiedOn": "2026-08-20",
+    "fieldSources": {
+      "skiableAcres": {
+        "source": "https://www.onthesnow.com/massachusetts/wachusett-mountain-ski-area/ski-resort",
+        "verifiedOn": "2026-08-20"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/massachusetts/wachusett-mountain-ski-area/ski-resort",
+        "verifiedOn": "2026-08-20"
+      },
+      "baseElevation": {
+        "source": "https://www.onthesnow.com/massachusetts/wachusett-mountain-ski-area/ski-resort",
+        "verifiedOn": "2026-08-20"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.onthesnow.com/massachusetts/wachusett-mountain-ski-area/ski-resort",
+        "verifiedOn": "2026-08-20"
+      },
+      "nightSkiing": {
+        "source": "https://www.wachusett.com/2024-2025-rates-sessions/",
+        "verifiedOn": "2026-08-20"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 19,
+    "percentIntermediate": 63,
+    "percentAdvanced": 19,
+    "percentExpert": null,
+    "glades": null,
+    "moguls": null,
+    "terrainParks": null,
+    "difficultyNotes": "Wachusett publishes no percentage split of its own; these are OnTheSnow's three-tier figures and sum to 101 after rounding. There is no fourth tier, so percentExpert is null and the 19% top tier sits in percentAdvanced. Glades, mogul policy and park count are null because neither the resort's trail map page nor OnTheSnow states them, and the trail map itself is a JPEG that cannot be read as data.",
+    "source": "https://www.onthesnow.com/massachusetts/wachusett-mountain-ski-area/ski-resort",
+    "verifiedOn": "2026-08-20",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Wachusett season pass",
+      "type": "none",
+      "access": "Season pass only",
+      "blackouts": null,
+      "verifiedOn": "2026-08-20",
+      "source": "https://www.wachusett.com/tickets-passes/season-passes/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 99,
+    "windowTicketAdultLow": 89,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "These are 2025-26 rates: as of the verified date Wachusett's lift ticket page says 2026-27 rates are 'coming soon', so nothing newer exists to record. Figures are the adult (13-64) full-day Session 1&2 rate, $99 weekend/holiday and $89 weekday. Wachusett sells timed sessions rather than an all-day ticket in the usual sense - morning, afternoon, early evening and late evening blocks run from 8am to 9:30pm, with the cheapest adult block at $54. The page does not distinguish window from advance pricing, so advanceTypical is null. No adult season pass price is published on the passes page.",
+    "verifiedOn": "2026-08-20",
+    "source": "https://www.wachusett.com/2024-2025-rates-sessions/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Wachusett is a thousand feet of vertical an hour from Boston, and it has built an entire business model on that one geographic fact. This is not a destination and does not pretend to be: there is no lodging, no village, no on-mountain hotel, and the summit is a twenty-minute ride from a parking lot in Princeton. What there is instead is the most efficiently run small mountain in New England. Three high-speed quads on 27 trails is an absurd lift-to-terrain ratio, the snowmaking covers everything, and the whole hill runs on timed sessions until 9:30 at night, which means a Boston office worker can genuinely leave at five and get three hours of skiing. The terrain is what a thousand feet gets you — mostly wide, mostly intermediate, mostly groomed twice a day. Nothing here will frighten a competent skier, and the black diamonds at the top of the Polar Express are short pitches rather than sustained ones. But Wachusett is honest about that, and it does the thing it does better than any mountain of its size in the region: consistent surface, short lift lines relative to its volume, and a night operation that is a genuine standalone product rather than an afterthought. It is also the most crowded ski area in Massachusetts, by a distance, and on a school-holiday Saturday the parking situation alone can turn an hour's drive into two.",
+    "snowQuality": "Wachusett gets around 71 inches of natural snow a year, which is nothing, and it compensates by making snow on 100% of the mountain. That is the whole story: what you ski here is manufactured, and the resort is unusually good at manufacturing it. Grooming runs twice a day, which matters enormously at a hill this size because the same trails get skied over and over — without the second pass the top of Smith Walton would be scraped bare by two in the afternoon. The weakness is January thaws. At 2,006 feet with a base at 1,006, Wachusett is low, and a warm rain event puts the whole mountain on the edge; the recovery is fast because the guns are everywhere, but for a day or two afterward the surface is the hard, granular refreeze that Massachusetts skiers grew up on and everyone else complains about.",
+    "crowds": "This is the busiest ski area in Massachusetts and the crowding is structural, not incidental — an hour from Boston, an hour from Worcester, and a huge learn-to-ski and school programme. Weekend mornings the lot fills early and the overflow lots are a real walk. The three high-speed quads move people well, so the lift lines are shorter than the parking chaos suggests, but the trails themselves get busy: Smith Walton and Challenger carry most of the traffic and both are wide enough to feel fine at 9am and crowded by 11. The genuine insider move is the night session. Buy the 4pm-9:30pm evening combo, arrive at five, and you get a mountain that is a fraction as busy as the same trails were at noon, on freshly regroomed snow, for less money. Wachusett's night skiing is not a token two-trail operation; it is most of the mountain, and it is the best value in Massachusetts skiing.",
+    "difficulty": "Wachusett rates generously, and a skier who is comfortable on its blacks should not walk into a Vermont black expecting the same thing. The top-tier trails here — Hitchcock, the steeper drop off the summit — are short, honest pitches of maybe 200 vertical feet before the angle backs off, which is a different sport from Killington's Outer Limits. Where it genuinely excels is the beginner-to-intermediate progression: the learning area is separate and well-designed, and the step from a green to Smith Walton is gradual rather than a cliff. For a self-described intermediate this is a confidence-building mountain, and that is a real virtue. Just be aware that 63% of the trails are rated intermediate, and after a few visits you will have skied all of them.",
+    "keyTrails": [
+      {
+        "name": "Smith Walton",
+        "note": "The signature top-to-bottom cruiser and the trail most people ski most of the time. Wide, consistently pitched, groomed twice daily, and busy from mid-morning onward."
+      },
+      {
+        "name": "Challenger",
+        "note": "The other main artery off the summit, a touch steeper than Smith Walton and the closest Wachusett comes to a sustained fall line. Carries a lot of the weekend traffic."
+      },
+      {
+        "name": "Hitchcock",
+        "note": "Wachusett's serious pitch, such as it is. Short and genuinely steep at the top before it mellows. Bumps up when it is left alone, which is not often."
+      },
+      {
+        "name": "Ralph's Run",
+        "note": "The long, gentle way down from the summit and the trail that makes Wachusett work as a learning hill — a beginner can ride the same lift as everyone else and still get down."
+      }
+    ],
+    "tidbits": [
+      "The ski area sits on Mount Wachusett, the highest point in Massachusetts east of the Connecticut River at 2,006 feet.",
+      "Snowmaking covers 100% of the terrain, and the mountain grooms twice a day rather than once.",
+      "Lift tickets are sold as timed sessions rather than full days, with four blocks running from 8am to 9:30pm.",
+      "Three of the eight lifts are high-speed quads, an unusually high ratio for a mountain with 27 trails."
+    ],
+    "bestFor": [
+      "Night skiing after work",
+      "Learning to ski near Boston",
+      "Reliable manmade surface",
+      "A three-hour ski day"
+    ],
+    "watchOutFor": [
+      "Weekend parking overflow",
+      "Only 27 trails, learned fast",
+      "Generous trail ratings",
+      "Thaw-refreeze after January rain",
+      "No 2026-27 prices published yet"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.wachusett.com/the-mountain/your-visit/snow-report/",
+    "trailMap": "https://www.wachusett.com/the-mountain/about-wachusett/trail-map/",
+    "webcams": "https://www.wachusett.com/the-mountain/media-center/webcams/",
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Wachusett Mountain statistics page",
+        "url": "https://www.wachusett.com/the-mountain/mountain-stats/",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "Wachusett rates and session times (2025-26 adult rates, evening sessions)",
+        "url": "https://www.wachusett.com/2024-2025-rates-sessions/",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "Wachusett season passes (own pass only; 2026-27 pricing not yet published)",
+        "url": "https://www.wachusett.com/tickets-passes/season-passes/",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "OnTheSnow Wachusett resort overview (acres, base elevation, longest run, snowfall, terrain split)",
+        "url": "https://www.onthesnow.com/massachusetts/wachusett-mountain-ski-area/ski-resort",
+        "accessedOn": "2026-08-20"
+      },
+      {
+        "label": "Mount Wachusett summit coordinates and elevation",
+        "url": "https://en.wikipedia.org/wiki/Mount_Wachusett",
+        "accessedOn": "2026-08-20"
+      }
+    ],
+    "verifiedOn": "2026-08-20",
+    "lastEditedBy": "claude-code"
+  }
+}

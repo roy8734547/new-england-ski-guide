@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-08-21T00:29:13.291Z",
+  "schemaVersion": 1,
+  "count": 3,
+  "resorts": [
+    {
+      "slug": "killington",
+      "name": "Killington Resort",
+      "state": "VT",
+      "region": "Central Vermont",
+      "town": "Killington",
+      "lat": 43.6045,
+      "lon": -72.8201,
+      "website": "https://www.killington.com",
+      "verticalDrop": 3050,
+      "skiableAcres": 1509,
+      "trailCount": 155,
+      "liftCount": 19,
+      "annualSnowfallAvg": 250,
+      "snowmakingPercent": null,
+      "nightSkiing": null,
+      "passTypes": [
+        "ikon"
+      ],
+      "passes": [
+        {
+          "name": "Ikon Pass",
+          "type": "ikon",
+          "access": "7 days, shared across Killington and Pico"
+        },
+        {
+          "name": "Ikon Base Pass",
+          "type": "ikon",
+          "access": "5 days, shared across Killington and Pico"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1529,
+      "bestFor": [
+        "The longest season in the East",
+        "Serious bump skiing",
+        "Midweek big-mountain days",
+        "Skiing in October or May"
+      ],
+      "officialSnowReport": "https://killington.com/mountain-report",
+      "verifiedOn": "2026-08-20"
+    },
+    {
+      "slug": "mad-river-glen",
+      "name": "Mad River Glen",
+      "state": "VT",
+      "region": "Central Vermont",
+      "town": "Waitsfield",
+      "lat": 44.1842,
+      "lon": -72.9289,
+      "website": "https://www.madriverglen.com",
+      "verticalDrop": 2037,
+      "skiableAcres": 115,
+      "trailCount": 60,
+      "liftCount": 5,
+      "annualSnowfallAvg": 228,
+      "snowmakingPercent": 15,
+      "nightSkiing": null,
+      "passTypes": [
+        "none",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Mad River Glen season pass",
+          "type": "none",
+          "access": "Season pass only - Mad River Glen is not on Ikon, Epic or Indy"
+        },
+        {
+          "name": "Plattekill Mountain reciprocal",
+          "type": "other",
+          "access": "50% off full-day tickets at Plattekill midweek, 30% off weekends"
+        }
+      ],
+      "advanceTypical": 125,
+      "seasonPassAdult": 1249,
+      "bestFor": [
+        "Expert tree skiing",
+        "Natural snow purists",
+        "Skiing without lift-line music",
+        "Powder days, decided last-minute"
+      ],
+      "officialSnowReport": "https://www.madriverglen.com/conditions/",
+      "verifiedOn": "2026-08-20"
+    },
+    {
+      "slug": "wachusett",
+      "name": "Wachusett Mountain",
+      "state": "MA",
+      "region": "Central Massachusetts",
+      "town": "Princeton",
+      "lat": 42.4889,
+      "lon": -71.8875,
+      "website": "https://www.wachusett.com",
+      "verticalDrop": 1000,
+      "skiableAcres": 125,
+      "trailCount": 27,
+      "liftCount": 8,
+      "annualSnowfallAvg": 71,
+      "snowmakingPercent": 100,
+      "nightSkiing": true,
+      "passTypes": [
+        "none"
+      ],
+      "passes": [
+        {
+          "name": "Wachusett season pass",
+          "type": "none",
+          "access": "Season pass only"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "bestFor": [
+        "Night skiing after work",
+        "Learning to ski near Boston",
+        "Reliable manmade surface",
+        "A three-hour ski day"
+      ],
+      "officialSnowReport": "https://www.wachusett.com/the-mountain/your-visit/snow-report/",
+      "verifiedOn": "2026-08-20"
+    }
+  ]
+}
