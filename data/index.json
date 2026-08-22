@@ -1,8 +1,45 @@
 {
-  "generatedAt": "2026-08-21T00:29:13.291Z",
+  "generatedAt": "2026-08-22T15:47:03.385Z",
   "schemaVersion": 1,
-  "count": 3,
+  "count": 8,
   "resorts": [
+    {
+      "slug": "jay-peak",
+      "name": "Jay Peak Resort",
+      "state": "VT",
+      "region": "Northeast Kingdom",
+      "town": "Jay",
+      "lat": 44.9242,
+      "lon": -72.5256,
+      "website": "https://jaypeakresort.com",
+      "verticalDrop": 2122,
+      "skiableAcres": 385,
+      "trailCount": 81,
+      "liftCount": 9,
+      "annualSnowfallAvg": 347,
+      "snowmakingPercent": 80,
+      "nightSkiing": null,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "2 days"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "bestFor": [
+        "The best tree skiing in the East",
+        "Deep natural snow",
+        "Escaping weekend crowds",
+        "Powder chasers who can drive"
+      ],
+      "officialSnowReport": "https://jaypeakresort.com/skiing-riding/snow-report-maps/snow-report",
+      "verifiedOn": "2026-08-22"
+    },
     {
       "slug": "killington",
       "name": "Killington Resort",
@@ -87,6 +124,154 @@
       ],
       "officialSnowReport": "https://www.madriverglen.com/conditions/",
       "verifiedOn": "2026-08-20"
+    },
+    {
+      "slug": "okemo",
+      "name": "Okemo Mountain Resort",
+      "state": "VT",
+      "region": "Southern Vermont",
+      "town": "Ludlow",
+      "lat": 43.405,
+      "lon": -72.7483,
+      "website": "https://www.okemo.com",
+      "verticalDrop": 2200,
+      "skiableAcres": 667,
+      "trailCount": 123,
+      "liftCount": 20,
+      "annualSnowfallAvg": 120,
+      "snowmakingPercent": 98,
+      "nightSkiing": null,
+      "passTypes": [
+        "epic"
+      ],
+      "passes": [
+        {
+          "name": "Epic Pass",
+          "type": "epic",
+          "access": "Unlimited"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1089,
+      "bestFor": [
+        "The best grooming in New England",
+        "Nervous intermediates",
+        "Families driving from Connecticut",
+        "Reliable snow in a bad winter"
+      ],
+      "officialSnowReport": "https://www.okemo.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-22"
+    },
+    {
+      "slug": "smugglers-notch",
+      "name": "Smugglers' Notch Resort",
+      "state": "VT",
+      "region": "Northern Vermont",
+      "town": "Jeffersonville",
+      "lat": 44.56,
+      "lon": -72.76,
+      "website": "https://www.smuggs.com",
+      "verticalDrop": 2610,
+      "skiableAcres": 311,
+      "trailCount": 78,
+      "liftCount": 8,
+      "annualSnowfallAvg": 248,
+      "snowmakingPercent": null,
+      "nightSkiing": null,
+      "passTypes": [
+        "none"
+      ],
+      "passes": [
+        {
+          "name": "Smugglers' Notch season pass",
+          "type": "none",
+          "access": "Season pass only - Smugglers' Notch is not on Ikon, Epic or Indy"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "bestFor": [
+        "Families with young children",
+        "Serious steep terrain, no queue",
+        "Uncrowded midweek skiing",
+        "Week-long self-catering trips"
+      ],
+      "officialSnowReport": "https://www.smuggs.com/conditions/winter-report/",
+      "verifiedOn": "2026-08-22"
+    },
+    {
+      "slug": "stowe",
+      "name": "Stowe Mountain Resort",
+      "state": "VT",
+      "region": "Northern Vermont",
+      "town": "Stowe",
+      "lat": 44.5439,
+      "lon": -72.8143,
+      "website": "https://www.stowe.com",
+      "verticalDrop": 2360,
+      "skiableAcres": 485,
+      "trailCount": 116,
+      "liftCount": 12,
+      "annualSnowfallAvg": 314,
+      "snowmakingPercent": null,
+      "nightSkiing": null,
+      "passTypes": [
+        "epic"
+      ],
+      "passes": [
+        {
+          "name": "Epic Pass",
+          "type": "epic",
+          "access": "Unlimited"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1089,
+      "bestFor": [
+        "Genuinely steep Eastern skiing",
+        "Long intermediate cruisers",
+        "Midweek days on Mansfield",
+        "Skiers who want a real ski town"
+      ],
+      "officialSnowReport": "https://www.stowe.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-22"
+    },
+    {
+      "slug": "sugarbush",
+      "name": "Sugarbush Resort",
+      "state": "VT",
+      "region": "Central Vermont",
+      "town": "Warren",
+      "lat": 44.16,
+      "lon": -72.9289,
+      "website": "https://www.sugarbush.com",
+      "verticalDrop": 2600,
+      "skiableAcres": 484,
+      "trailCount": 111,
+      "liftCount": 16,
+      "annualSnowfallAvg": 216,
+      "snowmakingPercent": null,
+      "nightSkiing": null,
+      "passTypes": [
+        "ikon"
+      ],
+      "passes": [
+        {
+          "name": "Ikon Pass",
+          "type": "ikon",
+          "access": "Unlimited"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1399,
+      "bestFor": [
+        "Old-school expert terrain",
+        "Quiet days on Mount Ellen",
+        "Long continuous vertical",
+        "Skiers who plan around conditions"
+      ],
+      "officialSnowReport": "https://www.sugarbush.com/mountain/conditions",
+      "verifiedOn": "2026-08-22"
     },
     {
       "slug": "wachusett",

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "slug": "jay-peak",
+    "name": "Jay Peak Resort",
+    "aka": ["Jay", "The Jay Cloud"],
+    "state": "VT",
+    "region": "Northeast Kingdom",
+    "town": "Jay",
+    "lat": 44.9242,
+    "lon": -72.5256,
+    "website": "https://jaypeakresort.com"
+  },
+  "size": {
+    "verticalDrop": 2122,
+    "skiableAcres": 385,
+    "trailCount": 81,
+    "liftCount": 9,
+    "longestRun": 3,
+    "summitElevation": 3862,
+    "baseElevation": 1750,
+    "annualSnowfallAvg": 347,
+    "snowmakingPercent": 80,
+    "nightSkiing": null,
+    "source": "https://jaypeakresort.com/skiing-riding/mountain",
+    "verifiedOn": "2026-08-22",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 20,
+    "percentIntermediate": 40,
+    "percentAdvanced": 40,
+    "percentExpert": null,
+    "glades": true,
+    "moguls": null,
+    "terrainParks": 2,
+    "difficultyNotes": "Jay publishes a three-tier split labelled novice/intermediate/advanced, so percentExpert is null and the 40% top tier sits in percentAdvanced. The 385-acre figure counts marked terrain; the resort separately advertises 100+ acres of gladed terrain and operates a liberal in-bounds policy, so the amount of skiable ground in a deep year is considerably larger than the acreage suggests. The 347-inch snowfall figure is specifically average NATURAL snowfall, which is the number that matters here given how much of the good skiing is in the trees.",
+    "source": "https://jaypeakresort.com/skiing-riding/mountain",
+    "verifiedOn": "2026-08-22",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "2 days",
+      "blackouts": null,
+      "verifiedOn": "2026-08-22",
+      "source": "https://www.onthesnow.com/news/indy-pass-buyers-guide/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "No adult ticket or season pass price could be sourced from the resort's own site as of the verified date; nothing here is estimated. Jay is on the Indy Pass, which sells from $369 for the 2026-27 season, but that is a multi-resort product granting two days here rather than a Jay season pass and is recorded under passes instead.",
+    "verifiedOn": "2026-08-22",
+    "source": "https://jaypeakresort.com/skiing-riding/mountain",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Jay Peak gets more snow than anywhere else in the eastern United States and it is not close. The resort claims 347 inches of natural snowfall a year, roughly a hundred more than Stowe an hour south, and the reason is a genuine meteorological quirk: the mountain sits alone at the top of Vermont with nothing between it and the moisture coming off Lake Champlain and the St. Lawrence, and it manufactures its own weather often enough that locals named it. The Jay Cloud is a real thing. It is also why the tram gets held for wind and why you can spend a day here in a whiteout so complete you cannot see the next tower. All that snow lands on a mountain built for it. Jay's marked trails are fine and largely beside the point; what people drive four and a half hours from Boston for are the glades, and Jay has the deepest, best-established network of them in the East, backed by an in-bounds policy liberal enough that if you can see a line through the trees you are generally allowed to ski it. Beaver Pond, Timbuktu, Valhalla, Everglade - these are real destinations, not marketing names on a map. The trade-off is remoteness and a resort that has been through the wringer. Jay is genuinely far from everything, the base area is a jumble of condos and an indoor waterpark, and the place spent years in federal receivership after the EB-5 fraud that funded much of what you are looking at. None of that affects the skiing, which on the right week is the best in the region.",
+    "snowQuality": "This is the one New England mountain where the snowfall claim is not marketing. Jay's base sits at 1,750 feet - high for Vermont - and that extra elevation means storms that fall as rain at Killington's base fall as snow here. The natural snow is lighter and drier than anything else in the region, which is exactly what the glades need, and because so much of the terrain is never groomed it stays skiable for days rather than hours after a storm. Snowmaking covers 80% of the marked trails, which is the safety net for the front side, but nobody comes to Jay to ski manmade snow. The weakness is wind and visibility rather than surface: the summit is exposed, the tram holds regularly, and a flat-light day in the trees at Jay is genuinely disorienting.",
+    "crowds": "Remoteness is Jay's crowd control and it works. It is roughly ninety minutes past Burlington and four and a half hours from Boston, which filters out the day-trip traffic that fills Killington and Okemo every Saturday. Even on a powder weekend the lift lines are modest by Vermont standards, and mid-week the mountain can feel close to private. The pinch point is the tram, which carries a lot of people to the summit slowly and holds for wind more than any other lift in the state - when it is down, everything funnels onto the Bonaventure and Flyer quads and the upper mountain gets crowded fast. The base area gets busy in a different way: the waterpark and the hotel bring families who are not skiing, so the lodges and restaurants can be full while the trails are empty.",
+    "difficulty": "Jay rates honestly and skis harder than its numbers. The 40% advanced figure understates it, because the glades are where the mountain actually lives and they are unrated in any meaningful sense - Valhalla and Everglade are tight, steep, and require both tree-skiing technique and the judgement to know when the cover is too thin. A confident intermediate from a groomed-trail background will find the marked blacks manageable and the woods overwhelming. The other thing to understand is that Jay's difficulty is conditional on snow depth in a way most resorts are not: the same glade that is superb in February is an unskiable minefield of stumps in early December. Check the base depth, not just the trail count.",
+    "keyTrails": [
+      {
+        "name": "Beaver Pond Glade",
+        "note": "The introduction to Jay's tree skiing and the one to do first. Moderately spaced, consistently pitched, and long enough to understand what the fuss is about."
+      },
+      {
+        "name": "Valhalla",
+        "note": "Tighter, steeper and more committing than Beaver Pond. The glade that separates people who ski trees from people who say they do."
+      },
+      {
+        "name": "Timbuktu",
+        "note": "Off the far side of the mountain and worth the traverse. Quiet, well spaced, and holds snow long after the front side has been tracked out."
+      },
+      {
+        "name": "Ullr's Dream",
+        "note": "The longest run on the mountain at three miles, and the civilised way down when the light has gone flat and the trees have stopped being fun."
+      },
+      {
+        "name": "The Face Chutes",
+        "note": "Steep, exposed and directly under the tram line, which means an audience. Wind-scoured as often as they are good."
+      }
+    ],
+    "tidbits": [
+      "Jay Peak averages 347 inches of natural snowfall a year, the most of any ski area in eastern North America.",
+      "The base elevation of 1,750 feet is unusually high for Vermont, which is a large part of why storms fall here as snow rather than rain.",
+      "The resort advertises over 100 acres of gladed terrain alongside its 385 acres of marked trails.",
+      "Jay operates the only aerial tram at a Vermont ski area.",
+      "The resort was placed in federal receivership in 2016 following an EB-5 investment fraud that had funded much of its base-area construction, and was sold to Pacific Group Resorts in 2022."
+    ],
+    "bestFor": [
+      "The best tree skiing in the East",
+      "Deep natural snow",
+      "Escaping weekend crowds",
+      "Powder chasers who can drive"
+    ],
+    "watchOutFor": [
+      "Four hours-plus from Boston",
+      "Tram holds for wind constantly",
+      "Glades need real base depth",
+      "Whiteout and flat light",
+      "No published ticket price"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://jaypeakresort.com/skiing-riding/snow-report-maps/snow-report",
+    "trailMap": "https://jaypeakresort.com/skiing-riding/snow-report-maps/trail-map",
+    "webcams": null,
+    "lodging": "https://jaypeakresort.com/trip-planning/lodging",
+    "twitter": "https://x.com/jaypeakresort",
+    "instagram": "https://www.instagram.com/jaypeakresort"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Jay Peak mountain by the numbers",
+        "url": "https://jaypeakresort.com/skiing-riding/mountain",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "OnTheSnow 2026/27 Indy Pass buyer's guide (access and pass price)",
+        "url": "https://www.onthesnow.com/news/indy-pass-buyers-guide/",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Jay Peak summit coordinates and elevation",
+        "url": "https://en.wikipedia.org/wiki/Jay_Peak_(Vermont)",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Wikipedia Jay Peak Resort (receivership and ownership history)",
+        "url": "https://en.wikipedia.org/wiki/Jay_Peak_Resort",
+        "accessedOn": "2026-08-22"
+      }
+    ],
+    "verifiedOn": "2026-08-22",
+    "lastEditedBy": "claude-code"
+  }
+}

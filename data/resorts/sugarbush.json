@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "slug": "sugarbush",
+    "name": "Sugarbush Resort",
+    "aka": ["Sugarbush", "Mascara Mountain"],
+    "state": "VT",
+    "region": "Central Vermont",
+    "town": "Warren",
+    "lat": 44.16,
+    "lon": -72.9289,
+    "website": "https://www.sugarbush.com"
+  },
+  "size": {
+    "verticalDrop": 2600,
+    "skiableAcres": 484,
+    "trailCount": 111,
+    "liftCount": 16,
+    "longestRun": 3,
+    "summitElevation": 4083,
+    "baseElevation": 1483,
+    "annualSnowfallAvg": 216,
+    "snowmakingPercent": null,
+    "nightSkiing": null,
+    "source": "https://www.onthesnow.com/vermont/sugarbush/ski-resort",
+    "verifiedOn": "2026-08-22",
+    "fieldSources": {
+      "trailCount": {
+        "source": "https://skivermont.com/sugarbush",
+        "verifiedOn": "2026-08-22"
+      },
+      "liftCount": {
+        "source": "https://skivermont.com/sugarbush",
+        "verifiedOn": "2026-08-22"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 23,
+    "percentIntermediate": 42,
+    "percentAdvanced": 27,
+    "percentExpert": 7,
+    "glades": true,
+    "moguls": null,
+    "terrainParks": null,
+    "difficultyNotes": "Sugarbush publishes no consolidated statistics page of its own, so the figures here are OnTheSnow's, with trail and lift counts confirmed against Ski Vermont. The percentages sum to 99 after rounding. The 484-acre figure covers the lift-served terrain on Lincoln Peak and Mount Ellen only; it excludes the 2,000-acre Slide Brook Basin between them, which is backcountry and is not patrolled as marked terrain. The summit elevation is Mount Ellen, the higher and quieter of the two mountains, not the Lincoln Peak side where most people ski.",
+    "source": "https://www.onthesnow.com/vermont/sugarbush/ski-resort",
+    "verifiedOn": "2026-08-22",
+    "fieldSources": {
+      "glades": {
+        "source": "https://skivermont.com/sugarbush",
+        "verifiedOn": "2026-08-22"
+      }
+    }
+  },
+  "passes": [
+    {
+      "name": "Ikon Pass",
+      "type": "ikon",
+      "access": "Unlimited",
+      "blackouts": null,
+      "verifiedOn": "2026-08-22",
+      "source": "https://www.sugarbush.com/mountain/winter"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 1399,
+    "currency": "USD",
+    "notes": "2026-27 season. Alterra prices day tickets dynamically and publishes no fixed window rate, so the ticket fields are null rather than guessed. The season pass figure is the full Ikon Pass, which is how unlimited Sugarbush access is bought. The cheaper Ikon Base Pass carries restrictions here and is not recorded. Sugarbush also sells its own Mountain Pass products, but no price for them could be sourced.",
+    "verifiedOn": "2026-08-22",
+    "source": "https://www.onthesnow.com/news/ikon-pass-buyers-guide/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Sugarbush is two mountains pretending to be one, and how much you enjoy it depends almost entirely on whether the lift between them is running. Lincoln Peak is the front door: a busy base village, most of the snowmaking, most of the crowds, and the resort's best-known terrain. Mount Ellen, four miles north, is higher, colder, windier, considerably quieter, and has the most continuous vertical in Vermont. Connecting them is the Slide Brook Express, the longest detachable quad in the world at over two miles, which spends a great deal of the winter closed for wind. When it runs, Sugarbush is one of the biggest and most varied ski days in the East. When it does not, you have chosen one mountain for the day and had better have chosen right. What makes the place worth the trouble is Castlerock. It is a small, separate pod on the Lincoln Peak side served by a slow fixed-grip double, with almost no snowmaking and no grooming to speak of, and the trails under it - Rumble, Middle Earth, Castlerock Run - are narrow, twisting, natural-snow-only relics of how Vermont skiing used to be cut. It is the best expert terrain at any Ikon mountain in the East and it exists in defiance of everything the modern industry does. Ski Castlerock on a good snow year and you will forgive Sugarbush a great deal, including the Ikon crowds that have arrived since Alterra bought the place in 2020.",
+    "snowQuality": "Sugarbush claims 262 inches; OnTheSnow's long-run average is 216, and the lower figure is the one to plan around. The mountain sits in the Mad River Valley and does well in northwest flow, but it is not Jay and it is not Stowe. The bigger issue is what the resort can do about a bad stretch, and the honest answer is: less than its neighbours. Snowmaking covers a good share of Lincoln Peak but Castlerock is effectively natural snow only, and Mount Ellen's upper mountain is exposed enough that wind strips it. A thin January closes Castlerock outright, which removes the single best reason to be there. In a good year the north-facing upper Mount Ellen trails hold cold, dry snow longer than almost anywhere else in the state.",
+    "crowds": "Ikon changed Lincoln Peak more than Alterra will admit. The Super Bravo and Gate House lifts back up hard on weekend mornings, the base area parking fills early, and the village bottleneck at the bottom of the Valley House is genuinely unpleasant at 4pm. Mount Ellen is the release valve and always has been: the same pass, a fifteen-minute drive or one Slide Brook ride away, and routinely a third of the traffic. Locals treat the two mountains as a weather call rather than a single resort - Ellen on a cold clear day, Lincoln when it is windy. Castlerock is self-limiting because the double chair moves so few people, which is exactly why the snow there lasts. Midweek the whole operation is pleasantly quiet.",
+    "difficulty": "The published breakdown undersells the top end badly. Sugarbush's blacks are steeper and narrower than the Vermont average, and Castlerock's trails are rated as though the rest of the mountain did not exist - Rumble is ungroomed, off-camber, littered with rocks and stumps in a thin year, and is harder than most double blacks in the region. Stein's Run off Lincoln Peak is a real pitch that holds bumps. Where an intermediate gets caught out is assuming the Castlerock pod is more of the same: it is not, there is no easy way down once you are committed, and the lift does not unload at the top. The intermediate skiing elsewhere is genuinely good and genuinely long, particularly the Mount Ellen runs off the Summit Quad.",
+    "keyTrails": [
+      {
+        "name": "Rumble",
+        "note": "The most serious lift-served trail in the Mad River Valley. Ungroomed, narrow, natural snow only, and closed more often than it is open. Skiing it well is a local credential."
+      },
+      {
+        "name": "Castlerock Run",
+        "note": "The signature of the Castlerock pod - twisting, old-school, cut to the terrain rather than through it. The reason people put up with a slow double chair."
+      },
+      {
+        "name": "Stein's Run",
+        "note": "Named for Stein Eriksen, steep and sustained off Lincoln Peak, and the best bump run on that side of the resort."
+      },
+      {
+        "name": "Slide Brook Express",
+        "note": "Not a trail but the thing your day depends on: over two miles of lift connecting Lincoln Peak to Mount Ellen. Check whether it is spinning before you plan anything."
+      },
+      {
+        "name": "Rim Run",
+        "note": "Mount Ellen's long high traverse-and-cruise, with the best views at the resort and a fraction of the Lincoln Peak traffic."
+      }
+    ],
+    "tidbits": [
+      "Sugarbush has the second-largest vertical drop in Vermont at 2,600 feet, behind Killington.",
+      "The Slide Brook Express, installed in 1995, travels 11,012 feet between Lincoln Peak and Mount Ellen and is the longest detachable quad in the world.",
+      "The 2,000-acre Slide Brook Basin between the two mountains is backcountry terrain and is not counted in the resort's 484 skiable acres.",
+      "Alterra Mountain Company acquired Sugarbush in January 2020, putting it on the Ikon Pass.",
+      "The resort's biggest recorded seasons, 1995-96 and 2016-17, both delivered 363 inches."
+    ],
+    "bestFor": [
+      "Old-school expert terrain",
+      "Quiet days on Mount Ellen",
+      "Long continuous vertical",
+      "Skiers who plan around conditions"
+    ],
+    "watchOutFor": [
+      "Slide Brook closes for wind",
+      "Castlerock needs real snow cover",
+      "Lincoln Peak weekend queues",
+      "Two mountains, one long drive",
+      "No published day-ticket price"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.sugarbush.com/mountain/conditions",
+    "trailMap": "https://www.sugarbush.com/mountain/terrain-and-maps",
+    "webcams": "https://www.sugarbush.com/mountain/webcams",
+    "lodging": "https://www.sugarbush.com/plan-your-trip/lodging",
+    "twitter": "https://twitter.com/Sugarbush_VT",
+    "instagram": "https://www.instagram.com/sugarbush_vt/"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Sugarbush resort overview (primary stat block)",
+        "url": "https://www.onthesnow.com/vermont/sugarbush/ski-resort",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Ski Vermont Sugarbush (trail and lift counts, tree skiing areas, Slide Brook)",
+        "url": "https://skivermont.com/sugarbush",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Sugarbush winter mountain page (Ikon Pass affiliation)",
+        "url": "https://www.sugarbush.com/mountain/winter",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Sugarbush resort history (Slide Brook Express, Alterra acquisition, record seasons)",
+        "url": "https://www.sugarbush.com/about-us/about-sugarbush",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "OnTheSnow 2026/27 Ikon Pass buyer's guide (pass price)",
+        "url": "https://www.onthesnow.com/news/ikon-pass-buyers-guide/",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Mount Ellen summit coordinates and elevation",
+        "url": "https://en.wikipedia.org/wiki/Mount_Ellen_(Vermont)",
+        "accessedOn": "2026-08-22"
+      }
+    ],
+    "verifiedOn": "2026-08-22",
+    "lastEditedBy": "claude-code"
+  }
+}

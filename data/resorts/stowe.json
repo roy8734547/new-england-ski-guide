@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "slug": "stowe",
+    "name": "Stowe Mountain Resort",
+    "aka": ["Stowe", "The Ski Capital of the East"],
+    "state": "VT",
+    "region": "Northern Vermont",
+    "town": "Stowe",
+    "lat": 44.5439,
+    "lon": -72.8143,
+    "website": "https://www.stowe.com"
+  },
+  "size": {
+    "verticalDrop": 2360,
+    "skiableAcres": 485,
+    "trailCount": 116,
+    "liftCount": 12,
+    "longestRun": 3.7,
+    "summitElevation": 3625,
+    "baseElevation": null,
+    "annualSnowfallAvg": 314,
+    "snowmakingPercent": null,
+    "nightSkiing": null,
+    "source": "https://www.stowe.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "verifiedOn": "2026-08-22",
+    "fieldSources": {
+      "verticalDrop": {
+        "source": "https://www.onthesnow.com/vermont/stowe-mountain-resort/ski-resort",
+        "verifiedOn": "2026-08-22"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/vermont/stowe-mountain-resort/ski-resort",
+        "verifiedOn": "2026-08-22"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 16,
+    "percentIntermediate": 55,
+    "percentAdvanced": 29,
+    "percentExpert": null,
+    "glades": null,
+    "moguls": null,
+    "terrainParks": 3,
+    "difficultyNotes": "Stowe publishes a three-tier split, so percentExpert is null and the 29% top tier sits in percentAdvanced. Read the elevations carefully: the resort lists a 4,395 ft summit, which is the true top of Mount Mansfield and is not lift-served, alongside a 3,625 ft 'highest skiing elevation'. The lift-served figure is what is recorded here, so the mountain is 770 ft shorter than its own headline number suggests. Base elevation is null because the resort does not publish one and deriving it from the vertical drop would be arithmetic, not a source.",
+    "source": "https://www.stowe.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "verifiedOn": "2026-08-22",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Epic Pass",
+      "type": "epic",
+      "access": "Unlimited",
+      "blackouts": null,
+      "verifiedOn": "2026-08-22",
+      "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 1089,
+    "currency": "USD",
+    "notes": "2026-27 season. Vail prices Stowe day tickets dynamically by date and publishes no fixed window rate, so all three ticket fields are null rather than estimated. The season pass figure is the full Epic Pass, which is how a season at Stowe is actually bought - Vail does not sell an unrestricted Stowe-only pass. The cheaper Epic Local carries holiday restrictions at Stowe and is not recorded here.",
+    "verifiedOn": "2026-08-22",
+    "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Stowe has spent a century being told it is the best ski town in the East, and it has started charging accordingly. The skiing is genuinely excellent: Mount Mansfield is the highest peak in Vermont, the fall lines off the FourRunner Quad are long and consistent, and the Front Four remain the most honestly steep lift-served trails in New England. What has changed is everything around the skiing. Vail bought the place in 2017, folded it into the Epic Pass, and the result is a mountain that now sells a Colorado-style resort experience at Colorado-style prices, with a purpose-built village at Spruce Peak that has about as much to do with old Stowe as an airport lounge does with aviation. Take the mountain on its own terms and it is superb. Mansfield gives you 2,360 lift-served feet, a genuinely varied trail network, and enough pitch to keep a strong skier honest all day. Spruce Peak across the road is the family side - gentler, sunnier, better for learning, and connected by the Over Easy gondola, which is a pleasant ride and a needless extra transfer if you are trying to lap the good stuff. The catch is that Stowe is now expensive in every direction at once: paid parking, resort-town lodging, and a lift line at the quad on a Saturday that Epic did nothing to shorten. Come midweek, ski Mansfield, and ignore the village entirely.",
+    "snowQuality": "The 314-inch claim is Stowe's own and it is generous. OnTheSnow puts the long-run average nearer 226, and the truth is somewhere between: Mansfield genuinely catches more than most of Vermont, but the resort is measuring high on the mountain and you are mostly skiing lower down. What actually determines your day is aspect and elevation. The upper Mansfield trails hold cold snow well into a thaw, while the runouts to the base are the first thing to go and the last thing to recover. The Front Four are north-facing and steep enough that they scrape to blue ice by mid-morning on a firm day - Goat in particular turns into a bobsled run of exposed rock and boilerplate when it has not snowed in a week. Snowmaking is good but the resort does not publish a coverage percentage, which is itself telling.",
+    "crowds": "The FourRunner Quad is the bottleneck and always has been. Everyone parks at Mansfield, everyone rides it, and on a February Saturday the line runs 20 minutes by half past nine. The Gondola on the far side of the mountain is the standard escape - longer ride, similar vertical, a fraction of the queue - and the locals' move is to start there and work back across. Epic did not create Stowe's crowds so much as change who is in them: more destination visitors on a pass they bought in March, fewer people who know that Nosedive skis better before ten. Spruce Peak absorbs families well and is noticeably quieter. Parking is now paid and reserved in peak periods, which has thinned the drive-up traffic and annoyed everyone who used to be it. Midweek in January the mountain is close to empty and is one of the best days you can have in New England.",
+    "difficulty": "Stowe's ratings are among the more honest in Vermont, and the top end is genuinely hard. The Front Four - Goat, Starr, National and Liftline - are steep, narrow, ungroomed and frequently icy, and they are not a marketing exercise; Starr is a legitimate double black that intimidates competent skiers. Below that the mountain flatters you. That 55% intermediate figure is real, and Stowe's blues are wide, well-groomed and long, which makes it a comfortable mountain for a confident intermediate and a slightly deceptive one, because the step from a Stowe blue to Goat is enormous with almost nothing in between. Compared to the West, everything is narrower and considerably firmer; a Stowe black on a hard day demands edges and commitment more than technique.",
+    "keyTrails": [
+      {
+        "name": "Goat",
+        "note": "The narrowest and meanest of the Front Four. Rocky, ungroomed, barely wider than a road, and genuinely dangerous when it is firm. The trail people mean when they say Stowe is a serious mountain."
+      },
+      {
+        "name": "Starr",
+        "note": "The steepest sustained pitch on Mansfield and the one that stops people at the top. Bumps up hard and holds them. If you can ski Starr in control you can ski anything in Vermont."
+      },
+      {
+        "name": "Nosedive",
+        "note": "The classic Stowe cruiser, cut in the 1930s and still following the terrain rather than a bulldozer's idea of it. Long, rolling, and much better in the first hour before it gets scraped."
+      },
+      {
+        "name": "Liftline",
+        "note": "Exactly what it sounds like, under the FourRunner Quad, so everybody on the chair grades your skiing. Steep, bumped and unforgiving."
+      },
+      {
+        "name": "Toll Road",
+        "note": "The long green way down from near the summit, and the reason a nervous skier can still ride the same lift as everyone else. More of a road than a trail, but it is the full height of the mountain."
+      }
+    ],
+    "tidbits": [
+      "Mount Mansfield is the highest peak in Vermont at 4,395 feet, but the lift-served summit is 3,625 feet - the top of the mountain is a hike, not a chairlift.",
+      "Stowe was bought by Vail Resorts in 2017 and is now on the Epic Pass.",
+      "The Over Easy gondola exists to carry skiers over the Mountain Road between Mansfield and Spruce Peak, because the two halves of the resort are separated by a public highway.",
+      "The resort reports 314 inches of average snowfall; third-party records put the long-run average closer to 226."
+    ],
+    "bestFor": [
+      "Genuinely steep Eastern skiing",
+      "Long intermediate cruisers",
+      "Midweek days on Mansfield",
+      "Skiers who want a real ski town"
+    ],
+    "watchOutFor": [
+      "FourRunner Quad weekend lines",
+      "Paid and reserved parking",
+      "Front Four scrape to ice fast",
+      "Resort-town prices everywhere",
+      "No published day-ticket price"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.stowe.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+    "trailMap": "https://www.stowe.com/the-mountain/about-the-mountain/trail-maps.aspx",
+    "webcams": "https://www.stowe.com/the-mountain/mountain-conditions/mountain-cams.aspx",
+    "lodging": "https://www.stowe.com/plan-your-trip/stay/stowe-lodging.aspx",
+    "twitter": null,
+    "instagram": "https://www.instagram.com/stowemt/"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Stowe Mountain Resort mountain information",
+        "url": "https://www.stowe.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "OnTheSnow Stowe resort overview (vertical drop, longest run)",
+        "url": "https://www.onthesnow.com/vermont/stowe-mountain-resort/ski-resort",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "OnTheSnow 2026/27 Epic Pass buyer's guide (access and pass price)",
+        "url": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Mount Mansfield summit coordinates and elevation",
+        "url": "https://en.wikipedia.org/wiki/Mount_Mansfield",
+        "accessedOn": "2026-08-22"
+      }
+    ],
+    "verifiedOn": "2026-08-22",
+    "lastEditedBy": "claude-code"
+  }
+}

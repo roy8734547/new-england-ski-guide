@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "slug": "smugglers-notch",
+    "name": "Smugglers' Notch Resort",
+    "aka": ["Smuggs"],
+    "state": "VT",
+    "region": "Northern Vermont",
+    "town": "Jeffersonville",
+    "lat": 44.56,
+    "lon": -72.76,
+    "website": "https://www.smuggs.com"
+  },
+  "size": {
+    "verticalDrop": 2610,
+    "skiableAcres": 311,
+    "trailCount": 78,
+    "liftCount": 8,
+    "longestRun": 3,
+    "summitElevation": 3640,
+    "baseElevation": 1030,
+    "annualSnowfallAvg": 248,
+    "snowmakingPercent": null,
+    "nightSkiing": null,
+    "source": "https://www.onthesnow.com/vermont/smugglers-notch-resort/ski-resort",
+    "verifiedOn": "2026-08-22",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 17,
+    "percentIntermediate": 51,
+    "percentAdvanced": 27,
+    "percentExpert": 5,
+    "glades": null,
+    "moguls": null,
+    "terrainParks": null,
+    "difficultyNotes": "Smugglers' Notch publishes no statistics table on its own site - the link it labels 'Mountain Stats' leads to a conditions hub with no figures - so the numbers here are OnTheSnow's. Snowmaking coverage is recorded as null because only an acreage (151 acres) is published, not a percentage. The 2,610 ft vertical is measured from the Madonna summit to the base village, and the three peaks are very unequal: Madonna carries almost all of the difficult terrain, Sterling most of the intermediate, and Morse is a separate beginner hill.",
+    "source": "https://www.onthesnow.com/vermont/smugglers-notch-resort/ski-resort",
+    "verifiedOn": "2026-08-22",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Smugglers' Notch season pass",
+      "type": "none",
+      "access": "Season pass only - Smugglers' Notch is not on Ikon, Epic or Indy",
+      "blackouts": null,
+      "verifiedOn": "2026-08-22",
+      "source": "https://www.smuggs.com/tickets-passes/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "No adult ticket or season pass price could be sourced as of the verified date. The resort's passes page is a store landing page that lists products - season passes, Bash Badges, the RCI-only SmuggsPass - without published rates, and nothing here is estimated. Note that Smuggs sells most of its business as lodging-and-lift packages rather than day tickets, so a headline day rate is less representative here than at most mountains.",
+    "verifiedOn": "2026-08-22",
+    "source": "https://www.smuggs.com/tickets-passes/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Smugglers' Notch has the third-biggest vertical drop in Vermont and not one high-speed lift, and both of those facts are deliberate. Madonna I, the chair that serves the top of the mountain and all of its serious terrain, is a fixed-grip double from another era that takes the better part of fifteen minutes and stops constantly. That single decision defines the place: Smuggs moves people slowly, which keeps the trails empty, keeps the snow around, and makes a powder day here last into the afternoon long after Stowe has been scraped bare. It also means you will get maybe six or seven runs in a day and you should make peace with that before you buy a ticket. The other thing Smuggs is genuinely the best at is teaching children. Its family programmes are the most serious in New England - not a daycare with skis attached, but a properly staffed operation that has been refined over decades, paired with a village of self-catering condos where you can walk to the lift. Families come back for a week every year for a generation. Everybody else should understand what they are choosing: three separate peaks with Morse effectively a standalone beginner hill, an ageing base village that has not been renovated in the way Stowe's has, minimal snowmaking, and a mountain road that closes for the winter so the fifteen-minute drive to Stowe becomes an hour and a half around. What you get in exchange is the Black Hole, an empty Madonna on a Tuesday, and a resort that has never once pretended to be Aspen.",
+    "snowQuality": "Smuggs sits directly behind Mount Mansfield and catches much of the same weather, with an average around 248 inches. What it does not have is Stowe's snowmaking plant - published coverage is roughly half the terrain, and the upper Madonna trails are essentially natural snow. In a good year that is the whole point: the terrain off Madonna is left ungroomed, the slow lift means it does not get skied off, and it holds soft snow for days. In a lean year it is brutal. Thin cover closes the woods and the steeper Madonna trails outright, and what remains is a narrow selection of manmade ribbon on the lower mountain. The base at 1,030 feet is low enough that the bottom of the hill turns to slush and then to boilerplate in a thaw cycle, while the summit 2,600 feet above stays cold. Check the base depth before committing, more so here than at most Vermont resorts.",
+    "crowds": "This is one of the least crowded serious mountains in Vermont, and the reason is the lift system. Madonna I simply cannot deliver enough people to the top to crowd the terrain up there, so even on a busy Saturday the good trails feel uncrowded while the queue at the bottom does not. The pattern is inverted from most resorts: you wait a long time and then have the run to yourself. Morse, the beginner peak, absorbs the ski school and the youngest children entirely, which keeps them off the intermediate terrain on Sterling - a genuinely good bit of resort design that more family mountains should copy. The village fills during school holiday weeks, when Smuggs is booked out with the same families it has hosted for years, and empties almost completely midweek in January.",
+    "difficulty": "Smuggs rates strictly and the top end is legitimately extreme. The Black Hole off Madonna is marketed as the only triple black diamond in the East, and while that is partly a marketing category, the trail underneath it is steep, narrow, rock-strewn and ungroomed, and it deserves respect. Above that, Madonna's regular blacks - Freefall, Upper Liftline - are steeper and rougher than the same rating at Okemo or Stowe's intermediate side. The mountain is unusually bimodal: a very well-designed beginner and lower-intermediate progression on Morse and Sterling, then a sharp step up to Madonna with less in between than most resorts offer. An intermediate who rides Madonna I because it is the tall one may find the descent unpleasant. That is worth knowing before you get on it, because there is no easy way down from the top.",
+    "keyTrails": [
+      {
+        "name": "The Black Hole",
+        "note": "Billed as the East's only triple black diamond. Steep, tight, ungroomed and littered with obstacles when the cover is thin. The marketing is doing some work, but not much."
+      },
+      {
+        "name": "Freefall",
+        "note": "Madonna's signature steep pitch - narrow, sustained and left to bump up. The trail that justifies the fifteen-minute chair ride."
+      },
+      {
+        "name": "Upper Liftline",
+        "note": "Straight down under Madonna I, so everyone on the slowest chair in Vermont has a long time to watch you ski it."
+      },
+      {
+        "name": "Sterling Ridge",
+        "note": "The best of the intermediate terrain, on the quieter middle peak, and a good place to spend a day when Madonna is wind-held or too thin."
+      },
+      {
+        "name": "Morse Highlands",
+        "note": "The learning terrain, kept entirely separate from the rest of the resort. It is why Smuggs works for families in a way most mountains do not."
+      }
+    ],
+    "tidbits": [
+      "Smugglers' Notch has the third-largest vertical drop in Vermont at 2,610 feet, and no high-speed lifts at all.",
+      "The resort spans three peaks - Madonna, Sterling and Morse - with the difficult terrain concentrated almost entirely on Madonna.",
+      "The Notch road, Route 108, closes for the winter, so the short hop over the mountain to Stowe becomes a drive of roughly ninety minutes.",
+      "Snowmaking covers around 151 acres of the resort's 311 skiable acres, well under half.",
+      "Smuggs is independently owned and is on no multi-mountain pass."
+    ],
+    "bestFor": [
+      "Families with young children",
+      "Serious steep terrain, no queue",
+      "Uncrowded midweek skiing",
+      "Week-long self-catering trips"
+    ],
+    "watchOutFor": [
+      "Slow fixed-grip lifts throughout",
+      "Under half the terrain has snowmaking",
+      "Dated base village",
+      "Big gap between blue and black",
+      "No published prices at all"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.smuggs.com/conditions/winter-report/",
+    "trailMap": "https://www.smuggs.com/conditions-stats/trail-map/",
+    "webcams": "https://www.smuggs.com/conditions-stats/web-cams/",
+    "lodging": "https://www.smuggs.com/lodging/",
+    "twitter": "https://twitter.com/Smugglers_Notch",
+    "instagram": "https://www.instagram.com/smugglersnotchvt"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Smugglers' Notch resort overview (primary stat block)",
+        "url": "https://www.onthesnow.com/vermont/smugglers-notch-resort/ski-resort",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Smugglers' Notch tickets and passes (independent, own pass only)",
+        "url": "https://www.smuggs.com/tickets-passes/",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Smugglers' Notch conditions and stats hub",
+        "url": "https://www.smuggs.com/conditions-stats/",
+        "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Wikipedia Smugglers' Notch Resort (peaks, elevations, town)",
+        "url": "https://en.wikipedia.org/wiki/Smugglers%27_Notch_Resort",
+        "accessedOn": "2026-08-22"
+      }
+    ],
+    "verifiedOn": "2026-08-22",
+    "lastEditedBy": "claude-code"
+  }
+}
