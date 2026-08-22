@@ -1,0 +1,22 @@
+{
+  "name": "new-england-ski-guide",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A static guide to New England ski areas ~650 ft vertical and up. The data is the product.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "build:index": "node tools/build-index.mjs",
+    "validate": "node tools/validate.mjs",
+    "fetch:snow": "node tools/fetch-snow.mjs",
+    "fetch:trailmaps": "node tools/fetch-trailmaps.mjs",
+    "check": "node tools/build-index.mjs && node tools/validate.mjs"
+  },
+  "devDependencies": {
+    "cheerio": "^1.2.0"
+  }
+}

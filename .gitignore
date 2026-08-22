@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+
+# Personal-use material. Trail map PDFs downloaded for offline planning.
+# Never committed, never deployed, never referenced from data/ or assets/.
+private/
+
+# Tool scratch
+*.log
+.playwright/
