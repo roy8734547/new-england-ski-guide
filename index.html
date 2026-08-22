@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New England Ski Guide</title>
+<meta name="description" content="Every New England ski area from roughly 650 feet of vertical up, with the numbers side by side and an honest opinion about each one.">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="site-title" href="index.html">New England Ski Guide</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Resorts</a>
+      <a href="conditions.html">Conditions</a>
+      <a href="compare.html">Compare</a>
+      <a href="map.html">Map</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="shell page-head">
+    <h1>Every mountain worth the drive</h1>
+    <p class="lede">
+      New England ski areas from roughly 650 feet of vertical up. Real numbers with a source
+      and a date against each one, and an opinion that is willing to say a mountain is icy,
+      crowded or overpriced.
+    </p>
+  </div>
+
+  <div class="controls">
+    <div class="shell">
+      <div class="controls__row">
+        <div class="field">
+          <span class="label" id="lbl-state">State</span>
+          <div class="chips" id="filter-state" role="group" aria-labelledby="lbl-state"></div>
+        </div>
+
+        <div class="field">
+          <span class="label" id="lbl-pass">Pass</span>
+          <div class="chips" id="filter-pass" role="group" aria-labelledby="lbl-pass"></div>
+        </div>
+
+        <div class="field range-field">
+          <label class="label" for="filter-vertical">Min vertical</label>
+          <div style="display:flex;align-items:center;gap:.6rem">
+            <input type="range" id="filter-vertical" min="0" max="3000" step="100" value="0">
+            <output for="filter-vertical" id="filter-vertical-out" class="num">Any</output>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label">Options</span>
+          <label class="switch">
+            <input type="checkbox" id="filter-night">
+            Night skiing only
+          </label>
+        </div>
+
+        <div class="field">
+          <label class="label" for="sort-by">Sort</label>
+          <div style="display:flex;gap:.4rem">
+            <select id="sort-by">
+              <option value="name">Name</option>
+              <option value="verticalDrop" selected>Vertical drop</option>
+              <option value="skiableAcres">Skiable acres</option>
+              <option value="annualSnowfallAvg">Annual snowfall</option>
+              <option value="seasonPassAdult">Season pass price</option>
+              <option value="advanceTypical">Advance ticket price</option>
+            </select>
+            <select id="sort-dir" aria-label="Sort direction">
+              <option value="desc" selected>High to low</option>
+              <option value="asc">Low to high</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field field--end">
+          <span class="label" id="lbl-view">View</span>
+          <div class="viewtoggle" role="group" aria-labelledby="lbl-view">
+            <button type="button" id="view-cards" aria-pressed="true">Cards</button>
+            <button type="button" id="view-table" aria-pressed="false">Table</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="controls__meta">
+        <span id="result-count">&nbsp;</span>
+        <button type="button" class="btn-reset" id="reset-filters" hidden>Clear filters</button>
+      </p>
+    </div>
+  </div>
+
+  <div class="shell">
+    <ul class="cards" id="resort-cards" hidden></ul>
+
+    <div class="table-scroll" id="resort-table-wrap" hidden>
+      <table class="compare" id="resort-table">
+        <caption class="visually-hidden">
+          Comparison of New England ski areas. Column headers sort the table.
+        </caption>
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <p class="empty" id="empty" hidden>No mountains match those filters.</p>
+  </div>
+
+  <p id="status" role="status">Loading resorts…</p>
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <p>
+      Every figure carries the source it came from and the date it was checked. Snow reports
+      are fetched from each resort's official report and linked back to it. Nothing here is
+      copied from a resort's marketing copy.
+    </p>
+    <p>
+      Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
+      used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.
+    </p>
+  </div>
+</footer>
+
+<script type="module" src="assets/js/render-index.js"></script>
+</body>
+</html>

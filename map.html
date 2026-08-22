@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map &middot; New England Ski Guide</title>
+<meta name="description" content="A data-first guide to New England ski areas, roughly 650 ft vertical and up.">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="site-title" href="index.html">New England Ski Guide</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="index.html">Resorts</a>
+    <a href="conditions.html">Conditions</a>
+    <a href="compare.html">Compare</a>
+    <a href="map.html">Map</a>
+  </nav>
+</header>
+
+<main id="main">
+  <h1>Map</h1>
+  <p class="lede">Every mountain, pinned and coloured by pass.</p>
+  <div id="map" role="application" aria-label="Map of New England ski areas"></div>
+  <p id="status" role="status">Loading map...</p>
+</main>
+
+<footer class="site-footer">
+  <p>Snow reports are fetched from each resort's official report and linked back to the source.</p>
+  <p>Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
+     used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</p>
+</footer>
+
+<script type="module" src="assets/js/render-map.js"></script>
+</body>
+</html>
