@@ -42,41 +42,56 @@ skipping a unit.
 | B | Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock | `03d7870` | 304 / 320 | **INTEGRITY FAILURE 4** found: OnTheSnow's two Black Mountain records are cross-contaminated. |
 | B | Batch 10: butternut, bousquet, mohawk-mountain — **ROSTER COMPLETE** | `3248270` | 324 / 345 | 45 of 45. Part B done. |
 | **C** | Superlative sweep across all 45 files | `f8d8132` | — | 31 false roster-relative claims corrected in 13 files. |
+| **C** | Cross-resort backfills (11 pass entries, 9 files) | `a01ae52` | — | |
+| **C** | Overpass retries cleared: Bolton `keyTrails`, Stowe coordinate | `037937f` | 322 / 345 | Main endpoint answered on the third try. See "Overpass, resolved" below. |
+| **D** | `map.html` — Leaflet 1.9.4 + SRI, 45 pins coloured by pass | `3c7003a` | — | Plus a plain grouped link list under the map as the accessible equivalent. |
+| **D** | `compare.html` — 2–4 mountains, numbers + editorial | `b1da25e` | — | Found and fixed a real sideways-scroll bug at 768px. |
 
 **Parts A and B are COMPLETE. All 45 resort files are written.** `npm run check` reports
 45 files, 0 errors, 4 warnings — all four warnings are correct data, not defects.
 
-**RESUME HERE — Part C is in progress.** Done so far: the superlative sweep (`f8d8132`).
-Still to do in Part C, in this order:
+**RESUME HERE — Parts D and E were pulled ahead of the rest of Part C.** The roster was
+complete but the site still had two stub pages and no public-site polish, so the order for
+this session is: Overpass retries → Part D → Part E → the rest of Part C → Part G.
+
+### Overpass, resolved (`037937f`)
+
+Both items parked on the 504s last session are closed. The main endpoint answered on the
+third consecutive retry; `overpass.private.coffee` timed out and `overpass.kumi.systems`
+returned 502, so **the working recipe is to retry `overpass-api.de` rather than to chase
+mirrors.** Note it rejects a bare project User-Agent with HTTP 406 and needs the query as a
+GET `?data=` rather than a POST body.
+
+- **`bolton-valley.editorial.keyTrails`** — seven entries written. OSM returned 80 named
+  downhill pistes with difficulty grades; SteepSeeker supplied measured pitches (Spillway
+  29.5°, Vermont 200 28.5°, Devil's Playground 26.8°); PeakRankings and a local
+  trail-by-trail ranking supplied character. **PeakRankings does have a Bolton Valley page**
+  — the "no PeakRankings coverage" finding from batches 7–10 is about those specific Tier
+  B/C resorts, not roster-wide, and Part C should not assume a 404 without checking.
+- **`stowe.identity` coordinate** — moved from 44.5439,-72.8143 to **44.5240,-72.8079**, the
+  FourRunner Quad's upper terminus. The old point was Mount Mansfield's true summit ridge,
+  660 ft above any lift, which is the wrong place to forecast weather from. The new one
+  probes at 3,606 ft against a published 3,625 ft summit. The Wikipedia source is dropped.
+
+### Still to do in Part C, after Part E
 
 1. **reviews[] for all 45 resorts** — three commits, Tier A / B / C. This is the largest
-   remaining unit. Every `reviews` array is currently empty. Note from Part B: **no Tier C
-   resort in batches 7-10 has a PeakRankings page** (checked: berkshire-east, catamount,
-   jiminy-peak, pleasant-mountain, middlebury, saskadena-six, black-mountain-nh,
+   remaining unit. Every `reviews` array is currently empty. Tier A first. Do not pad:
+   where a small area genuinely has no substantive coverage, leave `reviews` empty with an
+   `unpublished` fieldNotes entry and move on. Known 404s on PeakRankings (checked
+   individually, all Tier B/C from batches 7–10): berkshire-east, catamount, jiminy-peak,
+   pleasant-mountain, middlebury-snow-bowl, saskadena-six, black-mountain-nh,
    dartmouth-skiway, mt-abram, black-mountain-maine, camden-snow-bowl, big-rock, butternut,
-   bousquet, mohawk-mountain all 404). Expect many empty reviews arrays with `unpublished`
-   fieldNotes, which BATCHES.md says is the correct outcome.
-2. ~~Three cross-resort backfills~~ — **DONE, `a01ae52`.** Eleven pass entries added across
-   nine files (AIM High → Burke and Smuggs; Fairbank Group → Bromley and Cranmore; Dartmouth
-   partner discounts → Ragged, Pats Peak, Saskadena Six; Uphill New England → four files).
-3. **`bolton-valley.editorial.keyTrails` is empty** — **attempted and failed 2026-08-25.**
-   boltonvalley.com's trail-map page carries no trail names (the names live inside the map
-   image) and its snow report is blank out of season. The remaining route is an OSM/Overpass
-   lift query for Bolton's named lifts, which **timed out with HTTP 504 on both the main
-   endpoint and the kumi mirror** — Overpass was rate-limiting after ~8 queries in the run.
-   Retry the Overpass query in a later session. One useful thing was picked up: Bolton
-   publishes **100km of Nordic terrain** alongside its 71 alpine trails.
-4. **Stowe's coordinate** — flagged back in Batch 3 and still open. It probes at 4,285 ft
-   against a stored 3,625 ft `summitElevation`, i.e. it points at Mount Mansfield's true
-   summit rather than the lift-served top. Re-anchor it with the Overpass `aerialway` query.
-   **Blocked in this session by the same Overpass 504s as item 3** — do both together when
-   Overpass is responding again.
+   bousquet, mohawk-mountain.
+2. ~~Three cross-resort backfills~~ — **DONE, `a01ae52`.**
+3. ~~`bolton-valley.editorial.keyTrails`~~ — **DONE, `037937f`.**
+4. ~~Stowe's coordinate~~ — **DONE, `037937f`.**
 5. One more cross-check worth doing: **Bromley claims to be "the only major ski area in New
    England with a southern exposure"**, and `black-mountain-nh` publishes its primary exposure
    as south. Bromley's "major" gives it an out, but the two files should acknowledge each
    other. (Cannon publishes north/northeast, for what it is worth.)
 
-Then Parts D, E, F and G as written in AUTORUN.md.
+Then Parts F and G as written in AUTORUN.md.
 
 ### STANDING CHECK AT THE START OF EVERY SESSION — Vail: DONE, no longer needed
 
