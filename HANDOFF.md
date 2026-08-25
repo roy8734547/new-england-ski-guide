@@ -91,3 +91,35 @@ npx playwright install chromium
 
 CI installs it automatically via `.github/workflows/snow.yml`; this is only needed for local
 adapter development.
+
+---
+
+## 5. Put a real contact address on about.html — blocks publishing
+
+`about.html` now exists and is the page `SKI_BOT_CONTACT_URL` should point at (item 1).
+Its **Corrections** section deliberately ships with a placeholder rather than an address,
+because choosing what address to publish is yours to make — a personal email address on a
+public page is not a decision this run gets to take for you.
+
+Find this block in `about.html` and replace the whole `<span>`:
+
+```html
+<span class="contact-placeholder" data-contact-placeholder>
+  not yet set — this line must be replaced …
+</span>
+```
+
+with whichever you prefer:
+
+```html
+<a href="mailto:you@your-domain">you@your-domain</a>
+```
+```html
+<a href="https://github.com/YOUR-USERNAME/new-england-ski-guide/issues">
+  the issue tracker on GitHub</a>
+```
+
+It renders in a bordered amber box until you do, so it is not something you can miss on a
+live page. Nothing else on the site depends on it, but the fetcher's User-Agent points every
+resort's server at this page, and a contact page with no contact on it defeats the point of
+identifying the bot at all.

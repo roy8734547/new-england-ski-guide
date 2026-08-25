@@ -1440,3 +1440,84 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
   font-size: 0.875rem;
 }
 .vs-parklist b { font-weight: 650; }
+
+/* --- long-form pages (about, 404) ----------------------------------------- */
+
+.prose { margin-block: 1.5rem 3rem; }
+.prose section + section {
+  margin-top: 2.25rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--border);
+}
+.prose h2 { font-size: 1.3rem; letter-spacing: -0.015em; }
+.prose h2 + * { margin-top: 0.7rem; }
+.prose p { max-width: var(--measure); color: var(--text-muted); }
+.prose p + p { margin-top: 0.8rem; }
+.prose p strong, .prose p b { color: var(--text); font-weight: 650; }
+.prose :is(ul, ol) { margin-top: 0.8rem; max-width: var(--measure); }
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--bg-inset);
+  border-radius: var(--radius);
+  padding: 0.1em 0.35em;
+}
+
+.numbered {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: 0.7rem;
+}
+.numbered li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 0.6rem;
+  color: var(--text-muted);
+}
+.numbered li::before {
+  content: counter(step);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+}
+.numbered li b { color: var(--text); font-weight: 650; }
+
+.contact-block {
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--pass-other);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.9rem;
+  background: var(--bg-inset);
+  max-width: var(--measure);
+}
+.contact-placeholder { color: var(--pass-other); font-weight: 550; }
+
+/* --- 404 ------------------------------------------------------------------ */
+
+.notfound { padding-block: 3rem 1rem; }
+.notfound__code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 700;
+}
+.notfound h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); margin-top: 0.4rem; }
+.notfound__suggest { margin-top: 1.5rem; }
+.notfound__suggest h2 {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+}
