@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "ragged",
+    "name": "Ragged Mountain Resort",
+    "aka": [
+      "Ragged",
+      "Ragged Mountain"
+    ],
+    "state": "NH",
+    "region": "Dartmouth-Sunapee",
+    "town": "Danbury",
+    "lat": 43.4722,
+    "lon": -71.8455,
+    "website": "https://www.raggedmountainresort.com"
+  },
+  "size": {
+    "verticalDrop": 1250,
+    "skiableAcres": 250,
+    "trailCount": 57,
+    "liftCount": 5,
+    "longestRun": 1.2,
+    "summitElevation": 2250,
+    "baseElevation": 1000,
+    "annualSnowfallAvg": 88,
+    "snowmakingPercent": 98,
+    "nightSkiing": false,
+    "source": "https://www.onthesnow.com/new-hampshire/ragged-mountain-resort/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "nightSkiing": {
+        "source": "https://www.indyskipass.com/our-resorts/ragged-mountain",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 30,
+    "percentIntermediate": 26,
+    "percentAdvanced": 37,
+    "percentExpert": 7,
+    "glades": true,
+    "difficultyNotes": "Look at that breakdown again: 37% advanced and 7% expert against only 26% intermediate. Ragged is one of very few mountains in this guide with more hard terrain than middling terrain, and for a 1,250-foot hill in central New Hampshire that is genuinely unusual. It is a two-peak layout - Ragged proper and Spear Mountain - and the split reflects the fact that the Spear side carries the steeper trails while the main face carries the learning terrain. Note that all the figures in this group come from OnTheSnow: raggedmountainresort.com has no mountain statistics page at all, which for a resort of this size is an odd gap. The old ragged-mt.com domain now redirects to an unrelated German site, so any older source citing it is dead.",
+    "source": "https://www.onthesnow.com/new-hampshire/ragged-mountain-resort/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "2 all-day or night lift tickets, as at every Indy partner resort",
+      "blackouts": "No blackout dates",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/ragged-mountain"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 119,
+    "windowTicketAdultLow": 99,
+    "advanceTypical": 89,
+    "seasonPassAdult": 559,
+    "currency": "USD",
+    "notes": "Ragged is one of the few resorts in this guide that publishes its window and online prices side by side, so all four fields carry real figures. The ticket rates are 2025-26 for adults aged 13-64. Window: $99 Monday-Thursday, $109 Friday-Sunday, $119 holiday periods. Online: $69 Monday-Thursday, $89 Friday-Sunday, $99 holiday. The $89 recorded as advanceTypical is the weekend online rate, which is the price most visitors actually pay, and it sits below the window low because buying ahead here genuinely is cheaper - the validator flags that as out of range and it is correct data. The season pass figure is the 2026-27 adult (6-79) pass at $559, the tier running 20 April to 14 October 2026; it was $449 in the spring tier and rises to $699 from 15 October. That $559 is the cheapest unlimited adult season pass on this roster by a wide margin.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.raggedmountainresort.com/season-passes/",
+    "fieldSources": {
+      "windowTicketAdultHigh": {
+        "source": "https://www.raggedmountainresort.com/all-tickets/",
+        "verifiedOn": "2026-08-25"
+      },
+      "windowTicketAdultLow": {
+        "source": "https://www.raggedmountainresort.com/all-tickets/",
+        "verifiedOn": "2026-08-25"
+      },
+      "advanceTypical": {
+        "source": "https://www.raggedmountainresort.com/all-tickets/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Ragged is the best-value serious skiing in New Hampshire and it has built its whole identity around saying so - the season pass programme is literally called Mission: Affordable, and at $559 for an unlimited adult pass it undercuts everything else on this roster by hundreds of dollars. What that buys is more mountain than the price implies. Twelve hundred and fifty feet of vertical across two peaks, 250 acres, 98% snowmaking, and a terrain breakdown that is genuinely lopsided towards the hard end: 37% advanced and 7% expert against 26% intermediate, which is a shape you normally see at mountains three times the price. The lift fleet punches above its weight too, with the Summit 6-pack - the only high-speed six-person chair in New Hampshire - and the Spear Mountain Express quad. The weaknesses are real and mostly about scale: 88 inches of natural snow means the glades are opportunistic, the runs are short at 1.2 miles at the longest, and there is no night skiing. But as a place to buy a pass and ski a lot for very little, it has no equal in the state.",
+    "snowQuality": "Eighty-eight inches puts Ragged among the drier mountains in this guide, and the response has been the same as everywhere else in central New Hampshire: snowmaking on 200 of the 250 acres, which the resort advertises as 98% coverage of its trail network. The system is modern and the mountain opens and stays open on the back of it. What you get in return for the low pass price is not deep snow, it is a lot of days on a reliable machine-made surface, and that is a fair trade at $559. The glades and the ungroomed corners are the part that suffers - they need a natural storm and they get fewer of them than the White Mountains an hour north.",
+    "crowds": "One of the quieter mountains in this guide relative to what it offers, and the lift fleet is the reason. A high-speed six-pack and a high-speed quad serving 250 acres is a lot of uphill capacity for a mountain this size, so queues clear quickly even when the car park is full. Ragged's pass price means it does sell a lot of passes and the Saturday crowd is real, but it is a local and season-pass crowd rather than a destination one, and the mountain absorbs it. Midweek here is close to empty.",
+    "difficulty": "Harder than anything about its price or its size suggests. Thirty-seven percent of the trails are advanced and seven percent expert, more hard terrain than intermediate terrain, which is the statistic that should make a strong skier look twice at a mountain they have probably driven past. The Spear Mountain side carries most of it. There is glade skiing, and 1,250 feet of vertical is enough for a run to develop some rhythm rather than ending as soon as it starts - though at 1.2 miles the longest run here is short by the standards of the big mountains. The learning terrain on the main face is well separated and genuinely good, which is why the mountain works for a family with mixed abilities.",
+    "keyTrails": [
+      {
+        "name": "Spear Mountain",
+        "note": "The second peak, served by its own high-speed quad, and where the advanced terrain that makes Ragged interesting actually lives."
+      },
+      {
+        "name": "Wild Side",
+        "note": "The main terrain park - a rail garden of hand-built rails leading into a large jump line. Serious for a mountain this size."
+      },
+      {
+        "name": "Lower Chute",
+        "note": "Home of the boardercross course: fourteen medium berms and roller features with a proper four-cross pull-in starting gate."
+      },
+      {
+        "name": "The Summit 6-pack",
+        "note": "New Hampshire's only high-speed six-person chairlift, and the reason a Saturday crowd at Ragged does not feel like one."
+      }
+    ],
+    "tidbits": [
+      "An unlimited adult season pass is $559 - the cheapest on this roster by several hundred dollars.",
+      "The Summit 6-pack is the only high-speed six-person chairlift in New Hampshire.",
+      "Ragged has more advanced terrain (37%) than intermediate terrain (26%), which is rare at any size.",
+      "The resort's pass programme is called Mission: Affordable, and the pricing backs the name up.",
+      "Ragged is on the Indy Pass with two days and no blackout dates.",
+      "The boardercross course has fourteen berms and a real four-cross starting gate.",
+      "The old ragged-mt.com domain now redirects to an unrelated site - use raggedmountainresort.com."
+    ],
+    "bestFor": [
+      "The cheapest pass in New Hampshire",
+      "More advanced terrain than expected",
+      "Short lift lines on a six-pack",
+      "Indy Pass holders"
+    ],
+    "watchOutFor": [
+      "Only 88 inches of natural snow",
+      "No night skiing",
+      "Longest run is 1.2 miles",
+      "No stats page on the resort's site"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.raggedmountainresort.com/mountain-report-cams/",
+    "trailMap": "https://www.raggedmountainresort.com/mountain-report-cams/#trails",
+    "webcams": "https://www.raggedmountainresort.com/mountain-report-cams/#mountain_cams",
+    "lodging": "https://www.raggedmountainresort.com/lodging-overview/",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Ragged Mountain overview (every size and terrain figure; the resort publishes no stats page)",
+        "url": "https://www.onthesnow.com/new-hampshire/ragged-mountain-resort/ski-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ragged all-tickets page (2025-26 window and online adult rates)",
+        "url": "https://www.raggedmountainresort.com/all-tickets/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ragged season passes (2026-27 Mission: Affordable pricing tiers, Indy add-on)",
+        "url": "https://www.raggedmountainresort.com/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ragged terrain park page (Barnyard, Lower Chute BX, Wild Side)",
+        "url": "https://www.raggedmountainresort.com/terrain-park/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass Ragged listing (two days, no blackouts, night skiing: no)",
+        "url": "https://www.indyskipass.com/our-resorts/ragged-mountain",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.indyskipass.com/our-resorts/ragged-mountain",
+      "verifiedOn": "2026-08-25",
+      "note": "The Indy Pass resort directory publishes a structured Night field for every partner mountain and gives Ragged \"No\". raggedmountainresort.com's page sitemap contains no night or twilight page either"
+    },
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source discusses when Ragged's ungroomed terrain is at its best; PeakRankings has no Ragged review and the resort publishes nothing on grooming"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No competitions or bump scene are documented anywhere for Ragged"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The terrain park page names three parks and a boardercross course but no pipe"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Nothing about Ragged's grooming is published, and no independent review of the mountain exists to fill the gap - PeakRankings has no Ragged page. What can be said from the sourced figures is that a mountain running snowmaking on 200 of its 250 acres is protecting a machine-made surface, which usually means comprehensive grooming, and that its 44% advanced-and-expert terrain concentrated on the Spear Mountain side is where any ungroomed skiing would be.",
+    "namedRuns": [],
+    "quality": "Genuinely undocumented, and recorded as such rather than guessed at. Ragged has an unusual amount of steep terrain for its size and a low enough natural snowfall that grooming is likely to be thorough, and those two facts point in opposite directions without settling anything. This is the section of this file most worth revisiting in season, when the resort's own grooming report will say which trails are being left alone - that report is dormant in August and is the only objective source that would answer it.",
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.onthesnow.com/new-hampshire/ragged-mountain-resort/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 3,
+    "parks": [
+      {
+        "name": "Wild Side",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The main park: a rail garden of hand-built rails running into a large jump line. Hand-built rails are worth noting - most mountains this size buy their features."
+      },
+      {
+        "name": "Lower Chute BX",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A boardercross course with fourteen medium berms and roller features and a proper four-cross pull-in starting gate. A real course rather than a few banked turns."
+      },
+      {
+        "name": "Barnyard",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The progression park - small features for getting comfortable before moving to Wild Side."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "Barnyard into Wild Side is a two-step ladder with a big gap in the middle - the progression park carries small features and the main park opens with a rail garden and closes with a large jump line, so there is no medium rung. The boardercross course sits outside the ladder entirely and is a different discipline.",
+    "rebuildCadence": null,
+    "overview": "Three parks including a properly built boardercross course, on a mountain whose season pass costs $559. The hand-built rail garden in Wild Side and the fourteen-berm four-cross course are both more effort than a resort this size usually puts in, and together they are the clearest evidence that Ragged's cheap pass is not a sign of a cheap operation.",
+    "reputation": "Better than the mountain's profile suggests, and the boardercross course is the differentiator - a permanent four-cross layout with a real starting gate is rare in New Hampshire, and it gives riders here something Gunstock and Cranmore do not have. What is missing is a medium park to bridge Barnyard and Wild Side, which makes the step up steeper than it needs to be.",
+    "source": "https://www.raggedmountainresort.com/terrain-park/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

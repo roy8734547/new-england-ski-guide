@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "cranmore",
+    "name": "Cranmore Mountain Resort",
+    "aka": [
+      "Cranmore",
+      "Mount Cranmore"
+    ],
+    "state": "NH",
+    "region": "Mount Washington Valley",
+    "town": "North Conway",
+    "lat": 44.0576,
+    "lon": -71.0928,
+    "website": "https://cranmore.com"
+  },
+  "size": {
+    "verticalDrop": 1200,
+    "skiableAcres": 170,
+    "trailCount": 60,
+    "liftCount": 7,
+    "longestRun": 1,
+    "summitElevation": 2000,
+    "baseElevation": null,
+    "annualSnowfallAvg": 80,
+    "snowmakingPercent": 100,
+    "nightSkiing": true,
+    "source": "https://cranmore.com/trail-map",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "longestRun": {
+        "source": "https://www.onthesnow.com/new-hampshire/cranmore-mountain-resort/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://cranmore.com/tickets",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 30,
+    "percentIntermediate": 45,
+    "percentAdvanced": 25,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "Cranmore publishes a three-tier split, so percentExpert is null and the top quarter sits in percentAdvanced. The resort states the same breakdown twice and the two do not quite agree: as percentages it gives 30/45/25, and as trail counts 18 beginner, 27 intermediate and 15 expert out of 60, which works out to 30/45/25 as well - so in this case they reconcile exactly, which is worth noting because several resorts in this guide fail that test. The 170-acre figure is the resort's own; OnTheSnow says 200. Note also that 100% snowmaking coverage on a mountain averaging only 80 inches of natural snow is not a boast, it is a necessity.",
+    "source": "https://cranmore.com/trail-map",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "White Mountains SuperPass",
+      "type": "other",
+      "access": "Unlimited at Bretton Woods, Cannon, Cranmore and Waterville Valley - 1,181 acres, 308 trails and 40 lifts across the four areas, with no blackout dates",
+      "blackouts": "None published",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.waterville.com/wmsp-perks"
+    },
+    {
+      "name": "Sun N' Snow Pass",
+      "type": "other",
+      "access": "Valid at Cranmore and Bretton Woods, Sunday to Friday, with blackout dates. $799.",
+      "blackouts": "Blackout dates apply; the resort does not publish which",
+      "verifiedOn": "2026-08-25",
+      "source": "https://cranmore.com/season-passes"
+    },
+    {
+      "name": "No multi-mountain pass",
+      "type": "none",
+      "access": "Cranmore is independently operated and is not on Epic, Ikon or Indy. Multi-mountain access is through the regional White Mountains SuperPass and Sun N' Snow products rather than a national pass.",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://cranmore.com/season-passes"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 129,
+    "windowTicketAdultLow": 99,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "The ticket figures are 2025-26 rates: as of the verified date no 2026-27 pricing has been released. Single day is $129 weekend and holiday, $99 midweek non-holiday; the four-hour ticket is $109 and $89 on the same split, and the twilight (night) adult ticket for ages 13+ is $75. The page does not distinguish window from online purchase, so advanceTypical is null. No adult season pass figure is stored: Cranmore lists its 2026-27 products only as from-prices with no age bands published at all - Happy Trails Black Diamond from $565, Happy Trails Blue Square from $475, Sun N' Snow $799, White Mountain Super Pass from $825 - and a from-price of unknown age band is not an adult rate. Note the SuperPass discrepancy: Cranmore lists it from $825 while Waterville Valley and Cannon both publish $1,589 for the adult, so Cranmore's figure must cover a different age band.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://cranmore.com/tickets",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://cranmore.com/season-passes",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Cranmore is the oldest ski resort in this guide in spirit if not in paperwork - it has been operating above North Conway since the 1930s, it ran the first ski lift of its kind in America in the skimobile, and it sits in the middle of a town rather than out in the woods, which is the whole point of it. Twelve hundred feet of vertical on 170 acres is not a lot, and Cranmore does not compete on size. It competes on being five minutes from everything: the outlets, the restaurants, the lodging, and three other ski areas. What it does properly is service the family that has come to the Mount Washington Valley for a week. One hundred percent snowmaking on a mountain averaging only 80 inches of natural snow, four terrain parks, night skiing on Wednesdays and Saturdays and every day of a holiday week, and a mountain adventure park for the days when nobody wants to ski. The skiing itself is genial - a well-cut intermediate hill with a respectable quarter of its trails in the top tier and some real pitch on the North Slope. Nobody's favourite mountain, and half the valley's best week.",
+    "snowQuality": "Eighty inches is the second-lowest natural total in this guide, ahead only of Crotched, and Cranmore's answer is total: 100% snowmaking coverage across all 170 acres. That is not marketing, it is the operating requirement of a ski area at this elevation on the valley floor - a mountain topping out at 2,000 feet in North Conway takes rain in storms that fall as snow twenty minutes up the road at Wildcat. What you ski here is machine snow, well made and well groomed, and the mountain opens early and stays open because of it. Do not come to Cranmore for a powder day; come for the week when nowhere else has a base either and Cranmore does.",
+    "crowds": "Busy in the way a valley resort is busy - driven by the North Conway lodging base rather than by day-trippers, which means school holiday weeks and February vacation are the pinch points and ordinary midweek days are quiet. Seven lifts including a high-speed quad for 170 acres is generous capacity, so the queues that form are short. The night sessions spread the load usefully: running 2pm to 8pm on Wednesdays and Saturdays gives the valley's visitors somewhere to be in the late afternoon, and the mountain is a different, quieter place after four.",
+    "difficulty": "Gentle to middling, with more pitch than the acreage suggests. Twenty-five percent of the trails are in the top tier and the North Slope carries the steepest of them, including Morton's 60 where the largest park features live. The mountain is cut in a fan off a single summit so runs are short - a mile is the longest - and there is nothing sustained enough to test a strong skier. Where Cranmore is genuinely good is the middle: 45% intermediate on immaculate machine snow is a fine place to turn a cautious skier into a confident one, which given the family traffic it serves is exactly the right thing to be good at. There is glade skiing, but on 80 inches of natural snow it is occasional.",
+    "keyTrails": [
+      {
+        "name": "Morton's 60",
+        "note": "On the North Slope, and where Cranmore puts its largest and most expansive park features. Also the steepest ground on the mountain."
+      },
+      {
+        "name": "Reed's Progression Park",
+        "note": "On the South Slope, medium features, and the middle rung of a park ladder that is unusually well thought out for a mountain this size."
+      },
+      {
+        "name": "Lower Koessler",
+        "note": "Home of The 38 park - boxes, rails and snow features - and named for the family that has run this mountain for decades."
+      },
+      {
+        "name": "South Quad terrain",
+        "note": "The night skiing zone: up to five beginner and beginner-intermediate trails plus one terrain park, lit from 2pm to 8pm. The resort warns these trails are not re-groomed midday."
+      }
+    ],
+    "tidbits": [
+      "Cranmore has operated above North Conway since the 1930s and ran the skimobile, an early and unusual uphill lift.",
+      "Snowmaking covers 100% of the mountain, which at 80 inches of natural snow a year is a necessity rather than a boast.",
+      "Night skiing runs 2pm to 8pm on Wednesdays and Saturdays and daily through holiday and vacation periods.",
+      "The night ticket is $75 for adults and covers up to five trails plus one terrain park off the South Quad.",
+      "Cranmore is one of the four mountains on the White Mountains SuperPass, with Bretton Woods, Cannon and Waterville Valley.",
+      "The Sun N' Snow pass pairs Cranmore with Bretton Woods for Sunday-to-Friday skiing at $799.",
+      "The resort tells you outright that its night trails are not re-groomed midday, which is more honesty than most mountains offer."
+    ],
+    "bestFor": [
+      "A family week in North Conway",
+      "Night skiing after a day out",
+      "Guaranteed cover in a thin winter",
+      "Terrain park progression"
+    ],
+    "watchOutFor": [
+      "Only 80 inches of natural snow",
+      "Short runs, one mile at most",
+      "No adult pass price published",
+      "Busy over February vacation"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://cranmore.com/snow-report",
+    "trailMap": "https://cranmore.com/trail-map",
+    "webcams": "https://cranmore.com/cams",
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Cranmore trail map page (vertical, summit, acres, trails, lifts, snowfall, snowmaking, difficulty split)",
+        "url": "https://cranmore.com/trail-map",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Cranmore tickets (2025-26 day rates, night skiing nights, hours, terrain and ticket price)",
+        "url": "https://cranmore.com/tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Cranmore terrain parks (four named parks)",
+        "url": "https://cranmore.com/terrain-parks",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Cranmore season passes (2026-27 products, all as from-prices without age bands)",
+        "url": "https://cranmore.com/season-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "White Mountains SuperPass coverage and adult price",
+        "url": "https://www.waterville.com/wmsp-perks",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Cranmore overview (longest run; independent acreage and elevation figures)",
+        "url": "https://www.onthesnow.com/new-hampshire/cranmore-mountain-resort/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.baseElevation": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Cranmore publishes a 2,000 ft summit and a 1,200 ft vertical but no base. OnTheSnow supplies 600 ft, which cannot be right alongside those two - 2,000 minus 600 is 1,400, not 1,200 - so no base elevation is stored. See the dispute recorded against the summit figure"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The terrain parks page names four parks and no pipe"
+    },
+    "passes[2].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Not applicable in the usual sense - Cranmore is on no mega-pass - and the season passes page publishes no blackout dates for the Happy Trails products beyond saying the Blue Square tier has them"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The tickets page publishes a single rate table without distinguishing window from online pricing"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Every 2026-27 pass on Cranmore's page is listed as a from-price with no age bands published anywhere, so no adult rate exists to record. Confirmed by re-reading the page specifically for an age breakdown"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Cranmore rates on three tiers, so no fourth-tier figure exists to source"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.summitElevation",
+      "resortClaim": 2000,
+      "independentClaim": "about 1,650 ft",
+      "independentSource": "https://api.open-meteo.com/v1/elevation?latitude=44.0576&longitude=-71.0928",
+      "note": "Cranmore and OnTheSnow both publish a 2,000 ft summit, but OpenStreetMap tags the Cranmore Mountain peak at 510 m and a terrain-model probe of that point returns 1,644 ft - about 350 ft below the published figure. A 1,200 ft vertical from a 1,650 ft summit would put the base near 450 ft, which is consistent with North Conway's valley floor, whereas the published pairing is not. The resort's figure is stored per CLAUDE.md's source order, but the summit elevation here should be treated as the least reliable number in this file."
+    },
+    {
+      "field": "size.skiableAcres",
+      "resortClaim": 170,
+      "independentClaim": 200,
+      "independentSource": "https://www.onthesnow.com/new-hampshire/cranmore-mountain-resort/ski-resort",
+      "note": "Cranmore says 170+ acres and OnTheSnow says 200. The resort's own, lower figure is stored - a rare case of a resort claiming less than a third party does, which is mildly reassuring about the rest of its numbers."
+    }
+  ],
+  "moguls": {
+    "presence": "rare",
+    "policy": "Cranmore grooms comprehensively. A mountain running 100% snowmaking on 80 inches of natural snow has to protect its surface, and the resort's own night skiing page makes the philosophy explicit in passing when it warns that the lit trails are not re-groomed midday - the implication being that everywhere else is. No trail is set aside to bump up.",
+    "namedRuns": [],
+    "quality": "There is no bump skiing to speak of here and this file will not invent any. Cranmore's terrain is short, heavily machine-made and groomed to stay that way, and the mountain's freestyle investment goes into four terrain parks rather than into leaving a trail alone. Moguls form between passes on the steeper North Slope pitches and are gone by the next morning. Anyone in the Mount Washington Valley who wants bumps has the answer twenty minutes away at Wildcat, which does not groom its blacks at all - the two mountains are almost perfect opposites and the valley is better for having both.",
+    "bestTiming": "Late spring, when grooming eases off and the North Slope softens, is the only window worth mentioning.",
+    "bumpCulture": "None. Cranmore's competitive culture is the long-running Mountain Meisters recreational race league, which is a genuinely beloved local institution and has nothing to do with moguls.",
+    "source": "https://cranmore.com/tickets",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 4,
+    "parks": [
+      {
+        "name": "Morton's 60",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "On the North Slope and carrying the largest features and most expansive elements on the mountain. The top of the ladder."
+      },
+      {
+        "name": "Reed's Progression Park",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Medium-sized features on the South Slope. The step between the beginner parks and Morton's."
+      },
+      {
+        "name": "The 38",
+        "size": "small",
+        "level": "Beginner to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "On Lower Koessler - a mix of boxes, rails and snow features for riders who have outgrown the garden."
+      },
+      {
+        "name": "Tschol's Terrain Garden",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "On Lower Beginner's Luck, with small to medium features and jumps. The entry point, and placed on the beginner trail rather than off in a corner."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": true,
+    "progression": "Four parks on 170 acres is a dense programme and the ladder is clean: Tschol's Terrain Garden on Lower Beginner's Luck, The 38 on Lower Koessler, Reed's on the South Slope, Morton's 60 on the North Slope. Each step is a size rather than a leap, and one of the parks is included in the night skiing terrain off the South Quad.",
+    "rebuildCadence": null,
+    "overview": "Four named parks spread across both slopes, well sequenced, and one of them lit for the Wednesday and Saturday night sessions. For a mountain of this size the park programme is a serious piece of the offering rather than a token, and it fits what Cranmore is for - the valley's families and the teenagers among them.",
+    "reputation": "Solid and locally well regarded rather than a destination. Cranmore's parks are sized and sequenced for people learning, which is the right ambition for a 1,200-foot mountain, and having one lit at night gives valley teenagers somewhere to go after school. A rider chasing big features would drive to Loon.",
+    "source": "https://cranmore.com/terrain-parks",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

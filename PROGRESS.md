@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 21.
+**Roster target:** 45 resorts. **Current:** 26.
 
 ---
 
@@ -32,26 +32,79 @@ skipping a unit.
 | B | Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat | `2f8af90` | 111 / 126 | Two recorded research findings were wrong and were corrected against primary sources — see below. Also added `.claude/` to `.gitignore` at the user's request. |
 | B | Night-skiing negatives re-sourced off Ski NH | `72b5924` | — | Ski NH's list is a curated feature, not a registry. |
 | B | Batch 4: attitash, sunday-river, sugarloaf, saddleback | `12e9972` | 143 / 157 | 1 warning (Saddleback publishes a park count but no park names). |
+| B | Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched | `PENDING` | 180 / 189 | 2 warnings, both correct data. Vail still down, so Sunapee and Crotched lean on OnTheSnow. |
 
-**Part A complete. Batches 2, 3 and 4 complete.** Next unfinished unit: **Part B, Batch 5** —
-mount-sunapee, cranmore, ragged, gunstock, crotched. No research gathered yet.
+**Part A complete. Batches 2 through 5 complete.** Next unfinished unit: **Part B, Batch 6** —
+pats-peak, magic-mountain, bromley, bolton-valley. No research gathered yet.
 
-### Carry into Batch 5
+### Carry into Batch 6 — the Indy directory is the shortcut
 
-- **Cranmore needs a White Mountains SuperPass entry** (`type: "other"`, unlimited across
-  Bretton Woods / Cannon / Cranmore / Waterville Valley, $1,589 adult through 31 Oct 2026,
-  source `waterville.com/wmsp-perks`). Cannon, Bretton Woods and Waterville already have it.
-- **Mount Sunapee and Crotched are Vail.** Both are on the Epic Local unlimited list. Vail's
-  entire web estate — epicpass.com, skiwildcat.com, attitash.com — was returning
-  site-down / JS-only errors on 2026-08-25, so budget for falling back to OnTheSnow and
-  check whether Vail is back up before writing.
-- **Check night skiing per resort from its own site.** Cranmore, Crotched, Gunstock and Pats
-  Peak are all on Ski NH's list and almost certainly `true`, but confirm from each resort's
-  own page — and see the note below on why Ski NH cannot settle a negative.
-- **Ragged and Pats Peak moved to Indy for 2026-27.** BATCHES.md flags this as high-value;
-  verify against indyskipass.com's own resort directory, which publishes a structured
-  per-resort block (vertical, trails, lifts, Night yes/no, terrain parks) that proved to be
-  the cleanest source in Batch 4.
+`https://www.indyskipass.com/our-resorts` renders one structured block per partner resort:
+**Vertical / Trails / Lifts / Night (yes-no) / T-Parks (yes-no)**. It is the single cleanest
+source found so far, and crucially its `Night` field is an affirmative published datum, so it
+can support an `absent` fieldNote where Ski NH's curated list cannot. Values already pulled
+from it on 2026-08-25, for use in batches 6 through 10 — **still confirm each against the
+resort's own site before writing, and re-fetch rather than trusting this table blindly:**
+
+| Resort | Vertical | Trails | Lifts | Night | T-Parks |
+|---|---|---|---|---|---|
+| Pats Peak | 770 ft | 28 | 11 | **Yes** | Yes |
+| Magic Mountain | 1,500 ft | 50 | 5 | No | Yes |
+| Bolton Valley | 1,704 ft | 71 | 6 | **Yes** | Yes |
+| Berkshire East | 1,180 ft | 45 | 6 | **Yes** | Yes |
+| Catamount | 1,000 ft | 44 | 8 | **Yes** | Yes |
+| Middlebury Snowbowl | 1,020 ft | 17 | 4 | **Yes** | No |
+| Black Mountain (NH) | 1,100 ft | 45 | 5 | No | No |
+| Black Mountain of Maine | 1,380 ft | 31 | 2 | No | No |
+| Mt. Abram | 1,050 ft | 43 | 4 | No | No |
+| Camden Snow Bowl | 1,070 ft | 15 | 3 | **Yes** | Yes |
+| Big Rock Mountain | 920 ft | 29 | 4 | **Yes** | Yes |
+| Bousquet Mountain | 750 ft | 22 | 4 | **Yes** | Yes |
+
+Bromley is **not** in the Indy directory, so it will need its own sourcing.
+
+Note that Bousquet (750 ft) and Pats Peak (770 ft) both sit above the ~650 ft cutoff but not
+by much, and Camden Snow Bowl (1,070 ft on only 15 trails) and Big Rock (920 ft) are the
+marginal Tier C cases — expect very high null rates, which BATCHES.md says is the correct
+outcome, not a sign to try harder.
+
+**Also still outstanding:** Vail's web estate was down for the whole of 2026-08-25. Attitash,
+Mount Sunapee and Crotched all lean entirely on OnTheSnow as a result, and all three have
+empty `parks` sections. **Re-do those three in Part C once epicpass.com and the resort sites
+are readable again.**
+
+### Batch 5 notes
+
+- **Cranmore's summit elevation is probably wrong and is recorded as disputed.** Cranmore and
+  OnTheSnow both publish a 2,000 ft summit, but the OpenStreetMap peak node for Cranmore
+  Mountain is tagged 510 m and a terrain probe of that point returns 1,644 ft. A 1,200 ft
+  vertical from a 1,650 ft summit puts the base near 450 ft, which matches North Conway's
+  valley floor; the published pairing does not. Stored the resort's figure with a
+  `dataDispute` against it.
+- **Cranmore and OnTheSnow also disagree on acreage** — 170 vs 200 — with the resort claiming
+  *less*, which is unusual enough to be mildly reassuring about its other numbers.
+- **No adult season pass price exists for Cranmore.** Every 2026-27 product is listed as a
+  from-price with no age bands published anywhere on the page; confirmed by a second read
+  aimed specifically at the age breakdown. Note Cranmore lists the White Mountains SuperPass
+  from $825 while Waterville and Cannon both publish $1,589 adult, so Cranmore's figure must
+  cover a different age band — do not try to reconcile them.
+- **Ragged publishes window and online prices side by side**, which almost nobody else does,
+  so it is the only file on the roster with all four pricing fields populated. Its $559
+  unlimited adult season pass is the cheapest on the roster by several hundred dollars. The
+  validator warns that its `advanceTypical` sits below the window range; that is correct data
+  and the warning is the validator being conservative.
+- **Ragged's old domain is dead.** `ragged-mt.com` now redirects to an unrelated German site;
+  the live site is `raggedmountainresort.com`. Any older citation is broken.
+- **Ragged has no mountain statistics page at all**, which is odd for a resort of its size, so
+  every size figure comes from OnTheSnow. It also has no PeakRankings review, which makes its
+  `moguls` section the one place on the roster with no third-party input whatsoever. The file
+  says so and flags itself for re-checking against the live grooming report in season.
+- **Gunstock is county-owned** — Belknap County, run by the Gunstock Area Commission — which
+  makes it one of very few publicly-owned ski areas in the United States, and `type: "none"`
+  on passes.
+- Coordinates again from OSM peaks, elevation-probed: Sunapee −63 ft, Crotched −15 ft, Ragged
+  −42 ft, Gunstock −79 ft against published summits. Cranmore is the outlier at −356 ft,
+  which is the dispute above rather than a bad coordinate.
 
 ### Batch 4 notes
 
@@ -124,7 +177,7 @@ Roster of 37 remaining, from BATCHES.md:
 - [x] Batch 2: stratton, mount-snow, burke, pico — `efb2fde` — 80 unknown / 90 confirmed
 - [x] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat — `2f8af90` — 111 unknown / 126 confirmed
 - [x] Batch 4: attitash, sunday-river, sugarloaf, saddleback — `12e9972` — 143 unknown / 157 confirmed
-- [ ] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched
+- [x] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched — 180 unknown / 189 confirmed
 - [ ] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley
 - [ ] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount
 - [ ] Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway
@@ -197,3 +250,4 @@ number still matches.
 | 2 | Okemo `size.snowmakingPercent` = 98 against `okemo.com/.../mountain-info.aspx` | **PASS** — source still reads "Snowmaking Coverage 98%" |
 | 3 | Stratton `pricing.seasonPassAdult` = 1399 against `onthesnow.com/news/ikon-pass-buyers-guide/` | **FAIL** — see INTEGRITY FAILURES 1. Widened to Epic as well; five files corrected. |
 | 4 | Burke `size.verticalDrop` = 2011, `skiableAcres` = 178, `trailCount` = 56 against `onthesnow.com/vermont/burke-mountain/ski-resort` | **PASS** — spec block still reads 2,011 ft / 178 ac / 56 runs. Note the same self-contradiction pattern as the pass guides: the page prose says "55 trails and 4 lifts" while its spec block says 56 and 5. The file uses the spec block, which is the correct half. |
+| 5 | Waterville Valley `size.snowmakingPercent` = 100 and `skiableAcres` = 265 against `waterville.com/mountain-stats` | **PASS** — page still reads "SNOWMAKING 265 Aces 100% Coverage", plus Skiable Acres 265, Longest Run 1.9 mi and Summit 4,004 ft, all matching the file. |

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-25T13:44:43.127Z",
+  "generatedAt": "2026-08-25T14:03:28.418Z",
   "schemaVersion": 3,
-  "count": 21,
+  "count": 26,
   "resorts": [
     {
       "slug": "attitash",
@@ -182,6 +182,145 @@
         "NH residents buying a pass"
       ],
       "officialSnowReport": "https://www.cannonmt.com/mountain-report",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "cranmore",
+      "name": "Cranmore Mountain Resort",
+      "state": "NH",
+      "region": "Mount Washington Valley",
+      "town": "North Conway",
+      "lat": 44.0576,
+      "lon": -71.0928,
+      "website": "https://cranmore.com",
+      "verticalDrop": 1200,
+      "skiableAcres": 170,
+      "trailCount": 60,
+      "liftCount": 7,
+      "annualSnowfallAvg": 80,
+      "snowmakingPercent": 100,
+      "nightSkiing": true,
+      "passTypes": [
+        "other",
+        "none"
+      ],
+      "passes": [
+        {
+          "name": "White Mountains SuperPass",
+          "type": "other",
+          "access": "Unlimited at Bretton Woods, Cannon, Cranmore and Waterville Valley - 1,181 acres, 308 trails and 40 lifts across the four areas, with no blackout dates"
+        },
+        {
+          "name": "Sun N' Snow Pass",
+          "type": "other",
+          "access": "Valid at Cranmore and Bretton Woods, Sunday to Friday, with blackout dates. $799."
+        },
+        {
+          "name": "No multi-mountain pass",
+          "type": "none",
+          "access": "Cranmore is independently operated and is not on Epic, Ikon or Indy. Multi-mountain access is through the regional White Mountains SuperPass and Sun N' Snow products rather than a national pass."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "mogulPresence": "rare",
+      "parkCount": 4,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "A family week in North Conway",
+        "Night skiing after a day out",
+        "Guaranteed cover in a thin winter",
+        "Terrain park progression"
+      ],
+      "officialSnowReport": "https://cranmore.com/snow-report",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "crotched",
+      "name": "Crotched Mountain",
+      "state": "NH",
+      "region": "Southern New Hampshire",
+      "town": "Bennington",
+      "lat": 42.9983,
+      "lon": -71.8739,
+      "website": "https://www.crotchedmtn.com",
+      "verticalDrop": 1016,
+      "skiableAcres": 100,
+      "trailCount": 24,
+      "liftCount": 5,
+      "annualSnowfallAvg": 63,
+      "snowmakingPercent": 100,
+      "nightSkiing": true,
+      "passTypes": [
+        "epic"
+      ],
+      "passes": [
+        {
+          "name": "Epic Pass",
+          "type": "epic",
+          "access": "Unlimited"
+        },
+        {
+          "name": "Epic Local Pass",
+          "type": "epic",
+          "access": "Unlimited - Crotched Mountain is on the Epic Local unlimited list alongside Attitash, Mount Snow, Mount Sunapee, Okemo and Wildcat"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1119,
+      "mogulPresence": "rare",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Night skiing, all of the mountain",
+        "Midnight Madness sessions",
+        "An hour from Boston",
+        "Epic Local passholders"
+      ],
+      "officialSnowReport": "https://www.crotchedmtn.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "gunstock",
+      "name": "Gunstock Mountain Resort",
+      "state": "NH",
+      "region": "Lakes Region",
+      "town": "Gilford",
+      "lat": 43.5261,
+      "lon": -71.3785,
+      "website": "https://www.gunstock.com",
+      "verticalDrop": 1340,
+      "skiableAcres": 227,
+      "trailCount": 49,
+      "liftCount": 8,
+      "annualSnowfallAvg": 120,
+      "snowmakingPercent": 98,
+      "nightSkiing": true,
+      "passTypes": [
+        "none"
+      ],
+      "passes": [
+        {
+          "name": "No multi-mountain pass",
+          "type": "none",
+          "access": "Gunstock is owned by Belknap County and operated by the Gunstock Area Commission. It is not on Epic, Ikon or Indy; access is through its own season pass products."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 879,
+      "mogulPresence": "occasional",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Night skiing on real terrain",
+        "A Boston day trip under two hours",
+        "Reliable machine snow",
+        "Confident intermediates"
+      ],
+      "officialSnowReport": "https://www.gunstock.com/winter/snow-report/",
       "verifiedOn": "2026-08-25"
     },
     {
@@ -407,6 +546,52 @@
       "verifiedOn": "2026-08-25"
     },
     {
+      "slug": "mount-sunapee",
+      "name": "Mount Sunapee",
+      "state": "NH",
+      "region": "Dartmouth-Sunapee",
+      "town": "Newbury",
+      "lat": 43.3142,
+      "lon": -72.0737,
+      "website": "https://www.mountsunapee.com",
+      "verticalDrop": 1510,
+      "skiableAcres": 232,
+      "trailCount": 67,
+      "liftCount": 8,
+      "annualSnowfallAvg": 93,
+      "snowmakingPercent": null,
+      "nightSkiing": null,
+      "passTypes": [
+        "epic"
+      ],
+      "passes": [
+        {
+          "name": "Epic Pass",
+          "type": "epic",
+          "access": "Unlimited"
+        },
+        {
+          "name": "Epic Local Pass",
+          "type": "epic",
+          "access": "Unlimited - Mount Sunapee is on the Epic Local unlimited list alongside Attitash, Crotched Mountain, Mount Snow, Okemo and Wildcat"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1119,
+      "mogulPresence": "occasional",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Epic Local passholders",
+        "A short drive from Concord or Boston",
+        "Improving intermediates",
+        "Midweek skiing"
+      ],
+      "officialSnowReport": "https://www.mountsunapee.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-25"
+    },
+    {
       "slug": "okemo",
       "name": "Okemo Mountain Resort",
       "state": "VT",
@@ -492,6 +677,47 @@
       ],
       "officialSnowReport": "https://www.picomountain.com/the-mountain/conditions-weather/mountain-report/",
       "verifiedOn": "2026-08-24"
+    },
+    {
+      "slug": "ragged",
+      "name": "Ragged Mountain Resort",
+      "state": "NH",
+      "region": "Dartmouth-Sunapee",
+      "town": "Danbury",
+      "lat": 43.4722,
+      "lon": -71.8455,
+      "website": "https://www.raggedmountainresort.com",
+      "verticalDrop": 1250,
+      "skiableAcres": 250,
+      "trailCount": 57,
+      "liftCount": 5,
+      "annualSnowfallAvg": 88,
+      "snowmakingPercent": 98,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "2 all-day or night lift tickets, as at every Indy partner resort"
+        }
+      ],
+      "advanceTypical": 89,
+      "seasonPassAdult": 559,
+      "mogulPresence": "occasional",
+      "parkCount": 3,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "The cheapest pass in New Hampshire",
+        "More advanced terrain than expected",
+        "Short lift lines on a six-pack",
+        "Indy Pass holders"
+      ],
+      "officialSnowReport": "https://www.raggedmountainresort.com/mountain-report-cams/",
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "saddleback",
