@@ -10,8 +10,8 @@
     "state": "VT",
     "region": "Northern Vermont",
     "town": "Stowe",
-    "lat": 44.5439,
-    "lon": -72.8143,
+    "lat": 44.524,
+    "lon": -72.8079,
     "website": "https://www.stowe.com"
   },
   "size": {
@@ -144,9 +144,9 @@
         "accessedOn": "2026-08-22"
       },
       {
-        "label": "Mount Mansfield summit coordinates and elevation",
-        "url": "https://en.wikipedia.org/wiki/Mount_Mansfield",
-        "accessedOn": "2026-08-22"
+        "label": "OpenStreetMap FourRunner Quad upper terminus, re-anchored as the lift-served summit (44.5240, -72.8079; probes at 3,606 ft against a published 3,625 ft summit). The coordinate previously stored was Mount Mansfield's true summit ridge, 660 ft above any lift.",
+        "url": "https://overpass-api.de/api/interpreter",
+        "accessedOn": "2026-08-25"
       }
     ],
     "verifiedOn": "2026-08-25",

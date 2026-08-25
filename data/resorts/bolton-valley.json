@@ -79,7 +79,36 @@
     "snowQuality": "Bolton catches more snow than its size suggests, sitting on the spine of the Green Mountains where the same upslope flow that feeds Stowe and Smugglers' Notch runs over it. How much more is genuinely contested. OnTheSnow puts the annual average at 202 inches, which is the figure stored here. The Indy Pass partner directory says 312 inches - a number supplied by the resort, so effectively Bolton's own claim - and boltonvalley.com markets \"over 300 inches\", though on inspection that is a season-to-date total rather than a long-run average. A 110-inch gap between aggregator and resort is one of the widest on this roster, and the conservative number is the one recorded. Either way the cold matters as much as the total: the lift-served base sits at 1,446 feet with the village higher still, and Bolton loses less to rain at the bottom than the mountains east of the spine.",
     "crowds": "Quiet by northern Vermont standards, and structurally so. Bolton is twenty-five minutes from Burlington, which makes it the closest real mountain to Vermont's largest population centre, but the destination traffic keeps driving north to Stowe and Smugglers' Notch. The result is a mountain whose weekday and night business is local and whose weekends are busy without being fought over. The night operation genuinely redistributes the crowd - a Wednesday evening at Bolton is a different social event from a Wednesday afternoon, full of people who finished work in Burlington - and it takes pressure off the daylight hours in a way no other Vermont mountain manages. Holiday weeks will fill six lifts. The backcountry network absorbs anyone who would rather not queue at all.",
     "difficulty": "A well-balanced mid-sized mountain that leans easy: 34% beginner and 38% intermediate against 23% advanced and 6% expert, so nearly three quarters of the trail count is comfortable skiing. The glades are the reason strong skiers come. Bolton's tree skiing is well regarded in a state that sets a high bar for it, helped by the elevation, the natural snow and terrain that was never over-cleared. The expert 6% is a small slice and the mountain is honest about being small there - this is not a hill that will hold an aggressive skier for a week, and anyone chasing steeps has Stowe fifteen miles away. What Bolton does better than its neighbours is the transition out of the resort: the backcountry and nordic network starts where the lift terrain stops, which makes it one of the few places in New England where progressing from resort trees to earned turns is a matter of walking uphill rather than driving somewhere else.",
-    "keyTrails": [],
+    "keyTrails": [
+      {
+        "name": "Preacher",
+        "note": "The narrowest expert line off the Vista Quad, and the one everyone at Bolton names first. It starts thin, steep and usually scraped, then drops into an open grove where the snow is suddenly much better than what you just survived. Worth it on a powder day; a chore on a hard one."
+      },
+      {
+        "name": "Devil's Playground",
+        "note": "A cliff band you sidestep through rather than ski, opening into trees below. Bolton's regulars argue this is the hardest thing on the hill, and at roughly 27 degrees of sustained pitch off Vista, they have a case."
+      },
+      {
+        "name": "Wilderness Woods",
+        "note": "The best glade on the mountain and the reason the Wilderness chair exists. Steep and pinched at the entrance, then it relaxes into terrain a strong intermediate can handle. Wilderness is largely natural snow, so this is a storm-day trail, not an every-day one."
+      },
+      {
+        "name": "Doug's Woods",
+        "note": "Off the Timberline mid-station, wide enough to pick your own line and long enough that the line matters. Holds snow better than its low elevation suggests. If you only ski one glade at Bolton, ski this one."
+      },
+      {
+        "name": "Spillway",
+        "note": "The steepest cut trail on the front side at about 29 degrees, left ungroomed and bumped. This is where Bolton's mogul skiing actually happens, as opposed to where the trail map implies it does."
+      },
+      {
+        "name": "Sherman's Pass",
+        "note": "The long green that winds from the Vista summit to the base, and the trail that makes Bolton work as a family mountain: a genuine beginner can ride the summit quad and get down. Expect traffic on it in the afternoon."
+      },
+      {
+        "name": "Vermont 200",
+        "note": "A steep, narrow black off Vista at a comparable pitch to Spillway but usually with fewer people on it. A good measuring stick before committing to the glades."
+      }
+    ],
     "tidbits": [
       "Night skiing runs typically five nights a week, Tuesday to Saturday, 4pm to 10pm - the largest night operation in Vermont.",
       "A day ticket on a night-skiing day is valid for thirteen hours.",
@@ -136,6 +165,26 @@
       {
         "label": "Camden Snow Bowl season passes (Uphill New England's 24-mountain uphill network)",
         "url": "https://camdensnowbowl.com/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OpenStreetMap named downhill pistes and aerialways at Bolton Valley (trail names and difficulty grades; five lifts plus the Mighty Mite rope tow confirmed by name)",
+        "url": "https://overpass-api.de/api/interpreter",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "SteepSeeker measured trail pitches at Bolton Valley (Spillway 29.5 deg, Vermont 200 28.5 deg, Devil's Playground 26.8 deg)",
+        "url": "https://steepseeker.com/map/VT/Bolton%20Valley",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "PeakRankings Bolton Valley review (Preacher named as the hardest run; Wilderness green terrain requires the mid-station)",
+        "url": "https://www.peakrankings.com/content/bolton-valley",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "JoeThings trail-by-trail ranking of Bolton Valley, part 6 (glade character and local ordering)",
+        "url": "https://joethings.substack.com/p/ranking-the-trails-at-bolton-valley-b2e",
         "accessedOn": "2026-08-25"
       }
     ],
