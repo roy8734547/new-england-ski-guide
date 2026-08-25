@@ -56,18 +56,21 @@ Still to do in Part C, in this order:
    dartmouth-skiway, mt-abram, black-mountain-maine, camden-snow-bowl, big-rock, butternut,
    bousquet, mohawk-mountain all 404). Expect many empty reviews arrays with `unpublished`
    fieldNotes, which BATCHES.md says is the correct outcome.
-2. **Three cross-resort backfills found during Part B** (details in the batch notes below):
-   - the AIM High pass's Burke and Smugglers' Notch benefits → `burke.json`,
-     `smugglers-notch.json`
-   - the Fairbank Group relationship and reciprocal tickets → `bromley.json`, `cranmore.json`
-   - the Dartmouth Skiway partner discounts → `ragged.json`, `pats-peak.json`,
-     `saskadena-six.json`; plus **Uphill New England** (24 mountains), referenced by Camden,
-     Saskadena Six and Dartmouth Skiway and recorded nowhere.
-3. **`bolton-valley.editorial.keyTrails` is empty** — one fetch of boltonvalley.com's trail
-   map page closes the only validator warning that is a genuine gap rather than correct data.
+2. ~~Three cross-resort backfills~~ — **DONE, `a01ae52`.** Eleven pass entries added across
+   nine files (AIM High → Burke and Smuggs; Fairbank Group → Bromley and Cranmore; Dartmouth
+   partner discounts → Ragged, Pats Peak, Saskadena Six; Uphill New England → four files).
+3. **`bolton-valley.editorial.keyTrails` is empty** — **attempted and failed 2026-08-25.**
+   boltonvalley.com's trail-map page carries no trail names (the names live inside the map
+   image) and its snow report is blank out of season. The remaining route is an OSM/Overpass
+   lift query for Bolton's named lifts, which **timed out with HTTP 504 on both the main
+   endpoint and the kumi mirror** — Overpass was rate-limiting after ~8 queries in the run.
+   Retry the Overpass query in a later session. One useful thing was picked up: Bolton
+   publishes **100km of Nordic terrain** alongside its 71 alpine trails.
 4. **Stowe's coordinate** — flagged back in Batch 3 and still open. It probes at 4,285 ft
    against a stored 3,625 ft `summitElevation`, i.e. it points at Mount Mansfield's true
    summit rather than the lift-served top. Re-anchor it with the Overpass `aerialway` query.
+   **Blocked in this session by the same Overpass 504s as item 3** — do both together when
+   Overpass is responding again.
 5. One more cross-check worth doing: **Bromley claims to be "the only major ski area in New
    England with a southern exposure"**, and `black-mountain-nh` publishes its primary exposure
    as south. Bromley's "major" gives it an out, but the two files should acknowledge each
