@@ -12,3 +12,7 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
 | 2026-08-24 | Mad River Glen and Smugglers' Notch `parks.count` = null, not 0 | 1 | Neither publishes a terrain park page; several likely URLs 404. A guessed 0 would be fiction even though it is probably right for MRG. |
 | 2026-08-24 | `terrain.percentExpert` uses `unpublished`, never `absent` | 1 | `absent` requires the scalar to become 0, and 0% expert terrain is false at a three-tier resort. The category is missing, not the terrain. |
 | 2026-08-26 | Spot-check failures do not stop the run | 2 | AUTORUN.md §3b explicitly overrides the "stop and ask" instruction in BATCHES.md step 6. Log to PROGRESS.md, fix, continue. |
+| 2026-08-24 | `parks[]` shorter than `parks.count` is a warning, not an error | 4 | A resort advertising five parks and describing four is incomplete, not contradictory. `parks[]` exceeding count stays an error. |
+| 2026-08-24 | Stratton `parks.count` = null despite third-party summaries saying five | 1 | Stratton's own parks page is JS-rendered and unreadable by fetch tool or curl; a count I could not read directly is a guess. |
+| 2026-08-24 | Pico `longestRun` = null | 1 | Resort says Pike is "more than a mile"; OnTheSnow says 4 mi. Irreconcilable, so neither is stored. |
+| 2026-08-24 | Indy blackouts recorded structurally, not as dates | 1 | Indy does not publish exact 2026-27 dates until autumn 2026. The Base/Indy+ distinction is the citable, durable fact. |

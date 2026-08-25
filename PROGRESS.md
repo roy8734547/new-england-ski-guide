@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 8.
+**Roster target:** 45 resorts. **Current:** 12.
 
 ---
 
@@ -26,8 +26,10 @@ skipping a unit.
 | **A** | Moguls/parks rendering on resort.html | `91ef7d1` | — | |
 | **A** | Features filters + bump/park columns | `c794a56` | — | |
 | **A** | SEASONAL.md | `60a9305` | — | |
+| B | State files: PROGRESS, DECISIONS, HANDOFF | `211e247` | — | |
+| B | Batch 2: stratton, mount-snow, burke, pico | `efb2fde` | 80 / 90 | Stratton + Burke sites unreadable; both fall back to OnTheSnow. Carinthia's 8 parks recorded in full. |
 
-**Part A is complete.** Next unfinished unit: **Part B, Batch 2**.
+**Part A complete. Batch 2 complete.** Next unfinished unit: **Part B, Batch 3**.
 
 ---
 
@@ -35,7 +37,7 @@ skipping a unit.
 
 Roster of 37 remaining, from BATCHES.md:
 
-- [ ] Batch 2: stratton, mount-snow, burke, pico
+- [x] Batch 2: stratton, mount-snow, burke, pico — `efb2fde` — 80 unknown / 90 confirmed
 - [ ] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat
 - [ ] Batch 4: attitash, sunday-river, sugarloaf, saddleback
 - [ ] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched
@@ -67,4 +69,6 @@ _None yet._
 Each batch re-fetches one recorded source URL from an **earlier** batch and confirms the
 number still matches.
 
-_None yet._
+| Batch | Checked | Result |
+|---|---|---|
+| 2 | Okemo `size.snowmakingPercent` = 98 against `okemo.com/.../mountain-info.aspx` | **PASS** — source still reads "Snowmaking Coverage 98%" |
