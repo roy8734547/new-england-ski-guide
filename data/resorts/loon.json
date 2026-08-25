@@ -134,7 +134,7 @@
   "meta": {
     "sources": [
       {
-        "label": "OnTheSnow Loon Mountain overview (all size and terrain figures; loonmtn.com/mountain-info 404s)",
+        "label": "OnTheSnow Loon Mountain overview (also: operating schedule, no evening session)",
         "url": "https://www.onthesnow.com/new-hampshire/loon-mountain/ski-resort",
         "accessedOn": "2026-08-25"
       },
@@ -167,11 +167,6 @@
         "label": "PeakRankings Loon review (crowds, park assessment, Ripsaw, North Peak bumps)",
         "url": "https://www.peakrankings.com/content/loon",
         "accessedOn": "2026-08-25"
-      },
-      {
-        "label": "Ski NH published night skiing list",
-        "url": "https://www.skinh.com/activities/night-skiing",
-        "accessedOn": "2026-08-24"
       }
     ],
     "verifiedOn": "2026-08-25",
@@ -180,9 +175,9 @@
   "fieldNotes": {
     "size.nightSkiing": {
       "status": "absent",
-      "source": "https://www.skinh.com/activities/night-skiing",
-      "verifiedOn": "2026-08-24",
-      "note": "Not on Ski NH's published list of areas operating at night. Loon's own Friday Night Extended events run the gondola two extra hours to a 5:40pm last chair on four spring dates, which is extended afternoon operation rather than lit night skiing"
+      "source": "https://www.onthesnow.com/new-hampshire/loon-mountain/ski-resort",
+      "verifiedOn": "2026-08-25",
+      "note": "Published daily operating schedule runs 09:00-15:45 with no evening session on any day of the week. The resort has no night-skiing page in its own sitemap. Loon’s own Friday Night Extended page describes a 5:40pm last chair on four spring dates, which is extended afternoon operation and not a lit night product. Deliberately NOT sourced to Ski NH's night-skiing list: that page is a curated feature (\"Some New Hampshire ski areas turn on the lights\"), not an exhaustive registry, and it omits Waterville Valley, which does run night skiing. It cannot support a negative."
     },
     "size.snowmakingPercent": {
       "status": "unpublished",

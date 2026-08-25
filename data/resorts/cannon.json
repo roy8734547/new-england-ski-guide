@@ -161,7 +161,7 @@
         "accessedOn": "2026-08-24"
       },
       {
-        "label": "OnTheSnow Cannon Mountain overview (elevations, vertical, independent snowfall figure)",
+        "label": "OnTheSnow Cannon Mountain overview (also: operating schedule, no evening session)",
         "url": "https://www.onthesnow.com/new-hampshire/cannon-mountain/ski-resort",
         "accessedOn": "2026-08-25"
       },
@@ -169,11 +169,6 @@
         "label": "PeakRankings Cannon review (wind, ice, expert trail character)",
         "url": "https://www.peakrankings.com/content/cannon",
         "accessedOn": "2026-08-25"
-      },
-      {
-        "label": "Ski NH published night skiing list",
-        "url": "https://www.skinh.com/activities/night-skiing",
-        "accessedOn": "2026-08-24"
       },
       {
         "label": "White Mountains SuperPass coverage and price",
@@ -187,9 +182,9 @@
   "fieldNotes": {
     "size.nightSkiing": {
       "status": "absent",
-      "source": "https://www.skinh.com/activities/night-skiing",
-      "verifiedOn": "2026-08-24",
-      "note": "Not on Ski NH's published list of areas operating at night, and cannonmt.com has no night skiing page in its sitemap"
+      "source": "https://www.onthesnow.com/new-hampshire/cannon-mountain/ski-resort",
+      "verifiedOn": "2026-08-25",
+      "note": "Published daily operating schedule runs 09:00-16:00 with no evening session on any day of the week. The resort has no night-skiing page in its own sitemap. Deliberately NOT sourced to Ski NH's night-skiing list: that page is a curated feature (\"Some New Hampshire ski areas turn on the lights\"), not an exhaustive registry, and it omits Waterville Valley, which does run night skiing. It cannot support a negative."
     },
     "size.snowmakingPercent": {
       "status": "unpublished",
