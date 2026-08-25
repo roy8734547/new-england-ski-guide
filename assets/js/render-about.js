@@ -11,6 +11,7 @@
  */
 
 import { getIndex } from './data.js';
+import { applyCanonical } from './seo.js';
 import { fmt, formatDate, qs, STATE_NAMES } from './util.js';
 
 function set(name, value) {
@@ -44,3 +45,9 @@ async function main() {
 // A failure here leaves five dashes and a page that still reads correctly, so it
 // is deliberately silent rather than shouting at a visitor about a manifest.
 main().catch(() => {});
+
+// Canonical URL and og:url, written from location because this repo has no domain
+// baked into it. On pages whose querystring is view state rather than content —
+// index's filters and sort, conditions' sort — that state is stripped, so a
+// filtered view stays a shareable link without becoming its own indexable page.
+applyCanonical();

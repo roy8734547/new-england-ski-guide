@@ -20,3 +20,11 @@ private/
 
 # Claude Code local session state
 .claude/
+
+# Generated per deployment by tools/build-seo.mjs, which needs the real host and
+# refuses to guess one. Committing either with a placeholder domain would mean
+# shipping a sitemap that points at a site nobody owns. Netlify supplies $URL at
+# deploy time - see HANDOFF.md. The site works without both files; only crawlers
+# want them.
+/sitemap.xml
+/robots.txt

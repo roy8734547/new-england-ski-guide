@@ -10,6 +10,7 @@
  */
 
 import { getIndex } from './data.js';
+import { applyCanonical } from './seo.js';
 import { el, fill, qs, STATE_NAMES } from './util.js';
 import { suggestResorts, urlTokens } from './suggest.js';
 
@@ -38,3 +39,9 @@ async function main() {
 // A 404 page that throws is a 404 page twice over: the static half of the page
 // still lists every section of the site, so a failure here stays quiet.
 main().catch(() => {});
+
+// Canonical URL and og:url, written from location because this repo has no domain
+// baked into it. On pages whose querystring is view state rather than content —
+// index's filters and sort, conditions' sort — that state is stripped, so a
+// filtered view stays a shareable link without becoming its own indexable page.
+applyCanonical();

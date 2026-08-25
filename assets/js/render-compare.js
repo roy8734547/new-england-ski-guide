@@ -21,6 +21,7 @@
  */
 
 import { getIndex, getResort } from './data.js';
+import { applyCanonical } from './seo.js';
 import {
   el, fill, fmt, money, qs, setStatus, STATE_NAMES, PASS_LABELS,
 } from './util.js';
@@ -399,3 +400,12 @@ async function main() {
 }
 
 main().catch((e) => setStatus(`Could not load resorts: ${e.message}`, { error: true }));
+
+// Canonical URL and og:url, written from location because this repo has no domain
+// baked into it. On pages whose querystring is view state rather than content —
+// index's filters and sort, conditions' sort — that state is stripped, so a
+// filtered view stays a shareable link without becoming its own indexable page.
+// `?r=` here is view state as far as a crawler is concerned: robots.txt disallows
+// the parameterised form, so the canonical must be the bare page or the two
+// signals contradict each other.
+applyCanonical([]);

@@ -7,6 +7,7 @@
  */
 
 import { getIndex } from './data.js';
+import { applyCanonical } from './seo.js';
 import {
   el, fill, fmt, money, formatDate, compareNullsLast,
   qs, qsa, setStatus, STATE_NAMES, PASS_LABELS,
@@ -376,3 +377,9 @@ async function main() {
 }
 
 main().catch((e) => setStatus(`Could not load resorts: ${e.message}`, { error: true }));
+
+// Canonical URL and og:url, written from location because this repo has no domain
+// baked into it. On pages whose querystring is view state rather than content —
+// index's filters and sort, conditions' sort — that state is stripped, so a
+// filtered view stays a shareable link without becoming its own indexable page.
+applyCanonical();

@@ -65,11 +65,31 @@ gh repo create new-england-ski-guide --private --source=. --remote=origin --push
 ```
 Add new site > Import an existing project > GitHub > new-england-ski-guide
   Branch to deploy:   main
-  Build command:      (leave empty)
+  Build command:      node tools/build-seo.mjs --site $URL
   Publish directory:  .          <- repo root
 ```
 
-There is no build step; the site is static files. `SKI_BOT_CONTACT_URL` does **nothing** on
+**That build command is not a build step for the site** — every page works without
+it, and nothing it produces is loaded by a browser. It writes exactly two files
+crawlers ask for, `sitemap.xml` and `robots.txt`, both of which need the real
+domain and neither of which is in the repo for that reason (they are gitignored).
+Netlify sets `$URL` to the site's primary address at deploy time, so this is the
+one place the correct host is known without anybody typing it.
+
+If you would rather keep the build command empty, run it yourself before pushing
+and un-ignore the two files:
+
+```powershell
+$env:SITE_URL = "https://your-domain"
+npm run build:seo
+# then remove /sitemap.xml and /robots.txt from .gitignore and commit them
+```
+
+Either way, **do not** commit them with a placeholder domain. A sitemap pointing
+at a host you do not own gets deployed and submitted to a search engine before
+anyone reads it, which is why `build-seo.mjs` exits rather than guessing.
+
+Everything else is static files. `SKI_BOT_CONTACT_URL` does **nothing** on
 Netlify — with no build command Netlify executes no code, and the fetcher runs in GitHub
 Actions. Set it there, not here.
 

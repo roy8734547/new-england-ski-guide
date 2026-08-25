@@ -17,6 +17,9 @@ import {
   STATE_NAMES, PASS_LABELS,
 } from './util.js';
 import { suggestResorts, tokens } from './suggest.js';
+import {
+  applyCanonical, applyPageMeta, applyJsonLd, skiResortJsonLd, setNoIndex,
+} from './seo.js';
 
 const has = (v) => v !== null && v !== undefined && v !== '';
 const hasAny = (...vals) => vals.some(has);
@@ -717,6 +720,31 @@ function renderResort(r) {
   ].filter(Boolean);
 }
 
+/**
+ * A meta description for one resort: the overview, cut at a sentence boundary
+ * rather than mid-word, because a description ending "the fall lines off the
+ * FourRunner Qu…" reads as broken rather than as truncated. Falls back to the
+ * stats if a file somehow has no overview.
+ */
+function describe(r) {
+  const overview = r.editorial?.overview?.trim();
+  if (overview) {
+    if (overview.length <= 160) return overview;
+    const cut = overview.slice(0, 160);
+    const stop = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('? '), cut.lastIndexOf('! '));
+    return stop > 80 ? cut.slice(0, stop + 1) : `${cut.slice(0, cut.lastIndexOf(' '))}…`;
+  }
+  const where = [r.identity?.town, STATE_NAMES[r.identity?.state] ?? r.identity?.state]
+    .filter(Boolean).join(', ');
+  const vert = Number.isFinite(r.size?.verticalDrop)
+    ? `${fmt(r.size.verticalDrop)} ft vertical` : null;
+  return [
+    `${r.identity?.name}${where ? `, ${where}` : ''}`,
+    vert,
+    'stats, passes, pricing and an honest opinion',
+  ].filter(Boolean).join(' — ');
+}
+
 // --- not found --------------------------------------------------------------
 
 /**
@@ -726,7 +754,11 @@ function renderResort(r) {
  * page uses, in the page, at the URL the visitor came to.
  */
 async function renderUnknownSlug(slug) {
-  document.title = 'Resort not found · New England Ski Guide';
+  applyPageMeta({
+    title: 'Resort not found · New England Ski Guide',
+    description: `This guide has no resort called “${slug}”.`,
+  });
+  setNoIndex();
 
   const parts = [
     el('div', { class: 'shell notfound' },
@@ -759,6 +791,8 @@ async function renderUnknownSlug(slug) {
   fill(article, parts);
   article.hidden = false;
   setStatus('');
+  applyCanonical();
+  setNoIndex();
 }
 
 // --- boot -------------------------------------------------------------------
@@ -768,7 +802,11 @@ async function main() {
   if (!slug) {
     // resort.html with no ?r= is a bare URL somebody typed or a link that lost
     // its query string. Send them somewhere rather than stating the problem.
-    document.title = 'Pick a resort · New England Ski Guide';
+    applyPageMeta({
+      title: 'Pick a resort · New England Ski Guide',
+      description: 'This page shows one New England ski area at a time.',
+    });
+    setNoIndex();
     const article = document.getElementById('resort');
     fill(article, el('div', { class: 'shell notfound' },
       el('p', { class: 'notfound__code' }, 'No resort chosen'),
@@ -779,6 +817,8 @@ async function main() {
         el('a', { href: 'index.html' }, 'Browse every mountain →'))));
     article.hidden = false;
     setStatus('');
+    applyCanonical();
+    setNoIndex();
     return;
   }
 
@@ -789,12 +829,14 @@ async function main() {
     await renderUnknownSlug(slug);
     return;
   }
-  document.title = `${r.identity.name} · New England Ski Guide`;
-
-  const meta = document.querySelector('meta[name="description"]');
-  if (meta && r.editorial.overview) {
-    meta.content = `${r.editorial.overview.slice(0, 155).trim()}…`;
-  }
+  // Title, description, og:*, canonical and the SkiResort JSON-LD all come off
+  // the record. This is the only page on the site whose head is per-content, and
+  // it is the only page a search result should ever land on for a resort name.
+  applyPageMeta({
+    title: `${r.identity.name} · New England Ski Guide`,
+    description: describe(r),
+  });
+  applyJsonLd(skiResortJsonLd(r, { description: describe(r) }));
 
   const article = document.getElementById('resort');
   fill(article, renderResort(r));

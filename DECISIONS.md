@@ -202,3 +202,29 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
 - **Kept six superlatives that check out**: Burke's 8% beginner share, Pico's 2,000 ft base,
   Bousquet's 21-inch snowfall, Butternut's $399 pass, Dartmouth's $35 ticket, Pats Peak's 50%
   beginner share.
+
+### Part E — public site
+
+- **No domain is hardcoded anywhere in the repo.** `<link rel="canonical">` and `og:url` are
+  written in the browser from `location` (`assets/js/seo.js`), which is the one place the
+  real host is guaranteed correct. Only `sitemap.xml` and `robots.txt` genuinely require an
+  absolute URL, so `tools/build-seo.mjs` takes it as `SITE_URL`/`--site` and **exits rather
+  than guessing**. Both files are gitignored; a sitemap committed with a placeholder domain
+  would be deployed and submitted before anyone read it.
+- **Netlify gets a one-line build command** (`node tools/build-seo.mjs --site $URL`) despite
+  CLAUDE.md's no-build-step rule. The rule is about the site: every page still works with
+  neither file present, nothing a browser loads is generated, and Netlify's `$URL` is the only
+  place the correct host exists without a human typing it. Recorded here because it is the one
+  deliberate brush against that constraint in the whole run.
+- **`resort.html` with no or an unknown `?r=` is `noindex` via a meta tag, not robots.txt.**
+  Expressing it in robots.txt needs the `$` anchor, which only some crawlers implement, and a
+  crawler reading `/resort.html$` as a plain prefix would drop all 45 detail pages.
+- **`compare.html?r=…` is disallowed in robots.txt.** It is deep-linkable by design, which is
+  ~160,000 URLs of 2-to-4 combinations assembled from pages already indexed individually. The
+  bare page stays crawlable because robots.txt prefix matching leaves it alone.
+- **No `og:image`.** There are no photographs on this site by decision, and a generated card
+  image would be the only raster asset in the repo. Social cards will render text-only.
+- **Sitemap `priority` is uniform at 0.8 across all 45 resorts.** Varying it by size or
+  popularity would be a ranking claim dressed up as metadata, and this guide does not make one.
+- **The contact line on `about.html` ships as a visible placeholder.** Publishing an email
+  address is the owner's call (policy rule 3); logged as HANDOFF item 5.

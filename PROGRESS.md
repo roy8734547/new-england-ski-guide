@@ -43,7 +43,7 @@ skipping a unit.
 | B | Batch 10: butternut, bousquet, mohawk-mountain — **ROSTER COMPLETE** | `3248270` | 324 / 345 | 45 of 45. Part B done. |
 | **C** | Superlative sweep across all 45 files | `f8d8132` | — | 31 false roster-relative claims corrected in 13 files. |
 | **C** | Cross-resort backfills (11 pass entries, 9 files) | `a01ae52` | — | |
-| **C** | Overpass retries cleared: Bolton `keyTrails`, Stowe coordinate | `037937f` | 322 / 345 | Main endpoint answered on the third try. See "Overpass, resolved" below. |
+| **C** | Overpass retries cleared: Bolton `keyTrails`, Stowe coordinate | `037937f` | 324 / 345 | Main endpoint answered on the third try. See "Overpass, resolved" below. |
 | **D** | `map.html` — Leaflet 1.9.4 + SRI, 45 pins coloured by pass | `3c7003a` | — | Plus a plain grouped link list under the map as the accessible equivalent. |
 | **D** | `compare.html` — 2–4 mountains, numbers + editorial | `b1da25e` | — | Found and fixed a real sideways-scroll bug at 768px. |
 
