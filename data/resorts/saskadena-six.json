@@ -49,7 +49,7 @@
     "percentAdvanced": 14,
     "percentExpert": 18,
     "glades": null,
-    "difficultyNotes": "Saskadena Six publishes almost nothing about its own terrain - the mountain-info page's entire stat line is \"2 Lifts. 28 Trails. 60% snowmaking. 90 years of history to call your own\" - so the difficulty split comes from OnTheSnow, whose four-tier 18/50/14/18 sums to 100. The Indy Pass partner directory gives a flatter 30/40/30; OnTheSnow's is stored because it distinguishes a fourth tier, and an 18% expert share is consistent with a mountain whose signature trail, The Face, is steep enough that the ski area was named Suicide Six as a joke about it. The lift count is the one figure where the resort and the aggregators disagree: the resort says 2, OnTheSnow and Indy both say 3, and OnTheSnow's breakdown - one quad, one double, one surface lift - is internally consistent, so 3 is stored. The resort is almost certainly counting only its chairlifts. Note the vertical: 650 feet is the lowest on this roster and sits exactly on the guide's inclusion threshold.",
+    "difficultyNotes": "Saskadena Six publishes almost nothing about its own terrain - the mountain-info page's entire stat line is \"2 Lifts. 28 Trails. 60% snowmaking. 90 years of history to call your own\" - so the difficulty split comes from OnTheSnow, whose four-tier 18/50/14/18 sums to 100. The Indy Pass partner directory gives a flatter 30/40/30; OnTheSnow's is stored because it distinguishes a fourth tier, and an 18% expert share is consistent with a mountain whose signature trail, The Face, is steep enough that the ski area was named Suicide Six as a joke about it. The lift count is the one figure where the resort and the aggregators disagree: the resort says 2, OnTheSnow and Indy both say 3, and OnTheSnow's breakdown - one quad, one double, one surface lift - is internally consistent, so 3 is stored. The resort is almost certainly counting only its chairlifts. Note the vertical: 650 feet is the joint-lowest on this roster, tied with Mohawk Mountain, and sits exactly on the guide's inclusion threshold.",
     "source": "https://www.onthesnow.com/vermont/suicide-six/ski-resort",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
@@ -106,7 +106,7 @@
       "It was renamed in 2022; Saskadena is Abenaki for \"standing mountain\", chosen with Chief Don Stevens of the Nulhegan Band of the Coosuk-Abenaki Nation.",
       "The \"Six\" comes from the hill numbered 6 on the map Bunny Bertram used to pick his site.",
       "It is owned by the Woodstock Inn & Resort, itself owned by the Rockefellers' Woodstock Foundation.",
-      "At 650 feet, its vertical is the smallest on this roster.",
+      "At 650 feet, its vertical is the joint-smallest on this roster, tied with Mohawk Mountain.",
       "The adult season pass price is one of the few on this roster quoted with sales tax included."
     ],
     "bestFor": [

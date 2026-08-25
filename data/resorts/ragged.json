@@ -61,7 +61,7 @@
     "advanceTypical": 89,
     "seasonPassAdult": 559,
     "currency": "USD",
-    "notes": "Ragged is one of the few resorts in this guide that publishes its window and online prices side by side, so all four fields carry real figures. The ticket rates are 2025-26 for adults aged 13-64. Window: $99 Monday-Thursday, $109 Friday-Sunday, $119 holiday periods. Online: $69 Monday-Thursday, $89 Friday-Sunday, $99 holiday. The $89 recorded as advanceTypical is the weekend online rate, which is the price most visitors actually pay, and it sits below the window low because buying ahead here genuinely is cheaper - the validator flags that as out of range and it is correct data. The season pass figure is the 2026-27 adult (6-79) pass at $559, the tier running 20 April to 14 October 2026; it was $449 in the spring tier and rises to $699 from 15 October. That $559 is the cheapest unlimited adult season pass on this roster by a wide margin.",
+    "notes": "Ragged is one of the few resorts in this guide that publishes its window and online prices side by side, so all four fields carry real figures. The ticket rates are 2025-26 for adults aged 13-64. Window: $99 Monday-Thursday, $109 Friday-Sunday, $119 holiday periods. Online: $69 Monday-Thursday, $89 Friday-Sunday, $99 holiday. The $89 recorded as advanceTypical is the weekend online rate, which is the price most visitors actually pay, and it sits below the window low because buying ahead here genuinely is cheaper - the validator flags that as out of range and it is correct data. The season pass figure is the 2026-27 adult (6-79) pass at $559, the tier running 20 April to 14 October 2026; it was $449 in the spring tier and rises to $699 from 15 October. That $559 is the cheapest unlimited adult season pass of any New Hampshire mountain in this guide; only Butternut, Dartmouth Skiway, Camden Snow Bowl and Middlebury Snow Bowl come in lower, and all four are considerably smaller.",
     "verifiedOn": "2026-08-25",
     "source": "https://www.raggedmountainresort.com/season-passes/",
     "fieldSources": {
@@ -103,7 +103,7 @@
       }
     ],
     "tidbits": [
-      "An unlimited adult season pass is $559 - the cheapest on this roster by several hundred dollars.",
+      "An unlimited adult season pass is $559 - the cheapest of any New Hampshire mountain in this guide, though four smaller areas elsewhere on the roster undercut it.",
       "The Summit 6-pack is the only high-speed six-person chairlift in New Hampshire.",
       "Ragged has more advanced terrain (37%) than intermediate terrain (26%), which is rare at any size.",
       "The resort's pass programme is called Mission: Affordable, and the pricing backs the name up.",
