@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "mohawk-mountain",
+    "name": "Mohawk Mountain",
+    "aka": [
+      "Mohawk",
+      "Mohawk Mountain Ski Area"
+    ],
+    "state": "CT",
+    "region": "Northwest Connecticut",
+    "town": "Cornwall",
+    "lat": 41.8332,
+    "lon": -73.3054,
+    "website": "https://www.mohawkmtn.com"
+  },
+  "size": {
+    "verticalDrop": 650,
+    "skiableAcres": 112,
+    "trailCount": 26,
+    "liftCount": 8,
+    "longestRun": 1.5,
+    "summitElevation": 1600,
+    "baseElevation": 950,
+    "annualSnowfallAvg": 62,
+    "snowmakingPercent": null,
+    "nightSkiing": true,
+    "source": "https://www.indyskipass.com/our-resorts/mohawk-mountain",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "skiableAcres": {
+        "source": "https://www.mohawkmtn.com/history/",
+        "verifiedOn": "2026-08-25"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/connecticut/mohawk-mountain/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.mohawkmtn.com/night-skiing/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 30,
+    "percentIntermediate": 40,
+    "percentAdvanced": 30,
+    "percentExpert": null,
+    "glades": null,
+    "difficultyNotes": "A three-tier split from the Indy Pass partner listing; Mohawk publishes no difficulty breakdown of its own and OnTheSnow publishes none for it either. The elevations reconcile exactly - 1,600 ft summit less 950 ft base is 650 ft - and both third parties agree on all three, which is unusual enough to be worth noting. The lift fleet is the most distinctive thing in this group: five fixed-grip triple chairs and three carpets, which an OSM lift query confirms by name (Boulder Summit, Arrowhead, Mohawk, Deer Run and Nutmeg triples, plus the Robin's Nest and Runway carpets). Eight lifts on 112 acres and 650 feet of vertical is a very high ratio, and five identical triples is a fleet almost nobody else runs. Sixteen of the 26 trails are lit. The acreage figure is the resort's own - 112 skiable acres set inside 300 scenic acres of state forest - against OnTheSnow's 107; the trail count is the resort's 26 against OnTheSnow's 27.",
+    "source": "https://www.indyskipass.com/our-resorts/mohawk-mountain",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two days per season on the Indy Pass, redeemed in person at the customer service desk on the lower level of the lodge. Mohawk states there is no online reservation and no daily cap on Indy redemptions, and issues a free RFID card to first-time visitors.",
+      "blackouts": "Indy Base Pass holders are blacked out over MLK weekend (17-19 January 2026) and Presidents' Day (14-16 February 2026) and cannot make a reservation on those dates. Indy Plus Pass holders have no blackouts at all. Mohawk is the only Indy partner on this roster that publishes blackout dates.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.mohawkmtn.com/indy-pass/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 81,
+    "windowTicketAdultLow": 45,
+    "advanceTypical": null,
+    "seasonPassAdult": 750,
+    "currency": "USD",
+    "notes": "An adult (13-64) eight-hour pass is $45 on a weekday and $81 at weekends and holidays - a spread of nearly double, and one of the sharpest weekday discounts on this roster. A four-hour adult pass is $71 and is sold at weekends only. Night passes are a flat $40 for all ages, Monday to Saturday from 4pm, sold in person only, with a $70 bundle that adds a full rental package. The discount structure is unusually generous and unusually specific: active military pay $25 or $30, first responders, veterans, CT Ski Council members and college students $35 on weekdays, and members of the 70+ Ski Club $15 or $20 on production of a club card. Mohawk encourages pre-purchase to skip the line but publishes no separate advance rate, so advanceTypical is null. The season pass figure is the 2026-27 Anytime adult (13-64) rate at the price tier live on the verified date: $725 through 9 August, $750 from 10 August to 30 September, $775 after 1 October. A weekday pass covers Monday to Friday plus Saturdays from 4pm. Every individual Anytime pass carries two free buddy passes, two half-price ones and two tubing tickets, none valid in holiday periods.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.mohawkmtn.com/lift-passes/",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://www.mohawkmtn.com/season-passes/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Mohawk Mountain is where snowmaking was invented, and that is not a local legend - it is why every other mountain in this guide can open in December. Walt Schoenknecht opened Mohawk in 1947 on the northwest slope of the mountain in Cornwall, started making snow by shaving blocks of ice, and then worked out how to mix water, cold air and ice through a machine. The technology went worldwide; Schoenknecht went on to found Mount Snow, and was inducted into the National Ski Hall of Fame. Nearly eighty years later Mohawk is still family owned and operated, with Walt's daughter Carol Lugar - born the year the mountain opened - as co-owner and president. What you ski is 112 acres inside 300 acres of state forest, 26 trails and 650 feet of vertical, served by five fixed-grip triple chairs and three carpets. Sixteen trails are lit and the mountain runs six nights a week until 8 or 9:30. It is Connecticut's home mountain and it makes no larger claim than that. A tornado tore through it in 1989 and it rebuilt. Pine Lodge, the mid-mountain restaurant, was the Schoenknecht family home before any of it existed.",
+    "snowQuality": "The sources disagree sharply and the truth is probably in the middle: the Indy Pass listing gives a 62-inch average with a recorded high of 146, while OnTheSnow says 26 inches. Either way this is northwest Connecticut at a 950-foot base, which is not a place that gets buried, and Mohawk's whole identity is about not needing to be. The mountain that invented snowmaking still leans on it entirely - OnTheSnow records 100 of its 107 acres as covered - and grooming is the thing Mohawk's own marketing leads with. What you should expect is a firm, well-maintained, entirely manufactured surface, reliably open from December, and the occasional genuinely good natural day after a nor'easter tracks the right way. It is the most weatherproof mountain in Connecticut and the least likely to give you a powder morning.",
+    "crowds": "Well distributed by a fleet that is oversized for the terrain. Eight lifts - five of them triples - on 112 acres is a very high ratio, and it means Mohawk absorbs the Hartford, Danbury and Westchester weekend crowd better than a 650-foot hill has any right to. The evening operation does the rest of the work: six nights a week until 8pm, or 9:30 on Fridays and Saturdays, with a flat $40 night pass, which shifts a large share of the local traffic off the daylight hours. Saturdays are the pinch, and the pricing says so - $81 at the weekend against $45 midweek. Mohawk is also the only Indy partner on this roster with blackout dates, which tells you which weekends it expects to be full.",
+    "difficulty": "Even-handed and short. Thirty percent beginner, forty intermediate and thirty advanced on 650 feet of vertical means the harder third is a set of brief pitches rather than any sustained challenge, and the mountain's own material sells terrain for all abilities and top-notch instruction rather than steepness. What it does exceptionally well is the beginner end: five triple chairs, three carpets and a snowsports school with a long institutional history mean a first-timer here progresses through properly graded terrain instead of being dumped from a carpet onto a blue. The night terrain covers 16 of the 26 trails, so an evening here is most of the mountain rather than a token trail or two. Anyone in Connecticut wanting real difficulty is driving to the Berkshires, and Mohawk has never pretended otherwise.",
+    "keyTrails": [
+      {
+        "name": "Boulder Summit Triple",
+        "note": "The longest of the five triples and the one that reaches the 1,600-foot summit. Five fixed-grip triples is a lift fleet almost nobody else runs."
+      },
+      {
+        "name": "Arrowhead Triple",
+        "note": "The second summit-reaching chair, running nearly the same line. Redundant capacity like this is why Mohawk handles a Saturday better than its size suggests."
+      },
+      {
+        "name": "Nutmeg Triple",
+        "note": "The short chair, named for Connecticut's nickname - which also names Mohawk's four-hour ticket product."
+      },
+      {
+        "name": "Pine Lodge",
+        "note": "Not a trail: the mid-mountain restaurant, and the Schoenknecht family home for years before the ski area opened in 1947."
+      },
+      {
+        "name": "The night terrain",
+        "note": "Sixteen of the 26 trails lit, six nights a week, until 8pm Monday to Thursday and 9:30 on Friday and Saturday. A flat $40 buys all of it at any age."
+      }
+    ],
+    "tidbits": [
+      "Mohawk Mountain is the birthplace of commercial snowmaking - Walt Schoenknecht pioneered it here.",
+      "Snowmaking started by shaving down blocks of ice before Schoenknecht built a machine to mix water, cold air and ice.",
+      "Schoenknecht also founded Mount Snow and is in the National Ski Hall of Fame.",
+      "The mountain has been family owned since 1947; Carol Lugar, born that year, is co-owner and president.",
+      "A tornado hit Mohawk in 1989, damaging the lifts and destroying much of the surrounding forest.",
+      "Pine Lodge, the mid-mountain restaurant, was the Schoenknecht family home before the ski area existed.",
+      "Five fixed-grip triple chairs serve 112 acres - the highest lift-to-acre ratio in this guide.",
+      "Sixteen of the 26 trails are lit, six nights a week.",
+      "It is the only Indy Pass partner on this roster with published blackout dates.",
+      "Members of the 70+ Ski Club ski for $15 on a weekday."
+    ],
+    "bestFor": [
+      "Skiing where snowmaking was invented",
+      "Six nights a week under lights",
+      "$45 midweek adult tickets",
+      "Beginners with real progression"
+    ],
+    "watchOutFor": [
+      "Only 650 feet of vertical",
+      "$81 at weekends against $45 midweek",
+      "Indy Base holders are blacked out twice",
+      "Snowfall estimates differ by 36 inches"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.mohawkmtn.com/snow-report/",
+    "trailMap": "https://www.mohawkmtn.com/the-mountain/",
+    "webcams": "https://www.mohawkmtn.com/",
+    "lodging": "https://www.mohawkmtn.com/cornwall-inn/",
+    "twitter": "https://twitter.com/MohawkMountain",
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Mohawk Mountain history (the 1947 founding, Walt Schoenknecht and the invention of snowmaking, the Mount Snow and Hall of Fame connections, the 112 acres inside 300 acres of state forest, Carol Lugar's ownership, the 1989 tornado, Pine Lodge)",
+        "url": "https://www.mohawkmtn.com/history/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Mohawk Mountain info (daily operating hours through the week, location)",
+        "url": "https://www.mohawkmtn.com/mountain-info/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Mohawk night skiing (the six-nights-a-week schedule and closing times, the flat $40 night pass and the $70 rental bundle, 2025-26 holiday periods)",
+        "url": "https://www.mohawkmtn.com/night-skiing/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Mohawk lift passes (the full weekday and weekend adult grid, four-hour and Nutmeg products, and the military, first responder, CT Ski Council, college and 70+ Ski Club rates)",
+        "url": "https://www.mohawkmtn.com/lift-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Mohawk season passes (the 2026-27 Anytime and Weekday pricing tiers and the passholder perks)",
+        "url": "https://www.mohawkmtn.com/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Mohawk Indy Pass page (redemption process, no reservation or daily cap, and the Indy Base blackout dates)",
+        "url": "https://www.mohawkmtn.com/indy-pass/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Mohawk Mountain (elevations, terrain split, snowfall average and high, trail and lift counts, the 16 lit trails, structured park field)",
+        "url": "https://www.indyskipass.com/our-resorts/mohawk-mountain",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Mohawk Mountain (longest run, lit and snowmaking acreage, lift-type breakdown, and the differing 26-inch snowfall figure recorded as a dispute)",
+        "url": "https://www.onthesnow.com/connecticut/mohawk-mountain/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. Mohawk's competitive programmes are alpine racing - an alpine race team, D-Squad and Interclub"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes Mohawk's bump skiing. The resort publishes no trail list and its own marketing leads with grooming, and PeakRankings has no Mohawk page"
+    },
+    "parks.count": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/mohawk-mountain",
+      "note": "The Indy Pass partner directory's structured Terrain Parks field reads No, and Mohawk's own site never mentions a terrain park anywhere - its navigation covers lessons, race programmes, tubing, night skiing, dining and lodging with no freestyle page at all. Two lines pointing the same way, so this is recorded as a confirmed zero"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.mohawkmtn.com/lift-passes/",
+      "note": "Mohawk encourages pre-purchase to skip the line but publishes one price grid for all channels, so there is no advance rate distinct from the window rate. Night passes are the reverse case - sold in person only"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Remarkably, the mountain that invented snowmaking publishes no coverage figure. Neither its own site nor the Indy partner listing gives one. OnTheSnow records 100 snowmaking acres against 107 skiable, which would be about 93%, but that is arithmetic on two separately reported figures"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither the resort, the Indy listing nor OnTheSnow mentions glades or tree skiing at Mohawk, though the ski area sits inside 300 acres of state forest. Left null rather than assumed either way"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/mohawk-mountain",
+      "note": "The Indy listing publishes a three-tier split, so there is no fourth-tier figure to source, and the resort publishes no difficulty breakdown at all"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.annualSnowfallAvg",
+      "resortClaim": 62,
+      "independentClaim": 26,
+      "independentSource": "https://www.onthesnow.com/connecticut/mohawk-mountain/ski-resort",
+      "note": "A 36-inch gap on a total this small is more than a doubling. The 62 is the average on Mohawk's own Indy Pass partner listing, which also records a high of 146 inches; OnTheSnow says 26. Neither figure appears on the resort's own site. The partner-listed figure is stored under this guide's preference for the operator's own numbers, but a skier planning around natural snow in northwest Connecticut should assume the lower one and be pleased to be wrong."
+    }
+  ],
+  "moguls": {
+    "presence": "rare",
+    "policy": "No grooming policy is published, but Mohawk's whole identity argues against bumps. This is the mountain that invented snowmaking and its own marketing leads with amazing snow and grooming; it runs a manufactured surface on 650 feet of vertical with sixteen trails lit six nights a week, which is a schedule that demands constant resurfacing; and its competitive programmes are alpine racing, which needs firm consistent snow. There is no glade terrain documented and nothing in the trail network long enough to build a real mogul line. Recorded as rare on that basis and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.mohawkmtn.com/history/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 0,
+    "parks": [],
+    "pipe": false,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Mohawk Mountain has no terrain park. The structured Terrain Parks field on its Indy Pass partner listing reads No, and the resort's own site - which has pages for lessons, three separate race programmes, tubing, night skiing, four partner inns and a workshop - has no freestyle page at all. This is a confirmed absence rather than a gap in the record, and it is coherent for a family mountain whose competitive culture is alpine racing and whose remaining terrain is 650 feet of groomed Connecticut hillside.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts/mohawk-mountain",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

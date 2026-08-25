@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "bousquet",
+    "name": "Bousquet Mountain",
+    "aka": [
+      "Bousquet",
+      "Bousquet Ski Area"
+    ],
+    "state": "MA",
+    "region": "Berkshires",
+    "town": "Pittsfield",
+    "lat": 42.413,
+    "lon": -73.2842,
+    "website": "https://bousquetmountain.com"
+  },
+  "size": {
+    "verticalDrop": 750,
+    "skiableAcres": 200,
+    "trailCount": 23,
+    "liftCount": 4,
+    "longestRun": 1,
+    "summitElevation": 1818,
+    "baseElevation": 1068,
+    "annualSnowfallAvg": 21,
+    "snowmakingPercent": 90,
+    "nightSkiing": true,
+    "source": "https://bousquetmountain.com/statistics/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "annualSnowfallAvg": {
+        "source": "https://www.indyskipass.com/our-resorts/bousquet-mountain-0",
+        "verifiedOn": "2026-08-25"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/massachusetts/bousquet-ski-area/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://bousquetmountain.com/lift-tickets/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 9,
+    "percentIntermediate": 26,
+    "percentAdvanced": 22,
+    "percentExpert": 43,
+    "glades": null,
+    "difficultyNotes": "Read this split with care. Bousquet publishes no difficulty breakdown of its own, and the two third parties that do are both extreme in the same direction: OnTheSnow's four-tier 9/26/22/43 puts 65% of the mountain in the top two grades, and the Indy Pass partner listing's three-tier 17/26/57 puts 57% in one. OnTheSnow's is stored because it distinguishes a fourth tier and sums to 100, but a mountain with 750 feet of vertical that describes itself as family-focused and runs a snowtubing park is not two-thirds expert terrain in any meaningful sense - what these numbers most likely reflect is short, steep pitches on a low hill being rated relative to each other rather than against the region. Treat the shape as indicative and the absolute grades as local. The elevations are the resort's own and reconcile exactly: 1,818 ft summit less 1,068 ft base is 750 ft. OnTheSnow gives a different but equally self-consistent pair, 1,875 and 1,125. Trail count is the resort's 23 against 22 from both Indy and OnTheSnow. The four lifts are two chairs - a Yellow Triple and a Blue Double, confirmed by name in an OSM lift query - plus two magic carpets, one of which serves the tubing park.",
+    "source": "https://www.onthesnow.com/massachusetts/bousquet-ski-area/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two days per season on the Indy Pass, redeemed in person at Guest Services on arrival. Bousquet joined the Indy Pass recently and pitches its own Indy AddOn hard, on the grounds that Berkshire East and Catamount are both within easy reach.",
+      "blackouts": "None. The Indy partner page carries an explicit No Blackout Dates marker and the resort requires no advance reservation.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://bousquetmountain.com/lift-tickets/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 559,
+    "currency": "USD",
+    "notes": "The season pass ladder is published in full and it is unusually age-banded: an unrestricted adult (30-59) pass is $559, juniors (7-17) and seniors (60-79) pay $469, and there is a distinct Young Adult band for 18-29 at $269 - marketed as a college pass for everyone, with no blackouts or restrictions - which is one of the better-value products in this guide for anyone who qualifies. A Locals'+ pass at $409 covers Sunday to Friday all day plus twilight hours on Saturdays and holidays. Over-80s and under-7s ski free apart from a $5 RFID card, and a Bousquet Bloom spring pass from 1 March is $139 with $50 of it credited toward next season. Day-ticket rates could not be read: the tickets page routes to a booking widget and publishes no figures, saying only that buying online in advance is the cheapest route. Active and retired military get 10% off 4- and 8-hour tickets at the window. The RFID card is $5 and saves $5 a visit thereafter.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://bousquetmountain.com/season-passes/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Bousquet Mountain is Pittsfield's ski area - inside the city, minutes from downtown, and unmistakably built for the people who live there. Seven hundred and fifty feet of vertical on 200 acres with 23 trails, two chairlifts, two magic carpets, one terrain park and a snowtubing hill, most of it lit for night skiing. That last part is the operating premise: Bousquet exists to be skied after work and after school, and its own copy says so directly. It has been through a substantial rebuild in recent years - new lodge, new snowmaking, 90% coverage now - and it prices like a mountain that wants locals rather than tourists, with a Young Adult season pass for anyone aged 18 to 29 at $269 and a Locals' pass at $409. The catch is the snow. Twenty-one inches a year is the lowest natural average in this guide by a wide margin, less than half what Berkshire East gets forty minutes north, so everything here is made. What Bousquet is genuinely good at is being close, being lit, being cheap and being open; it is not a destination and it has never tried to be one.",
+    "snowQuality": "Twenty-one inches. That is the annual average both the Indy Pass listing and OnTheSnow give, and it is not a typo - Pittsfield sits in a valley in the central Berkshires and gets remarkably little natural snow for its latitude, with a recorded high of 63 inches in a good year. Everything skiable at Bousquet is therefore manufactured, and the resort has invested accordingly: 90% snowmaking coverage by its own count, 85% by Indy's, on 200 acres. The system is the mountain. What that means for a skier is entirely predictable conditions - firm and consistent in the cold, heavy and slow in a thaw, and never, in any circumstance, deep. Anyone in the Berkshires hoping for a natural snow day is driving north to Berkshire East or Jiminy Peak, and even they will be disappointed most weeks.",
+    "crowds": "A local mountain with local rhythms. Bousquet is inside Pittsfield, a city of forty thousand, and most of its traffic is after-school and after-work rather than destination weekends - the twilight session from 3pm is the busiest part of many days. Two chairlifts on 200 acres is modest capacity, but the terrain absorbs it because the mountain is broad rather than long. Weekend afternoons in February are the pinch, and the Young Adult pass at $269 means the evening crowd skews young. Anyone driving in from outside the county will find it quiet on a weekday, and will also find it small enough that quiet is not really the deciding factor.",
+    "difficulty": "Genuinely hard to characterise, because the only published numbers are implausible and the resort itself publishes none. OnTheSnow puts 43% of the terrain in an expert grade and Indy puts 57% in the top of three, which would make a 750-foot city hill one of the steepest mountains in this guide - and it is not. What is almost certainly happening is that the trails are being rated relative to each other rather than against the region, on a hill whose short pitches are steep for their length. The honest description is a mountain with a genuinely steep face and no room to sustain it, plenty of intermediate terrain across a broad 200 acres, and a small dedicated beginner area with its own carpet. Yokun Terrain Park is where most of the progression happens, backed by an Intro to Park programme with PSIA and AASI-trained coaches at a 5:1 ratio.",
+    "keyTrails": [
+      {
+        "name": "Yokun Terrain Park",
+        "note": "Bousquet's single terrain park, and the focus of its freestyle programming. The Intro to Park course runs on it with trained coaches at five riders to an instructor."
+      },
+      {
+        "name": "Grand",
+        "note": "Named as a favourite trail by the resort's own staff on its team page - one of very few Bousquet trails identified anywhere in its published material."
+      },
+      {
+        "name": "The Yellow Chair",
+        "note": "The triple that reaches the 1,818-foot summit and the full 750 feet of vertical."
+      },
+      {
+        "name": "The Blue Chair",
+        "note": "The double, serving the other half of the 200 acres. Two chairs is the whole lift-served mountain; the other two lifts are carpets."
+      },
+      {
+        "name": "The night terrain",
+        "note": "The majority of the 23 trails are lit, and OnTheSnow records 100 of the 200 acres as lit terrain. Twilight tickets run from 3pm and are the way most locals ski here."
+      }
+    ],
+    "tidbits": [
+      "At 21 inches a year, Bousquet has the lowest natural snowfall of any mountain in this guide.",
+      "Snowmaking covers 90% of the mountain by the resort's count.",
+      "The majority of its 23 trails are lit for night skiing.",
+      "A Young Adult season pass for anyone aged 18-29 costs $269 with no blackouts.",
+      "It sits inside the city of Pittsfield, minutes from downtown.",
+      "Over-80s and under-7s ski free apart from a $5 RFID card.",
+      "A Bousquet Bloom spring pass from 1 March is $139, with $50 credited to next season.",
+      "The mountain has one terrain park, Yokun, and a coached Intro to Park programme to go with it."
+    ],
+    "bestFor": [
+      "Skiing after work in Pittsfield",
+      "A $269 pass if you are 18-29",
+      "Night skiing on most of the mountain",
+      "Learning park with real coaching"
+    ],
+    "watchOutFor": [
+      "Only 21 inches of natural snow",
+      "Only 750 feet of vertical",
+      "Published difficulty splits look wrong",
+      "No day-ticket rates published"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://bousquetmountain.com/lift-trail-status/",
+    "trailMap": "https://bousquetmountain.com/wp-content/uploads/2025/10/Trail-Map-1.pdf",
+    "webcams": "https://bousquetmountain.com/live-cam/",
+    "lodging": "https://bousquetmountain.com/ski-stay/",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Bousquet Mountain statistics (base and peak elevations, vertical, trail count, lift composition, skiable acres, 90% snowmaking, one terrain park)",
+        "url": "https://bousquetmountain.com/statistics/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bousquet terrain park (Yokun Terrain Park and the Intro to Park coaching programme)",
+        "url": "https://bousquetmountain.com/terrain-park/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bousquet lift tickets (twilight night skiing, the Indy Pass partnership and redemption process, the RFID card, the military discount, the Bousquet Bloom spring pass)",
+        "url": "https://bousquetmountain.com/lift-tickets/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bousquet season passes (the full age-banded ladder including the 18-29 Young Adult pass and the Locals'+ pass and its twilight terms)",
+        "url": "https://bousquetmountain.com/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Bousquet Mountain (snowfall average and high, 85% snowmaking, terrain split, no blackout dates, structured park and night fields)",
+        "url": "https://www.indyskipass.com/our-resorts/bousquet-mountain-0",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Bousquet Ski Area (four-tier difficulty split, longest run, lit and snowmaking acreage, and a differing but self-consistent elevation pair)",
+        "url": "https://www.onthesnow.com/massachusetts/bousquet-ski-area/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. Bousquet's programmes are an adult racing league, kids' programmes and Intro to Park"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes Bousquet's bump skiing. The resort names one trail on its entire site and says nothing about grooming, and PeakRankings has no Bousquet page"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://bousquetmountain.com/terrain-park/",
+      "note": "The terrain park page describes the Intro to Park coaching programme at length and never lists a single feature, let alone a pipe"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://bousquetmountain.com/lift-tickets/",
+      "note": "The lift tickets page states that buying online in advance is the cheapest route but publishes no rate; the prices themselves live in a booking widget"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://bousquetmountain.com/lift-tickets/",
+      "note": "No day-ticket figure of any kind is published as text on the lift tickets page"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://bousquetmountain.com/lift-tickets/",
+      "note": "No day-ticket figure of any kind is published as text on the lift tickets page"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither the resort's statistics page, the Indy listing nor OnTheSnow mentions glades or tree skiing at Bousquet. Left null rather than assumed either way"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.snowmakingPercent",
+      "resortClaim": 90,
+      "independentClaim": 85,
+      "independentSource": "https://www.indyskipass.com/our-resorts/bousquet-mountain-0",
+      "note": "A small gap but worth recording on a mountain where snowmaking is effectively the whole product. The resort's statistics page says 90% and its own prose repeats it; the Indy partner listing says 85%. OnTheSnow gives 98 snowmaking acres against 200 skiable, which is a third figure again on a different basis. The resort's own number is stored."
+    }
+  ],
+  "moguls": {
+    "presence": "rare",
+    "policy": "No grooming policy is published, and the mountain's shape makes the answer close to inevitable. Twenty-one inches of natural snow a year means there is almost never loose surface to bump up; 90% snowmaking coverage means the surface is manufactured and must be groomed to survive; and a mountain whose busiest hours are lit evening sessions has to resurface constantly for the traffic it carries on a small trail network. Recorded as rare on that basis and flagged for re-checking against the live grooming report in January - though at Bousquet the answer is unlikely to change.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://bousquetmountain.com/statistics/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 1,
+    "parks": [
+      {
+        "name": "Yokun Terrain Park",
+        "size": "medium",
+        "level": "Beginner to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Bousquet's single park, named on its terrain park page. No feature list, sizing or lighting information is published for it anywhere - the page is given over almost entirely to the coaching programme that runs on it."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": "Coached rather than built. Bousquet's Intro to Park programme runs on Yokun with PSIA and AASI-trained staff at a five-to-one ratio, and is aimed explicitly at riders who have never approached a feature - teaching how to get on and off features correctly, how to use the jumps safely, and the balance and stance fundamentals underneath. That is a more structured entry route than most single-park mountains offer, and it substitutes for a second, smaller park.",
+    "rebuildCadence": null,
+    "overview": "One park, Yokun, named by the resort and described nowhere. The terrain park page names it and then spends its length on the Intro to Park coaching programme instead - no feature counts, no jump sizes, no lighting information, no rebuild schedule. Both the resort's statistics page and the Indy Pass listing confirm the count of one.",
+    "reputation": "Modest, and sensibly so for a 750-foot city hill with one chairlift reaching the summit. What distinguishes Bousquet's park offering is not the features but the teaching around them: a small mountain that puts trained coaches on its only park at a 5:1 ratio is treating freestyle as a skill to develop rather than an amenity to advertise. A rider who has outgrown Yokun has Berkshire East, Catamount and Jiminy Peak all within an hour.",
+    "source": "https://bousquetmountain.com/statistics/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "progression": {
+        "source": "https://bousquetmountain.com/terrain-park/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  }
+}

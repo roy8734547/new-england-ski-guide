@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-25T18:48:39.275Z",
+  "generatedAt": "2026-08-25T18:58:48.616Z",
   "schemaVersion": 3,
-  "count": 42,
+  "count": 45,
   "resorts": [
     {
       "slug": "attitash",
@@ -258,6 +258,47 @@
         "Indy days with no blackouts"
       ],
       "officialSnowReport": "https://www.boltonvalley.com/winter/trail-maps-snow-reports/snow-reports/",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "bousquet",
+      "name": "Bousquet Mountain",
+      "state": "MA",
+      "region": "Berkshires",
+      "town": "Pittsfield",
+      "lat": 42.413,
+      "lon": -73.2842,
+      "website": "https://bousquetmountain.com",
+      "verticalDrop": 750,
+      "skiableAcres": 200,
+      "trailCount": 23,
+      "liftCount": 4,
+      "annualSnowfallAvg": 21,
+      "snowmakingPercent": 90,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two days per season on the Indy Pass, redeemed in person at Guest Services on arrival. Bousquet joined the Indy Pass recently and pitches its own Indy AddOn hard, on the grounds that Berkshire East and Catamount are both within easy reach."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 559,
+      "mogulPresence": "rare",
+      "parkCount": 1,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Skiing after work in Pittsfield",
+        "A $269 pass if you are 18-29",
+        "Night skiing on most of the mountain",
+        "Learning park with real coaching"
+      ],
+      "officialSnowReport": "https://bousquetmountain.com/lift-trail-status/",
       "verifiedOn": "2026-08-25"
     },
     {
@@ -1027,6 +1068,47 @@
       "verifiedOn": "2026-08-25"
     },
     {
+      "slug": "mohawk-mountain",
+      "name": "Mohawk Mountain",
+      "state": "CT",
+      "region": "Northwest Connecticut",
+      "town": "Cornwall",
+      "lat": 41.8332,
+      "lon": -73.3054,
+      "website": "https://www.mohawkmtn.com",
+      "verticalDrop": 650,
+      "skiableAcres": 112,
+      "trailCount": 26,
+      "liftCount": 8,
+      "annualSnowfallAvg": 62,
+      "snowmakingPercent": null,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two days per season on the Indy Pass, redeemed in person at the customer service desk on the lower level of the lodge. Mohawk states there is no online reservation and no daily cap on Indy redemptions, and issues a free RFID card to first-time visitors."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 750,
+      "mogulPresence": "rare",
+      "parkCount": 0,
+      "hasPark": false,
+      "hasPipe": false,
+      "bestFor": [
+        "Skiing where snowmaking was invented",
+        "Six nights a week under lights",
+        "$45 midweek adult tickets",
+        "Beginners with real progression"
+      ],
+      "officialSnowReport": "https://www.mohawkmtn.com/snow-report/",
+      "verifiedOn": "2026-08-25"
+    },
+    {
       "slug": "mount-snow",
       "name": "Mount Snow",
       "state": "VT",
@@ -1449,6 +1531,47 @@
         "Indy Pass days with no blackouts"
       ],
       "officialSnowReport": "https://www.saskadenasix.com/winter/conditions",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "butternut",
+      "name": "Ski Butternut",
+      "state": "MA",
+      "region": "Berkshires",
+      "town": "Great Barrington",
+      "lat": 42.1726,
+      "lon": -73.3147,
+      "website": "https://skibutternut.com",
+      "verticalDrop": 1000,
+      "skiableAcres": 100,
+      "trailCount": 22,
+      "liftCount": 10,
+      "annualSnowfallAvg": 64,
+      "snowmakingPercent": 100,
+      "nightSkiing": false,
+      "passTypes": [
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Freedom Pass",
+          "type": "other",
+          "access": "Every Butternut Unlimited season pass includes three free days at each Freedom Pass partner resort - a reciprocal network of independent areas. Unlimited passholders also get exclusive access to buy a 3-day Ikon Session pass at 50% off, and free night skiing at Otis Ridge, the neighbouring Massachusetts area, which Butternut itself does not offer."
+        }
+      ],
+      "advanceTypical": 90,
+      "seasonPassAdult": 399,
+      "mogulPresence": "rare",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "A $399 season pass",
+        "Serious park riding at a small area",
+        "Midweek at a quarter the price",
+        "Five quads and no lift lines"
+      ],
+      "officialSnowReport": "https://skibutternut.com/the-mountain/trails-conditions/condition-report",
       "verifiedOn": "2026-08-25"
     },
     {

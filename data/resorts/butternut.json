@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "butternut",
+    "name": "Ski Butternut",
+    "aka": [
+      "Butternut",
+      "Butternut Basin"
+    ],
+    "state": "MA",
+    "region": "Berkshires",
+    "town": "Great Barrington",
+    "lat": 42.1726,
+    "lon": -73.3147,
+    "website": "https://skibutternut.com"
+  },
+  "size": {
+    "verticalDrop": 1000,
+    "skiableAcres": 100,
+    "trailCount": 22,
+    "liftCount": 10,
+    "longestRun": 1.5,
+    "summitElevation": 1800,
+    "baseElevation": 800,
+    "annualSnowfallAvg": 64,
+    "snowmakingPercent": 100,
+    "nightSkiing": false,
+    "source": "https://skibutternut.com/the-mountain/mountain-info/mountain-stats",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "baseElevation": {
+        "source": "https://www.onthesnow.com/massachusetts/ski-butternut/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.onthesnow.com/massachusetts/ski-butternut/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/massachusetts/ski-butternut/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://skibutternut.com/tickets-passes/season-passes",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 20,
+    "percentIntermediate": 60,
+    "percentAdvanced": 20,
+    "percentExpert": null,
+    "glades": null,
+    "difficultyNotes": "A three-tier split published by the resort, so percentExpert is null and the top 20% sits in percentAdvanced. OnTheSnow gives a considerably flatter 36/36/27 for the same mountain; the resort's own figures are stored and its 60% intermediate is the more believable description of a Berkshires family area. The lift count deserves a note because 10 lifts on 100 acres sounds absurd until you see the composition: five quad chairs, four learning carpets and one tubing carpet. That is the resort's own list and OnTheSnow agrees on the total, and an OSM lift query independently confirms all five quads by name - Top Flight, Jane's, Cruiser, Highline and Paddy Wagon. Five detachable-era chairs serving 22 trails on 100 acres gives Butternut one of the highest lift-to-terrain ratios in this guide. Snowmaking is 100%, which OnTheSnow corroborates at 100 acres of 100. The base elevation is not published by the resort - it gives a 1,800 ft summit and a 1,000 ft vertical - and OnTheSnow's 800 ft reconciles the two exactly, so it is stored from there.",
+    "source": "https://skibutternut.com/the-mountain/mountain-info/mountain-stats",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Freedom Pass",
+      "type": "other",
+      "access": "Every Butternut Unlimited season pass includes three free days at each Freedom Pass partner resort - a reciprocal network of independent areas. Unlimited passholders also get exclusive access to buy a 3-day Ikon Session pass at 50% off, and free night skiing at Otis Ridge, the neighbouring Massachusetts area, which Butternut itself does not offer.",
+      "blackouts": "None are published for the Freedom Pass days. Butternut's own Unlimited pass is explicitly valid any time the mountain is open, with no restrictions.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://skibutternut.com/tickets-passes/season-passes"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": 90,
+    "seasonPassAdult": 399,
+    "currency": "USD",
+    "notes": "Butternut publishes online rates only and states that the ticket window costs $5 more without ever listing the window figures, so the two window fields are null and advanceTypical carries the published non-holiday weekend adult online rate of $90 - the price most visitors actually pay at a weekend-driven Berkshires day area. The full adult grid is the striking part: $95 in holiday periods, $90 at weekends, and $25 and $40 on the two weekday tiers, a nearly four-fold spread that is the widest on this roster. Half-days, morning or afternoon, are sold at weekends and holidays only. The season pass is the headline: an Unlimited adult (14-69) pass at $399 if bought by 31 August 2026, rising to $499 through November and $599 after 1 December. At $399 that is the cheapest unrestricted adult season pass in this guide, and it comes with free night skiing at Otis Ridge, three days at every Freedom Pass partner and half-price access to a 3-day Ikon Session pass. Holiday periods are 24 December to 4 January, 17-19 January and 14-22 February.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://skibutternut.com/tickets-passes/lift-tickets",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://skibutternut.com/tickets-passes/season-passes",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Ski Butternut is the most efficiently built small mountain in this guide. A thousand feet of vertical and 22 trails on 100 acres in Great Barrington - and five quad chairlifts to serve them, plus four learning carpets. Nothing else on this roster comes close to that ratio, and it is the reason a mountain this size absorbs weekend traffic out of Connecticut and New York without feeling like a queue. Snowmaking covers 100% of the terrain. The trail split is 20/60/20 and the 60% is the point: this is intermediate cruising, well groomed, on a hill that has been doing exactly this since the 1960s. Two things lift it above the category. The first is Twisted Terrain Park, which is genuinely ambitious for a 100-acre area - natural log rides and rock jibs alongside a wall ride, twenty-six rail features rotated through the season, and two jump lines running up to 30-foot step-downs. The second is the price: an Unlimited season pass bought in August costs $399, the cheapest unrestricted adult pass in this guide, and it throws in three days at every Freedom Pass partner. What Butternut does not have is night skiing - its passes include free night skiing at neighbouring Otis Ridge instead - or much natural snow.",
+    "snowQuality": "Sixty-four inches a year is a modest total and Butternut's answer is complete rather than partial: 100% snowmaking coverage across all 100 skiable acres, confirmed by both the resort and OnTheSnow. That is the same answer Berkshire East and Jiminy Peak give, and in this part of Massachusetts it is the only workable one - the mountains here are low, the base sits at 800 feet, and the winter is a sequence of thaws punctuated by cold snaps. What Butternut gets out of it is reliability and a reputation for grooming that its own visitor reviews return to repeatedly. What it does not get is powder. Nobody should plan a Butternut day around natural snow; plan it around a cold week and a freshly groomed morning.",
+    "crowds": "Better managed than almost anything of its size, because of the lifts. Five quads on 22 trails means the uphill capacity is wildly out of proportion to the terrain, which is exactly the right imbalance for a day area that gets a concentrated Saturday rush from the New York and Connecticut suburbs and very little midweek traffic. The pricing reinforces the split hard: a weekday adult ticket is $25 or $40 online against $90 at the weekend and $95 in a holiday week. The practical advice writes itself - come on a Tuesday if you possibly can, when you will have a well-groomed mountain and five quads largely to yourself for a quarter of the weekend price.",
+    "difficulty": "Comfortably intermediate and honest about it: 20% beginner, 60% intermediate, 20% advanced on a thousand feet of vertical. Nothing here is steep or long, and the mountain does not pretend otherwise; what it does well is deliver consistently good surfaces on trails that are wide enough to carve properly, which is what an improving skier actually needs. The terrain park is where the real progression happens, and Butternut has built it as a two-step ladder - Cruiser Progression Park with scaled-down boxes, rails and jumps off the Cruiser Quad, and Twisted with 30-foot step-downs at the far end. A confident skier will exhaust the trail map inside a morning. A rider working on rails could spend a season here.",
+    "keyTrails": [
+      {
+        "name": "Twisted Terrain Park",
+        "note": "The reason freestyle riders come to Great Barrington: natural log rides and rock jibs, a wall ride, twenty-six rail features rotated in and out through the season, and two jump lines up to 30-foot step-downs. Reachable from three different quads."
+      },
+      {
+        "name": "Pied Piper",
+        "note": "One of the two routes into Twisted, dropping in from the Top Flight summit quad."
+      },
+      {
+        "name": "Uptown",
+        "note": "The other route into Twisted, from Jane's Quad. Butternut names both approaches on its own park page, which is a small kindness most mountains skip."
+      },
+      {
+        "name": "Top Flight Quad",
+        "note": "The summit lift, reaching 1,800 feet. One of five quad chairs on a 100-acre mountain."
+      },
+      {
+        "name": "Cruiser Quad",
+        "note": "Serves the Cruiser Progression Park, the smaller of the two parks and the one designed for learning features."
+      },
+      {
+        "name": "Highline Quad",
+        "note": "Delivers you a few feet from the Twisted entrance, which makes it the lap lift for anyone spending the day in the park."
+      }
+    ],
+    "tidbits": [
+      "Butternut has five quad chairlifts for 22 trails on 100 acres.",
+      "Snowmaking covers 100% of the mountain.",
+      "An Unlimited adult season pass bought by 31 August is $399 - the cheapest on this roster.",
+      "Every season pass includes free night skiing at Otis Ridge, because Butternut has none of its own.",
+      "Unlimited passholders get three free days at every Freedom Pass partner resort.",
+      "Twisted Terrain Park carries twenty-six rail features, rotated through the season.",
+      "A weekday adult ticket is $25 or $40 online; a holiday one is $95.",
+      "Unlimited passholders can buy a 3-day Ikon Session pass at half price."
+    ],
+    "bestFor": [
+      "A $399 season pass",
+      "Serious park riding at a small area",
+      "Midweek at a quarter the price",
+      "Five quads and no lift lines"
+    ],
+    "watchOutFor": [
+      "No night skiing at all",
+      "Only 64 inches of natural snow",
+      "$90 to $95 at weekends and holidays",
+      "Nothing steep or long"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://skibutternut.com/the-mountain/trails-conditions/condition-report",
+    "trailMap": "https://skibutternut.com/the-mountain/trails-conditions/trail-map-videos",
+    "webcams": null,
+    "lodging": "https://skibutternut.com/dining-lodging/local-lodging",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Ski Butternut mountain stats (trails, vertical, summit elevation, snowmaking coverage, skiable acres, difficulty split, lift composition)",
+        "url": "https://skibutternut.com/the-mountain/mountain-info/mountain-stats",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ski Butternut terrain parks (Twisted and Cruiser Progression described in full, including feature types, jump sizes and the three lift approaches)",
+        "url": "https://skibutternut.com/the-mountain/trails-conditions/terrain-parks",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ski Butternut lift tickets (the online adult rate grid, the $5 window differential, half-day availability)",
+        "url": "https://skibutternut.com/tickets-passes/lift-tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ski Butternut season passes (the 2026-27 Unlimited pricing ladder, free night skiing at Otis Ridge, Freedom Pass days, the Ikon Session discount)",
+        "url": "https://skibutternut.com/tickets-passes/season-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ski Butternut hours of operation (holiday periods and the daily schedule)",
+        "url": "https://skibutternut.com/the-mountain/mountain-info/hours-of-operation",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Ski Butternut (base elevation, annual snowfall, longest run, snowmaking acreage, lift total)",
+        "url": "https://www.onthesnow.com/massachusetts/ski-butternut/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. Butternut's freestyle programming is park-based, including a multi-week Advanced Freestyle programme"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes Butternut's bump skiing. The resort documents its parks in detail and says nothing about ungroomed terrain, and PeakRankings has no Butternut page"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://skibutternut.com/the-mountain/trails-conditions/terrain-parks",
+      "note": "The terrain parks page describes both parks and their feature types in unusual detail - log rides, rock jibs, a wall ride, rails, tables and step-downs - and mentions no pipe"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://skibutternut.com/tickets-passes/lift-tickets",
+      "note": "Butternut publishes an online rate grid and states that window tickets cost $5 more, but never lists the window prices themselves. Adding five to each cell would be this guide's arithmetic rather than a published rate"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://skibutternut.com/tickets-passes/lift-tickets",
+      "note": "See windowTicketAdultHigh - only online rates are published as figures"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://skibutternut.com/tickets-passes/season-passes",
+      "note": "Butternut has no night skiing, and it says so by implication in the most concrete way available: every one of its season passes includes free night skiing at Otis Ridge, a neighbouring Massachusetts area. A mountain does not buy its passholders night access somewhere else if it lights its own trails. Corroborated by the ticket structure, whose afternoon half-day window closes at 4:00pm"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither the resort's stats page nor OnTheSnow mentions glades or tree skiing at Butternut, though the terrain parks page does describe natural log rides and rock jibs inside Twisted. Left null rather than assumed either way"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://skibutternut.com/the-mountain/mountain-info/mountain-stats",
+      "note": "Butternut publishes three difficulty grades on its own stats page, so there is no fourth-tier figure to source"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "rare",
+    "policy": "No grooming policy is published, but every signal points the same way. Snowmaking covers 100% of the mountain, so the entire surface is manufactured and has to be groomed to survive a Berkshires thaw-freeze; the trail split is 60% intermediate on a thousand feet of vertical; and the resort's own visitor reviews single out the grooming as the thing it does best. Butternut is a corduroy mountain by design, and the freestyle energy that would elsewhere go into leaving a black run alone goes into Twisted Terrain Park instead. Recorded as rare on that basis and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://skibutternut.com/the-mountain/mountain-info/mountain-stats",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 2,
+    "parks": [
+      {
+        "name": "Twisted Terrain Park",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": 30,
+        "boxes": null,
+        "rails": 26,
+        "note": "Unusually well documented for a 100-acre mountain, and unusually varied. Natural features - log rides, rock jibs - alongside man-made ones including a wall ride and twenty-six rail features that are rotated in and out through the season, plus two jump lines running from small tables to 30-foot step-downs. Butternut's own framing is that this is not a cookie-cutter slopestyle course, and the feature list backs that up. Accessible from three separate quads: Top Flight via Pied Piper, Jane's via Uptown, or Highline, which drops you a few feet from the entrance."
+      },
+      {
+        "name": "Cruiser Progression Park",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Scaled-down boxes, rails and jumps built for learning, served by the Cruiser Quad. Aimed both at first-time park riders and at anyone wanting to get technical on smaller features."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "A clean two-rung ladder with its own lift on each rung: Cruiser Progression Park off the Cruiser Quad for scaled-down boxes, rails and jumps, and Twisted off Highline, Jane's or Top Flight for everything above that. The step between them is large - Twisted's jump lines run to 30-foot step-downs - but Butternut fills the gap with coaching rather than features, running a multi-week Advanced Freestyle programme through the season.",
+    "rebuildCadence": "The rail features are rotated in and out through the season rather than left in place - the resort says so explicitly, and with twenty-six of them that is a park that changes shape several times a winter.",
+    "overview": "Two parks, both named and described in more detail than most mountains three times this size manage. Twisted Terrain Park is the serious one: natural log rides and rock jibs, a wall ride, twenty-six rotating rail features and two jump lines topping out at 30-foot step-downs, reachable from three different quads. Cruiser Progression Park is the learning rung, with scaled-down boxes, rails and jumps off its own quad. No pipe. Butternut publishes feature counts and jump sizes, which almost nothing else on this roster does.",
+    "reputation": "Genuinely good, and the strongest park offering of any 100-acre mountain in this guide. Twisted is built around variety rather than a single slopestyle line, and the natural features - log rides, rock jibs - are the kind of thing a mountain builds because its park crew wants to, not because a marketing plan called for it. Butternut's own visitor reviews single out the parks alongside the grooming. It is not Carinthia at Mount Snow, but for a rider in the southern Berkshires it is the obvious home mountain, and at $399 for a season pass it is priced like one.",
+    "source": "https://skibutternut.com/the-mountain/trails-conditions/terrain-parks",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}
