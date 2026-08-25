@@ -33,7 +33,7 @@ skipping a unit.
 | B | Night-skiing negatives re-sourced off Ski NH | `72b5924` | — | Ski NH's list is a curated feature, not a registry. |
 | B | Batch 4: attitash, sunday-river, sugarloaf, saddleback | `12e9972` | 143 / 157 | 1 warning (Saddleback publishes a park count but no park names). |
 | B | Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched | `3b41bea` | 180 / 189 | 2 warnings, both correct data. Vail still down, so Sunapee and Crotched lean on OnTheSnow. |
-| B | Batch 6 **(PARTIAL)**: pats-peak, magic-mountain, bromley + pico fix | `PENDING` | 196 / 205 | `bolton-valley` still to write; its research is recorded above. |
+| B | Batch 6 **(PARTIAL)**: pats-peak, magic-mountain, bromley + pico fix | `c42e0c8` | 196 / 205 | `bolton-valley` still to write; its research is recorded above. |
 
 **Part A complete. Batches 2 through 5 complete. Batch 6 is PARTIAL.**
 
