@@ -1,6 +1,6 @@
 # Resort data contract
 
-**Schema version:** `1` · **Last revised:** 2026-08-20
+**Schema version:** `2` · **Last revised:** 2026-08-24
 
 One file per resort at `data/resorts/<slug>.json`. That file is the **source of truth** for
 everything the site knows about a mountain except live weather (fetched in the browser) and
@@ -115,7 +115,7 @@ negative signal on a detail page.
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": { },
   "size": { },
   "terrain": { },
@@ -124,16 +124,25 @@ negative signal on a detail page.
   "editorial": { },
   "reviews": [ ],
   "links": { },
-  "meta": { }
+  "meta": { },
+  "fieldNotes": { },
+  "dataDisputes": [ ]
 }
 ```
 
 | key | type | null? | notes |
 |---|---|---|---|
-| `schemaVersion` | integer | no | Currently `1`. Bump only on a breaking change; the validator refuses versions it doesn't know. |
+| `schemaVersion` | integer | no | Currently `2`. Bump only on a breaking change; the validator refuses versions it doesn't know. |
+| `fieldNotes` | object | no (may be `{}`) | Why a field is empty. See §12. |
+| `dataDisputes` | array | no (may be `[]`) | Where we think a resort's own figure is wrong. See §13. |
 
 Every other top-level key is required and must be an object or array — never `null`. An empty
 array is the correct value for "no reviews yet".
+
+**What changed in v2.** Both new keys exist to fix the same failure: a bare `null` cannot
+say whether we looked. `fieldNotes` separates *unknown* from *checked and confirmed empty*;
+`dataDisputes` turns "the resort's number looks wrong" from a sentence somebody happened to
+write into structured, renderable data.
 
 ---
 
@@ -364,14 +373,115 @@ URL doesn't say what it was used for, and a dead link with a label is still reco
 
 ---
 
-## 12. Complete example
+## 12. `fieldNotes` — why a field is empty
+
+A bare `null` says "we have no value". It cannot say whether anybody looked, and after eight
+resorts it was `null` in the same eight places every time — `nightSkiing`, the dynamic ticket
+prices, the glade acreage nobody publishes. Those are not the same kind of gap as a figure we
+simply have not researched yet, and treating them alike turns `UNVERIFIED.md` into a worklist
+full of rows that can never be closed.
+
+`fieldNotes` is an optional map from a **dotted field path** to a record explaining the
+emptiness:
+
+```json
+"fieldNotes": {
+  "size.nightSkiing": {
+    "status": "absent",
+    "source": "https://www.vermontlifttickets.com/night-skiing/",
+    "verifiedOn": "2026-08-24",
+    "note": "Vermont's published night-skiing list does not include this resort"
+  },
+  "terrain.glades": {
+    "status": "unpublished",
+    "checkedOn": "2026-08-24",
+    "note": "Glades exist but no acreage or count is published anywhere citable"
+  },
+  "pricing.advanceTypical": {
+    "status": "unpublished",
+    "checkedOn": "2026-08-24",
+    "note": "Dynamic pricing; no window or advance rate published"
+  }
+}
+```
+
+### The three statuses
+
+| status | meaning | scalar must be | requires |
+|---|---|---|---|
+| `absent` | Checked, and the resort genuinely does not have this. | `false` or `0` — **not** `null` | `source` **and** `verifiedOn` |
+| `unpublished` | It exists, or may exist, but no citable source states it. | `null` | `checkedOn` (`source` optional) |
+| `seasonal` | Cannot be known outside the ski season. | `null` | `checkedOn` |
+
+**`absent` is the important one.** It is the only status that changes the data: the field
+stops being `null` and becomes a real `false` or `0`, because we can now assert the negative.
+"This mountain has no night skiing" is a fact a visitor wants, and it should render as a
+sentence, not as a missing row. It therefore demands a source — the same standard as any
+positive claim. An unsourced hunch that a resort lacks something is not `absent`, it is
+`unpublished`.
+
+**`unpublished` is a finished state, not a backlog item.** Once a resort's dynamic pricing has
+been confirmed as unpublishable, no amount of further research fixes it. `UNVERIFIED.md`
+separates these into their own table so the research worklist stays honest about what is
+actually left to do.
+
+### Rules
+
+- The path must resolve to a real field: `group.field` for the object groups, `passes[0].field`
+  or `reviews[0].field` for array entries, or a bare `reviews` / `passes` for an empty array.
+- Do **not** write a `fieldNote` for something you did not actually check. A field you have not
+  investigated belongs in the unknown table, and inventing a status to empty that table defeats
+  the purpose of having it.
+- `note` is optional but almost always worth writing. It is what stops the next person
+  re-researching a dead end.
+
+---
+
+## 13. `dataDisputes` — where we think the resort is wrong
+
+This site exists to be more honest than the marketing copy, so it will sometimes disagree with
+a resort's own published figure. That disagreement used to live in whatever sentence the
+editorial happened to contain. It is now structured and rendered.
+
+```json
+"dataDisputes": [
+  {
+    "field": "terrain.percentAdvanced",
+    "resortClaim": 30,
+    "independentClaim": 21,
+    "independentSource": "https://www.onthesnow.com/vermont/okemo-mountain-resort/ski-resort",
+    "note": "Okemo's own figure is generous; the independent breakdown is 33/38/21/9 and the ratings run soft by Vermont standards"
+  }
+]
+```
+
+| field | type | notes |
+|---|---|---|
+| `field` | string | Dotted path to the disputed field. Must resolve, same rules as `fieldNotes`. |
+| `resortClaim` | number \| string | What the resort says. **Must equal the value actually stored at `field`** — the validator enforces this, so the dispute cannot drift out of step with the data. |
+| `independentClaim` | number \| string | What the independent source says. |
+| `independentSource` | string (URL) | Who says otherwise. Required — a dispute without a counter-source is just an opinion, and opinions belong in `editorial`. |
+| `note` | string | Why we think the resort's figure is generous, and what a reader should take from it. |
+
+**The resort's own figure stays in the data field.** We do not quietly substitute a number we
+prefer; that would make the dataset unauditable and would be exactly the behaviour this site
+criticises. The resort's claim is what it publishes, and the disagreement sits beside it where
+a reader can weigh both. `resort.html` renders these as a labelled callout next to the relevant
+figure, never buried in prose.
+
+Use this sparingly. It is for figures where an independent source materially contradicts the
+resort — not for every rounding difference.
+
+---
+
+## 14. Complete example
 
 Values below are **illustrative placeholders**, not verified data. Do not copy them into a
 real resort file.
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": {
     "slug": "example-mountain",
     "name": "Example Mountain",
@@ -470,13 +580,22 @@ real resort file.
     ],
     "verifiedOn": "2026-08-20",
     "lastEditedBy": "claude-code"
-  }
+  },
+  "fieldNotes": {
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.example.com/mountain-stats",
+      "verifiedOn": "2026-08-20",
+      "note": "No night operation listed"
+    }
+  },
+  "dataDisputes": []
 }
 ```
 
 ---
 
-## 13. Generated files — do not hand-edit
+## 15. Generated files — do not hand-edit
 
 ### `data/index.json`
 
@@ -488,7 +607,7 @@ page shows it.
 ```json
 {
   "generatedAt": "2026-08-20T12:00:00.000Z",
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "count": 1,
   "resorts": [
     {
@@ -537,7 +656,7 @@ visible in review.
 
 ---
 
-## 14. Checklist for adding a resort
+## 16. Checklist for adding a resort
 
 1. Copy the shape from §12. Every key present; unknowns `null`.
 2. Fill `identity` from the resort's own site. Summit coordinates, not the base lodge.
