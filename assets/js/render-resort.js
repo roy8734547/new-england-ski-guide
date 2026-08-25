@@ -286,6 +286,59 @@ async function loadWeather(r) {
   renderWeather(r, outcome);
 }
 
+
+// --- fieldNotes and dataDisputes (schema.md §12, §13) ----------------------
+
+/** The fieldNote for a dotted path, or null. */
+const noteFor = (r, path) => r.fieldNotes?.[path] ?? null;
+
+/**
+ * A field with status "absent" is a fact, not a gap: we checked and the resort
+ * genuinely does not have it. It renders as a definite statement rather than
+ * being omitted, which is the entire reason the status exists.
+ */
+function absentRow(r, path, label, phrasing) {
+  const note = noteFor(r, path);
+  if (!note || note.status !== 'absent') return null;
+  return [label, el('span', { class: 'stated-absent', title: note.note ?? '' },
+    phrasing,
+    note.source
+      ? el('a', { class: 'stated-absent__src', href: note.source, rel: 'noopener' }, 'source')
+      : null)];
+}
+
+/** Disputes attached to any field inside `group`. */
+const disputesIn = (r, group) =>
+  (r.dataDisputes ?? []).filter((d) => typeof d.field === 'string' && d.field.startsWith(`${group}.`));
+
+const FIELD_LABELS = {
+  'terrain.percentBeginner': 'beginner terrain',
+  'terrain.percentIntermediate': 'intermediate terrain',
+  'terrain.percentAdvanced': 'advanced terrain',
+  'terrain.percentExpert': 'expert terrain',
+  'size.annualSnowfallAvg': 'annual snowfall',
+  'size.skiableAcres': 'skiable acres',
+  'size.verticalDrop': 'vertical drop',
+  'size.trailCount': 'trail count',
+};
+
+/** "The resort says X, independent sources say Y" - never buried in prose. */
+function disputeCallout(dispute) {
+  const label = FIELD_LABELS[dispute.field] ?? dispute.field;
+  const unit = dispute.field.startsWith('terrain.percent') ? '%' : '';
+  return el('aside', { class: 'dispute' },
+    el('p', { class: 'dispute__head' }, 'We disagree with this figure'),
+    el('p', { class: 'dispute__claims' },
+      'On ', el('b', {}, label), ' the resort says ',
+      el('b', { class: 'dispute__resort' }, `${dispute.resortClaim}${unit}`),
+      '; ',
+      el('a', { href: dispute.independentSource, rel: 'noopener' }, 'independent figures'),
+      ' say ',
+      el('b', { class: 'dispute__independent' }, `${dispute.independentClaim}${unit}`),
+      '.'),
+    el('p', { class: 'dispute__note' }, dispute.note));
+}
+
 // --- terrain ----------------------------------------------------------------
 
 const TIERS = [
@@ -321,18 +374,23 @@ function terrainSection(r) {
     ['Glades', has(t.glades) ? (t.glades ? 'Yes' : 'No') : null],
     ['Mogul runs', has(t.moguls) ? (t.moguls ? 'Yes' : 'No') : null],
     ['Terrain parks', has(t.terrainParks) ? fmt(t.terrainParks) : null],
-    ['Night skiing', has(r.size.nightSkiing) ? (r.size.nightSkiing ? 'Yes' : 'No') : null],
+    // Checked and confirmed: say so outright rather than dropping the row.
+    absentRow(r, 'size.nightSkiing', 'Night skiing', 'None — confirmed ') ??
+      ['Night skiing', has(r.size.nightSkiing) ? (r.size.nightSkiing ? 'Yes' : 'No') : null],
     ['Longest run', has(r.size.longestRun) ? `${fmt(r.size.longestRun, { digits: 1 })} mi` : null],
     ['Summit', has(r.size.summitElevation) ? `${fmt(r.size.summitElevation)} ft` : null],
     ['Base', has(r.size.baseElevation) ? `${fmt(r.size.baseElevation)} ft` : null],
   ]);
 
   const bar = terrainBreakdown(t);
-  if (!bar && !features && !has(t.difficultyNotes)) return null;
+  const disputes = disputesIn(r, 'terrain');
+  if (!bar && !features && !has(t.difficultyNotes) && !disputes.length) return null;
 
   return section('Terrain',
     el('div', { class: 'twocol' },
-      el('div', {}, bar ?? el('p', { class: 'is-unknown' }, 'No published difficulty split.')),
+      el('div', {},
+        bar ?? el('p', { class: 'is-unknown' }, 'No published difficulty split.'),
+        disputes.map(disputeCallout)),
       features),
     has(t.difficultyNotes) ? el('p', { class: 'note' }, t.difficultyNotes) : null,
     provenance(t));

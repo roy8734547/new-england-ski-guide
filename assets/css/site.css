@@ -730,6 +730,34 @@ th[aria-sort="descending"] button::after { content: "↓"; opacity: 1; color: va
   padding: 0.1rem 0.5rem;
 }
 
+/* A figure we think the resort has overstated. Deliberately visible: the whole
+   point is that the disagreement is data, not a sentence buried in prose. */
+.dispute {
+  margin-top: 1.1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--diff-expert) 40%, var(--border));
+  border-left-width: 3px;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--diff-expert) 7%, transparent);
+  max-width: var(--measure);
+}
+.dispute__head {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--diff-expert);
+  margin-bottom: 0.35rem;
+}
+.dispute__claims { font-size: 0.9375rem; margin-bottom: 0.35rem; }
+.dispute__resort { font-variant-numeric: tabular-nums; }
+.dispute__independent { font-variant-numeric: tabular-nums; color: var(--diff-expert); }
+.dispute__note { font-size: 0.875rem; color: var(--text-muted); margin: 0; }
+
+/* "No night skiing" is an answer, not a missing row. */
+.stated-absent { display: inline-flex; align-items: baseline; gap: 0.4rem; }
+.stated-absent__src { font-size: 0.75rem; }
+
 /* --- weather --------------------------------------------------------------- */
 
 .panel__stamp {
