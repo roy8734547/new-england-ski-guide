@@ -149,3 +149,29 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
   trails, so most of the mountain cannot be groomed to a manufactured standard.
 - **Middlebury snowfall 150 (resort) over Indy's 200**, recorded as a dispute. Unusual direction
   — the resort claims less — which is why it is worth a dispute record rather than a note.
+
+### Batch 9
+
+- **No OnTheSnow figure used for `black-mountain-maine`.** Its OnTheSnow record carries Black
+  Mountain NH's elevation triple verbatim. See INTEGRITY FAILURE 4 in PROGRESS.md.
+- **`black-mountain-maine.nightSkiing` = true, against Indy's structured No.** The resort's own
+  about page says "top to bottom night skiing" and its hours page schedules selected Wednesdays
+  5-9pm. A resort's own statement outranks a partner directory's checkbox.
+- **`mt-abram` stores the resort's 1,150 ft vertical AND Indy's 2,000 ft summit, base null.**
+  The three published triples are mutually inconsistent; a terrain probe of the summit lift top
+  (~1,975 ft) supports Indy's summit over OnTheSnow's 2,250 ft. Nulling the base avoids storing
+  an arithmetic contradiction while keeping two sourced values instead of one.
+- **`camden-snow-bowl` stores no elevations at all.** Three verticals and two irreconcilable
+  summit-base pairs; the terrain probe falls between them and settles nothing. Both null.
+- **`camden-snow-bowl.seasonPassAdult` = 531**, the 2026-27 general-public early-bird rate. As
+  at Middlebury, that is a published forward price - the sale opens 1 September - and the whole
+  ladder including the Camden-resident rates is in `pricing.notes`.
+- **`big-rock` trail count 25 and lift count 4 from the resort's live trail report**, over
+  Indy's 29 and its blurb's 26. An enumerated list beats an aggregate number.
+- **`big-rock` window ticket high and low both 60.** The store lists exactly one adult day
+  product. A February-break notice implies a cheaper midweek rate exists but none is published,
+  and `pricing.notes` says the low figure is provisional rather than inventing one.
+- **`big-rock.snowmakingPercent` = null despite Indy's "80 snowmaking".** The figure carries no
+  unit; on 90 skiable acres, 80% and 80 acres are very different claims.
+- **`mt-abram` and `black-mountain-maine` `parks.count` = 0 (absent)**, same two-line bar as
+  Batch 8. `big-rock` and `camden-snow-bowl` keep parks that exist but are undescribed.

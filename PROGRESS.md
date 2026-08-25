@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 38.
+**Roster target:** 45 resorts. **Current:** 42.
 
 ---
 
@@ -39,11 +39,13 @@ skipping a unit.
 | B | **Vail repair**: attitash, mount-sunapee, crotched rebuilt from Vail's own pages | `869bfc0` | 197 / 210 | Standing probe passed. See "Vail repair" below. |
 | B | Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount | `0fd6cf5` | 227 / 249 | No PeakRankings page for any of the four. See Batch 7 notes. |
 | B | Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway | `41f82aa` | 265 / 281 | Two confirmed-zero park sections. See Batch 8 notes. |
+| B | Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock | `03d7870` | 304 / 320 | **INTEGRITY FAILURE 4** found: OnTheSnow's two Black Mountain records are cross-contaminated. |
 
-**Part A complete. Batches 2 through 8 complete.**
+**Part A complete. Batches 2 through 9 complete.**
 
-**RESUME HERE.** The next unfinished unit is **Batch 9** — mt-abram, black-mountain-maine,
-camden-snow-bowl, big-rock. Then Batch 10, then Parts C through G.
+**RESUME HERE.** The next unfinished unit is **Batch 10** — butternut, bousquet,
+mohawk-mountain. That is the last batch and completes the 45-resort roster. Then Parts C
+through G.
 
 ### STANDING CHECK AT THE START OF EVERY SESSION — Vail: DONE, no longer needed
 
@@ -137,6 +139,40 @@ outcome, not a sign to try harder.
 
 **Vail note:** superseded — the three Vail files were repaired in `869bfc0`. See the Vail
 repair section above.
+
+### Batch 9 notes
+
+- **The headline finding is INTEGRITY FAILURE 4 below** — OnTheSnow's two Black Mountain
+  records have contaminated each other. Read it before using any OnTheSnow figure for either.
+- **Black Mountain of Maine has night skiing and the Indy structured field says it does not.**
+  The resort's own about page says "top to bottom night skiing", its hours page schedules
+  selected Wednesdays 5:00-9:00pm, and its free-ski-nights page describes those evenings as
+  free for skiing, riding *and* tubing with $40 rentals. Indy's alpine Night field reads No;
+  its Nordic Night field reads Yes. **That is the second time an Indy structured field has been
+  wrong** (after Dartmouth's elevations) — the fields are useful but never sufficient alone.
+- **Three files in this batch could not store a full elevation triple.** Mt. Abram: resort
+  vertical 1,150, Indy 2,000/950 (=1,050), OnTheSnow 2,250/1,050 (=1,200); stored the resort's
+  vertical and Indy's summit — the terrain probe backs Indy at −25 ft against OnTheSnow at
+  −275 ft — and nulled the base. Camden Snow Bowl: resort 1,000 vertical, Indy 1,286/216
+  (=1,070), OnTheSnow 1,080/150 (=930); **both elevations null**. The probe (1,106 ft) sits
+  between the two published summits and settles nothing.
+- **Big Rock's live trail report is the best small-resort source found so far.** It enumerates
+  all 25 trails with a difficulty marker *and* a night-skiing flag on each, plus all four lifts
+  by name and type. It beat Indy's 29 trails, Indy's own blurb's 26, and a history page whose
+  lift names (North Star Double, South Star Triple) were superseded by a quad and a triple.
+  **Check for a live trail/conditions report before trusting any aggregate trail count.**
+- **Five more `parks.count: 0` confirmed zeros** — mt-abram and black-mountain-maine — on the
+  same two-line bar as Batch 8 (Indy's structured No plus the resort never mentioning a park).
+  Camden publishes 2 parks and names neither, so it joins Saddleback and Mount Sunapee in the
+  "count without names" warning.
+- **Camden Snow Bowl's mountain is Ragged Mountain** — not the Ragged Mountain in Danbury, NH
+  already on this roster. Both files should keep saying so; this is the second same-name
+  collision in the guide after the two Black Mountains.
+- **Uphill New England now covers 24 mountains**, per Camden's pass page — Dartmouth Skiway's
+  page says "12+". The Camden figure is newer. Still recorded nowhere in the data; Part C.
+- **Coordinates**: Big Rock −12 ft against published (best in the run), Camden −180 ft,
+  Mt. Abram −275 ft against OnTheSnow's summit but −25 ft against Indy's, Black Mountain of
+  Maine −223 ft. All from the Overpass `aerialway` query anchored to the summit lift top.
 
 ### Batch 8 notes
 
@@ -345,7 +381,7 @@ Roster of 37 remaining, from BATCHES.md:
 - [x] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley — `c42e0c8` + `f150308` — 205 unknown / 214 confirmed
 - [x] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount — `0fd6cf5` — 227 unknown / 249 confirmed
 - [x] Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway — `41f82aa` — 265 unknown / 281 confirmed
-- [ ] Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock
+- [x] Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock — `03d7870` — 304 unknown / 320 confirmed
 - [ ] Batch 10: butternut, bousquet, mohawk-mountain
 
 Then: Part C reviews (3 commits), Part D map + compare, Part E public site, Part F
@@ -457,6 +493,35 @@ roster. Note also that new files are still introducing them: Crotched's "smalles
 this roster" is true at 30 resorts and will very likely be false at 45, once Camden Snow Bowl,
 Big Rock, Middlebury and the Massachusetts hills are in.
 
+### 4. OnTheSnow's two Black Mountain records are cross-contaminated (found 2026-08-25)
+
+**What is wrong.** OnTheSnow publishes a record for *Black Mountain* (Jackson, New Hampshire)
+and one for *Black Mountain of Maine* (Rumford). They share numbers they cannot both own:
+
+| Figure | OTS: Black Mtn NH | OTS: Black Mtn of Maine | Operator's own figure |
+|---|---|---|---|
+| Summit | 2,350 ft | **2,350 ft** | NH 2,350 / ME 2,280 |
+| Base | 1,250 ft | **1,250 ft** | NH 1,250 / ME 900 |
+| Vertical | 1,100 ft | **1,100 ft** | NH 1,100 / ME **1,380** |
+| Acres | **600** | 600 | NH **140** / ME 600 |
+
+The elevation triple is the New Hampshire mountain's and has been copied onto the Maine record;
+the 600-acre figure is the Maine mountain's and has been copied onto the New Hampshire record.
+Both resorts publish figures that contradict OnTheSnow in exactly the way that swap predicts —
+Black Mountain of Maine calls itself Maine's fourth-tallest ski area at 1,380 ft, and Black
+Mountain NH says "over 140 acres" in two separate venues.
+
+**Impact on this repo.** `black-mountain-maine.json` uses no OnTheSnow figure at all. The
+existing `size.skiableAcres` dispute in `black-mountain-nh.json` was written before this was
+found and has been amended to name the cause. No other file was affected, because no other
+resort on the roster shares a name with another.
+
+**Lesson.** BATCHES.md warned about the two Black Mountains and told this run to keep the slugs
+distinct. It was the aggregator, not this project, that confused them — which is the more
+useful version of the lesson: **when two resorts share a name, diff their aggregator records
+against each other before using either.** A figure that is byte-identical across two different
+mountains is a copy, not a coincidence.
+
 ## Spot-check log
 
 Each batch re-fetches one recorded source URL from an **earlier** batch and confirms the
@@ -471,3 +536,4 @@ number still matches.
 | 6 | Sunday River `size.skiableAcres` = 884, `trailCount` = 139, `liftCount` = 19 against `sundayriver.com/the-mountain` | **PASS** — The Numbers block still reads 8 Peaks / 884 Skiable Acres / 139 Trails & Glades / 19 Lifts. |
 | 7 | Mount Snow `parks.count` = 8 and all eight park names against `mountsnow.com/.../terrain-parks.aspx` | **PASS** — Grommet, Inferno, Junkyard, Fool's Gold, Nitro, The Gulch, Prospector and The Farm all still named and described. |
 | 8 | Bromley elevations, snowfall and snowmaking-by-difficulty against `bromley.com/about` | **PASS** — base 1,950 / summit 3,284 / vertical 1,334 / snowfall 145" / 86% overall with 99-82-79 by grade / 47 trails on 178 of 300 acres, all unchanged. |
+| 9 | Jiminy Peak's seven stat-block figures against `jiminypeak.com/the-mountain/mountain-information/` | **PASS** — 2,380 ft summit / 1,150 ft vertical / 167.4 acres / 68" / 96% snowmaking / 45 trails / 9 lifts, all unchanged. |
