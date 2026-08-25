@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 34.
+**Roster target:** 45 resorts. **Current:** 38.
 
 ---
 
@@ -38,12 +38,12 @@ skipping a unit.
 | B | Validator: `advanceTypical` range check narrowed | `6874b1d` | — | Only flags advance rates ABOVE `windowTicketAdultHigh` now. Cleared 4 false-positive warnings. |
 | B | **Vail repair**: attitash, mount-sunapee, crotched rebuilt from Vail's own pages | `869bfc0` | 197 / 210 | Standing probe passed. See "Vail repair" below. |
 | B | Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount | `0fd6cf5` | 227 / 249 | No PeakRankings page for any of the four. See Batch 7 notes. |
+| B | Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway | `41f82aa` | 265 / 281 | Two confirmed-zero park sections. See Batch 8 notes. |
 
-**Part A complete. Batches 2 through 7 complete.**
+**Part A complete. Batches 2 through 8 complete.**
 
-**RESUME HERE.** The next unfinished unit is **Batch 8** — middlebury-snow-bowl,
-saskadena-six, black-mountain-nh, dartmouth-skiway. Then batches 9 and 10, then Parts C
-through G.
+**RESUME HERE.** The next unfinished unit is **Batch 9** — mt-abram, black-mountain-maine,
+camden-snow-bowl, big-rock. Then Batch 10, then Parts C through G.
 
 ### STANDING CHECK AT THE START OF EVERY SESSION — Vail: DONE, no longer needed
 
@@ -137,6 +137,55 @@ outcome, not a sign to try harder.
 
 **Vail note:** superseded — the three Vail files were repaired in `869bfc0`. See the Vail
 repair section above.
+
+### Batch 8 notes
+
+- **The Indy partner directory has a per-resort page, and it is much richer than the index
+  table.** `indyskipass.com/our-resorts/<slug>` carries elevations, a difficulty split, an
+  annual snowfall average and high, acreage, trail and lift counts, and the structured
+  Terrain Parks / Night Skiing yes-no fields, plus a No Blackout Dates marker. Slugs are not
+  predictable — Black Mountain NH is `black-mountain-ski-area` and Saskadena Six is
+  `saskadena-six-ski-area`; **grep `/our-resorts/` on the index page to find them**.
+- **Two confirmed-zero parks sections**, the first on the roster. Middlebury Snow Bowl and
+  Black Mountain NH both have `parks.count: 0` with an `absent` fieldNote, supported by Indy's
+  structured Terrain Parks field reading No *and* the resort's own site never mentioning a park
+  across any page. That is the two-line-of-evidence bar this project should hold for a
+  confirmed zero — one line alone is not enough.
+- **But do not trust the Indy structured fields blindly.** Indy's page for **Dartmouth Skiway**
+  gives a 1,680 ft summit and a 700 ft base, against the resort's own 1,943 ft summit and
+  OnTheSnow's 974 ft base. Two of its three elevation figures are simply wrong. Its Middlebury,
+  Saskadena and Black Mountain elevations, by contrast, reconciled exactly. Cross-check every
+  Indy figure against something before using it.
+- **Middlebury Snow Bowl publishes an inverted difficulty pyramid**: 6 Easiest, 8 More
+  Difficult, 14 Most Difficult of 28 trails — half the network at the top grade — plus 11
+  separately counted glades and 600+ acres of woods and backcountry outside the 110 acres of
+  trail. Snowmaking reaches six trails. This is the most natural-snow-dependent file on the
+  roster and its `moguls.presence` is set to `common` on that structural basis.
+- **Black Mountain NH publishes three different trail counts and two acreages.** 45 (prose, on
+  both its own site and its owner's Indy listing) / 61 (its own facts block) / 68 (OnTheSnow),
+  and 140 acres against OnTheSnow's 600. **This is the first time this repo has NOT followed
+  the stat-block-over-prose rule** — 45 is stored because the operator repeats it in a second
+  venue while 61 appears once, and because the pattern of both gaps looks like glades being
+  counted in or out. That reasoning is written into the file as a hypothesis, not a finding.
+- **Black Mountain NH is becoming skier-owned.** Indy Pass bought it in 2024, rebuilt the
+  snowmaking and lifts, and is converting it to a co-operative; the operating entity now signs
+  as *Black Mountain Community Cooperation*. In **July 2026** it also bought the 12-acre base
+  parcel including Whitney's Inn (guests since 1842), the Shovel Handle Pub and the snowmaking
+  water supply. Season passes sell out and are allocated by waitlist. **This is the most
+  time-sensitive file on the roster — re-check it before any publication.**
+- **Dartmouth Skiway contradicts itself in a single sentence**: "the base elevation is 968 feet,
+  and the summit elevation is 1,943 feet. The vertical drop is 968 feet." Used OnTheSnow's 974 ft
+  base, which reconciles with both other figures.
+- **A third cross-resort finding for Part C.** A Dartmouth Skiway season pass carries discounts
+  at **Whaleback, Ragged, Saskadena Six, Middlebury Snowbowl and Pats Peak** (blackouts may
+  apply). `ragged.json` and `pats-peak.json` do not mention it. Note Whaleback is not on this
+  guide's roster. Also: **Uphill New England**, a non-profit multi-mountain uphill pass covering
+  12+ resorts, is referenced by both Saskadena Six and Dartmouth Skiway and is not recorded
+  anywhere in the data.
+- **Coordinates** for all four came from the Overpass `aerialway` query rather than peak nodes,
+  anchored to the summit lift top: Middlebury −122 ft against published, Saskadena Six +148 ft,
+  Black Mountain NH −126 ft, Dartmouth (Holt's Ledge Double top) −102 ft. The lift geometry also
+  independently confirmed every lift count in the batch.
 
 ### Batch 7 notes
 
@@ -295,7 +344,7 @@ Roster of 37 remaining, from BATCHES.md:
 - [x] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched — `3b41bea` — 180 unknown / 189 confirmed
 - [x] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley — `c42e0c8` + `f150308` — 205 unknown / 214 confirmed
 - [x] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount — `0fd6cf5` — 227 unknown / 249 confirmed
-- [ ] Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway
+- [x] Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway — `41f82aa` — 265 unknown / 281 confirmed
 - [ ] Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock
 - [ ] Batch 10: butternut, bousquet, mohawk-mountain
 
@@ -421,3 +470,4 @@ number still matches.
 | 5 | Waterville Valley `size.snowmakingPercent` = 100 and `skiableAcres` = 265 against `waterville.com/mountain-stats` | **PASS** — page still reads "SNOWMAKING 265 Aces 100% Coverage", plus Skiable Acres 265, Longest Run 1.9 mi and Summit 4,004 ft, all matching the file. |
 | 6 | Sunday River `size.skiableAcres` = 884, `trailCount` = 139, `liftCount` = 19 against `sundayriver.com/the-mountain` | **PASS** — The Numbers block still reads 8 Peaks / 884 Skiable Acres / 139 Trails & Glades / 19 Lifts. |
 | 7 | Mount Snow `parks.count` = 8 and all eight park names against `mountsnow.com/.../terrain-parks.aspx` | **PASS** — Grommet, Inferno, Junkyard, Fool's Gold, Nitro, The Gulch, Prospector and The Farm all still named and described. |
+| 8 | Bromley elevations, snowfall and snowmaking-by-difficulty against `bromley.com/about` | **PASS** — base 1,950 / summit 3,284 / vertical 1,334 / snowfall 145" / 86% overall with 99-82-79 by grade / 47 trails on 178 of 300 acres, all unchanged. |

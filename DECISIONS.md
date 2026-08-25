@@ -111,3 +111,41 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
   but `parks.overview` notes it counts locations, which may not equal distinct designed parks.
 - **Berkshire East and Catamount ticket fields all null.** Both run demand-based flexible pricing
   and publish no window rate at all. Estimating one would be fabrication.
+
+### Batch 8
+
+- **Black Mountain NH `trailCount` = 45, NOT the 61 in its own facts block.** This departs from
+  the stat-block-over-prose rule that has held at Burke and Mount Sunapee. The reasons: the
+  operator publishes 45 in two venues (its own prose and its owner's Indy listing) while 61
+  appears once, and both this gap and the 140-vs-600 acreage gap look like glades being counted
+  in or out. The file states all three counts and offers the glades explanation as a hypothesis.
+- **Black Mountain NH terrain split from the Indy listing (33/34/33) over OnTheSnow's
+  four-tier 29/32/24/15.** Indy Pass owns the mountain, so its listing is the operator speaking,
+  and CLAUDE.md rule 3 prefers the operator.
+- **Black Mountain NH `nightSkiing` = false (absent).** The resort publishes 9am-4pm hours seven
+  days a week and Indy's structured field says No. The lit beginner area and the 1959-60 night
+  lights on Whitney's hill are named in the note so a later reader does not mistake them for a
+  night operation.
+- **Two `parks.count: 0` entries with `absent` notes** — Middlebury Snow Bowl and Black Mountain
+  NH. Bar applied: Indy's structured Terrain Parks field reading No, *plus* the resort's own site
+  never mentioning a park anywhere. One line of evidence alone would have left it null.
+- **Dartmouth Skiway `baseElevation` = 974 from OnTheSnow, rejecting the resort's 968.** The
+  resort's own sentence gives 968 for both the base and the vertical against a 1,943 ft summit,
+  which is arithmetically impossible; OnTheSnow's 974 reconciles to within a foot.
+- **Dartmouth Skiway `advanceTypical` = 35**, the non-peak online adult rate. At a mountain whose
+  main constituency is a college, the weekday rate is the typical one. All four rates are in
+  `pricing.notes` so the choice is auditable.
+- **Dartmouth Skiway's third tier stored in `percentAdvanced` though the resort calls it
+  expert.** The schema fills grades in order and cannot record a third tier as a fourth. The
+  resort's own wording is preserved in `difficultyNotes` and the fieldNote.
+- **Saskadena Six `liftCount` = 3, not the resort's 2.** OnTheSnow and Indy both say 3 and
+  OnTheSnow's breakdown (quad, double, surface) is internally consistent; the resort is counting
+  chairlifts only.
+- **Saskadena Six `seasonPassAdult` = 726.1, tax-inclusive.** The resort states that its pass
+  prices include 6% Vermont state tax. Stored as published and flagged in `pricing.notes`,
+  because every other season pass figure on this roster is pre-tax and a naive comparison
+  overstates Saskadena Six by about 6%.
+- **Middlebury `moguls.presence` = common** on structural grounds: snowmaking reaches six of 28
+  trails, so most of the mountain cannot be groomed to a manufactured standard.
+- **Middlebury snowfall 150 (resort) over Indy's 200**, recorded as a dispute. Unusual direction
+  — the resort claims less — which is why it is worth a dispute record rather than a note.
