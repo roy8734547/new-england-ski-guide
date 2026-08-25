@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 12.
+**Roster target:** 45 resorts. **Current:** 17.
 
 ---
 
@@ -28,9 +28,47 @@ skipping a unit.
 | **A** | SEASONAL.md | `60a9305` | — | |
 | B | State files: PROGRESS, DECISIONS, HANDOFF | `211e247` | — | |
 | B | Batch 2: stratton, mount-snow, burke, pico | `efb2fde` | 80 / 90 | Stratton + Burke sites unreadable; both fall back to OnTheSnow. Carinthia's 8 parks recorded in full. |
+| B | Epic/Ikon season pass price correction (5 earlier files) | `ef1167e` | — | Spot-check failure, see INTEGRITY FAILURES. |
+| B | Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat | `PENDING` | 111 / 126 | Two recorded research findings were wrong and were corrected against primary sources — see below. Also added `.claude/` to `.gitignore` at the user's request. |
 
-**Part A complete. Batch 2 complete.** Next unfinished unit: **Part B, Batch 3** —
-research is DONE and recorded below; only the file-writing remains. Do not re-fetch.
+**Part A complete. Batches 2 and 3 complete.** Next unfinished unit: **Part B, Batch 4** —
+attitash, sunday-river, sugarloaf, saddleback. No research gathered yet; start from scratch.
+
+### Batch 3 corrections to the pre-gathered research
+
+The research block preserved in `470c39c` was mostly accurate but contained two errors that
+would have shipped as confident fiction if written up unchecked. Both were caught by going
+to the resort's own site as CLAUDE.md rule 3 requires.
+
+1. **Waterville Valley night skiing.** The research said `false` + `absent`, sourced to Ski
+   NH's night-skiing list. Waterville's own site has a dedicated night skiing page
+   describing lift-served alpine night skiing on Exhibition, Lower White Caps and the Lower
+   Pasture, served by the Exhibition T-Bar and Lower Pasture Carpet. Recorded as `true`.
+2. **Bretton Woods night skiing.** The research said record `null` + `unpublished` because
+   Ski NH and a third-party guide contradicted each other. Bretton Woods' own alpine page
+   states flatly that it does **not** offer night skiing or riding, which settles it:
+   `false` + `absent` sourced to the resort.
+
+**Reusable finding, revised.** Ski NH's night-skiing list is *not* authoritative for
+absence. It was right about Cannon, Loon and Wildcat (each confirmed independently: none of
+the three has a night-skiing page in its own sitemap, and Loon's "Friday Night Extended" is
+a 5:40pm last chair on four spring dates, not lit night skiing) and wrong about Waterville
+Valley. **Batches 5 and 6 must check each resort's own site rather than inheriting this.**
+The `true` half of the finding stands — Cranmore, Crotched, Gunstock and Pats Peak are on
+the list and get `true`, but confirm from each resort's own page anyway.
+
+**Also newly established in Batch 3:** the **White Mountains SuperPass** — unlimited at
+Bretton Woods, Cannon, Cranmore and Waterville Valley, no published blackouts, $1,589 adult
+through 31 Oct 2026. Recorded as a `type: "other"` pass on all three Batch 3 members.
+**Cranmore needs the same entry in Batch 5.** Source: `waterville.com/wmsp-perks`.
+
+**Coordinates.** All five were taken from OSM peak nodes and validated by probing
+Open-Meteo's elevation API against the published summit; every one lands within 150 ft, in
+line with the twelve existing files, which are summit-anchored. Note for later: Wildcat's
+OSM node named "Wildcat Mountain" is Wildcat A (4,354 ft probe), not the ski area summit —
+the correct node is "Wildcat D" at 44.2494,-71.2236. **Stowe is an outlier worth revisiting
+in Part C:** its coordinate probes at 4,285 ft against a stored `summitElevation` of 3,625,
+i.e. it points at Mount Mansfield's true summit rather than the lift-served top.
 
 ---
 
@@ -39,7 +77,7 @@ research is DONE and recorded below; only the file-writing remains. Do not re-fe
 Roster of 37 remaining, from BATCHES.md:
 
 - [x] Batch 2: stratton, mount-snow, burke, pico — `efb2fde` — 80 unknown / 90 confirmed
-- [ ] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat
+- [x] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat — 111 unknown / 126 confirmed
 - [ ] Batch 4: attitash, sunday-river, sugarloaf, saddleback
 - [ ] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched
 - [ ] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley
@@ -53,63 +91,12 @@ SEASONAL.md (already written in Part A — verify and extend), Part G final repo
 
 ---
 
-## Batch 3 research — ALREADY GATHERED, do not re-fetch
+## Batch 3 research — CONSUMED
 
-Paused before writing the files. Everything below is verified; resume by writing the five
-resort JSONs from it, then `npm run check`, render check, spot-check, commit.
-
-**Reusable finding — NH night skiing.** Ski NH publishes the authoritative list at
-`https://www.skinh.com/activities/night-skiing`. Areas listed: Cranmore, Crotched, Granite
-Gorge, Gunstock, King Pine, McIntyre, Pats Peak. **Not** listed, so `nightSkiing: false` +
-`absent` sourced to that URL: Cannon, Loon, Waterville Valley, Wildcat, Attitash, Mount
-Sunapee, Ragged. This also settles batches 5 and 6 — Cranmore, Gunstock, Crotched and Pats
-Peak are night-skiing resorts and get `true`.
-
-**Cannon** (`cannonmt.com/mountain-stats`, JS-injects summit/vertical so those come from
-OnTheSnow): summit 4,080 / base 1,900 / vertical 2,180 (longest in NH); 287 skiable acres
-(OnTheSnow says 285); 98 trails and glades incl. Mittersill; 15/52/33 three-tier; 9 lifts
-(1 detachable quad, 2 fixed quad, 3 triple, 1 double, T-bar, handle tow); longest run 2.3 mi;
-snowfall 160" (resort) vs 143" (OnTheSnow); snowmaking 192 acres of 287 — no % published.
-Exposure north/northeast. State-owned, in Franconia Notch State Park. **Indy Pass, 2 days,
-no blackouts, Winter 26/27** — confirmed via `cannonmt.com/indy-pass` and indyskipass.com.
-
-**Loon** (OnTheSnow; `loonmtn.com/mountain-info` 404s): vertical 2,100 / base 950 / summit
-3,050; 403 acres; 73 trails; 14 lifts; longest 2.5 mi; snowfall 132"; snowmaking 322 ac;
-26/47/26/1. Boyne property, **Ikon**. Parks (`loonmtn.com/parks`): five named — Progression
-Parks (Little Sister trail), Little Sister Park, Springboard Park, Loon Mountain Park
-(advanced, ~1,000 vertical ft), Lil' Stash (Burton-developed, family). Third-party sources
-claim six parks and two halfpipes; the resort's own page names five and no pipe — use the
-resort, record the pipe as `unpublished`. Moguls: Flume (one side kept ungroomed, under the
-chair), Angel Street (black, marked with moguls on the trail map, by East Basin), Walking
-Boss (long/wide off North Peak Express).
-
-**Bretton Woods** (OnTheSnow only; every brettonwoods.com stats URL 404s): vertical 1,500 /
-base 1,600 / summit 3,100; 470 acres; 100 trails; 9 lifts (1 gondola, 4 HS quads, 1 quad,
-3 surface); longest 2 mi; snowfall 156"; snowmaking 344 ac; 25/40/25/10. Independent (Omni
-Mount Washington Resort), own pass only. 35 glades. 3 terrain parks, one modest, beginner-
-to-intermediate, boxes/rails/jumps/XS rollers. **CONFLICT to resolve: night skiing.** Ski NH
-does not list Bretton Woods, but a third-party guide says 5 trails and 2 lifts open on
-specific evenings. Record `nightSkiing: null` + `unpublished` noting the contradiction —
-do NOT mark it `absent`.
-
-**Waterville Valley** (`waterville.com/mountain-stats`, full primary block): Mount Tecumseh;
-total acres 500, skiable 265; longest 1.9 mi; summit 4,004; vertical 2,020 (base = 1,984);
-62 trails, 15/59/23/3; glades 5 named (Old T Trees, True Grit Trees, Sugar Shack Glades,
-Psycho Glades, Furgal's Forest, Psyched Out); lifts 10 (1 HS 6-pack bubble, 1 HS quad,
-2 triples, 2 doubles, 4 surface); snowmaking 265 acres / **100% coverage**. Parks: six —
-Exhibition (Large), Boarder Cross Course (Large), High Country (Medium), Stillness (Medium),
-Fun Run (Small), Pasture Mini (Small). **Indy Pass, 2 days, no blackouts.**
-
-**Wildcat** (`skiwildcat.com/.../mountain-info.aspx`, full primary block): highest 4,062 /
-base 1,950 / vertical 2,112; 225 acres; 5 lifts; 48 trails; snowfall "200+ inches";
-20/47/33 three-tier. Vail property, **Epic**. Polecat is 2.75 mi, the longest novice trail
-in NH. Wildcat Trail cut 1933, one of the first US ski racing trails. Gondola ran 1958-1999,
-dismantled 2013. Faces Mount Washington and the Presidentials.
-
-**Coordinates still to validate** (probe against published summits before writing):
-Cannon ~44.1567,-71.6989 (4,080) · Loon ~44.0367,-71.6217 (3,050) · Bretton Woods
-~44.2589,-71.4694 (3,100) · Waterville ~43.9739,-71.5461 (4,004) · Wildcat ~44.2622,-71.2050
-(4,062).
+The pre-gathered research block that lived here was written into the five resort files and
+is no longer needed; the files and their per-field `source` URLs are now the record. Two of
+its findings were wrong and were corrected against primary sources before writing — see
+"Batch 3 corrections to the pre-gathered research" above, which is the part worth keeping.
 
 ---
 
@@ -121,7 +108,37 @@ _None yet._
 
 ## INTEGRITY FAILURES
 
-_None yet._
+### 1. Stale Epic and Ikon season pass prices in five Batch 2 / Pre-A files (found 2026-08-25)
+
+**What was wrong.** `stratton` and `sugarbush` carried `seasonPassAdult: 1399`; `okemo`,
+`stowe` and `mount-snow` carried `1089`. Both figures were labelled "2026-27 season" with a
+`verifiedOn` of 2026-08-24, implying current prices. Both were out of date on the day they
+were written.
+
+**Why it happened, and it is worth understanding.** Both numbers were read from OnTheSnow's
+pass buyer's guides, and **both of those pages contradict themselves.** The Ikon guide's
+prose says the full pass "starts at $1,399" while its own spec box a few hundred words later
+says "Ikon Pass —starts at $1,449". The Epic guide's prose says the pass "went on sale in
+March for $1,089" while its "Cost:" line reads "The Epic Pass for 31+ is $1,119". Whoever
+wrote the Batch 2 files read the prose. The prose is the historical on-sale price; the spec
+line is the current one. Nothing was fabricated — the recorded number really is on the page
+— but the wrong half of a self-contradicting page was used, and no check caught it because
+re-reading the same sentence reproduces the same error.
+
+**Fixed.** Ikon corrected to **$1,449** against `ikonpass.com/en/shop-passes` — the operator's
+own shop page, which is what BATCHES.md step 3 asked for in the first place. Epic corrected
+to **$1,119**; `epicpass.com` was returning a site-down error all day, so the same OnTheSnow
+guide is still the source, but the current-cost line is used rather than the prose. Every
+one of the five files now carries a note in `pricing.notes` saying what it previously held
+and why it changed, so the correction is visible in the data and not just here.
+
+**Lesson for the remaining batches.** Prefer the pass operator's own shop page over any
+aggregator's buyer's guide for pass prices. Where an aggregator must be used, grep the raw
+page for every price-shaped string rather than trusting a single sentence — a page that
+quotes two different prices for the same product will happily hand you either one.
+
+**Still worth a look:** `killington` holds its own $1,529 Killington pass price and `pico`
+holds null, so neither was affected. No other file carries a mega-pass price.
 
 ---
 
@@ -133,3 +150,4 @@ number still matches.
 | Batch | Checked | Result |
 |---|---|---|
 | 2 | Okemo `size.snowmakingPercent` = 98 against `okemo.com/.../mountain-info.aspx` | **PASS** — source still reads "Snowmaking Coverage 98%" |
+| 3 | Stratton `pricing.seasonPassAdult` = 1399 against `onthesnow.com/news/ikon-pass-buyers-guide/` | **FAIL** — see INTEGRITY FAILURES 1. Widened to Epic as well; five files corrected. |

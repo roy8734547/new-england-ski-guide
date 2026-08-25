@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "bretton-woods",
+    "name": "Bretton Woods",
+    "aka": [
+      "Bretton Woods Ski Area"
+    ],
+    "state": "NH",
+    "region": "White Mountains",
+    "town": "Bretton Woods",
+    "lat": 44.2432,
+    "lon": -71.4712,
+    "website": "https://www.brettonwoods.com"
+  },
+  "size": {
+    "verticalDrop": 1500,
+    "skiableAcres": 464,
+    "trailCount": 63,
+    "liftCount": 9,
+    "longestRun": 2,
+    "summitElevation": 3100,
+    "baseElevation": 1600,
+    "annualSnowfallAvg": 156,
+    "snowmakingPercent": null,
+    "nightSkiing": false,
+    "source": "https://www.brettonwoods.com/experiences/alpine-ski/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "summitElevation": {
+        "source": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+        "verifiedOn": "2026-08-24"
+      },
+      "baseElevation": {
+        "source": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+        "verifiedOn": "2026-08-24"
+      },
+      "verticalDrop": {
+        "source": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+        "verifiedOn": "2026-08-24"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+        "verifiedOn": "2026-08-24"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+        "verifiedOn": "2026-08-24"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 25,
+    "percentIntermediate": 40,
+    "percentAdvanced": 25,
+    "percentExpert": 10,
+    "glades": true,
+    "difficultyNotes": "Read the trail count carefully before comparing it with anything else in this guide. Bretton Woods counts trails and glades separately: its own alpine page says 63 trails and 36 glades, and its snow report's denominators read 63 trails and 40 glades. OnTheSnow's widely-quoted 100 trails is those two numbers added together, and the 63 stored here is trails alone - so Bretton Woods will look smaller in the comparison table than a mountain that folds its glades into one number. The glade network is the point of the place: 36 to 40 named glades on 464 acres is a higher density than anywhere else in New Hampshire, most of it intermediate-friendly rather than the tight expert stuff the word usually implies. The resort's own two pages disagree on whether there are 36 or 40, which is recorded here rather than resolved.",
+    "source": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {
+      "glades": {
+        "source": "https://www.brettonwoods.com/experiences/alpine-ski/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "passes": [
+    {
+      "name": "No multi-mountain pass",
+      "type": "none",
+      "access": "Bretton Woods is independently operated by the Omni Mount Washington Resort and is not on Epic, Ikon or Indy. Access is through its own season pass products.",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.brettonwoods.com/experiences/alpine-ski/season-pass/"
+    },
+    {
+      "name": "White Mountains SuperPass",
+      "type": "other",
+      "access": "Unlimited at Bretton Woods, Cannon, Cranmore and Waterville Valley - 1,181 acres, 308 trails and 40 lifts across the four areas",
+      "blackouts": "None published",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.waterville.com/wmsp-perks"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "No adult ticket or season pass rate could be sourced as of the verified date. The 2026-27 season pass page says passes are on sale and that prices increase on 31 October 2026, and its FAQ says pricing typically rises as the season approaches, but it publishes no dollar figures at all; nothing here is estimated. The one citable price attached to Bretton Woods is the White Mountains SuperPass at $1,589 through 31 October 2026, and that is a four-mountain product recorded under passes rather than a Bretton Woods season pass.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.brettonwoods.com/experiences/alpine-ski/season-pass/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Bretton Woods is the most comfortable mountain in New Hampshire and the least intimidating large one, and whether that reads as praise depends entirely on what you want from a ski day. It sits across the valley from the Mount Washington Hotel with the Presidential Range filling the windscreen, which is the best view from any base lodge in the East and not a small thing over a season. The skiing is 464 acres of wide, immaculately groomed, mostly north-facing terrain served by nine lifts including a gondola and a high-speed quad, and it is aimed squarely at families and intermediates. What lifts it above being merely pleasant is the glade network: 36 to 40 of them, cut at a density nothing else in the state matches, and crucially cut wide enough that a competent intermediate can actually ski them. That is a genuinely unusual thing to offer. The weakness is honest and structural - 1,500 feet of vertical is the shortest drop of any major New Hampshire area, the advanced terrain does not last long enough to tire anyone out, and an expert skier will have seen everything by lunchtime on day one. Come for the trees, the grooming and the view; do not come expecting to be challenged.",
+    "snowQuality": "A largely north-facing footprint on the shoulder of Mount Rosebrook, which is the single most useful thing about the place in a bad winter - the surface holds together through freeze-thaw cycles that turn south-facing mountains to boilerplate. Around 156 inches falls in a typical season, decent rather than remarkable for the White Mountains, and the resort backs it with heavy snowmaking. What Bretton Woods does with that snow is the point: the grooming here is genuinely first-rate, with smooth corduroy on all the greens, most of the blues and some of the blacks, laid down consistently rather than on the trails that happen to be convenient. The glades run on natural cover and need a real base, so the mountain's best asset is also its least dependable one in a thin year.",
+    "crowds": "Handles crowds better than any comparable mountain in New Hampshire, which is partly good design and partly the absence of a Boston day-trip catchment - it is a genuine drive up Route 302 rather than a motorway exit like Loon. The chairs rarely queue in any meaningful way. The gondola is the one pinch point and will build to ten or fifteen minutes on a cold or busy day, which by regional standards barely registers as a line. The practical effect is that a Saturday at Bretton Woods feels like a midweek day somewhere else, and for families that is worth more than an extra few hundred feet of vertical.",
+    "difficulty": "The gentlest large mountain in the state and the terrain breakdown flatters it. Twenty-five percent advanced and ten percent expert sound substantial, but the sustained pitch is not there: the genuinely advanced glades and mogul runs are good while they last and they do not last very long, so there is no endurance terrain and nothing that punishes a mistake. Where Bretton Woods is unusually strong is the middle: intermediate glades off the Telegraph T-Bar and in the West Mountain zone let a skier who has never left a groomer learn trees at a pitch that forgives, and a few intermediate runs are left ungroomed at times so that people can meet moguls without committing to a black. As a place to become a better skier it is excellent. As a place to test one you already are, it is not.",
+    "keyTrails": [
+      {
+        "name": "Telegraph T-Bar glades",
+        "note": "The zone that best shows what Bretton Woods is for - intermediate-friendly tree skiing at a pitch that lets a first-time glade skier learn rather than survive."
+      },
+      {
+        "name": "West Mountain glades",
+        "note": "The other main glade concentration, including some single-black trees. The most interesting terrain on the hill and the reason to come back."
+      },
+      {
+        "name": "Bethlehem Express (BEQII)",
+        "note": "The newer high-speed quad, and the lift that made the west side of the mountain worth lapping rather than visiting once."
+      },
+      {
+        "name": "Rosebrook Summit gondola line",
+        "note": "The gondola is the only lift here that queues, and the terrain it serves is the mountain's main event. Ride it early."
+      }
+    ],
+    "tidbits": [
+      "The base area looks straight across at the Mount Washington Hotel and the Presidential Range - the best view from any lodge in the East.",
+      "Bretton Woods counts 63 trails and 36 to 40 glades separately; the 100-trail figure quoted elsewhere is those two added together.",
+      "The resort's own alpine page states flatly that it does not offer night skiing, contradicting several third-party guides.",
+      "Its own two pages disagree on whether there are 36 or 40 glades.",
+      "Bretton Woods is independently operated by the Omni Mount Washington Resort - no Epic, no Ikon, no Indy.",
+      "It calls itself New Hampshire's largest ski area, on 464 acres."
+    ],
+    "bestFor": [
+      "Learning to ski trees",
+      "Families and nervous intermediates",
+      "Consistently excellent grooming",
+      "Short lift lines on a Saturday"
+    ],
+    "watchOutFor": [
+      "Shortest vertical of the big NH areas",
+      "No sustained expert terrain",
+      "No season pass prices published",
+      "Glades need a real natural base"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.brettonwoods.com/snow-trail-report/",
+    "trailMap": "https://www.brettonwoods.com/plan-visit/maps/",
+    "webcams": "https://www.brettonwoods.com/live-cam-forecast/",
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Bretton Woods alpine ski page (acreage, trails, glades, lifts, night skiing statement)",
+        "url": "https://www.brettonwoods.com/experiences/alpine-ski/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bretton Woods snow and trail report (trail, glade and lift denominators)",
+        "url": "https://www.brettonwoods.com/snow-trail-report/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bretton Woods 2026-27 season pass page (on sale, no prices published)",
+        "url": "https://www.brettonwoods.com/experiences/alpine-ski/season-pass/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Bretton Woods overview (elevations, vertical, snowfall, longest run, difficulty split)",
+        "url": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "PeakRankings Bretton Woods review (grooming, glades, crowds, terrain park)",
+        "url": "https://www.peakrankings.com/content/bretton-woods",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "White Mountains SuperPass coverage and price",
+        "url": "https://www.waterville.com/wmsp-perks",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.brettonwoods.com/experiences/alpine-ski/",
+      "verifiedOn": "2026-08-25",
+      "note": "The resort's own alpine page states: the Bretton Woods Ski Area does NOT offer night skiing or riding. This overrides a third-party guide claiming five trails and two lifts on specific evenings, and Ski NH's night skiing list also omits Bretton Woods. The only evening product on the site is the Nordic Nights event, which is cross-country"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "OnTheSnow lists 344 snowmaking acres, but against its own 470-acre figure rather than the resort's 464, and neither source states a percentage. No figure is derived from two numbers that do not share a denominator"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is mentioned on the resort's site or in the reviews consulted"
+    },
+    "passes[0].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Not applicable in the usual sense - Bretton Woods is on no mega-pass - and its own season pass page publishes no blackout terms for the products it sells"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No dollar figures appear anywhere on the 2026-27 season pass page and no ticket pricing page could be found"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The 2026-27 season pass page says passes are on sale and prices rise 31 October 2026 but publishes no rates"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No ticket pricing page could be found on brettonwoods.com"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No ticket pricing page could be found on brettonwoods.com"
+    },
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "OnTheSnow lists three terrain parks and PeakRankings describes one modestly-sized park; the resort's own alpine page does not mention parks at all and there is no park page in its sitemap. Two independent sources give different counts and the resort gives none, so no count is stored"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.skiableAcres",
+      "resortClaim": 464,
+      "independentClaim": 470,
+      "independentSource": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+      "note": "A six-acre gap that changes nothing practical, recorded only because the same OnTheSnow entry is the source of this file's elevation and snowfall figures - so it is worth knowing that its acreage does not match the resort's own."
+    },
+    {
+      "field": "size.trailCount",
+      "resortClaim": 63,
+      "independentClaim": 100,
+      "independentSource": "https://www.onthesnow.com/new-hampshire/bretton-woods/ski-resort",
+      "note": "Not really a disagreement about the mountain, but about what counts as a trail. OnTheSnow's 100 is the resort's 63 trails plus its glades. The resort's own figure is stored, which makes Bretton Woods look smaller here than in guides that use the combined number."
+    }
+  ],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Bretton Woods grooms nearly everything, and grooms it well - smooth corduroy on all the greens, most of the blues and some of the blacks. Bumps here are a deliberate teaching decision rather than a by-product of neglect: a few intermediate runs are left ungroomed at times specifically so guests can meet mogul terrain at a pitch that does not punish them. Nothing on this mountain bumps up the way a Cannon or Wildcat black does.",
+    "namedRuns": [],
+    "quality": "Modest and short, and the resort is not pretending otherwise. The advanced glades and mogul runs that do exist are enjoyable while they last and they do not last long, which leaves the mountain without endurance terrain of any kind. What Bretton Woods is genuinely good at is the first bump run of someone's life: leaving intermediate trails ungroomed at a forgiving pitch is a much better introduction than being sent down a black at Cannon and told to figure it out. Judged as a bump mountain it is weak. Judged as a place to learn to ski bumps it is one of the better options in the state.",
+    "bestTiming": "Midwinter, once there is enough base for the ungroomed intermediate runs and the advanced glades to be open at all. There is no late-season spring bump scene here of the kind mountains with steeper sustained pitch develop.",
+    "bumpCulture": "None. No competitions, no scene, and no pretence of one - Bretton Woods sells grooming, glades and comfort, and the moguls it leaves are there for teaching.",
+    "source": "https://www.peakrankings.com/content/bretton-woods",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Bretton Woods runs a modest park programme and does not write about it - the alpine page does not mention parks and the sitemap has no park page. Third-party sources disagree on how many there are: OnTheSnow says three, PeakRankings describes one modestly-sized park. What both agree on is the character - small to medium features aimed at beginners and intermediates, the usual boxes, rails, jumps and extra-small rollers, with nothing built for advanced riders.",
+    "reputation": "Not a park destination and no serious rider treats it as one. The features are sized for people learning, which fits the mountain exactly; anyone in the White Mountains wanting a real park drives forty minutes to Loon. That is a reasonable division of labour rather than a failing, but a rider choosing between the two should not be in any doubt about it.",
+    "source": "https://www.peakrankings.com/content/bretton-woods",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

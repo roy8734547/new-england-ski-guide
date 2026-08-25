@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "loon",
+    "name": "Loon Mountain Resort",
+    "aka": [
+      "Loon",
+      "Loon Mountain"
+    ],
+    "state": "NH",
+    "region": "White Mountains",
+    "town": "Lincoln",
+    "lat": 44.0349,
+    "lon": -71.6207,
+    "website": "https://www.loonmtn.com"
+  },
+  "size": {
+    "verticalDrop": 2100,
+    "skiableAcres": 403,
+    "trailCount": 73,
+    "liftCount": 14,
+    "longestRun": 2.5,
+    "summitElevation": 3050,
+    "baseElevation": 950,
+    "annualSnowfallAvg": 132,
+    "snowmakingPercent": null,
+    "nightSkiing": false,
+    "source": "https://www.onthesnow.com/new-hampshire/loon-mountain/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 26,
+    "percentIntermediate": 47,
+    "percentAdvanced": 26,
+    "percentExpert": 1,
+    "glades": true,
+    "difficultyNotes": "A four-tier breakdown, and the 1% expert figure is not a rounding artefact - Loon has essentially one double-black trail, Ripsaw, and it is perennially groomed. That is the shape of the mountain in a single statistic: a very large intermediate resort with a park programme bolted on and almost no genuinely hard terrain. What difficulty exists is concentrated in the moguls and trees on the upper half of North Peak rather than on the marked steeps.",
+    "source": "https://www.onthesnow.com/new-hampshire/loon-mountain/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "percentExpert": {
+        "source": "https://www.peakrankings.com/content/loon",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "passes": [
+    {
+      "name": "Ikon Pass",
+      "type": "ikon",
+      "access": "Loon is an Ikon destination, but neither Alterra nor Loon publishes a per-tier day allocation for it. Loon's own Ikon page states that Ikon Pass holders must make a reservation before arriving.",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.loonmtn.com/season-passes/ikon-pass"
+    },
+    {
+      "name": "New England Pass",
+      "type": "other",
+      "access": "Boyne's own multi-mountain pass covering Loon, Sunday River and Sugarloaf, sold in Gold, Silver, Bronze and limited tiers with different access at each mountain",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.loonmtn.com/season-passes"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 1449,
+    "currency": "USD",
+    "notes": "2026-27 season. Loon publishes no day-ticket rates as of the verified date - its lift tickets page pushes buyers to an online cart without showing figures - so all three ticket fields are null rather than estimated. The season pass figure is the full adult Ikon Pass taken from Alterra's own shop page; the Ikon Base Pass is $1,019. Boyne also sells its own New England Pass covering Loon, Sunday River and Sugarloaf, but the adult Gold rate is not published on Loon's passes page (only a $659 youth Gold rate, a $869 LTD pass and a $499 college pass appear), so it is not recorded here.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.ikonpass.com/en/shop-passes",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Loon is the most convenient serious mountain in New Hampshire and it has been paying for that convenience for thirty years. Two hours from Boston, straight off I-93, with a gondola from the parking lot and 403 acres of mostly intermediate terrain spread across three peaks - it is the default weekend destination for a very large number of people, and on a Saturday you feel every one of them. The skiing is genuinely good and genuinely tame. Seventy-three trails, 2,100 feet of vertical, near-universal snowmaking, and exactly one double-black on the map, which the resort grooms anyway. What Loon does better than almost anyone in the East is terrain parks: five named parks with a real progression from Little Sister up to Loon Mountain Park's thousand vertical feet of advanced features, plus the Burton-built Lil' Stash in the trees. If you ride park, this is the New Hampshire mountain. If you want steeps, it is not, and no amount of North Peak mogul terrain changes that. The honest summary is that Loon is a very well-run intermediate resort with an excellent park department and a gondola queue that will test your patience even midweek.",
+    "snowQuality": "One hundred and thirty-two inches is a modest number for a mountain of this size, and Loon knows it - snowmaking covers 322 of its 403 acres, which is why the place opens early and holds a surface through thaws that leave less-invested mountains scratchy. The trade-off is what that surface is: machine-made snow groomed hard, pleasant to carve and unremarkable to ski. Natural cover comes and goes, and thin cover with rocks and dirt showing through is a recurring complaint on the glades and the North Peak trees well into a normal season. Loon is a reliable mountain rather than a good-snow one, and those are not the same virtue.",
+    "crowds": "The worst crowding problem of any mountain in this batch, and it is structural rather than occasional. Loon sits directly off I-93 with a Boston day-trip catchment, and the four-passenger gondola is the bottleneck everything funnels through - it builds the longest lines on the hill, and unusually for the Northeast it queues on off-peak weekdays too. Weekends are packed. The mitigation is knowing the mountain: the South Peak side and the North Peak Express draw a fraction of the gondola traffic, and skiing away from the base area for the middle of the day is the difference between a good Loon day and a frustrating one. Arrive early or accept the wait.",
+    "difficulty": "Easy, and unapologetically so. The four-tier breakdown gives 26% to advanced and 1% to expert, and that 1% is Ripsaw - the mountain's only double-black, and one Loon grooms anyway, so it skis as a fast steep cruiser rather than a challenge. What real difficulty exists is on the upper half of North Peak, where the mogul and tree runs are long enough to be properly taxing endurance terrain, and that is where strong skiers should spend the day. Angel Street and Walking Boss are the trails worth knowing. Everything else is a well-cut, well-groomed intermediate mountain, which is exactly what most of the people driving up from Boston want.",
+    "keyTrails": [
+      {
+        "name": "Walking Boss",
+        "note": "Long and wide off the North Peak Express, and the trail that gives Loon its only genuinely taxing sustained descent. Bumps up when it is left alone."
+      },
+      {
+        "name": "Angel Street",
+        "note": "A black over by East Basin, marked with moguls on the trail map itself - the rare case of a resort admitting in print which trail bumps."
+      },
+      {
+        "name": "Ripsaw",
+        "note": "Loon's lone double-black, and perennially groomed. Steep enough to build real speed on, but it is a fast cruiser rather than the expert run the rating implies."
+      },
+      {
+        "name": "Flume",
+        "note": "One side is left ungroomed under the chair, which makes it the most-watched bump line on the mountain and a reliable place to find shaped moguls."
+      },
+      {
+        "name": "Lil' Stash",
+        "note": "The Burton-developed park in the trees, built around wood features. The most distinctive thing Loon has, and family-friendly rather than intimidating."
+      }
+    ],
+    "tidbits": [
+      "Loon runs five named terrain parks, the deepest park programme in New Hampshire.",
+      "The mountain has exactly one double-black trail, Ripsaw, and grooms it.",
+      "Lil' Stash is one of a small number of Burton-developed tree parks built around wood features.",
+      "Ikon Pass holders must make a reservation before arriving - Loon is one of the destinations that enforces it.",
+      "The four-passenger gondola queues on weekdays, which is genuinely unusual in the Northeast.",
+      "Snowmaking covers 322 of Loon's 403 acres, among the most thorough coverage in the state."
+    ],
+    "bestFor": [
+      "Terrain park progression",
+      "A Boston day trip",
+      "Reliable early-season cover",
+      "Confident intermediates"
+    ],
+    "watchOutFor": [
+      "Gondola queues, even midweek",
+      "Almost no expert terrain",
+      "Thin natural cover in the trees",
+      "Weekends are genuinely packed"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.loonmtn.com/mountain-report",
+    "trailMap": "https://www.loonmtn.com/mountain-maps",
+    "webcams": "https://www.loonmtn.com/mountain-report",
+    "lodging": "https://www.loonmtn.com/lodging",
+    "twitter": "https://twitter.com/loonmtn",
+    "instagram": "https://www.instagram.com/loonmtnresort"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Loon Mountain overview (all size and terrain figures; loonmtn.com/mountain-info 404s)",
+        "url": "https://www.onthesnow.com/new-hampshire/loon-mountain/ski-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Loon Mountain terrain parks page (the five named parks)",
+        "url": "https://www.loonmtn.com/parks",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Loon Mountain report page (conditions and webcams)",
+        "url": "https://www.loonmtn.com/mountain-report",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Loon Mountain season passes (New England Pass products)",
+        "url": "https://www.loonmtn.com/season-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Loon Mountain Ikon Pass page (reservation requirement)",
+        "url": "https://www.loonmtn.com/season-passes/ikon-pass",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ikon Pass shop page (2026-27 adult pass price)",
+        "url": "https://www.ikonpass.com/en/shop-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "PeakRankings Loon review (crowds, park assessment, Ripsaw, North Peak bumps)",
+        "url": "https://www.peakrankings.com/content/loon",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ski NH published night skiing list",
+        "url": "https://www.skinh.com/activities/night-skiing",
+        "accessedOn": "2026-08-24"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.skinh.com/activities/night-skiing",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Ski NH's published list of areas operating at night. Loon's own Friday Night Extended events run the gondola two extra hours to a 5:40pm last chair on four spring dates, which is extended afternoon operation rather than lit night skiing"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "OnTheSnow lists 322 snowmaking acres against 403 skiable acres but no percentage, and loonmtn.com's own mountain-info page 404s. The derived figure is not stored because the resort never states it"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "PeakRankings describes an 18-foot superpipe at Loon when conditions allow, but the resort's own parks page names five parks and no pipe. Recorded as unpublished rather than true or false, on the same basis as Killington"
+    },
+    "passes[0].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither Alterra's destination page, Alterra's shop page, Loon's own Ikon page nor OnTheSnow's Ikon guide publishes a per-tier day allocation or blackout calendar for Loon"
+    },
+    "passes[1].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Boyne's New England Pass tiers carry different restrictions but the passes page does not set out blackout dates for the adult products"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Loon's lift tickets page routes buyers to an online cart without publishing rates"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Loon's lift tickets page routes buyers to an online cart without publishing rates"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Loon's lift tickets page routes buyers to an online cart without publishing rates"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "Loon grooms heavily - it is a mountain built on machine snow and corduroy, and it grooms its only double-black. The bumps that exist are deliberate exceptions: one side of Flume is left ungroomed under the chair, Angel Street carries a mogul symbol on the trail map, and the upper half of North Peak is where the resort concentrates its unmaintained terrain.",
+    "namedRuns": [
+      {
+        "name": "Walking Boss",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Long and wide off the North Peak Express, and the closest thing Loon has to endurance bump terrain. This is where strong skiers end up."
+      },
+      {
+        "name": "Flume",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "One side kept ungroomed directly under the chair. Being watched from the lift keeps the line honest, and the moguls stay well shaped."
+      },
+      {
+        "name": "Angel Street",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Over by East Basin and marked with moguls on the trail map itself, which is as close to a guarantee as a resort gives."
+      }
+    ],
+    "quality": "Better than a mountain this groomed has any right to offer, and concentrated in one place. The North Peak bump and tree runs are long enough to be properly taxing rather than a novelty - they are the only terrain at Loon that will tire a strong skier out. Flume is the reliable everyday lap because the ungroomed side sits under the chair and gets skied constantly, which keeps the troughs shaped. The limitation is snow: Loon's natural totals are modest and the bump lines depend on cover that is thin more often than not, so early season is frequently a write-off on the trees while the groomed runs are already in good shape.",
+    "bestTiming": "Midwinter after a natural storm, when North Peak has enough base for the trees and moguls to fill in. Loon's heavy grooming means the bump lines do not build steadily through the season the way they do at less-maintained mountains - they depend on what has fallen recently.",
+    "bumpCulture": "Loon's freestyle identity is in the parks, not the bumps. There is no organised mogul scene here; the culture is park riders and a very large intermediate weekend crowd, and the North Peak bumps are where the small number of strong skiers quietly go.",
+    "source": "https://www.peakrankings.com/content/loon",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 5,
+    "parks": [
+      {
+        "name": "Loon Mountain Park",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The flagship, running roughly a thousand vertical feet of advanced features. This is the park Loon's reputation rests on and the reason serious riders in New Hampshire come here rather than to Cannon or Waterville."
+      },
+      {
+        "name": "Springboard Park",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The step between the progression parks and the main event, and the one most riders spend the most time in."
+      },
+      {
+        "name": "Lil' Stash",
+        "size": "medium",
+        "level": "All abilities",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Burton-developed and built around wood features set in the trees. Family-oriented and the most distinctive park in the state - it rides like a natural terrain playground rather than a features course."
+      },
+      {
+        "name": "Little Sister Park",
+        "size": "small",
+        "level": "Beginner to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The small park on the Little Sister trail, sized for riders moving up out of the progression features."
+      },
+      {
+        "name": "Progression Parks",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The entry point, also on Little Sister. Loon's progression is unusually well laid out - the parks genuinely step up in sequence rather than being three unrelated zones of different sizes."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "The clearest park progression in New Hampshire: Progression Parks and Little Sister Park on the same trail for beginners, Springboard in the middle, Loon Mountain Park at the top for advanced riders, with Lil' Stash sitting outside the ladder as a tree park anyone can ride. Riders can move up one step at a time without ever facing a feature two sizes beyond them.",
+    "rebuildCadence": null,
+    "overview": "Five named parks, well sequenced, well maintained, and the single strongest argument for skiing Loon. Third-party guides variously claim six parks and two halfpipes; the resort's own parks page names five and no pipe, and that is what is recorded. Loon also builds unadvertised Top Secret parks that appear and disappear through the season.",
+    "reputation": "The best park mountain in New Hampshire and competitive with anything in the East outside Carinthia at Mount Snow. Riders rate the progression in particular - the gap between parks is small enough to actually climb. The knock is the same one that applies to the whole mountain: it is crowded, and a busy Saturday in Loon Mountain Park means waiting your turn at every feature.",
+    "source": "https://www.loonmtn.com/parks",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
+}

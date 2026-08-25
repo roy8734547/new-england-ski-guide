@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "waterville-valley",
+    "name": "Waterville Valley Resort",
+    "aka": [
+      "Waterville Valley",
+      "Waterville"
+    ],
+    "state": "NH",
+    "region": "White Mountains",
+    "town": "Waterville Valley",
+    "lat": 43.9665,
+    "lon": -71.5566,
+    "website": "https://www.waterville.com"
+  },
+  "size": {
+    "verticalDrop": 2020,
+    "skiableAcres": 265,
+    "trailCount": 62,
+    "liftCount": 10,
+    "longestRun": 1.9,
+    "summitElevation": 4004,
+    "baseElevation": 1984,
+    "annualSnowfallAvg": 126,
+    "snowmakingPercent": 100,
+    "nightSkiing": true,
+    "source": "https://www.waterville.com/mountain-stats",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {
+      "annualSnowfallAvg": {
+        "source": "https://www.onthesnow.com/new-hampshire/waterville-valley/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.waterville.com/night-skiing",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 15,
+    "percentIntermediate": 59,
+    "percentAdvanced": 23,
+    "percentExpert": 3,
+    "glades": true,
+    "difficultyNotes": "Fifty-nine percent intermediate is the highest proportion of any mountain in this guide, and it is an accurate description rather than a rating quirk - Waterville is a blue-square mountain with a serious freestyle department attached. Note that the resort publishes two acreage figures: 500 total acres and 265 skiable, and the 265 is what is stored because it is the number snowmaking coverage and trail counts are measured against. Five named glades are cut - Old T Trees, True Grit Trees, Sugar Shack Glades, Psycho Glades and Furgal's Forest - a modest network next to Bretton Woods but cut into steeper ground.",
+    "source": "https://www.waterville.com/mountain-stats",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "2 days, no blackouts, for the 2026-27 season",
+      "blackouts": "None. Waterville sells the Indy Base Pass at $369 and the Indy+ at $489 directly from its own passes page; Indy does not publish its exact 2026-27 blackout calendars until autumn 2026, but Waterville is a no-blackout resort on the pass.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.waterville.com/top-season-passes"
+    },
+    {
+      "name": "White Mountains SuperPass",
+      "type": "other",
+      "access": "Unlimited at Bretton Woods, Cannon, Cranmore and Waterville Valley - 1,181 acres, 308 trails and 40 lifts across the four areas, plus $15 off buddy tickets at each and free summer Snow's Mountain access at Waterville",
+      "blackouts": "None published",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.waterville.com/wmsp-perks"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 145,
+    "windowTicketAdultLow": 145,
+    "advanceTypical": null,
+    "seasonPassAdult": 1357,
+    "currency": "USD",
+    "notes": "The $145 is a 2025-26 rate, not a current one: as of the verified date the lift tickets page says 2026/27 tickets are coming soon and shows only last season's table. That table is a single flat adult (18+) full-day price with no window-versus-advance distinction, so both window fields carry it and advanceTypical is null - the same treatment Wachusett gets for the same reason. Teen/college/military was $135 and junior/senior $125. The season pass figure is the 2026-27 adult Plus Pass at $1,357 through 12 October 2026, which is the unrestricted product and includes Kids Ski Free; the restricted Value Pass is $933 and the young adult (18-29) pass $816. The four-mountain White Mountains SuperPass is $1,589 through 31 October 2026 and is recorded under passes.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.waterville.com/top-season-passes",
+    "fieldSources": {
+      "windowTicketAdultHigh": {
+        "source": "https://www.waterville.com/lift-tickets",
+        "verifiedOn": "2026-08-25"
+      },
+      "windowTicketAdultLow": {
+        "source": "https://www.waterville.com/lift-tickets",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Waterville Valley is where professional freestyle skiing was invented, and fifty-five years later that is still the most interesting thing about it - not as nostalgia, but because the mountain is visibly built around it. Tom Corcoran took Doug Pfeiffer's challenge and held the first professional freestyle competition on the True Grit trail in the winter of 1971; the FIS Freestyle World Cup came back in 2024 and 2025 to mark the fiftieth anniversary of a sport that started here. What that history bought is six terrain parks, a boardercross course, a mountain that grooms and shapes with real intent, and 100% snowmaking coverage across all 265 skiable acres - the only resort in this guide that can say that. The mountain itself is 2,020 feet of vertical off Mount Tecumseh, 62 trails, 59% of them blue, in a purpose-built valley resort that has no through road and therefore no passing trade. It is a self-contained, family-shaped place with an unusually deep competitive streak. What it is not is big or steep: 265 acres is modest for the vertical, the expert terrain is 3% and feels like it, and a strong skier will exhaust the genuinely hard runs quickly. Come for the parks, the bumps and the reliability.",
+    "snowQuality": "One hundred and twenty-six inches is a thin natural total by White Mountains standards - lower than Loon, well below Cannon - and Waterville's answer is the most complete snowmaking system in this guide: 265 acres of coverage against 265 skiable acres, which is to say all of it. That changes what the mountain is. It opens early, holds a surface through thaws that shut down natural-cover mountains, and the World Cup course is dependable enough that FIS will schedule on it. The cost is the usual one: a lot of what you ski here is manufactured and groomed hard, and the five named glades run on natural snow and are the first thing to be unskiable in a thin winter. Reliable rather than deep is the trade Waterville has made, deliberately.",
+    "crowds": "Better than Loon, worse than Bretton Woods, and shaped by geography. Waterville sits at the end of a dead-end road eleven miles off I-93, which filters out casual traffic in a way a motorway-exit mountain cannot, and the resort has enough lift capacity for its acreage - ten lifts including a high-speed six-pack with a bubble for 265 acres is generous. Weekends and school holidays fill the valley because the lodging base is right there and largely self-contained, so the crowd arrives all at once and skis the same hours. The parks concentrate people too; Exhibition on a Saturday afternoon has queues at the features rather than the lift.",
+    "difficulty": "A blue mountain with a black reputation it earned in 1971 and has not fully lived up to since. Fifty-nine percent intermediate, 23% advanced, 3% expert - the terrain breakdown is honest and the skiing matches it. True Grit remains the real thing, a sustained black that has been the mountain's proving ground for over fifty years and is where the moguls are, and the glades cut into the steeper ground on the upper mountain give a strong skier somewhere to go. Beyond that, the difficulty here lives in the freestyle terrain rather than the trail map: the jump line in Exhibition Park and the boardercross course will test a rider far more than any trail will test a skier. Anyone coming purely to ski steeps should go to Cannon instead.",
+    "keyTrails": [
+      {
+        "name": "True Grit",
+        "note": "The trail that hosted the first professional freestyle competition in 1971, and still the mountain's serious mogul run. Everything Waterville is known for started here."
+      },
+      {
+        "name": "Exhibition",
+        "note": "Does triple duty as the World Cup venue, the largest terrain park and the main night skiing trail. If one trail explains this mountain, it is this one."
+      },
+      {
+        "name": "Psycho Glades",
+        "note": "One of five named glades and the one that most rewards a strong skier, cut into the steeper upper ground on natural cover only."
+      },
+      {
+        "name": "Furgal's Forest",
+        "note": "Named glade terrain that stays quiet even on a full weekend, because the crowd here is concentrated in the parks and on the blues."
+      },
+      {
+        "name": "Lower Pasture",
+        "note": "One of the three trails lit for night skiing, served by the Lower Pasture Carpet, and where the Pasture Mini park sits. The beginners' end of the mountain, well thought out."
+      }
+    ],
+    "tidbits": [
+      "The first professional freestyle skiing competition was held here on True Grit in the winter of 1971.",
+      "The FIS Freestyle World Cup returned in 2024 and 2025, fifty years after the sport began at this mountain.",
+      "Snowmaking covers 265 acres out of 265 skiable acres - the only 100% figure in this guide.",
+      "Waterville runs six terrain parks, including a boardercross course, on a mountain of only 265 acres.",
+      "Night skiing runs on Exhibition, Lower White Caps and the Lower Pasture, served by the Exhibition T-Bar and Lower Pasture Carpet.",
+      "Waterville moved to the Indy Pass for 2026-27 with two days and no blackouts, and sells Indy passes directly.",
+      "The resort is at the end of a dead-end road with no through traffic, which is why it feels quieter than its lodging base suggests."
+    ],
+    "bestFor": [
+      "Terrain parks and freestyle",
+      "Guaranteed cover in a thin winter",
+      "Night skiing in the Whites",
+      "Learning to ski moguls properly"
+    ],
+    "watchOutFor": [
+      "Only 265 skiable acres",
+      "Thin natural snowfall",
+      "Very little expert terrain",
+      "Ticket prices a season out of date"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.waterville.com/snow-report-maps",
+    "trailMap": "https://www.waterville.com/maps",
+    "webcams": "https://www.waterville.com/cams",
+    "lodging": "https://www.waterville.com/lodging",
+    "twitter": "https://twitter.com/waterville",
+    "instagram": "https://www.instagram.com/waterville_valley"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Waterville Valley mountain statistics page (elevations, trails, lifts, glades, snowmaking)",
+        "url": "https://www.waterville.com/mountain-stats",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Waterville Valley terrain parks page (park names and feature counts)",
+        "url": "https://www.waterville.com/terrain-parks",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Waterville Valley night skiing page (trails, lifts and evening programmes)",
+        "url": "https://www.waterville.com/night-skiing",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Waterville Valley Freestyle Hall of Fame (1971 first professional competition, World Cup return)",
+        "url": "https://www.waterville.com/freestyle-hall-of-fame",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Waterville Valley season passes (2026-27 pass products and prices)",
+        "url": "https://www.waterville.com/top-season-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Waterville Valley lift tickets (2025-26 rate table; 2026-27 not yet published)",
+        "url": "https://www.waterville.com/lift-tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "White Mountains SuperPass coverage and price",
+        "url": "https://www.waterville.com/wmsp-perks",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Waterville Valley overview (snowfall; corroborates acreage, trails, lifts, vertical)",
+        "url": "https://www.onthesnow.com/new-hampshire/waterville-valley/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The lift tickets page shows a single flat full-day adult rate and does not distinguish window from advance pricing, so there is no advance figure to record"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No halfpipe is mentioned on the terrain parks page, which lists six parks and a boardercross course but no pipe"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "signature",
+    "policy": "Waterville grooms most of its blue terrain hard and deliberately leaves True Grit to bump, which is the arrangement the mountain has run in some form since 1971. The freestyle department shapes rather than merely neglects: this is a mountain that builds mogul lines because competitions are held on them, not one where bumps appear because nobody drove a cat over the trail.",
+    "namedRuns": [
+      {
+        "name": "True Grit",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "The trail the sport of professional freestyle started on, in the winter of 1971, and still the mountain's bump run. Full snowmaking coverage means it is in condition far earlier and far more consistently than a natural-cover bump line anywhere else in this guide."
+      }
+    ],
+    "quality": "The best bump skiing in this batch and arguably the most dependable in New Hampshire, for an unglamorous reason: 100% snowmaking. Bump lines elsewhere in the state need a natural base and get scoured, glazed or closed; True Grit gets built. The line is well shaped because the mountain has fifty-five years of institutional knowledge about shaping it and because World Cup freestyle events are scheduled here, which imposes a standard. The honest limitation is quantity - this is essentially one serious mogul trail rather than a network, so a bump specialist will lap the same run all day. Depth of quality, not breadth.",
+    "bestTiming": "Almost any time the mountain is open, which is the point - full snowmaking coverage means True Grit does not wait for a natural base the way Cannon's or Wildcat's bump lines do. Late season is still best, once the surface softens and the troughs deepen, and competition weeks are worth avoiding or seeking out depending on whether you want to ski or watch.",
+    "bumpCulture": "The deepest freestyle culture of any mountain in this guide and it is not close. The first professional competition in the sport was held here in 1971, the Chevy Tour ran through the seventies, the FIS Freestyle World Cup returned in 2024 and 2025, and the resort maintains a Freestyle Hall of Fame. A mountain with a mogul scene this old attracts coaching, programmes and a junior pipeline, which is why the local standard on True Grit is high.",
+    "source": "https://www.waterville.com/freestyle-hall-of-fame",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 6,
+    "parks": [
+      {
+        "name": "Exhibition",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": 3,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": 6,
+        "note": "The flagship, listing six large rails and pills, one medium jump and two large jumps. It is also the World Cup venue and the main night skiing trail, which is a lot of duty for one piece of hill."
+      },
+      {
+        "name": "Boarder Cross Course",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A dedicated boardercross course, which very few mountains of this size maintain. The terrain parks page lists it as open without giving feature detail."
+      },
+      {
+        "name": "High Country",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": 2,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": 9,
+        "note": "Nine rails and boxes and two medium jumps. The step between the small parks and Exhibition, and where most riders spend the bulk of a day."
+      },
+      {
+        "name": "Stillness",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Listed as one of the six parks on the mountain statistics page, but the terrain parks page does not break out its features, so nothing is recorded beyond its existence and size."
+      },
+      {
+        "name": "Fun Run",
+        "size": "small",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "On Valley Run and described by the resort as kid and beginner friendly. No feature count published."
+      },
+      {
+        "name": "The Pasture Mini",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": 1,
+        "note": "Two boxes, one rail and easy jumps, sitting on the Lower Pasture beside the beginner carpet. The genuine entry point, and well placed - a first-timer can reach it without riding a chairlift."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": true,
+    "progression": "Six parks on 265 acres is a remarkable density and they are properly laid out: Pasture Mini beside the beginner carpet, Fun Run on Valley Run, High Country and Stillness in the middle, Exhibition at the top, with the boardercross course sitting outside the ladder. A rider can climb the whole progression at one mountain without ever facing a feature two sizes too big, which is the same thing Loon does well and almost nowhere else in New Hampshire manages.",
+    "rebuildCadence": null,
+    "overview": "The deepest park programme in this guide relative to mountain size, and it comes from the same place as everything else here - Waterville invented competitive freestyle and never stopped investing in it. Exhibition doubles as the FIS World Cup venue and as the lit night skiing trail, so the biggest features are also the ones you can ride after dark.",
+    "reputation": "Taken seriously by riders and by the sport itself, which is the higher compliment. Six parks, a boardercross course, a World Cup on the hill in 2024 and 2025 and a junior freestyle pipeline give Waterville credibility that a mountain of 265 acres would not otherwise have. Loon has more terrain overall and a bigger advanced park; Waterville has the better progression and vastly better snowmaking underneath it, which in a thin New Hampshire winter is the difference between a park that is open and one that is closed.",
+    "source": "https://www.waterville.com/terrain-parks",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "count": {
+        "source": "https://www.waterville.com/mountain-stats",
+        "verifiedOn": "2026-08-24"
+      }
+    }
+  }
+}

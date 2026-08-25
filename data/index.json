@@ -1,8 +1,55 @@
 {
-  "generatedAt": "2026-08-25T01:44:49.692Z",
+  "generatedAt": "2026-08-25T13:24:20.010Z",
   "schemaVersion": 3,
-  "count": 12,
+  "count": 17,
   "resorts": [
+    {
+      "slug": "bretton-woods",
+      "name": "Bretton Woods",
+      "state": "NH",
+      "region": "White Mountains",
+      "town": "Bretton Woods",
+      "lat": 44.2432,
+      "lon": -71.4712,
+      "website": "https://www.brettonwoods.com",
+      "verticalDrop": 1500,
+      "skiableAcres": 464,
+      "trailCount": 63,
+      "liftCount": 9,
+      "annualSnowfallAvg": 156,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "none",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "No multi-mountain pass",
+          "type": "none",
+          "access": "Bretton Woods is independently operated by the Omni Mount Washington Resort and is not on Epic, Ikon or Indy. Access is through its own season pass products."
+        },
+        {
+          "name": "White Mountains SuperPass",
+          "type": "other",
+          "access": "Unlimited at Bretton Woods, Cannon, Cranmore and Waterville Valley - 1,181 acres, 308 trails and 40 lifts across the four areas"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "mogulPresence": "occasional",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Learning to ski trees",
+        "Families and nervous intermediates",
+        "Consistently excellent grooming",
+        "Short lift lines on a Saturday"
+      ],
+      "officialSnowReport": "https://www.brettonwoods.com/snow-trail-report/",
+      "verifiedOn": "2026-08-25"
+    },
     {
       "slug": "burke",
       "name": "Burke Mountain",
@@ -43,6 +90,53 @@
       ],
       "officialSnowReport": "https://www.skiburke.com/mountain/conditions",
       "verifiedOn": "2026-08-24"
+    },
+    {
+      "slug": "cannon",
+      "name": "Cannon Mountain",
+      "state": "NH",
+      "region": "White Mountains",
+      "town": "Franconia",
+      "lat": 44.1567,
+      "lon": -71.6986,
+      "website": "https://www.cannonmt.com",
+      "verticalDrop": 2180,
+      "skiableAcres": 287,
+      "trailCount": 98,
+      "liftCount": 9,
+      "annualSnowfallAvg": 160,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "2 days, no blackouts, for the 2026-27 season"
+        },
+        {
+          "name": "White Mountains SuperPass",
+          "type": "other",
+          "access": "Unlimited at Bretton Woods, Cannon, Cranmore and Waterville Valley - 1,181 acres, 308 trails and 40 lifts across the four areas"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 899,
+      "mogulPresence": "common",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Storm-chasing on a powder day",
+        "The longest vertical in NH",
+        "Glades on natural cover",
+        "NH residents buying a pass"
+      ],
+      "officialSnowReport": "https://www.cannonmt.com/mountain-report",
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "jay-peak",
@@ -132,6 +226,53 @@
       "verifiedOn": "2026-08-20"
     },
     {
+      "slug": "loon",
+      "name": "Loon Mountain Resort",
+      "state": "NH",
+      "region": "White Mountains",
+      "town": "Lincoln",
+      "lat": 44.0349,
+      "lon": -71.6207,
+      "website": "https://www.loonmtn.com",
+      "verticalDrop": 2100,
+      "skiableAcres": 403,
+      "trailCount": 73,
+      "liftCount": 14,
+      "annualSnowfallAvg": 132,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "ikon",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Ikon Pass",
+          "type": "ikon",
+          "access": "Loon is an Ikon destination, but neither Alterra nor Loon publishes a per-tier day allocation for it. Loon's own Ikon page states that Ikon Pass holders must make a reservation before arriving."
+        },
+        {
+          "name": "New England Pass",
+          "type": "other",
+          "access": "Boyne's own multi-mountain pass covering Loon, Sunday River and Sugarloaf, sold in Gold, Silver, Bronze and limited tiers with different access at each mountain"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1449,
+      "mogulPresence": "common",
+      "parkCount": 5,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Terrain park progression",
+        "A Boston day trip",
+        "Reliable early-season cover",
+        "Confident intermediates"
+      ],
+      "officialSnowReport": "https://www.loonmtn.com/mountain-report",
+      "verifiedOn": "2026-08-25"
+    },
+    {
       "slug": "mad-river-glen",
       "name": "Mad River Glen",
       "state": "VT",
@@ -205,7 +346,7 @@
         }
       ],
       "advanceTypical": null,
-      "seasonPassAdult": 1089,
+      "seasonPassAdult": 1119,
       "mogulPresence": "common",
       "parkCount": 8,
       "hasPark": true,
@@ -217,7 +358,7 @@
         "Reliable manufactured snow"
       ],
       "officialSnowReport": "https://www.mountsnow.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
-      "verifiedOn": "2026-08-24"
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "okemo",
@@ -246,7 +387,7 @@
         }
       ],
       "advanceTypical": null,
-      "seasonPassAdult": 1089,
+      "seasonPassAdult": 1119,
       "mogulPresence": "rare",
       "parkCount": 5,
       "hasPark": true,
@@ -258,7 +399,7 @@
         "Reliable snow in a bad winter"
       ],
       "officialSnowReport": "https://www.okemo.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
-      "verifiedOn": "2026-08-22"
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "pico",
@@ -374,7 +515,7 @@
         }
       ],
       "advanceTypical": null,
-      "seasonPassAdult": 1089,
+      "seasonPassAdult": 1119,
       "mogulPresence": "common",
       "parkCount": 3,
       "hasPark": true,
@@ -386,7 +527,7 @@
         "Skiers who want a real ski town"
       ],
       "officialSnowReport": "https://www.stowe.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
-      "verifiedOn": "2026-08-22"
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "stratton",
@@ -415,7 +556,7 @@
         }
       ],
       "advanceTypical": null,
-      "seasonPassAdult": 1399,
+      "seasonPassAdult": 1449,
       "mogulPresence": "occasional",
       "parkCount": null,
       "hasPark": null,
@@ -427,7 +568,7 @@
         "Ski-in ski-out village"
       ],
       "officialSnowReport": "https://www.stratton.com/the-mountain/conditions",
-      "verifiedOn": "2026-08-24"
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "sugarbush",
@@ -456,7 +597,7 @@
         }
       ],
       "advanceTypical": null,
-      "seasonPassAdult": 1399,
+      "seasonPassAdult": 1449,
       "mogulPresence": "common",
       "parkCount": 4,
       "hasPark": true,
@@ -468,7 +609,7 @@
         "Skiers who plan around conditions"
       ],
       "officialSnowReport": "https://www.sugarbush.com/mountain/conditions",
-      "verifiedOn": "2026-08-22"
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "wachusett",
@@ -510,6 +651,99 @@
       ],
       "officialSnowReport": "https://www.wachusett.com/the-mountain/your-visit/snow-report/",
       "verifiedOn": "2026-08-20"
+    },
+    {
+      "slug": "waterville-valley",
+      "name": "Waterville Valley Resort",
+      "state": "NH",
+      "region": "White Mountains",
+      "town": "Waterville Valley",
+      "lat": 43.9665,
+      "lon": -71.5566,
+      "website": "https://www.waterville.com",
+      "verticalDrop": 2020,
+      "skiableAcres": 265,
+      "trailCount": 62,
+      "liftCount": 10,
+      "annualSnowfallAvg": 126,
+      "snowmakingPercent": 100,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "2 days, no blackouts, for the 2026-27 season"
+        },
+        {
+          "name": "White Mountains SuperPass",
+          "type": "other",
+          "access": "Unlimited at Bretton Woods, Cannon, Cranmore and Waterville Valley - 1,181 acres, 308 trails and 40 lifts across the four areas, plus $15 off buddy tickets at each and free summer Snow's Mountain access at Waterville"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1357,
+      "mogulPresence": "signature",
+      "parkCount": 6,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Terrain parks and freestyle",
+        "Guaranteed cover in a thin winter",
+        "Night skiing in the Whites",
+        "Learning to ski moguls properly"
+      ],
+      "officialSnowReport": "https://www.waterville.com/snow-report-maps",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "wildcat",
+      "name": "Wildcat Mountain",
+      "state": "NH",
+      "region": "Mount Washington Valley",
+      "town": "Gorham",
+      "lat": 44.2494,
+      "lon": -71.2236,
+      "website": "https://www.skiwildcat.com",
+      "verticalDrop": 2112,
+      "skiableAcres": 225,
+      "trailCount": 48,
+      "liftCount": 5,
+      "annualSnowfallAvg": 200,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "epic"
+      ],
+      "passes": [
+        {
+          "name": "Epic Pass",
+          "type": "epic",
+          "access": "Unlimited"
+        },
+        {
+          "name": "Epic Local Pass",
+          "type": "epic",
+          "access": "Unlimited - Wildcat is on the Epic Local unlimited list alongside Mount Snow, Mount Sunapee and Okemo, unlike Stowe"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1119,
+      "mogulPresence": "signature",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Ungroomed black-diamond skiing",
+        "The best summit view in the East",
+        "Epic Local passholders",
+        "Beginners who want real vertical"
+      ],
+      "officialSnowReport": "https://www.skiwildcat.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-25"
     }
   ]
 }

@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "wildcat",
+    "name": "Wildcat Mountain",
+    "aka": [
+      "Wildcat"
+    ],
+    "state": "NH",
+    "region": "Mount Washington Valley",
+    "town": "Gorham",
+    "lat": 44.2494,
+    "lon": -71.2236,
+    "website": "https://www.skiwildcat.com"
+  },
+  "size": {
+    "verticalDrop": 2112,
+    "skiableAcres": 225,
+    "trailCount": 48,
+    "liftCount": 5,
+    "longestRun": 2.75,
+    "summitElevation": 4062,
+    "baseElevation": 1950,
+    "annualSnowfallAvg": 200,
+    "snowmakingPercent": null,
+    "nightSkiing": false,
+    "source": "https://www.skiwildcat.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 20,
+    "percentIntermediate": 47,
+    "percentAdvanced": 33,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "Wildcat rates on three tiers, so percentExpert is null and the top third sits in percentAdvanced. Two hundred and twenty-five acres over 2,112 feet of vertical is the tightest ratio of any large mountain in this guide, and it describes the place well: Wildcat is narrow, steep and long rather than broad. The 33% figure understates how hard it skis, because the resort rarely grooms its blacks - the difficulty here is as much about surface as pitch. Several advanced runs and all the glades have no snowmaking, which is why conditions stay inconsistent until mid-January in a normal year.",
+    "source": "https://www.skiwildcat.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Epic Pass",
+      "type": "epic",
+      "access": "Unlimited",
+      "blackouts": "None",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/"
+    },
+    {
+      "name": "Epic Local Pass",
+      "type": "epic",
+      "access": "Unlimited - Wildcat is on the Epic Local unlimited list alongside Mount Snow, Mount Sunapee and Okemo, unlike Stowe",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 1119,
+    "currency": "USD",
+    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null rather than estimated. The season pass figure is the full adult (31+) Epic Pass; Vail does not sell an unrestricted Wildcat-only pass. Wildcat is one of the resorts that carries unlimited access on the cheaper Epic Local Pass too, at $829 for 31+, which makes it a materially better deal than Stowe for a New England passholder. epicpass.com was returning a site-down error on the verified date, so the figures come from OnTheSnow's Epic buyer's guide; note that guide quotes $1,089 in its prose, which was the March 2026 on-sale price, while its current cost line reads $1,119.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Wildcat is the most spectacular ski area in New England and one of the most frustrating, and both facts come from the same source: it is built on an exposed ridge directly across Pinkham Notch from Mount Washington. The view from the summit is of Tuckerman Ravine and the Presidential Range at close range, unobstructed, and there is nothing else like it in the East. The skiing underneath it is proper old-school New England - 2,112 feet of vertical down narrow, twisting, largely ungroomed trails cut into 225 acres, with the Wildcat Trail dating to 1933 as one of the first ski racing trails cut in the United States. What you get is a mountain that rarely grooms its blacks, has no snowmaking on the glades and several advanced runs, and asks you to actually ski. What you also get is wind. The Wildcat Express closes multiple times a week in a normal winter, and when it does the mountain shrinks to the mid-mountain triples. Vail owns it and runs it on the Epic Pass, unlimited on both the full pass and the Local, which makes it excellent value for anyone already committed. Just do not plan a trip around it - plan a drive.",
+    "snowQuality": "Just under 200 inches a year, the highest natural total of any mountain in this batch, and Wildcat needs every inch because the snowmaking does not reach the terrain that matters. Several advanced trails and all of the glades have no coverage at all, which means conditions here stay genuinely inconsistent until mid-January in a typical season while Waterville and Loon have been reliable since December. The compensations are altitude and aspect - a 4,062-foot summit facing north across Pinkham Notch holds cold well. The complication is again the wind: this is one of the most exposed lift-served summits in the East, sitting opposite the mountain that holds the record for surface wind speed, and scouring is routine. Deep and unreliable, rather than shallow and dependable.",
+    "crowds": "Modest by the standards of a Vail-owned Epic mountain, mostly because Wildcat is a long way from anywhere and has no lodging of its own - the Mount Washington Valley beds are down in North Conway, half an hour away, and most of those skiers go to Attitash or Cranmore. The Wildcat Express builds ten to fifteen minute waits at peak times and the mid-mountain triples run similar or slightly shorter. The important caveat is that Wildcat's crowding is weather-driven rather than calendar-driven: when the summit quad shuts for wind, the entire mountain compresses onto the triples, and a quiet Tuesday becomes a queue. Lift status matters more here than the day of the week.",
+    "difficulty": "One of the genuinely demanding mountains in New England, and the reason is grooming policy as much as pitch. Wildcat rarely grooms its black-diamond runs, so the advanced terrain is bumped and natural for most of the season, and the trails hold a consistent pitch long enough to be a real endurance test rather than a short steep pitch with a runout. The 33% top-tier figure is honest but incomplete: a black here is a harder proposition than a black at Bretton Woods by a wide margin. The other side of the mountain is worth knowing - Polecat is 2.75 miles, the longest novice trail in New Hampshire, which means a beginner can ski the full 2,112 feet of vertical from the summit and take in the Mount Washington view doing it. Very few mountains offer that at both ends.",
+    "keyTrails": [
+      {
+        "name": "Polecat",
+        "note": "Two and three-quarter miles from the summit, the longest novice trail in New Hampshire. It lets a first-year skier take the full vertical and the Presidential Range view, which is a rare thing to be able to offer."
+      },
+      {
+        "name": "Wildcat Trail",
+        "note": "Cut in 1933 as one of the first ski racing trails in the United States, and still on the map. Narrow, twisting and old-school in exactly the way the phrase is meant to imply."
+      },
+      {
+        "name": "Lynx",
+        "note": "The long fall-line descent under the Wildcat Express, and the trail most riders on the lift are watching. Ungroomed for most of the season, like most of the blacks here."
+      },
+      {
+        "name": "Wildcat Express line",
+        "note": "Not a trail so much as the thing your day depends on. When wind shuts this quad - which happens multiple times a week in a normal winter - the mountain becomes a different and much smaller place."
+      }
+    ],
+    "tidbits": [
+      "The summit looks straight across Pinkham Notch at Tuckerman Ravine and Mount Washington, the best view from any lift in the East.",
+      "The Wildcat Trail was cut in 1933, among the first ski racing trails in the United States.",
+      "Polecat is 2.75 miles long and the longest novice trail in New Hampshire.",
+      "A gondola served the mountain from 1958 to 1999 and was finally dismantled in 2013.",
+      "Wildcat has unlimited access on the Epic Local Pass as well as the full Epic Pass, which Stowe does not.",
+      "Only 225 skiable acres carry 2,112 feet of vertical - the narrowest big mountain in this guide."
+    ],
+    "bestFor": [
+      "Ungroomed black-diamond skiing",
+      "The best summit view in the East",
+      "Epic Local passholders",
+      "Beginners who want real vertical"
+    ],
+    "watchOutFor": [
+      "Wind closes the summit quad often",
+      "No snowmaking on the glades",
+      "Thin conditions until mid-January",
+      "No lodging at the mountain"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.skiwildcat.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+    "trailMap": "https://www.skiwildcat.com/the-mountain/about-the-mountain/trail-map.aspx",
+    "webcams": "https://www.skiwildcat.com/the-mountain/mountain-conditions/mountain-cams.aspx",
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Wildcat mountain information page (elevations, acreage, trails, lifts, snowfall, difficulty split)",
+        "url": "https://www.skiwildcat.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "PeakRankings Wildcat review (grooming policy, wind closures, crowds, snowmaking gaps)",
+        "url": "https://www.peakrankings.com/content/wildcat",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow 2026/27 Epic Pass buyer's guide (pass prices and Wildcat access tiers)",
+        "url": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ski NH published night skiing list",
+        "url": "https://www.skinh.com/activities/night-skiing",
+        "accessedOn": "2026-08-24"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.skinh.com/activities/night-skiing",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Ski NH's published list of areas operating at night, and skiwildcat.com has no night skiing page in its sitemap"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Wildcat publishes no snowmaking figure - neither a percentage nor an acreage. What is documented is where it is absent: several advanced runs and all glades have no coverage"
+    },
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The mountain information page does not list a terrain park, skiwildcat.com has no park page in its sitemap, and the PeakRankings review does not mention one. Absence of mention is not a source for absence, so this is null rather than 0"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is listed anywhere on the resort's site"
+    },
+    "passes[1].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The Epic buyer's guide places Wildcat on the Epic Local unlimited list but does not publish per-resort blackout dates for that tier, and epicpass.com was returning a site-down error on the checked date"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Vail prices dynamically by date and publishes no representative advance rate"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Vail prices dynamically by date and publishes no window rate"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Vail prices dynamically by date and publishes no window rate"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Wildcat rates on three tiers, so no fourth-tier figure exists to source"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "signature",
+    "policy": "Wildcat rarely grooms its black-diamond runs. That is the whole policy and it is the defining decision the mountain makes - the blacks are left to bump up and stay bumped for most of the season, which is why Wildcat has a reputation among New England skiers out of all proportion to its 225 acres. Greens and blues are groomed conventionally, so the split between maintained and unmaintained terrain here is unusually clean.",
+    "namedRuns": [
+      {
+        "name": "Lynx",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "The long fall-line run under the Wildcat Express, ungroomed for most of the season and directly observed from the lift, which keeps the line honest and well shaped."
+      },
+      {
+        "name": "Wildcat Trail",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "The 1933 racing trail. Narrow and twisting rather than wide-open, so the bumps form in a corridor and the line demands precision more than power."
+      }
+    ],
+    "quality": "Among the best in New England, with a large caveat attached. A resort that does not groom its blacks produces sustained, properly formed mogul fields rather than the occasional bumped-up section most mountains offer, and Wildcat's trails hold their pitch long enough that a run is a genuine endurance test. Add nearly 200 inches of natural snow and the raw ingredients are as good as anywhere in the region. The caveat is access and surface: no snowmaking on the advanced terrain means the bump lines are unreliable before mid-January, and the wind that shuts the Wildcat Express also scours and glazes what has formed. When Wildcat is on, it is a bump skier's mountain. It is off more often than its rivals.",
+    "bestTiming": "Mid-January onwards, once the natural base is deep enough for the unmaintained blacks to be properly open, and ideally two or three days after a storm with light winds in the forecast. Spring is the reliable window - the troughs soften, the wind eases, and the terrain that spent January glazed becomes the best skiing of the year.",
+    "bumpCulture": "No organised competition scene, but a strong and unusually loyal skier culture - Wildcat's regulars are people who choose it specifically because nothing is groomed, and the mountain's identity among New England skiers is built on that. It is the anti-Bretton Woods, forty minutes away.",
+    "source": "https://www.peakrankings.com/content/wildcat",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "No terrain park is named on Wildcat's mountain information page, there is no park page in the site's sitemap, and the third-party review consulted does not mention one either. Recorded as unpublished rather than zero on the same basis as Cannon - a mountain not writing about a park is not proof it has none.",
+    "reputation": "Nothing about Wildcat suggests park riding is part of what it does. The mountain sells ungroomed black diamonds, 1930s trail architecture and the view of Mount Washington, and a rider looking for features in this corner of New Hampshire would go to Attitash or Cranmore in the valley below.",
+    "source": "https://www.skiwildcat.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}
