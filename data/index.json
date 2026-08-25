@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-25T14:18:31.342Z",
+  "generatedAt": "2026-08-25T17:45:05.790Z",
   "schemaVersion": 3,
-  "count": 29,
+  "count": 30,
   "resorts": [
     {
       "slug": "attitash",
@@ -47,6 +47,47 @@
         "A cold snap in midwinter"
       ],
       "officialSnowReport": "https://www.attitash.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "bolton-valley",
+      "name": "Bolton Valley Resort",
+      "state": "VT",
+      "region": "Northern Vermont",
+      "town": "Bolton",
+      "lat": 44.415,
+      "lon": -72.8344,
+      "website": "https://www.boltonvalley.com",
+      "verticalDrop": 1704,
+      "skiableAcres": 300,
+      "trailCount": 71,
+      "liftCount": 6,
+      "annualSnowfallAvg": 202,
+      "snowmakingPercent": null,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day-or-night visits per season on the Indy Pass. Because Bolton runs lit night skiing five nights a week, an Indy day here can be redeemed as a night session instead, which is an unusually flexible use of an Indy visit."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 859,
+      "mogulPresence": "occasional",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Night skiing on a weeknight",
+        "Backcountry from the same base",
+        "Glades without a Stowe lift line",
+        "Indy days with no blackouts"
+      ],
+      "officialSnowReport": "https://www.boltonvalley.com/winter/trail-maps-snow-reports/snow-reports/",
       "verifiedOn": "2026-08-25"
     },
     {

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "bolton-valley",
+    "name": "Bolton Valley Resort",
+    "aka": [
+      "Bolton Valley",
+      "Bolton"
+    ],
+    "state": "VT",
+    "region": "Northern Vermont",
+    "town": "Bolton",
+    "lat": 44.415,
+    "lon": -72.8344,
+    "website": "https://www.boltonvalley.com"
+  },
+  "size": {
+    "verticalDrop": 1704,
+    "skiableAcres": 300,
+    "trailCount": 71,
+    "liftCount": 6,
+    "longestRun": 0.6,
+    "summitElevation": 3150,
+    "baseElevation": 1446,
+    "annualSnowfallAvg": 202,
+    "snowmakingPercent": null,
+    "nightSkiing": true,
+    "source": "https://www.onthesnow.com/vermont/bolton-valley/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "nightSkiing": {
+        "source": "https://www.boltonvalley.com/winter/activities/night-skiing-riding/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 34,
+    "percentIntermediate": 38,
+    "percentAdvanced": 23,
+    "percentExpert": 6,
+    "glades": true,
+    "difficultyNotes": "The four published percentages sum to 101, which is rounding rather than an error. The size figures reconcile cleanly - a 3,150 ft summit less a 1,446 ft base is exactly the 1,704 ft vertical that both the resort and OnTheSnow publish - which is worth saying because Bolton's other headline numbers do not reconcile nearly as well. The Indy Pass partner directory lists Bolton's base at 2,100 ft alongside the same 3,150 ft summit and 1,704 ft vertical, which is internally contradictory; that 2,100 ft is the elevation of the base village and hotel rather than the bottom of the lift-served vertical, and this guide stores the 1,446 ft figure that actually squares with the drop.",
+    "source": "https://www.onthesnow.com/vermont/bolton-valley/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two all-day-or-night visits per season on the Indy Pass. Because Bolton runs lit night skiing five nights a week, an Indy day here can be redeemed as a night session instead, which is an unusually flexible use of an Indy visit.",
+      "blackouts": "None. The Indy partner page for Bolton Valley lists no blackout dates against the standard Indy Base pass.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/bolton-valley-resort"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 859,
+    "currency": "USD",
+    "notes": "The $859 is the 2026-27 adult (26-64) All Terrain Day & Night pass, the unrestricted product. Bolton publishes an unusually legible ladder underneath it: All Terrain Daytime $809, Bolton Local Day & Night $729 with nine restricted dates, Bolton Local Daytime $689, and a Midweek Day pass at $299 which is one of the cheapest season products on this roster. Prices rise on 8 September 2026. The interesting thing about that ladder is what the day-and-night split implies - Bolton is one of the few mountains in New England where night access is a distinct product rather than an afterthought, because the night operation is a real part of the season here and not a Friday novelty. No adult day-ticket rates were read, so all three ticket fields are null.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.boltonvalley.com/winter/tickets-passes/season-passes/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Bolton Valley is the mountain Vermont locals use on a Tuesday night. It sits above the Winooski valley between Burlington and Waterbury with 1,704 feet of vertical on 300 acres and 71 trails served by six lifts, which puts it squarely mid-sized - bigger than the community hills, a long way short of Stowe fifteen miles north. What makes it unusual is not the size but the shape of its operating week. Bolton runs lit night skiing typically five nights a week, Tuesday through Saturday, from four until ten, and that is the largest night operation in Vermont; a day ticket bought on one of those days is good for thirteen hours. Around the lift-served terrain sits a genuine backcountry and nordic network with its own separately mapped trail system, which is not a marketing line but a real part of the resort, and it draws a self-selecting crowd of people who own skins. The base village sits high and cold, the snow holds, and the whole place has an unpolished, self-contained feel - a hotel, a handful of buildings and a mountain, rather than a resort town. It is also on the Indy Pass with no blackouts, which for two days a season makes it one of the better value visits in northern Vermont.",
+    "snowQuality": "Bolton catches more snow than its size suggests, sitting on the spine of the Green Mountains where the same upslope flow that feeds Stowe and Smugglers' Notch runs over it. How much more is genuinely contested. OnTheSnow puts the annual average at 202 inches, which is the figure stored here. The Indy Pass partner directory says 312 inches - a number supplied by the resort, so effectively Bolton's own claim - and boltonvalley.com markets \"over 300 inches\", though on inspection that is a season-to-date total rather than a long-run average. A 110-inch gap between aggregator and resort is one of the widest on this roster, and the conservative number is the one recorded. Either way the cold matters as much as the total: the lift-served base sits at 1,446 feet with the village higher still, and Bolton loses less to rain at the bottom than the mountains east of the spine.",
+    "crowds": "Quiet by northern Vermont standards, and structurally so. Bolton is twenty-five minutes from Burlington, which makes it the closest real mountain to Vermont's largest population centre, but the destination traffic keeps driving north to Stowe and Smugglers' Notch. The result is a mountain whose weekday and night business is local and whose weekends are busy without being fought over. The night operation genuinely redistributes the crowd - a Wednesday evening at Bolton is a different social event from a Wednesday afternoon, full of people who finished work in Burlington - and it takes pressure off the daylight hours in a way no other Vermont mountain manages. Holiday weeks will fill six lifts. The backcountry network absorbs anyone who would rather not queue at all.",
+    "difficulty": "A well-balanced mid-sized mountain that leans easy: 34% beginner and 38% intermediate against 23% advanced and 6% expert, so nearly three quarters of the trail count is comfortable skiing. The glades are the reason strong skiers come. Bolton's tree skiing is well regarded in a state that sets a high bar for it, helped by the elevation, the natural snow and terrain that was never over-cleared. The expert 6% is a small slice and the mountain is honest about being small there - this is not a hill that will hold an aggressive skier for a week, and anyone chasing steeps has Stowe fifteen miles away. What Bolton does better than its neighbours is the transition out of the resort: the backcountry and nordic network starts where the lift terrain stops, which makes it one of the few places in New England where progressing from resort trees to earned turns is a matter of walking uphill rather than driving somewhere else.",
+    "keyTrails": [],
+    "tidbits": [
+      "Night skiing runs typically five nights a week, Tuesday to Saturday, 4pm to 10pm - the largest night operation in Vermont.",
+      "A day ticket on a night-skiing day is valid for thirteen hours.",
+      "OnTheSnow says 202 inches of snow a year; the resort's own Indy listing says 312.",
+      "The backcountry and nordic network is separately mapped and has its own trail system.",
+      "Twenty-five minutes from Burlington, the closest sizeable mountain to Vermont's largest city.",
+      "On the Indy Pass with no blackout dates on the standard Base pass.",
+      "A midweek-only season pass costs $299."
+    ],
+    "bestFor": [
+      "Night skiing on a weeknight",
+      "Backcountry from the same base",
+      "Glades without a Stowe lift line",
+      "Indy days with no blackouts"
+    ],
+    "watchOutFor": [
+      "Snowfall claims vary by 110 inches",
+      "Only 6% expert terrain",
+      "No published snowmaking percentage",
+      "Longest run is only 0.6 miles"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.boltonvalley.com/winter/trail-maps-snow-reports/snow-reports/",
+    "trailMap": "https://www.boltonvalley.com/winter/trail-maps-snow-reports/trail-maps/",
+    "webcams": "https://www.boltonvalley.com/the-resort/live-webcams/",
+    "lodging": "https://www.boltonvalley.com/lodging/",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Bolton Valley (vertical, acres, trails, lifts, longest run, summit, base, snowfall, snowmaking acreage, lit acreage, terrain breakdown)",
+        "url": "https://www.onthesnow.com/vermont/bolton-valley/ski-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bolton Valley night skiing (five nights a week Tuesday to Saturday, 4-10pm, thirteen-hour day tickets)",
+        "url": "https://www.boltonvalley.com/winter/activities/night-skiing-riding/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bolton Valley 2026-27 season passes (All Terrain and Bolton Local products, day-and-night pricing, 8 September increase)",
+        "url": "https://www.boltonvalley.com/winter/tickets-passes/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Bolton Valley (two visits, no blackouts, terrain parks yes; its 2,100 ft base figure is not used)",
+        "url": "https://www.indyskipass.com/our-resorts/bolton-valley-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.onthesnow.com/vermont/bolton-valley/ski-resort",
+      "note": "No percentage is published anywhere. OnTheSnow gives 90 acres of snowmaking against 300 skiable acres, which would divide out to 30%, but that division is this guide's arithmetic on two separately reported figures rather than a number any source states, so it is left null"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Only season pass pricing was read for 2026-27; no adult day-ticket window rate was sourced"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Only season pass pricing was read for 2026-27; no adult day-ticket window rate was sourced"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Only season pass pricing was read for 2026-27; no adult online rate was sourced"
+    },
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/bolton-valley-resort",
+      "note": "The Indy partner directory's structured T-Parks field says yes, so Bolton has terrain parks, but no park page exists in boltonvalley.com's page sitemap and no count or park names are published anywhere. Same basis as Stratton, Sunday River, Mount Sunapee and Crotched"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is mentioned by any source, and with no park page there is nothing to read either way"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes Bolton's bump skiing, and the live grooming report - the one objective test - is dormant in August"
+    },
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality: with no description of the bump skiing there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No bump competitions or organised mogul scene are documented for Bolton Valley"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Nothing is published about Bolton's grooming policy and no third-party review of its bump skiing was found. What can be said from the terrain breakdown is that 34% beginner and 38% intermediate terrain is the part a mountain this size grooms nightly, and that Bolton's reputation rests on its glades rather than on lift-line bumps. The 23% advanced and 6% expert terrain is where bumps would form, and it is a small share of 300 acres. Recorded as occasional on that structural basis, and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.onthesnow.com/vermont/bolton-valley/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Bolton has terrain parks - the Indy Pass partner directory's structured T-Parks field says so - and publishes nothing else about them. There is no park page in the site's own page sitemap, no count, no names, no feature list. That is a real gap rather than a small one for a mountain whose night operation would suit a park crowd well, and it is recorded as unknown rather than guessed at.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts/bolton-valley-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}
