@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 42.
+**Roster target:** 45 resorts. **Current:** 45 — COMPLETE.
 
 ---
 
@@ -40,12 +40,40 @@ skipping a unit.
 | B | Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount | `0fd6cf5` | 227 / 249 | No PeakRankings page for any of the four. See Batch 7 notes. |
 | B | Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway | `41f82aa` | 265 / 281 | Two confirmed-zero park sections. See Batch 8 notes. |
 | B | Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock | `03d7870` | 304 / 320 | **INTEGRITY FAILURE 4** found: OnTheSnow's two Black Mountain records are cross-contaminated. |
+| B | Batch 10: butternut, bousquet, mohawk-mountain — **ROSTER COMPLETE** | `3248270` | 324 / 345 | 45 of 45. Part B done. |
+| **C** | Superlative sweep across all 45 files | `f8d8132` | — | 31 false roster-relative claims corrected in 13 files. |
 
-**Part A complete. Batches 2 through 9 complete.**
+**Parts A and B are COMPLETE. All 45 resort files are written.** `npm run check` reports
+45 files, 0 errors, 4 warnings — all four warnings are correct data, not defects.
 
-**RESUME HERE.** The next unfinished unit is **Batch 10** — butternut, bousquet,
-mohawk-mountain. That is the last batch and completes the 45-resort roster. Then Parts C
-through G.
+**RESUME HERE — Part C is in progress.** Done so far: the superlative sweep (`f8d8132`).
+Still to do in Part C, in this order:
+
+1. **reviews[] for all 45 resorts** — three commits, Tier A / B / C. This is the largest
+   remaining unit. Every `reviews` array is currently empty. Note from Part B: **no Tier C
+   resort in batches 7-10 has a PeakRankings page** (checked: berkshire-east, catamount,
+   jiminy-peak, pleasant-mountain, middlebury, saskadena-six, black-mountain-nh,
+   dartmouth-skiway, mt-abram, black-mountain-maine, camden-snow-bowl, big-rock, butternut,
+   bousquet, mohawk-mountain all 404). Expect many empty reviews arrays with `unpublished`
+   fieldNotes, which BATCHES.md says is the correct outcome.
+2. **Three cross-resort backfills found during Part B** (details in the batch notes below):
+   - the AIM High pass's Burke and Smugglers' Notch benefits → `burke.json`,
+     `smugglers-notch.json`
+   - the Fairbank Group relationship and reciprocal tickets → `bromley.json`, `cranmore.json`
+   - the Dartmouth Skiway partner discounts → `ragged.json`, `pats-peak.json`,
+     `saskadena-six.json`; plus **Uphill New England** (24 mountains), referenced by Camden,
+     Saskadena Six and Dartmouth Skiway and recorded nowhere.
+3. **`bolton-valley.editorial.keyTrails` is empty** — one fetch of boltonvalley.com's trail
+   map page closes the only validator warning that is a genuine gap rather than correct data.
+4. **Stowe's coordinate** — flagged back in Batch 3 and still open. It probes at 4,285 ft
+   against a stored 3,625 ft `summitElevation`, i.e. it points at Mount Mansfield's true
+   summit rather than the lift-served top. Re-anchor it with the Overpass `aerialway` query.
+5. One more cross-check worth doing: **Bromley claims to be "the only major ski area in New
+   England with a southern exposure"**, and `black-mountain-nh` publishes its primary exposure
+   as south. Bromley's "major" gives it an out, but the two files should acknowledge each
+   other. (Cannon publishes north/northeast, for what it is worth.)
+
+Then Parts D, E, F and G as written in AUTORUN.md.
 
 ### STANDING CHECK AT THE START OF EVERY SESSION — Vail: DONE, no longer needed
 
@@ -139,6 +167,40 @@ outcome, not a sign to try harder.
 
 **Vail note:** superseded — the three Vail files were repaired in `869bfc0`. See the Vail
 repair section above.
+
+### Part C — superlative sweep (done, `f8d8132`)
+
+Every roster-relative claim in every editorial field was grepped out with a regex over the
+superlative vocabulary and checked against the finished data. **Thirty-one were false**, across
+13 of the 45 files. The worst offenders were the files written earliest against the smallest
+roster (attitash, sugarloaf, waterville-valley, mount-sunapee, ragged) and, notably, several
+written in the last two batches — Camden claiming the driest mountain when Bousquet had not yet
+been written, Big Rock claiming the lowest beginner share when Bousquet came two files later.
+
+**The measured conclusion, for the Part G report:** this failure mode is not occasional. It hit
+29% of the files and it hit files written on the same day as their contradiction. Any future
+addition to the roster requires re-running the sweep — the grep is a five-line script and the
+check is mechanical, so it should simply be part of adding a resort.
+
+### Batch 10 notes
+
+- **Mohawk Mountain is the birthplace of commercial snowmaking**, and its founder Walt
+  Schoenknecht also founded **Mount Snow** — the first time two resorts on this roster turn out
+  to share an origin. Both files should probably say so; only Mohawk's does.
+- **Mohawk is the only Indy partner on the roster with published blackout dates** (Indy Base
+  holders only: MLK weekend and Presidents' Day). Every other Indy partner here carries an
+  explicit No Blackout Dates marker.
+- **Butternut has the highest lift-to-terrain ratio in the guide**: five quad chairs plus four
+  learning carpets for 22 trails on 100 acres, all five quads confirmed by name via Overpass.
+  It also publishes actual park feature counts — 26 rails, 30-foot step-downs — which almost
+  nothing else on the roster does.
+- **Bousquet's published difficulty splits are not credible** and the file says so rather than
+  repeating them straight: OnTheSnow rates 43% of a 750-foot city hill as expert and Indy rates
+  57% as advanced. Stored OnTheSnow's four-tier split with an explicit warning in
+  `difficultyNotes` that the grades are local rather than regional.
+- **Butternut is not on the Indy Pass** — it is on the **Freedom Pass**, the first appearance of
+  that network in this data, and its Unlimited passholders also get a half-price Ikon Session
+  3-Day and free night skiing at Otis Ridge (which is not on this roster).
 
 ### Batch 9 notes
 
@@ -382,7 +444,7 @@ Roster of 37 remaining, from BATCHES.md:
 - [x] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount — `0fd6cf5` — 227 unknown / 249 confirmed
 - [x] Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway — `41f82aa` — 265 unknown / 281 confirmed
 - [x] Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock — `03d7870` — 304 unknown / 320 confirmed
-- [ ] Batch 10: butternut, bousquet, mohawk-mountain
+- [x] Batch 10: butternut, bousquet, mohawk-mountain — `3248270` — 324 unknown / 345 confirmed — **ROSTER COMPLETE**
 
 Then: Part C reviews (3 commits), Part D map + compare, Part E public site, Part F
 SEASONAL.md (already written in Part A — verify and extend), Part G final report.
@@ -537,3 +599,4 @@ number still matches.
 | 7 | Mount Snow `parks.count` = 8 and all eight park names against `mountsnow.com/.../terrain-parks.aspx` | **PASS** — Grommet, Inferno, Junkyard, Fool's Gold, Nitro, The Gulch, Prospector and The Farm all still named and described. |
 | 8 | Bromley elevations, snowfall and snowmaking-by-difficulty against `bromley.com/about` | **PASS** — base 1,950 / summit 3,284 / vertical 1,334 / snowfall 145" / 86% overall with 99-82-79 by grade / 47 trails on 178 of 300 acres, all unchanged. |
 | 9 | Jiminy Peak's seven stat-block figures against `jiminypeak.com/the-mountain/mountain-information/` | **PASS** — 2,380 ft summit / 1,150 ft vertical / 167.4 acres / 68" / 96% snowmaking / 45 trails / 9 lifts, all unchanged. |
+| 10 | Cannon `trailCount` = 98, `liftCount` = 9, `skiableAcres` = 287, `annualSnowfallAvg` = 160 against `cannonmt.com/mountain-stats` | **PASS** — 98 trails and glades, 9 lifts, 287 acres, 160" and a 2.3 mi longest run all unchanged. Also confirms 192 snowmaking acres and a north/northeast exposure, neither of which is stored. |

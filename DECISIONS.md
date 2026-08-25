@@ -175,3 +175,30 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
   unit; on 90 skiable acres, 80% and 80 acres are very different claims.
 - **`mt-abram` and `black-mountain-maine` `parks.count` = 0 (absent)**, same two-line bar as
   Batch 8. `big-rock` and `camden-snow-bowl` keep parks that exist but are undescribed.
+
+### Batch 10
+
+- **`butternut.liftCount` = 10, which includes a tubing carpet.** That is the resort's own list
+  (5 quads, 4 learning carpets, 1 tubing carpet) and OnTheSnow agrees on the total. Noted in
+  `difficultyNotes` so the composition is visible rather than implied.
+- **`butternut` window ticket fields null, `advanceTypical` = 90.** Butternut publishes online
+  rates only and states the window costs $5 more without listing those prices. Ninety is the
+  non-holiday weekend online adult rate - the common case for a weekend-driven day area.
+- **`bousquet` stores OnTheSnow's four-tier 9/26/22/43 over Indy's three-tier 17/26/57**, the
+  same call made at Saskadena Six. Both are implausible for a 750-ft family hill and
+  `difficultyNotes` says so outright rather than presenting either as a description of the
+  mountain.
+- **`mohawk-mountain.snowmakingPercent` = null.** The mountain that invented snowmaking
+  publishes no coverage figure, and OnTheSnow's 100-of-107-acres would be derived arithmetic.
+- **`mohawk-mountain.seasonPassAdult` = 750**, the middle rung of a three-step ladder and the
+  price live on the verified date. Whole ladder in `pricing.notes`.
+
+### Part C — superlative sweep
+
+- **Corrected 31 false roster-relative claims rather than deleting them.** Each was rewritten to
+  a statement that is true against the finished 45 - usually by narrowing the comparison set
+  ("cheapest in New Hampshire", "second-largest by acreage") rather than by dropping the point,
+  because the comparisons are genuinely useful to a reader and only the absolutes were wrong.
+- **Kept six superlatives that check out**: Burke's 8% beginner share, Pico's 2,000 ft base,
+  Bousquet's 21-inch snowfall, Butternut's $399 pass, Dartmouth's $35 ticket, Pats Peak's 50%
+  beginner share.
