@@ -31,7 +31,7 @@ skipping a unit.
 | B | Epic/Ikon season pass price correction (5 earlier files) | `ef1167e` | — | Spot-check failure, see INTEGRITY FAILURES. |
 | B | Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat | `2f8af90` | 111 / 126 | Two recorded research findings were wrong and were corrected against primary sources — see below. Also added `.claude/` to `.gitignore` at the user's request. |
 | B | Night-skiing negatives re-sourced off Ski NH | `72b5924` | — | Ski NH's list is a curated feature, not a registry. |
-| B | Batch 4: attitash, sunday-river, sugarloaf, saddleback | `PENDING` | 143 / 157 | 1 warning (Saddleback publishes a park count but no park names). |
+| B | Batch 4: attitash, sunday-river, sugarloaf, saddleback | `12e9972` | 143 / 157 | 1 warning (Saddleback publishes a park count but no park names). |
 
 **Part A complete. Batches 2, 3 and 4 complete.** Next unfinished unit: **Part B, Batch 5** —
 mount-sunapee, cranmore, ragged, gunstock, crotched. No research gathered yet.
@@ -123,7 +123,7 @@ Roster of 37 remaining, from BATCHES.md:
 
 - [x] Batch 2: stratton, mount-snow, burke, pico — `efb2fde` — 80 unknown / 90 confirmed
 - [x] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat — `2f8af90` — 111 unknown / 126 confirmed
-- [x] Batch 4: attitash, sunday-river, sugarloaf, saddleback — 143 unknown / 157 confirmed
+- [x] Batch 4: attitash, sunday-river, sugarloaf, saddleback — `12e9972` — 143 unknown / 157 confirmed
 - [ ] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched
 - [ ] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley
 - [ ] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount
