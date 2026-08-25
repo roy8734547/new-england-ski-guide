@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-25T17:57:48.850Z",
+  "generatedAt": "2026-08-25T18:15:38.430Z",
   "schemaVersion": 3,
-  "count": 30,
+  "count": 34,
   "resorts": [
     {
       "slug": "attitash",
@@ -47,6 +47,53 @@
         "A cold snap in midwinter"
       ],
       "officialSnowReport": "https://www.attitash.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "berkshire-east",
+      "name": "Berkshire East Mountain Resort",
+      "state": "MA",
+      "region": "Berkshires",
+      "town": "Charlemont",
+      "lat": 42.614,
+      "lon": -72.8702,
+      "website": "https://www.berkshireeast.com",
+      "verticalDrop": 1180,
+      "skiableAcres": 180,
+      "trailCount": 43,
+      "liftCount": 5,
+      "annualSnowfallAvg": 62,
+      "snowmakingPercent": 100,
+      "nightSkiing": true,
+      "passTypes": [
+        "other",
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "AIM High Season Pass",
+          "type": "other",
+          "access": "Unlimited at both Berkshire East and Catamount - the two mountains sell one joint pass rather than two. It also carries two days each at Burke Mountain and Smugglers' Notch with 50% off further days, unlimited midweek skiing at Burke through March, and 25% off non-holiday lodging at both. AIM stands for Authentic Independent Mountains, which is the marketing and also an accurate description of the arrangement."
+        },
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two days per season on the Indy Pass. Berkshire East also sells the discounted Indy AddOn Pass to its own AIM High passholders, which gives two days at each of the 300-plus Indy partners but is explicitly not valid at Berkshire East itself."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 699,
+      "mogulPresence": "occasional",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Real pitch in Massachusetts",
+        "Two mountains on one pass",
+        "Midweek and night value",
+        "Snowmaking reliability"
+      ],
+      "officialSnowReport": "https://www.berkshireeast.com/winter/mountain-conditions",
       "verifiedOn": "2026-08-25"
     },
     {
@@ -267,6 +314,53 @@
       "verifiedOn": "2026-08-25"
     },
     {
+      "slug": "catamount",
+      "name": "Catamount Mountain Resort",
+      "state": "MA",
+      "region": "Berkshires",
+      "town": "South Egremont",
+      "lat": 42.1613,
+      "lon": -73.4849,
+      "website": "https://www.catamountski.com",
+      "verticalDrop": 1000,
+      "skiableAcres": 133,
+      "trailCount": 44,
+      "liftCount": 8,
+      "annualSnowfallAvg": 47,
+      "snowmakingPercent": 93,
+      "nightSkiing": true,
+      "passTypes": [
+        "other",
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "AIM High Season Pass",
+          "type": "other",
+          "access": "Unlimited at both Catamount and Berkshire East - the two mountains sell one joint pass. It also carries two days each at Burke Mountain and Smugglers' Notch with 50% off further days, unlimited midweek skiing at Burke through March, and 25% off non-holiday lodging at both. AIM stands for Authentic Independent Mountains."
+        },
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two days per season on the Indy Pass. Catamount runs a dedicated Indy Pass reservation page, so redemptions are booked rather than walked up."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 699,
+      "mogulPresence": "occasional",
+      "parkCount": 4,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "The steepest pitch in the Berkshires",
+        "Two mountains on one pass",
+        "A day trip from the Hudson Valley",
+        "Night skiing on half the mountain"
+      ],
+      "officialSnowReport": "https://www.catamountski.com/winter/the-mountain/mountain-conditions",
+      "verifiedOn": "2026-08-25"
+    },
+    {
       "slug": "cranmore",
       "name": "Cranmore Mountain Resort",
       "state": "NH",
@@ -445,6 +539,53 @@
       ],
       "officialSnowReport": "https://jaypeakresort.com/skiing-riding/snow-report-maps/snow-report",
       "verifiedOn": "2026-08-22"
+    },
+    {
+      "slug": "jiminy-peak",
+      "name": "Jiminy Peak Mountain Resort",
+      "state": "MA",
+      "region": "Berkshires",
+      "town": "Hancock",
+      "lat": 42.5442,
+      "lon": -73.2862,
+      "website": "https://www.jiminypeak.com",
+      "verticalDrop": 1150,
+      "skiableAcres": 167,
+      "trailCount": 45,
+      "liftCount": 9,
+      "annualSnowfallAvg": 68,
+      "snowmakingPercent": 96,
+      "nightSkiing": true,
+      "passTypes": [
+        "ikon",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Ikon Pass",
+          "type": "ikon",
+          "access": "Two days per season as an Ikon Bonus Mountain - not a full destination. Bonus days must be redeemed at the Crane Lodge ticket window rather than direct-to-lift, and are not valid on the Ikon Base Pass or Ikon Session passes. In the other direction, Jiminy's own Anytime and Zephyr passholders can buy a 3-day Ikon Session pass at a discounted $279."
+        },
+        {
+          "name": "Fairbank three-mountain benefit",
+          "type": "other",
+          "access": "Not a separate pass but worth knowing: Jiminy, Bromley in Vermont and Cranmore in New Hampshire are all Fairbank Group mountains, and a Jiminy Anytime or Zephyr season pass carries two free lift tickets at each of the other two, valid on the days your own pass is valid. There is also a $471 three-mountain college pass giving unlimited access to all three with no blackouts."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1356,
+      "mogulPresence": "rare",
+      "parkCount": 3,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Night skiing seven nights a week",
+        "Families and progression",
+        "Three lit terrain parks",
+        "A real resort near four cities"
+      ],
+      "officialSnowReport": "https://www.jiminypeak.com/the-mountain/mountain-information/snow-report/",
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "killington",
@@ -841,6 +982,52 @@
       ],
       "officialSnowReport": "https://www.picomountain.com/the-mountain/conditions-weather/mountain-report/",
       "verifiedOn": "2026-08-24"
+    },
+    {
+      "slug": "pleasant-mountain",
+      "name": "Pleasant Mountain",
+      "state": "ME",
+      "region": "Western Maine",
+      "town": "Bridgton",
+      "lat": 44.0444,
+      "lon": -70.822,
+      "website": "https://www.pleasantmountain.com",
+      "verticalDrop": 1350,
+      "skiableAcres": 239,
+      "trailCount": 44,
+      "liftCount": 6,
+      "annualSnowfallAvg": 101,
+      "snowmakingPercent": null,
+      "nightSkiing": true,
+      "passTypes": [
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "New England Pass",
+          "type": "other",
+          "access": "Unlimited at Pleasant Mountain, Sunday River, Sugarloaf and Loon Mountain - Boyne Resorts' four New England mountains on one pass. Additional Pleasant Mountain passholder benefits and perks do not carry onto this pass."
+        },
+        {
+          "name": "Boyne Freestyle Pass",
+          "type": "other",
+          "access": "Three to seven days of your choosing across ten Boyne Resorts destinations - Sunday River, Sugarloaf, Pleasant Mountain, Loon, Boyne Mountain, The Highlands, Brighton, Summit at Snoqualmie, Cypress and Big Sky - plus one bonus day that is valid only at Pleasant Mountain or Cypress and is spent automatically on the first visit to either. Pleasant Mountain is the small mountain Boyne uses as the sweetener on its own multi-resort product."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "mogulPresence": "occasional",
+      "parkCount": 3,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Night skiing, six nights a week",
+        "Families out of Portland",
+        "Park progression sessions",
+        "Boyne New England Pass holders"
+      ],
+      "officialSnowReport": "https://www.pleasantmountain.com/mountain-report",
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "ragged",

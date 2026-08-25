@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "berkshire-east",
+    "name": "Berkshire East Mountain Resort",
+    "aka": [
+      "Berkshire East",
+      "Thunder Mountain"
+    ],
+    "state": "MA",
+    "region": "Berkshires",
+    "town": "Charlemont",
+    "lat": 42.614,
+    "lon": -72.8702,
+    "website": "https://www.berkshireeast.com"
+  },
+  "size": {
+    "verticalDrop": 1180,
+    "skiableAcres": 180,
+    "trailCount": 43,
+    "liftCount": 5,
+    "longestRun": 2,
+    "summitElevation": 1720,
+    "baseElevation": 540,
+    "annualSnowfallAvg": 62,
+    "snowmakingPercent": 100,
+    "nightSkiing": true,
+    "source": "https://www.onthesnow.com/massachusetts/berkshire-east/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "snowmakingPercent": {
+        "source": "https://www.berkshireeast.com/winter",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.berkshireeast.com/winter/lift-tickets",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 28,
+    "percentIntermediate": 42,
+    "percentAdvanced": 28,
+    "percentExpert": 2,
+    "glades": null,
+    "difficultyNotes": "A rare four-tier breakdown for a mountain this size, summing exactly to 100. It comes from OnTheSnow, because Berkshire East publishes no mountain statistics anywhere: its complete site - checked against its own Joomla sitemap, not just its navigation - has no stats page, no terrain page and no trail list. The 1,720 ft summit less the 540 ft base gives exactly the published 1,180 ft vertical, which is a good sign for figures that all come from one aggregator. Two numbers are contested. The Indy Pass partner directory lists Berkshire East at 45 trails and 6 lifts against OnTheSnow's 43 and 5; OnTheSnow's lift figure is internally consistent (3 quads, 1 double, 1 surface = 5) so it is the one stored. And snowmaking is stored at 100% on the resort's own claim - it says a million-dollar 2021 upgrade gave it 100% trail coverage - while OnTheSnow still records 165 snowmaking acres against 180 skiable, which is 92%. The two are not strictly comparable: one counts trails, the other acres.",
+    "source": "https://www.onthesnow.com/massachusetts/berkshire-east/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "AIM High Season Pass",
+      "type": "other",
+      "access": "Unlimited at both Berkshire East and Catamount - the two mountains sell one joint pass rather than two. It also carries two days each at Burke Mountain and Smugglers' Notch with 50% off further days, unlimited midweek skiing at Burke through March, and 25% off non-holiday lodging at both. AIM stands for Authentic Independent Mountains, which is the marketing and also an accurate description of the arrangement.",
+      "blackouts": "None at Berkshire East or Catamount. The pass page states unlimited access to both with no blackout dates; the separate Midweek pass is Monday to Friday only.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.berkshireeast.com/winter/season-passes"
+    },
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two days per season on the Indy Pass. Berkshire East also sells the discounted Indy AddOn Pass to its own AIM High passholders, which gives two days at each of the 300-plus Indy partners but is explicitly not valid at Berkshire East itself.",
+      "blackouts": "No blackout dates are published, but Berkshire East requires advance reservations for every Indy redemption - made through its online ticketing portal, separately for a first and second visit, with a ticket-window stop still needed on arrival to activate the RFID card. The resort says plainly this is to cap crowding on busy days, which is a soft blackout in practice.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.berkshireeast.com/winter/indy-pass"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 699,
+    "currency": "USD",
+    "notes": "The $699 is the 2026-27 AIM High adult (19-59) rate, and it is a deadline price: it holds until 31 August 2026 and rises to $799 until 30 November. For that money you get unlimited access to two mountains, Berkshire East and Catamount, which makes it one of the better-value products on this roster. Youth (7-18) and senior (60-79) are $579 rising to $679; a midweek pass valid at both mountains is $379 rising to $429; 80+ and under-7 are free. Day tickets are genuinely unpriceable here: Berkshire East runs a flexible pricing model where the rate depends on demand and remaining inventory, states outright that days can and do sell out, and publishes no fixed window rate, so all three ticket fields are null rather than estimated. Prices exclude tax. Holiday periods carrying higher rates are 25 December to 1 January, 17-19 January and 14-22 February.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.berkshireeast.com/winter/season-passes",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Berkshire East is a 1,180-foot mountain in Charlemont that punches so far above its size that the interesting question is how. Part of the answer is the Schaefer family, who have run it since 1975 and have spent fifty years buying the bones of dead ski areas - Roy Schaefer famously stripped equipment out of Magic Mountain, Berkshire Snow Basin, Mt Tom, Ski Rio and more than twenty other bankrupt hills and trucked it back to Charlemont. Part of it is the snowmaking: a million dollars went in during 2021 and the resort now claims 100% trail coverage, which on 62 inches of natural snow a year is not a luxury but the entire business. Part of it is the power - Berkshire East was the first ski area in the world to generate 100% of its own electricity onsite, from a wind turbine and a solar array. And part is simply that western Massachusetts has real pitch: 1,180 feet of vertical with a two-mile longest run, 28% of the trails in the advanced grade and a further 2% expert, which is more top-end terrain than most southern New England hills bother with. Add night skiing four nights a week, a summer bike park that is nationally regarded, and a joint season pass with Catamount at $699, and the mountain's own line about being the best kept secret in the industry starts to look less like marketing.",
+    "snowQuality": "Sixty-two inches a year is a genuinely thin natural total - western Massachusetts at a 540-foot base does not get much - and Berkshire East's answer is total. The 2021 snowmaking investment brought coverage to every trail on the mountain, and the operation is the thing the resort talks about first and most. What that buys is reliability rather than quality: this is a manufactured surface for most of the season, firm in the morning, softening by afternoon, and vulnerable to the thaw-freeze cycles that define a southern New England winter. The consolation is that a mountain generating its own electricity has an unusual incentive structure around running fan guns hard. Anyone chasing natural snow in the Berkshires is out of luck at any of these mountains; the honest comparison is between snowmaking systems, and Berkshire East's is among the best in the region.",
+    "crowds": "Manageable, and actively managed. Five lifts on 180 acres is not generous capacity, and Berkshire East has responded with two mechanisms most small mountains do not use: flexible pricing that makes busy days expensive and can sell out entirely, and a mandatory advance-reservation system for Indy Pass holders that exists explicitly to keep lift lines down. Both are unusual candour about a real constraint. The practical effect is that a midweek or non-holiday day here is quiet and cheap, a holiday Saturday is neither, and if you turn up without a ticket on a February weekend you may not get one. Night skiing - Thursday through Saturday until 9pm - absorbs a chunk of the local demand and is the best-value way to ski the place.",
+    "difficulty": "More serious than the Berkshires' reputation. Twenty-eight percent advanced and 2% expert on 1,180 feet of vertical means real sustained pitch rather than the token black diamonds that southern New England hills often carry, and a two-mile longest run on a mountain this compact means the trails wind rather than plunging straight down. The mountain has been a ski-racing factory for fifty years - the programme Bill Farrell built here has sent racers to the US Ski Team and the development team and a long list of skiers to NCAA All-American honours - and that history shows in the terrain, which is cut for carving. What it lacks is any published trail-by-trail information at all: the resort does not list its trails, name its difficulty ratings, or describe its glades anywhere on its own site, which for a mountain this proud of its skiing is a strange gap.",
+    "keyTrails": [
+      {
+        "name": "Big Chief",
+        "note": "The one Berkshire East trail name that appears in the resort's own writing - in the history page, where lift footings were poured near its end for an expansion that never happened, and again as the name of a base-area webcam. Everything else about the trail network is undocumented."
+      },
+      {
+        "name": "Summit Quad",
+        "note": "The lift that defines the mountain, running to the 1,720-foot summit. A high-speed detachable quad on a hill this size is the single biggest reason the place skis larger than its acreage."
+      },
+      {
+        "name": "T-Bar Express",
+        "note": "A quad in spite of the name - a relic of the surface lift it replaced. Serves the same summit terrain and is the second of the two lifts the mountain lists in its conditions report."
+      },
+      {
+        "name": "Top Notch",
+        "note": "The double serving the lower mountain, and the lift a Lower Mountain ticket buys along with the Bobcat. Berkshire East is one of very few areas that sells a cheaper lower-mountain-only day ticket."
+      }
+    ],
+    "tidbits": [
+      "Berkshire East was the first ski area in the world to produce 100% of its electricity from onsite renewable energy.",
+      "The Schaefer family has run the mountain since 1975.",
+      "It opened as Thunder Mountain in 1953 and was renamed Berkshire East for the 1969-70 season.",
+      "Five ski areas once operated within three miles of Charlemont; this is the only survivor.",
+      "Roy Schaefer rebuilt the mountain with equipment auctioned from as many as 26 bankrupt ski areas, including Magic Mountain and Mt Tom.",
+      "A $1m snowmaking upgrade in 2021 brought coverage to 100% of the trails.",
+      "One season pass, the AIM High, covers both Berkshire East and Catamount for $699.",
+      "Indy Pass holders must reserve every visit in advance."
+    ],
+    "bestFor": [
+      "Real pitch in Massachusetts",
+      "Two mountains on one pass",
+      "Midweek and night value",
+      "Snowmaking reliability"
+    ],
+    "watchOutFor": [
+      "Only 62 inches of natural snow",
+      "Busy days can sell out entirely",
+      "Indy visits need a reservation",
+      "No trail information published"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.berkshireeast.com/winter/mountain-conditions",
+    "trailMap": "https://www.berkshireeast.com/plan/trail-maps",
+    "webcams": "https://www.berkshireeast.com/winter/mountain-conditions",
+    "lodging": "https://www.berkshireeast.com/plan/local-lodging",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Berkshire East winter overview (Schaefer family ownership, high-speed detachable quad, the 2021 snowmaking upgrade to 100% coverage, first ski area in the world on 100% onsite renewable electricity)",
+        "url": "https://www.berkshireeast.com/winter",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Berkshire East history (Thunder Mountain 1953, the five Charlemont ski areas, the 1969-70 renaming, Roy Schaefer and the equipment auctions, the race programme)",
+        "url": "https://www.berkshireeast.com/the-resort/history",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Berkshire East lift tickets (night skiing schedule, flexible pricing model, holiday periods, lower-mountain and 4-hour ticket products)",
+        "url": "https://www.berkshireeast.com/winter/lift-tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Berkshire East season passes (AIM High pricing and terms, the Catamount partnership, Burke and Smugglers' Notch benefits)",
+        "url": "https://www.berkshireeast.com/winter/season-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Berkshire East Indy Pass page (two days, the AddOn pass, the mandatory advance reservation system)",
+        "url": "https://www.berkshireeast.com/winter/indy-pass",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Berkshire East (vertical, elevations, acreage, trail and lift counts, four-tier difficulty split, snowfall, longest run, night and snowmaking acreage)",
+        "url": "https://www.onthesnow.com/massachusetts/berkshire-east/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. Berkshire East's competitive culture is alpine racing, which is documented at length"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes Berkshire East's bump skiing. The resort publishes no trail information at all, and PeakRankings has no Berkshire East page"
+    },
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts",
+      "note": "The Indy Pass partner directory's structured T-Parks field says yes, so Berkshire East has terrain parks. Beyond that there is nothing: no terrain parks page exists anywhere in the resort's own Joomla sitemap, no park is named on any page, OnTheSnow publishes no park count, and the trail map PDF is an image with no extractable text"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is mentioned by any source. With no park page there is nothing to read either way"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.berkshireeast.com/winter/lift-tickets",
+      "note": "Berkshire East runs a demand-based flexible pricing model and publishes no representative advance rate - its own guidance is that buying earlier is cheaper and that prices rise as inventory sells"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.berkshireeast.com/winter/lift-tickets",
+      "note": "No window rate is published. Prices are set per day by demand and remaining inventory, and days can sell out entirely"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.berkshireeast.com/winter/lift-tickets",
+      "note": "No window rate is published. Prices are set per day by demand and remaining inventory, and days can sell out entirely"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Berkshire East publishes no trail list, no difficulty ratings and no terrain description of any kind on its own site, so there is no statement either way about glade skiing. OnTheSnow's four-tier split does not distinguish glades. Left null rather than assumed"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Nothing is published, and the inference cuts two ways here. A mountain with snowmaking on every trail and a fifty-year alpine racing programme has strong reasons to groom comprehensively - race training needs firm, consistent surfaces, and manufactured snow left alone in a Massachusetts thaw-freeze becomes unskiable. Against that, 28% of the trails carry the advanced rating and 2% are expert, which is a larger top-end share than most southern New England areas and more terrain than a five-lift operation can resurface nightly. Recorded as occasional on that balance, and flagged for re-checking against the live grooming report in January - which for this mountain is the only source that will ever answer the question.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.onthesnow.com/massachusetts/berkshire-east/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Berkshire East has terrain parks - the Indy Pass partner directory's structured field says so - and publishes not one word about them. This is the most complete documentation gap on the roster: the resort's own Joomla sitemap was fetched and enumerated in full, and it contains no terrain parks page, no freestyle page and no trail list; no park is named anywhere on the site; OnTheSnow gives no count; and the trail map is a PDF with no extractable text. For a mountain that documents its own history at three thousand words and its wind turbine in detail, saying nothing at all about its parks is a conspicuous silence rather than an oversight.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

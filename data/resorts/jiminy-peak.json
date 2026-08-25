@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "jiminy-peak",
+    "name": "Jiminy Peak Mountain Resort",
+    "aka": [
+      "Jiminy Peak",
+      "Jiminy"
+    ],
+    "state": "MA",
+    "region": "Berkshires",
+    "town": "Hancock",
+    "lat": 42.5442,
+    "lon": -73.2862,
+    "website": "https://www.jiminypeak.com"
+  },
+  "size": {
+    "verticalDrop": 1150,
+    "skiableAcres": 167,
+    "trailCount": 45,
+    "liftCount": 9,
+    "longestRun": 2,
+    "summitElevation": 2380,
+    "baseElevation": null,
+    "annualSnowfallAvg": 68,
+    "snowmakingPercent": 96,
+    "nightSkiing": true,
+    "source": "https://www.jiminypeak.com/the-mountain/mountain-information/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 38,
+    "percentIntermediate": 42,
+    "percentAdvanced": 13,
+    "percentExpert": 7,
+    "glades": null,
+    "difficultyNotes": "Jiminy is the only resort on this roster that publishes its terrain as a six-tier trail count rather than a four-tier percentage: 17 Easy, 6 Low Intermediate, 7 Intermediate, 6 High Intermediate, 6 Black Diamond and 3 Double Black Diamond, totalling 45. The percentages stored here are that breakdown collapsed into this schema's four grades and converted - 17/45 beginner, the three intermediate tiers combined at 19/45, 6/45 advanced and 3/45 expert - which rounds to 38/42/13/7 and sums to 100. That is arithmetic on the resort's own published counts rather than a figure it states, and the trail counts are the more faithful record, which is why they are set out here in full. The six-tier scheme is worth noticing in its own right: a mountain that splits intermediate three ways is telling you where it thinks its guests actually are. Base elevation is null - the resort publishes a 2,380 ft summit and a 1,150 ft vertical rise but no base figure, and subtracting one from the other would be this guide's arithmetic rather than a sourced number.",
+    "source": "https://www.jiminypeak.com/the-mountain/mountain-information/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Ikon Pass",
+      "type": "ikon",
+      "access": "Two days per season as an Ikon Bonus Mountain - not a full destination. Bonus days must be redeemed at the Crane Lodge ticket window rather than direct-to-lift, and are not valid on the Ikon Base Pass or Ikon Session passes. In the other direction, Jiminy's own Anytime and Zephyr passholders can buy a 3-day Ikon Session pass at a discounted $279.",
+      "blackouts": "December 27 2025 to January 1 2026; January 17 and 18 2026; February 14 and 15 2026 - the 25/26 dates, which is the last set the resort has published.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.jiminypeak.com/skiing-riding/tickets-passes/season-passes/"
+    },
+    {
+      "name": "Fairbank three-mountain benefit",
+      "type": "other",
+      "access": "Not a separate pass but worth knowing: Jiminy, Bromley in Vermont and Cranmore in New Hampshire are all Fairbank Group mountains, and a Jiminy Anytime or Zephyr season pass carries two free lift tickets at each of the other two, valid on the days your own pass is valid. There is also a $471 three-mountain college pass giving unlimited access to all three with no blackouts.",
+      "blackouts": "The free tickets inherit your own pass's restrictions - an Anytime passholder may use them any day, a Zephyr passholder only Sunday to Friday outside holiday periods. The college pass has no blackout dates.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.jiminypeak.com/skiing-riding/tickets-passes/season-passes/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 124,
+    "windowTicketAdultLow": 114,
+    "advanceTypical": null,
+    "seasonPassAdult": 1356,
+    "currency": "USD",
+    "notes": "These are 2025-26 day rates, the last published: adult (19-64) all-day $124 weekend and holiday, $114 midweek and non-holiday, with 4-hour tickets $5 less at $119 and $109 and a Twilight ticket at $69 and $59. Every other age band is $20 cheaper on the day rate but pays the same $69/$59 for Twilight, which is unusual and tells you who the night operation is priced for. A lower-mountain day ticket is $56 at the window only. There is no separate published online rate - the saving comes from reloading an existing Axess RFID card, which takes $5 off - so advanceTypical is null rather than estimated. The season pass figure is the 2026-27 Anytime (all day, all night, 7/7) adult rate at the price tier live on the verified date: Jiminy runs a four-step deadline ladder at $1,104 by 15 April, $1,230 by 15 July, $1,356 by 15 October and $1,480 after, so the $1,356 is what an adult buying today pays and it will rise. The Sunday-Friday Zephyr Pass is $700 at the same tier and the Twilight-only pass $560. Seniors take 15% off everything except the Zephyr Senior.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.jiminypeak.com/skiing-riding/tickets-passes/lift-tickets/",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://www.jiminypeak.com/skiing-riding/tickets-passes/season-passes/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Jiminy Peak is the most complete resort in southern New England, and it is not especially close. Eleven hundred and fifty feet of vertical on 167 acres in Hancock, with 45 trails, nine lifts including a six-passenger high-speed bubble, 96% snowmaking, three terrain parks, slopeside lodging and a mountain coaster, all inside two and a half hours of Boston, New York, Hartford and Albany. It has been running since 1948 and the current operation shows fifty years of steady reinvestment rather than one big build. Two things make it genuinely distinctive. The first is night skiing on a scale nobody else in Massachusetts attempts: 25 of the 45 trails lit by 530 LED fixtures, four lifts turning, all three terrain parks open, seven nights a week until 10pm - and a Twilight season pass at $560 that costs a third of the full one. The second is Zephyr, the 1.5-megawatt wind turbine on the ridge that made Jiminy the first mountain resort in North America to install one; it supplies about two thirds of the resort's electricity and it is visible from most of the mountain, which makes it the rare sustainability project that is also a landmark. What Jiminy is not is big or steep - three double-black trails out of 45 is the honest measure - but for a family that wants a real resort rather than a hill, this is the one.",
+    "snowQuality": "Sixty-eight inches a year is a low natural total and Jiminy has never pretended otherwise; the mountain is engineered around making its own. Coverage is 96%, and the guns are Sledgehammers built by SnowGun Technologies, a design the resort's own chairman Brian Fairbank co-developed with a former Skunk Works engineer - which is an unusual claim for a ski area to be able to make and, by the resort's account, doubled snow output while cutting energy use. The practical result is a firm, consistent, thoroughly manufactured surface that opens in mid-November most years and holds into early April. What you will not get is powder. The Berkshires at a 2,380-foot summit sit in the wrong place for it, and a skier who wants natural snow should be looking three hours north rather than choosing between Berkshire mountains.",
+    "crowds": "Busy, and the price structure is where you see it. Jiminy sits within easy reach of four metropolitan areas and it draws hard from all of them, with Christmas week, MLK weekend and Presidents' week the periods the resort itself warns will sell out. Nine lifts on 167 acres is generous capacity for the size and the six-passenger Berkshire Express moves a lot of people, but 167 acres is still 167 acres on a February Saturday. The escape routes are real and well priced: midweek rates are $10 lower, Twilight is $59 and runs seven nights a week, and the Zephyr pass exists precisely for people willing to give up Saturday daytime. A quieter and better day here is a Tuesday afternoon into the evening.",
+    "difficulty": "Family terrain with a small serious corner. The published trail counts are the clearest statement of it anywhere on this roster: 17 easy, 19 intermediate across three sub-grades, 6 black and 3 double black. That is a mountain built for progression - the three-way intermediate split is not marketing, it reflects genuinely different pitches - and a mountain where a strong skier will have covered the interesting ground before lunch. All trails funnel back to the base area, which is the single most useful fact for a parent and the reason Jiminy has the family reputation it does. The night terrain skews easier still, at 12 green, 10 blue and 3 black of the 25 lit trails. Anyone in the Berkshires wanting sustained steepness is at Berkshire East or Catamount, both of which carry a larger share of hard terrain on smaller acreage.",
+    "keyTrails": [
+      {
+        "name": "The Berkshire Express",
+        "note": "The six-passenger high-speed lift, and the reason a 167-acre mountain absorbs metropolitan weekend traffic at all. Also where the monthly First Tracks sessions meet at 8am."
+      },
+      {
+        "name": "Ace of Spades",
+        "note": "The trail carrying Coyote Ridge park at its top. One of the few Jiminy trails named anywhere in the resort's own published material."
+      },
+      {
+        "name": "Alex's Park",
+        "note": "The showpiece park at the base, between the Summit Triple and Grand Slam lifts, with its own surface lift so you can lap it without riding the mountain. The resort's phrase is the place to see and be seen."
+      },
+      {
+        "name": "Coyote Ridge",
+        "note": "The flow park at the top of Ace of Spades - jibs, gaps and slopestyle, and the most advanced of the three."
+      },
+      {
+        "name": "The 180",
+        "note": "Named on the parks page as the reference point for Grommetville, which sits under the Novice chair near its top. Jiminy's beginner terrain has its own dedicated lift, which is rarer than it should be."
+      }
+    ],
+    "tidbits": [
+      "Zephyr, Jiminy's 1.5MW wind turbine, made it the first mountain resort in North America to install one.",
+      "The turbine stands 386 feet to the blade tip and supplies about 66% of the resort's electricity.",
+      "Twenty-five of the 45 trails are lit by 530 LED fixtures, seven nights a week until 10pm.",
+      "All three terrain parks are lit at night.",
+      "The resort publishes six difficulty grades, splitting intermediate three ways.",
+      "Jiminy, Bromley and Cranmore are all Fairbank Group mountains, and a Jiminy pass gets you two free days at each.",
+      "A season pass holder from any other mountain can buy a Jiminy day ticket for $10.",
+      "Jiminy has been operating since 1948."
+    ],
+    "bestFor": [
+      "Night skiing seven nights a week",
+      "Families and progression",
+      "Three lit terrain parks",
+      "A real resort near four cities"
+    ],
+    "watchOutFor": [
+      "Only three double-black trails",
+      "Sells out over holiday weeks",
+      "68 inches of natural snow",
+      "The pass price rises every quarter"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.jiminypeak.com/the-mountain/mountain-information/snow-report/",
+    "trailMap": "https://www.jiminypeak.com/the-mountain/mountain-information/jiminy-maps/",
+    "webcams": "https://www.jiminypeak.com/webcams/",
+    "lodging": "https://www.jiminypeak.com/lodging-real-estate/lodging/",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Jiminy Peak mountain information (summit elevation, vertical rise, acreage, snowfall, snowmaking coverage, longest run, park count, lift and trail breakdowns, the Sledgehammer snowmaking system, 1948 founding)",
+        "url": "https://www.jiminypeak.com/the-mountain/mountain-information/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Jiminy Peak terrain parks (all three parks, their locations, levels and character)",
+        "url": "https://www.jiminypeak.com/the-mountain/mountain-information/jiminy-parks/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Jiminy Peak night skiing (25 of 45 trails lit, 530 LED fixtures, all three parks lit, the 12/10/3 night difficulty split, twilight pricing)",
+        "url": "https://www.jiminypeak.com/the-mountain/activities-things-to-do/night-skiing/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Jiminy Peak lift tickets (2025-26 adult window rates, 4-hour and twilight products, the Axess reload saving)",
+        "url": "https://www.jiminypeak.com/skiing-riding/tickets-passes/lift-tickets/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Jiminy Peak season passes (2026-27 Anytime and Zephyr pricing ladders, the Ikon Bonus Mountain terms and blackout dates, the Bromley and Cranmore benefits, the three-mountain college pass)",
+        "url": "https://www.jiminypeak.com/skiing-riding/tickets-passes/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Jiminy Peak sustainability (Zephyr wind turbine specifications, output and share of resort electricity, the 2008 Golden Eagle Award)",
+        "url": "https://www.jiminypeak.com/the-mountain/mountain-information/sustainability/",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. Jiminy's freestyle programming is park-based and its competitive programme is alpine racing"
+    },
+    "moguls.namedRuns": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.jiminypeak.com/the-mountain/mountain-information/",
+      "note": "Jiminy publishes trail counts by difficulty but no trail list and no named runs beyond Ace of Spades and the 180, both of which appear only as park reference points. There is no source that names which trails are left ungroomed"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes Jiminy's bump skiing. PeakRankings has no Jiminy Peak page and the resort says nothing about grooming policy"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.jiminypeak.com/the-mountain/mountain-information/jiminy-parks/",
+      "note": "The parks page describes all three parks in detail and mentions no pipe"
+    },
+    "parks.rebuildCadence": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No rebuild or reset schedule is published, though the resort does state it hosts several freestyle events a season"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.jiminypeak.com/skiing-riding/tickets-passes/lift-tickets/",
+      "note": "Jiminy publishes one set of window rates and no separate online price. The only advance saving is $5 for reloading an existing Axess RFID card, which is a card-reuse discount rather than an advance-purchase rate"
+    },
+    "size.baseElevation": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.jiminypeak.com/the-mountain/mountain-information/",
+      "note": "The resort's stat block gives a 2,380 ft summit elevation and a 1,150 ft vertical rise and publishes no base figure. Subtracting the two would give 1,230 ft, but that is this guide's arithmetic rather than a sourced number - the same treatment Saddleback gets for the reverse case"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Jiminy's six-tier trail breakdown counts trails by difficulty and says nothing about glades, and no other page on the site mentions tree skiing. Left null rather than assumed"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "rare",
+    "policy": "No grooming policy is published, but the shape of the mountain makes the answer fairly clear. Ninety-six percent snowmaking coverage on 167 acres means a manufactured surface that has to be groomed to survive Berkshire thaw-freeze cycles; a night operation running seven nights a week to 10pm compresses the window in which grooming can happen and increases the need for it; and with 6 black and 3 double-black trails out of 45 there is very little terrain that could be left alone without costing the resort its family reputation. Recorded as rare on that basis. This is a groomed mountain by design, and the file says so rather than hedging.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.jiminypeak.com/the-mountain/mountain-information/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 3,
+    "parks": [
+      {
+        "name": "Alex's Park",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "At the base between the Summit Triple and Grand Slam lifts, reachable from three chairs and served by its own surface lift so it can be lapped without riding the mountain. The resort's own line is that this is the place to see and be seen at Jiminy, which is a fair description of a park sited where everyone in the base area can watch it."
+      },
+      {
+        "name": "Coyote Ridge",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "At the top of the Ace of Spades trail, reached from the Grand Slam, Summit Triple or Berkshire Express. A flow park rather than a jib line - the resort describes dialling in jibs, hucking gaps and building slopestyle runs."
+      },
+      {
+        "name": "Grommetville",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The entry-level park under the Novice chair near the top of the 180, with small features aimed at basic skills and confidence. Having it on the beginner lift rather than buried on the mountain is the detail that makes it usable."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": true,
+    "progression": "A three-rung ladder with clear separation and, unusually, sensible siting for each rung: Grommetville on the beginner chair for first features, Alex's at the base with its own surface lift for lapping, and Coyote Ridge at the top of Ace of Spades for people building slopestyle runs. All three are lit and open at night, which effectively doubles the hours available to a park rider - no other Massachusetts mountain offers that.",
+    "rebuildCadence": null,
+    "overview": "Three parks, all named, all described, and all lit at night - a serious freestyle offering for a 167-acre mountain. Alex's Park sits at the base with its own dedicated surface lift; Coyote Ridge is the advanced flow park at the top of Ace of Spades; Grommetville is the entry-level park under the Novice chair. The resort runs several freestyle competitions a season and requires a signed waiver for each. No feature counts, jump sizes or rebuild schedules are published, and there is no pipe.",
+    "reputation": "Strong for southern New England, and the night lighting is what sets it apart rather than the features themselves. Three parks with genuine progression between them, all rideable until 10pm seven nights a week, is a combination no other mountain in Massachusetts matches - and given that Jiminy's Twilight ticket is the same $59 to $69 for every age group, the night session is where the park scene actually lives. Nothing here is on the scale of Carinthia at Mount Snow, and nobody is driving from out of state for it, but for a Berkshires rider it is the obvious choice.",
+    "source": "https://www.jiminypeak.com/the-mountain/mountain-information/jiminy-parks/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "nightPark": {
+        "source": "https://www.jiminypeak.com/the-mountain/activities-things-to-do/night-skiing/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  }
+}

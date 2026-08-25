@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "catamount",
+    "name": "Catamount Mountain Resort",
+    "aka": [
+      "Catamount",
+      "Catamount Ski Area"
+    ],
+    "state": "MA",
+    "region": "Berkshires",
+    "town": "South Egremont",
+    "lat": 42.1613,
+    "lon": -73.4849,
+    "website": "https://www.catamountski.com"
+  },
+  "size": {
+    "verticalDrop": 1000,
+    "skiableAcres": 133,
+    "trailCount": 44,
+    "liftCount": 8,
+    "longestRun": 1.75,
+    "summitElevation": 2000,
+    "baseElevation": 1000,
+    "annualSnowfallAvg": 47,
+    "snowmakingPercent": 93,
+    "nightSkiing": true,
+    "source": "https://www.catamountski.com/the-resort/catamount-resort/about-catamount-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "skiableAcres": {
+        "source": "https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "summitElevation": {
+        "source": "https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "baseElevation": {
+        "source": "https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 35,
+    "percentIntermediate": 42,
+    "percentAdvanced": 23,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "Catamount publishes its own breakdown as both percentages and trail counts, which is rarer than it should be: 35% green on 16 trails, 42% blue on 18, and 23% black and double-black together on 10. Because the resort combines single and double diamonds into one figure, percentExpert is null and all 23% sits in percentAdvanced - the same treatment other three-tier resorts on this roster get, though here it hides something worth knowing, since Catapult is a genuine double diamond that the resort calls the steepest trail in the Berkshires and Ripper and Christopher's Leap were cut recently as double diamonds too. OnTheSnow splits it 36/40/14/10, which puts a tenth of the mountain in an expert grade; the resort's own numbers are stored. Two other figures come from the resort rather than the aggregator and are worth flagging: snowmaking is 93% of trails, and 22 of the 44 trails are lit - exactly half the mountain. Note that this resort straddles a state line. The base lodge and address are in Hillsdale, New York; the summit and part of the terrain are in South Egremont, Massachusetts. It is recorded here as MA because that is the New England half and this is a New England guide, but its own mailing address is the New York one and OnTheSnow files it under New York.",
+    "source": "https://www.catamountski.com/the-resort/catamount-resort/about-catamount-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "AIM High Season Pass",
+      "type": "other",
+      "access": "Unlimited at both Catamount and Berkshire East - the two mountains sell one joint pass. It also carries two days each at Burke Mountain and Smugglers' Notch with 50% off further days, unlimited midweek skiing at Burke through March, and 25% off non-holiday lodging at both. AIM stands for Authentic Independent Mountains.",
+      "blackouts": "None at Catamount or Berkshire East. The pass is sold as unlimited at both with no blackout dates; the cheaper Midweek pass is Monday to Friday only.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.berkshireeast.com/winter/season-passes"
+    },
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two days per season on the Indy Pass. Catamount runs a dedicated Indy Pass reservation page, so redemptions are booked rather than walked up.",
+      "blackouts": "No blackout dates are published, but reservations are required for Indy redemptions - the same crowd-control arrangement its sister mountain Berkshire East uses.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.catamountski.com/winter/tickets-passes/indy-pass-reservations"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 699,
+    "currency": "USD",
+    "notes": "The $699 is the 2026-27 AIM High adult (19-59) rate and it buys two mountains, Catamount and Berkshire East, unlimited with no blackouts. It is a deadline price: it holds until 31 August 2026 and rises to $799 until 30 November. Youth (7-18) and senior (60-79) are $579 rising to $679, a two-mountain midweek pass is $379 rising to $429, and 80+ and under-7 are free. Note that the pass is sold from Berkshire East's site rather than Catamount's, which is where the joint arrangement shows. Day tickets cannot be quoted: Catamount uses the same demand-based flexible pricing as its sister mountain, publishes no fixed window rate, and warns that days can sell out. Full-day tickets are free for under-7s and 80-plus at the ticket window. Night tickets are sold separately for Wednesday to Saturday sessions. Prices exclude tax, and a $20 change fee applies to rescheduling a dated ticket.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.berkshireeast.com/winter/season-passes",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Catamount is the ski area that sits on the New York-Massachusetts line, and the split is not a technicality: the base lodge is in Hillsdale, New York, the summit is in South Egremont, Massachusetts, and you cross states on the way down. A thousand feet of vertical on 133 acres with 44 trails and eight lifts, two and a half hours from New York City and inside an hour of the whole Hudson Valley and western Connecticut. What makes it worth the drive over the closer options is that Catamount has kept cutting hard terrain when most southern New England areas stopped - Catapult is a double diamond the resort calls the steepest trail in the Berkshires, and Ripper and Christopher's Leap were added as double diamonds more recently. Ten of the 44 trails carry a black rating. Against that, this is a low-snow mountain in a low-snow region at 47 inches a year, entirely dependent on covering 93% of its trails with machine snow, and 133 acres is small. Since joining forces with Berkshire East it has become half of a genuinely good deal: one $699 pass, two mountains, no blackouts, plus days at Burke and Smugglers' Notch. Twenty-two of the 44 trails are lit Wednesday through Saturday, and in summer the CataMonster zip line runs 250 feet above the trails at 55mph, which is the loudest thing in the Berkshires.",
+    "snowQuality": "Forty-seven inches a year is the thinnest natural snowfall of any mountain in this guide's southern half, and it is not a close call - this is the far southwestern corner of the region at a 1,000-foot base, which is the wrong end of every variable. Catamount's answer is 93% snowmaking coverage and four Prinoth groomers plus a winch cat working it every night, and the operation is good enough that the mountain skis reliably from December into March. What that means in practice is a firm, engineered surface: fast and consistent in the morning, softening through the afternoon, and thoroughly exposed to the thaw-freeze cycles that define winter this far south. Birch Glade and the black terrain are the parts that suffer, since tree skiing needs natural cover that arrives here only after a real storm. Nobody comes to Catamount for snow. They come for the pitch, and then hope.",
+    "crowds": "Quieter than its catchment suggests, which is Catamount's real advantage. Two and a half hours from New York City puts it in the same bracket as the Catskills areas that absorb most of the metropolitan traffic, and eight lifts on 133 acres - two quads, three triples and three carpets - is generous capacity for the size. Weekend afternoons fill up and holiday periods are busy, but the mountain has not been discovered the way Windham and Hunter have. The night operation from Wednesday to Saturday redistributes a good chunk of local demand, and the flexible pricing model means a midweek visit is both cheaper and emptier. Like its sister mountain, Catamount requires Indy Pass holders to reserve, which keeps the busiest days from being overrun.",
+    "difficulty": "The most serious terrain in southern New England on this little vertical, and the resort is unusually specific about it. Ten trails carry a black or double-black rating - 23% of the mountain - and the headline is Catapult, which Catamount calls the steepest trail in the Berkshires and which is a genuine double diamond rather than a courtesy rating. Ripper and Christopher's Leap were cut more recently as double diamonds, which is a striking thing for a small area to be doing in the 2020s when most of its peers are widening trails rather than steepening them. Below that the mountain is broad and welcoming: 16 green trails including a dedicated learning area, and 18 blues with Upper and Lower Sidewinder running 1.25 miles from summit to base as the run everyone remembers. The limit is length, not pitch - a thousand feet of vertical means the steep sections are short, and a strong skier gets through the black list quickly.",
+    "keyTrails": [
+      {
+        "name": "Catapult",
+        "note": "Double diamond, and by Catamount's own claim the steepest trail in the Berkshires. The single reason a strong skier picks this mountain over its neighbours."
+      },
+      {
+        "name": "Ripper",
+        "note": "One of two double diamonds cut recently - a small area adding hard terrain rather than softening it, which is worth noting on its own."
+      },
+      {
+        "name": "Christopher's Leap",
+        "note": "The other new double diamond. Between these two and Catapult, Catamount's top end has grown rather than shrunk."
+      },
+      {
+        "name": "Upper and Lower Sidewinder",
+        "note": "A mile and a quarter from summit to base and the resort's own nominated favourite. The intermediate run the mountain is really built around."
+      },
+      {
+        "name": "Ridge Run to Upper and Lower Promenade",
+        "note": "The longest run at 1.75 miles, and green the whole way - a beginner can take the full mountain from the summit, which is not true at most areas with this much black terrain."
+      },
+      {
+        "name": "Birch Glade",
+        "note": "The tree skiing, rated blue and folded into the intermediate count. On 47 inches of natural snow it needs a storm to be worth finding."
+      }
+    ],
+    "tidbits": [
+      "Catamount straddles the state line - the base lodge is in Hillsdale, New York, the summit in South Egremont, Massachusetts.",
+      "Catapult is, by the resort's own claim, the steepest trail in the Berkshires.",
+      "Ripper and Christopher's Leap were cut recently as new double diamonds.",
+      "Twenty-two of the 44 trails are lit - exactly half the mountain.",
+      "One $699 AIM High pass covers both Catamount and Berkshire East with no blackouts.",
+      "Four Prinoth groomers and a winch cat work 133 acres, which is heavy machinery for the size.",
+      "The CataMonster is the longest dual-span zip line in the United States, running 250 feet above the ski trails.",
+      "At 47 inches a year it has the thinnest natural snowfall of any mountain in this guide's southern half."
+    ],
+    "bestFor": [
+      "The steepest pitch in the Berkshires",
+      "Two mountains on one pass",
+      "A day trip from the Hudson Valley",
+      "Night skiing on half the mountain"
+    ],
+    "watchOutFor": [
+      "Only 47 inches of natural snow",
+      "133 acres goes quickly",
+      "Glades need a real storm",
+      "Indy visits need a reservation"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.catamountski.com/winter/the-mountain/mountain-conditions",
+    "trailMap": "https://www.catamountski.com/winter/the-mountain/trail-map",
+    "webcams": "https://www.catamountski.com/winter/the-mountain/mountain-conditions",
+    "lodging": "https://www.catamountski.com/the-resort/lodging",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Catamount about page (vertical, trail counts and difficulty split, lift breakdown, snowmaking percentage, lit trail count, grooming fleet, longest run, named trails and terrain parks, the state-line straddle)",
+        "url": "https://www.catamountski.com/the-resort/catamount-resort/about-catamount-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Catamount lift tickets (night skiing schedule and hours, flexible pricing model, ticket terms, Ski NY passport participation)",
+        "url": "https://www.catamountski.com/winter/tickets-passes/lift-tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Berkshire East season passes (the joint AIM High pass covering both mountains, its pricing ladder and its Burke and Smugglers' Notch benefits - sold from Berkshire East's site for both resorts)",
+        "url": "https://www.berkshireeast.com/winter/season-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Catamount (skiable acreage, summit and base elevations, annual snowfall, lift type breakdown, night and snowmaking acreage)",
+        "url": "https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of which trails are left ungroomed there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented for Catamount"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.catamountski.com/the-resort/catamount-resort/about-catamount-resort",
+      "note": "No source describes Catamount's bump skiing. The resort names its double diamonds and its grooming fleet but never says which trails the fleet leaves alone, and PeakRankings has no Catamount page"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.catamountski.com/the-resort/catamount-resort/about-catamount-resort",
+      "note": "The about page names the four trails carrying terrain parks and mentions no pipe; there is no terrain parks page anywhere on the site"
+    },
+    "parks.rebuildCadence": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No rebuild or reset schedule is published"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.catamountski.com/winter/tickets-passes/lift-tickets",
+      "note": "Catamount runs a demand-based flexible pricing model and publishes no representative advance rate - its own guidance is that buying earlier is cheaper and that prices rise as inventory sells"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.catamountski.com/winter/tickets-passes/lift-tickets",
+      "note": "No window rate is published. Prices are set per day by demand and remaining inventory, and days can sell out entirely"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.catamountski.com/winter/tickets-passes/lift-tickets",
+      "note": "No window rate is published. Prices are set per day by demand and remaining inventory, and days can sell out entirely"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.catamountski.com/the-resort/catamount-resort/about-catamount-resort",
+      "note": "Catamount combines black diamond and double black diamond into a single 23% figure on 10 trails, so there is no separate fourth-tier percentage to source - even though the mountain plainly has double-diamond terrain and names three of those trails"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Catamount publishes its grooming fleet - four Prinoth machines and a winch cat for 133 acres, which is heavy equipment for the size and implies a mountain that intends to groom thoroughly - but never says what it leaves alone. The winch cat is the informative detail: a winch is for grooming pitches too steep to work conventionally, which means Catapult and the other double diamonds are within reach of the fleet rather than beyond it. Against that, 10 black trails on a mountain with 47 inches of natural snow and a nightly resurfacing job across half of it lit for night skiing leaves room for bumps to form between passes on the steep terrain. Recorded as occasional and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.catamountski.com/the-resort/catamount-resort/about-catamount-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 4,
+    "parks": [
+      {
+        "name": "Bobcat",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "One of four blue-rated trails the resort lists as carrying terrain parks. No feature information is published for any of them."
+      },
+      {
+        "name": "Panther",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A second park trail, named alongside Bobcat, Sunrise and Turnpike in the resort's intermediate trail description."
+      },
+      {
+        "name": "Sunrise",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A third park trail. That Catamount spreads its parks across four separate blue trails rather than concentrating them is the one structural thing that can be said about the setup."
+      },
+      {
+        "name": "Turnpike",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The fourth park trail named by the resort."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Catamount names four trails that carry terrain parks - Bobcat, Panther, Sunrise and Turnpike, all rated blue - and publishes nothing else about them. There is no terrain parks page on the site, no feature lists, no sizing, no lighting information and no progression scheme; the parks appear only as a clause inside the intermediate trail description on the about page. The count of 4 recorded here is the number of park-carrying trails the resort itself enumerates, which is a published list rather than an estimate, but it counts locations rather than distinct designed parks, and the two may not be the same thing.",
+    "reputation": null,
+    "source": "https://www.catamountski.com/the-resort/catamount-resort/about-catamount-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

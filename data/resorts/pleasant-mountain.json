@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "pleasant-mountain",
+    "name": "Pleasant Mountain",
+    "aka": [
+      "Shawnee Peak",
+      "Pleasant Mountain Ski Area"
+    ],
+    "state": "ME",
+    "region": "Western Maine",
+    "town": "Bridgton",
+    "lat": 44.0444,
+    "lon": -70.822,
+    "website": "https://www.pleasantmountain.com"
+  },
+  "size": {
+    "verticalDrop": 1350,
+    "skiableAcres": 239,
+    "trailCount": 44,
+    "liftCount": 6,
+    "longestRun": 0.8,
+    "summitElevation": 1900,
+    "baseElevation": 600,
+    "annualSnowfallAvg": 101,
+    "snowmakingPercent": null,
+    "nightSkiing": true,
+    "source": "https://www.onthesnow.com/maine/pleasant-mountain/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "trailCount": {
+        "source": "https://www.pleasantmountain.com/",
+        "verifiedOn": "2026-08-25"
+      },
+      "liftCount": {
+        "source": "https://www.pleasantmountain.com/",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.pleasantmountain.com/winter-activities/night-skiing",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": null,
+    "percentIntermediate": null,
+    "percentAdvanced": null,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "No difficulty breakdown exists for Pleasant Mountain in any form. The resort publishes a four-number stat block on its homepage - 44 trails and glades, 6 lifts, 20 night trails, 86 years - and nothing else; there is no mountain-statistics page anywhere in its 128-URL sitemap, and its mountain report loads its numbers through JavaScript. OnTheSnow, which carries a difficulty split for almost every other resort on this roster, publishes none for Pleasant Mountain either. So all four percentages are null rather than estimated. `glades` is true on the resort's own wording - it counts \"44 Trails and Glades\" as one figure, which is also why the trail count here is 44 against OnTheSnow's 43: the resort is counting its glades as trails and OnTheSnow is not. Note also that the three published elevation figures do not quite reconcile: 1,900 ft summit less 600 ft base is 1,300 ft, against a published 1,350 ft vertical. All three come from OnTheSnow and the 50 ft slack sits exactly on this project's tolerance, so all three are stored as published.",
+    "source": "https://www.pleasantmountain.com/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "New England Pass",
+      "type": "other",
+      "access": "Unlimited at Pleasant Mountain, Sunday River, Sugarloaf and Loon Mountain - Boyne Resorts' four New England mountains on one pass. Additional Pleasant Mountain passholder benefits and perks do not carry onto this pass.",
+      "blackouts": "None. The resort's season pass page lists the New England Pass with an explicit NO BLACKOUTS.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.pleasantmountain.com/season-passes/pleasant-mountain-passes"
+    },
+    {
+      "name": "Boyne Freestyle Pass",
+      "type": "other",
+      "access": "Three to seven days of your choosing across ten Boyne Resorts destinations - Sunday River, Sugarloaf, Pleasant Mountain, Loon, Boyne Mountain, The Highlands, Brighton, Summit at Snoqualmie, Cypress and Big Sky - plus one bonus day that is valid only at Pleasant Mountain or Cypress and is spent automatically on the first visit to either. Pleasant Mountain is the small mountain Boyne uses as the sweetener on its own multi-resort product.",
+      "blackouts": "Blackout dates apply at Big Sky Resort only; no blackouts are published for Pleasant Mountain or the other eight destinations.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.pleasantmountain.com/tickets-and-ticket-packs/boyne-freestyle-pass"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "The one price Pleasant Mountain publishes as flat text is the most revealing one on the page: a Night Season Pass, valid 3:30pm to close six nights a week for every age, at $275 with no blackouts. That a mountain sells night access as a headline product rather than a footnote is the whole story of the place. Every other rate - Unlimited, Sunday-Friday, Beginner's, New England Pass, and all day-ticket products - is behind an age-and-type selector that renders through JavaScript, so none could be read. The pass structure itself is legible even where the prices are not: the Unlimited Pass carries no blackouts and includes night skiing plus three free days each at Sunday River, Sugarloaf or Loon and at the western Boyne resorts; the Sunday-Friday Pass is blacked out 28 December to 1 January, 18 January and 15-19 February. Night skiing is included with every daily lift ticket at no extra charge.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.pleasantmountain.com/season-passes/pleasant-mountain-passes",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://www.pleasantmountain.com/season-passes/pleasant-mountain-passes",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Pleasant Mountain is the night skiing mountain, and it says so without hedging: when the sun goes down it lights 20 trails on four lifts, six nights a week, and claims more night terrain than anywhere else in New England. It has been doing it since the late 1980s and the operation is built around it - a $275 all-ages night season pass, night skiing included free with every day ticket, Monday Night Madness at $24 for unlimited laps, and Racing with the Moon two nights a week. The daytime mountain underneath is a genuinely decent one: 1,350 feet of vertical on 239 acres above Moose Pond in Bridgton, forty-five minutes from Portland and inside two and a half hours of Boston, with a new high-speed summit quad that arrived in December 2024 and turned an evening here from five laps into a dozen. What it is not is a big mountain or a hard one - the longest run is 0.8 miles and no source publishes a difficulty breakdown, which tells you something in itself. It was called Shawnee Peak from 1988 until Boyne bought it and restored the original name for 2022-23, so half the reviews you find online are filed under a name the mountain no longer uses.",
+    "snowQuality": "A hundred and one inches a year is a middling total for Maine and a long way short of Sunday River an hour north, which is the honest comparison since both are Boyne mountains on the same pass. What Pleasant Mountain has instead is snowmaking on 234 of its 239 acres and a long institutional memory about it - the resort installed snowmaking in 1979 after a year with no snow and went top-to-bottom in 1983-84, which for a Maine area of this size was early. The low base at 600 feet is the vulnerability: this is southwestern Maine rather than the western mountains, and a February thaw reaches the bottom of the hill here before it reaches Sugarloaf. Night skiing on manufactured snow is, as it happens, a good pairing - the surface firms up after dark rather than turning to slush.",
+    "crowds": "Two mountains again, split by the clock. Daytime weekends draw families from Portland and the Sebago Lakes region onto six lifts, and the mountain fills without being unpleasant. The night operation is where Pleasant Mountain's character actually lives: a local crowd, a lot of it teenage and collegiate, working through laps on lit terrain from 3:30 until close, with Blizzards Pub doing the rest of the work. The Summit Express matters more here than the raw statistics suggest - a high-speed quad on a mountain whose sessions are three or four hours long changes the arithmetic of an evening completely. Holiday weeks in February are the crowded stretch; the rest of the season is comfortable.",
+    "difficulty": "Genuinely hard to characterise, because nobody publishes a breakdown - not the resort, not OnTheSnow, not the state association. What can be said from the shape of the place is that 1,350 feet of vertical spread over 44 trails and glades with a 0.8-mile longest run means short, direct pitches rather than long winding ones, and that a mountain whose identity is night skiing, learning programmes and family traffic is not one that has invested in scaring people. Longtime visitors on OnTheSnow describe terrain that is excellent for families and expert trails that are really intermediates - a fair characterisation to weigh, though it is skier consensus rather than a published fact. Anyone in Maine wanting genuine difficulty drives an hour north to Sunday River, and the resort's own pass benefits assume you will.",
+    "keyTrails": [
+      {
+        "name": "The Summit Express",
+        "note": "Not a trail but the thing that changed the mountain: the high-speed summit quad, first public chair 21 December 2024. The resort's own pitch is that you get as many runs in an evening as most mountains offer in a full day."
+      },
+      {
+        "name": "Playground Park",
+        "note": "The park on Main, and the site of the Throwdown Showdown - best trick, best overall run, most creative, first hundred entrants, no fee."
+      },
+      {
+        "name": "Lower Grom Park",
+        "note": "The middle park, jumps and jibs, and where the free Progression Sessions for park riders are held."
+      },
+      {
+        "name": "Lil Grommet Park",
+        "note": "First features. The resort runs beginner park sessions here for people who have never slid a rail."
+      },
+      {
+        "name": "The night terrain",
+        "note": "Twenty lit trails on four lifts, Monday to Saturday 3:30pm to close plus holiday Sundays. It is the reason the mountain has the reputation it does."
+      }
+    ],
+    "tidbits": [
+      "Twenty lit trails on four lifts - the resort claims more night terrain than anywhere else in New England.",
+      "Night skiing is included free with every daily lift ticket.",
+      "A night-only season pass costs $275 for any age, with no blackout dates.",
+      "The first trail was cleared in 1938 by local students, CCC members and volunteers.",
+      "Maine's first ski patrol was here in 1938, and Maine's first chairlift in 1957.",
+      "It was Shawnee Peak from 1988 until Boyne Resorts restored the original name for 2022-23.",
+      "The Summit Express high-speed quad loaded its first public chair on 21 December 2024.",
+      "Nobody - not the resort, not OnTheSnow - publishes a difficulty breakdown for this mountain."
+    ],
+    "bestFor": [
+      "Night skiing, six nights a week",
+      "Families out of Portland",
+      "Park progression sessions",
+      "Boyne New England Pass holders"
+    ],
+    "watchOutFor": [
+      "No difficulty breakdown published",
+      "Longest run is only 0.8 miles",
+      "600-foot base takes the thaw",
+      "Prices are behind a JavaScript selector"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.pleasantmountain.com/mountain-report",
+    "trailMap": "https://www.pleasantmountain.com/trail-map",
+    "webcams": "https://www.pleasantmountain.com/mountain-report",
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Pleasant Mountain homepage (44 trails and glades, 6 lifts, 20 night trails, the Summit Express project)",
+        "url": "https://www.pleasantmountain.com/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Pleasant Mountain night skiing (20 lit trails, 4 lifts, Monday-Saturday 3:30pm to close, Monday Night Madness, $275 night pass)",
+        "url": "https://www.pleasantmountain.com/winter-activities/night-skiing",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Pleasant Mountain history (1938 founding, Maine's first ski patrol and first chairlift, snowmaking timeline, the Shawnee Peak years, the Boyne purchase)",
+        "url": "https://www.pleasantmountain.com/our-history",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Pleasant Mountain season passes (pass structure, blackout terms, New England Pass, night skiing included with day tickets)",
+        "url": "https://www.pleasantmountain.com/season-passes/pleasant-mountain-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Boyne Freestyle Pass (ten destinations, 3-7 days, the Pleasant Mountain bonus day, Big Sky blackouts)",
+        "url": "https://www.pleasantmountain.com/tickets-and-ticket-packs/boyne-freestyle-pass",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Throwdown Showdown event page (names Playground Park on Main)",
+        "url": "https://www.pleasantmountain.com/events/the-throwdown-showdown",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Progression Session event page (names Lower Grom Park and Lil Grommet Park)",
+        "url": "https://www.pleasantmountain.com/events/progression-session",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Pleasant Mountain (vertical, elevations, acreage, longest run, snowfall, snowmaking and night acreage, lift types)",
+        "url": "https://www.onthesnow.com/maine/pleasant-mountain/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the bump skiing anywhere there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No bump competitions or organised mogul scene are documented. The resort's event calendar is thorough and lists freestyle park events, a race league and Racing with the Moon, but nothing mogul-related"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes Pleasant Mountain's bump skiing, and with no difficulty breakdown published there is not even a percentage to reason from. PeakRankings has no Pleasant Mountain page"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is mentioned on any page found, and with no park page there is nothing to read either way"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The daily lift tickets page renders its prices through a JavaScript booking widget and shows no rate as text"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The season pass page describes five pass products and their terms in full but puts every price behind an age-and-type selector that renders through JavaScript. The only price published as text anywhere is the $275 night pass, which is not the adult all-access product"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The daily lift tickets page renders its prices through a JavaScript booking widget and shows no rate as text"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The daily lift tickets page renders its prices through a JavaScript booking widget and shows no rate as text"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.onthesnow.com/maine/pleasant-mountain/ski-resort",
+      "note": "No percentage is published. OnTheSnow gives 234 snowmaking acres against 239 skiable acres, which would divide out to 98%, but that is this guide's arithmetic on two separately reported figures rather than a number any source states"
+    },
+    "terrain.percentAdvanced": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No difficulty breakdown exists for Pleasant Mountain anywhere - not on the resort's site, not on OnTheSnow, not at Ski Maine. This is one of very few resorts on the roster with no split at all"
+    },
+    "terrain.percentBeginner": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No difficulty breakdown exists for Pleasant Mountain anywhere - not on the resort's site, not on OnTheSnow, not at Ski Maine"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No difficulty breakdown exists for Pleasant Mountain anywhere - not on the resort's site, not on OnTheSnow, not at Ski Maine"
+    },
+    "terrain.percentIntermediate": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No difficulty breakdown exists for Pleasant Mountain anywhere - not on the resort's site, not on OnTheSnow, not at Ski Maine"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Nothing is published about grooming and no account of the mountain's ungroomed terrain was found. The structural reasoning is the same as at other heavily snowmade mountains this size: snowmaking on 234 of 239 acres means a manufactured surface that gets groomed to stay usable, and a resort whose evening business runs six nights a week has an operational reason to resurface nightly that a daytime-only mountain does not. Recorded as occasional on that basis and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.onthesnow.com/maine/pleasant-mountain/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 3,
+    "parks": [
+      {
+        "name": "Playground Park",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The main park, on Main, and the venue for the Throwdown Showdown - a free comp capped at a hundred entrants, judged on best trick, best overall run and most creative. Competitors must be 13 or over and able to hit every feature, which is the resort's own way of saying this is the serious one."
+      },
+      {
+        "name": "Lower Grom Park",
+        "size": "medium",
+        "level": "Beginner to intermediate",
+        "jumps": null,
+        "jibs": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Jumps and jibs, and the park the resort uses for its free Progression Sessions - first-timers and experienced park riders in the same coached session."
+      },
+      {
+        "name": "Lil Grommet Park",
+        "size": "progression",
+        "level": "Beginner",
+        "jumps": null,
+        "jibs": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "First features - the park where the resort teaches people to slide their first rail and hit their first jump. Also written as Lil Grom Park on the same page."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": "A three-rung ladder that is unusually well documented for a mountain with no park page at all, because the resort runs coached sessions on each rung and writes them up: Lil Grommet for a first feature, Lower Grom for jumps and jibs with instruction available free, and Playground for anyone who can hit everything. The Progression Session events are free and explicitly welcome people who have never been in a park.",
+    "rebuildCadence": null,
+    "overview": "Pleasant Mountain has no terrain parks page - there is no such URL anywhere in its 128-entry sitemap, and the homepage stat block counts trails, lifts and night trails but not parks. What it does have is an unusually detailed events calendar, and three parks are named across it: Playground Park on Main, Lower Grom Park and Lil Grommet Park. The count of 3 recorded here is the number of distinct parks this guide could name from those pages, not a figure the resort publishes - there may be more. No feature lists, no lighting information and no rebuild schedule are published anywhere.",
+    "reputation": "Better organised than the absence of a park page suggests. Between the Throwdown Showdown, the free Progression Sessions on two separate parks and a Red Bull Slide-In Tour stop with Zeb Powell and five other athletes riding here for a day, this is a mountain that programmes freestyle deliberately rather than just pushing up a few features. Whether the parks themselves are any good is not something any source will tell you, and this file does not guess.",
+    "source": "https://www.pleasantmountain.com/events/the-throwdown-showdown",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}
