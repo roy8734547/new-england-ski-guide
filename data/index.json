@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-25T14:03:28.418Z",
+  "generatedAt": "2026-08-25T14:18:31.342Z",
   "schemaVersion": 3,
-  "count": 26,
+  "count": 29,
   "resorts": [
     {
       "slug": "attitash",
@@ -94,6 +94,47 @@
         "Short lift lines on a Saturday"
       ],
       "officialSnowReport": "https://www.brettonwoods.com/snow-trail-report/",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "bromley",
+      "name": "Bromley Mountain",
+      "state": "VT",
+      "region": "Southern Vermont",
+      "town": "Peru",
+      "lat": 43.2277,
+      "lon": -72.9396,
+      "website": "https://bromley.com",
+      "verticalDrop": 1334,
+      "skiableAcres": 178,
+      "trailCount": 47,
+      "liftCount": 9,
+      "annualSnowfallAvg": 145,
+      "snowmakingPercent": 86,
+      "nightSkiing": null,
+      "passTypes": [
+        "none"
+      ],
+      "passes": [
+        {
+          "name": "No multi-mountain pass",
+          "type": "none",
+          "access": "Bromley is independently operated and on no multi-mountain pass. Its own site states plainly that Ikon Passes are not valid for use at Bromley; access is through its own season pass products."
+        }
+      ],
+      "advanceTypical": 114,
+      "seasonPassAdult": null,
+      "mogulPresence": "occasional",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Sun on the snow all day",
+        "Families with mixed abilities",
+        "A two-and-a-half-mile beginner run",
+        "One ticket price, any day"
+      ],
+      "officialSnowReport": "https://bromley.com/snow-report",
       "verifiedOn": "2026-08-25"
     },
     {
@@ -505,6 +546,47 @@
       "verifiedOn": "2026-08-20"
     },
     {
+      "slug": "magic-mountain",
+      "name": "Magic Mountain",
+      "state": "VT",
+      "region": "Southern Vermont",
+      "town": "Londonderry",
+      "lat": 43.1884,
+      "lon": -72.7607,
+      "website": "https://www.magicmtn.com",
+      "verticalDrop": 1500,
+      "skiableAcres": 205,
+      "trailCount": 53,
+      "liftCount": 5,
+      "annualSnowfallAvg": 107,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "2 all-day or night lift tickets, as at every Indy partner resort"
+        }
+      ],
+      "advanceTypical": 114,
+      "seasonPassAdult": null,
+      "mogulPresence": "common",
+      "parkCount": 1,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Expert terrain and glades",
+        "Old-school 1960s trail cutting",
+        "Escaping Stratton and Bromley",
+        "Indy Pass holders"
+      ],
+      "officialSnowReport": "https://www.magicmtn.com/snow-report",
+      "verifiedOn": "2026-08-25"
+    },
+    {
       "slug": "mount-snow",
       "name": "Mount Snow",
       "state": "VT",
@@ -630,6 +712,47 @@
         "Reliable snow in a bad winter"
       ],
       "officialSnowReport": "https://www.okemo.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "pats-peak",
+      "name": "Pats Peak",
+      "state": "NH",
+      "region": "Southern New Hampshire",
+      "town": "Henniker",
+      "lat": 43.1553,
+      "lon": -71.7949,
+      "website": "https://www.patspeak.com",
+      "verticalDrop": 770,
+      "skiableAcres": 115,
+      "trailCount": 28,
+      "liftCount": 11,
+      "annualSnowfallAvg": 69,
+      "snowmakingPercent": 100,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "2 all-day or night lift tickets. Reservations are required in advance at patspeak.com/indypass, and only Indy+ may be used during blackout periods."
+        }
+      ],
+      "advanceTypical": 76,
+      "seasonPassAdult": 629,
+      "mogulPresence": "rare",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Learning to ski",
+        "Night skiing on most of a mountain",
+        "Families under two hours from Boston",
+        "Knowing the price before you go"
+      ],
+      "officialSnowReport": "https://www.patspeak.com/the-mountain/mountain-info/snow-report/",
       "verifiedOn": "2026-08-25"
     },
     {

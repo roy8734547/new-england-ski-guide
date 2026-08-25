@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "bromley",
+    "name": "Bromley Mountain",
+    "aka": [
+      "Bromley"
+    ],
+    "state": "VT",
+    "region": "Southern Vermont",
+    "town": "Peru",
+    "lat": 43.2277,
+    "lon": -72.9396,
+    "website": "https://bromley.com"
+  },
+  "size": {
+    "verticalDrop": 1334,
+    "skiableAcres": 178,
+    "trailCount": 47,
+    "liftCount": 9,
+    "longestRun": 2.5,
+    "summitElevation": 3284,
+    "baseElevation": 1950,
+    "annualSnowfallAvg": 145,
+    "snowmakingPercent": 86,
+    "nightSkiing": null,
+    "source": "https://bromley.com/about",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 32,
+    "percentIntermediate": 37,
+    "percentAdvanced": 31,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "A three-tier breakdown, so percentExpert is null and the top 31% sits in percentAdvanced. The 178 acres is the skiable figure out of 300 total, which is the resort's own framing. Bromley's snowmaking number is more informative than most because it is published by difficulty: 86% average, made up of 99% of beginner terrain, 82% intermediate and 79% advanced - which tells you exactly where the resort spends its water and that the hard terrain is the part most exposed to a thin winter. The mountain's defining physical fact is not in any of these numbers though: Bromley faces south, and its own about page calls it the only major ski area in New England with a southern exposure.",
+    "source": "https://bromley.com/about",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "No multi-mountain pass",
+      "type": "none",
+      "access": "Bromley is independently operated and on no multi-mountain pass. Its own site states plainly that Ikon Passes are not valid for use at Bromley; access is through its own season pass products.",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://bromley.com/ikon-session-3-day"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 119,
+    "windowTicketAdultLow": 119,
+    "advanceTypical": 114,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "These are 2025-26 rates; no 2026-27 day pricing had been published as of the verified date. Bromley charges one adult rate for every operating day with no weekend or holiday premium - $119 at the window, $114 online - and states outright that tickets are valid any day of the season with no blackouts and no restrictions, which is a rarer thing to be able to say than it sounds. Half days are $109 window and $104 online. Multi-day rates run to $446 window for four days. No adult season pass rate could be sourced: the 2026-27 season pass page lists Unlimited, Off-Peak and Midweek products with prices marked coming soon, and the only figure published is a $99 uphill access pass. Bromley Unlimited passholders can buy a discounted 3-day Ikon Session pass for $279, but it is explicitly not valid at Bromley, so it is not recorded as a pass here.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://bromley.com/lift-tickets",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://bromley.com/season-passes",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Bromley faces south, and that one fact explains almost everything about it. It is the only major ski area in New England with a southern exposure, which means the sun is on the snow all day - warmer, brighter, softer, and far more pleasant to stand around in than the north-facing mountains that surround it. Families have known this for decades and it is why Bromley has the reputation it does in southern Vermont: 1,334 feet of vertical on 178 skiable acres in Peru, with the highest base elevation of any Vermont resort bar one, nine lifts for a mountain that size, and Runaround stretching two and a half miles from the summit. It is independently run and on no multi-mountain pass at all - its own site says flatly that Ikon passes are not valid here - which in 2026 makes it an increasingly unusual thing. The trade-off is the same sun: south-facing snow softens and then refreezes, and Bromley's 86% snowmaking is doing real work to hold a surface together. The East Side Steeps give strong skiers somewhere to go. Everyone else comes for the warmth and Runaround.",
+    "snowQuality": "The southern exposure is a genuine double-edged sword and the honest assessment has to say so. On a cold bright February day Bromley is the most comfortable mountain in southern Vermont, with soft forgiving snow while everything north-facing stays hard. In a thaw it is the first to suffer and the refreeze is unkind. One hundred and forty-five inches of natural snow is a reasonable regional total, and the 86% snowmaking coverage is what actually keeps the mountain skiable - though the published breakdown shows where the priorities lie: 99% of beginner terrain covered, 82% intermediate, 79% advanced. The East Side glades run on whatever nature provides. Bromley also has the second-highest base elevation of any Vermont resort at 1,950 feet, which helps at the bottom of the hill in marginal weather.",
+    "crowds": "Comfortable, and helped by having nine lifts for 178 acres - unusually generous capacity, including a high-speed detachable quad, a fixed-grip quad and four doubles. Bromley draws families from the same southern Vermont catchment as Stratton, which is ten minutes away and considerably larger, and that neighbour absorbs most of the destination traffic. The result is a mountain that fills up on holiday weeks and stays civilised the rest of the time. The south-facing base area is a genuine factor in how crowded it feels: people linger outside here in a way they do not at Magic or Stratton, so the lodge is busier than the lifts.",
+    "difficulty": "A family mountain with a proper advanced corner, which is a better combination than it sounds. Thirty-one percent of the trails are in the top tier and they are concentrated in the East Side Steeps, the zone Bromley markets as its advanced terrain and which delivers more than most such branding: Havoc and Blue Ribbon are two of the steepest, fastest cruisers on the mountain, Stargazer runs over snowmaking whales that turn it into a rollercoaster, Pabst Panic carries relentless bumps, and Avalanche Glade and Orion are tight tree skiing with real difficulty. Away from the east side it is genial intermediate terrain, and Runaround gives beginners two and a half miles of descent, which is a remarkable thing for a nervous skier to be able to do. The gap is the middle of the top tier - the step from Bromley's blues into the East Side is abrupt.",
+    "keyTrails": [
+      {
+        "name": "Runaround",
+        "note": "Two and a half miles from the summit, and the reason a first-season skier can take the whole mountain. The longest run in southern Vermont outside the big resorts."
+      },
+      {
+        "name": "Pabst Panic",
+        "note": "The resort's own description is relentless bumps, which is unusually direct marketing. The mogul run on the east side."
+      },
+      {
+        "name": "Havoc",
+        "note": "One of the two steepest, fastest cruisers on the mountain by Bromley's own reckoning, on the East Side Steeps."
+      },
+      {
+        "name": "Stargazer",
+        "note": "Runs over massive snowmaking whales that turn it into rollercoaster-like drops - an odd and genuinely fun consequence of where the guns sit."
+      },
+      {
+        "name": "Avalanche Glade",
+        "note": "Tight trees and hidden powder stashes on the east side, on natural snow. With 79% snowmaking on advanced terrain, the glades are the part that waits for a storm."
+      }
+    ],
+    "tidbits": [
+      "Bromley is the only major ski area in New England with a southern exposure.",
+      "Its 1,950-foot base is the second-highest of any Vermont resort, behind Pico.",
+      "Runaround is two and a half miles long.",
+      "Snowmaking is published by difficulty: 99% of beginner terrain, 82% intermediate, 79% advanced.",
+      "Nine lifts serve 178 skiable acres - unusually generous capacity for the size.",
+      "Bromley's own site states that Ikon Passes are not valid here.",
+      "Lift tickets are one price on every operating day, with no blackouts and no weekend premium."
+    ],
+    "bestFor": [
+      "Sun on the snow all day",
+      "Families with mixed abilities",
+      "A two-and-a-half-mile beginner run",
+      "One ticket price, any day"
+    ],
+    "watchOutFor": [
+      "South face refreezes after a thaw",
+      "Advanced terrain has 79% snowmaking",
+      "No season pass price published",
+      "Abrupt step from blue to East Side"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://bromley.com/snow-report",
+    "trailMap": "https://bromley.com/trail-map",
+    "webcams": "https://bromley.com/webcams",
+    "lodging": "https://bromley.com/lodging",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Bromley about page (elevations, vertical, acres, trails, lifts, longest run, snowfall, snowmaking by difficulty, southern exposure)",
+        "url": "https://bromley.com/about",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bromley lift tickets (2025-26 adult window and online rates, no-blackout statement)",
+        "url": "https://bromley.com/lift-tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bromley season passes (2026-27 products, prices not yet published)",
+        "url": "https://bromley.com/season-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bromley East Side Steeps (advanced trail names and character)",
+        "url": "https://bromley.com/east-side-steeps",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bromley terrain parks (Plaza and Bonanza)",
+        "url": "https://bromley.com/bromley-parks",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Bromley Ikon Session 3-Day page (states Ikon is not valid at Bromley)",
+        "url": "https://bromley.com/ikon-session-3-day",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.nightSkiing": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No usable source either way. Bromley's about page says nothing about night skiing, there is no night or twilight page anywhere in its section sitemaps, and Bromley is not an Indy partner so the Indy directory's structured Night field is unavailable for it. Left null rather than assuming the answer is no"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The parks page names two parks and no pipe"
+    },
+    "passes[0].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Not applicable in the usual sense - Bromley is on no mega-pass - and its season pass page publishes no blackout terms for the products it sells"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The 2026-27 season pass page lists Unlimited, Off-Peak and Midweek products with prices marked coming soon; the only figure published is a $99 uphill access pass"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Bromley rates on three tiers, so no fourth-tier figure exists to source"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No bump competitions or organised scene are documented for Bromley"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Bromley grooms the family terrain thoroughly - it is a mountain built around comfortable intermediate skiing on a sunny face - and concentrates its ungroomed terrain in the East Side Steeps. Pabst Panic is the trail the resort itself describes as carrying relentless bumps, which is a rare case of a mountain saying in print which run it leaves alone.",
+    "namedRuns": [
+      {
+        "name": "Pabst Panic",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Described by Bromley's own East Side Steeps page as having relentless bumps. The mountain's bump run, and named as such by the people who groom it."
+      },
+      {
+        "name": "Stargazer",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Not a conventional bump run but worth knowing: massive snowmaking whales left on the trail create rollercoaster-like drops, which skis somewhere between a mogul field and a natural terrain park."
+      },
+      {
+        "name": "Avalanche Glade",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Tight trees on the east side with hidden powder stashes. Only 79% of Bromley's advanced terrain has snowmaking and the glades are outside that, so this needs a natural storm."
+      }
+    ],
+    "quality": "Decent and, unusually, complicated by the sun. Bromley's southern exposure means bump lines here soften earlier in the day than anywhere else in southern Vermont, which in March is a gift - the troughs go from firm to forgiving by eleven in the morning while Magic ten minutes away is still hard. In midwinter the same exposure works against it: a warm afternoon followed by a cold night sets the bumps into something unpleasant, and there is no north-facing alternative on this mountain to retreat to. Pabst Panic is the dependable line and the resort says so itself. Stargazer's snowmaking whales are the oddity worth trying.",
+    "bestTiming": "Spring, and specifically late morning. A south-facing mountain in March softens hours before its neighbours, which makes Bromley one of the better places in New England to ski bumps in late season. Midwinter after a thaw-freeze is the time to avoid.",
+    "bumpCulture": null,
+    "source": "https://bromley.com/east-side-steeps",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 2,
+    "parks": [
+      {
+        "name": "Plaza",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The main park, carrying medium and large features. No feature counts are published."
+      },
+      {
+        "name": "Bonanza",
+        "size": "progression",
+        "level": "Beginner to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Extra-small and small features - the progression park, and the right size for the family crowd Bromley actually gets."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "Two parks with a clear step between them - Bonanza for extra-small and small features, Plaza for medium and large. There is no middle rung, which for a 178-acre mountain is a reasonable simplification rather than a gap.",
+    "rebuildCadence": null,
+    "overview": "Two parks, sized sensibly for a family mountain, with medium and large features in Plaza and a genuine progression park in Bonanza. Bromley publishes their names and sizes and nothing more - no feature counts, no lighting, no rebuild schedule.",
+    "reputation": "Modest and appropriate. Bromley's identity is sun, families and the East Side Steeps, not freestyle, and the parks are sized to serve its own visitors rather than to attract riders from elsewhere. Anyone in southern Vermont riding park seriously drives twenty-five minutes to Carinthia at Mount Snow, which runs eight.",
+    "source": "https://bromley.com/bromley-parks",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

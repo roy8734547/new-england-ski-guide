@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "magic-mountain",
+    "name": "Magic Mountain",
+    "aka": [
+      "Magic",
+      "Magic Mountain Vermont"
+    ],
+    "state": "VT",
+    "region": "Southern Vermont",
+    "town": "Londonderry",
+    "lat": 43.1884,
+    "lon": -72.7607,
+    "website": "https://www.magicmtn.com"
+  },
+  "size": {
+    "verticalDrop": 1500,
+    "skiableAcres": 205,
+    "trailCount": 53,
+    "liftCount": 5,
+    "longestRun": 1.6,
+    "summitElevation": 2850,
+    "baseElevation": 1350,
+    "annualSnowfallAvg": 107,
+    "snowmakingPercent": null,
+    "nightSkiing": false,
+    "source": "https://www.onthesnow.com/vermont/magic-mountain/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "nightSkiing": {
+        "source": "https://www.indyskipass.com/our-resorts/magic-mountain",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 28,
+    "percentIntermediate": 30,
+    "percentAdvanced": 15,
+    "percentExpert": 26,
+    "glades": true,
+    "difficultyNotes": "Twenty-six percent expert against 15% advanced is the strangest-shaped breakdown on this roster and it is the single most useful thing to know about Magic: there is more genuinely expert terrain here than there is advanced terrain, which means the mountain skips the step most places use to ease you upward. That is Magic's whole reputation - a 1,500-foot mountain cut in the 1960s with narrow, twisting, steep old-school trails and a glade network that southern Vermont regulars rate above anything else in the region. The snowmaking figure is the counterweight: 100 acres of 205, so barely half the mountain is covered and the expert half largely is not. Magic runs a limited operating week, typically Thursday to Sunday plus holiday periods, which is not a schema field but is the most important practical fact about visiting.",
+    "source": "https://www.onthesnow.com/vermont/magic-mountain/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "2 all-day or night lift tickets, as at every Indy partner resort",
+      "blackouts": "No blackout dates",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/magic-mountain"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 129,
+    "windowTicketAdultLow": 129,
+    "advanceTypical": 114,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "2026-27 rates, and unusually for this roster they are current rather than last season's. The adult (18-64) all-day ticket is $129 at the window and $114 online, with no weekend/midweek split - Magic charges the same on every operating day, which is simpler than most and reflects a mountain that only opens Thursday to Sunday plus holiday weeks anyway. There is one published exception worth knowing: non-holiday Thursdays without powder conditions run retro pricing at $79. No adult season pass rate could be sourced; the season pass page did not render prices.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.magicmtn.com/lift-ticket-info",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Magic is the mountain southern Vermont skiers name when they want to prove they are serious, and unlike most such claims it holds up. Fifteen hundred feet of vertical on 205 acres in Londonderry, cut in the 1960s and never modernised in the ways that would have ruined it - the trails are narrow, they twist, they follow the fall line rather than the contour, and the glade network between them is the best in the region by common consent. The terrain breakdown tells the story better than any description: 26% expert against 15% advanced, more genuinely hard terrain than intermediate stepping-stone terrain, which is a shape almost nothing else in New England has. Magic has been through repeated financial trouble, closed for stretches in the 1990s, and survives now as a stubbornly independent operation on the Indy Pass with a limited operating week - typically Thursday to Sunday plus holidays. That schedule, and snowmaking on barely half the acreage, are the price of admission. Check the calendar and the snow report before you drive, and if the answer is yes, this is the most interesting skiing in southern Vermont.",
+    "snowQuality": "One hundred and seven inches is a middling southern Vermont total and Magic cannot paper over the gaps the way its neighbours can - snowmaking reaches 100 of its 205 acres, so roughly half the mountain, and the half it does not reach is the steep and gladed half that people actually come for. That makes Magic unusually weather-dependent for a resort of its size. In a good winter the trees hold snow well because the mountain is quiet and the terrain is sheltered, and the skiing is as good as anywhere in the region. In a thin one, the expert terrain simply is not open, and what remains is a mid-sized mountain with half its acreage covered. There is no way to plan around this except to watch the report.",
+    "crowds": "Genuinely quiet, and for once that is not a euphemism for a mountain nobody wants to ski. Magic's limited operating week concentrates its visitors into fewer days, but five lifts on 205 acres of narrow trails absorbs the numbers, and the terrain is hard enough to disperse people fast - the crowd that shows up here is competent and spreads out into the trees. Stratton and Bromley are both within twenty minutes and take the family traffic that would otherwise land here, which is the real reason Magic stays uncrowded. Thursday, non-holiday, is the quietest and cheapest day of the week at $79.",
+    "difficulty": "The hardest mountain in southern Vermont and one of the harder ones in this guide relative to its size. Twenty-six percent of the terrain is rated expert and, unusually, that rating is not inflated - these are narrow 1960s trails with real pitch and no runout, plus a glade network that is the mountain's actual draw. The 15% advanced figure is the interesting part: there is less intermediate-to-advanced bridging terrain than expert terrain, so a skier moving up will find the step from Magic's blues to its blacks larger than it would be at Stratton. Combine that with only half the mountain under snowmaking and you get a place that rewards strong skiers on good days and gives cautious ones very little on bad ones.",
+    "keyTrails": [
+      {
+        "name": "The Black Summit Quad terrain",
+        "note": "The lift that serves Magic's expert half. Everything the mountain is famous for hangs off it."
+      },
+      {
+        "name": "Red Summit Chair",
+        "note": "The second base-to-summit lift, and the older side of the mountain - narrow, twisting 1960s trail cutting of the kind almost nowhere else still has."
+      },
+      {
+        "name": "Abracadabra Area",
+        "note": "Where the terrain park sits, served by its own tow. Named in keeping with a mountain whose trails have been called things like this since the sixties."
+      },
+      {
+        "name": "The glade network",
+        "note": "Magic's real asset and the reason southern Vermont regulars rate it above its neighbours. On natural snow only, so it lives or dies by the winter."
+      }
+    ],
+    "tidbits": [
+      "Magic has more terrain rated expert (26%) than advanced (15%) - a shape almost nothing else in New England has.",
+      "The mountain was cut in the 1960s and its trail character has never been modernised away.",
+      "Snowmaking reaches only 100 of Magic's 205 acres, and not the half people come for.",
+      "Magic typically operates Thursday to Sunday plus holiday periods rather than seven days a week.",
+      "Non-holiday Thursdays without powder run retro pricing at $79.",
+      "It is on the Indy Pass with two days and no blackout dates.",
+      "Magic closed for stretches in the 1990s and has been independently run ever since."
+    ],
+    "bestFor": [
+      "Expert terrain and glades",
+      "Old-school 1960s trail cutting",
+      "Escaping Stratton and Bromley",
+      "Indy Pass holders"
+    ],
+    "watchOutFor": [
+      "Open Thursday to Sunday only",
+      "Half the mountain has no snowmaking",
+      "Little intermediate bridging terrain",
+      "No season pass price published"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.magicmtn.com/snow-report",
+    "trailMap": "https://www.magicmtn.com/trail-map",
+    "webcams": "https://www.youtube.com/live/oFoM1U23cXk",
+    "lodging": "https://www.magicmtn.com/lodging",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Magic Mountain overview (every size and terrain figure; magicmtn.com publishes no stats page)",
+        "url": "https://www.onthesnow.com/vermont/magic-mountain/ski-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Magic Mountain lift ticket info (2026-27 adult window and online rates, Thursday retro pricing)",
+        "url": "https://www.magicmtn.com/lift-ticket-info",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Magic Mountain snow report (lift names, Abracadabra Area terrain park, webcam link)",
+        "url": "https://www.magicmtn.com/snow-report",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass Magic Mountain listing (two days, no blackouts, night skiing: no)",
+        "url": "https://www.indyskipass.com/our-resorts/magic-mountain",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.indyskipass.com/our-resorts/magic-mountain",
+      "verifiedOn": "2026-08-25",
+      "note": "The Indy Pass resort directory publishes a structured Night field for every partner mountain and gives Magic \"No\". magicmtn.com's page sitemap contains no night or twilight page either"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "OnTheSnow lists 100 snowmaking acres against 205 skiable acres but no percentage, and the resort publishes no stats page at all"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe appears on the snow report's park listing and the resort publishes no park page"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The season pass information page did not render any prices"
+    },
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source discusses when Magic's ungroomed terrain is at its best; there is no PeakRankings review and the resort publishes nothing on grooming"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No bump competitions or organised scene are documented for Magic"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "No grooming policy is published and no independent review of Magic exists to describe one. What the sourced figures establish is that snowmaking covers only 100 of 205 acres, and the uncovered half is where the 26% expert terrain and the glade network sit - terrain a resort cannot groom to a consistent surface because there is no consistent surface to groom. Ungroomed skiing here is therefore structural rather than a policy choice.",
+    "namedRuns": [],
+    "quality": "Almost certainly good and genuinely undocumented, which is an uncomfortable combination to record. Magic has more expert terrain than advanced terrain, half its acreage runs on natural snow, and its reputation among southern Vermont skiers rests on exactly the narrow steep ungroomed lines that produce bumps - but no source consulted names a single bump run, because Magic has no PeakRankings review and publishes nothing itself. Rather than write plausible fiction from the reputation, this section records what the numbers support and stops. It is the strongest candidate on the roster for re-checking against the live grooming report in January, when the resort's own report will name which trails are being left alone.",
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.onthesnow.com/vermont/magic-mountain/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 1,
+    "parks": [
+      {
+        "name": "Abracadabra Area terrain park",
+        "size": "small",
+        "level": "Not published",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The mountain's only park, in the Abracadabra Area and served by its own tow. Magic's snow report names it and publishes nothing else about it - no level, no feature counts, no size. The size recorded here is inferred from it being one park served by a surface lift on a 205-acre mountain, not from a published figure."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "One park, in the Abracadabra Area, with its own tow. That is the entirety of what Magic publishes about its freestyle terrain, and it is consistent with everything else about the mountain - the investment here has gone into keeping steep old trails and glades open, not into building features.",
+    "reputation": "Not a park mountain and nobody expects it to be. Magic's draw is the opposite end of the sport, and a rider looking for features in southern Vermont has Stratton and Mount Snow's Carinthia both within half an hour, the latter running eight parks. Having one park served by a tow is the right answer for a mountain that opens four days a week.",
+    "source": "https://www.magicmtn.com/snow-report",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

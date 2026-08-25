@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "pats-peak",
+    "name": "Pats Peak",
+    "aka": [
+      "Pat's Peak"
+    ],
+    "state": "NH",
+    "region": "Southern New Hampshire",
+    "town": "Henniker",
+    "lat": 43.1553,
+    "lon": -71.7949,
+    "website": "https://www.patspeak.com"
+  },
+  "size": {
+    "verticalDrop": 770,
+    "skiableAcres": 115,
+    "trailCount": 28,
+    "liftCount": 11,
+    "longestRun": 1.5,
+    "summitElevation": 1460,
+    "baseElevation": 690,
+    "annualSnowfallAvg": 69,
+    "snowmakingPercent": 100,
+    "nightSkiing": true,
+    "source": "https://www.onthesnow.com/new-hampshire/pats-peak/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "nightSkiing": {
+        "source": "https://www.patspeak.com/plan-your-visit/tickets-passes/lift-ticket-rates/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 50,
+    "percentIntermediate": 21,
+    "percentAdvanced": 14,
+    "percentExpert": 14,
+    "glades": true,
+    "difficultyNotes": "Half the terrain is beginner, which is the most lopsided breakdown on this roster and an accurate description of what Pats Peak is for. Eleven lifts on 115 acres is the other giveaway - that is more uphill capacity per acre than anywhere else in this guide, because a learning hill needs to move a lot of first-timers a short distance rather than a few skiers a long one. The 14% expert figure covers a handful of short pitches. Note the snowmaking: OnTheSnow lists 115 snowmaking acres against 115 skiable acres, so the 100% figure is the two numbers being identical rather than a percentage derived across mismatched sources. It has to be - 69 inches of natural snow a year is among the lowest totals on the roster.",
+    "source": "https://www.onthesnow.com/new-hampshire/pats-peak/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "2 all-day or night lift tickets. Reservations are required in advance at patspeak.com/indypass, and only Indy+ may be used during blackout periods.",
+      "blackouts": "Blackout dates apply to the standard Indy Pass - only Indy+ works during them. Indy links to a blackout calendar rather than listing Pats Peak's dates on the resort page.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/pats-peak"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 105,
+    "windowTicketAdultLow": 79,
+    "advanceTypical": 76,
+    "seasonPassAdult": 629,
+    "currency": "USD",
+    "notes": "Pats Peak is the only resort on this roster publishing a full 2026-27 adult day-rate grid, and it is worth reading carefully because the fields flatten it. $105 is the weekend and holiday adult (18-64) full-day rate, which is online-only - Pats Peak requires reservations at weekends and holidays and sells no walk-up ticket then, so it is the top of the price range rather than a window rate in the strict sense. $79 is the weekday non-holiday walk-up rate and $76 the same ticket bought online. Night skiing (4pm to close) is $85 at weekends, $69 online or $72 at the window midweek; half days run $95 weekend, $66-$69 midweek. The season pass figure is the adult (18-64) Powder Pass Club at $629 on or before 9 September 2026, rising to $689 through 4 November and $719 after - the resort describes it as unlimited skiing and riding day or night with snowtubing access included. Pats Peak lists several other pass products whose price tables did not render, so this is the one adult rate that could actually be read.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.patspeak.com/plan-your-visit/tickets-passes/lift-ticket-rates/",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://www.patspeak.com/plan-your-visit/tickets-passes/season-passes/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Pats Peak is a teaching hill that happens to have eleven lifts, and it is unembarrassed about it. Seven hundred and seventy feet of vertical on 115 acres in Henniker, half an hour west of Concord and well under two from Boston, with half the trail network rated beginner and the densest lift coverage per acre of anything in this guide. That combination is not an accident: a mountain whose business is turning first-timers into skiers needs short lifts, lots of them, and terrain that forgives. What lifts it above being merely a learning area is the night operation. Ninety-three of its 115 acres are lit - more than four-fifths of the mountain - and night skiing runs from 26 December through the season, which makes this one of the biggest lit footprints in New England and the reason a Henniker weeknight has a real atmosphere. Add 100% snowmaking, a genuinely thought-out ticket grid with published prices, and a $629 pass that includes night skiing and snowtubing, and it is very good value for what it is. What it is not is a mountain for anybody who can already ski well. Seven hundred and seventy feet ends quickly.",
+    "snowQuality": "Sixty-nine inches a year is close to the bottom of this roster and Pats Peak's response is total: OnTheSnow lists snowmaking acreage identical to skiable acreage, meaning every acre of the mountain is covered. The resort has been investing in it too - one of the few news items on its own site is a major snowmaking reservoir expansion. What that buys, at 690 feet of base elevation in southern New Hampshire, is a mountain that opens and stays open in a region where natural snow simply cannot be relied on. What you ski is machine snow, groomed, and it is honest about that. The freeze-thaw cycles that reach this far south are the real enemy, not the lack of powder.",
+    "crowds": "Busy in a specific way: this is a lesson mountain and a night mountain, so the crowd is concentrated in the beginner area during the day and spread across the lit terrain in the evening. Eleven lifts on 115 acres means queues rarely build even when the base area is full, which is the point of having that much capacity. Weekends and holidays require an advance reservation - Pats Peak sells no walk-up ticket then - which is unusual for a mountain this size and does keep the numbers managed. The nicest time here is a midweek evening, when the lit acreage empties out and a $69 ticket buys you most of the hill.",
+    "difficulty": "Easy, deliberately and almost entirely. Fifty percent beginner is the highest proportion in this guide and the terrain matches it - wide, gentle, well-lit, well-groomed and arranged so a first-timer can progress without meeting anything alarming. The 14% expert rating covers a handful of short steep pitches that will hold a competent skier's attention for one run each. There is glade skiing, and on 69 inches of natural snow it is occasional. Nobody who can already ski should drive past Gunstock or Ragged to come here for the terrain; plenty of people should come here to learn, and that is a genuinely valuable thing for a mountain to be.",
+    "keyTrails": [
+      {
+        "name": "Turbulence Park",
+        "note": "The main terrain park, on the Valley Slope trail - jumps, rails, boxes and spines, with features changed through the season rather than built once."
+      },
+      {
+        "name": "Microburst Park",
+        "note": "The progression park on the Whisper trail, about six smaller features. The step before Turbulence, and well separated from it."
+      },
+      {
+        "name": "The Peak chair",
+        "note": "The summit lift and the top of the mountain's 770 feet. Also where the small amount of steeper terrain lives."
+      },
+      {
+        "name": "The lit terrain",
+        "note": "Ninety-three of 115 acres are lit for night skiing from 26 December - more than four-fifths of the hill, and one of the largest lit footprints in New England."
+      }
+    ],
+    "tidbits": [
+      "Ninety-three of Pats Peak's 115 acres are lit for night skiing.",
+      "Fifty percent of the terrain is rated beginner, the highest proportion on this roster.",
+      "Eleven lifts on 115 acres is the densest lift coverage per acre in this guide.",
+      "Snowmaking acreage equals skiable acreage - the whole mountain is covered.",
+      "It is the only resort on this roster publishing a full 2026-27 adult day-rate grid.",
+      "Weekends and holidays require an advance reservation; no walk-up ticket is sold.",
+      "Indy Pass holders must reserve too, and only Indy+ works during blackout periods."
+    ],
+    "bestFor": [
+      "Learning to ski",
+      "Night skiing on most of a mountain",
+      "Families under two hours from Boston",
+      "Knowing the price before you go"
+    ],
+    "watchOutFor": [
+      "Only 770 feet of vertical",
+      "69 inches of natural snow a year",
+      "Weekend reservations required",
+      "Very little advanced terrain"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.patspeak.com/the-mountain/mountain-info/snow-report/",
+    "trailMap": "https://www.patspeak.com/the-mountain/mountain-info/trail-map/",
+    "webcams": "https://www.patspeak.com/the-mountain/cams-media/web-cams/",
+    "lodging": "https://www.patspeak.com/plan-your-visit/partners-lodging/",
+    "twitter": "https://x.com/patspeak",
+    "instagram": "https://www.instagram.com/patspeakskiarea"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Pats Peak overview (size, terrain split, snowmaking and lit acreage)",
+        "url": "https://www.onthesnow.com/new-hampshire/pats-peak/ski-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Pats Peak lift ticket rates (full 2026-27 adult grid, night skiing start date)",
+        "url": "https://www.patspeak.com/plan-your-visit/tickets-passes/lift-ticket-rates/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Pats Peak season passes (2026-27 Powder Pass Club adult tiers)",
+        "url": "https://www.patspeak.com/plan-your-visit/tickets-passes/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Pats Peak terrain parks (Turbulence and Microburst)",
+        "url": "https://www.patspeak.com/things-to-do/parks/terrain-parks/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass Pats Peak listing (reservations required, Indy+ during blackouts, independent snowfall figure)",
+        "url": "https://www.indyskipass.com/our-resorts/pats-peak",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "parks.nightPark": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "With 93 of 115 acres lit it is very likely at least one park is included, but neither the terrain parks page nor the ticket page says so, and inferring it from the lit acreage would be a guess"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The terrain parks page names two parks and no pipe"
+    },
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source discusses ungroomed terrain at Pats Peak; there is no PeakRankings review and the resort publishes nothing on grooming"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No bump scene or competitions are documented for Pats Peak"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.annualSnowfallAvg",
+      "resortClaim": 69,
+      "independentClaim": 100,
+      "independentSource": "https://www.indyskipass.com/our-resorts/pats-peak",
+      "note": "A thirty-one-inch gap between OnTheSnow's 69 and the 100 given in the Indy Pass directory, whose figures are partner-supplied and so effectively the resort's own claim. The lower number is stored because it comes from the source used for every other figure in this group, but note the direction of the disagreement is the usual one - the resort-side figure is the higher one. At a mountain running 100% snowmaking, neither number changes much about the skiing."
+    }
+  ],
+  "moguls": {
+    "presence": "rare",
+    "policy": "Nothing about grooming is published and there is no independent review of Pats Peak to fall back on. What the sourced figures imply is straightforward: a mountain with snowmaking on every acre, 69 inches of natural snow and half its terrain rated beginner is grooming comprehensively, because a manufactured surface at southern New Hampshire temperatures becomes unskiable if left alone.",
+    "namedRuns": [],
+    "quality": "There is no bump skiing here worth the name and this file will not invent any. Seven hundred and seventy feet of vertical on a fully machine-covered learning hill does not produce mogul terrain, and Pats Peak's freestyle investment goes into two well-maintained parks instead. Anyone in southern New Hampshire wanting bumps is looking at Gunstock's Tiger terrain an hour north.",
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.onthesnow.com/new-hampshire/pats-peak/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 2,
+    "parks": [
+      {
+        "name": "Turbulence Park",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "On the Valley Slope trail, carrying jumps, rails, boxes and spines. The resort says the features are changed up through the season rather than set once, which is more effort than a hill this size usually puts in."
+      },
+      {
+        "name": "Microburst Park",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": 1,
+        "note": "On the Whisper trail, with about six smaller features including jumps, boxes and rails. A genuine progression park rather than a token beginner box."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": "Two parks and a clean step between them - Microburst on Whisper for riders starting out, Turbulence on Valley Slope for everyone else. For a 115-acre hill that is the right amount of park, and putting them on separate trails means a beginner is not sharing a run with someone hitting a spine.",
+    "rebuildCadence": "Features in Turbulence Park are changed through the season rather than built once, per the resort's own description.",
+    "overview": "Two parks on 115 acres, actively maintained, and supported by a park cam and a Park SMART safety page - which together suggest the freestyle programme is taken more seriously here than the mountain's size would predict. Pats Peak's identity is teaching, and the parks are part of that rather than an afterthought.",
+    "reputation": "Locally well regarded and sized honestly. Nobody is claiming Turbulence competes with Loon or Carinthia, and it does not need to - for a southern New Hampshire rider learning features, having a maintained progression park and a maintained main park on a hill you can reach after school is worth more than a bigger park two hours away.",
+    "source": "https://www.patspeak.com/things-to-do/parks/terrain-parks/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

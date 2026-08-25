@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 26.
+**Roster target:** 45 resorts. **Current:** 29.
 
 ---
 
@@ -33,9 +33,56 @@ skipping a unit.
 | B | Night-skiing negatives re-sourced off Ski NH | `72b5924` | — | Ski NH's list is a curated feature, not a registry. |
 | B | Batch 4: attitash, sunday-river, sugarloaf, saddleback | `12e9972` | 143 / 157 | 1 warning (Saddleback publishes a park count but no park names). |
 | B | Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched | `3b41bea` | 180 / 189 | 2 warnings, both correct data. Vail still down, so Sunapee and Crotched lean on OnTheSnow. |
+| B | Batch 6 **(PARTIAL)**: pats-peak, magic-mountain, bromley + pico fix | `PENDING` | 196 / 205 | `bolton-valley` still to write; its research is recorded above. |
 
-**Part A complete. Batches 2 through 5 complete.** Next unfinished unit: **Part B, Batch 6** —
-pats-peak, magic-mountain, bromley, bolton-valley. No research gathered yet.
+**Part A complete. Batches 2 through 5 complete. Batch 6 is PARTIAL.**
+
+**RESUME HERE.** Batch 6 is three of four written and committed: `pats-peak`, `magic-mountain`
+and `bromley` are done. **`bolton-valley` is NOT written.** All of its research is gathered
+and recorded below — do not re-fetch, just write the file, then run the batch close-out
+(`npm run check`, render check, spot-check against an earlier batch, commit, update this file).
+
+#### bolton-valley — research gathered 2026-08-25, ready to write
+
+- identity: slug `bolton-valley`, name `Bolton Valley Resort`, VT, region `Northern Vermont`,
+  town `Bolton`, **lat 44.4150, lon -72.8344** (top of the Vista Quad, found via Overpass
+  `aerialway`; DEM probe 3,045 ft against a published 3,150 ft summit).
+- size, all from `https://www.onthesnow.com/vermont/bolton-valley/ski-resort`: vertical 1704,
+  acres 300, trails 71, lifts 6, longest run 0.6, summit 3150, base 1446, snowfall 202,
+  snowmaking 90 ac of 300 so `snowmakingPercent: null` with a fieldNote, `nightSkiing: true`.
+  Note 3150 − 1446 = 1704 reconciles exactly.
+- terrain 34/38/23/6 (sums to 101, inside tolerance), `glades: true`.
+- **Snowfall is contested and there is no clean resort-published average.** OnTheSnow says
+  202 in. The Indy directory says 312 in (partner-supplied, so effectively the resort's
+  claim). boltonvalley.com only markets "over 300 inches of snowfall for the season (so
+  far)", which is season-to-date, not an average. Store 202 and describe the gap in prose —
+  `dataDisputes` does not fit, because the stored value is not the resort's claim.
+- night skiing, from `https://www.boltonvalley.com/winter/activities/night-skiing-riding/`:
+  typically five nights a week, Tuesday to Saturday, night ticket 4pm to 10pm; day tickets
+  are valid 13 hours on those days. OnTheSnow gives 50 acres lit of 300.
+- passes: Indy, 2 all-day-or-night tickets, **no blackout dates for standard Indy Base**,
+  source `https://www.indyskipass.com/our-resorts/bolton-valley-resort` (note the `-resort`
+  suffix — `/bolton-valley` 404s). That page also gives base 2,100 ft, which contradicts its
+  own 3,150 summit and 1,704 vertical — **do not use it**, use OnTheSnow's 1,446.
+- pricing, from `https://www.boltonvalley.com/winter/tickets-passes/season-passes/`:
+  2026-27 adult (26-64) All Terrain Day & Night $859; Bolton Local Day & Night $729 with 9
+  restricted dates; All Terrain Daytime $809; Bolton Local Daytime $689; Midweek Day $299.
+  Prices increase 8 September 2026. `seasonPassAdult: 859`. No day-ticket rates were read,
+  so the three ticket fields are null.
+- links: snow report `.../winter/trail-maps-snow-reports/snow-reports/`, trail map
+  `.../winter/trail-maps-snow-reports/trail-maps/`, webcams `.../the-resort/live-webcams/`,
+  lodging `https://www.boltonvalley.com/lodging/`.
+- parks: Indy says terrain parks yes, but no park page exists in boltonvalley.com's page
+  sitemap and no count is published anywhere → `parks.count: null` with a fieldNote, same
+  basis as Stratton, Sunday River, Mount Sunapee and Crotched.
+- editorial angles worth using: highest base-area elevation of any Vermont resort per the
+  resort's own marketing (**check this against `pico` at 2,000 ft before repeating it** —
+  Bromley makes a similar claim at 1,950 ft and Pico beats both); the backcountry and nordic
+  network, which is genuinely unusual and has its own pages; and the night operation, which
+  is the largest in Vermont.
+
+After Bolton Valley, the next unfinished unit is **Batch 7** — pleasant-mountain,
+berkshire-east, jiminy-peak, catamount.
 
 ### Carry into Batch 6 — the Indy directory is the shortcut
 
@@ -237,6 +284,31 @@ quotes two different prices for the same product will happily hand you either on
 
 **Still worth a look:** `killington` holds its own $1,529 Killington pass price and `pico`
 holds null, so neither was affected. No other file carries a mega-pass price.
+
+### 2. Pico editorial claimed the wrong base-elevation ranking (found 2026-08-25)
+
+**What was wrong.** `pico.json` said in `editorial.snowQuality` that Pico has "the highest
+base elevation of any resort in this guide except Jay Peak", and carried a tidbit saying it
+had "the second-highest base elevation of any resort in this guide, behind Jay Peak". Both
+were false when written: Jay Peak's stored base is 1,750 ft and Pico's is 2,000 ft, so Pico
+was already the highest on the roster and still is at 29 resorts.
+
+**How it was found.** Bromley's about page claims the highest base elevation in Vermont at
+1,950 ft. Checking that against the roster surfaced Pico at 2,000 ft — and, incidentally,
+that Bromley's claim is also wrong. Sorting one column caught a mistake that had survived
+since Batch 2.
+
+**Fixed.** Both sentences in `pico.json` corrected to say Pico has the highest base elevation
+in the guide. Bromley's file repeats the resort's southern-exposure claim, which is
+checkable, but records its base as second-highest in Vermont rather than repeating the
+resort's "highest" claim.
+
+**Lesson.** This is a different failure mode from the pass-price one: not a bad source, but a
+*comparative* claim in editorial that was never re-checked as the roster grew. Superlatives
+like "highest", "longest", "only" and "steepest" are true relative to a roster that is still
+changing. **Part C should sweep every editorial superlative against the finished 45-resort
+roster** — there are more of them than this, and they are exactly the kind of error that
+reads as authoritative.
 
 ---
 
