@@ -24,14 +24,38 @@ const COLUMNS = [
   { key: 'annualSnowfallAvg', label: 'Snowfall', unit: '"' },
   { key: 'snowmakingPercent', label: 'Snowmaking', unit: '%' },
   { key: 'nightSkiing', label: 'Night' },
+  { key: 'parkCount', label: 'Parks' },
+  { key: 'mogulPresence', label: 'Bumps', type: 'text', cls: 'col-text' },
   { key: 'passes', label: 'Pass', type: 'passes', sortable: false, cls: 'col-text' },
   { key: 'advanceTypical', label: 'Advance', type: 'money' },
   { key: 'seasonPassAdult', label: 'Season pass', type: 'money' },
 ];
 
+/**
+ * Trip-planning filters over the two v3 sections. Each is a flat test against a
+ * field build-index.mjs precomputes, for the same reason passTypes exists.
+ */
+const FEATURES = {
+  park: { label: 'Park', test: (r) => r.hasPark === true },
+  pipe: { label: 'Halfpipe', test: (r) => r.hasPipe === true },
+  bumps: { label: 'Bumps', test: (r) => ['signature', 'common'].includes(r.mogulPresence) },
+};
+
+/** Bumps ordered worst to best so the column sorts meaningfully. */
+const MOGUL_RANK = { none: 0, rare: 1, occasional: 2, common: 3, signature: 4 };
+
+const MOGUL_SHORT = {
+  signature: 'Signature',
+  common: 'Common',
+  occasional: 'Occasional',
+  rare: 'Rare',
+  none: 'None',
+};
+
 const state = {
   states: new Set(),
   passes: new Set(),
+  features: new Set(),
   minVertical: 0,
   nightOnly: false,
   sortBy: 'verticalDrop',
@@ -47,6 +71,10 @@ function matches(r) {
   if (state.states.size && !state.states.has(r.state)) return false;
   if (state.passes.size && !r.passTypes.some((t) => state.passes.has(t))) return false;
   if (state.nightOnly && r.nightSkiing !== true) return false;
+  // Features are additive: every selected chip must hold.
+  for (const key of state.features) {
+    if (!FEATURES[key]?.test(r)) return false;
+  }
   // A null vertical can never satisfy a minimum, but it is visible at "Any".
   if (state.minVertical > 0 && !(r.verticalDrop >= state.minVertical)) return false;
   return true;
@@ -54,8 +82,12 @@ function matches(r) {
 
 function sorted(list) {
   const dir = state.sortDir === 'asc' ? 1 : -1;
+  // "signature" beats "rare"; alphabetical order would say the opposite.
+  const value = (r) => (state.sortBy === 'mogulPresence'
+    ? MOGUL_RANK[r.mogulPresence] ?? null
+    : r[state.sortBy]);
   return [...list].sort((a, b) => {
-    const cmp = compareNullsLast(a[state.sortBy], b[state.sortBy], dir);
+    const cmp = compareNullsLast(value(a), value(b), dir);
     // Name is the stable tiebreak so equal rows never shuffle between renders.
     return cmp !== 0 ? cmp : a.name.localeCompare(b.name, 'en');
   });
@@ -152,6 +184,10 @@ function cell(r, col) {
   if (value === null || value === undefined) {
     return el('td', { class: `${col.cls ?? ''} is-unknown`.trim(), title: 'Not sourced' }, '—');
   }
+  if (col.key === 'mogulPresence') {
+    return el('td', { class: col.cls },
+      el('span', { class: `presence__badge presence__badge--${value}` }, MOGUL_SHORT[value] ?? value));
+  }
   if (col.type === 'money') return el('td', { class: col.cls }, money(value));
   if (typeof value === 'boolean') return el('td', { class: col.cls }, value ? 'Yes' : 'No');
   return el('td', { class: col.cls }, `${fmt(value)}${col.unit ?? ''}`);
@@ -186,7 +222,8 @@ function render() {
 }
 
 const isFiltered = () =>
-  state.states.size > 0 || state.passes.size > 0 || state.minVertical > 0 || state.nightOnly;
+  state.states.size > 0 || state.passes.size > 0 || state.features.size > 0 ||
+  state.minVertical > 0 || state.nightOnly;
 
 // --- controls ---------------------------------------------------------------
 
@@ -207,6 +244,14 @@ function buildChips() {
     onclick: () => toggleChip(state.states, code),
   }, code)));
 
+  fill(qs('#filter-features'), Object.entries(FEATURES).map(([key, f]) => el('button', {
+    type: 'button',
+    class: 'chip',
+    'aria-pressed': 'false',
+    dataset: { value: key },
+    onclick: () => toggleChip(state.features, key),
+  }, f.label)));
+
   const passes = PASS_ORDER.filter((t) => resorts.some((r) => r.passTypes.includes(t)));
   fill(qs('#filter-pass'), passes.map((type) => el('button', {
     type: 'button',
@@ -224,6 +269,9 @@ function syncControls() {
   });
   qsa('#filter-pass .chip').forEach((b) => {
     b.setAttribute('aria-pressed', String(state.passes.has(b.dataset.value)));
+  });
+  qsa('#filter-features .chip').forEach((b) => {
+    b.setAttribute('aria-pressed', String(state.features.has(b.dataset.value)));
   });
   qs('#filter-vertical').value = String(state.minVertical);
   qs('#filter-vertical-out').textContent =
@@ -259,6 +307,7 @@ function wireControls() {
   qs('#reset-filters').addEventListener('click', () => {
     state.states.clear();
     state.passes.clear();
+    state.features.clear();
     state.minVertical = 0;
     state.nightOnly = false;
     syncControls();
@@ -278,6 +327,8 @@ function readUrl() {
   const p = new URLSearchParams(location.search);
   p.get('state')?.split(',').filter(Boolean).forEach((s) => state.states.add(s));
   p.get('pass')?.split(',').filter(Boolean).forEach((s) => state.passes.add(s));
+  p.get('feat')?.split(',').filter(Boolean)
+    .forEach((s) => { if (FEATURES[s]) state.features.add(s); });
   if (p.has('vert')) state.minVertical = Number(p.get('vert')) || 0;
   if (p.get('night') === '1') state.nightOnly = true;
   if (p.has('sort')) state.sortBy = p.get('sort');
@@ -289,6 +340,7 @@ function writeUrl() {
   const p = new URLSearchParams();
   if (state.states.size) p.set('state', [...state.states].join(','));
   if (state.passes.size) p.set('pass', [...state.passes].join(','));
+  if (state.features.size) p.set('feat', [...state.features].join(','));
   if (state.minVertical) p.set('vert', String(state.minVertical));
   if (state.nightOnly) p.set('night', '1');
   if (state.sortBy !== 'verticalDrop') p.set('sort', state.sortBy);
