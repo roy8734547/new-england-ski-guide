@@ -1,9 +1,11 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": {
     "slug": "smugglers-notch",
     "name": "Smugglers' Notch Resort",
-    "aka": ["Smuggs"],
+    "aka": [
+      "Smuggs"
+    ],
     "state": "VT",
     "region": "Northern Vermont",
     "town": "Jeffersonville",
@@ -21,7 +23,7 @@
     "baseElevation": 1030,
     "annualSnowfallAvg": 248,
     "snowmakingPercent": null,
-    "nightSkiing": null,
+    "nightSkiing": false,
     "source": "https://www.onthesnow.com/vermont/smugglers-notch-resort/ski-resort",
     "verifiedOn": "2026-08-22",
     "fieldSources": {}
@@ -142,5 +144,58 @@
     ],
     "verifiedOn": "2026-08-22",
     "lastEditedBy": "claude-code"
-  }
+  },
+  "fieldNotes": {
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.smuggs.com/tickets-passes/",
+      "note": "No adult ticket or season pass rate is published anywhere on the resort site"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.smuggs.com/tickets-passes/",
+      "note": "No adult ticket or season pass rate is published anywhere on the resort site"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.smuggs.com/tickets-passes/",
+      "note": "No adult ticket or season pass rate is published anywhere on the resort site"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.smuggs.com/tickets-passes/",
+      "note": "No adult ticket or season pass rate is published anywhere on the resort site"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Vermont's published list of areas operating at night"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Only an acreage (151 ac) is published; the resort has no statistics page of its own"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No glade terrain is published; the resort page labelled Mountain Stats leads to a conditions hub with no figures"
+    },
+    "terrain.moguls": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No mogul policy is published"
+    },
+    "terrain.terrainParks": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Terrain parks are referenced but never counted"
+    }
+  },
+  "dataDisputes": []
 }

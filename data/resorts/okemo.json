@@ -1,9 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": {
     "slug": "okemo",
     "name": "Okemo Mountain Resort",
-    "aka": ["Okemo", "Ludlow Mountain"],
+    "aka": [
+      "Okemo",
+      "Ludlow Mountain"
+    ],
     "state": "VT",
     "region": "Southern Vermont",
     "town": "Ludlow",
@@ -21,7 +24,7 @@
     "baseElevation": 1144,
     "annualSnowfallAvg": 120,
     "snowmakingPercent": 98,
-    "nightSkiing": null,
+    "nightSkiing": false,
     "source": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-22",
     "fieldSources": {
@@ -155,5 +158,47 @@
     ],
     "verifiedOn": "2026-08-22",
     "lastEditedBy": "claude-code"
-  }
+  },
+  "fieldNotes": {
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Vermont's published list of areas operating at night"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Glades exist but are not counted or measured on the resort statistics page"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "terrain.percentAdvanced",
+      "resortClaim": 30,
+      "independentClaim": 21,
+      "independentSource": "https://www.onthesnow.com/vermont/okemo-mountain-resort/ski-resort",
+      "note": "Okemo's own figure is generous. The independent breakdown of the same mountain is 33/38/21/9, and the trails Okemo rates black are consistently gentler than the same rating elsewhere in Vermont - the steep sections last a few hundred vertical feet before the pitch relaxes."
+    }
+  ]
 }

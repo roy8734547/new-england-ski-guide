@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T15:47:03.385Z",
+  "generatedAt": "2026-08-25T00:41:57.293Z",
   "schemaVersion": 1,
   "count": 8,
   "resorts": [
@@ -18,7 +18,7 @@
       "liftCount": 9,
       "annualSnowfallAvg": 347,
       "snowmakingPercent": 80,
-      "nightSkiing": null,
+      "nightSkiing": false,
       "passTypes": [
         "indy"
       ],
@@ -55,7 +55,7 @@
       "liftCount": 19,
       "annualSnowfallAvg": 250,
       "snowmakingPercent": null,
-      "nightSkiing": null,
+      "nightSkiing": false,
       "passTypes": [
         "ikon"
       ],
@@ -97,7 +97,7 @@
       "liftCount": 5,
       "annualSnowfallAvg": 228,
       "snowmakingPercent": 15,
-      "nightSkiing": null,
+      "nightSkiing": false,
       "passTypes": [
         "none",
         "other"
@@ -140,7 +140,7 @@
       "liftCount": 20,
       "annualSnowfallAvg": 120,
       "snowmakingPercent": 98,
-      "nightSkiing": null,
+      "nightSkiing": false,
       "passTypes": [
         "epic"
       ],
@@ -177,7 +177,7 @@
       "liftCount": 8,
       "annualSnowfallAvg": 248,
       "snowmakingPercent": null,
-      "nightSkiing": null,
+      "nightSkiing": false,
       "passTypes": [
         "none"
       ],
@@ -214,7 +214,7 @@
       "liftCount": 12,
       "annualSnowfallAvg": 314,
       "snowmakingPercent": null,
-      "nightSkiing": null,
+      "nightSkiing": false,
       "passTypes": [
         "epic"
       ],
@@ -251,7 +251,7 @@
       "liftCount": 16,
       "annualSnowfallAvg": 216,
       "snowmakingPercent": null,
-      "nightSkiing": null,
+      "nightSkiing": false,
       "passTypes": [
         "ikon"
       ],

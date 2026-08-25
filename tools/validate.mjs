@@ -22,7 +22,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const RESORTS_DIR = path.join(ROOT, 'data', 'resorts');
 const UNVERIFIED_PATH = path.join(ROOT, 'data', 'UNVERIFIED.md');
 
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 
 const STATES = ['VT', 'NH', 'ME', 'MA', 'CT', 'RI'];
 
@@ -152,6 +152,48 @@ const CHIP_MAX = 40;
 const PRICE_STALE_DAYS = 180;
 const VERTICAL_WARN_BELOW = 600;
 
+const FIELD_NOTE_STATUSES = ['absent', 'unpublished', 'seasonal'];
+
+/** Which array groups a dotted path may index into. */
+const ARRAY_GROUPS = { passes: PASS_SPEC, reviews: REVIEW_SPEC };
+
+/**
+ * Validates a dotted field path and returns how to read it, or null when the
+ * path names nothing real. Accepted forms:
+ *   size.nightSkiing        an object group field
+ *   passes[0].blackouts     an array entry field
+ *   reviews                 a whole array group (for the "no reviews" case)
+ */
+function parseFieldPath(path) {
+  if (typeof path !== 'string' || !path) return null;
+
+  if (path in ARRAY_GROUPS) return { kind: 'group', group: path };
+
+  const arrayMatch = path.match(/^([a-zA-Z]+)\[(\d+)\]\.([a-zA-Z]+)$/);
+  if (arrayMatch) {
+    const [, group, index, field] = arrayMatch;
+    const spec = ARRAY_GROUPS[group];
+    if (!spec || !(field in spec)) return null;
+    return { kind: 'arrayField', group, index: Number(index), field };
+  }
+
+  const dotMatch = path.match(/^([a-zA-Z]+)\.([a-zA-Z]+)$/);
+  if (dotMatch) {
+    const [, group, field] = dotMatch;
+    if (!SPEC[group] || !(field in SPEC[group])) return null;
+    return { kind: 'field', group, field };
+  }
+  return null;
+}
+
+/** Reads the value a parsed path points at. Returns undefined when absent. */
+function readFieldPath(record, parsed) {
+  if (!parsed) return undefined;
+  if (parsed.kind === 'group') return record[parsed.group];
+  if (parsed.kind === 'field') return record[parsed.group]?.[parsed.field];
+  return record[parsed.group]?.[parsed.index]?.[parsed.field];
+}
+
 // ---------------------------------------------------------------------------
 
 const today = new Date().toISOString().slice(0, 10);
@@ -195,18 +237,20 @@ class Report {
   constructor() {
     this.errors = [];
     this.warnings = [];
-    this.unverified = [];
+    this.unverified = [];   // null, and nobody has looked yet
+    this.resolved = [];     // null or false, explained by a fieldNote
   }
   err(file, msg) { this.errors.push({ file, msg }); }
   warn(file, msg) { this.warnings.push({ file, msg }); }
   gap(file, name, field) { this.unverified.push({ file, name, field }); }
+  note(file, name, field, entry) { this.resolved.push({ file, name, field, entry }); }
 }
 
 /**
  * Type/enum/range check for one field. Records the null into UNVERIFIED when the
  * spec allows null. Returns true when a real (non-null) value is present and valid.
  */
-function checkField(report, file, name, pathStr, spec, value) {
+function checkField(report, file, name, pathStr, spec, value, fieldNotes = {}) {
   if (value === undefined) {
     report.err(file, `${pathStr} is missing — every key must be present (schema.md §1.4)`);
     return false;
@@ -216,7 +260,10 @@ function checkField(report, file, name, pathStr, spec, value) {
       report.err(file, `${pathStr} may not be null`);
       return false;
     }
-    report.gap(file, name, pathStr);
+    // A null that somebody has already investigated is a finished state, not a
+    // research task. schema.md §12.
+    if (fieldNotes[pathStr]) report.note(file, name, pathStr, fieldNotes[pathStr]);
+    else report.gap(file, name, pathStr);
     return false;
   }
 
@@ -312,13 +359,13 @@ function checkField(report, file, name, pathStr, spec, value) {
 }
 
 /** Validates a group object against its spec and rejects unknown keys. */
-function checkGroup(report, file, name, groupName, spec, group) {
+function checkGroup(report, file, name, groupName, spec, group, fieldNotes = {}) {
   if (!isPlainObject(group)) {
     report.err(file, `${groupName} must be an object`);
     return;
   }
   for (const [field, fieldSpec] of Object.entries(spec)) {
-    checkField(report, file, name, `${groupName}.${field}`, fieldSpec, group[field]);
+    checkField(report, file, name, `${groupName}.${field}`, fieldSpec, group[field], fieldNotes);
   }
   for (const key of Object.keys(group)) {
     if (!(key in spec)) {
@@ -345,7 +392,7 @@ function checkGroup(report, file, name, groupName, spec, group) {
   }
 }
 
-function checkArrayGroup(report, file, name, groupName, spec, arr) {
+function checkArrayGroup(report, file, name, groupName, spec, arr, fieldNotes = {}) {
   if (!Array.isArray(arr)) {
     report.err(file, `${groupName} must be an array`);
     return;
@@ -356,12 +403,160 @@ function checkArrayGroup(report, file, name, groupName, spec, arr) {
       return;
     }
     for (const [field, fieldSpec] of Object.entries(spec)) {
-      checkField(report, file, name, `${groupName}[${i}].${field}`, fieldSpec, entry[field]);
+      checkField(report, file, name, `${groupName}[${i}].${field}`, fieldSpec, entry[field], fieldNotes);
     }
     for (const key of Object.keys(entry)) {
       if (!(key in spec)) {
         report.err(file, `${groupName}[${i}] has unknown key "${key}"`);
       }
+    }
+  });
+}
+
+
+// --- fieldNotes and dataDisputes (schema.md §12, §13) ----------------------
+
+/**
+ * Every note must name a real field, carry a legal status, and satisfy that
+ * status's own requirements. The scalar check is the important one: "absent"
+ * asserts a negative and so the field must actually hold false/0, while
+ * "unpublished" and "seasonal" mean we still have no value and it must be null.
+ */
+function checkFieldNotes(report, file, name, record) {
+  const notes = record.fieldNotes;
+  if (notes === undefined) {
+    report.err(file, 'fieldNotes is missing — use {} when there is nothing to note');
+    return {};
+  }
+  if (!isPlainObject(notes)) {
+    report.err(file, 'fieldNotes must be an object');
+    return {};
+  }
+
+  for (const [pathStr, entry] of Object.entries(notes)) {
+    const parsed = parseFieldPath(pathStr);
+    if (!parsed) {
+      report.err(file, `fieldNotes."${pathStr}" does not name a real field`);
+      continue;
+    }
+    if (!isPlainObject(entry)) {
+      report.err(file, `fieldNotes."${pathStr}" must be an object`);
+      continue;
+    }
+    for (const key of Object.keys(entry)) {
+      if (!['status', 'source', 'verifiedOn', 'checkedOn', 'note'].includes(key)) {
+        report.err(file, `fieldNotes."${pathStr}" has unknown key "${key}"`);
+      }
+    }
+
+    const { status } = entry;
+    if (!FIELD_NOTE_STATUSES.includes(status)) {
+      report.err(file, `fieldNotes."${pathStr}".status must be one of ${FIELD_NOTE_STATUSES.join(', ')}`);
+      continue;
+    }
+
+    const value = readFieldPath(record, parsed);
+
+    if (status === 'absent') {
+      const problem = urlProblem(entry.source);
+      if (problem) {
+        report.err(file, `fieldNotes."${pathStr}" is "absent" and so needs a source that ${problem.replace(/^must/, 'must')}`);
+      }
+      if (!isValidDate(entry.verifiedOn)) {
+        report.err(file, `fieldNotes."${pathStr}" is "absent" and needs verifiedOn as an ISO date`);
+      } else if (entry.verifiedOn > today) {
+        report.err(file, `fieldNotes."${pathStr}".verifiedOn is in the future`);
+      }
+      // Asserting the negative means the data must say so.
+      if (value === null || value === undefined) {
+        report.err(
+          file,
+          `fieldNotes."${pathStr}" is "absent", so ${pathStr} must be false or 0 rather than null — ` +
+          `that is the whole point of the status (schema.md §12)`
+        );
+      } else if (value !== false && value !== 0) {
+        report.err(file, `fieldNotes."${pathStr}" is "absent" but ${pathStr} holds ${JSON.stringify(value)}`);
+      }
+    } else {
+      if (!isValidDate(entry.checkedOn)) {
+        report.err(file, `fieldNotes."${pathStr}" is "${status}" and needs checkedOn as an ISO date`);
+      } else if (entry.checkedOn > today) {
+        report.err(file, `fieldNotes."${pathStr}".checkedOn is in the future`);
+      }
+      if (entry.source !== undefined) {
+        const problem = urlProblem(entry.source);
+        if (problem) report.err(file, `fieldNotes."${pathStr}".source ${problem}`);
+      }
+      const empty = value === null || value === undefined ||
+        (Array.isArray(value) && value.length === 0);
+      if (!empty) {
+        report.err(
+          file,
+          `fieldNotes."${pathStr}" is "${status}" but ${pathStr} has a value — ` +
+          `remove the note or clear the field`
+        );
+      }
+    }
+
+    if (entry.note !== undefined && (typeof entry.note !== 'string' || !entry.note.trim())) {
+      report.err(file, `fieldNotes."${pathStr}".note must be a non-empty string when present`);
+    }
+
+    // "absent" fields hold false/0, so checkField's null sweep never sees them.
+    // Record them here or a confirmed finding would vanish from the report.
+    if (status === 'absent') report.note(file, name, pathStr, entry);
+  }
+  return notes;
+}
+
+/** A dispute must name a real field and must not drift from the stored value. */
+function checkDataDisputes(report, file, record) {
+  const disputes = record.dataDisputes;
+  if (disputes === undefined) {
+    report.err(file, 'dataDisputes is missing — use [] when there are none');
+    return;
+  }
+  if (!Array.isArray(disputes)) {
+    report.err(file, 'dataDisputes must be an array');
+    return;
+  }
+
+  disputes.forEach((d, i) => {
+    const at = `dataDisputes[${i}]`;
+    if (!isPlainObject(d)) {
+      report.err(file, `${at} must be an object`);
+      return;
+    }
+    for (const key of Object.keys(d)) {
+      if (!['field', 'resortClaim', 'independentClaim', 'independentSource', 'note'].includes(key)) {
+        report.err(file, `${at} has unknown key "${key}"`);
+      }
+    }
+    const parsed = parseFieldPath(d.field);
+    if (!parsed) {
+      report.err(file, `${at}.field "${d.field}" does not name a real field`);
+      return;
+    }
+    for (const key of ['resortClaim', 'independentClaim']) {
+      if (!['number', 'string'].includes(typeof d[key])) {
+        report.err(file, `${at}.${key} must be a number or a string`);
+      }
+    }
+    const problem = urlProblem(d.independentSource);
+    if (problem) {
+      report.err(file, `${at}.independentSource ${problem} — a dispute without a counter-source is an opinion`);
+    }
+    if (typeof d.note !== 'string' || !d.note.trim()) {
+      report.err(file, `${at}.note must explain why the resort's figure is doubted`);
+    }
+    // The dispute must describe the data as it actually stands.
+    const stored = readFieldPath(record, parsed);
+    if (stored !== undefined && stored !== d.resortClaim) {
+      report.err(
+        file,
+        `${at}.resortClaim is ${JSON.stringify(d.resortClaim)} but ${d.field} holds ` +
+        `${JSON.stringify(stored)} — the dispute has drifted out of step with the data`
+      );
     }
   });
 }
@@ -558,13 +753,23 @@ async function main() {
       ? r.identity.name
       : file.replace(/\.json$/, '');
 
-    for (const [groupName, spec] of Object.entries(SPEC)) {
-      checkGroup(report, file, name, groupName, spec, r[groupName]);
-    }
-    checkArrayGroup(report, file, name, 'passes', PASS_SPEC, r.passes);
-    checkArrayGroup(report, file, name, 'reviews', REVIEW_SPEC, r.reviews);
+    const fieldNotes = checkFieldNotes(report, file, name, r);
+    checkDataDisputes(report, file, r);
 
-    const known = [...Object.keys(SPEC), 'passes', 'reviews', 'schemaVersion'];
+    for (const [groupName, spec] of Object.entries(SPEC)) {
+      checkGroup(report, file, name, groupName, spec, r[groupName], fieldNotes);
+    }
+    checkArrayGroup(report, file, name, 'passes', PASS_SPEC, r.passes, fieldNotes);
+    checkArrayGroup(report, file, name, 'reviews', REVIEW_SPEC, r.reviews, fieldNotes);
+
+    // An empty reviews array is only acceptable once somebody has said why.
+    if (Array.isArray(r.reviews) && r.reviews.length === 0) {
+      if (fieldNotes.reviews) report.note(file, name, 'reviews', fieldNotes.reviews);
+      else report.gap(file, name, 'reviews');
+    }
+
+    const known = [...Object.keys(SPEC), 'passes', 'reviews', 'schemaVersion',
+      'fieldNotes', 'dataDisputes'];
     for (const key of Object.keys(r)) {
       if (!known.includes(key)) report.err(file, `unknown top-level key "${key}"`);
     }
@@ -602,25 +807,55 @@ async function writeUnverified(report, fileCount) {
     '',
     `Last run: ${new Date().toISOString()} · ${fileCount} resort file(s) checked.`,
     '',
-    'Every row is a field that is currently `null` because it could not be sourced.',
-    'Fill it from a citable source and re-run the validator, or leave it — a null is an',
-    'honest answer. Never guess a number to clear a row (`CLAUDE.md`, data rule 2).',
+    'Two tables, and the difference between them matters. The first is a worklist. The',
+    'second is finished work: fields somebody has already chased down and confirmed cannot',
+    'be sourced. Never guess a number to clear a row from either (`CLAUDE.md`, data rule 2).',
     '',
   ];
 
-  if (report.unverified.length === 0) {
-    lines.push(fileCount === 0 ? '_No resort files yet._' : '_No unverified fields. Every tracked field is sourced._', '');
-  } else {
+  const group = (rows) => {
     const byResort = new Map();
-    for (const g of report.unverified) {
-      if (!byResort.has(g.file)) byResort.set(g.file, { name: g.name, fields: [] });
-      byResort.get(g.file).fields.push(g.field);
+    for (const row of rows) {
+      if (!byResort.has(row.file)) byResort.set(row.file, { name: row.name, rows: [] });
+      byResort.get(row.file).rows.push(row);
     }
-    lines.push(`${report.unverified.length} unverified field(s) across ${byResort.size} resort(s).`, '');
-    lines.push('| Resort | File | Field |', '|---|---|---|');
-    for (const [file, { name, fields }] of [...byResort].sort()) {
-      for (const field of fields) {
-        lines.push(`| ${name} | \`${file}\` | \`${field}\` |`);
+    return [...byResort].sort();
+  };
+
+  // --- table 1: genuine unknowns ---
+  lines.push('## Unknown — still needs research', '');
+  if (report.unverified.length === 0) {
+    lines.push(fileCount === 0 ? '_No resort files yet._' : '_Nothing outstanding._', '');
+  } else {
+    lines.push(
+      `${report.unverified.length} field(s) across ${group(report.unverified).length} resort(s) ` +
+      'are empty and have not been investigated.',
+      '',
+      '| Resort | File | Field |', '|---|---|---|',
+    );
+    for (const [file, { name, rows }] of group(report.unverified)) {
+      for (const row of rows) lines.push(`| ${name} | \`${file}\` | \`${row.field}\` |`);
+    }
+    lines.push('');
+  }
+
+  // --- table 2: closed out ---
+  lines.push('## Confirmed unpublished — no further work possible', '');
+  if (report.resolved.length === 0) {
+    lines.push('_Nothing recorded._', '');
+  } else {
+    lines.push(
+      `${report.resolved.length} field(s) carry a \`fieldNotes\` entry explaining the ` +
+      'emptiness. `absent` means the resort genuinely does not have it; `unpublished` means ' +
+      'nobody publishes it; `seasonal` means it cannot be known until the lifts turn.',
+      '',
+      '| Resort | Field | Status | Checked | Why |', '|---|---|---|---|---|',
+    );
+    for (const [, { name, rows }] of group(report.resolved)) {
+      for (const { field, entry } of rows) {
+        const when = entry.verifiedOn ?? entry.checkedOn ?? '—';
+        const why = (entry.note ?? '').replace(/\|/g, '\|');
+        lines.push(`| ${name} | \`${field}\` | ${entry.status} | ${when} | ${why} |`);
       }
     }
     lines.push('');
@@ -638,7 +873,7 @@ async function writeUnverified(report, fileCount) {
     lines.push('');
   }
 
-  await writeFile(UNVERIFIED_PATH, lines.join('\n'), 'utf8');
+  await writeFile(UNVERIFIED_PATH, `${lines.join('\n')}\n`, 'utf8');
 }
 
 function printSummary(report, fileCount) {
@@ -648,7 +883,7 @@ function printSummary(report, fileCount) {
   console.log(
     `\nvalidate: ${fileCount} resort file(s) · ` +
     `${report.errors.length} error(s) · ${report.warnings.length} warning(s) · ` +
-    `${report.unverified.length} unverified field(s)`
+    `${report.unverified.length} unknown · ${report.resolved.length} confirmed unpublished`
   );
   console.log(`wrote ${path.relative(ROOT, UNVERIFIED_PATH).replace(/\\/g, '/')}`);
 }

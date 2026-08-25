@@ -1,9 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": {
     "slug": "sugarbush",
     "name": "Sugarbush Resort",
-    "aka": ["Sugarbush", "Mascara Mountain"],
+    "aka": [
+      "Sugarbush",
+      "Mascara Mountain"
+    ],
     "state": "VT",
     "region": "Central Vermont",
     "town": "Warren",
@@ -21,7 +24,7 @@
     "baseElevation": 1483,
     "annualSnowfallAvg": 216,
     "snowmakingPercent": null,
-    "nightSkiing": null,
+    "nightSkiing": false,
     "source": "https://www.onthesnow.com/vermont/sugarbush/ski-resort",
     "verifiedOn": "2026-08-22",
     "fieldSources": {
@@ -166,5 +169,39 @@
     ],
     "verifiedOn": "2026-08-22",
     "lastEditedBy": "claude-code"
-  }
+  },
+  "fieldNotes": {
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Vermont's published list of areas operating at night"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Only an acreage (406 ac) is published; the resort has no consolidated statistics page of its own"
+    },
+    "terrain.terrainParks": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Parks are described but never counted"
+    }
+  },
+  "dataDisputes": []
 }

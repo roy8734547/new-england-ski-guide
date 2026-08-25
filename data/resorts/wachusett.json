@@ -1,9 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": {
     "slug": "wachusett",
     "name": "Wachusett Mountain",
-    "aka": ["Wachusett Mountain Ski Area", "Wa Wa Wachusett"],
+    "aka": [
+      "Wachusett Mountain Ski Area",
+      "Wa Wa Wachusett"
+    ],
     "state": "MA",
     "region": "Central Massachusetts",
     "town": "Princeton",
@@ -163,5 +166,40 @@
     ],
     "verifiedOn": "2026-08-20",
     "lastEditedBy": "claude-code"
-  }
+  },
+  "fieldNotes": {
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.wachusett.com/2024-2025-rates-sessions/",
+      "note": "The published session rates do not distinguish window from advance purchase"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.wachusett.com/tickets-passes/season-passes/",
+      "note": "The season passes page carries no rates; 2026-27 pricing was not published as of the check"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Neither the resort trail map page nor OnTheSnow states glade terrain; the trail map itself is a JPEG that cannot be read as data"
+    },
+    "terrain.moguls": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No mogul policy is published"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
+    },
+    "terrain.terrainParks": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Terrain parks are referenced in navigation but never counted"
+    }
+  },
+  "dataDisputes": []
 }

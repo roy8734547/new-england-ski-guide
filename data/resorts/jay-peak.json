@@ -1,9 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": {
     "slug": "jay-peak",
     "name": "Jay Peak Resort",
-    "aka": ["Jay", "The Jay Cloud"],
+    "aka": [
+      "Jay",
+      "The Jay Cloud"
+    ],
     "state": "VT",
     "region": "Northeast Kingdom",
     "town": "Jay",
@@ -21,7 +24,7 @@
     "baseElevation": 1750,
     "annualSnowfallAvg": 347,
     "snowmakingPercent": 80,
-    "nightSkiing": null,
+    "nightSkiing": false,
     "source": "https://jaypeakresort.com/skiing-riding/mountain",
     "verifiedOn": "2026-08-22",
     "fieldSources": {}
@@ -142,5 +145,39 @@
     ],
     "verifiedOn": "2026-08-22",
     "lastEditedBy": "claude-code"
-  }
+  },
+  "fieldNotes": {
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No adult ticket or season pass rate is published anywhere on the resort site"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No adult ticket or season pass rate is published anywhere on the resort site"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No adult ticket or season pass rate is published anywhere on the resort site"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No adult ticket or season pass rate is published anywhere on the resort site"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Vermont's published list of areas operating at night"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
+    }
+  },
+  "dataDisputes": []
 }

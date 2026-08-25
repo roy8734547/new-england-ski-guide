@@ -1,9 +1,13 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": {
     "slug": "killington",
     "name": "Killington Resort",
-    "aka": ["The Beast", "The Beast of the East", "K-Mart"],
+    "aka": [
+      "The Beast",
+      "The Beast of the East",
+      "K-Mart"
+    ],
     "state": "VT",
     "region": "Central Vermont",
     "town": "Killington",
@@ -21,7 +25,7 @@
     "baseElevation": 1165,
     "annualSnowfallAvg": 250,
     "snowmakingPercent": null,
-    "nightSkiing": null,
+    "nightSkiing": false,
     "source": "https://www.killington.com/the-mountain/mountain-info/mountain-stats/",
     "verifiedOn": "2026-08-20",
     "fieldSources": {
@@ -182,5 +186,42 @@
     ],
     "verifiedOn": "2026-08-20",
     "lastEditedBy": "claude-code"
-  }
+  },
+  "fieldNotes": {
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.killington.com/tickets-passes/lift-tickets",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.killington.com/tickets-passes/lift-tickets",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "source": "https://www.killington.com/tickets-passes/lift-tickets",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Vermont's published list of areas operating at night"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Only an acreage (600 ac) is published, and it is not stated whether that covers Killington alone or Killington plus Pico"
+    },
+    "terrain.terrainParks": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Park locations are listed for Killington and Pico together without being separated"
+    }
+  },
+  "dataDisputes": []
 }

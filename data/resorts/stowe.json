@@ -1,9 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "identity": {
     "slug": "stowe",
     "name": "Stowe Mountain Resort",
-    "aka": ["Stowe", "The Ski Capital of the East"],
+    "aka": [
+      "Stowe",
+      "The Ski Capital of the East"
+    ],
     "state": "VT",
     "region": "Northern Vermont",
     "town": "Stowe",
@@ -21,7 +24,7 @@
     "baseElevation": null,
     "annualSnowfallAvg": 314,
     "snowmakingPercent": null,
-    "nightSkiing": null,
+    "nightSkiing": false,
     "source": "https://www.stowe.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-22",
     "fieldSources": {
@@ -150,5 +153,49 @@
     ],
     "verifiedOn": "2026-08-22",
     "lastEditedBy": "claude-code"
-  }
+  },
+  "fieldNotes": {
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "size.baseElevation": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "The resort publishes a summit and a vertical drop but no base elevation; subtracting one from the other would be arithmetic, not a source"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Vermont's night-skiing list states Stowe's night operation ended over a decade ago"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "The resort publishes no coverage percentage and OnTheSnow gives only an acreage"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Glades exist but no count or acreage is published anywhere citable"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
+    }
+  },
+  "dataDisputes": []
 }
