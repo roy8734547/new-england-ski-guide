@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "smugglers-notch",
     "name": "Smugglers' Notch Resort",
@@ -34,8 +34,6 @@
     "percentAdvanced": 27,
     "percentExpert": 5,
     "glades": null,
-    "moguls": null,
-    "terrainParks": null,
     "difficultyNotes": "Smugglers' Notch publishes no statistics table on its own site - the link it labels 'Mountain Stats' leads to a conditions hub with no figures - so the numbers here are OnTheSnow's. Snowmaking coverage is recorded as null because only an acreage (151 acres) is published, not a percentage. The 2,610 ft vertical is measured from the Madonna summit to the base village, and the three peaks are very unequal: Madonna carries almost all of the difficult terrain, Sterling most of the intermediate, and Morse is a separate beginner hill.",
     "source": "https://www.onthesnow.com/vermont/smugglers-notch-resort/ski-resort",
     "verifiedOn": "2026-08-22",
@@ -146,6 +144,21 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Smugglers’ Notch publishes no terrain park page - several likely URLs 404 - and never lists or counts its parks. Its own condition updates reference a terrain park below mid-station on Mogul Mouse’s Magic Lift and an entry-level park on Morse, but no citable list exists"
+    },
+    "parks.nightPark": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No night skiing operation, but the site does not state it for parks"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No pipe is mentioned anywhere on the resort site"
+    },
     "pricing.advanceTypical": {
       "status": "unpublished",
       "checkedOn": "2026-08-24",
@@ -185,17 +198,58 @@
       "status": "unpublished",
       "checkedOn": "2026-08-24",
       "note": "No glade terrain is published; the resort page labelled Mountain Stats leads to a conditions hub with no figures"
-    },
-    "terrain.moguls": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-24",
-      "note": "No mogul policy is published"
-    },
-    "terrain.terrainParks": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-24",
-      "note": "Terrain parks are referenced but never counted"
     }
   },
-  "dataDisputes": []
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "Madonna is left largely ungroomed and the slow fixed-grip double serving it cannot deliver enough traffic to flatten what forms, so the upper mountain holds bumps for days. Sterling carries steep narrow mogul lines across its footprint. Morse, the beginner peak, is groomed conventionally.",
+    "namedRuns": [
+      {
+        "name": "Doc Dempsey's",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "A steep open face left ungroomed and littered with waist-high moguls. The most consistently bumped trail on the mountain."
+      },
+      {
+        "name": "Freefall",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "Madonna's signature steep, narrow and left to bump up, with an infamous frozen waterfall that is treacherous when windblown."
+      },
+      {
+        "name": "The Black Hole",
+        "difficulty": "triple-black",
+        "reliability": "variable",
+        "note": "Billed as the only triple black diamond in the East. The top 600 feet run at 65 to 70 percent grade with cliffs, moguls and tight woods - bumps here are incidental to the exposure."
+      },
+      {
+        "name": "Upper Liftline",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Straight down under Madonna I, so the slowest chair in Vermont gives everyone a long look at your bump skiing."
+      }
+    ],
+    "quality": "Underrated, and the lift system is the reason. Bumps that form on Madonna survive far longer than at a resort with a high-speed quad, so the lines stay soft and well-shaped into the afternoon on a busy day. The weakness is cover: snowmaking reaches under half the mountain and none of the serious Madonna terrain, so a thin year closes the bump runs outright rather than merely degrading them.",
+    "bestTiming": "Midwinter once the base is deep, and spring weekends when the surface softens. In a lean season the answer is to check the base depth and go somewhere else.",
+    "bumpCulture": "No competitions and no organised scene. Smugglers’ markets itself on family programmes, and the expert terrain on Madonna is left to find its own audience.",
+    "source": "https://www.peakrankings.com/content/smugglers-notch",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": null,
+    "reputation": null,
+    "source": "https://www.smuggs.com/conditions-stats/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "stowe",
     "name": "Stowe Mountain Resort",
@@ -44,8 +44,6 @@
     "percentAdvanced": 29,
     "percentExpert": null,
     "glades": null,
-    "moguls": null,
-    "terrainParks": 3,
     "difficultyNotes": "Stowe publishes a three-tier split, so percentExpert is null and the 29% top tier sits in percentAdvanced. Read the elevations carefully: the resort lists a 4,395 ft summit, which is the true top of Mount Mansfield and is not lift-served, alongside a 3,625 ft 'highest skiing elevation'. The lift-served figure is what is recorded here, so the mountain is 770 ft shorter than its own headline number suggests. Base elevation is null because the resort does not publish one and deriving it from the vertical drop would be arithmetic, not a source.",
     "source": "https://www.stowe.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-22",
@@ -155,6 +153,16 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No pipe is listed on the terrain parks page"
+    },
+    "parks.rebuildCadence": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "The resort describes the parks but never states how often features are reset"
+    },
     "pricing.advanceTypical": {
       "status": "unpublished",
       "checkedOn": "2026-08-24",
@@ -197,5 +205,90 @@
       "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
     }
   },
-  "dataDisputes": []
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "The Front Four are the bump terrain and are managed differently from each other: Goat and Starr are left natural and are ungroomed by default, while Liftline and National carry snowmaking and have been widened enough that they can be groomed when the resort chooses. That choice is the variable that decides your day.",
+    "namedRuns": [
+      {
+        "name": "National",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "Cut in 1952, north-east facing and unusually wide for a Stowe steep, which lets several bump lines run side by side. Holds snow well into spring and is the consensus pick for the best bumps on the mountain."
+      },
+      {
+        "name": "Goat",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "A double fall line and big, irregular moguls in a trail barely wider than a road. Rocky, ungroomed and genuinely dangerous when firm."
+      },
+      {
+        "name": "Starr",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "The steepest sustained pitch on Mansfield. Bumps up hard and holds them, and the pitch is steep enough that the troughs get deep."
+      },
+      {
+        "name": "Liftline",
+        "difficulty": "double-black",
+        "reliability": "variable",
+        "note": "Directly under the FourRunner Quad. Carries snowmaking and can be groomed, so whether it is a bump run on any given day is the resort’s decision rather than the weather’s."
+      }
+    ],
+    "quality": "Steep and serious rather than rhythmic. The Front Four are narrow and north-facing, which is good for snow preservation and bad for line consistency - the bumps are irregular and the troughs scrape to blue ice by mid-morning on a firm day. Skier consensus is that the upper sections of Goat and Starr are rarely fully open and need a genuinely big storm to fill in, so the reliable bump skiing is lower National.",
+    "bestTiming": "A few days after a storm, once traffic has formed lines but before a thaw-freeze glazes the troughs. National is the spring pick and holds soft snow later than the others.",
+    "bumpCulture": "No mogul competition and no organised bump scene, despite the Front Four being the best-known steep terrain in New England. The culture at Stowe is built around the trails themselves rather than around bump skiing as a discipline.",
+    "source": "https://www.skimag.com/ski-resort-life/the-best-runs-at-stowe/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 3,
+    "parks": [
+      {
+        "name": "Standard Park",
+        "size": "medium",
+        "level": "Progression to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The flagship, on Standard below Crossover. Small to medium jumps, rails and boxes laid out for flow rather than size."
+      },
+      {
+        "name": "Lower Gulch Park",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The creative one - unusual hits and a layout that rewards style over size. Back this season with a fresh build."
+      },
+      {
+        "name": "Midway Park",
+        "size": "small",
+        "level": "Progression",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Early-season park just below Midway Lodge, running small to medium features. Where new tricks get tried first."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "Midway for early season and warming up, Standard as the main progression setup, Lower Gulch for riders who want something other than a jump line. No airbag and no Woodward facility.",
+    "rebuildCadence": null,
+    "overview": "A three-park programme that has been running since 1996 and is pitched at progression rather than at competition riders. Reasonable for a mountain whose reputation rests almost entirely on its steeps.",
+    "reputation": "Solid but not a destination park. Stowe markets thirty years of park history and the parks are competently built, but Killington and Mount Snow are both a tier above in scale, and nobody chooses Stowe for the freestyle terrain.",
+    "source": "https://www.stowe.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
 }

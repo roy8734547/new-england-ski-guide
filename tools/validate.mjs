@@ -22,7 +22,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const RESORTS_DIR = path.join(ROOT, 'data', 'resorts');
 const UNVERIFIED_PATH = path.join(ROOT, 'data', 'UNVERIFIED.md');
 
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 
 const STATES = ['VT', 'NH', 'ME', 'MA', 'CT', 'RI'];
 
@@ -34,6 +34,12 @@ const REGIONS = [
 ];
 
 const PASS_TYPES = ['epic', 'ikon', 'indy', 'other', 'none'];
+
+const MOGUL_PRESENCE = ['signature', 'common', 'occasional', 'rare', 'none'];
+const TRAIL_DIFFICULTY = ['green', 'blue', 'black', 'double-black', 'triple-black'];
+const BUMP_RELIABILITY = ['reliable', 'late-season', 'variable'];
+const PARK_SIZES = ['progression', 'small', 'medium', 'large'];
+const PIPE_TYPES = ['halfpipe', 'superpipe'];
 
 // Generous bounding box around New England. Catches sign errors and transposed
 // lat/lon, which are the two mistakes that actually happen.
@@ -80,8 +86,6 @@ const SPEC = {
     percentAdvanced: { type: 'integer', n: true, min: 0, max: 100 },
     percentExpert: { type: 'integer', n: true, min: 0, max: 100 },
     glades: { type: 'boolean', n: true },
-    moguls: { type: 'boolean', n: true },
-    terrainParks: { type: 'integer', n: true, min: 0, max: 20 },
     difficultyNotes: { type: 'string', n: true },
     source: { type: 'url' },
     verifiedOn: { type: 'date' },
@@ -120,6 +124,34 @@ const SPEC = {
     sources: { type: 'source[]' },
     verifiedOn: { type: 'date' },
     lastEditedBy: { type: 'string' },
+  },
+  // Promoted out of `terrain` in v3: a boolean could not say which trail bumps
+  // up, and a park count could not say whether the parks were any good.
+  moguls: {
+    presence: { type: 'string', enum: MOGUL_PRESENCE },
+    policy: { type: 'string', n: true },
+    namedRuns: { type: 'namedRun[]' },
+    quality: { type: 'string', n: true },
+    bestTiming: { type: 'string', n: true },
+    bumpCulture: { type: 'string', n: true },
+    source: { type: 'url' },
+    verifiedOn: { type: 'date' },
+    fieldSources: { type: 'fieldSources' },
+  },
+  parks: {
+    count: { type: 'integer', n: true, min: 0, max: 30 },
+    parks: { type: 'park[]' },
+    pipe: { type: 'boolean', n: true },
+    pipeType: { type: 'string', n: true, enum: PIPE_TYPES },
+    pipeSpecs: { type: 'string', n: true },
+    nightPark: { type: 'boolean', n: true },
+    progression: { type: 'string', n: true },
+    rebuildCadence: { type: 'string', n: true },
+    overview: { type: 'string', n: true },
+    reputation: { type: 'string', n: true },
+    source: { type: 'url' },
+    verifiedOn: { type: 'date' },
+    fieldSources: { type: 'fieldSources' },
   },
 };
 
@@ -321,6 +353,64 @@ function checkField(report, file, name, pathStr, spec, value, fieldNotes = {}) {
         }
       });
       break;
+    case 'namedRun[]':
+      if (!Array.isArray(value)) return fail('must be an array');
+      value.forEach((entry, i) => {
+        if (!isPlainObject(entry)) {
+          report.err(file, `${pathStr}[${i}] must be an object {name, difficulty, reliability, note}`);
+          return;
+        }
+        for (const k of ['name', 'note']) {
+          if (typeof entry[k] !== 'string' || entry[k].trim() === '') {
+            report.err(file, `${pathStr}[${i}].${k} must be a non-empty string`);
+          }
+        }
+        if (!TRAIL_DIFFICULTY.includes(entry.difficulty)) {
+          report.err(file, `${pathStr}[${i}].difficulty must be one of ${TRAIL_DIFFICULTY.join(', ')}`);
+        }
+        if (!BUMP_RELIABILITY.includes(entry.reliability)) {
+          report.err(file, `${pathStr}[${i}].reliability must be one of ${BUMP_RELIABILITY.join(', ')}`);
+        }
+        for (const k of Object.keys(entry)) {
+          if (!['name', 'difficulty', 'reliability', 'note'].includes(k)) {
+            report.err(file, `${pathStr}[${i}] has unknown key "${k}"`);
+          }
+        }
+      });
+      break;
+    case 'park[]': {
+      if (!Array.isArray(value)) return fail('must be an array');
+      const countFields = ['jibs', 'jumps', 'boxes', 'rails', 'largestJumpFt'];
+      const allowed = ['name', 'size', 'level', 'note', ...countFields];
+      value.forEach((entry, i) => {
+        if (!isPlainObject(entry)) {
+          report.err(file, `${pathStr}[${i}] must be an object`);
+          return;
+        }
+        for (const k of ['name', 'level', 'note']) {
+          if (typeof entry[k] !== 'string' || entry[k].trim() === '') {
+            report.err(file, `${pathStr}[${i}].${k} must be a non-empty string`);
+          }
+        }
+        if (!PARK_SIZES.includes(entry.size)) {
+          report.err(file, `${pathStr}[${i}].size must be one of ${PARK_SIZES.join(', ')}`);
+        }
+        for (const k of countFields) {
+          const v = entry[k];
+          if (v === undefined) {
+            report.err(file, `${pathStr}[${i}].${k} is missing - use null when unpublished`);
+          } else if (v !== null && (!Number.isInteger(v) || v < 0)) {
+            report.err(file, `${pathStr}[${i}].${k} must be a non-negative whole number or null`);
+          }
+        }
+        for (const k of Object.keys(entry)) {
+          if (!allowed.includes(k)) {
+            report.err(file, `${pathStr}[${i}] has unknown key "${k}"`);
+          }
+        }
+      });
+      break;
+    }
     case 'source[]':
       if (!Array.isArray(value)) return fail('must be an array');
       value.forEach((entry, i) => {
@@ -677,6 +767,54 @@ function crossChecks(report, file, name, r) {
     }
   }
 
+  // --- moguls and parks (schema.md 14, 15) ---------------------------------
+  const moguls = isPlainObject(r.moguls) ? r.moguls : {};
+  const parks = isPlainObject(r.parks) ? r.parks : {};
+
+  // Claiming bumps are a defining feature without naming one is marketing.
+  if (moguls.presence === 'signature' && (moguls.namedRuns ?? []).length === 0) {
+    report.err(
+      file,
+      'moguls.presence is "signature" but namedRuns is empty - a mountain whose bumps are ' +
+      'a defining feature must be able to name at least one of them'
+    );
+  }
+  // "none" is a claim about policy, so it has to say what the policy is.
+  if (moguls.presence === 'none' && !moguls.policy) {
+    report.err(file, 'moguls.presence is "none" and needs a policy explaining why');
+  }
+  if (moguls.presence === 'none' && (moguls.namedRuns ?? []).length > 0) {
+    report.err(file, 'moguls.presence is "none" but namedRuns lists trails');
+  }
+  if (['rare', 'occasional'].includes(moguls.presence) && !moguls.policy) {
+    report.warn(file, `moguls.presence is "${moguls.presence}" with no policy explaining the grooming`);
+  }
+
+  const parkList = Array.isArray(parks.parks) ? parks.parks : [];
+  if (Number.isInteger(parks.count)) {
+    if (parkList.length === 0 && parks.count > 0) {
+      // A sourced count with no per-park detail yet is incomplete, not wrong.
+      report.warn(file, `parks.count is ${parks.count} but no individual parks are described`);
+    } else if (parkList.length !== parks.count) {
+      report.err(
+        file,
+        `parks.count is ${parks.count} but parks[] holds ${parkList.length} entries`
+      );
+    }
+    if (parks.count === 0 && parkList.length > 0) {
+      report.err(file, 'parks.count is 0 but parks[] is not empty');
+    }
+  } else if (parkList.length > 0) {
+    report.err(file, `parks.count is null but parks[] describes ${parkList.length} park(s)`);
+  }
+
+  if (parks.pipe === true && !parks.pipeType) {
+    report.warn(file, 'parks.pipe is true but pipeType is null - halfpipe or superpipe?');
+  }
+  if (parks.pipe !== true && (parks.pipeType || parks.pipeSpecs)) {
+    report.err(file, 'parks has pipe details but parks.pipe is not true');
+  }
+
   // Editorial voice checks — warnings, because length is guidance not law.
   const ed = isPlainObject(r.editorial) ? r.editorial : {};
   for (const [field, [min, max]] of Object.entries(PROSE_WORDS)) {
@@ -768,6 +906,7 @@ async function main() {
       else report.gap(file, name, 'reviews');
     }
 
+    // SPEC now includes moguls and parks, so they are covered by Object.keys(SPEC).
     const known = [...Object.keys(SPEC), 'passes', 'reviews', 'schemaVersion',
       'fieldNotes', 'dataDisputes'];
     for (const key of Object.keys(r)) {

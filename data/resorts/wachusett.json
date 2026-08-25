@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "wachusett",
     "name": "Wachusett Mountain",
@@ -56,8 +56,6 @@
     "percentAdvanced": 19,
     "percentExpert": null,
     "glades": null,
-    "moguls": null,
-    "terrainParks": null,
     "difficultyNotes": "Wachusett publishes no percentage split of its own; these are OnTheSnow's three-tier figures and sum to 101 after rounding. There is no fourth tier, so percentExpert is null and the 19% top tier sits in percentAdvanced. Glades, mogul policy and park count are null because neither the resort's trail map page nor OnTheSnow states them, and the trail map itself is a JPEG that cannot be read as data.",
     "source": "https://www.onthesnow.com/massachusetts/wachusett-mountain-ski-area/ski-resort",
     "verifiedOn": "2026-08-20",
@@ -168,6 +166,11 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No pipe is listed on the terrain parks page"
+    },
     "pricing.advanceTypical": {
       "status": "unpublished",
       "checkedOn": "2026-08-24",
@@ -185,21 +188,73 @@
       "checkedOn": "2026-08-24",
       "note": "Neither the resort trail map page nor OnTheSnow states glade terrain; the trail map itself is a JPEG that cannot be read as data"
     },
-    "terrain.moguls": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-24",
-      "note": "No mogul policy is published"
-    },
     "terrain.percentExpert": {
       "status": "unpublished",
       "checkedOn": "2026-08-24",
       "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
-    },
-    "terrain.terrainParks": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-24",
-      "note": "Terrain parks are referenced in navigation but never counted"
     }
   },
-  "dataDisputes": []
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Wachusett grooms twice a day across a 27-trail mountain, which leaves very little standing. What bumps up does so on the steeper pitches near the summit between grooming passes rather than as a matter of policy.",
+    "namedRuns": [
+      {
+        "name": "Hitchcock",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Wachusett's steepest pitch and the trail most likely to be bumped, though it also carries part of the terrain park, so what you get depends on the day."
+      },
+      {
+        "name": "Look Ma",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Listed among the ungroomed lines on third-party trail-map analysis, and the closest thing to a natural bump run here. Short."
+      }
+    ],
+    "quality": "Thin. With twice-daily grooming and a thousand feet of vertical, bumps rarely get more than a few hours to form before they are cut down, and what does survive is manmade snow that sets up firm. Skiers coming from Vermont should treat Wachusett as a groomed mountain that occasionally has bumps rather than a bump mountain.",
+    "bestTiming": "Late afternoon on a busy weekend, before the evening grooming pass, and spring weekends when the surface softens and the crew backs off.",
+    "bumpCulture": "None. No comps, no organised bump scene, and the mountain does not market bump terrain at all.",
+    "source": "https://www.wachusett.com/the-mountain/mountain-stats/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 2,
+    "parks": [
+      {
+        "name": "Hitchcock",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The main park, off the Minuteman Quad and Vickery Triple, running a jump line with rails, boxes and a wallride. Requires a separate park pass."
+      },
+      {
+        "name": "Frannie's Folly",
+        "size": "progression",
+        "level": "Beginner to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The progression park - snow features, rollers and small jumps, with no park pass required."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": true,
+    "progression": "A genuine two-step ladder for a mountain this size: Frannie's Folly is free to ride and deliberately unintimidating, Hitchcock is the step up and gates access behind a $5 season park pass.",
+    "rebuildCadence": "Maintained during operating hours - the resort warns that the park may close before 9pm for feature maintenance, which implies a nightly reset.",
+    "overview": "A well-run two-park operation for a 27-trail hill, aimed squarely at the after-school and after-work crowd who make up most of Wachusett’s traffic. It is lit, which matters more here than the feature count.",
+    "reputation": "Modest by regional standards and honest about it - nobody drives to Wachusett for the park. Within an hour of Boston and open at night, though, it is the most accessible park riding in eastern Massachusetts, and the progression setup is better thought through than at several larger mountains.",
+    "source": "https://www.wachusett.com/events-park/terrain-parks/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
 }

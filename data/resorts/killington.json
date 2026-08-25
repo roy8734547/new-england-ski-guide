@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "killington",
     "name": "Killington Resort",
@@ -41,8 +41,6 @@
     "percentAdvanced": 30,
     "percentExpert": 14,
     "glades": true,
-    "moguls": null,
-    "terrainParks": null,
     "difficultyNotes": "Killington's own stats page publishes a three-tier split (17/40/43) that combines Killington with Pico, which is unusable for a Killington-only record; the four-tier figures here are OnTheSnow's. Skiable acreage counts marked trails and glades but not the sidecountry off the Killington Peak ridge. The park count is null because the resort lists eight park locations across Killington and Pico together without separating them.",
     "source": "https://www.onthesnow.com/vermont/killington-resort/ski-resort",
     "verifiedOn": "2026-08-20",
@@ -188,6 +186,16 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
+    "parks.nightPark": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Killington runs no night skiing, so no park is lit, but the parks pages do not state it"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Neither the parks overview nor the parks report lists a pipe; third-party listings mentioning an 18-ft modified halfpipe could not be confirmed against the resort’s own pages"
+    },
     "pricing.advanceTypical": {
       "status": "unpublished",
       "checkedOn": "2026-08-24",
@@ -216,12 +224,146 @@
       "status": "unpublished",
       "checkedOn": "2026-08-24",
       "note": "Only an acreage (600 ac) is published, and it is not stated whether that covers Killington alone or Killington plus Pico"
-    },
-    "terrain.terrainParks": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-24",
-      "note": "Park locations are listed for Killington and Pico together without being separated"
     }
   },
-  "dataDisputes": []
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "signature",
+    "policy": "Bear Mountain is the bump pod and is managed as one: Outer Limits is left ungroomed as policy for most of the season rather than being seeded, and the surrounding singles are groomed only intermittently. Everything on the Snowdon and Ramshead side is groomed nightly, so the bumps are concentrated in one corner of a very large mountain.",
+    "namedRuns": [
+      {
+        "name": "Outer Limits",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "The canonical Eastern bump run and the longest and steepest of them. Wide enough to hold several lines, and fully visible from the Bear Mountain quad, so there is always an audience."
+      },
+      {
+        "name": "Devil's Fiddle",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Bear Mountain's other serious pitch. Bumps up when it is left alone, which is most of midwinter, and empties out once the Outer Limits crowd commits."
+      },
+      {
+        "name": "Superstar",
+        "difficulty": "black",
+        "reliability": "late-season",
+        "note": "Groomed for most of the winter, but the spring bumps that form on it in late April and May are the reason the mogul crowd stays until June."
+      }
+    ],
+    "quality": "The Outer Limits line is genuinely good by Eastern standards - the pitch is consistent enough that the troughs form a rhythm rather than a random field, and the trail is wide enough that a second and third line develop through the weekend. The failure mode is ice. After a thaw-freeze the troughs glaze and the bumps go from firm to unskiable, and because Killington makes so much snow the surface underneath is manmade and sets up harder than natural pack. Skier consensus is consistent that it is best in spring and worst in a dry January.",
+    "bestTiming": "Late March through the April spring cycle, when the base is deep and the surface softens by mid-morning. Midwinter the bumps are there but frequently firm; the week after a real storm is the other window.",
+    "bumpCulture": "The strongest bump scene in the East. The Bear Mountain Mogul Challenge has run on Outer Limits since 1981 and is now as much a spring party as a competition - a single-run qualifier with head-to-head sudden-death finals, age divisions from youth to 50-plus, held in early April.",
+    "source": "https://killington.com/bear-mountain-mogul-challenge",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 8,
+    "parks": [
+      {
+        "name": "Reason Park",
+        "size": "small",
+        "level": "Progression to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The first park to open each season, often the first in the country. Lapped from the North Ridge Quad, with fresh setups built daily."
+      },
+      {
+        "name": "Full House",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A line of small features for learning, set next door to Mouse Run so the step up is one traverse away."
+      },
+      {
+        "name": "Mouse Run Park",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The signature Snowdon-area park, off the Snowdon Six Express, running medium to large features."
+      },
+      {
+        "name": "Timberline Park",
+        "size": "large",
+        "level": "All levels",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Killington Parks' crown jewel - a 1,000-foot-long run packed with jumps, rails, transitions and creative features, off the Ramshead Express Quad."
+      },
+      {
+        "name": "Lil' Stash",
+        "size": "progression",
+        "level": "Beginner to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The little brother of Bear Mountain's Stash, on Ramshead. Wooden and natural features at a scale beginners can actually use."
+      },
+      {
+        "name": "Easy Street",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Mellow boxes and small features. The bottom rung of the progression ladder."
+      },
+      {
+        "name": "Dream Maker",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Large freestyle features, and the top of the ladder that starts at Easy Street."
+      },
+      {
+        "name": "The Stash",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Freestyle riding in the woods on Bear Mountain, built with Burton, with over 60 natural features. Unlike anything else in the East."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": "A deliberate ladder rather than a collection: Easy Street and Full House for learning, Reason and Mouse Run in the middle, Dream Maker and Timberline at the top. The Stash sits outside it as a tree-park in its own right.",
+    "rebuildCadence": "Reason Park is rebuilt daily - the resort describes fresh setups every day - and the parks crew works the network all season rather than building once and letting it decay.",
+    "overview": "The largest park network in Vermont and one of the few in the East built as a genuine progression rather than one flagship park plus an afterthought. Eight parks spread across four pods means you can spend a day in them without repeating yourself.",
+    "reputation": "Regionally strong and consistently rated near the top in the East, though Mount Snow’s Carinthia is the benchmark for sheer scale. The Stash is the differentiator - very few mountains anywhere run a Burton tree park, and it is the thing park riders mention first about Killington.",
+    "source": "https://www.killington.com/the-mountain/terrain-parks/terrain-parks-overview/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {
+      "count": {
+        "source": "https://www.killington.com/the-mountain/terrain-parks/terrain-parks-overview/the-stash/",
+        "verifiedOn": "2026-08-24"
+      }
+    }
+  }
 }

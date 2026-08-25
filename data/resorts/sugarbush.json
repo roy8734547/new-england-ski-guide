@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "sugarbush",
     "name": "Sugarbush Resort",
@@ -44,8 +44,6 @@
     "percentAdvanced": 27,
     "percentExpert": 7,
     "glades": true,
-    "moguls": null,
-    "terrainParks": null,
     "difficultyNotes": "Sugarbush publishes no consolidated statistics page of its own, so the figures here are OnTheSnow's, with trail and lift counts confirmed against Ski Vermont. The percentages sum to 99 after rounding. The 484-acre figure covers the lift-served terrain on Lincoln Peak and Mount Ellen only; it excludes the 2,000-acre Slide Brook Basin between them, which is backcountry and is not patrolled as marked terrain. The summit elevation is Mount Ellen, the higher and quieter of the two mountains, not the Lincoln Peak side where most people ski.",
     "source": "https://www.onthesnow.com/vermont/sugarbush/ski-resort",
     "verifiedOn": "2026-08-22",
@@ -171,6 +169,16 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No pipe is listed on the terrain parks page"
+    },
+    "parks.rebuildCadence": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "The parks page describes in-house feature building but states no reset schedule"
+    },
     "pricing.advanceTypical": {
       "status": "unpublished",
       "checkedOn": "2026-08-24",
@@ -196,12 +204,103 @@
       "status": "unpublished",
       "checkedOn": "2026-08-24",
       "note": "Only an acreage (406 ac) is published; the resort has no consolidated statistics page of its own"
-    },
-    "terrain.terrainParks": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-24",
-      "note": "Parks are described but never counted"
     }
   },
-  "dataDisputes": []
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "Castlerock is effectively a permanent bump pod - almost no snowmaking, no meaningful grooming, and a slow fixed-grip double that cannot deliver enough traffic to flatten it. Elsewhere the mountain grooms normally, so the bumps concentrate on a handful of named steeps rather than appearing across the trail network.",
+    "namedRuns": [
+      {
+        "name": "Stein's Run",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Named for Stein Eriksen and the best-known bump line on the Lincoln Peak side. A thigh-burning steep with intensely sculpted moguls."
+      },
+      {
+        "name": "Castlerock Run",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "Natural, ungroomed and cut to the terrain rather than through it. Steep pitches, tight turns and bumps that form wherever the trail allows."
+      },
+      {
+        "name": "Rumble",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "The most serious trail in the Mad River Valley after Mad River Glen itself. Ungroomed, off-camber and rocky in a thin year."
+      },
+      {
+        "name": "FIS",
+        "difficulty": "double-black",
+        "reliability": "variable",
+        "note": "Mount Ellen's race-pitch trail. Steep and often icy at the top with big moguls below, and considerably quieter than the Lincoln Peak bump runs."
+      }
+    ],
+    "quality": "Two very different products under one pass. The Castlerock bumps are natural-snow, irregular and dependent entirely on cover - excellent in a deep year, closed outright in a thin one. Stein’s Run is the opposite: a snowmaking trail that bumps up predictably and holds a proper sculpted line through a weekend. Skier consensus rates Mount Ellen’s bump terrain as the quieter and often better-preserved option because so much less traffic reaches it.",
+    "bestTiming": "Midwinter once the base is deep enough for Castlerock to open, and any cold spell on Mount Ellen where the north-facing upper trails hold dry snow. Castlerock in a lean January is not worth planning around.",
+    "bumpCulture": "No formal competition, but Castlerock functions as an informal proving ground - skiing Rumble well is a recognised local credential, and the pod self-selects for people who ski bumps by choice.",
+    "source": "https://vtskiandride.com/the-tough-list-vermonts-toughest-trails/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 4,
+    "parks": [
+      {
+        "name": "Riemergasse",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The main park, on Mount Ellen: six acres and roughly 50 features across a 2,100-foot slope, with enough continuity to link up to 15 features in a single top-to-bottom lap."
+      },
+      {
+        "name": "Sugar Run",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Also on Mount Ellen, running small to medium features. The warm-up and trick-refinement park before committing to Riemergasse."
+      },
+      {
+        "name": "Slowpoke",
+        "size": "progression",
+        "level": "All ages and abilities",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "On Lincoln Peak - rollers, berms, spines and small jumps. More of a flow trail than a jib park."
+      },
+      {
+        "name": "Sugarbear Forest",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Entry-level, on Lincoln Peak. Small low-to-the-ground rails, boxes and jumps built for first attempts."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "A four-step ladder that runs across both mountains: Sugarbear Forest and Slowpoke on Lincoln Peak, then Sugar Run and Riemergasse on Mount Ellen. The awkwardness is geographic - the top two rungs are a Slide Brook ride or a four-mile drive from the bottom two.",
+    "rebuildCadence": null,
+    "overview": "A genuinely substantial park operation that most people do not associate with Sugarbush, largely because the biggest park is on the mountain fewer visitors ski. Features are built in house rather than bought in, which the resort makes a point of.",
+    "reputation": "Underrated regionally. Riemergasse is a real park by Eastern standards and is quiet compared with Killington or Mount Snow, but its location on Mount Ellen keeps it off most riders’ lists and the resort does little to market it.",
+    "source": "https://www.sugarbush.com/mountain/parks",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
 }

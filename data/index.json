@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-25T00:41:57.293Z",
-  "schemaVersion": 1,
+  "generatedAt": "2026-08-25T01:25:46.797Z",
+  "schemaVersion": 3,
   "count": 8,
   "resorts": [
     {
@@ -31,6 +31,10 @@
       ],
       "advanceTypical": null,
       "seasonPassAdult": null,
+      "mogulPresence": "common",
+      "parkCount": 3,
+      "hasPark": true,
+      "hasPipe": null,
       "bestFor": [
         "The best tree skiing in the East",
         "Deep natural snow",
@@ -73,6 +77,10 @@
       ],
       "advanceTypical": null,
       "seasonPassAdult": 1529,
+      "mogulPresence": "signature",
+      "parkCount": 8,
+      "hasPark": true,
+      "hasPipe": null,
       "bestFor": [
         "The longest season in the East",
         "Serious bump skiing",
@@ -116,6 +124,10 @@
       ],
       "advanceTypical": 125,
       "seasonPassAdult": 1249,
+      "mogulPresence": "signature",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
       "bestFor": [
         "Expert tree skiing",
         "Natural snow purists",
@@ -153,6 +165,10 @@
       ],
       "advanceTypical": null,
       "seasonPassAdult": 1089,
+      "mogulPresence": "rare",
+      "parkCount": 5,
+      "hasPark": true,
+      "hasPipe": true,
       "bestFor": [
         "The best grooming in New England",
         "Nervous intermediates",
@@ -190,6 +206,10 @@
       ],
       "advanceTypical": null,
       "seasonPassAdult": null,
+      "mogulPresence": "common",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
       "bestFor": [
         "Families with young children",
         "Serious steep terrain, no queue",
@@ -227,6 +247,10 @@
       ],
       "advanceTypical": null,
       "seasonPassAdult": 1089,
+      "mogulPresence": "common",
+      "parkCount": 3,
+      "hasPark": true,
+      "hasPipe": null,
       "bestFor": [
         "Genuinely steep Eastern skiing",
         "Long intermediate cruisers",
@@ -264,6 +288,10 @@
       ],
       "advanceTypical": null,
       "seasonPassAdult": 1399,
+      "mogulPresence": "common",
+      "parkCount": 4,
+      "hasPark": true,
+      "hasPipe": null,
       "bestFor": [
         "Old-school expert terrain",
         "Quiet days on Mount Ellen",
@@ -301,6 +329,10 @@
       ],
       "advanceTypical": null,
       "seasonPassAdult": null,
+      "mogulPresence": "occasional",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": null,
       "bestFor": [
         "Night skiing after work",
         "Learning to ski near Boston",

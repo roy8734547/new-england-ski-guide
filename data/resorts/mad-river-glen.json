@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "mad-river-glen",
     "name": "Mad River Glen",
@@ -45,8 +45,6 @@
     "percentAdvanced": 45,
     "percentExpert": null,
     "glades": true,
-    "moguls": null,
-    "terrainParks": null,
     "difficultyNotes": "Mad River Glen publishes a three-tier split labelled '20% novice, 35% intermediate, 45% expert'. Per the schema, the top tier of a three-way split is recorded in percentAdvanced and percentExpert is null - MRG's 'expert' is not a fourth tier carved out of a larger advanced number. Read the 45% as harder than the same figure would be almost anywhere else. The 115 skiable acres counts marked trails only; the resort separately advertises access to nearly 2,000 acres of tree skiing, which is not included in that number and is not patrolled the way a marked trail is.",
     "source": "https://www.madriverglen.com/quick-facts/",
     "verifiedOn": "2026-08-20",
@@ -193,6 +191,21 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Mad River Glen publishes no terrain park page - the URL returns 404 - and no park appears in its quick facts. No citable source states whether one exists, so the count is null rather than 0"
+    },
+    "parks.nightPark": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No night operation, but the site does not state it in the context of parks"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No pipe is mentioned anywhere on the resort site"
+    },
     "pricing.windowTicketAdultHigh": {
       "status": "unpublished",
       "checkedOn": "2026-08-24",
@@ -217,5 +230,56 @@
       "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
     }
   },
-  "dataDisputes": []
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "signature",
+    "policy": "The policy is the absence of one. Mad River Glen grooms very little and makes snow on 15% of the mountain, so essentially everything left alone bumps up - skier consensus puts it at well over half the trail network in a normal week. Bumps here are entirely skier-formed on natural snow; nothing is seeded, and nothing gets groomed away midweek to reset it.",
+    "namedRuns": [
+      {
+        "name": "Paradise",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "The trail the reputation rests on. Ledgy, natural-snow bumps with a committing ice-bulge drop partway down, and it needs real cover before it is sane."
+      },
+      {
+        "name": "Chute",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "Narrow, steep and straight down the fall line off the single chair. The bump line is forced by the trail width rather than chosen."
+      },
+      {
+        "name": "Fall Line",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Named accurately. Short, steep and bumped-up directly beneath the single chair, so the entire lift watches."
+      },
+      {
+        "name": "Liftline",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Steep and technical under the lift, and one of the trails locals point to when asked where the bumps are."
+      }
+    ],
+    "quality": "Different in kind from a groomed-resort bump run. Because the bumps form on natural snow over uneven ground rather than on a manmade base over a bulldozed pitch, the lines are irregular, the troughs are rocky in a thin year, and the whole thing rewards adaptability over rhythm. When the cover is deep it is the best natural bump skiing in New England. When it is thin the same trails are a rock-strewn survival exercise, and the difference between those two states is a single storm.",
+    "bestTiming": "Anytime the base is genuinely deep - which at Mad River means checking the conditions report before committing to the drive rather than picking a date. February and March in a good year; spring softening is a bonus rather than the main event.",
+    "bumpCulture": "No comps and no organised scene, which is consistent with a co-op that does not market itself. The culture is the skiing: a large, self-selecting group of regulars who ski bumps every day because there is nothing else on offer.",
+    "source": "https://www.madriverglen.com/quick-facts/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": null,
+    "reputation": null,
+    "source": "https://www.madriverglen.com/quick-facts/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
 }

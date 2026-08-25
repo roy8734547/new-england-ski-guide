@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "jay-peak",
     "name": "Jay Peak Resort",
@@ -35,8 +35,6 @@
     "percentAdvanced": 40,
     "percentExpert": null,
     "glades": true,
-    "moguls": null,
-    "terrainParks": 2,
     "difficultyNotes": "Jay publishes a three-tier split labelled novice/intermediate/advanced, so percentExpert is null and the 40% top tier sits in percentAdvanced. The 385-acre figure counts marked terrain; the resort separately advertises 100+ acres of gladed terrain and operates a liberal in-bounds policy, so the amount of skiable ground in a deep year is considerably larger than the acreage suggests. The 347-inch snowfall figure is specifically average NATURAL snowfall, which is the number that matters here given how much of the good skiing is in the trees.",
     "source": "https://jaypeakresort.com/skiing-riding/mountain",
     "verifiedOn": "2026-08-22",
@@ -147,6 +145,16 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No pipe is listed on the terrain parks page"
+    },
+    "parks.rebuildCadence": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No reset schedule is published"
+    },
     "pricing.advanceTypical": {
       "status": "unpublished",
       "checkedOn": "2026-08-24",
@@ -179,5 +187,90 @@
       "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
     }
   },
-  "dataDisputes": []
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "Jay grooms the front side and leaves a large share of the mountain natural, including most of the glade network and a set of named natural-snow trails. Bumps form on the ungroomed natural-snow runs rather than being maintained as designated bump trails.",
+    "namedRuns": [
+      {
+        "name": "Green Beret",
+        "difficulty": "double-black",
+        "reliability": "variable",
+        "note": "One of the steeper natural-snow lines and, by skier consensus, one of the runs that humbles people. Needs cover."
+      },
+      {
+        "name": "Kitzbuehel",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "A natural-snow favourite among regulars. Bumps form and hold when the base allows."
+      },
+      {
+        "name": "Upper Milk Run",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Natural snow only, and skier consensus is blunt that it is best avoided unless conditions are genuinely deep."
+      },
+      {
+        "name": "Derick Hotshot",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Slow, well-formed moguls on natural snow when the coverage is there - one of the more forgiving bump lines on the hill."
+      }
+    ],
+    "quality": "Better than most of the East for the same reason everything at Jay is - the snow. Bumps forming on 347 inches of light natural snow are softer and more forgiving than the manmade-base equivalent at a southern Vermont resort, and because so little is groomed they last for days. The catch is the same one that governs the glades: in a thin spell the same trails are unskiable, and skier consensus repeatedly warns off the natural-snow runs when cover is marginal.",
+    "bestTiming": "A few days after a storm, once the powder has been skied into shape but before it sets up. Jay gets enough storms that this window recurs through midwinter rather than being a spring-only event.",
+    "bumpCulture": "No comps and no formal scene. Jay’s freeride identity is built around tree skiing rather than bump skiing, and the bumps are a by-product of the no-grooming policy rather than a marketed product.",
+    "source": "https://jaypeakresort.com/skiing-riding/mountain",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 3,
+    "parks": [
+      {
+        "name": "Chalet Meadows Park",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The intro park, skier’s left of the Chalet Meadows beginner trail on Stateside, off the Taxi Quad and Village Double. Small features only."
+      },
+      {
+        "name": "The Rusch",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The main park, on Lower Can Am off the Taxi Quad. Down box, flat box, cannon rail, A-frame, wall ride and coping alongside a jump line."
+      },
+      {
+        "name": "The Rabbit Hole",
+        "size": "progression",
+        "level": "Intro to glade freeriding",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A tree island skier’s left of Rabbit Trail, mixing wooden features built by the park crew with naturally formed ones. An introduction to riding features in the woods rather than a conventional park."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "A terrain-based learning zone off the Stateside moving carpet feeds into Chalet Meadows and then The Rusch. The Rabbit Hole sits outside that ladder as a bridge between park riding and the glades Jay is actually known for.",
+    "rebuildCadence": null,
+    "overview": "A modest three-park programme at a mountain whose freestyle identity is really about trees. The Rabbit Hole is the interesting one - a tree park at a resort with the best glade network in the East is a sensible thing to build.",
+    "reputation": "Not a park destination and does not try to be. Riders come to Jay for snow and glades; the parks are competent, small, and firmly secondary.",
+    "source": "https://jaypeakresort.com/terrain-parks",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
 }

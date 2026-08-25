@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "okemo",
     "name": "Okemo Mountain Resort",
@@ -48,8 +48,6 @@
     "percentAdvanced": 30,
     "percentExpert": null,
     "glades": null,
-    "moguls": null,
-    "terrainParks": 5,
     "difficultyNotes": "Okemo publishes a three-tier split, so percentExpert is null and the 30% top tier sits in percentAdvanced. Treat that 30% with scepticism: OnTheSnow's independent breakdown of the same mountain is 33/38/21/9, and the trails Okemo rates black are consistently gentler than the same rating elsewhere in Vermont. The resort's own site publishes no snowfall figure, which for a mountain claiming 98% snowmaking coverage is a reasonable thing to be quiet about.",
     "source": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-22",
@@ -200,5 +198,100 @@
       "independentSource": "https://www.onthesnow.com/vermont/okemo-mountain-resort/ski-resort",
       "note": "Okemo's own figure is generous. The independent breakdown of the same mountain is 33/38/21/9, and the trails Okemo rates black are consistently gentler than the same rating elsewhere in Vermont - the steep sections last a few hundred vertical feet before the pitch relaxes."
     }
-  ]
+  ],
+  "moguls": {
+    "presence": "rare",
+    "policy": "Okemo grooms essentially the entire mountain nightly - skier consensus is that it grooms everything but the parking lot - and that is a deliberate identity rather than an oversight. Two trails are left to bump up; everything else is cut flat before it can.",
+    "namedRuns": [
+      {
+        "name": "Sel's Choice",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Okemo's designated bump run and the steepest sustained pitch on the mountain, though skier consensus describes the bumps as low-angle by Vermont standards."
+      },
+      {
+        "name": "Upper Nor'easter",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "The only other trail regulars name as a bump run. Short, and groomed away often enough that it cannot be relied on."
+      }
+    ],
+    "quality": "Poor, and that is the direct cost of the grooming operation that makes Okemo good at everything else. The bumps that do form are on a manmade base and skier consensus is consistent and unflattering - rutted and firm to the point of being called bulletproof, with the rest of the mountain a groomer. A bump skier should drive the extra hour to Killington.",
+    "bestTiming": "Spring afternoons, when the surface softens enough to make manmade bumps forgiving. There is no good midwinter window.",
+    "bumpCulture": "None. No competitions, no scene, and no attempt by the resort to build one - Okemo’s freestyle energy goes entirely into the terrain parks.",
+    "source": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 5,
+    "parks": [
+      {
+        "name": "Gordon's Garden",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Named for Gordon Robbins, \"Grandpa Shred\". Creative small and medium features laid out to flow one into the next, under the A Quad on Homeward Bound."
+      },
+      {
+        "name": "The Zone",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Skate-park influenced, with a wide range of transitions, rails, boxes and jibs. Home to the halfpipe."
+      },
+      {
+        "name": "Tree Tap",
+        "size": "progression",
+        "level": "Family and beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A reimagined starter park in the Jackson Gore base area, off the Coleman Brook Express Quad."
+      },
+      {
+        "name": "Vermont Family Adventure",
+        "size": "progression",
+        "level": "All ages",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "An obstacle course rather than a park - small features, slalom bank turns, rollers, berms and a ski-through covered bridge. Sits inside Gordon’s Garden this season."
+      },
+      {
+        "name": "Blackout",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The competition park: a slopestyle-influenced course and training ground built around medium and large features."
+      }
+    ],
+    "pipe": true,
+    "pipeType": "halfpipe",
+    "pipeSpecs": "200 ft long, 18 ft walls",
+    "nightPark": false,
+    "progression": "The most deliberate progression ladder in Vermont, and the thing Okemo builds its park identity on: Tree Tap and the Vermont Family Adventure for first features, Gordon’s Garden and The Zone in the middle, Blackout as the competition-level top.",
+    "rebuildCadence": "Features are refreshed through the season rather than built once - the resort describes classic features being refreshed and the parks regularly reset.",
+    "overview": "Five parks arranged as a genuine beginner-to-competition ladder, plus the only halfpipe of any consequence in Vermont. If Okemo has one thing that a strong skier would drive for, it is this rather than the terrain.",
+    "reputation": "Genuinely strong regionally and the clear counterweight to the mountain’s soft trail ratings. The pipe is the differentiator - Okemo built one of Vermont’s first in the early 1990s and is one of very few Eastern areas still running one, though the current 200-foot build is a step down from the longer superpipe it has run in past seasons.",
+    "source": "https://www.okemo.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
 }

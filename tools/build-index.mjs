@@ -22,7 +22,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const RESORTS_DIR = path.join(ROOT, 'data', 'resorts');
 const INDEX_PATH = path.join(ROOT, 'data', 'index.json');
 
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 3;
 
 /** Reads a nested value without throwing on a missing group. */
 const get = (obj, group, field) =>
@@ -62,6 +62,15 @@ function summarize(r) {
 
     advanceTypical: get(r, 'pricing', 'advanceTypical'),
     seasonPassAdult: get(r, 'pricing', 'seasonPassAdult'),
+
+    // Flattened so the Features filters are a flat test rather than a nested
+    // scan on every keystroke, same reasoning as passTypes above.
+    mogulPresence: get(r, 'moguls', 'presence'),
+    parkCount: get(r, 'parks', 'count'),
+    hasPark: Number.isInteger(get(r, 'parks', 'count'))
+      ? r.parks.count > 0
+      : null,
+    hasPipe: get(r, 'parks', 'pipe'),
 
     bestFor: Array.isArray(get(r, 'editorial', 'bestFor')) ? r.editorial.bestFor : [],
 
