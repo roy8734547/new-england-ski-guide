@@ -52,6 +52,14 @@
       "blackouts": "Blackout dates apply to the standard Indy Pass - only Indy+ works during them. Indy links to a blackout calendar rather than listing Pats Peak's dates on the resort page.",
       "verifiedOn": "2026-08-25",
       "source": "https://www.indyskipass.com/our-resorts/pats-peak"
+    },
+    {
+      "name": "Dartmouth Skiway partner discount",
+      "type": "other",
+      "access": "Pats Peak is one of five mountains where a Dartmouth Skiway season pass earns a discount, alongside Whaleback, Ragged, Saskadena Six and Middlebury Snowbowl. The discount rate itself is not published.",
+      "blackouts": "Dartmouth Skiway states that blackout dates may apply to its partner-mountain discounts without publishing which dates or which mountains.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://dartmouthskiway.com/passes/"
     }
   ],
   "pricing": {
@@ -149,6 +157,11 @@
       {
         "label": "Indy Pass Pats Peak listing (reservations required, Indy+ during blackouts, independent snowfall figure)",
         "url": "https://www.indyskipass.com/our-resorts/pats-peak",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Dartmouth Skiway season passes (its partner-mountain discount network)",
+        "url": "https://dartmouthskiway.com/passes/",
         "accessedOn": "2026-08-25"
       }
     ],

@@ -73,6 +73,14 @@
       "blackouts": null,
       "verifiedOn": "2026-08-25",
       "source": "https://cranmore.com/season-passes"
+    },
+    {
+      "name": "Fairbank Group three-mountain benefit",
+      "type": "other",
+      "access": "Cranmore, Bromley in Vermont and Jiminy Peak in Massachusetts are all Fairbank Group mountains. A Jiminy Peak Anytime or Zephyr season pass carries two free lift tickets at Cranmore, and a $471 three-mountain college pass gives unlimited access to all three - which for a student is the cheapest route to a Cranmore season by a wide margin.",
+      "blackouts": "The free Jiminy tickets inherit the Jiminy pass's own restrictions - an Anytime holder may use them any day, a Zephyr holder only Sunday to Friday outside holiday periods. The three-mountain college pass has no blackout dates.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.jiminypeak.com/skiing-riding/tickets-passes/season-passes/"
     }
   ],
   "pricing": {
@@ -175,6 +183,11 @@
       {
         "label": "OnTheSnow Cranmore overview (longest run; independent acreage and elevation figures)",
         "url": "https://www.onthesnow.com/new-hampshire/cranmore-mountain-resort/ski-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Jiminy Peak season passes (the Fairbank Group relationship between Jiminy, Bromley and Cranmore, the two free tickets at each and the $471 three-mountain college pass)",
+        "url": "https://www.jiminypeak.com/skiing-riding/tickets-passes/season-passes/",
         "accessedOn": "2026-08-25"
       }
     ],

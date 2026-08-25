@@ -48,6 +48,14 @@
       "blackouts": "Indy Base and Indy AddOn Base are blacked out over the Christmas, MLK weekend and Presidents’ Week holiday periods; Indy+ has no blackouts. Exact 2026-27 dates are not published until autumn 2026.",
       "verifiedOn": "2026-08-24",
       "source": "https://www.indyskipass.com/blackout-dates-reservations"
+    },
+    {
+      "name": "AIM High partner benefit (Berkshire East / Catamount)",
+      "type": "other",
+      "access": "Not a pass sold here, but access sold elsewhere that lands at Burke: the AIM High season pass - Berkshire East and Catamount's joint product, $699 for an adult - carries two days at Burke with 50% off further days, unlimited midweek skiing at Burke through March, and 25% off non-holiday lodging at the Burke Mountain Hotel. It is worth knowing because $699 for two Massachusetts mountains plus a month of midweek Burke is an unusual amount of Northeast Kingdom access for the money.",
+      "blackouts": "The two included days carry none; the unlimited midweek benefit is restricted to March and to midweek days, and the lodging discount excludes holiday periods.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.berkshireeast.com/winter/season-passes"
     }
   ],
   "pricing": {
@@ -143,9 +151,14 @@
         "label": "Vermont night skiing list",
         "url": "https://www.vermontlifttickets.com/night-skiing/",
         "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Berkshire East season passes (the AIM High pass's Burke benefits - two days, 50% off further days, unlimited midweek in March, 25% off lodging)",
+        "url": "https://www.berkshireeast.com/winter/season-passes",
+        "accessedOn": "2026-08-25"
       }
     ],
-    "verifiedOn": "2026-08-24",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {

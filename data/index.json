@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T19:03:24.497Z",
+  "generatedAt": "2026-08-25T19:06:14.666Z",
   "schemaVersion": 3,
   "count": 45,
   "resorts": [
@@ -236,13 +236,19 @@
       "snowmakingPercent": null,
       "nightSkiing": true,
       "passTypes": [
-        "indy"
+        "indy",
+        "other"
       ],
       "passes": [
         {
           "name": "Indy Pass",
           "type": "indy",
           "access": "Two all-day-or-night visits per season on the Indy Pass. Because Bolton runs lit night skiing five nights a week, an Indy day here can be redeemed as a night session instead, which is an unusually flexible use of an Indy visit."
+        },
+        {
+          "name": "Uphill New England",
+          "type": "other",
+          "access": "A multi-mountain season pass for uphill travel only - skinning up rather than riding a lift - run by a non-profit and covering 24 New England mountains including this one. It buys no lift access at all. Worth recording because it is the only multi-mountain product on this roster aimed at a category of skier the lift-ticket economy ignores entirely."
         }
       ],
       "advanceTypical": null,
@@ -365,13 +371,19 @@
       "snowmakingPercent": 86,
       "nightSkiing": null,
       "passTypes": [
-        "none"
+        "none",
+        "other"
       ],
       "passes": [
         {
           "name": "No multi-mountain pass",
           "type": "none",
           "access": "Bromley is independently operated and on no multi-mountain pass. Its own site states plainly that Ikon Passes are not valid for use at Bromley; access is through its own season pass products."
+        },
+        {
+          "name": "Fairbank Group three-mountain benefit",
+          "type": "other",
+          "access": "Bromley, Cranmore in New Hampshire and Jiminy Peak in Massachusetts are all Fairbank Group mountains, and the group sells across them. A Jiminy Peak Anytime or Zephyr season pass carries two free lift tickets at Bromley, and a $471 three-mountain college pass gives unlimited access to all three. This does not make Bromley a multi-mountain-pass resort - its own site is emphatic that Ikon is not valid here - but it is the one route to Bromley days that does not go through Bromley's own ticket window."
         }
       ],
       "advanceTypical": 114,
@@ -406,13 +418,19 @@
       "snowmakingPercent": null,
       "nightSkiing": false,
       "passTypes": [
-        "indy"
+        "indy",
+        "other"
       ],
       "passes": [
         {
           "name": "Indy Pass",
           "type": "indy",
           "access": "2 days"
+        },
+        {
+          "name": "AIM High partner benefit (Berkshire East / Catamount)",
+          "type": "other",
+          "access": "Not a pass sold here, but access sold elsewhere that lands at Burke: the AIM High season pass - Berkshire East and Catamount's joint product, $699 for an adult - carries two days at Burke with 50% off further days, unlimited midweek skiing at Burke through March, and 25% off non-holiday lodging at the Burke Mountain Hotel. It is worth knowing because $699 for two Massachusetts mountains plus a month of midweek Burke is an unusual amount of Northeast Kingdom access for the money."
         }
       ],
       "advanceTypical": null,
@@ -428,7 +446,7 @@
         "Strong skiers on a budget"
       ],
       "officialSnowReport": "https://www.skiburke.com/mountain/conditions",
-      "verifiedOn": "2026-08-24"
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "camden-snow-bowl",
@@ -606,6 +624,11 @@
           "name": "No multi-mountain pass",
           "type": "none",
           "access": "Cranmore is independently operated and is not on Epic, Ikon or Indy. Multi-mountain access is through the regional White Mountains SuperPass and Sun N' Snow products rather than a national pass."
+        },
+        {
+          "name": "Fairbank Group three-mountain benefit",
+          "type": "other",
+          "access": "Cranmore, Bromley in Vermont and Jiminy Peak in Massachusetts are all Fairbank Group mountains. A Jiminy Peak Anytime or Zephyr season pass carries two free lift tickets at Cranmore, and a $471 three-mountain college pass gives unlimited access to all three - which for a student is the cheapest route to a Cranmore season by a wide margin."
         }
       ],
       "advanceTypical": null,
@@ -699,6 +722,11 @@
           "name": "Skiway partner-mountain discounts",
           "type": "other",
           "access": "Not a pass but a benefit worth knowing: a Skiway season pass carries discounts at five other independent New England areas - Whaleback, Ragged, Saskadena Six, Middlebury Snowbowl and Pats Peak. Passholders also get two 50% off lift tickets for friends or family, and 10% off retail, rental and repair."
+        },
+        {
+          "name": "Uphill New England",
+          "type": "other",
+          "access": "A multi-mountain season pass for uphill travel only - skinning up rather than riding a lift - run by a non-profit and covering 24 New England mountains including this one. It buys no lift access at all. Worth recording because it is the only multi-mountain product on this roster aimed at a category of skier the lift-ticket economy ignores entirely."
         }
       ],
       "advanceTypical": 35,
@@ -1043,13 +1071,19 @@
       "snowmakingPercent": null,
       "nightSkiing": true,
       "passTypes": [
-        "indy"
+        "indy",
+        "other"
       ],
       "passes": [
         {
           "name": "Indy Pass",
           "type": "indy",
           "access": "Two all-day or night lift tickets per season on the Indy Pass. Because the Snowbowl runs night skiing Wednesday through Friday, an Indy day here can be taken as an evening instead."
+        },
+        {
+          "name": "Uphill New England",
+          "type": "other",
+          "access": "A multi-mountain season pass for uphill travel only - skinning up rather than riding a lift - run by a non-profit and covering 24 New England mountains including this one. It buys no lift access at all. Worth recording because it is the only multi-mountain product on this roster aimed at a category of skier the lift-ticket economy ignores entirely."
         }
       ],
       "advanceTypical": null,
@@ -1294,13 +1328,19 @@
       "snowmakingPercent": 100,
       "nightSkiing": true,
       "passTypes": [
-        "indy"
+        "indy",
+        "other"
       ],
       "passes": [
         {
           "name": "Indy Pass",
           "type": "indy",
           "access": "2 all-day or night lift tickets. Reservations are required in advance at patspeak.com/indypass, and only Indy+ may be used during blackout periods."
+        },
+        {
+          "name": "Dartmouth Skiway partner discount",
+          "type": "other",
+          "access": "Pats Peak is one of five mountains where a Dartmouth Skiway season pass earns a discount, alongside Whaleback, Ragged, Saskadena Six and Middlebury Snowbowl. The discount rate itself is not published."
         }
       ],
       "advanceTypical": 76,
@@ -1427,13 +1467,19 @@
       "snowmakingPercent": 98,
       "nightSkiing": false,
       "passTypes": [
-        "indy"
+        "indy",
+        "other"
       ],
       "passes": [
         {
           "name": "Indy Pass",
           "type": "indy",
           "access": "2 all-day or night lift tickets, as at every Indy partner resort"
+        },
+        {
+          "name": "Dartmouth Skiway partner discount",
+          "type": "other",
+          "access": "Ragged is one of five mountains where a Dartmouth Skiway season pass earns a discount, alongside Whaleback, Saskadena Six, Middlebury Snowbowl and Pats Peak. The discount rate itself is not published."
         }
       ],
       "advanceTypical": 89,
@@ -1509,13 +1555,24 @@
       "snowmakingPercent": 60,
       "nightSkiing": false,
       "passTypes": [
-        "indy"
+        "indy",
+        "other"
       ],
       "passes": [
         {
           "name": "Indy Pass",
           "type": "indy",
           "access": "Two all-day lift tickets per season on the Indy Pass. Saskadena Six season passholders can also buy the discounted Indy AddOn Pass, which the resort itself pitches on the grounds that more than ten other Indy partners are within its own region."
+        },
+        {
+          "name": "Dartmouth Skiway partner discount",
+          "type": "other",
+          "access": "Saskadena Six is one of five mountains where a Dartmouth Skiway season pass earns a discount, alongside Whaleback, Ragged, Middlebury Snowbowl and Pats Peak. The discount rate itself is not published."
+        },
+        {
+          "name": "Uphill New England",
+          "type": "other",
+          "access": "A multi-mountain season pass for uphill travel only - skinning up rather than riding a lift - run by a non-profit and covering 24 New England mountains including this one. It buys no lift access at all. Worth recording because it is the only multi-mountain product on this roster aimed at a category of skier the lift-ticket economy ignores entirely."
         }
       ],
       "advanceTypical": null,
@@ -1591,13 +1648,19 @@
       "snowmakingPercent": null,
       "nightSkiing": false,
       "passTypes": [
-        "none"
+        "none",
+        "other"
       ],
       "passes": [
         {
           "name": "Smugglers' Notch season pass",
           "type": "none",
           "access": "Season pass only - Smugglers' Notch is not on Ikon, Epic or Indy"
+        },
+        {
+          "name": "AIM High partner benefit (Berkshire East / Catamount)",
+          "type": "other",
+          "access": "Not a pass sold here, but access sold elsewhere that lands at Smugglers' Notch: the AIM High season pass - Berkshire East and Catamount's joint product, $699 for an adult - carries two days at Smugglers' Notch with 50% off further days, plus 25% off non-holiday lodging."
         }
       ],
       "advanceTypical": null,
@@ -1613,7 +1676,7 @@
         "Week-long self-catering trips"
       ],
       "officialSnowReport": "https://www.smuggs.com/conditions/winter-report/",
-      "verifiedOn": "2026-08-22"
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "stowe",

@@ -47,6 +47,14 @@
       "blackouts": null,
       "verifiedOn": "2026-08-22",
       "source": "https://www.smuggs.com/tickets-passes/"
+    },
+    {
+      "name": "AIM High partner benefit (Berkshire East / Catamount)",
+      "type": "other",
+      "access": "Not a pass sold here, but access sold elsewhere that lands at Smugglers' Notch: the AIM High season pass - Berkshire East and Catamount's joint product, $699 for an adult - carries two days at Smugglers' Notch with 50% off further days, plus 25% off non-holiday lodging.",
+      "blackouts": "No blackouts are published on the two included days; the lodging discount excludes holiday periods.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.berkshireeast.com/winter/season-passes"
     }
   ],
   "pricing": {
@@ -138,9 +146,14 @@
         "label": "Wikipedia Smugglers' Notch Resort (peaks, elevations, town)",
         "url": "https://en.wikipedia.org/wiki/Smugglers%27_Notch_Resort",
         "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Berkshire East season passes (the AIM High pass's Smugglers' Notch benefits - two days, 50% off further days, 25% off lodging)",
+        "url": "https://www.berkshireeast.com/winter/season-passes",
+        "accessedOn": "2026-08-25"
       }
     ],
-    "verifiedOn": "2026-08-22",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {

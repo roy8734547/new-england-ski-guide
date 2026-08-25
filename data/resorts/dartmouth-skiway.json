@@ -73,6 +73,14 @@
       "blackouts": "The resort states that blackout dates may apply to the partner-mountain discounts without publishing which dates or which mountains.",
       "verifiedOn": "2026-08-25",
       "source": "https://dartmouthskiway.com/passes/"
+    },
+    {
+      "name": "Uphill New England",
+      "type": "other",
+      "access": "A multi-mountain season pass for uphill travel only - skinning up rather than riding a lift - run by a non-profit and covering 24 New England mountains including this one. It buys no lift access at all. Worth recording because it is the only multi-mountain product on this roster aimed at a category of skier the lift-ticket economy ignores entirely.",
+      "blackouts": "No blackout dates are published; each mountain's own uphill policy and operating-hours restrictions apply.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://camdensnowbowl.com/season-passes/"
     }
   ],
   "pricing": {
@@ -177,6 +185,11 @@
       {
         "label": "Indy Pass partner page for Dartmouth Skiway (no blackout dates, the structured terrain-park and night-skiing fields; its elevation figures are wrong and are not used)",
         "url": "https://www.indyskipass.com/our-resorts/dartmouth-skiway",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Camden Snow Bowl season passes (Uphill New England's 24-mountain uphill network)",
+        "url": "https://camdensnowbowl.com/season-passes/",
         "accessedOn": "2026-08-25"
       }
     ],

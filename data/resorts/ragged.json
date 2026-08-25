@@ -53,6 +53,14 @@
       "blackouts": "No blackout dates",
       "verifiedOn": "2026-08-25",
       "source": "https://www.indyskipass.com/our-resorts/ragged-mountain"
+    },
+    {
+      "name": "Dartmouth Skiway partner discount",
+      "type": "other",
+      "access": "Ragged is one of five mountains where a Dartmouth Skiway season pass earns a discount, alongside Whaleback, Saskadena Six, Middlebury Snowbowl and Pats Peak. The discount rate itself is not published.",
+      "blackouts": "Dartmouth Skiway states that blackout dates may apply to its partner-mountain discounts without publishing which dates or which mountains.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://dartmouthskiway.com/passes/"
     }
   ],
   "pricing": {
@@ -158,6 +166,11 @@
       {
         "label": "Indy Pass Ragged listing (two days, no blackouts, night skiing: no)",
         "url": "https://www.indyskipass.com/our-resorts/ragged-mountain",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Dartmouth Skiway season passes (its partner-mountain discount network)",
+        "url": "https://dartmouthskiway.com/passes/",
         "accessedOn": "2026-08-25"
       }
     ],
