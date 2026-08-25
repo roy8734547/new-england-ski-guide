@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-25T18:17:38.371Z",
+  "generatedAt": "2026-08-25T18:32:40.007Z",
   "schemaVersion": 3,
-  "count": 34,
+  "count": 38,
   "resorts": [
     {
       "slug": "attitash",
@@ -94,6 +94,47 @@
         "Snowmaking reliability"
       ],
       "officialSnowReport": "https://www.berkshireeast.com/winter/mountain-conditions",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "black-mountain-nh",
+      "name": "Black Mountain",
+      "state": "NH",
+      "region": "Mount Washington Valley",
+      "town": "Jackson",
+      "lat": 44.1774,
+      "lon": -71.1688,
+      "website": "https://www.blackmt.com",
+      "verticalDrop": 1100,
+      "skiableAcres": 140,
+      "trailCount": 45,
+      "liftCount": 5,
+      "annualSnowfallAvg": 120,
+      "snowmakingPercent": 98,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day lift tickets per season on the Indy Pass. The relationship runs deeper than a partnership: Indy Pass bought Black Mountain outright in 2024 and has since moved its own operations, and those of Entabeni, to the base of the mountain."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "mogulPresence": "occasional",
+      "parkCount": 0,
+      "hasPark": false,
+      "hasPipe": false,
+      "bestFor": [
+        "Skiing a co-operative you can own",
+        "Glades on a powder day",
+        "No lift lines in a busy valley",
+        "Indy Pass days with no blackouts"
+      ],
+      "officialSnowReport": "https://www.blackmt.com/conditions",
       "verifiedOn": "2026-08-25"
     },
     {
@@ -459,6 +500,53 @@
       "verifiedOn": "2026-08-25"
     },
     {
+      "slug": "dartmouth-skiway",
+      "name": "Dartmouth Skiway",
+      "state": "NH",
+      "region": "Dartmouth-Sunapee",
+      "town": "Lyme Center",
+      "lat": 43.7784,
+      "lon": -72.1049,
+      "website": "https://dartmouthskiway.com",
+      "verticalDrop": 968,
+      "skiableAcres": 104,
+      "trailCount": 28,
+      "liftCount": 4,
+      "annualSnowfallAvg": 54,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day lift tickets per season on the Indy Pass. Skiway season passholders can also buy the discounted Indy AddOn Pass. The Skiway makes a point of the redemption being frictionless - its own wording is \"No reservations needed for Indy!\", which is a pointed contrast with the Indy partners that now require one."
+        },
+        {
+          "name": "Skiway partner-mountain discounts",
+          "type": "other",
+          "access": "Not a pass but a benefit worth knowing: a Skiway season pass carries discounts at five other independent New England areas - Whaleback, Ragged, Saskadena Six, Middlebury Snowbowl and Pats Peak. Passholders also get two 50% off lift tickets for friends or family, and 10% off retail, rental and repair."
+        }
+      ],
+      "advanceTypical": 35,
+      "seasonPassAdult": 499,
+      "mogulPresence": "rare",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "The cheapest day on this roster",
+        "Dartmouth students and staff",
+        "Learning to ski well",
+        "Indy days with no reservation"
+      ],
+      "officialSnowReport": "https://dartmouthskiway.com/mountain-2/",
+      "verifiedOn": "2026-08-25"
+    },
+    {
       "slug": "gunstock",
       "name": "Gunstock Mountain Resort",
       "state": "NH",
@@ -766,6 +854,47 @@
         "Indy Pass holders"
       ],
       "officialSnowReport": "https://www.magicmtn.com/snow-report",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "middlebury-snow-bowl",
+      "name": "Middlebury Snow Bowl",
+      "state": "VT",
+      "region": "Central Vermont",
+      "town": "Hancock",
+      "lat": 43.9287,
+      "lon": -72.9617,
+      "website": "https://middleburysnowbowl.com",
+      "verticalDrop": 1020,
+      "skiableAcres": 110,
+      "trailCount": 28,
+      "liftCount": 4,
+      "annualSnowfallAvg": 150,
+      "snowmakingPercent": null,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day or night lift tickets per season on the Indy Pass. Because the Snowbowl runs night skiing Wednesday through Friday, an Indy day here can be taken as an evening instead."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 549,
+      "mogulPresence": "common",
+      "parkCount": 0,
+      "hasPark": false,
+      "hasPipe": false,
+      "bestFor": [
+        "Hard terrain at a small price",
+        "Glades and backcountry access",
+        "Weeknight skiing until 9pm",
+        "Indy Pass days with no blackouts"
+      ],
+      "officialSnowReport": "https://middleburysnowbowl.com/conditions/",
       "verifiedOn": "2026-08-25"
     },
     {
@@ -1109,6 +1238,47 @@
         "Skiers who will drive for terrain"
       ],
       "officialSnowReport": "https://www.saddlebackmaine.com/mountain-report/",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "saskadena-six",
+      "name": "Saskadena Six Ski Area",
+      "state": "VT",
+      "region": "Central Vermont",
+      "town": "South Pomfret",
+      "lat": 43.6615,
+      "lon": -72.5487,
+      "website": "https://www.saskadenasix.com",
+      "verticalDrop": 650,
+      "skiableAcres": 100,
+      "trailCount": 28,
+      "liftCount": 3,
+      "annualSnowfallAvg": 48,
+      "snowmakingPercent": 60,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day lift tickets per season on the Indy Pass. Saskadena Six season passholders can also buy the discounted Indy AddOn Pass, which the resort itself pitches on the grounds that more than ten other Indy partners are within its own region."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 726.1,
+      "mogulPresence": "occasional",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Ski history you can stand in",
+        "A Woodstock Inn ski day",
+        "Race-trail pitch in miniature",
+        "Indy Pass days with no blackouts"
+      ],
+      "officialSnowReport": "https://www.saskadenasix.com/winter/conditions",
       "verifiedOn": "2026-08-25"
     },
     {

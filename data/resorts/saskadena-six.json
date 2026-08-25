@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "saskadena-six",
+    "name": "Saskadena Six Ski Area",
+    "aka": [
+      "Suicide Six",
+      "Saskadena Six",
+      "Hill No. 6"
+    ],
+    "state": "VT",
+    "region": "Central Vermont",
+    "town": "South Pomfret",
+    "lat": 43.6615,
+    "lon": -72.5487,
+    "website": "https://www.saskadenasix.com"
+  },
+  "size": {
+    "verticalDrop": 650,
+    "skiableAcres": 100,
+    "trailCount": 28,
+    "liftCount": 3,
+    "longestRun": 0.4,
+    "summitElevation": 1200,
+    "baseElevation": 550,
+    "annualSnowfallAvg": 48,
+    "snowmakingPercent": 60,
+    "nightSkiing": false,
+    "source": "https://www.onthesnow.com/vermont/suicide-six/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "trailCount": {
+        "source": "https://www.saskadenasix.com/the-mountain/mountain-info",
+        "verifiedOn": "2026-08-25"
+      },
+      "snowmakingPercent": {
+        "source": "https://www.saskadenasix.com/the-mountain/mountain-info",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.indyskipass.com/our-resorts/saskadena-six-ski-area",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 18,
+    "percentIntermediate": 50,
+    "percentAdvanced": 14,
+    "percentExpert": 18,
+    "glades": null,
+    "difficultyNotes": "Saskadena Six publishes almost nothing about its own terrain - the mountain-info page's entire stat line is \"2 Lifts. 28 Trails. 60% snowmaking. 90 years of history to call your own\" - so the difficulty split comes from OnTheSnow, whose four-tier 18/50/14/18 sums to 100. The Indy Pass partner directory gives a flatter 30/40/30; OnTheSnow's is stored because it distinguishes a fourth tier, and an 18% expert share is consistent with a mountain whose signature trail, The Face, is steep enough that the ski area was named Suicide Six as a joke about it. The lift count is the one figure where the resort and the aggregators disagree: the resort says 2, OnTheSnow and Indy both say 3, and OnTheSnow's breakdown - one quad, one double, one surface lift - is internally consistent, so 3 is stored. The resort is almost certainly counting only its chairlifts. Note the vertical: 650 feet is the lowest on this roster and sits exactly on the guide's inclusion threshold.",
+    "source": "https://www.onthesnow.com/vermont/suicide-six/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two all-day lift tickets per season on the Indy Pass. Saskadena Six season passholders can also buy the discounted Indy AddOn Pass, which the resort itself pitches on the grounds that more than ten other Indy partners are within its own region.",
+      "blackouts": "None. The Indy partner page for Saskadena Six carries an explicit No Blackout Dates marker. The real constraint is the operating schedule: Wednesday to Sunday, daily during holiday periods.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/saskadena-six-ski-area"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 119,
+    "windowTicketAdultLow": 75,
+    "advanceTypical": null,
+    "seasonPassAdult": 726.1,
+    "currency": "USD",
+    "notes": "These are 2025-26 rates, the last published. The spread is the widest on this roster relative to the mountain's size: adult (18-64) all day is $75 on a non-peak weekday, $109 on a non-peak weekend and $119 on a holiday or peak date, with after-12:30pm rates of $89 and $99 on weekends and holidays. Peak periods were 20 December to 1 January, 17-19 January and 14-22 February. A VT/NH resident rate of $59 is sold at the ticket window only, which is a nice piece of local pricing and the sort of thing that does not survive corporate ownership. The FLEX ticket at $119 is online-only and redeemable on any operating day, but it is priced at the peak rate rather than discounted, so there is no advance rate to record. The season pass figure is unusual in one respect worth flagging: $726.10 for an adult (18-64) includes 6% Vermont state tax, which the resort states explicitly and which no other file on this roster does - every other season pass price here is pre-tax. Passes are non-transferable, non-extendable and non-refundable, sold online only, and include uphill access through Uphill New England.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.saskadenasix.com/winter/lift-tickets-passes",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Saskadena Six is 650 feet of vertical with ninety years of ski history stacked on top of it, and the history is the reason to care. America's first rope tow went up on Clinton Gilbert's pasture a couple of miles from here in 1934; the ski area itself opened in 1936 when Wallace \"Bunny\" Bertram, a former Dartmouth ski instructor, strung a tow up the hill marked number 6 on a local map and joked that skiing its pitch would be suicide. The name stuck for eighty-six years. In 1937 it ran the first Fisk Trophy Race, now the longest-running ski race in North America and still held annually; in 1982 it hosted the National Snow Surfing Championship, roughly 150 competitors on a sport that had not yet decided to call itself snowboarding. Laurance Rockefeller bought it from Bertram and it belongs today to the Woodstock Inn & Resort, itself owned by the Rockefellers' Woodstock Foundation. In summer 2022 it retired the old name for Saskadena - Abenaki for \"standing mountain\", chosen with Chief Don Stevens of the Nulhegan Band of the Coosuk-Abenaki. What you actually ski is small: 28 trails on 100 acres with two chairs and a J-bar, 60% snowmaking, 48 inches of natural snow and a longest run of four tenths of a mile. The Face is genuinely steep. Everything else is a pleasant hour.",
+    "snowQuality": "Forty-eight inches a year is very little, and at 550 feet of base elevation in the Ottauquechee valley the mountain is at the mercy of every thaw that comes up the Connecticut River. Snowmaking covers 60% of the trails - the resort's figure; OnTheSnow records 50 of the 100 acres - and it has been invested in seriously, with $400,000 spent in 2018 on ten automated TechnoAlpin producers, seven of them lining The Face from top to bottom and one on a 30-foot articulating arm at the steepest pitch. That system is why the mountain opens reliably at all. What it cannot do is make the other 40% skiable, or hold a surface through a February rain event on a south-facing hill this low. Come after a cold snap, and check the report first.",
+    "crowds": "Rarely an issue and structurally so. Saskadena Six runs Wednesday to Sunday, closes Monday and Tuesday outside holiday periods, and draws from Woodstock - a town of three thousand - plus guests of the Woodstock Inn, which is the mountain's owner and its main source of destination traffic. Two chairs on 100 acres is enough for that. The exception is the Fisk Trophy Race and the other race weekends, when the mountain becomes a competitive venue with a ninety-year backlog of tradition and the parking fills with New England ski clubs. Prices do the rest of the sorting: $119 on a holiday weekend for 650 feet of vertical is a lot of money, and the mountain knows exactly who it is charging.",
+    "difficulty": "Small but not soft. OnTheSnow puts 18% of the trails in an expert tier and another 14% advanced, which on 28 trails is nine runs, and the mountain's whole identity is built on one of them: The Face, the competition trail that gave the ski area its old name and still hosts the longest-running race in North America. It is short - nothing here is more than four tenths of a mile - and 650 feet of vertical means the steep section ends about when your legs start to notice. Half the trail network is intermediate and the learning terrain off Pearson's Path is properly separated, which is what a resort hotel's ski area needs to be. A strong skier will have skied everything twice before lunch and enjoyed it anyway, mostly because of where they are standing.",
+    "keyTrails": [
+      {
+        "name": "The Face",
+        "note": "The competition trail and the reason the place was called Suicide Six for eighty-six years. Host of the Fisk Trophy Race - the longest-running ski race in North America, run annually since 1937 - and of the 1982 National Snow Surfing Championship. Fully automated snowmaking from top to bottom since 2018."
+      },
+      {
+        "name": "Pearson's Path",
+        "note": "Serves the ski and snowboard learning centre, and one of the two zones the resort's 2018 snowmaking investment was aimed at. The other half of what this mountain is for."
+      },
+      {
+        "name": "Quad Chair 1",
+        "note": "The Leitner-Poma quad that replaced the mountain's older lift arrangement and turned a ski area into something a resort hotel could sell. Two thousand feet long."
+      },
+      {
+        "name": "Double Chair 2",
+        "note": "Sixteen hundred feet, installed in 1978 to replace the 1954 Poma - itself a $40,000 purchase that could lift 950 skiers an hour and put the mountain in a different league at the time."
+      }
+    ],
+    "tidbits": [
+      "The ski area opened in 1936 as Suicide Six, named for a joke about the pitch of Hill No. 6.",
+      "America's first rope tow was installed in 1934 on a pasture a short distance away in Woodstock.",
+      "The Fisk Trophy Race, first run here in 1937, is the longest-running ski race in North America.",
+      "The 1982 National Snow Surfing Championship was held here, before the sport settled on the name snowboarding.",
+      "It was renamed in 2022; Saskadena is Abenaki for \"standing mountain\", chosen with Chief Don Stevens of the Nulhegan Band of the Coosuk-Abenaki Nation.",
+      "The \"Six\" comes from the hill numbered 6 on the map Bunny Bertram used to pick his site.",
+      "It is owned by the Woodstock Inn & Resort, itself owned by the Rockefellers' Woodstock Foundation.",
+      "At 650 feet, its vertical is the smallest on this roster.",
+      "The adult season pass price is one of the few on this roster quoted with sales tax included."
+    ],
+    "bestFor": [
+      "Ski history you can stand in",
+      "A Woodstock Inn ski day",
+      "Race-trail pitch in miniature",
+      "Indy Pass days with no blackouts"
+    ],
+    "watchOutFor": [
+      "Only 48 inches of natural snow",
+      "$119 on a holiday weekend",
+      "Longest run is 0.4 miles",
+      "Closed Mondays and Tuesdays"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.saskadenasix.com/winter/conditions",
+    "trailMap": "https://www.saskadenasix.com/the-mountain/mountain-info",
+    "webcams": null,
+    "lodging": "https://www.saskadenasix.com/more/the-woodstock-inn-resort",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Saskadena Six mountain info (trail count, snowmaking percentage, lift count, the full ninety-year history, the 2018 TechnoAlpin snowmaking investment, The Face and Pearson's Path)",
+        "url": "https://www.saskadenasix.com/the-mountain/mountain-info",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Saskadena Six name change (the Abenaki origin of Saskadena, Chief Don Stevens and the Nulhegan Band, the origin of the Six, the reason for the change)",
+        "url": "https://www.saskadenasix.com/the-mountain/our-new-name",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Saskadena Six lift tickets and passes (2025-26 adult peak, weekend and weekday rates, the VT/NH resident rate, FLEX tickets, the tax-inclusive season pass price, Indy AddOn)",
+        "url": "https://www.saskadenasix.com/winter/lift-tickets-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Saskadena Six (no blackout dates, the structured terrain-park and night-skiing fields, elevations, and the Fisk Trophy and 1982 championship history)",
+        "url": "https://www.indyskipass.com/our-resorts/saskadena-six-ski-area",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Suicide Six (elevations, vertical, acreage, four-tier difficulty split, snowfall, longest run, lift-type breakdown - still filed under the old name)",
+        "url": "https://www.onthesnow.com/vermont/suicide-six/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions are documented. The mountain's competitive tradition is alpine racing - the Fisk Trophy - and, historically, snowboarding"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes the bump skiing here. The resort publishes a four-item stat line and no trail information, and PeakRankings has no Saskadena Six page"
+    },
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/saskadena-six-ski-area",
+      "note": "The Indy Pass partner directory's structured Terrain Parks field reads Yes, so the mountain has at least one park. Nothing else exists: the resort's own site never mentions a terrain park on any page, names none, and publishes no count, and OnTheSnow gives no park figure"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is mentioned by any source. With no park information at all from the resort there is nothing to read either way"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.saskadenasix.com/winter/lift-tickets-passes",
+      "note": "Saskadena Six publishes one set of rates for all channels. Its only online-exclusive product, the FLEX ticket, is priced at $119 - the peak rate - so it is a flexibility premium rather than an advance-purchase discount, and there is no advance rate to record"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/saskadena-six-ski-area",
+      "note": "The Indy Pass partner directory's structured Night Skiing field reads No for Saskadena Six, which is an affirmative published statement rather than an absence of one. The resort's own site corroborates by omission - it has no night or twilight page and its ticket products are all-day and after-12:30pm only, with nothing sold for an evening session"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither the resort, OnTheSnow nor the Indy partner page mentions glades or tree skiing at Saskadena Six. Left null rather than assumed either way"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.annualSnowfallAvg",
+      "resortClaim": 48,
+      "independentClaim": 42,
+      "independentSource": "https://www.indyskipass.com/our-resorts/saskadena-six-ski-area",
+      "note": "A small gap and both figures are third-party - the resort publishes no snowfall number at all, so the stored 48 is OnTheSnow's rather than the resort's, and the 42 is the Indy partner directory's average. Recorded because at this end of the scale a six-inch difference is more than 10% of the total."
+    }
+  ],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Nothing is published about grooming. What can be reasoned from the sourced figures is that snowmaking reaches 60% of the trails and the resort's own account of its 2018 investment describes the priorities plainly - The Face from top to bottom, and the learning centre - which are the two zones a small mountain with a hotel attached must keep in good condition. That leaves the remaining 40% of the trail network on natural snow and effectively outside the nightly grooming rotation, which on 48 inches of annual snowfall means it is often not worth skiing rather than reliably bumped. Recorded as occasional and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.saskadenasix.com/the-mountain/mountain-info",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "The Indy Pass partner directory says Saskadena Six has terrain parks, and that is the entire published record. The resort's own site does not mention a park anywhere - not on the mountain-info page, not in its history, not on the tickets page - and neither OnTheSnow nor any other source gives a count or a name. `nightPark` is false only because there is no night skiing here at all.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts/saskadena-six-ski-area",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

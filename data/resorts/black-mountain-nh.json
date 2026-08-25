@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "black-mountain-nh",
+    "name": "Black Mountain",
+    "aka": [
+      "Black Mountain NH",
+      "Black Mountain Ski Area",
+      "Whitney's Hill",
+      "Black Mountain Community Cooperation"
+    ],
+    "state": "NH",
+    "region": "Mount Washington Valley",
+    "town": "Jackson",
+    "lat": 44.1774,
+    "lon": -71.1688,
+    "website": "https://www.blackmt.com"
+  },
+  "size": {
+    "verticalDrop": 1100,
+    "skiableAcres": 140,
+    "trailCount": 45,
+    "liftCount": 5,
+    "longestRun": 2,
+    "summitElevation": 2350,
+    "baseElevation": 1250,
+    "annualSnowfallAvg": 120,
+    "snowmakingPercent": 98,
+    "nightSkiing": false,
+    "source": "https://www.blackmt.com/the-mountain",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "baseElevation": {
+        "source": "https://www.indyskipass.com/our-resorts/black-mountain-ski-area",
+        "verifiedOn": "2026-08-25"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.indyskipass.com/our-resorts/black-mountain-ski-area",
+        "verifiedOn": "2026-08-25"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/new-hampshire/black-mountain/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.blackmt.com/tickets",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 33,
+    "percentIntermediate": 34,
+    "percentAdvanced": 33,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "The split comes from the Indy Pass partner listing rather than the resort's own site, which publishes a facts block with elevations, lifts, acreage and exposure but no difficulty breakdown at all. Since Indy Pass owns Black Mountain, that listing is effectively the operator speaking, which is why it is preferred here over OnTheSnow's rather different 29/32/24/15. The trail count needs explaining, because three published figures exist. The resort's prose - repeated verbatim on its Indy listing - says 45 trails; the facts block further down the same page says 61; OnTheSnow says 68. The 45 is stored because the operator publishes it in two places while 61 appears once, which departs from this guide's usual rule of preferring a stat block over prose. The likely reconciliation is that the higher counts fold in the glades, of which Black has many named ones - Carter Notch, Lostbo, Sugar and Maple - but no source states that, so it is offered as a hypothesis rather than a finding. The acreage carries the same pattern and is recorded as a dispute. One published figure here is genuinely rare and worth keeping: primary exposure, which Black gives as south.",
+    "source": "https://www.indyskipass.com/our-resorts/black-mountain-ski-area",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two all-day lift tickets per season on the Indy Pass. The relationship runs deeper than a partnership: Indy Pass bought Black Mountain outright in 2024 and has since moved its own operations, and those of Entabeni, to the base of the mountain.",
+      "blackouts": "None. The Indy partner page for Black Mountain carries an explicit No Blackout Dates marker.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/black-mountain-ski-area"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "Black Mountain publishes more about how its passes are sold than what they cost, and the how is the more interesting half. Season passes sell out and are allocated in waves: existing passholders get a priority week and bypass the waitlist permanently, waitlist members buy on 2 April in priority order, and the general public gets whatever is left on 9 April. Returning passholders get a standing discount that compounds year over year, and there is a no-bank, zero-interest payment plan on every pass type. The two prices published as text are both partial-season: an Early Season Pass at $189, valid from opening day through Christmas Day, and a Late Season Pass at $189 from 1 April - built as add-ons to somebody else's season pass, with the mountain aiming to open in November and ski into May. Every full rate, and every day-ticket rate, lives on a JavaScript e-store that renders nothing to a plain fetch, so all four price fields are null. The general manager states the mountain has kept most pass options below its own 2023-24 prices. All local children K-8 in SAU 9 get a free unlimited season pass.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.blackmt.com/tickets",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Black Mountain has been skiing since 1935 and very nearly stopped in 2024, and what happened instead is the most interesting ownership story in New England skiing. Indy Pass bought the mountain, spent a season rebuilding it - a fifth more snowmaking capacity, a new gun fleet, a new groomer, a remodelled lodge, full lift maintenance - and then began converting it to a co-operative owned by its own skiers, with 2024-25 passholders given first call on shares. The operating entity now signs its letters Black Mountain Community Cooperation. In July 2026 it went further and bought the entire 12-acre base parcel, including Whitney's Inn, which has been taking guests since 1842, the Shovel Handle Pub, and the mountain's snowmaking water supply - putting all of it under one owner for the first time in half a century. What you get for all that is 1,100 feet of vertical and 140 acres in Jackson, snowmaking on 98% of the terrain, five lifts including a J-bar descended from the first overhead cable lift in the country, and a south-facing hill with manicured glades, summit steeps and, by the mountain's own account, no lift lines. It is small, it is old, and it is the only ski area on this roster you may shortly be able to own a piece of.",
+    "snowQuality": "A hundred and twenty inches by the operator's count against OnTheSnow's 87, which is a wide gap and both are worth knowing. Either way this is Mount Washington Valley snowfall on a low mountain: a 1,250-foot base takes rain in storms that fall as snow on Wildcat twenty minutes north, and the south-facing exposure - which Black publishes as a headline fact rather than hiding - means sun on the snow all day, warmer and softer in March and unkind after a thaw-freeze. The compensation is a snowmaking system that has just been rebuilt: 98% coverage, a 20% capacity increase and an entirely new gun fleet under Indy's ownership, feeding from a water supply the mountain now owns outright. The glades are the part that still waits for a real storm, and locals say so - Black's own copy calls it the powder-day choice, which is a claim about traffic as much as about snow.",
+    "crowds": "The selling point, and the operator says it plainly: non-existent lift lines. Black Mountain sits in the same valley as Attitash, Wildcat and Cranmore and takes the smallest share of their traffic, partly because it is smaller and partly because it has spent decades as the valley's quiet alternative. The pass allocation system is the thing to understand: passes genuinely sell out, priority runs from existing passholders to waitlist members to the public, and the waitlist is described by the mountain as deep. That is a mountain choosing to cap its own attendance rather than one struggling to fill it - an unusual position for a 140-acre area, and the clearest sign that the co-operative model is working. Guest hours are 9 to 4, seven days a week.",
+    "difficulty": "An even three-way split by the operator's own numbers - 33% beginner, 34% intermediate, 33% advanced - which for a 1,100-foot mountain means the hard third is short rather than easy. The East Bowl Triple serves 80% of the terrain and most of what people ski; the Historic Summit Double is the one that unlocks the full vertical and the views across to Mount Washington. The character is classic New England: narrow, twisting, cut rather than bulldozed, with named trails going back to 1948 - Whitney, Davis, Hardscrabble, Maple - and a steady accretion of glades since the late 1990s. Upper Maple Slalom into the Carter Notch glades is the leg-burner; Upper Black Beauty is the corduroy alternative. Beginners have a dedicated progression from a lit rope-tow area to the Platter Pull and out onto Ninow and Jubilee, which is better sequenced than most mountains twice this size manage.",
+    "keyTrails": [
+      {
+        "name": "Upper Maple Slalom",
+        "note": "Recently widened, and the resort's own recommended route into the Carter Notch glades. The way to make your legs burn here."
+      },
+      {
+        "name": "Carter Notch glades",
+        "note": "The best-known of Black's tree skiing, and part of why locals pick this mountain on a powder day. Glades are counted separately from the trail total, which is probably why three different trail counts exist for this mountain."
+      },
+      {
+        "name": "Upper Black Beauty",
+        "note": "The mellow corduroy alternative to the glades off the summit - the resort's own framing of the choice at the top."
+      },
+      {
+        "name": "Jackson Standard",
+        "note": "One of the East Bowl Triple's named favourites, along with Juniper and Sugarbush. That one lift serves 80% of the mountain's terrain."
+      },
+      {
+        "name": "The Historic Summit Double",
+        "note": "Installed in 1965 and the lift that took Black to its full 1,100 feet. Views of Mount Washington and the valley from the top."
+      },
+      {
+        "name": "Ninow and Jubilee",
+        "note": "The easy cruising off the Platter Pull, and the second rung of a genuinely well-sequenced beginner progression that starts on a lit rope-tow area."
+      }
+    ],
+    "tidbits": [
+      "Indy Pass bought Black Mountain in 2024 and is converting it to a skier-owned co-operative.",
+      "In July 2026 the operator also bought Whitney's Inn, the Shovel Handle Pub and the mountain's snowmaking water supply - 12 acres at the base.",
+      "Whitney's Inn has been welcoming guests since 1842; the ski area has run 91 seasons.",
+      "The Shovel Handle - now the J-Bar - was the first overhead cable lift in the country.",
+      "Black installed one of New England's first snowmaking systems, on the Whitney slope in 1957.",
+      "Its primary exposure is south, which almost no ski area publishes.",
+      "Every local child K-8 in SAU 9 gets a free unlimited season pass.",
+      "Season passes sell out and are allocated by waitlist in priority order.",
+      "Three different trail counts are published for this mountain: 45, 61 and 68."
+    ],
+    "bestFor": [
+      "Skiing a co-operative you can own",
+      "Glades on a powder day",
+      "No lift lines in a busy valley",
+      "Indy Pass days with no blackouts"
+    ],
+    "watchOutFor": [
+      "Season passes genuinely sell out",
+      "No prices published as readable text",
+      "A 1,250-foot base takes the rain",
+      "Only 1,100 feet of vertical"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.blackmt.com/conditions",
+    "trailMap": "https://www.blackmt.com/trail-map",
+    "webcams": "https://www.blackmt.com/conditions",
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Black Mountain the-mountain page (facts block with lifts, trails, acreage, exposure, summit and vertical; the 98% snowmaking claim; named lifts and trails; the full year-by-year history including the 2024 Indy Pass purchase and co-op plan)",
+        "url": "https://www.blackmt.com/the-mountain",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Black Mountain tickets and passes (the waitlist allocation system, early and late season pass prices, free local children's passes, operating hours of 9 to 4 seven days a week, 2026-27 holiday dates)",
+        "url": "https://www.blackmt.com/tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Letter from the GM, July 2026 (the purchase of Whitney's Inn, the Shovel Handle Pub and the snowmaking water supply; Black Mountain Community Cooperation as the operating entity)",
+        "url": "https://www.blackmt.com/post/letter-from-the-gm-yes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Black Mountain (base elevation, snowfall average, difficulty split, no blackout dates, the structured terrain-park and night-skiing fields)",
+        "url": "https://www.indyskipass.com/our-resorts/black-mountain-ski-area",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Black Mountain (longest run, and the differing 68-trail, 600-acre and 87-inch figures recorded in the notes and disputes)",
+        "url": "https://www.onthesnow.com/new-hampshire/black-mountain/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. The mountain's programming is its Black Sheep youth seasonal programme, which teaches glades, ungroomed runs and entry-level backcountry - a telling emphasis, but not a bump culture"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.blackmt.com/the-mountain",
+      "note": "No source describes Black's bump skiing. The resort names its glades and its steeps and describes its grooming only as robust, and PeakRankings has no Black Mountain page"
+    },
+    "parks.count": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/black-mountain-ski-area",
+      "note": "The Indy Pass partner directory's structured Terrain Parks field reads No, and since Indy Pass owns Black Mountain that is the operator's own statement rather than a third party's. The resort's own site corroborates by omission - it describes its glades, its steeps, its beginner progression and its history in detail across several pages and never mentions a terrain park"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.blackmt.com/tickets",
+      "note": "Every rate lives on a JavaScript e-store that renders no prices to a plain fetch. The tickets page describes the pass structure and the waitlist system at length and publishes only the two $189 partial-season passes as text"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.blackmt.com/tickets",
+      "note": "The adult season pass rate is on the JavaScript e-store only. The two prices published as text - Early Season and Late Season, both $189 - are partial-season products and not the adult all-season rate"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.blackmt.com/tickets",
+      "note": "No day-ticket rate is published as text anywhere; the e-store renders through JavaScript"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.blackmt.com/tickets",
+      "note": "No day-ticket rate is published as text anywhere; the e-store renders through JavaScript"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.blackmt.com/tickets",
+      "note": "The resort publishes its hours of operation as 9:00am to 4:00pm, seven days a week, with no evening session of any kind, and the Indy partner listing's structured Night Skiing field reads No. Note the historical trace that could mislead: night lights were added on Whitney's hill in 1959-60, and the current beginner area is advertised as lighted - but lit terrain for a learning area is not a night-skiing operation, and the published schedule closes at four"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/black-mountain-ski-area",
+      "note": "The operator publishes a three-tier split, so there is no fourth-tier figure to source. OnTheSnow does give a four-tier 29/32/24/15, but the operator's own numbers are preferred"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.skiableAcres",
+      "resortClaim": 140,
+      "independentClaim": 600,
+      "independentSource": "https://www.onthesnow.com/new-hampshire/black-mountain/ski-resort",
+      "note": "A factor of more than four, and the largest acreage disagreement on this roster. The resort says over 140 acres on both its own site and its Indy listing; OnTheSnow says 600. The most likely explanation is that OnTheSnow counts the gladed and backcountry terrain that Black keeps outside its trail acreage, which is the same pattern that produces three different trail counts for this mountain - but no source says so, and the conservative figure is stored."
+    },
+    {
+      "field": "size.annualSnowfallAvg",
+      "resortClaim": 120,
+      "independentClaim": 87,
+      "independentSource": "https://www.onthesnow.com/new-hampshire/black-mountain/ski-resort",
+      "note": "A 33-inch gap. The 120 is the average published on the operator's own Indy Pass listing, which also gives a high of 300; OnTheSnow records 87. The operator's figure is stored under this guide's preference for the resort's own numbers, but a skier planning around natural snow should weigh the lower one, especially on a south-facing mountain with a 1,250-foot base."
+    }
+  ],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "No grooming policy is published beyond the resort's own word for it, which is robust. What is documented cuts against heavy bump formation on the trail network: snowmaking now reaches 98% of the terrain after Indy's rebuild, and a manufactured surface on a south-facing mountain has to be groomed to survive its own exposure. The counterweight is the glades, which Black names, markets and teaches - its Black Sheep youth programme explicitly covers glades, woods and ungroomed runs for children as young as five - and which sit outside any grooming rotation. So the honest picture is a groomed mountain with an ungroomed shadow network in the trees. Recorded as occasional and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.blackmt.com/the-mountain",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 0,
+    "parks": [],
+    "pipe": false,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Black Mountain has no terrain park, and this is a confirmed absence rather than a missing record: the structured Terrain Parks field on its Indy Pass listing reads No, and Indy Pass owns the mountain. The resort's own site never mentions a park across any of its pages, while describing its glades, its summit steeps, its beginner progression and ninety years of history in detail. For a mountain whose youth programme teaches tree skiing and entry-level backcountry to five-year-olds, that is a coherent set of priorities rather than a gap.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts/black-mountain-ski-area",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

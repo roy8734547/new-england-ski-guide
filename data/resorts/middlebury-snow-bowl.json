@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "middlebury-snow-bowl",
+    "name": "Middlebury Snow Bowl",
+    "aka": [
+      "Middlebury College Snow Bowl",
+      "Middlebury Snowbowl",
+      "The Snowbowl"
+    ],
+    "state": "VT",
+    "region": "Central Vermont",
+    "town": "Hancock",
+    "lat": 43.9287,
+    "lon": -72.9617,
+    "website": "https://middleburysnowbowl.com"
+  },
+  "size": {
+    "verticalDrop": 1020,
+    "skiableAcres": 110,
+    "trailCount": 28,
+    "liftCount": 4,
+    "longestRun": null,
+    "summitElevation": 2720,
+    "baseElevation": 1700,
+    "annualSnowfallAvg": 150,
+    "snowmakingPercent": null,
+    "nightSkiing": true,
+    "source": "https://middleburysnowbowl.com/mountain-info/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "baseElevation": {
+        "source": "https://www.indyskipass.com/our-resorts/middlebury-snowbowl",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 21,
+    "percentIntermediate": 29,
+    "percentAdvanced": 50,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "These percentages are the resort's own trail counts converted: 6 Easiest, 8 More Difficult and 14 Most Difficult out of 28, which is 21/29/50 and sums to 100. Half the trail network carrying the top rating is a striking figure for a college hill and it is not a rounding artefact - the counts are published individually. The Indy Pass partner directory gives a much gentler 21/44/35 for the same mountain; the resort's own counts are stored. Glades are counted separately and generously: 11 named gladed areas on top of the 28 trails, with over 600 acres of woods and backcountry terrain beyond the 110 acres of trails, which is why the acreage figure here looks small for the terrain on offer. Indy lists 200 acres and 17 trails, both of which sit between the resort's two ways of counting. The base elevation comes from Indy rather than the resort - the Snowbowl publishes a 2,720 ft summit and a 1,020 ft vertical and no base, and Indy's 1,700 ft reconciles the two exactly.",
+    "source": "https://middleburysnowbowl.com/mountain-info/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two all-day or night lift tickets per season on the Indy Pass. Because the Snowbowl runs night skiing Wednesday through Friday, an Indy day here can be taken as an evening instead.",
+      "blackouts": "None. The Indy partner page for the Snowbowl carries an explicit No Blackout Dates marker. Note the operating schedule is the real constraint: the mountain is closed on non-holiday Mondays and Tuesdays.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/middlebury-snowbowl"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 73,
+    "windowTicketAdultLow": 63,
+    "advanceTypical": null,
+    "seasonPassAdult": 549,
+    "currency": "USD",
+    "notes": "The Snowbowl publishes a clean peak/non-peak grid and it is among the cheapest on this roster: adult (19-64) full day $63 non-peak and $73 peak, half-day afternoon $53 and $63, night-only $43 and $53. Buying online saves $5 on most tickets, but that is a stated discount rather than a separately published advance rate, so advanceTypical is null. Same-day tickets are sold at the base lodge window only and are not available online. The season pass figure is the 2026-27 adult fall-sale rate of $549, on sale 1 September to 31 October, rising to $599 from 1 November - and note that on the verified date passes were not yet purchasable, so this is a published forward price rather than a live one. The rest of that ladder is remarkable for how far it goes: senior (65-79) $349, junior (6-18) $199, Middlebury College student $189, non-Middlebury college student $349, uphill-only $75, and free for under-6s and over-80s. No blackout dates on any of them. A combo pass with the college's Rikert Nordic centre saves a further 10%.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://middleburysnowbowl.com/lift-tickets/",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://middleburysnowbowl.com/season-passes/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "The Middlebury Snow Bowl is a college-owned ski area on Worth Mountain that skis considerably harder than a college-owned ski area has any business skiing. Half its 28 trails carry the resort's top difficulty rating - the counts are published, 6 easiest, 8 more difficult, 14 most difficult - and there are 11 gladed areas on top of that, with over 600 acres of woods and backcountry beyond the 110 acres of maintained trail. A thousand and twenty feet of vertical, three chairlifts and a surface lift, twenty minutes from the village of Middlebury on Route 125 in Hancock. It has been running since 1934 and the ski-jumping history is not decoration: the Snowbowl hosted the NCAA Ski Jumping Championships in 1961 and 1973 on a 50-metre jump, and the town's ski legacy runs back to a 1922 jump built by Fred Harris. The catches are real. Snowmaking covers six trails, which on 150 inches of natural snow means most of the mountain is at the weather's mercy. It is closed Mondays and Tuesdays outside holiday weeks. And it is small. But an adult season pass is $549, night skiing runs Wednesday to Friday, and the terrain is genuinely interesting - which is a combination almost nothing else in Vermont offers.",
+    "snowQuality": "A hundred and fifty inches by the resort's count, and the Indy Pass directory claims 200, which is one of the wider gaps on this roster. Either figure puts the Snowbowl well ahead of most of what is south of it, and the elevation helps - a 2,720-foot summit and a 1,700-foot base is high ground for central Vermont, higher at the base than anything in the Berkshires is at its top. What matters more than the total is where the snowmaking is: six trails. The other 22 plus the 11 glades and the 600 acres of woods run on natural snow only, so the mountain that is worth skiing here and the mountain that is reliably open are not the same mountain. Go after a storm. In a thin January the Snow Bowl is a handful of white ribbons.",
+    "crowds": "Not a problem, and the operating schedule is why. The Snowbowl is closed on non-holiday Mondays and Tuesdays, runs Wednesday to Friday from 9am to 9pm and weekends 9am to 4pm, and draws almost entirely from Middlebury College and the surrounding valley. Four lifts on 110 acres of trail is adequate for that, and the weekday evenings - which exist mainly for the college's own programmes and the local after-school crowd - are the quietest lift-served skiing in central Vermont. Holiday weeks bring the only real traffic. Anyone used to queueing at Sugarbush forty minutes north will find the contrast startling.",
+    "difficulty": "Genuinely demanding for its size, and the numbers say so plainly. Fourteen of 28 trails are rated most difficult by the mountain itself, against six easiest - an inverted pyramid that no commercial resort would dare publish. Add 11 gladed areas and 600-plus acres of woods and backcountry and this becomes a natural-snow skier's hill rather than a beginner's one, despite the college's teaching programmes running out of the same base. The vertical is only 1,020 feet, so nothing is long, and the pitch is New England steep rather than alpine steep. But this is a mountain that has trained Olympians and NCAA champions for ninety years and the trail network reflects that history rather than a marketing department's idea of a family ski area.",
+    "keyTrails": [
+      {
+        "name": "Worth Mountain Triple",
+        "note": "The summit lift, and the one that reaches the 2,720-foot top and the mountain's harder half. The ski area takes its shape from this chair."
+      },
+      {
+        "name": "Bailey Falls Triple",
+        "note": "The second triple, and the lift that opens up the other side of the trail network."
+      },
+      {
+        "name": "Sheehan Double",
+        "note": "The short chair by the base, and part of what makes the Snowbowl's lift arrangement feel like an older, smaller era of skiing."
+      },
+      {
+        "name": "The glades",
+        "note": "Eleven named gladed areas counted separately from the 28 trails, with over 600 acres of woods and backcountry beyond them. On natural snow only - none of it has snowmaking."
+      }
+    ],
+    "tidbits": [
+      "The Snow Bowl is owned and operated by Middlebury College.",
+      "Fourteen of its 28 trails carry the resort's Most Difficult rating; only six are rated Easiest.",
+      "Trails were first cut here in 1934, making it one of Vermont's earliest ski areas.",
+      "It hosted the NCAA Ski Jumping Championships in 1961 and 1973 on a 50-metre jump.",
+      "Snowmaking reaches six trails; everything else runs on natural snow.",
+      "Night skiing runs Wednesday through Friday, with lifts turning until 9pm.",
+      "It is closed on non-holiday Mondays and Tuesdays.",
+      "An adult season pass is $549 and a Middlebury College student pass is $189.",
+      "The base lodge still has the original fieldstone fireplace, kept through a 2003 expansion."
+    ],
+    "bestFor": [
+      "Hard terrain at a small price",
+      "Glades and backcountry access",
+      "Weeknight skiing until 9pm",
+      "Indy Pass days with no blackouts"
+    ],
+    "watchOutFor": [
+      "Snowmaking on only six trails",
+      "Closed Mondays and Tuesdays",
+      "No terrain park at all",
+      "Only 1,020 feet of vertical"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://middleburysnowbowl.com/conditions/",
+    "trailMap": "https://middleburysnowbowl.com/trail-map/",
+    "webcams": "https://middleburysnowbowl.com/webcams/",
+    "lodging": "https://middleburysnowbowl.com/lodging/",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Middlebury Snow Bowl mountain stats and info (vertical, summit, acreage, trail and glade counts, difficulty counts, lifts, snowmaking, night skiing, snowfall, operating hours, history and sustainability)",
+        "url": "https://middleburysnowbowl.com/mountain-info/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Middlebury Snow Bowl lift tickets (peak and non-peak adult, half-day and night-only rates, the online saving, window-only same-day sales)",
+        "url": "https://middleburysnowbowl.com/lift-tickets/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Middlebury Snow Bowl season passes (2026-27 pricing ladder, the no-blackout terms, the Rikert combo pass)",
+        "url": "https://middleburysnowbowl.com/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Middlebury Snowbowl (base elevation, no blackout dates, the structured terrain-park and night-skiing fields, its own differing trail count, acreage, snowfall and difficulty split)",
+        "url": "https://www.indyskipass.com/our-resorts/middlebury-snowbowl",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. The Snowbowl's competitive history is alpine racing and ski jumping, both documented at length"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes the Snowbowl's bump skiing. The resort publishes difficulty counts but no trail names and nothing about grooming policy, and PeakRankings has no Middlebury page"
+    },
+    "parks.count": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/middlebury-snowbowl",
+      "note": "The Indy Pass partner directory's structured Terrain Parks field reads No for the Snowbowl, and the resort's own site never mentions a terrain park on any page - its mountain-info stat block counts trails, glades, lifts and snowmaking and lists no park. Two independent lines pointing the same way, so this is recorded as a confirmed zero rather than an unknown. Note that the resort's Side Hits programme is an after-school lesson programme, not a park"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://middleburysnowbowl.com/lift-tickets/",
+      "note": "The Snowbowl publishes one window rate grid and advertises a $5 saving for buying online, but never states the resulting online prices as rates of their own. Subtracting five from each cell would be this guide's arithmetic"
+    },
+    "size.longestRun": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://middleburysnowbowl.com/mountain-info/",
+      "note": "The resort's stat block is otherwise thorough - vertical, summit, acreage, trail and glade counts, difficulty counts, lifts, snowmaking, snowfall - and publishes no longest-run figure. The Indy partner page does not carry one either"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://middleburysnowbowl.com/mountain-info/",
+      "note": "The resort states snowmaking on six trails rather than a percentage. Six of 28 trails would be 21%, but that is a trail-count ratio rather than the terrain-coverage percentage this field holds, and the resort never expresses it either way"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://middleburysnowbowl.com/mountain-info/",
+      "note": "The Snowbowl publishes three difficulty grades - Easiest, More Difficult, Most Difficult - so there is no fourth-tier figure to source. Unusually, the top of those three is the largest at 14 of 28 trails"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.annualSnowfallAvg",
+      "resortClaim": 150,
+      "independentClaim": 200,
+      "independentSource": "https://www.indyskipass.com/our-resorts/middlebury-snowbowl",
+      "note": "An unusual direction for a snowfall dispute: the resort claims less than the third party does. Middlebury's own stat block says 150 inches; the Indy Pass partner directory says the average is 200 with a high of 250. The resort's more conservative figure is stored. Partner directory entries are usually supplied by the resort, which makes the gap harder to explain than most on this roster."
+    }
+  ],
+  "moguls": {
+    "presence": "common",
+    "policy": "No grooming policy is published, but the arithmetic is unusually informative here. Snowmaking reaches six of 28 trails; the other 22, plus 11 gladed areas and 600-odd acres of woods, carry natural snow only. A mountain cannot groom a natural-snow trail into a manufactured surface, and a four-lift college operation is not sending cats over 600 acres of woods. That leaves most of the Snowbowl's terrain - including the 14 trails it rates Most Difficult - skiing as whatever the weather and the traffic make it. Recorded as common on that structural basis rather than on any published statement, and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://middleburysnowbowl.com/mountain-info/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 0,
+    "parks": [],
+    "pipe": false,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "There is no terrain park at the Middlebury Snow Bowl, and this is a confirmed absence rather than a gap in the record. The Indy Pass partner directory's structured Terrain Parks field reads No, and the resort's own site - which documents its trail counts, glade counts, snowmaking, lift fleet and ninety years of ski-jumping history in detail - never mentions a park on any page. For a mountain that rates half its trails Most Difficult and counts its glades separately, this is a coherent identity rather than an oversight: the Snowbowl's freestyle terrain is the woods.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts/middlebury-snowbowl",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}
