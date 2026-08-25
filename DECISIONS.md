@@ -41,3 +41,34 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
 | 2026-08-25 | Crotched `nightSkiing` = true sourced to Ski NH | 2 | Ski NH was demoted for *negatives* only. Its positive claims are specific and checkable — nights, hours, Midnight Madness dates — and OnTheSnow independently records 100 acres of lit terrain against 100 skiable. Using it here is consistent with the demotion, not a reversal of it. |
 | 2026-08-25 | Cranmore gets three `passes[]` entries including `type: "none"` | 4 | It is on no mega-pass but does sell two genuine multi-mountain products. The validator allows `none` to coexist with `other`, which is exactly this case. |
 | 2026-08-25 | Browser render check replaced with a server + module-parse check | 5 | No browser is drivable in this environment. `resort.html`, both new JSON files and every JS module return 200 from the dev server, all modules parse, and the one genuinely new data shape — `moguls.namedRuns: []` at Bretton Woods — was confirmed by reading `namedRunList()`, which returns null and renders "No bump runs recorded". |
+
+## 2026-08-25 — session 2
+
+- **Validator `advanceTypical` check narrowed to one-sided.** An online rate below the window
+  rate is the normal commercial case, not an anomaly; four of five live warnings were correct
+  data. Only an advance rate above `windowTicketAdultHigh` warns now. (User instruction.)
+- **Bolton Valley snowfall: stored OnTheSnow's 202, not the resort's 312.** The 312 comes from
+  the Indy partner directory (partner-supplied) and boltonvalley.com's own "over 300 inches" is
+  season-to-date, not an average. No `dataDisputes` entry, because the stored value is not the
+  resort's claim and the record has no shape for the reverse case; the gap is described in
+  `editorial.snowQuality` instead.
+- **Bolton Valley base elevation: 1,446 ft, rejecting Indy's 2,100 ft.** Indy's own page pairs
+  2,100 with a 3,150 summit and a 1,704 vertical, which cannot all be true. 3,150 − 1,446 =
+  1,704 exactly.
+- **Bolton Valley `keyTrails` left empty.** The unit's instruction was explicitly not to
+  re-fetch and no trail names were in the gathered research. One validator warning is the
+  correct price for not inventing four trail names. Flagged for Part C.
+- **Mount Sunapee `parks.count` = 4, not 2.** The resort's own page states both. Followed the
+  Burke precedent — the statistics block over the prose — and documented the contradiction in
+  `parks.overview` so the reader sees it.
+- **Attitash `nightSkiing` = false**, sourced to the hours-of-operation page, whose published
+  winter lift hours never run past 4:00pm. Previously null. An `absent` fieldNote needs a
+  positive published statement; a schedule that ends at 4pm across the whole season is one.
+- **Mount Sunapee `nightSkiing` stays null.** No night page in its sitemap, but its hours page
+  currently shows summer hours only, so there is no published winter schedule to read a
+  negative off. Absence from a sitemap is suggestive and is not a source.
+- **Crotched `parks.nightPark` stays null.** OnTheSnow's 100 lit acres against 100 skiable
+  acres would leave no room for an unlit park, but that is arithmetic on two aggregate figures,
+  and AUTORUN.md section 2 rule 1 outranks the temptation.
+- **Attitash snowfall: stored the resort's 120 over OnTheSnow's 88**, per CLAUDE.md rule 3,
+  with the 88 in `dataDisputes`.

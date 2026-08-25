@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 29.
+**Roster target:** 45 resorts. **Current:** 30.
 
 ---
 
@@ -33,56 +33,74 @@ skipping a unit.
 | B | Night-skiing negatives re-sourced off Ski NH | `72b5924` | — | Ski NH's list is a curated feature, not a registry. |
 | B | Batch 4: attitash, sunday-river, sugarloaf, saddleback | `12e9972` | 143 / 157 | 1 warning (Saddleback publishes a park count but no park names). |
 | B | Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched | `3b41bea` | 180 / 189 | 2 warnings, both correct data. Vail still down, so Sunapee and Crotched lean on OnTheSnow. |
-| B | Batch 6 **(PARTIAL)**: pats-peak, magic-mountain, bromley + pico fix | `c42e0c8` | 196 / 205 | `bolton-valley` still to write; its research is recorded above. |
+| B | Batch 6 (part 1): pats-peak, magic-mountain, bromley + pico fix | `c42e0c8` | 196 / 205 | |
+| B | Batch 6 (part 2): bolton-valley — batch closed | `f150308` | 205 / 214 | Snowfall conflict resolved as the notes specified: stored OnTheSnow's 202, explained the resort's 312 in prose. `keyTrails` left empty. |
+| B | Validator: `advanceTypical` range check narrowed | `6874b1d` | — | Only flags advance rates ABOVE `windowTicketAdultHigh` now. Cleared 4 false-positive warnings. |
+| B | **Vail repair**: attitash, mount-sunapee, crotched rebuilt from Vail's own pages | `869bfc0` | 197 / 210 | Standing probe passed. See "Vail repair" below. |
 
-**Part A complete. Batches 2 through 5 complete. Batch 6 is PARTIAL.**
+**Part A complete. Batches 2 through 6 complete.**
 
-**RESUME HERE.** Batch 6 is three of four written and committed: `pats-peak`, `magic-mountain`
-and `bromley` are done. **`bolton-valley` is NOT written.** All of its research is gathered
-and recorded below — do not re-fetch, just write the file, then run the batch close-out
-(`npm run check`, render check, spot-check against an earlier batch, commit, update this file).
+**RESUME HERE.** The next unfinished unit is **Batch 7** — pleasant-mountain, berkshire-east,
+jiminy-peak, catamount. Then batches 8, 9 and 10, then Parts C through G.
 
-#### bolton-valley — research gathered 2026-08-25, ready to write
+### STANDING CHECK AT THE START OF EVERY SESSION — Vail: DONE, no longer needed
 
-- identity: slug `bolton-valley`, name `Bolton Valley Resort`, VT, region `Northern Vermont`,
-  town `Bolton`, **lat 44.4150, lon -72.8344** (top of the Vista Quad, found via Overpass
-  `aerialway`; DEM probe 3,045 ft against a published 3,150 ft summit).
-- size, all from `https://www.onthesnow.com/vermont/bolton-valley/ski-resort`: vertical 1704,
-  acres 300, trails 71, lifts 6, longest run 0.6, summit 3150, base 1446, snowfall 202,
-  snowmaking 90 ac of 300 so `snowmakingPercent: null` with a fieldNote, `nightSkiing: true`.
-  Note 3150 − 1446 = 1704 reconciles exactly.
-- terrain 34/38/23/6 (sums to 101, inside tolerance), `glades: true`.
-- **Snowfall is contested and there is no clean resort-published average.** OnTheSnow says
-  202 in. The Indy directory says 312 in (partner-supplied, so effectively the resort's
-  claim). boltonvalley.com only markets "over 300 inches of snowfall for the season (so
-  far)", which is season-to-date, not an average. Store 202 and describe the gap in prose —
-  `dataDisputes` does not fit, because the stored value is not the resort's claim.
-- night skiing, from `https://www.boltonvalley.com/winter/activities/night-skiing-riding/`:
-  typically five nights a week, Tuesday to Saturday, night ticket 4pm to 10pm; day tickets
-  are valid 13 hours on those days. OnTheSnow gives 50 acres lit of 300.
-- passes: Indy, 2 all-day-or-night tickets, **no blackout dates for standard Indy Base**,
-  source `https://www.indyskipass.com/our-resorts/bolton-valley-resort` (note the `-resort`
-  suffix — `/bolton-valley` 404s). That page also gives base 2,100 ft, which contradicts its
-  own 3,150 summit and 1,704 vertical — **do not use it**, use OnTheSnow's 1,446.
-- pricing, from `https://www.boltonvalley.com/winter/tickets-passes/season-passes/`:
-  2026-27 adult (26-64) All Terrain Day & Night $859; Bolton Local Day & Night $729 with 9
-  restricted dates; All Terrain Daytime $809; Bolton Local Daytime $689; Midweek Day $299.
-  Prices increase 8 September 2026. `seasonPassAdult: 859`. No day-ticket rates were read,
-  so the three ticket fields are null.
-- links: snow report `.../winter/trail-maps-snow-reports/snow-reports/`, trail map
-  `.../winter/trail-maps-snow-reports/trail-maps/`, webcams `.../the-resort/live-webcams/`,
-  lodging `https://www.boltonvalley.com/lodging/`.
-- parks: Indy says terrain parks yes, but no park page exists in boltonvalley.com's page
-  sitemap and no count is published anywhere → `parks.count: null` with a fieldNote, same
-  basis as Stratton, Sunday River, Mount Sunapee and Crotched.
-- editorial angles worth using: highest base-area elevation of any Vermont resort per the
-  resort's own marketing (**check this against `pico` at 2,000 ft before repeating it** —
-  Bromley makes a similar claim at 1,950 ft and Pico beats both); the backcountry and nordic
-  network, which is genuinely unusual and has its own pages; and the night operation, which
-  is the largest in Vermont.
+~~Probe one Vail URL before anything else.~~ **Resolved 2026-08-25.** `attitash.com` returned
+200, and Attitash, Mount Sunapee and Crotched were rebuilt from Vail's own pages in `869bfc0`.
+This check can be dropped. What remains outstanding about Vail is narrower and is *not* worth
+a session's retrying — see below.
 
-After Bolton Valley, the next unfinished unit is **Batch 7** — pleasant-mountain,
-berkshire-east, jiminy-peak, catamount.
+#### Vail repair — what was fixed and what is still not obtainable
+
+All three files previously took every figure from OnTheSnow and carried empty `parks` sections.
+Rebuilt from `.../the-mountain/about-the-mountain/mountain-info.aspx` and, where one exists,
+`.../terrain-parks.aspx`:
+
+- **attitash** — trails 73 → **76**, snowfall 88 → **120**, terrain 22/49/29 → **29/44/27**,
+  `nightSkiing` null → **false**, and three named parks (Arcade Park, Ptarmigans Pop Up Park,
+  Family Cross). The night-skiing answer came from the hours-of-operation page, whose published
+  winter lift hours never run past 4:00pm — that page is the reusable technique for a Vail
+  property with no night page in its sitemap.
+- **mount-sunapee** — acres 232 → **233**, `snowmakingPercent` null → **97**, `parks.count`
+  null → **4**. Sunapee has **no terrain-parks page at all** (the sibling URL 404s and nothing
+  in its content sitemap matches `park`), so the parks are counted and unnamed.
+- **crotched** — trails 24 → **25**, terrain 29/33/38 → **28/40/32**, `nightSkiing` re-sourced
+  from Ski NH to the resort's own page, both parks named and described (CM Park, NCC-1701).
+
+**Still not obtainable, and stop trying:** every ticket and pass page across Vail's estate —
+`epicpass.com` included — 302s to `waitingroom.snow.com`, which requires JavaScript. Content
+pages are fine; commerce pages are not. Epic pass pricing therefore still comes from
+OnTheSnow's buyer's guide and each of the six Epic files says so in `pricing.notes`. Do not
+spend another session on this; it needs Playwright, which is a SEASONAL.md item.
+
+#### Two findings from the repair worth carrying forward
+
+1. **Vail's own stat blocks contradict Vail's own prose.** Mount Sunapee's mountain statistics
+   block reads "Terrain Parks 4" while a tile on the *same page* says it "boasts 2 terrain
+   parks". Stored the 4 on the Burke precedent (the spec block has been the correct half every
+   time this pattern has appeared), and said so in `parks.overview`. This is now the third
+   self-contradicting source on the roster after the two pass buyer's guides and Burke.
+2. **Resort-vs-aggregator terrain splits differ more than expected.** All three files carried
+   OnTheSnow's percentages; two of the three disagreed with the resort's own by 6-7 points, in
+   both cases making the mountain look harder than the operator claims. Sunapee's matched
+   exactly. Prefer the resort's split whenever it is readable.
+
+#### bolton-valley — research CONSUMED
+
+The research block that lived here was written into `data/resorts/bolton-valley.json` in
+`f150308` and is no longer needed; the file and its per-field `source` URLs are now the record.
+Both judgement calls the notes asked for were made as specified: OnTheSnow's **202** inches is
+stored with the resort's 312 explained in `editorial.snowQuality` rather than in `dataDisputes`
+(the stored value is not the resort's claim, so a dispute record does not fit), and the Indy
+directory's 2,100 ft base was rejected in favour of OnTheSnow's 1,446 ft, which reconciles
+exactly with the summit and vertical. The "highest base elevation in Vermont" marketing line
+was **not** repeated: Bolton's lift-served base is 1,446 ft, well below Pico's 2,000 ft, and the
+2,100 ft figure refers to the base village rather than the bottom of the drop.
+
+**One gap, deliberately left:** `bolton-valley.editorial.keyTrails` is empty and the validator
+warns about it. The instruction for this unit was explicitly not to re-fetch, and no trail names
+were in the gathered research; inventing them is the exact failure mode section 3 of AUTORUN.md
+warns about. **Pick this up in Part C** — one fetch of boltonvalley.com's trail map page.
 
 ### Carry into Batch 6 — the Indy directory is the shortcut
 
@@ -115,10 +133,8 @@ by much, and Camden Snow Bowl (1,070 ft on only 15 trails) and Big Rock (920 ft)
 marginal Tier C cases — expect very high null rates, which BATCHES.md says is the correct
 outcome, not a sign to try harder.
 
-**Also still outstanding:** Vail's web estate was down for the whole of 2026-08-25. Attitash,
-Mount Sunapee and Crotched all lean entirely on OnTheSnow as a result, and all three have
-empty `parks` sections. **Re-do those three in Part C once epicpass.com and the resort sites
-are readable again.**
+**Vail note:** superseded — the three Vail files were repaired in `869bfc0`. See the Vail
+repair section above.
 
 ### Batch 5 notes
 
@@ -225,7 +241,7 @@ Roster of 37 remaining, from BATCHES.md:
 - [x] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat — `2f8af90` — 111 unknown / 126 confirmed
 - [x] Batch 4: attitash, sunday-river, sugarloaf, saddleback — `12e9972` — 143 unknown / 157 confirmed
 - [x] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched — `3b41bea` — 180 unknown / 189 confirmed
-- [ ] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley
+- [x] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley — `c42e0c8` + `f150308` — 205 unknown / 214 confirmed
 - [ ] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount
 - [ ] Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway
 - [ ] Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock
@@ -312,6 +328,34 @@ reads as authoritative.
 
 ---
 
+### 3. Attitash editorial claimed the wrong snowfall ranking (found 2026-08-25)
+
+**What was wrong.** `attitash.json` said in three places that its 88-inch average was "the
+lowest average snowfall of any resort in this guide" and "the lowest total in this guide by a
+wide margin". It was not, on the day it was written. Crotched was already stored at 63 inches,
+Pats Peak at 69, Wachusett at 71 and Cranmore at 80 — four resorts below it, one of them by 25
+inches. Attitash was tied for fifth with Ragged.
+
+**How it was found.** Not by a spot-check. It surfaced while sorting the roster's snowfall
+column to decide whether the resort's newly readable 120-inch figure or OnTheSnow's 88 should
+be stored — which is to say, by the same manoeuvre that caught the Pico error: sorting one
+column across the whole roster.
+
+**Fixed.** All three sentences rewritten. The file now stores the resort's 120 with OnTheSnow's
+88 in `dataDisputes`, and compares Attitash to named neighbours (Wildcat, twenty minutes away
+and two thousand feet higher) rather than to a roster ranking. Its one surviving superlative —
+that the 600 ft base is the lowest on the roster — was checked and is true.
+
+**Lesson, and this is the second instance of it.** This is the identical failure mode to the
+Pico base-elevation error: a *comparative* editorial claim, true-sounding, never re-checked, in
+a file written before the roster was complete. Two instances in six batches means this is not
+bad luck, it is systematic. **Part C's superlative sweep is now mandatory, not advisory** —
+grep every resort file for "lowest", "highest", "only", "smallest", "largest", "steepest",
+"longest", "most" and "in this guide", and check each hit against the finished 45-resort
+roster. Note also that new files are still introducing them: Crotched's "smallest mountain on
+this roster" is true at 30 resorts and will very likely be false at 45, once Camden Snow Bowl,
+Big Rock, Middlebury and the Massachusetts hills are in.
+
 ## Spot-check log
 
 Each batch re-fetches one recorded source URL from an **earlier** batch and confirms the
@@ -323,3 +367,4 @@ number still matches.
 | 3 | Stratton `pricing.seasonPassAdult` = 1399 against `onthesnow.com/news/ikon-pass-buyers-guide/` | **FAIL** — see INTEGRITY FAILURES 1. Widened to Epic as well; five files corrected. |
 | 4 | Burke `size.verticalDrop` = 2011, `skiableAcres` = 178, `trailCount` = 56 against `onthesnow.com/vermont/burke-mountain/ski-resort` | **PASS** — spec block still reads 2,011 ft / 178 ac / 56 runs. Note the same self-contradiction pattern as the pass guides: the page prose says "55 trails and 4 lifts" while its spec block says 56 and 5. The file uses the spec block, which is the correct half. |
 | 5 | Waterville Valley `size.snowmakingPercent` = 100 and `skiableAcres` = 265 against `waterville.com/mountain-stats` | **PASS** — page still reads "SNOWMAKING 265 Aces 100% Coverage", plus Skiable Acres 265, Longest Run 1.9 mi and Summit 4,004 ft, all matching the file. |
+| 6 | Sunday River `size.skiableAcres` = 884, `trailCount` = 139, `liftCount` = 19 against `sundayriver.com/the-mountain` | **PASS** — The Numbers block still reads 8 Peaks / 884 Skiable Acres / 139 Trails & Glades / 19 Lifts. |
