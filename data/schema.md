@@ -1,6 +1,6 @@
 # Resort data contract
 
-**Schema version:** `2` · **Last revised:** 2026-08-24
+**Schema version:** `3` · **Last revised:** 2026-08-24
 
 One file per resort at `data/resorts/<slug>.json`. That file is the **source of truth** for
 everything the site knows about a mountain except live weather (fetched in the browser) and
@@ -98,11 +98,14 @@ prices unless `pricing.currency` says otherwise.
 every consumer has to convert. One fixed unit per field, documented here, enforced by range
 checks in the validator.
 
-### 1.6 `glades` and `moguls` are booleans; how good they are is editorial
+### 1.6 `glades` is a boolean; how good it is is editorial
 
-These are factual presence flags — does the mountain maintain and market this terrain —
+This is a factual presence flag — does the mountain maintain and market gladed terrain —
 sourceable from the trail map or the terrain page. Whether the glades are any good is a
 judgment, and it belongs in `terrain.difficultyNotes` and `editorial.difficulty`.
+
+Bumps and parks used to work the same way and no longer do: both outgrew a boolean and now
+have their own sections (§14, §15). Glades may well follow in a later version.
 
 **Consequence for the UI:** `glades` is `true` for nearly every New England area above this
 site's cutoff, so it is a near-useless filter facet and `index.html` should not offer it as
@@ -115,7 +118,7 @@ negative signal on a detail page.
 
 ```json
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": { },
   "size": { },
   "terrain": { },
@@ -126,15 +129,19 @@ negative signal on a detail page.
   "links": { },
   "meta": { },
   "fieldNotes": { },
-  "dataDisputes": [ ]
+  "dataDisputes": [ ],
+  "moguls": { },
+  "parks": { }
 }
 ```
 
 | key | type | null? | notes |
 |---|---|---|---|
-| `schemaVersion` | integer | no | Currently `2`. Bump only on a breaking change; the validator refuses versions it doesn't know. |
+| `schemaVersion` | integer | no | Currently `3`. Bump only on a breaking change; the validator refuses versions it doesn't know. |
 | `fieldNotes` | object | no (may be `{}`) | Why a field is empty. See §12. |
 | `dataDisputes` | array | no (may be `[]`) | Where we think a resort's own figure is wrong. See §13. |
+| `moguls` | object | no | Bump terrain. See §14. |
+| `parks` | object | no | Terrain parks and pipe. See §15. |
 
 Every other top-level key is required and must be an object or array — never `null`. An empty
 array is the correct value for "no reviews yet".
@@ -143,6 +150,13 @@ array is the correct value for "no reviews yet".
 say whether we looked. `fieldNotes` separates *unknown* from *checked and confirmed empty*;
 `dataDisputes` turns "the resort's number looks wrong" from a sentence somebody happened to
 write into structured, renderable data.
+
+**What changed in v3.** `moguls` and `parks` were promoted from two thin scalars inside
+`terrain` — a boolean and a count — to sections of their own. `terrainParks: 5` told a
+reader nothing about whether the parks were any good, and `moguls: true` could not answer
+the only bump question anybody actually asks, which is *which trail*. The old
+`terrain.moguls` and `terrain.terrainParks` fields are **removed**; anything real in them
+moved into the new sections.
 
 ---
 
@@ -208,8 +222,6 @@ transcription error or two mixed sources, so it is an error, not a warning.
 | `percentAdvanced` | percent | integer 0–100 | yes | |
 | `percentExpert` | percent | integer 0–100 | yes | |
 | `glades` | — | boolean | yes | Maintained/marketed gladed terrain. See §1.6. |
-| `moguls` | — | boolean | yes | Trails left ungroomed as bump runs as a matter of policy. |
-| `terrainParks` | count | integer | yes | Number of distinct parks, as published. `0` is a real value. |
 | `difficultyNotes` | — | string \| null | yes | Short factual caveats on how to read the numbers above: which rating scheme the resort uses, whether a fourth "expert" tier exists, whether acreage includes glades. **Factual, not opinion** — opinion goes in `editorial.difficulty`. |
 | `source` | — | string (URL) | **no** | |
 | `verifiedOn` | — | string (`YYYY-MM-DD`) | **no** | |
@@ -474,14 +486,97 @@ resort — not for every rounding difference.
 
 ---
 
-## 14. Complete example
+## 14. `moguls`
+
+Bumps used to be `terrain.moguls`, a boolean, which could not answer the only question
+anybody actually asks about them: *which trail*. "Does Outer Limits still bump up" has a
+real answer and the schema should carry it.
+
+| field | type | null? | notes |
+|---|---|---|---|
+| `presence` | string | **no** | One of `signature` `common` `occasional` `rare` `none`. `signature` means bumps are a defining feature of the mountain, not merely present. `none` requires a `policy` explaining why, which in practice means a mountain that grooms everything nightly. |
+| `policy` | string \| null | yes | What the mountain actually *does*: which pods or trails are left ungroomed as policy, whether bumps are seeded or purely skier-formed, whether anything gets groomed away midweek. |
+| `namedRuns` | object[] | no (may be `[]`) | The specific trails that bump up. See below. This is the field people come for. |
+| `quality` | string \| null | yes | Editorial on the bumps themselves - shape, spacing, line consistency, whether the troughs go to ice, how they survive a weekend. Be willing to say bumps are bad. |
+| `bestTiming` | string \| null | yes | When they are actually good: spring corn, a few days after a storm, late season, weekends once skier traffic has built them. |
+| `bumpCulture` | string \| null | yes | Is there a scene? Comps, a local crew that maintains a line. Killington's Bear Mountain Mogul Challenge is the obvious example; **most mountains have nothing and should say so.** |
+| `source` | string (URL) | **no** | |
+| `verifiedOn` | string (`YYYY-MM-DD`) | **no** | |
+| `fieldSources` | object | no (may be `{}`) | Per-field overrides; see 1.2. |
+
+Each `namedRuns` entry:
+
+| field | type | notes |
+|---|---|---|
+| `name` | string | The trail as the mountain names it. |
+| `difficulty` | string | `green` `blue` `black` `double-black` `triple-black`. |
+| `reliability` | string | `reliable` - bumps up most of the season. `late-season` - only once the base is deep or spring arrives. `variable` - depends on grooming decisions and snow. |
+| `note` | string | One line on character. Steep and troughed, wide and rhythmic, scraped by noon. |
+
+**Researching this is not like researching the stat block.** Marketing pages do not tell
+you where the bumps are. Three sources that do, in order:
+
+1. **The daily grooming report.** A resort publishes which trails were groomed last night;
+   the ungroomed ones are where bumps form. This is the single most objective source for
+   `namedRuns` - and it is dormant all summer, so anything sourced outside the season is
+   provisional and belongs in `SEASONAL.md` for re-verification in January.
+2. **Trail descriptions** on the resort's own trail list. "Left natural", "ungroomed",
+   "bump run" are citable phrases.
+3. **Forum and skier consensus** - AlpineZone, r/skiing, r/icecoast. Attribute as skier
+   consensus, never as resort fact, and never quote it directly. This is where the honest
+   assessment of bump *quality* lives, and there is nowhere else to get it.
+
+---
+
+## 15. `parks`
+
+| field | type | null? | notes |
+|---|---|---|---|
+| `count` | integer | yes | Number of distinct parks. `0` is a real value and needs a `fieldNotes` entry with status `absent` - a mountain that runs no park is information people want. `null` means nobody publishes a count. |
+| `parks` | object[] | no (may be `[]`) | One entry per park. See below. |
+| `pipe` | boolean | yes | Halfpipe or superpipe present. A mountain that **used to** have one and dropped it records `false` plus an `absent` fieldNote - that is a fact worth stating, not an omission. |
+| `pipeType` | string \| null | yes | `halfpipe` or `superpipe`. |
+| `pipeSpecs` | string \| null | yes | Dimensions as published: `"200 ft long, 18 ft walls"`. |
+| `nightPark` | boolean | yes | Is any park lit. |
+| `progression` | string \| null | yes | Is there a real beginner-to-advanced ladder, an airbag, a Woodward-branded facility, coaching. |
+| `rebuildCadence` | string \| null | yes | How often features are reset. **The difference between a good park and a bad one is almost entirely maintenance**, so this matters more than the feature count. |
+| `overview` | string \| null | yes | Editorial: who this park is actually for. |
+| `reputation` | string \| null | yes | Where it sits regionally, honestly. Most New England parks are mediocre and a guide that says so is more useful than one that doesn't. |
+| `source` | string (URL) | **no** | |
+| `verifiedOn` | string (`YYYY-MM-DD`) | **no** | |
+| `fieldSources` | object | no (may be `{}`) | |
+
+Each `parks` entry:
+
+| field | type | notes |
+|---|---|---|
+| `name` | string | |
+| `size` | string | `progression` `small` `medium` `large`. |
+| `level` | string | Intended ability, in the mountain's own terms. |
+| `jibs` `jumps` `boxes` `rails` | integer \| null | Approximate counts where published. Null is normal - most resorts publish none. |
+| `largestJumpFt` | integer \| null | |
+| `note` | string | Character, and where it is on the hill. |
+
+**Why `pipe` is a flat boolean** rather than a nested object: `parks.pipe` has to be a legal
+`fieldNotes` path so the dropped-pipe case can be recorded as `absent` (12), and
+`parseFieldPath()` resolves `group.field` only.
+
+**Sources for parks are much better than for bumps** - parks get marketed hard. The
+resort's own park page is usually good, Woodward pages cover the Vail properties, and
+Newschoolers and Snowboarder cover the bigger operations. Use forum consensus for the one
+thing the resort will not tell you: whether the published feature list matches what is
+actually built on the hill this week.
+
+---
+
+## 16. Complete example
 
 Values below are **illustrative placeholders**, not verified data. Do not copy them into a
 real resort file.
 
 ```json
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "identity": {
     "slug": "example-mountain",
     "name": "Example Mountain",
@@ -514,8 +609,6 @@ real resort file.
     "percentAdvanced": 25,
     "percentExpert": 10,
     "glades": true,
-    "moguls": true,
-    "terrainParks": 2,
     "difficultyNotes": "Resort publishes a four-tier breakdown; the acreage figure includes glades.",
     "source": "https://www.example.com/trails",
     "verifiedOn": "2026-08-20",
@@ -589,13 +682,58 @@ real resort file.
       "note": "No night operation listed"
     }
   },
-  "dataDisputes": []
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "The Example Chute and the trails either side of it are left ungroomed as policy; everything else is groomed nightly.",
+    "namedRuns": [
+      {
+        "name": "The Example Chute",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "Steep, narrow and troughed by mid-morning on a weekend."
+      }
+    ],
+    "quality": "...",
+    "bestTiming": "...",
+    "bumpCulture": "No comps and no organised scene.",
+    "source": "https://www.example.com/trails",
+    "verifiedOn": "2026-08-20",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 1,
+    "parks": [
+      {
+        "name": "Example Park",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": 4,
+        "largestJumpFt": 40,
+        "boxes": 3,
+        "rails": 6,
+        "note": "Off the main quad, rebuilt weekly."
+      }
+    ],
+    "pipe": false,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "...",
+    "rebuildCadence": "...",
+    "overview": "...",
+    "reputation": "...",
+    "source": "https://www.example.com/parks",
+    "verifiedOn": "2026-08-20",
+    "fieldSources": {}
+  }
 }
 ```
 
 ---
 
-## 15. Generated files — do not hand-edit
+## 17. Generated files — do not hand-edit
 
 ### `data/index.json`
 
@@ -607,7 +745,7 @@ page shows it.
 ```json
 {
   "generatedAt": "2026-08-20T12:00:00.000Z",
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "count": 1,
   "resorts": [
     {
@@ -656,7 +794,7 @@ visible in review.
 
 ---
 
-## 16. Checklist for adding a resort
+## 18. Checklist for adding a resort
 
 1. Copy the shape from §12. Every key present; unknowns `null`.
 2. Fill `identity` from the resort's own site. Summit coordinates, not the base lodge.
