@@ -16,18 +16,27 @@
   },
   "size": {
     "verticalDrop": 1510,
-    "skiableAcres": 232,
+    "skiableAcres": 233,
     "trailCount": 67,
     "liftCount": 8,
     "longestRun": 0.8,
     "summitElevation": 2743,
     "baseElevation": 1233,
     "annualSnowfallAvg": 93,
-    "snowmakingPercent": null,
+    "snowmakingPercent": 97,
     "nightSkiing": null,
-    "source": "https://www.onthesnow.com/new-hampshire/mount-sunapee/ski-resort",
+    "source": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
-    "fieldSources": {}
+    "fieldSources": {
+      "longestRun": {
+        "source": "https://www.onthesnow.com/new-hampshire/mount-sunapee/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.onthesnow.com/new-hampshire/mount-sunapee/ski-resort",
+        "verifiedOn": "2026-08-25"
+      }
+    }
   },
   "terrain": {
     "percentBeginner": 29,
@@ -35,8 +44,8 @@
     "percentAdvanced": 24,
     "percentExpert": null,
     "glades": true,
-    "difficultyNotes": "A three-tier breakdown, so percentExpert is null and the top 24% sits in percentAdvanced. Everything in this group comes from OnTheSnow rather than the resort: mountsunapee.com is a Vail property and its mountain information page was returning a system-outage error on the verified date, the same failure that affected Attitash, Crotched, Wildcat and epicpass.com. Note the longest run - 0.8 miles is the shortest on this roster, and on 1,510 feet of vertical that tells you the trails here fall steeply and end quickly rather than winding. Mount Sunapee sits inside Mount Sunapee State Park and is operated under a lease, which is why there is no slopeside development.",
-    "source": "https://www.onthesnow.com/new-hampshire/mount-sunapee/ski-resort",
+    "difficultyNotes": "A three-tier breakdown, so percentExpert is null and the top 24% sits in percentAdvanced. This group was re-sourced to the resort's own mountain statistics page once Vail's web estate came back up; the 29/47/24 split is identical to OnTheSnow's, which is mildly reassuring about both. The resort's own figures also corrected the acreage from 232 to 233 and, more usefully, supplied a snowmaking coverage of 97% where OnTheSnow had only an acreage. Note the longest run - 0.8 miles is the shortest on this roster, and on 1,510 feet of vertical that tells you the trails here fall steeply and end quickly rather than winding. Mount Sunapee sits inside Mount Sunapee State Park and is operated under a lease, which is why there is no slopeside development.",
+    "source": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
   },
@@ -64,14 +73,14 @@
     "advanceTypical": null,
     "seasonPassAdult": 1119,
     "currency": "USD",
-    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null rather than estimated. The season pass figure is the full adult (31+) Epic Pass; Vail does not sell an unrestricted Sunapee-only pass. Mount Sunapee carries unlimited access on the cheaper Epic Local Pass too, at $829 for 31+, which is the tier that makes sense for a New Hampshire skier. mountsunapee.com was returning a system-outage error on the verified date, so the figures come from OnTheSnow's Epic buyer's guide; that guide quotes $1,089 in its prose, which was the March 2026 on-sale price, while its current cost line reads $1,119.",
+    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null rather than estimated. The season pass figure is the full adult (31+) Epic Pass; Vail does not sell an unrestricted Sunapee-only pass. Mount Sunapee carries unlimited access on the cheaper Epic Local Pass too, at $829 for 31+, which is the tier most New England Epic buyers actually want. mountsunapee.com's content pages became readable again on 2026-08-25 and this file was rebuilt from them, but its ticket and pass pages are a separate matter: every one of them redirects to Vail's ecommerce waiting room, which requires JavaScript. So the $1,119 still comes from OnTheSnow's Epic buyer's guide - its current-cost line, not its prose, which quotes the March 2026 on-sale price of $1,089.",
     "verifiedOn": "2026-08-25",
     "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
     "fieldSources": {}
   },
   "editorial": {
-    "overview": "Mount Sunapee is the mountain that serves everything south and west of the White Mountains, and its virtue is that it is closer than the alternatives rather than better than them. Fifteen hundred and ten feet of vertical on 232 acres above Lake Sunapee, an hour and a half from Boston and well under that from Concord and the Upper Valley, on the Epic Pass at the unlimited tier on both the full pass and the Local. It sits inside Mount Sunapee State Park under a lease, which is why there is no village and no condominium sprawl - a genuinely pleasant thing, and the reason the base area still feels like a state park rather than a resort. The skiing is competent intermediate terrain, 47% of it blue, with a couple of real blacks off the summit and glades that mostly stay roped. What holds it back is a combination of short runs - 0.8 miles is the shortest longest-run on this roster - modest snowfall, and weekend crowds that its two high-speed quads cannot absorb, with half-hour waits not unusual in the late morning. Midweek it is a good, quick, unfussy mountain. On a Saturday in February it is a queue with a view of the lake.",
-    "snowQuality": "Ninety-three inches a year puts Mount Sunapee at about two-thirds of what the mountains in north-central New Hampshire get, though comfortably ahead of anything in Massachusetts, and the practical consequence is that this is a snowmaking mountain that occasionally gets a powder day rather than the other way round. Snowmaking covers 215 of the 232 acres and does the work all season. The glades are the casualty: they rarely open, with ropes coming down only on powder days or in the few days after a real storm, so the tree skiing here should be treated as an occasional bonus rather than a reason to come.",
+    "overview": "Mount Sunapee is the mountain that serves everything south and west of the White Mountains, and its virtue is that it is closer than the alternatives rather than better than them. Fifteen hundred and ten feet of vertical on 233 acres above Lake Sunapee, an hour and a half from Boston and well under that from Concord and the Upper Valley, on the Epic Pass at the unlimited tier on both the full pass and the Local. It sits inside Mount Sunapee State Park under a lease, which is why there is no village and no condominium sprawl - a genuinely pleasant thing, and the reason the base area still feels like a state park rather than a resort. The skiing is competent intermediate terrain, 47% of it blue, with a couple of real blacks off the summit and glades that mostly stay roped, and the South Peak learning area is one of the better dedicated beginner zones in the state. Snowmaking covers 97% of it, which it needs to. What holds Sunapee back is a combination of short runs - 0.8 miles is the shortest longest-run on this roster - modest snowfall, and weekend crowds that its two high-speed quads cannot absorb, with half-hour waits not unusual in the late morning. Midweek it is a good, quick, unfussy mountain. On a Saturday in February it is a queue with a view of the lake.",
+    "snowQuality": "Ninety-three inches a year puts Mount Sunapee at about two-thirds of what the mountains in north-central New Hampshire get, though comfortably ahead of anything in Massachusetts, and the practical consequence is that this is a snowmaking mountain that occasionally gets a powder day rather than the other way round. The resort publishes 97% snowmaking coverage - among the highest on this roster - and that machine snow does the work all season, not just at the margins. The glades are the casualty: they rarely open, with ropes coming down only on powder days or in the few days after a real storm, so the tree skiing here should be treated as an occasional bonus rather than a reason to come.",
     "crowds": "The clearest weakness, and it is a capacity problem rather than a popularity one. Mount Sunapee draws a large weekend crowd from Boston, Concord and the Upper Valley, and its two high-speed quads become the bottleneck everything funnels through - waits of over half an hour are not out of the ordinary through the late morning and early afternoon on a Saturday. Unlimited access on the Epic Local Pass, which most New England Epic buyers hold, adds a passholder crowd on top of the day-ticket one. Midweek the mountain is a completely different and much better proposition. If your only option is a weekend, arrive at opening and take an early lunch.",
     "difficulty": "Comfortably intermediate with a thin top end. Forty-seven percent of the trails are blue and that is where the mountain lives; Upper Blast Off is the only black diamond directly off the summit, and Goosebumps - steep and ungroomed - is effectively the sole expert option. The advanced trails vary a lot in what they actually demand, with Upper Flying Goose and Lynx holding sustained pitch and seldom being groomed, which makes them the two worth seeking out. The glade terrain would add real difficulty if it were reliably open, and it is not. A strong skier will have seen everything Sunapee has by lunchtime; an improving intermediate will have a very good day.",
     "keyTrails": [
@@ -94,17 +103,19 @@
     ],
     "tidbits": [
       "Mount Sunapee sits inside Mount Sunapee State Park and is run under a lease, so there is no slopeside development.",
-      "At 0.8 miles, Sunapee's longest run is the shortest on this roster.",
+      "The resort claims the world’s first ski-through lighthouse.",
+      "Thirteen other ski resort peaks are visible from the summit, by the resort’s own count.",
+      "At 0.8 miles, Sunapee’s longest run is the shortest on this roster.",
+      "Snowmaking covers 97% of the mountain.",
       "It is unlimited on the Epic Local Pass as well as the full Epic Pass.",
-      "Snowmaking covers 215 of the mountain's 232 acres.",
       "The glades open only on powder days or shortly after a real storm.",
-      "Vail's entire web estate was returning system-outage errors on the date this file was verified, so every figure here comes from OnTheSnow."
+      "The resort’s own statistics page says 4 terrain parks; a tile on the same page says 2."
     ],
     "bestFor": [
       "Epic Local passholders",
       "A short drive from Concord or Boston",
       "Improving intermediates",
-      "Midweek skiing"
+      "First-timers on South Peak"
     ],
     "watchOutFor": [
       "Half-hour weekend lift queues",
@@ -118,30 +129,30 @@
     "officialSnowReport": "https://www.mountsunapee.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.mountsunapee.com/the-mountain/about-the-mountain/trail-maps.aspx",
     "webcams": "https://www.mountsunapee.com/the-mountain/mountain-conditions/mountain-cams.aspx",
-    "lodging": null,
+    "lodging": "https://www.mountsunapee.com/lodging/find-lodging/plan-your-stay.aspx",
     "twitter": null,
     "instagram": null
   },
   "meta": {
     "sources": [
       {
-        "label": "OnTheSnow Mount Sunapee overview (every size and terrain figure; mountsunapee.com was erroring)",
+        "label": "Mount Sunapee mountain information page (elevations, vertical, acreage, lifts, trails, snowmaking coverage, terrain split, park count, South Peak learning area, state-park facts)",
+        "url": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Mount Sunapee overview (longest run and annual snowfall, neither of which the resort publishes)",
         "url": "https://www.onthesnow.com/new-hampshire/mount-sunapee/ski-resort",
         "accessedOn": "2026-08-25"
       },
       {
-        "label": "OnTheSnow 2026/27 Epic Pass buyer's guide (pass prices and Sunapee access tiers)",
-        "url": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
-        "accessedOn": "2026-08-25"
-      },
-      {
-        "label": "PeakRankings Mount Sunapee review (Goosebumps, Upper Flying Goose, Lynx, glade access, weekend queues)",
+        "label": "PeakRankings Mount Sunapee (independent account of the park, the glades policy, the lift queues and the ungroomed trails)",
         "url": "https://www.peakrankings.com/content/mount-sunapee",
         "accessedOn": "2026-08-25"
       },
       {
-        "label": "Mount Sunapee mountain information page (returned a system-outage error on the accessed date)",
-        "url": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "label": "OnTheSnow 2026/27 Epic Pass buyer's guide (pass prices and Sunapee access tiers; Vail's own pass pages are behind a JavaScript waiting room)",
+        "url": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
         "accessedOn": "2026-08-25"
       }
     ],
@@ -149,50 +160,43 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
-    "size.nightSkiing": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "No usable source either way. mountsunapee.com was returning a system-outage error, OnTheSnow's operating schedule for Sunapee could not be read, and Ski NH's night-skiing list is a curated feature rather than a registry and cannot support a negative. Left null rather than assuming the answer is no - the same treatment Attitash gets for the same reason"
-    },
-    "size.snowmakingPercent": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "OnTheSnow lists 215 snowmaking acres against 232 skiable acres but no percentage, and the resort's own site was unreachable"
-    },
-    "parks.count": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "PeakRankings describes one main park off the Spruce Triple plus beginner features on South Peak, but gives no count and the resort's own site was erroring. A count read only from a third party is not a sourced count - the same basis as Stratton and Sunday River"
-    },
     "parks.pipe": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "No pipe is mentioned in the review consulted and the resort's site was unreachable"
+      "note": "No pipe is mentioned by the resort or in the review consulted. Sunapee publishes no park page at all, so there is nothing to read either way",
+      "source": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx"
     },
     "passes[1].blackouts": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "The Epic buyer's guide places Mount Sunapee on the Epic Local unlimited list but does not publish per-resort blackout dates for that tier"
+      "note": "The Epic buyer's guide places Mount Sunapee on the Epic Local unlimited list but does not publish per-resort blackout dates for that tier, and every Vail pass page redirects to an ecommerce waiting room that requires JavaScript, so the operator's own terms could not be read"
     },
     "pricing.advanceTypical": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no representative advance rate"
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
     },
     "pricing.windowTicketAdultHigh": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no window rate"
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
     },
     "pricing.windowTicketAdultLow": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no window rate"
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
+    },
+    "size.nightSkiing": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Still no usable source either way after the resort's site came back up. mountsunapee.com's own content sitemap contains no night or twilight page - the grep that found Sunday River's twilight skiing and that turns up a dedicated page for its sibling Crotched - but its hours of operation page currently publishes summer lift hours only, so unlike at Attitash there is no published winter schedule to read a negative off. Absence from a sitemap is suggestive and is not a source. Left null",
+      "source": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx"
     },
     "terrain.percentExpert": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "OnTheSnow publishes a three-tier breakdown for Sunapee, so no fourth-tier figure exists to source"
+      "note": "Sunapee publishes a three-tier breakdown on its own mountain statistics page, so no fourth-tier figure exists to source",
+      "source": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx"
     }
   },
   "dataDisputes": [],
@@ -227,17 +231,17 @@
     "fieldSources": {}
   },
   "parks": {
-    "count": null,
+    "count": 4,
     "parks": [],
     "pipe": null,
     "pipeType": null,
     "pipeSpecs": null,
     "nightPark": null,
-    "progression": null,
+    "progression": "Not documented as a ladder. What is known is that the beginner end sits on South Peak, separate from the main park off the Spruce Triple, which is a sensible split for a mountain whose learning area is its strongest feature - but the resort publishes nothing about how the steps between features work.",
     "rebuildCadence": null,
-    "overview": "Limited, and poorly documented because the resort's own site was unreachable on the verified date. The one independent account consulted describes a single main park served by the Spruce Triple carrying boxes, rails and jumps, plus beginner features over on South Peak. No count is published anywhere, so none is stored.",
-    "reputation": "Weak, and unusually bluntly so - the review consulted says outright that park rats should look elsewhere. That is a fair summary of a mountain whose freestyle provision is one park and a scattering of beginner features. Anyone in this part of New Hampshire riding park seriously is at Waterville Valley or Loon, both within an hour and a half.",
-    "source": "https://www.peakrankings.com/content/mount-sunapee",
+    "overview": "Sunapee publishes a park count and nothing else - no park page exists anywhere on mountsunapee.com, and a direct request for the terrain-parks URL its sister mountains use returns a 404. Worse, the resort contradicts itself on the same page: the mountain statistics block reads \"Terrain Parks 4\" while a Freestyle Fun tile a few hundred pixels below it says Sunapee \"boasts 2 terrain parks each with a unique design and focus, from small progression features to large, expert level hits\". The 4 is stored because the statistics block has been the reliable half of exactly this kind of self-contradiction elsewhere on this roster - it was right at Burke, where the prose was wrong - but the discrepancy is real and unresolved, and a reader should treat the count as approximate. Beyond the number, the only description available is third-party: PeakRankings describes one main park served by the Spruce Triple carrying boxes, rails and jumps, plus beginner features over on South Peak. No park names, no feature counts, no lighting and no rebuild schedule are published by anyone.",
+    "reputation": "Weak, and unusually bluntly so - the review consulted says outright that park rats should look elsewhere. That is a fair summary of a mountain that cannot say for certain how many parks it has and names none of them, on a site where its sibling Crotched gives both of its parks a page and a description. Anyone in this part of New Hampshire riding park seriously is at Waterville Valley or Loon, both within an hour and a half.",
+    "source": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
   }

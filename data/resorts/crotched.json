@@ -17,7 +17,7 @@
   "size": {
     "verticalDrop": 1016,
     "skiableAcres": 100,
-    "trailCount": 24,
+    "trailCount": 25,
     "liftCount": 5,
     "longestRun": 1.2,
     "summitElevation": 2066,
@@ -25,23 +25,31 @@
     "annualSnowfallAvg": 63,
     "snowmakingPercent": 100,
     "nightSkiing": true,
-    "source": "https://www.onthesnow.com/new-hampshire/crotched-mountain/ski-resort",
+    "source": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {
+      "longestRun": {
+        "source": "https://www.onthesnow.com/new-hampshire/crotched-mountain/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.onthesnow.com/new-hampshire/crotched-mountain/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
       "nightSkiing": {
-        "source": "https://www.skinh.com/activities/night-skiing",
+        "source": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/mountain-info.aspx",
         "verifiedOn": "2026-08-25"
       }
     }
   },
   "terrain": {
-    "percentBeginner": 29,
-    "percentIntermediate": 33,
-    "percentAdvanced": 38,
+    "percentBeginner": 28,
+    "percentIntermediate": 40,
+    "percentAdvanced": 32,
     "percentExpert": null,
     "glades": true,
-    "difficultyNotes": "A three-tier breakdown with the top tier the largest at 38%, which sounds impressive until you put it against the mountain: 24 trails on 100 acres with 1,016 feet of vertical. Thirty-eight percent of 24 trails is nine runs, and a black at a southern New Hampshire hill this size is not a black at Cannon. Everything in this group comes from OnTheSnow rather than the resort: crotchedmtn.com is a Vail property and its mountain information page was returning a system-outage error on the verified date. The number that actually defines this mountain is the 63 inches of natural snow, the lowest on this roster, set against 100 acres of snowmaking - which is to say all of it. Crotched is a fully manufactured ski area, and it is very good at being one.",
-    "source": "https://www.onthesnow.com/new-hampshire/crotched-mountain/ski-resort",
+    "difficultyNotes": "A three-tier breakdown, so percentExpert is null and the top 32% sits in percentAdvanced. These are the resort's own figures, read from crotchedmtn.com once Vail's web estate came back up; the file previously carried OnTheSnow's 29/33/38, which put a further 6 points into the top grade and made the mountain look harder than the operator claims it is. Either way the percentage flatters it: 32% of 25 trails is eight runs on 1,016 feet of vertical, and a black diamond at a southern New Hampshire hill this size is not a black at Cannon. The number that actually defines this mountain is the 63 inches of natural snow set against 100% snowmaking on 100 acres - which is to say all of it, fed by 100-plus fan guns on 3,800 feet of pipe pumping 6,000 gallons a minute. Crotched is a fully manufactured ski area and it is very good at being one.",
+    "source": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
   },
@@ -69,34 +77,42 @@
     "advanceTypical": null,
     "seasonPassAdult": 1119,
     "currency": "USD",
-    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null rather than estimated. The season pass figure is the full adult (31+) Epic Pass; Vail does not sell an unrestricted Crotched-only pass. Crotched carries unlimited access on the Epic Local Pass too, at $829 for 31+, and for a mountain this size that cheaper tier is the only one that makes sense. crotchedmtn.com was returning a system-outage error on the verified date, so the figures come from OnTheSnow's Epic buyer's guide; that guide quotes $1,089 in its prose, which was the March 2026 on-sale price, while its current cost line reads $1,119.",
+    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null rather than estimated. The season pass figure is the full adult (31+) Epic Pass; Vail does not sell an unrestricted Crotched-only pass. Crotched carries unlimited access on the Epic Local Pass too, at $829 for 31+, and for a mountain this size that cheaper tier is the only one that makes sense. crotchedmtn.com's content pages became readable again on 2026-08-25 and this file was rebuilt from them, but its ticket and pass pages redirect to Vail's ecommerce waiting room, which requires JavaScript, so the $1,119 still comes from OnTheSnow's Epic buyer's guide - its current-cost line, not its prose, which quotes the March 2026 on-sale price of $1,089.",
     "verifiedOn": "2026-08-25",
     "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
     "fieldSources": {}
   },
   "editorial": {
-    "overview": "Crotched is the smallest mountain in this guide and it has built a genuine identity out of the one thing it can do that bigger mountains cannot be bothered to: it stays open at night, on all of it. A hundred acres, 24 trails, 1,016 feet of vertical in Bennington, an hour from Boston and forty minutes from Manchester, with night skiing Tuesday through Saturday until 9pm and the Midnight Madness sessions running 8pm to midnight on selected dates through the winter. Nobody in New England lights this proportion of their mountain and nobody else keeps a lift spinning past eleven. That is what Crotched is for, and it fills the hill with a young Boston-and-Manchester crowd on weeknights that gives the place an atmosphere the daytime skiing does not earn on its own. Because with 63 inches of natural snow a year - the lowest total on this roster - everything you ski here is made, and 100 acres is a small canvas. Come for a Wednesday night. Do not plan a February Saturday around it.",
-    "snowQuality": "Sixty-three inches is the lowest natural snowfall of any resort in this guide and the number is not close - it is half of what Gunstock gets an hour north and a third of Wildcat's. Southern New Hampshire at 2,000 feet simply does not get much snow, and Crotched's answer is complete: 100 acres of snowmaking against 100 skiable acres, so every trail on the mountain is machine-covered. The system is good and the mountain is reliably open, which for a hill this far south is the whole achievement. What it means for a skier is that the surface is manufactured all season and the freeze-thaw cycles of southern New Hampshire are the thing to watch - a January thaw here is a real event in a way it is not at Sugarloaf.",
+    "overview": "Crotched is the smallest mountain on this roster and it has built a genuine identity out of the one thing bigger mountains cannot be bothered to do: it stays open at night, on all of it. A hundred acres, 25 trails and 1,016 feet of vertical in Bennington, an hour from Boston and forty minutes from Manchester, with night skiing Tuesday through Saturday until 9pm and Midnight Madness on select Saturdays - which the resort calls, plausibly, the latest skiing and riding in the Northeast. OnTheSnow records 100 acres of lit terrain against 100 skiable acres, so this is not a lit trail or two, it is the mountain. That is what Crotched is for, and it fills the hill with a young Boston-and-Manchester crowd on weeknights that gives the place an atmosphere the daytime skiing does not earn on its own. Because with 63 inches of natural snow a year everything you ski here is made - 100% snowmaking coverage, 100-plus fan guns - and 100 acres is a small canvas. The Rocket, southern New Hampshire's only high-speed quad, gets you back up it quickly. Come for a Wednesday night. Do not plan a February Saturday around it.",
+    "snowQuality": "Sixty-three inches is a very low natural total - half of what Gunstock gets an hour north and a third of Wildcat's - and it is a straightforward consequence of being in southern New Hampshire at 2,000 feet. Crotched's answer is complete rather than partial: 100% snowmaking coverage on 100 skiable acres, fed by more than a hundred fan guns connected by 3,800 feet of pipe pumping 6,000 gallons of water a minute. Every trail on the mountain is machine-covered, the system is good, and the hill is reliably open, which for a ski area this far south is the whole achievement. What it means for a skier is that the surface is manufactured all season and the freeze-thaw cycles of southern New Hampshire are the thing to watch - a January thaw here is a real event in a way it is not at Sugarloaf.",
     "crowds": "Two different mountains depending on the hour. Daytime weekends draw a Boston and Manchester day-trip crowd onto 100 acres and five lifts, which is not much terrain to spread people over, and it feels full. The night sessions are the interesting half: a younger, more local crowd, more of it in the terrain park than on the trails, and a genuinely good atmosphere on a Tuesday or Wednesday evening. Midnight Madness nights sell the place out in a different way - it becomes an event rather than a ski day, which is either the appeal or the problem depending on what you came for.",
-    "difficulty": "Small, and the percentages flatter it. Thirty-eight percent of the trails carry the top rating, but 38% of 24 trails is nine runs on 1,016 feet of vertical, and the pitch that earns a black diamond at a southern New Hampshire hill would be a blue at Cannon. There is glade skiing, but on 63 inches of natural snow it opens rarely. What Crotched is honestly good for is a competent skier who wants laps rather than a challenge - five lifts on 100 acres means very short rides and a lot of runs in an evening - and for park riders, who get most of the mountain's attention. Nobody should drive past Gunstock to ski Crotched's terrain in daylight.",
+    "difficulty": "Small, and the percentages flatter it. Thirty-two percent of the trails carry the resort's top rating, but 32% of 25 trails is eight runs on 1,016 feet of vertical, and the pitch that earns a black diamond at a southern New Hampshire hill would be a blue at Cannon. There is glade skiing, but on 63 inches of natural snow it opens rarely. What Crotched is honestly good for is a competent skier who wants laps rather than a challenge - five lifts on 100 acres, one of them a high-speed quad, means very short rides and a lot of runs in an evening - and for park riders, who get a real share of the mountain's attention across two properly designed parks. Nobody should drive past Gunstock to ski Crotched's terrain in daylight.",
     "keyTrails": [
       {
-        "name": "The night terrain",
-        "note": "OnTheSnow records 100 acres lit against 100 acres skiable - the entire mountain stays open after dark, which no other resort in this guide can say."
+        "name": "The Rocket",
+        "note": "Southern New Hampshire's only high-speed quad, and the reason an evening here turns into a dozen laps rather than five."
+      },
+      {
+        "name": "CM Park",
+        "note": "The advanced park and, on a night session, the busiest place on the mountain. A giant A-frame, flat boxes and full block-party set-ups."
+      },
+      {
+        "name": "NCC-1701",
+        "note": "The medium park - flat-down rails and boxes and medium jumps - and the rung most riders here actually spend their time on. Yes, it is named after the Enterprise."
       },
       {
         "name": "Midnight Madness",
-        "note": "Not a trail but the reason people come: skiing and riding from 8pm to midnight on selected dates through the winter. There is nothing else like it in New England."
+        "note": "Not a trail but the reason people come: skiing and riding on select Saturdays long after every other lift in New England has stopped."
       }
     ],
     "tidbits": [
-      "Crotched's 63 inches of average snowfall is the lowest on this roster, and snowmaking covers 100% of the mountain.",
-      "Night skiing runs Tuesday through Saturday until 9pm.",
-      "Midnight Madness sessions run 8pm to midnight on selected dates through the winter.",
+      "Night skiing runs Tuesday through Saturday until 9pm, with Midnight Madness on select Saturdays.",
       "OnTheSnow records 100 acres of lit terrain against 100 skiable acres - effectively the whole mountain.",
-      "At 100 acres it is the smallest ski area in this guide.",
-      "It is unlimited on the Epic Local Pass as well as the full Epic Pass.",
-      "Vail's whole web estate was returning system-outage errors on the date this file was verified, so every figure here comes from OnTheSnow."
+      "Snowmaking covers 100% of the mountain: 100-plus fan guns, 3,800 feet of pipe, 6,000 gallons a minute.",
+      "Sixty-three inches of natural snow a year is half what Gunstock gets an hour north.",
+      "The Rocket is southern New Hampshire’s only high-speed quad.",
+      "The Onset Pub is named after Onset, the original ski area that became Crotched in the 1980s.",
+      "It is unlimited on the Epic Local Pass as well as the full Epic Pass."
     ],
     "bestFor": [
       "Night skiing, all of the mountain",
@@ -105,8 +121,8 @@
       "Epic Local passholders"
     ],
     "watchOutFor": [
-      "Lowest natural snowfall in this guide",
-      "Only 100 acres and 24 trails",
+      "Only 63 inches of natural snow",
+      "Only 100 acres and 25 trails",
       "Crowded on weekend days",
       "Glades open rarely"
     ]
@@ -116,30 +132,35 @@
     "officialSnowReport": "https://www.crotchedmtn.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/trail-maps.aspx",
     "webcams": "https://www.crotchedmtn.com/the-mountain/mountain-conditions/mountain-cams.aspx",
-    "lodging": null,
+    "lodging": "https://www.crotchedmtn.com/explore-the-resort/during-your-stay/lodging.aspx",
     "twitter": null,
     "instagram": null
   },
   "meta": {
     "sources": [
       {
-        "label": "OnTheSnow Crotched Mountain overview (every size and terrain figure, plus 100 acres of lit night terrain)",
+        "label": "Crotched mountain information page (elevations, vertical, acreage, lifts, trails, snowmaking, terrain split, park count, night-skiing schedule, Midnight Madness, The Rocket, snowmaking system, Onset history)",
+        "url": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Crotched terrain parks page (both parks, their levels and their features)",
+        "url": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Crotched Mountain overview (longest run, annual snowfall, lit acreage)",
         "url": "https://www.onthesnow.com/new-hampshire/crotched-mountain/ski-resort",
         "accessedOn": "2026-08-25"
       },
       {
-        "label": "Ski NH night skiing feature (Crotched's nights, hours and Midnight Madness dates)",
+        "label": "Ski NH night-skiing listing (corroborates night operation; superseded as the primary source by the resort's own page)",
         "url": "https://www.skinh.com/activities/night-skiing",
         "accessedOn": "2026-08-25"
       },
       {
-        "label": "OnTheSnow 2026/27 Epic Pass buyer's guide (pass prices and Crotched access tiers)",
+        "label": "OnTheSnow 2026/27 Epic Pass buyer's guide (pass prices and Crotched access tiers; Vail's own pass pages are behind a JavaScript waiting room)",
         "url": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
-        "accessedOn": "2026-08-25"
-      },
-      {
-        "label": "Crotched Mountain information page (returned a system-outage error on the accessed date)",
-        "url": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/mountain-info.aspx",
         "accessedOn": "2026-08-25"
       }
     ],
@@ -147,76 +168,102 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
-    "parks.count": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "crotchedmtn.com was returning a system-outage error, OnTheSnow publishes no terrain park count for Crotched, and no independent review of the mountain could be found - PeakRankings has no Crotched page. Nothing citable exists"
-    },
-    "parks.pipe": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "No pipe is documented in any source consulted"
-    },
-    "passes[1].blackouts": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "The Epic buyer's guide places Crotched on the Epic Local unlimited list but does not publish per-resort blackout dates for that tier"
-    },
-    "pricing.advanceTypical": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no representative advance rate"
-    },
-    "pricing.windowTicketAdultHigh": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no window rate"
-    },
-    "pricing.windowTicketAdultLow": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no window rate"
-    },
-    "terrain.percentExpert": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "OnTheSnow publishes a three-tier breakdown for Crotched, so no fourth-tier figure exists to source"
-    },
     "moguls.bestTiming": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "No source discusses Crotched's ungroomed terrain at all; the resort's site was unreachable and no independent review exists"
+      "note": "No source discusses Crotched's ungroomed terrain at all. The resort's site is readable again and says nothing about grooming, and no independent review of the mountain exists - PeakRankings has no Crotched page"
     },
     "moguls.bumpCulture": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
       "note": "No bump scene or competitions are documented for Crotched"
+    },
+    "parks.nightPark": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+      "note": "Neither the terrain parks page nor the mountain information page says whether the parks are lit. OnTheSnow's 100 acres of lit terrain against 100 skiable acres would leave no room for an unlit park, but that is arithmetic on two aggregate figures rather than a statement by anyone, and the resort's own night-skiing page could not be read - it redirects to a JavaScript-only waiting room"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The terrain parks page names and describes both parks and their features; no pipe appears on it or anywhere else on the site",
+      "source": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/terrain-parks.aspx"
+    },
+    "passes[1].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The Epic buyer's guide places Crotched on the Epic Local unlimited list but does not publish per-resort blackout dates for that tier, and every Vail pass page redirects to an ecommerce waiting room that requires JavaScript, so the operator's own terms could not be read"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Crotched publishes a three-tier breakdown on its own mountain statistics page, so no fourth-tier figure exists to source",
+      "source": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/mountain-info.aspx"
     }
   },
   "dataDisputes": [],
   "moguls": {
     "presence": "rare",
-    "policy": "A mountain covering 100 of its 100 acres with snowmaking is protecting a manufactured surface, and that means comprehensive grooming - a hundred acres of machine snow left to bump up would be unskiable within a week at southern New Hampshire temperatures. No grooming policy is published and the resort's site was unreachable, so this is inference from the snowmaking figure rather than a sourced statement, and it is recorded at the cautious end.",
+    "policy": "A mountain covering 100 of its 100 acres with snowmaking is protecting a manufactured surface, and that means comprehensive grooming - a hundred acres of machine snow left to bump up would be unskiable within a week at southern New Hampshire temperatures. No grooming policy is published; the resort's site, readable again as of this revision, describes its parks and its night operation in detail and says nothing about ungroomed terrain. This remains inference from the snowmaking figure rather than a sourced statement, and it is recorded at the cautious end.",
     "namedRuns": [],
     "quality": "There is no meaningful bump skiing at Crotched and nothing here pretends otherwise. This is a 100-acre fully manufactured mountain whose freestyle attention goes into its parks and whose distinguishing feature is that the lights stay on. Anyone in southern New Hampshire who wants moguls is looking at Gunstock's Tiger terrain an hour north, or Wildcat if they are willing to drive.",
     "bestTiming": null,
     "bumpCulture": null,
-    "source": "https://www.onthesnow.com/new-hampshire/crotched-mountain/ski-resort",
+    "source": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
   },
   "parks": {
-    "count": null,
-    "parks": [],
+    "count": 2,
+    "parks": [
+      {
+        "name": "CM Park",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The resort calls it the final stop on the progression train, with every feature designed for riders who have worked up to technical ones - a giant A-frame, flat boxes and full block-party set-ups. Where visiting pros ride."
+      },
+      {
+        "name": "NCC-1701",
+        "size": "medium",
+        "level": "Advanced beginner to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The middle rung: flat-down rails, flat-down boxes and medium jumps, aimed at riders already comfortable on boxes and small jumps. Named after the registry of the starship Enterprise."
+      }
+    ],
     "pipe": null,
     "pipeType": null,
     "pipeSpecs": null,
     "nightPark": null,
-    "progression": null,
+    "progression": "Explicitly built as a ladder, which is more than most mountains this size manage, though the bottom rung is missing from the published account: NCC-1701 is described as the step for riders who are already comfortable with boxes, rails and smaller jumps, and CM Park as the final stop after that. Where a true first-timer starts is not stated. Crotched also runs the NSAA Smart Style programme and puts park safety front and centre on the page, which reads as genuine rather than boilerplate for a mountain whose park traffic is this large a share of its business.",
     "rebuildCadence": null,
-    "overview": "Undocumented. crotchedmtn.com was returning a system-outage error on the verified date, OnTheSnow publishes no park count, and there is no independent review of the mountain to fall back on. Crotched has a well-known park scene among southern New Hampshire riders and the Dew After Dark branding on its late-night sessions points squarely at it, but none of that is a source for a count or a name.",
-    "reputation": "Widely understood locally to be a park-and-night mountain rather than a skier's mountain, and the evening programming is built around that crowd. Nothing citable was found to describe the parks themselves, so no judgement is recorded. Along with Attitash, this is the thinnest parks section on the roster and both should be redone once Vail's site is readable.",
-    "source": "https://www.onthesnow.com/new-hampshire/crotched-mountain/ski-resort",
+    "overview": "Two parks, both named, both described, and the resort's statistics block and its terrain parks page agree on the count - which is worth saying because its sister mountain Mount Sunapee contradicts itself on the same question. CM Park is the advanced end: a giant A-frame, flat boxes and block-party set-ups. NCC-1701 is the medium park, with flat-down rails and boxes and medium jumps. No feature counts, no lighting detail and no rebuild schedule are published, and there is no pipe.",
+    "reputation": "Crotched is understood locally as a park-and-night mountain rather than a skier's mountain, and the resort does not fight that reading - freestyle gets two of its five named fun facts and a page with more detail on it than the trails get. Two well-defined parks on 100 acres is a serious allocation of a small mountain, and the combination of park riding and lights until 9pm is genuinely hard to find anywhere else within an hour of Boston. What it is not is a destination park on the scale of Carinthia at Mount Snow.",
+    "source": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/terrain-parks.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
   }

@@ -17,26 +17,35 @@
   "size": {
     "verticalDrop": 1750,
     "skiableAcres": 311,
-    "trailCount": 73,
+    "trailCount": 76,
     "liftCount": 8,
     "longestRun": 3,
     "summitElevation": 2350,
     "baseElevation": 600,
-    "annualSnowfallAvg": 88,
+    "annualSnowfallAvg": 120,
     "snowmakingPercent": null,
-    "nightSkiing": null,
-    "source": "https://www.onthesnow.com/new-hampshire/attitash/ski-resort",
+    "nightSkiing": false,
+    "source": "https://www.attitash.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
-    "fieldSources": {}
+    "fieldSources": {
+      "longestRun": {
+        "source": "https://www.onthesnow.com/new-hampshire/attitash/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.attitash.com/explore-the-resort/about-the-resort/hours-of-operation.aspx",
+        "verifiedOn": "2026-08-25"
+      }
+    }
   },
   "terrain": {
-    "percentBeginner": 22,
-    "percentIntermediate": 49,
-    "percentAdvanced": 29,
+    "percentBeginner": 29,
+    "percentIntermediate": 44,
+    "percentAdvanced": 27,
     "percentExpert": null,
     "glades": true,
-    "difficultyNotes": "A three-tier breakdown, so percentExpert is null and the top 29% sits in percentAdvanced. Everything in this group comes from OnTheSnow rather than the resort: attitash.com is entirely JavaScript-rendered and its mountain information page returns no readable statistics to either the fetch tool or curl with the project's bot user-agent, which is the same problem Stratton presented in Batch 2. Attitash is really two mountains - Attitash proper and Bear Peak, linked mid-mountain - and the 73-trail count covers both. Note the 88-inch snowfall figure, the lowest of any mountain in this guide: the Mount Washington Valley floor sits at 600 feet and gets a great deal of what falls as rain.",
-    "source": "https://www.onthesnow.com/new-hampshire/attitash/ski-resort",
+    "difficultyNotes": "A three-tier breakdown, so percentExpert is null and the top 27% sits in percentAdvanced. These are the resort's own figures, read from attitash.com's mountain information page after Vail's web estate came back up; the file previously carried OnTheSnow's 22/49/29 split, which moved 7 points from the beginner grade into intermediate and overstated how much of the mountain is middle-grade skiing. Attitash is really two mountains - Attitash proper and Bear Peak, linked mid-mountain - and the 76-trail count covers both. The resort also publishes 60+ acres of tree skiing and 23 miles of trails, which is the more useful way to think about a mountain whose acreage figure is modest. The one figure still worth treating carefully is snowfall: see dataDisputes.",
+    "source": "https://www.attitash.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
   },
@@ -47,7 +56,7 @@
       "access": "Unlimited",
       "blackouts": "None",
       "verifiedOn": "2026-08-25",
-      "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/"
+      "source": "https://www.onthesnow.com/new-hampshire/attitash/ski-resort"
     },
     {
       "name": "Epic Local Pass",
@@ -64,41 +73,47 @@
     "advanceTypical": null,
     "seasonPassAdult": 1119,
     "currency": "USD",
-    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null rather than estimated. The season pass figure is the full adult (31+) Epic Pass; Vail does not sell an unrestricted Attitash-only pass. Attitash carries unlimited access on the cheaper Epic Local Pass too, at $829 for 31+, which is the tier most New England Epic buyers actually want. epicpass.com and attitash.com were both returning errors on the verified date, so the figures come from OnTheSnow's Epic buyer's guide; that guide quotes $1,089 in its prose, which was the March 2026 on-sale price, while its current cost line reads $1,119.",
+    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null rather than estimated. The season pass figure is the full adult (31+) Epic Pass; Vail does not sell an unrestricted Attitash-only pass. Attitash carries unlimited access on the cheaper Epic Local Pass too, at $829 for 31+, which is the tier most New England Epic buyers actually want. Every content page on attitash.com became readable again on 2026-08-25 and this file was rebuilt from them, but the ticket and pass pages are a separate matter: they redirect to Vail's ecommerce waiting room, which requires JavaScript, so no pass or ticket price on any Vail property could be read from the operator directly. The $1,119 therefore still comes from OnTheSnow's Epic buyer's guide - specifically its current-cost line, not its prose, which quotes the March 2026 on-sale price of $1,089.",
     "verifiedOn": "2026-08-25",
     "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
     "fieldSources": {}
   },
   "editorial": {
-    "overview": "Attitash is the mountain the Mount Washington Valley actually skis, and it is a more interesting place than its statistics suggest. Seventeen hundred and fifty feet of vertical across two linked peaks - Attitash proper and Bear Peak - on 311 acres in Bartlett, ten minutes from North Conway and all the lodging, food and outlet shopping the valley has. That location is the whole proposition: Attitash is where a family staying in North Conway goes, and it is priced into the Epic Pass at the unlimited tier on both the full pass and the Local, which makes it close to free for anyone who already has one. The skiing is honest intermediate terrain with a long runout, a three-mile top-to-bottom, and a top 29% that is respectable rather than fearsome. The problem is elevation. The base sits at 600 feet, the summit at 2,350, and 88 inches of average snowfall is the lowest total in this guide by a wide margin - what falls on Wildcat as snow arrives here as rain more often than anyone would like. Attitash lives or dies on its snowmaking and on the calendar. In a cold February it is a genuinely good mountain. In a mild one it is the thinnest big-name mountain in New Hampshire.",
-    "snowQuality": "The weak point, and the numbers are blunt about it. Eighty-eight inches a year is the lowest average of any resort in this guide - a third of what Jay Peak claims and less than half Wildcat's, twenty minutes up the road but two thousand feet higher. The reason is elevation: a 600-foot base in the Mount Washington Valley floor catches a great deal of rain in storms that fall as snow on the surrounding mountains, and the lower third of the hill takes the worst of every thaw. Snowmaking covers 240 of the 311 acres, and it is doing the heavy lifting all season rather than just at the margins. This is a mountain to ski in a cold spell, and one where checking the base-area report matters more than at almost anywhere else.",
+    "overview": "Attitash is the mountain the Mount Washington Valley actually skis, and it is a more interesting place than its statistics suggest. Seventeen hundred and fifty feet of vertical across two linked peaks - Attitash proper and Bear Peak - on 311 acres in Bartlett, ten minutes from North Conway and all the lodging, food and outlet shopping the valley has. That location is the whole proposition: Attitash is where a family staying in North Conway goes, and it sits at the unlimited tier on both the full Epic Pass and the Epic Local, which makes it close to free for anyone who already holds one. The skiing is honest terrain with a long runout, a three-mile top-to-bottom and 76 trails split 29/44/27, with 60-odd acres of tree skiing threaded through it. The problem is elevation. The base sits at 600 feet - the lowest on this roster - and the summit at 2,350, so what falls on Wildcat as snow arrives here as rain more often than anyone would like, and the lower third of the hill takes the worst of every thaw. Attitash lives or dies on snowmaking and on the calendar. In a cold February it is a genuinely good mountain and the Bear Peak side gives it more variety than the acreage implies. In a mild one it is the thinnest big-name mountain in New Hampshire.",
+    "snowQuality": "The weak point, and the sources disagree about how weak. Attitash publishes a 120-inch average; OnTheSnow records 88. Take either and it is a low total for northern New Hampshire, and the reason is elevation rather than latitude: a 600-foot base on the Mount Washington Valley floor catches a great deal of rain in storms that fall as snow on the surrounding mountains, and Wildcat is twenty minutes up the road and two thousand feet higher with roughly double the natural snow. Snowmaking covers 240 of the 311 acres by OnTheSnow's count and it is doing the heavy lifting all season rather than just at the margins. This is a mountain to ski in a cold spell, and one where reading the base-area report matters more than at almost anywhere else on this roster.",
     "crowds": "Busier than it looks on paper, because Attitash draws from a large lodging base rather than from day-trippers. North Conway fills up over school holidays and February vacation, and the valley's visitors distribute themselves between Attitash, Cranmore and Wildcat - with Attitash taking the largest share of the families. Eight lifts across two linked peaks spreads people reasonably well, and Bear Peak stays quieter than the Attitash side. The pattern worth knowing is that Epic Pass access at the unlimited tier makes this a default choice for a lot of New England passholders, so weekends draw a passholder crowd on top of the resort's own guests.",
-    "difficulty": "Comfortable rather than testing. The three-tier split puts 49% in the middle grade and 29% at the top, which is an accurate description - this is a mountain of long, well-cut intermediate trails with a three-mile top-to-bottom run and enough pitch on the upper sections to keep a competent skier interested. The two-peak layout adds variety that the acreage does not suggest, and there is glade skiing. What is missing is anything sustained or steep enough to worry an expert, and the low-elevation base means the bottom third is often the least pleasant part of the run rather than the payoff. Anyone in the valley looking for real difficulty drives to Wildcat.",
+    "difficulty": "Comfortable rather than testing. The resort's own three-tier split puts 44% in the middle grade and 27% at the top, which is an accurate description - this is a mountain of long, well-cut intermediate trails with a three-mile top-to-bottom run and enough pitch on the upper sections to keep a competent skier interested. The two-peak layout adds variety the acreage does not suggest, and there are 60-plus acres of tree skiing; Attitash's own guidance sends experts to the narrow, classic New England lines of Tim's and Ptarmigan off the Mountaineer quad, and intermediates across to Bear Peak's wide groomers. What is missing is anything sustained or steep enough to worry a genuine expert, and the low base means the bottom third is often the least pleasant part of the run rather than the payoff. Anyone in the valley looking for real difficulty drives to Wildcat.",
     "keyTrails": [
       {
-        "name": "The Mountaineer",
-        "note": "The summit lift, and the one that defines a day here - it serves the top of Attitash proper and the longest sustained descents on the hill."
+        "name": "Tim's Trail",
+        "note": "Narrow, classic New England skiing off the Mountaineer quad - the resort's own answer to where experts should go, and the opposite in character to Bear Peak."
+      },
+      {
+        "name": "Ptarmigan",
+        "note": "The other half of that answer: tight, old-school and served by the Mountaineer. The name also survives on Ptarmigans Pub in the base lodge and the pop-up park out front."
+      },
+      {
+        "name": "Illusion",
+        "note": "Bear Peak's race trail, which Attitash calls one of the region's most sought-after alpine race courses. Steep, wide and consistently pitched."
       },
       {
         "name": "Bear Peak",
-        "note": "The second mountain, linked mid-mountain and consistently quieter than the Attitash side. Worth crossing over for on a busy holiday week."
+        "note": "The second mountain, linked mid-mountain and consistently quieter than the Attitash side. Wide open groomers and glades, added in the mid-1990s."
       },
       {
-        "name": "Flying Bear",
-        "note": "The lift that opens up the Bear Peak terrain. Where regulars go when the main side fills up."
-      },
-      {
-        "name": "Abenaki",
-        "note": "One of the quads on the Attitash side, serving the middle-mountain intermediate terrain that is the bulk of what people ski here."
+        "name": "The Mountaineer",
+        "note": "The summit quad on the Attitash side, and the lift that defines a day here - it serves the longest sustained descents on the hill."
       }
     ],
     "tidbits": [
       "Attitash is two linked mountains - Attitash proper and Bear Peak - counted as one resort.",
-      "At 88 inches, Attitash has the lowest average snowfall of any resort in this guide.",
+      "It opened in 1965 as the Red Carpet Ski Area, known for capping day-ticket sales to keep lift lines short.",
       "The 600-foot base elevation is the lowest of any mountain in this guide.",
+      "Bear Peak was added in the mid-1990s and is still the quieter half.",
+      "The resort claims 120 inches of snow a year; OnTheSnow records 88.",
+      "Attitash publishes 60+ acres of tree skiing and 23 miles of trails.",
       "Attitash is unlimited on the Epic Local Pass as well as the full Epic Pass.",
-      "It is ten minutes from North Conway, which gives it a lodging base most New Hampshire areas lack.",
-      "attitash.com publishes its statistics only through JavaScript, so every figure here comes from OnTheSnow."
+      "Published lift hours never run past 4pm, so there is no night skiing - unlike its sister mountain Crotched."
     ],
     "bestFor": [
       "Epic Local passholders",
@@ -107,8 +122,8 @@
       "A cold snap in midwinter"
     ],
     "watchOutFor": [
-      "Lowest snowfall in this guide",
-      "600-foot base takes the rain",
+      "A 600-foot base takes the rain",
+      "Snowfall claims differ by 32 inches",
       "Little genuinely hard terrain",
       "Busy over school holidays"
     ]
@@ -118,25 +133,35 @@
     "officialSnowReport": "https://www.attitash.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.attitash.com/the-mountain/about-the-mountain/trail-map.aspx",
     "webcams": "https://www.attitash.com/the-mountain/mountain-conditions/mountain-cams.aspx",
-    "lodging": null,
+    "lodging": "https://www.attitash.com/explore-the-resort/during-your-stay/lodging.aspx",
     "twitter": null,
     "instagram": null
   },
   "meta": {
     "sources": [
       {
-        "label": "OnTheSnow Attitash overview (every size and terrain figure; attitash.com is JavaScript-rendered and unreadable)",
+        "label": "Attitash mountain information page (elevations, vertical, acres, lifts, trails, snowfall, terrain split, park count, tree-skiing acreage, resort history)",
+        "url": "https://www.attitash.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Attitash terrain parks page (all three parks, their levels and their features)",
+        "url": "https://www.attitash.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Attitash hours of operation (published lift hours, which never run past 4pm - the basis for nightSkiing: false)",
+        "url": "https://www.attitash.com/explore-the-resort/about-the-resort/hours-of-operation.aspx",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Attitash overview (longest run, snowmaking acreage, and the 88-inch snowfall figure recorded in dataDisputes)",
         "url": "https://www.onthesnow.com/new-hampshire/attitash/ski-resort",
         "accessedOn": "2026-08-25"
       },
       {
-        "label": "OnTheSnow 2026/27 Epic Pass buyer's guide (pass prices and Attitash access tiers)",
+        "label": "OnTheSnow 2026/27 Epic Pass buyer's guide (pass prices and Attitash access tiers; Vail's own pass pages are behind a JavaScript waiting room)",
         "url": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
-        "accessedOn": "2026-08-25"
-      },
-      {
-        "label": "Attitash mountain information page (JavaScript-rendered; returned no readable statistics)",
-        "url": "https://www.attitash.com/the-mountain/about-the-mountain/mountain-info.aspx",
         "accessedOn": "2026-08-25"
       }
     ],
@@ -144,76 +169,111 @@
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
-    "size.nightSkiing": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "No usable source either way. attitash.com is JavaScript-rendered and its sitemap yielded no readable page list, OnTheSnow publishes an empty operating schedule for Attitash so the isNight check that settled Cannon, Loon, Wildcat and Sugarloaf is unavailable, and Ski NH's night-skiing list is a curated feature rather than a registry and cannot support a negative. Left null rather than assuming the answer is no"
-    },
-    "size.snowmakingPercent": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "OnTheSnow lists 240 snowmaking acres against 311 skiable acres but no percentage, and the resort publishes nothing readable"
-    },
-    "parks.count": {
-      "status": "unpublished",
-      "checkedOn": "2026-08-25",
-      "note": "OnTheSnow gives no terrain park count for Attitash and the resort's own site is unreadable. User reviews on OnTheSnow refer to a small terrain park, but a review is not a source for a count"
-    },
     "parks.pipe": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "No pipe is documented in any source consulted"
+      "source": "https://www.attitash.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+      "note": "The terrain parks page names all three parks and describes their features; no pipe is mentioned on it or anywhere else on the site"
     },
     "passes[1].blackouts": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "The Epic buyer's guide places Attitash on the Epic Local unlimited list but does not publish per-resort blackout dates for that tier, and epicpass.com was returning a site-down error on the checked date"
+      "note": "The Epic buyer's guide places Attitash on the Epic Local unlimited list but does not publish per-resort blackout dates for that tier, and every Vail pass page redirects to an ecommerce waiting room that requires JavaScript, so the operator's own terms could not be read"
     },
     "pricing.advanceTypical": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no representative advance rate"
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
     },
     "pricing.windowTicketAdultHigh": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no window rate"
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
     },
     "pricing.windowTicketAdultLow": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "Vail prices dynamically by date and publishes no window rate"
+      "note": "Vail prices dynamically by date and publishes no fixed rate; the ticket page redirects to an ecommerce waiting room that requires JavaScript, so nothing could be read from it either"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "OnTheSnow lists 240 snowmaking acres against 311 skiable acres but no percentage, and the resort's own mountain statistics block publishes trails, lifts, acreage, elevations and snowfall but no snowmaking figure at all - unlike its sister mountains Mount Sunapee (97%) and Crotched (100%), which both publish one",
+      "source": "https://www.attitash.com/the-mountain/about-the-mountain/mountain-info.aspx"
     },
     "terrain.percentExpert": {
       "status": "unpublished",
       "checkedOn": "2026-08-25",
-      "note": "OnTheSnow publishes a three-tier breakdown for Attitash, so no fourth-tier figure exists to source"
+      "note": "Attitash publishes a three-tier breakdown on its own mountain statistics page, so no fourth-tier figure exists to source",
+      "source": "https://www.attitash.com/the-mountain/about-the-mountain/mountain-info.aspx"
     }
   },
-  "dataDisputes": [],
+  "dataDisputes": [
+    {
+      "field": "size.annualSnowfallAvg",
+      "resortClaim": 120,
+      "independentClaim": 88,
+      "independentSource": "https://www.onthesnow.com/new-hampshire/attitash/ski-resort",
+      "note": "A 32-inch gap. The resort's own mountain information page publishes a 120-inch average; OnTheSnow records 88. The resort's figure is stored because CLAUDE.md prefers the resort's own site, but the lower number is the one to plan a natural-snow trip around, and it is worth knowing that neither figure is generous by New England standards - Attitash's 600-foot base is the lowest on this roster and takes rain in storms that fall as snow on the mountains around it."
+    }
+  ],
   "moguls": {
     "presence": "occasional",
-    "policy": "No grooming policy could be sourced. Attitash's own site publishes nothing readable and no independent review consulted discusses its grooming or names a bump run, so what is recorded here is limited to what the terrain and snow conditions imply rather than anything stated.",
+    "policy": "No grooming policy is published. Attitash's own site, readable again as of this revision, describes its terrain and its parks in detail and says nothing about which trails are left ungroomed, and no independent review consulted names a bump run here. What is recorded is inference from terrain and snow rather than anything stated.",
     "namedRuns": [],
-    "quality": "Genuinely not documented, and this file says so rather than filling the gap. What can be said from the sourced figures is structural: an 88-inch average snowfall and a 600-foot base mean Attitash depends on machine snow for most of its surface, and a heavily snowmade surface gets groomed to stay usable. That points to a mountain where bumps form between passes on the steeper upper pitches rather than one with maintained mogul terrain, and the presence rating reflects that inference. Anyone in the Mount Washington Valley specifically wanting bumps should drive to Wildcat, which does not groom its blacks at all.",
+    "quality": "Not documented, and this file says so rather than filling the gap. What can be said from the sourced figures is structural: a low base, a snowfall average somewhere between 88 and 120 inches and snowmaking over 240 of 311 acres mean Attitash depends on machine snow for most of its surface, and a heavily snowmade surface gets groomed to stay usable. That points to a mountain where bumps form between passes on the narrow upper pitches - Tim's and Ptarmigan are the candidates - rather than one with maintained mogul terrain. Anyone in the Mount Washington Valley specifically wanting bumps should drive to Wildcat, which does not groom its blacks at all.",
     "bestTiming": null,
     "bumpCulture": null,
-    "source": "https://www.onthesnow.com/new-hampshire/attitash/ski-resort",
+    "source": "https://www.attitash.com/the-mountain/about-the-mountain/mountain-info.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
   },
   "parks": {
-    "count": null,
-    "parks": [],
+    "count": 3,
+    "parks": [
+      {
+        "name": "Arcade Park",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The main park and the one the freestyle crowd comes for: unique rail and box features, small and medium jumps, and large jumps. No feature counts are published."
+      },
+      {
+        "name": "Ptarmigans Pop Up Park",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Smaller features set up in front of the Main Base Lodge, and explicitly weather and conditions permitting - so it is there some days and not others."
+      },
+      {
+        "name": "Family Cross",
+        "size": "small",
+        "level": "All abilities",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A skier-cross style course rather than a jib park - rollers and turns aimed at families. Counted in the resort's park total."
+      }
+    ],
     "pipe": null,
     "pipeType": null,
     "pipeSpecs": null,
-    "nightPark": null,
-    "progression": null,
+    "nightPark": false,
+    "progression": "A clean three-step ladder, and unusually explicit about where the bottom rung is: Ptarmigans Pop Up in front of the base lodge for first features, Family Cross for anyone who wants terrain rather than jibs, and Arcade Park for the real thing. The gap is in the middle - Arcade carries small through large jumps in one park rather than splitting them, so the step from the pop-up park into Arcade is bigger than the three-park count suggests.",
     "rebuildCadence": null,
-    "overview": "Nothing citable. Attitash's own site is JavaScript-rendered and returns no readable park information, OnTheSnow publishes no park count for it, and no independent review consulted covers the parks. User reviews on OnTheSnow mention a small terrain park, which is a hint rather than a source. This is the thinnest parks section on the roster and it should be revisited once the resort's site is readable.",
-    "reputation": "No sourced assessment exists. The one recurring remark in user reviews is that the park is small, which is consistent with a Vail-run valley mountain whose identity is family intermediate skiing, but it is not enough to write a judgement on.",
-    "source": "https://www.onthesnow.com/new-hampshire/attitash/ski-resort",
+    "overview": "Three parks, collectively branded Arcade Terrain Parks, and the resort's own count and description agree - 3 in the mountain statistics block and three named parks on the terrain parks page. Arcade Park is the main event, with rail and box features and jumps up to large; Ptarmigans Pop Up Park sits in front of the Main Base Lodge for smaller features when conditions allow; Family Cross is a cross-style course for everyone. No feature counts, no lighting and no rebuild schedule are published, and there is no pipe.",
+    "reputation": "Better than Attitash's family-mountain reputation implies. The resort describes freestyle as a vital part of its culture and keeps a dedicated park crew, and three parks on 311 acres is a real commitment for a mountain this size - Mount Sunapee, its larger Vail sibling, publishes a park count and not one park name. That said, nothing here competes with Carinthia at Mount Snow, and a serious park rider in New Hampshire is more likely to be at Loon or Waterville.",
+    "source": "https://www.attitash.com/the-mountain/about-the-mountain/terrain-parks.aspx",
     "verifiedOn": "2026-08-25",
     "fieldSources": {}
   }

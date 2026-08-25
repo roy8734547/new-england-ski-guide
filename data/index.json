@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T17:45:05.790Z",
+  "generatedAt": "2026-08-25T17:56:04.902Z",
   "schemaVersion": 3,
   "count": 30,
   "resorts": [
@@ -14,11 +14,11 @@
       "website": "https://www.attitash.com",
       "verticalDrop": 1750,
       "skiableAcres": 311,
-      "trailCount": 73,
+      "trailCount": 76,
       "liftCount": 8,
-      "annualSnowfallAvg": 88,
+      "annualSnowfallAvg": 120,
       "snowmakingPercent": null,
-      "nightSkiing": null,
+      "nightSkiing": false,
       "passTypes": [
         "epic"
       ],
@@ -37,8 +37,8 @@
       "advanceTypical": null,
       "seasonPassAdult": 1119,
       "mogulPresence": "occasional",
-      "parkCount": null,
-      "hasPark": null,
+      "parkCount": 3,
+      "hasPark": true,
       "hasPipe": null,
       "bestFor": [
         "Epic Local passholders",
@@ -329,7 +329,7 @@
       "website": "https://www.crotchedmtn.com",
       "verticalDrop": 1016,
       "skiableAcres": 100,
-      "trailCount": 24,
+      "trailCount": 25,
       "liftCount": 5,
       "annualSnowfallAvg": 63,
       "snowmakingPercent": 100,
@@ -352,8 +352,8 @@
       "advanceTypical": null,
       "seasonPassAdult": 1119,
       "mogulPresence": "rare",
-      "parkCount": null,
-      "hasPark": null,
+      "parkCount": 2,
+      "hasPark": true,
       "hasPipe": null,
       "bestFor": [
         "Night skiing, all of the mountain",
@@ -678,11 +678,11 @@
       "lon": -72.0737,
       "website": "https://www.mountsunapee.com",
       "verticalDrop": 1510,
-      "skiableAcres": 232,
+      "skiableAcres": 233,
       "trailCount": 67,
       "liftCount": 8,
       "annualSnowfallAvg": 93,
-      "snowmakingPercent": null,
+      "snowmakingPercent": 97,
       "nightSkiing": null,
       "passTypes": [
         "epic"
@@ -702,14 +702,14 @@
       "advanceTypical": null,
       "seasonPassAdult": 1119,
       "mogulPresence": "occasional",
-      "parkCount": null,
-      "hasPark": null,
+      "parkCount": 4,
+      "hasPark": true,
       "hasPipe": null,
       "bestFor": [
         "Epic Local passholders",
         "A short drive from Concord or Boston",
         "Improving intermediates",
-        "Midweek skiing"
+        "First-timers on South Peak"
       ],
       "officialSnowReport": "https://www.mountsunapee.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
       "verifiedOn": "2026-08-25"
