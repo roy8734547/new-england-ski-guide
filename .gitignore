@@ -17,3 +17,6 @@ private/
 # Tool scratch
 *.log
 .playwright/
+
+# Claude Code local session state
+.claude/

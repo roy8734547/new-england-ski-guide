@@ -68,11 +68,11 @@
     "windowTicketAdultHigh": null,
     "windowTicketAdultLow": null,
     "advanceTypical": null,
-    "seasonPassAdult": 1399,
+    "seasonPassAdult": 1449,
     "currency": "USD",
-    "notes": "2026-27 season. Alterra prices day tickets dynamically and publishes no fixed window rate, so the ticket fields are null rather than guessed. The season pass figure is the full Ikon Pass, which is how unlimited Sugarbush access is bought. The cheaper Ikon Base Pass carries restrictions here and is not recorded. Sugarbush also sells its own Mountain Pass products, but no price for them could be sourced.",
-    "verifiedOn": "2026-08-22",
-    "source": "https://www.onthesnow.com/news/ikon-pass-buyers-guide/",
+    "notes": "2026-27 season. Alterra prices day tickets dynamically and publishes no window rate, so the ticket fields are null rather than estimated. The season pass figure is the full Ikon Pass, which is how unlimited Sugarbush access is bought; the cheaper Ikon Base Pass ($1,019) carries restrictions here and is not recorded. Sugarbush also sells its own Mountain Pass products, but no price for them could be sourced. Corrected on 2026-08-25: this file previously held $1,399, taken from OnTheSnow's Ikon buyer's guide, whose prose still recites the spring on-sale price while its own spec box says $1,449. The figure now comes from Alterra's shop page directly.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.ikonpass.com/en/shop-passes",
     "fieldSources": {}
   },
   "editorial": {
@@ -163,9 +163,14 @@
         "label": "Mount Ellen summit coordinates and elevation",
         "url": "https://en.wikipedia.org/wiki/Mount_Ellen_(Vermont)",
         "accessedOn": "2026-08-22"
+      },
+      {
+        "label": "Ikon Pass shop page (2026-27 adult pass price)",
+        "url": "https://www.ikonpass.com/en/shop-passes",
+        "accessedOn": "2026-08-25"
       }
     ],
-    "verifiedOn": "2026-08-22",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {

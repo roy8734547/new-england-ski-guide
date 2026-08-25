@@ -54,10 +54,10 @@
     "windowTicketAdultHigh": null,
     "windowTicketAdultLow": null,
     "advanceTypical": null,
-    "seasonPassAdult": 1089,
+    "seasonPassAdult": 1119,
     "currency": "USD",
-    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null. The season pass figure is the full Epic Pass; Vail does not sell an unrestricted Mount Snow-only pass.",
-    "verifiedOn": "2026-08-24",
+    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null rather than estimated. The season pass figure is the full Epic Pass, which is how a season at Mount Snow is bought; Vail does not sell an unrestricted Mount Snow-only pass. The cheaper Epic Local ($829 for 31+) carries holiday restrictions and is not recorded here. Corrected on 2026-08-25: this file previously held $1,089, which is the price the Epic Pass went on sale at in March 2026 and which OnTheSnow's guide still quotes in its prose; the same guide's current \"Cost\" line reads $1,119 for ages 31+, and that is the figure recorded. epicpass.com itself was returning a site-down error on the verified date, so the operator's own page could not be used.",
+    "verifiedOn": "2026-08-25",
     "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
     "fieldSources": {}
   },
@@ -145,7 +145,7 @@
         "accessedOn": "2026-08-24"
       }
     ],
-    "verifiedOn": "2026-08-24",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
