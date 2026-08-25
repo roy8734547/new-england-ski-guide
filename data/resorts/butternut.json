@@ -232,6 +232,11 @@
       "checkedOn": "2026-08-25",
       "source": "https://skibutternut.com/the-mountain/mountain-info/mountain-stats",
       "note": "Butternut publishes three difficulty grades on its own stats page, so there is no fourth-tier figure to source"
+    },
+    "reviews": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Searched for coverage on the Storm Skiing Journal, SnowBrains, DCSki, PeakRankings and ZRankings on 2026-08-25. PeakRankings 404s and ZRankings lists Bousquet and Berkshire East from the Berkshires but not Butternut. No substantive review found."
     }
   },
   "dataDisputes": [],

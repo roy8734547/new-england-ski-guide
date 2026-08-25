@@ -146,7 +146,15 @@
       "Snowmaking on under two thirds"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "The Storm Skiing Journal",
+      "url": "https://www.stormskiing.com/p/podcast-135-dartmouth-skiway-gm-mark",
+      "gist": "Rates it well-financed and well-kept, a place to escape to on the days the big mountains are unbearable — a thousand feet of vertical over two faces of twisting New England trails, at a price that reflects who owns it. The qualifications are structural and he says they are not going away: the lifts are slow and will stay slow, neither side reaches its own summit because the Appalachian Trail crosses Holt’s Ledge, and the road between the two faces means walking. His interest is in whether a college-owned nonprofit can be a model for small mountains rather than in whether it competes with its neighbours.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://dartmouthskiway.com/mountain-2/",
     "trailMap": "https://dartmouthskiway.com/mountain-2/",

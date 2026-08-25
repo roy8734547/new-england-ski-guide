@@ -138,7 +138,15 @@
       "Closed Mondays and Tuesdays"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "The Storm Skiing Journal",
+      "url": "https://www.stormskiing.com/p/there-was-no-political-pressure-to",
+      "gist": "An interview about the 2022 rename that is also the clearest outside description of the business: seventeenth-largest in Vermont, three lifts and 24 trails, and sustained for nearly ninety years by guests of the Woodstock Inn rather than by day skiers. He credits the Indy Pass with raising its profile and is candid that most skiers still do not think about it, historic first rope tow or not.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.saskadenasix.com/winter/conditions",
     "trailMap": "https://www.saskadenasix.com/the-mountain/mountain-info",

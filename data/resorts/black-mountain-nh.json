@@ -135,7 +135,15 @@
       "Only 1,100 feet of vertical"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "The Storm Skiing Journal",
+      "url": "https://www.stormskiing.com/p/indy-pass-acquires-black-mountain",
+      "gist": "The bleakest assessment of any mountain in this guide, written at the point Black nearly closed: an 88-year-old area that did not modernise while its neighbours bought high-speed lifts and snowmaking, closing mid-March while Attitash and Wildcat ran into April, and unable to find a buyer after some thirty parties looked at it. The piece is not a write-off — it treats the co-operative conversion as a genuine route forward — but it is explicit that Black has to become something other than what it was.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.blackmt.com/conditions",
     "trailMap": "https://www.blackmt.com/trail-map",

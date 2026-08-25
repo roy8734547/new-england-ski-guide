@@ -124,7 +124,22 @@
       "No day-ticket rates published"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Fiftieth of fifty — last on their Eastern list, below every Vermont, New Hampshire and Maine area they rate. The score is built on terrain and snowfall, so it says nothing about the base-area rebuild, and their acreage and snowfall figures are both well above the ones this guide records.",
+      "rating": 28.2,
+      "ratingScale": 100
+    },
+    {
+      "source": "Boston.com",
+      "url": "https://www.boston.com/travel/skiing/2022/02/17/bousquet-mountain-new-ski-base-lodge/",
+      "gist": "Covers the single biggest change at Bousquet in decades: a $5m, 17,500 sq ft two-storey base lodge opened in February 2022, part of a rebuild by Mill Town Capital that also replaced snowmaking and reworked the tubing area. The piece is about the building rather than the skiing, which is a fair reflection of where the money went.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://bousquetmountain.com/lift-trail-status/",
     "trailMap": "https://bousquetmountain.com/wp-content/uploads/2025/10/Trail-Map-1.pdf",

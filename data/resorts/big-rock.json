@@ -236,6 +236,11 @@
       "checkedOn": "2026-08-25",
       "source": "https://www.indyskipass.com/our-resorts/big-rock-mountain",
       "note": "The Indy listing publishes a three-tier split, so there is no fourth-tier figure to source, and the resort publishes no percentages of its own"
+    },
+    "reviews": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Searched for coverage on the Storm Skiing Journal, SnowBrains, DCSki, PeakRankings and ZRankings on 2026-08-25. Nothing substantive. Aroostook County is far enough from the ski press that the mountain is effectively uncovered."
     }
   },
   "dataDisputes": [],

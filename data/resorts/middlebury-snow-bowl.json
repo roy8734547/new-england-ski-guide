@@ -127,7 +127,15 @@
       "Only 1,020 feet of vertical"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "The Storm Skiing Journal",
+      "url": "https://www.stormskiing.com/p/podcast-130-middlebury-college-snowbowl",
+      "gist": "Makes the case on price and space rather than on statistics: a whole family skiing without a lift queue an hour from mountains charging over $200 a day, on terrain that sprawls further into the glades than the trail count implies, with real recent capital going into lifts and lights. He is straightforward that it is sixteenth in Vermont by vertical and that a thousand feet is a thousand feet — the mountain cannot buy a bigger one.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://middleburysnowbowl.com/conditions/",
     "trailMap": "https://middleburysnowbowl.com/trail-map/",

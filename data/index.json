@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T23:54:44.711Z",
+  "generatedAt": "2026-08-25T23:57:56.598Z",
   "schemaVersion": 3,
   "count": 45,
   "resorts": [
@@ -2105,7 +2105,7 @@
         "A three-hour ski day"
       ],
       "officialSnowReport": "https://www.wachusett.com/the-mountain/your-visit/snow-report/",
-      "verifiedOn": "2026-08-20"
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "waterville-valley",

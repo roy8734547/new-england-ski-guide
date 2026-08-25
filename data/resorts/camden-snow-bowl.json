@@ -243,6 +243,11 @@
       "checkedOn": "2026-08-25",
       "source": "https://www.indyskipass.com/our-resorts/camden-snow-bowl",
       "note": "The Indy listing publishes a three-tier split, so there is no fourth-tier figure to source, and the Snow Bowl publishes no difficulty breakdown at all"
+    },
+    "reviews": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Searched for coverage on the Storm Skiing Journal, SnowBrains, DCSki, PeakRankings and ZRankings on 2026-08-25. Everything returned was an aggregator listing, a tourism-board entry or a TripAdvisor page. The ocean view and the toboggan chute get written about; the skiing does not."
     }
   },
   "dataDisputes": [],

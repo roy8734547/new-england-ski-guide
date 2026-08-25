@@ -131,7 +131,15 @@
       "Snowfall estimates differ by 36 inches"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "DCSki",
+      "url": "https://www.dcski.com/articles/1528",
+      "gist": "A visit report that takes the snowmaking history seriously — this is where the first machine-made snow was skied on — and finds the place still working: five triples, no queue, 100% coverage, tidy grooming, and a lodge that has not changed much in sixty years. The criticisms are the obvious ones and are not dodged: 650 feet of vertical, fixed-grip chairs that make the ride back up slow, and nowhere to stay.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.mohawkmtn.com/snow-report/",
     "trailMap": "https://www.mohawkmtn.com/the-mountain/",

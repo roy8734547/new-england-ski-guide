@@ -125,7 +125,15 @@
       "No 2026-27 prices published yet"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "The Storm Skiing Journal",
+      "url": "https://www.stormskiing.com/p/podcast-65-wachusett-mountain-president",
+      "gist": "Calls Wachusett one of the most successful ski areas in the country and means it commercially rather than sentimentally: over 400,000 visits a year onto 130 acres, every part of the operation optimised for throughput, ticket prices and even the cafeteria kept reasonable, and a record of beating northern resorts to opening — Killington included, in 2020. He also notes it finished ahead of Stowe in a SKI reader poll. The qualifications are two: the footprint is fixed by an old-growth forest fight near the summit and is not growing, and which Wachusett you get depends entirely on what time you turn up.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.wachusett.com/the-mountain/your-visit/snow-report/",
     "trailMap": "https://www.wachusett.com/the-mountain/about-wachusett/trail-map/",
@@ -162,7 +170,7 @@
         "accessedOn": "2026-08-20"
       }
     ],
-    "verifiedOn": "2026-08-20",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
