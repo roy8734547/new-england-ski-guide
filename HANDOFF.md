@@ -1,0 +1,93 @@
+# HANDOFF.md — everything that needs you, not me
+
+Nothing in this file has been done. Each item was declined under AUTORUN.md policy rule 3:
+anything touching accounts, money, publishing, third-party services, or large binary
+installs is prepared here and left for you to run.
+
+---
+
+## 1. Set the bot contact URL — do this before anything is published
+
+Every request the snow fetcher makes to a resort's server carries a User-Agent naming this
+project and pointing at a contact page. It currently points at `https://example.invalid/about`,
+which is not a real host, and every tool prints a warning saying so.
+
+`about.html` is written to be that page once the site is live.
+
+**Locally:**
+```powershell
+Copy-Item .env.example .env
+# then edit .env and set SKI_BOT_CONTACT_URL
+```
+
+**In GitHub Actions** — Settings > Secrets and variables > Actions > **Variables** (not a
+secret; it is a public URL and masking it only makes debugging harder):
+```
+Name:  SKI_BOT_CONTACT_URL
+Value: https://<your-domain>/about.html
+```
+
+Verify with:
+```powershell
+node tools/report-broken-adapters.mjs --human
+```
+The first line prints the exact User-Agent that will be sent.
+
+---
+
+## 2. Create the GitHub repo and push
+
+Not done: AUTORUN.md forbids creating repos, adding remotes, pushing or deploying.
+`gh` is not installed on this machine.
+
+The local repository is committed and clean on branch `main`.
+
+```powershell
+# 1. Create an EMPTY repo at https://github.com/new
+#    Name: new-england-ski-guide
+#    Do NOT add a README, .gitignore or licence - this repo already has full history.
+
+# 2. From D:\Ski resort website
+git remote add origin https://github.com/YOUR-USERNAME/new-england-ski-guide.git
+git push -u origin main
+```
+
+With `gh` instead (`winget install --id GitHub.cli`, then `gh auth login`):
+```powershell
+gh repo create new-england-ski-guide --public  --source=. --remote=origin --push
+gh repo create new-england-ski-guide --private --source=. --remote=origin --push
+```
+
+---
+
+## 3. Netlify
+
+```
+Add new site > Import an existing project > GitHub > new-england-ski-guide
+  Branch to deploy:   main
+  Build command:      (leave empty)
+  Publish directory:  .          <- repo root
+```
+
+There is no build step; the site is static files. `SKI_BOT_CONTACT_URL` does **nothing** on
+Netlify — with no build command Netlify executes no code, and the fetcher runs in GitHub
+Actions. Set it there, not here.
+
+Note the scheduled workflow commits `data/snow-reports.json` to `main` every two hours in
+season, so Netlify will redeploy on that cadence from November to April. That is intended.
+
+---
+
+## 4. Playwright, if you want the browser-tier adapter to work
+
+Not installed: ~300MB, and AUTORUN.md policy rule 3 covers large binary installs. The
+`sunday-river` adapter fails soft without it and the site falls back to the resort's own
+report link.
+
+```powershell
+npm install --save-dev playwright
+npx playwright install chromium
+```
+
+CI installs it automatically via `.github/workflows/snow.yml`; this is only needed for local
+adapter development.
