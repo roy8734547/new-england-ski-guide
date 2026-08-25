@@ -1166,3 +1166,135 @@ table.data td:last-child { width: 100%; }
   color: var(--text-muted);
 }
 .park__counts b { color: var(--text); font-variant-numeric: tabular-nums; }
+
+/* --- map page ------------------------------------------------------------- */
+
+.map-canvas {
+  height: clamp(22rem, 62vh, 40rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-inset);
+  z-index: 0; /* keeps Leaflet's own panes under the sticky site header */
+}
+
+/* OSM's raster tiles only exist in one flavour, so dark mode inverts them.
+   Inverting hue-rotates back to sane colours; the pins sit in their own pane
+   and are excluded, or they would come out as their own complements. */
+@media (prefers-color-scheme: dark) {
+  .map-canvas .leaflet-tile-pane {
+    filter: invert(1) hue-rotate(180deg) brightness(0.86) contrast(1.05) saturate(0.7);
+  }
+}
+
+.map-canvas .leaflet-container {
+  font: inherit;
+  background: var(--bg-inset);
+}
+.map-canvas .leaflet-control-attribution {
+  background: color-mix(in srgb, var(--bg-raised) 88%, transparent);
+  color: var(--text-muted);
+  font-size: 0.6875rem;
+}
+.map-canvas .leaflet-control-attribution a { color: var(--accent); }
+.map-canvas .leaflet-bar a {
+  background: var(--bg-raised);
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+.map-canvas .leaflet-bar a:hover { background: var(--bg-inset); color: var(--accent); }
+.map-canvas :is(.leaflet-popup-content-wrapper, .leaflet-popup-tip) {
+  background: var(--bg-raised);
+  color: var(--text);
+  box-shadow: var(--shadow-card);
+}
+.map-canvas .leaflet-popup-content { margin: 0.85rem 1rem; }
+.map-canvas .leaflet-tooltip {
+  background: var(--bg-raised);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+.map-canvas .leaflet-tooltip-top::before { border-top-color: var(--border); }
+.map-canvas .leaflet-interactive:focus-visible { outline: 3px solid var(--focus); }
+
+.map-popup h2 { font-size: 1.05rem; letter-spacing: -0.01em; }
+.map-popup h2 a { color: inherit; text-decoration: none; }
+.map-popup h2 a:hover { text-decoration: underline; }
+.map-popup__where { color: var(--text-muted); font-size: 0.8125rem; margin-top: 0.15rem; }
+.map-popup__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+.map-popup__stats dt {
+  font-size: 0.5625rem; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--text-faint); font-weight: 650;
+}
+.map-popup__stats dd {
+  margin: 0.1rem 0 0; font-size: 0.9375rem; font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.map-popup__pass { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.7rem; }
+.map-popup__go { margin-top: 0.6rem; font-size: 0.875rem; font-weight: 650; }
+
+.chip--dot::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--chip-accent);
+  display: inline-block;
+  margin-right: 0.4rem;
+  vertical-align: -0.02rem;
+}
+
+.map-list { margin-block: 2.5rem 1rem; }
+.map-list > h2 { font-size: 1.25rem; }
+.map-list > .note { margin-top: 0.35rem; }
+.map-list #map-list,
+.map-list > div {
+  display: grid;
+  gap: 1.5rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  margin-top: 1.25rem;
+}
+.map-list__state h3 {
+  font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 700;
+  padding-bottom: 0.4rem; border-bottom: 1px solid var(--border);
+}
+.map-list__state h3 small { color: var(--text-faint); font-weight: 650; }
+.map-list__items { list-style: none; display: grid; gap: 0.1rem; margin-top: 0.4rem; }
+.map-list__items li {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--bg-inset);
+  font-size: 0.9375rem;
+}
+.map-list__dot {
+  width: 0.5rem; height: 0.5rem; border-radius: 50%;
+  background: var(--pass-none); align-self: center;
+}
+.map-list__dot--epic { background: var(--pass-epic); }
+.map-list__dot--ikon { background: var(--pass-ikon); }
+.map-list__dot--indy { background: var(--pass-indy); }
+.map-list__dot--other { background: var(--pass-other); }
+.map-list__dot--none { background: var(--pass-none); }
+.map-list__items a { text-decoration: none; }
+.map-list__items a:hover { text-decoration: underline; }
+.map-list__vert {
+  font-size: 0.8125rem; color: var(--text-muted);
+  font-variant-numeric: tabular-nums; text-align: right;
+}
+.map-list__locate {
+  appearance: none; border: 0; background: none; padding: 0;
+  font: inherit; font-size: 0.75rem; color: var(--accent);
+  cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
+}
+.map-list__locate:hover { color: var(--accent-hover); }

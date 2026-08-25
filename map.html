@@ -3,35 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Map &middot; New England Ski Guide</title>
-<meta name="description" content="A data-first guide to New England ski areas, roughly 650 ft vertical and up.">
+<title>Map · New England Ski Guide</title>
+<meta name="description" content="Every New England ski area on one map, pinned at the lift-served summit and coloured by which pass gets you on the lift.">
+
+<!-- Leaflet is the only third-party script on this site and it loads only on this
+     page. Pinned to an exact version with subresource integrity so a compromised
+     CDN cannot silently change what runs here. -->
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <a class="site-title" href="index.html">New England Ski Guide</a>
-  <nav class="site-nav" aria-label="Primary">
-    <a href="index.html">Resorts</a>
-    <a href="conditions.html">Conditions</a>
-    <a href="compare.html">Compare</a>
-    <a href="map.html">Map</a>
-  </nav>
+  <div class="shell site-header__inner">
+    <a class="site-title" href="index.html">New England Ski Guide</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Resorts</a>
+      <a href="conditions.html">Conditions</a>
+      <a href="compare.html">Compare</a>
+      <a href="map.html" aria-current="page">Map</a>
+    </nav>
+  </div>
 </header>
 
 <main id="main">
-  <h1>Map</h1>
-  <p class="lede">Every mountain, pinned and coloured by pass.</p>
-  <div id="map" role="application" aria-label="Map of New England ski areas"></div>
-  <p id="status" role="status">Loading map...</p>
+  <div class="shell page-head">
+    <h1>Where they all are</h1>
+    <p class="lede">
+      Forty-five mountains, pinned at the top of the highest lift rather than at the base
+      lodge, and coloured by which pass gets you on it. Pin size tracks vertical drop, so
+      the map reads as a rough terrain survey as well as a road atlas.
+    </p>
+  </div>
+
+  <div class="controls">
+    <div class="shell">
+      <div class="controls__row">
+        <div class="field">
+          <span class="label" id="legend-label">Pass</span>
+          <div class="chips" id="map-legend" role="group" aria-labelledby="legend-label"></div>
+        </div>
+        <div class="field field--end">
+          <span class="label">View</span>
+          <button type="button" class="btn-refresh" id="fit-all">Zoom to fit</button>
+        </div>
+      </div>
+      <p class="controls__meta"><span id="result-count">&nbsp;</span></p>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div id="map" class="map-canvas" role="application"
+         aria-label="Map of New England ski areas. An equivalent list of every mountain follows below the map."></div>
+    <p class="note" id="map-note" hidden></p>
+  </div>
+
+  <div class="shell">
+    <section class="map-list" aria-labelledby="map-list-head">
+      <h2 id="map-list-head">Every mountain on the map</h2>
+      <p class="note">
+        The same forty-five areas as plain links, grouped by state — for keyboard users,
+        for screen readers, and for anything that cannot run the map.
+      </p>
+      <div id="map-list"></div>
+    </section>
+  </div>
+
+  <p id="status" role="status">Loading the map…</p>
 </main>
 
 <footer class="site-footer">
-  <p>Snow reports are fetched from each resort's official report and linked back to the source.</p>
-  <p>Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
-     used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</p>
+  <div class="shell">
+    <p>
+      Map tiles &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>
+      contributors, under the <a href="https://opendatacommons.org/licenses/odbl/" rel="noopener">ODbL</a>.
+      Map rendering by <a href="https://leafletjs.com/" rel="noopener">Leaflet</a> 1.9.4.
+      Coordinates are our own, taken from each resort's published summit or from
+      OpenStreetMap's lift geometry where no summit is published.
+    </p>
+  </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
 <script type="module" src="assets/js/render-map.js"></script>
 </body>
 </html>
