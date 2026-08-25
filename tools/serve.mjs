@@ -57,8 +57,21 @@ const server = createServer(async (req, res) => {
     });
     res.end(body);
   } catch {
-    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-    res.end(`Not found: ${rel}`);
+    // Static hosts serve 404.html for anything they cannot match, and that page
+    // reads the failed URL to guess at a resort. Serving plain text here would
+    // mean the one page whose whole job is to handle a bad URL could never be
+    // exercised locally.
+    try {
+      const page = await readFile(path.join(ROOT, '404.html'));
+      res.writeHead(404, {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'no-cache',
+      });
+      res.end(page);
+    } catch {
+      res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+      res.end(`Not found: ${rel}`);
+    }
   }
 });
 

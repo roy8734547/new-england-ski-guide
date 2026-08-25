@@ -36,6 +36,10 @@ function summarize(r) {
   return {
     slug: get(r, 'identity', 'slug'),
     name: get(r, 'identity', 'name'),
+    // Former names matter to two pages: the 404 page matches a dead link against
+    // them (Suicide Six and Shawnee Peak both renamed inside the last few years,
+    // and the old names are still all over the web), and the sitemap does not.
+    aka: Array.isArray(get(r, 'identity', 'aka')) ? r.identity.aka : [],
     state: get(r, 'identity', 'state'),
     region: get(r, 'identity', 'region'),
     town: get(r, 'identity', 'town'),

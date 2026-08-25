@@ -1,11 +1,15 @@
 {
-  "generatedAt": "2026-08-25T22:47:38.092Z",
+  "generatedAt": "2026-08-25T23:07:02.144Z",
   "schemaVersion": 3,
   "count": 45,
   "resorts": [
     {
       "slug": "attitash",
       "name": "Attitash Mountain Resort",
+      "aka": [
+        "Attitash",
+        "Attitash Bear Peak"
+      ],
       "state": "NH",
       "region": "Mount Washington Valley",
       "town": "Bartlett",
@@ -52,6 +56,10 @@
     {
       "slug": "berkshire-east",
       "name": "Berkshire East Mountain Resort",
+      "aka": [
+        "Berkshire East",
+        "Thunder Mountain"
+      ],
       "state": "MA",
       "region": "Berkshires",
       "town": "Charlemont",
@@ -99,6 +107,11 @@
     {
       "slug": "big-rock",
       "name": "Big Rock Mountain",
+      "aka": [
+        "BigRock",
+        "Big Rock Ski Area",
+        "Mars Hill Skiway"
+      ],
       "state": "ME",
       "region": "Northern Maine",
       "town": "Mars Hill",
@@ -140,6 +153,12 @@
     {
       "slug": "black-mountain-nh",
       "name": "Black Mountain",
+      "aka": [
+        "Black Mountain NH",
+        "Black Mountain Ski Area",
+        "Whitney's Hill",
+        "Black Mountain Community Cooperation"
+      ],
       "state": "NH",
       "region": "Mount Washington Valley",
       "town": "Jackson",
@@ -181,6 +200,10 @@
     {
       "slug": "black-mountain-maine",
       "name": "Black Mountain of Maine",
+      "aka": [
+        "Black Mountain",
+        "Black Mountain of Maine, Rumford"
+      ],
       "state": "ME",
       "region": "Western Maine",
       "town": "Rumford",
@@ -222,6 +245,10 @@
     {
       "slug": "bolton-valley",
       "name": "Bolton Valley Resort",
+      "aka": [
+        "Bolton Valley",
+        "Bolton"
+      ],
       "state": "VT",
       "region": "Northern Vermont",
       "town": "Bolton",
@@ -269,6 +296,10 @@
     {
       "slug": "bousquet",
       "name": "Bousquet Mountain",
+      "aka": [
+        "Bousquet",
+        "Bousquet Ski Area"
+      ],
       "state": "MA",
       "region": "Berkshires",
       "town": "Pittsfield",
@@ -310,6 +341,9 @@
     {
       "slug": "bretton-woods",
       "name": "Bretton Woods",
+      "aka": [
+        "Bretton Woods Ski Area"
+      ],
       "state": "NH",
       "region": "White Mountains",
       "town": "Bretton Woods",
@@ -357,6 +391,9 @@
     {
       "slug": "bromley",
       "name": "Bromley Mountain",
+      "aka": [
+        "Bromley"
+      ],
       "state": "VT",
       "region": "Southern Vermont",
       "town": "Peru",
@@ -404,6 +441,10 @@
     {
       "slug": "burke",
       "name": "Burke Mountain",
+      "aka": [
+        "Burke",
+        "Burke Mountain Resort"
+      ],
       "state": "VT",
       "region": "Northeast Kingdom",
       "town": "East Burke",
@@ -451,6 +492,10 @@
     {
       "slug": "camden-snow-bowl",
       "name": "Camden Snow Bowl",
+      "aka": [
+        "The Snow Bowl",
+        "Ragged Mountain, Camden"
+      ],
       "state": "ME",
       "region": "Midcoast Maine",
       "town": "Camden",
@@ -498,6 +543,9 @@
     {
       "slug": "cannon",
       "name": "Cannon Mountain",
+      "aka": [
+        "Cannon"
+      ],
       "state": "NH",
       "region": "White Mountains",
       "town": "Franconia",
@@ -545,6 +593,10 @@
     {
       "slug": "catamount",
       "name": "Catamount Mountain Resort",
+      "aka": [
+        "Catamount",
+        "Catamount Ski Area"
+      ],
       "state": "MA",
       "region": "Berkshires",
       "town": "South Egremont",
@@ -592,6 +644,10 @@
     {
       "slug": "cranmore",
       "name": "Cranmore Mountain Resort",
+      "aka": [
+        "Cranmore",
+        "Mount Cranmore"
+      ],
       "state": "NH",
       "region": "Mount Washington Valley",
       "town": "North Conway",
@@ -649,6 +705,10 @@
     {
       "slug": "crotched",
       "name": "Crotched Mountain",
+      "aka": [
+        "Crotched",
+        "Crotched Mountain Ski Area"
+      ],
       "state": "NH",
       "region": "Southern New Hampshire",
       "town": "Bennington",
@@ -695,6 +755,10 @@
     {
       "slug": "dartmouth-skiway",
       "name": "Dartmouth Skiway",
+      "aka": [
+        "The Skiway",
+        "Holt's Ledge"
+      ],
       "state": "NH",
       "region": "Dartmouth-Sunapee",
       "town": "Lyme Center",
@@ -747,6 +811,9 @@
     {
       "slug": "gunstock",
       "name": "Gunstock Mountain Resort",
+      "aka": [
+        "Gunstock"
+      ],
       "state": "NH",
       "region": "Lakes Region",
       "town": "Gilford",
@@ -788,6 +855,10 @@
     {
       "slug": "jay-peak",
       "name": "Jay Peak Resort",
+      "aka": [
+        "Jay",
+        "The Jay Cloud"
+      ],
       "state": "VT",
       "region": "Northeast Kingdom",
       "town": "Jay",
@@ -829,6 +900,10 @@
     {
       "slug": "jiminy-peak",
       "name": "Jiminy Peak Mountain Resort",
+      "aka": [
+        "Jiminy Peak",
+        "Jiminy"
+      ],
       "state": "MA",
       "region": "Berkshires",
       "town": "Hancock",
@@ -876,6 +951,11 @@
     {
       "slug": "killington",
       "name": "Killington Resort",
+      "aka": [
+        "The Beast",
+        "The Beast of the East",
+        "K-Mart"
+      ],
       "state": "VT",
       "region": "Central Vermont",
       "town": "Killington",
@@ -922,6 +1002,10 @@
     {
       "slug": "loon",
       "name": "Loon Mountain Resort",
+      "aka": [
+        "Loon",
+        "Loon Mountain"
+      ],
       "state": "NH",
       "region": "White Mountains",
       "town": "Lincoln",
@@ -969,6 +1053,11 @@
     {
       "slug": "mad-river-glen",
       "name": "Mad River Glen",
+      "aka": [
+        "MRG",
+        "Ski It If You Can",
+        "General Stark Mountain"
+      ],
       "state": "VT",
       "region": "Central Vermont",
       "town": "Waitsfield",
@@ -1016,6 +1105,10 @@
     {
       "slug": "magic-mountain",
       "name": "Magic Mountain",
+      "aka": [
+        "Magic",
+        "Magic Mountain Vermont"
+      ],
       "state": "VT",
       "region": "Southern Vermont",
       "town": "Londonderry",
@@ -1057,6 +1150,11 @@
     {
       "slug": "middlebury-snow-bowl",
       "name": "Middlebury Snow Bowl",
+      "aka": [
+        "Middlebury College Snow Bowl",
+        "Middlebury Snowbowl",
+        "The Snowbowl"
+      ],
       "state": "VT",
       "region": "Central Vermont",
       "town": "Hancock",
@@ -1104,6 +1202,10 @@
     {
       "slug": "mohawk-mountain",
       "name": "Mohawk Mountain",
+      "aka": [
+        "Mohawk",
+        "Mohawk Mountain Ski Area"
+      ],
       "state": "CT",
       "region": "Northwest Connecticut",
       "town": "Cornwall",
@@ -1145,6 +1247,10 @@
     {
       "slug": "mount-snow",
       "name": "Mount Snow",
+      "aka": [
+        "Mt. Snow",
+        "Carinthia"
+      ],
       "state": "VT",
       "region": "Southern Vermont",
       "town": "West Dover",
@@ -1186,6 +1292,10 @@
     {
       "slug": "mount-sunapee",
       "name": "Mount Sunapee",
+      "aka": [
+        "Sunapee",
+        "Mt. Sunapee"
+      ],
       "state": "NH",
       "region": "Dartmouth-Sunapee",
       "town": "Newbury",
@@ -1232,6 +1342,10 @@
     {
       "slug": "mt-abram",
       "name": "Mt. Abram",
+      "aka": [
+        "Mount Abram",
+        "Mt Abram Ski Area"
+      ],
       "state": "ME",
       "region": "Western Maine",
       "town": "Greenwood",
@@ -1273,6 +1387,10 @@
     {
       "slug": "okemo",
       "name": "Okemo Mountain Resort",
+      "aka": [
+        "Okemo",
+        "Ludlow Mountain"
+      ],
       "state": "VT",
       "region": "Southern Vermont",
       "town": "Ludlow",
@@ -1314,6 +1432,9 @@
     {
       "slug": "pats-peak",
       "name": "Pats Peak",
+      "aka": [
+        "Pat's Peak"
+      ],
       "state": "NH",
       "region": "Southern New Hampshire",
       "town": "Henniker",
@@ -1361,6 +1482,10 @@
     {
       "slug": "pico",
       "name": "Pico Mountain",
+      "aka": [
+        "Pico",
+        "Pico Peak"
+      ],
       "state": "VT",
       "region": "Central Vermont",
       "town": "Mendon",
@@ -1407,6 +1532,10 @@
     {
       "slug": "pleasant-mountain",
       "name": "Pleasant Mountain",
+      "aka": [
+        "Shawnee Peak",
+        "Pleasant Mountain Ski Area"
+      ],
       "state": "ME",
       "region": "Western Maine",
       "town": "Bridgton",
@@ -1453,6 +1582,10 @@
     {
       "slug": "ragged",
       "name": "Ragged Mountain Resort",
+      "aka": [
+        "Ragged",
+        "Ragged Mountain"
+      ],
       "state": "NH",
       "region": "Dartmouth-Sunapee",
       "town": "Danbury",
@@ -1500,6 +1633,10 @@
     {
       "slug": "saddleback",
       "name": "Saddleback Mountain",
+      "aka": [
+        "Saddleback",
+        "Saddleback Maine"
+      ],
       "state": "ME",
       "region": "Western Maine",
       "town": "Rangeley",
@@ -1541,6 +1678,11 @@
     {
       "slug": "saskadena-six",
       "name": "Saskadena Six Ski Area",
+      "aka": [
+        "Suicide Six",
+        "Saskadena Six",
+        "Hill No. 6"
+      ],
       "state": "VT",
       "region": "Central Vermont",
       "town": "South Pomfret",
@@ -1593,6 +1735,10 @@
     {
       "slug": "butternut",
       "name": "Ski Butternut",
+      "aka": [
+        "Butternut",
+        "Butternut Basin"
+      ],
       "state": "MA",
       "region": "Berkshires",
       "town": "Great Barrington",
@@ -1634,6 +1780,9 @@
     {
       "slug": "smugglers-notch",
       "name": "Smugglers' Notch Resort",
+      "aka": [
+        "Smuggs"
+      ],
       "state": "VT",
       "region": "Northern Vermont",
       "town": "Jeffersonville",
@@ -1681,6 +1830,10 @@
     {
       "slug": "stowe",
       "name": "Stowe Mountain Resort",
+      "aka": [
+        "Stowe",
+        "The Ski Capital of the East"
+      ],
       "state": "VT",
       "region": "Northern Vermont",
       "town": "Stowe",
@@ -1722,6 +1875,9 @@
     {
       "slug": "stratton",
       "name": "Stratton Mountain Resort",
+      "aka": [
+        "Stratton"
+      ],
       "state": "VT",
       "region": "Southern Vermont",
       "town": "Stratton",
@@ -1763,6 +1919,10 @@
     {
       "slug": "sugarbush",
       "name": "Sugarbush Resort",
+      "aka": [
+        "Sugarbush",
+        "Mascara Mountain"
+      ],
       "state": "VT",
       "region": "Central Vermont",
       "town": "Warren",
@@ -1804,6 +1964,10 @@
     {
       "slug": "sugarloaf",
       "name": "Sugarloaf",
+      "aka": [
+        "Sugarloaf Mountain",
+        "Sugarloaf/USA"
+      ],
       "state": "ME",
       "region": "Western Maine",
       "town": "Carrabassett Valley",
@@ -1851,6 +2015,9 @@
     {
       "slug": "sunday-river",
       "name": "Sunday River",
+      "aka": [
+        "Sunday River Resort"
+      ],
       "state": "ME",
       "region": "Western Maine",
       "town": "Newry",
@@ -1898,6 +2065,10 @@
     {
       "slug": "wachusett",
       "name": "Wachusett Mountain",
+      "aka": [
+        "Wachusett Mountain Ski Area",
+        "Wa Wa Wachusett"
+      ],
       "state": "MA",
       "region": "Central Massachusetts",
       "town": "Princeton",
@@ -1939,6 +2110,10 @@
     {
       "slug": "waterville-valley",
       "name": "Waterville Valley Resort",
+      "aka": [
+        "Waterville Valley",
+        "Waterville"
+      ],
       "state": "NH",
       "region": "White Mountains",
       "town": "Waterville Valley",
@@ -1986,6 +2161,9 @@
     {
       "slug": "wildcat",
       "name": "Wildcat Mountain",
+      "aka": [
+        "Wildcat"
+      ],
       "state": "NH",
       "region": "Mount Washington Valley",
       "town": "Gorham",

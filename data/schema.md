@@ -751,6 +751,7 @@ page shows it.
     {
       "slug": "example-mountain",
       "name": "Example Mountain",
+      "aka": ["The Example"],
       "state": "VT",
       "region": "Southern Vermont",
       "town": "Exampleville",
@@ -768,6 +769,10 @@ page shows it.
       "passes": [{ "name": "Indy Pass", "type": "indy", "access": "2 days" }],
       "advanceTypical": 89,
       "seasonPassAdult": 749,
+      "mogulPresence": "common",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": false,
       "bestFor": ["Steep bump skiing"],
       "officialSnowReport": "https://www.example.com/conditions",
       "verifiedOn": "2026-08-20"
@@ -778,6 +783,17 @@ page shows it.
 
 `passTypes` is a flattened, de-duplicated list of `passes[].type`, precomputed so the index
 page's pass filter is a set-membership test rather than a nested scan on every keystroke.
+`mogulPresence`, `parkCount`, `hasPark` and `hasPipe` are flattened out of §14 and §15 for
+the same reason: the Features filters run on every keystroke and should not walk a nested
+object to do it. `hasPark` is `null` rather than `false` when `parks.count` is unsourced,
+because "no park" and "we do not know" are different answers and the filter must not treat
+them alike.
+
+`aka` carries the former and alternate names from §6. It is in the manifest for one page:
+`404.html` matches a dead URL against resort names, and two mountains on this roster were
+renamed recently enough that the old names are still the ones on the wider web — Suicide Six
+is now Saskadena Six, Shawnee Peak is now Pleasant Mountain. A stale link to either should
+land somewhere useful.
 
 Resorts are sorted by `name`, so adding one produces a small, stable diff.
 

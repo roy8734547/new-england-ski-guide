@@ -8,12 +8,15 @@
  * the absence is informative against its neighbours.
  */
 
-import { getResort, getSnowReport, isReportUsable, reportUnavailableReason } from './data.js';
+import {
+  getIndex, getResort, getSnowReport, isReportUsable, reportUnavailableReason,
+} from './data.js';
 import { getForecast, conditionLabel, isSnowing, snowfallTotal } from './weather.js';
 import {
   el, fill, fmt, money, formatDate, relativeTime, param, setStatus,
   STATE_NAMES, PASS_LABELS,
 } from './util.js';
+import { suggestResorts, tokens } from './suggest.js';
 
 const has = (v) => v !== null && v !== undefined && v !== '';
 const hasAny = (...vals) => vals.some(has);
@@ -714,16 +717,78 @@ function renderResort(r) {
   ].filter(Boolean);
 }
 
+// --- not found --------------------------------------------------------------
+
+/**
+ * `resort.html?r=nonsense` is a page that exists, so no static host will serve a
+ * 404 for it — this renderer is the only thing standing between a stale link and
+ * a raw "HTTP 404" error string. It answers with the same "did you mean" the 404
+ * page uses, in the page, at the URL the visitor came to.
+ */
+async function renderUnknownSlug(slug) {
+  document.title = 'Resort not found · New England Ski Guide';
+
+  const parts = [
+    el('div', { class: 'shell notfound' },
+      el('p', { class: 'notfound__code' }, 'Not found'),
+      el('h1', {}, 'No mountain by that name'),
+      el('p', { class: 'lede' },
+        'This guide has no resort with the identifier ',
+        el('code', {}, String(slug)),
+        '. Resorts get renamed and links go stale; the list below is current.')),
+  ];
+
+  try {
+    const { resorts = [] } = await getIndex();
+    const hits = suggestResorts(resorts, tokens(slug));
+    if (hits.length) {
+      parts.push(el('div', { class: 'shell notfound__suggest' },
+        el('h2', {}, 'Did you mean one of these?'),
+        el('ul', { class: 'pill-list' }, hits.map((r) => el('li', {},
+          el('a', { class: 'pill', href: `resort.html?r=${encodeURIComponent(r.slug)}` },
+            r.name, el('small', {}, ` ${STATE_NAMES[r.state] ?? r.state}`)))))));
+    }
+  } catch {
+    // No manifest, no suggestions. The link to the full list below still works.
+  }
+
+  parts.push(el('div', { class: 'shell notfound__suggest' },
+    el('p', {}, el('a', { href: 'index.html' }, 'Browse every mountain →'))));
+
+  const article = document.getElementById('resort');
+  fill(article, parts);
+  article.hidden = false;
+  setStatus('');
+}
+
 // --- boot -------------------------------------------------------------------
 
 async function main() {
   const slug = param('r');
   if (!slug) {
-    setStatus('No resort specified. Pick one from the resort list.', { error: true });
+    // resort.html with no ?r= is a bare URL somebody typed or a link that lost
+    // its query string. Send them somewhere rather than stating the problem.
+    document.title = 'Pick a resort · New England Ski Guide';
+    const article = document.getElementById('resort');
+    fill(article, el('div', { class: 'shell notfound' },
+      el('p', { class: 'notfound__code' }, 'No resort chosen'),
+      el('h1', {}, 'Which mountain?'),
+      el('p', { class: 'lede' },
+        'This page shows one resort at a time and this address does not name one.'),
+      el('p', { class: 'notfound__suggest' },
+        el('a', { href: 'index.html' }, 'Browse every mountain →'))));
+    article.hidden = false;
+    setStatus('');
     return;
   }
 
-  const r = await getResort(slug);
+  let r;
+  try {
+    r = await getResort(slug);
+  } catch {
+    await renderUnknownSlug(slug);
+    return;
+  }
   document.title = `${r.identity.name} · New England Ski Guide`;
 
   const meta = document.querySelector('meta[name="description"]');
