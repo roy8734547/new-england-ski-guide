@@ -792,17 +792,20 @@ function crossChecks(report, file, name, r) {
 
   const parkList = Array.isArray(parks.parks) ? parks.parks : [];
   if (Number.isInteger(parks.count)) {
-    if (parkList.length === 0 && parks.count > 0) {
-      // A sourced count with no per-park detail yet is incomplete, not wrong.
-      report.warn(file, `parks.count is ${parks.count} but no individual parks are described`);
-    } else if (parkList.length !== parks.count) {
+    if (parkList.length > parks.count) {
+      // parks[] exceeding the count is a contradiction: we have described more
+      // parks than we claim exist.
       report.err(
         file,
         `parks.count is ${parks.count} but parks[] holds ${parkList.length} entries`
       );
-    }
-    if (parks.count === 0 && parkList.length > 0) {
-      report.err(file, 'parks.count is 0 but parks[] is not empty');
+    } else if (parkList.length < parks.count) {
+      // A published count with only some parks named is incomplete, not wrong.
+      // This is common - resorts advertise "five parks" and describe three.
+      report.warn(
+        file,
+        `parks.count is ${parks.count} but only ${parkList.length} park(s) are described`
+      );
     }
   } else if (parkList.length > 0) {
     report.err(file, `parks.count is null but parks[] describes ${parkList.length} park(s)`);

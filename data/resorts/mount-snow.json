@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "mount-snow",
+    "name": "Mount Snow",
+    "aka": [
+      "Mt. Snow",
+      "Carinthia"
+    ],
+    "state": "VT",
+    "region": "Southern Vermont",
+    "town": "West Dover",
+    "lat": 42.9603,
+    "lon": -72.9204,
+    "website": "https://www.mountsnow.com"
+  },
+  "size": {
+    "verticalDrop": 1700,
+    "skiableAcres": 601,
+    "trailCount": 86,
+    "liftCount": 18,
+    "longestRun": null,
+    "summitElevation": 3600,
+    "baseElevation": 1900,
+    "annualSnowfallAvg": 150,
+    "snowmakingPercent": 83,
+    "nightSkiing": false,
+    "source": "https://www.mountsnow.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 16,
+    "percentIntermediate": 66,
+    "percentAdvanced": 18,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "Mount Snow publishes a three-tier split, so percentExpert is null and the 18% top tier sits in percentAdvanced. That 66% intermediate figure is the defining number - Mount Snow is an unusually homogeneous mountain, with the difficult skiing concentrated almost entirely on the North Face, a separate front that is kept ungroomed and skis nothing like the rest of the resort. The 601 acres includes the 100-acre Carinthia face, which is given over entirely to terrain parks.",
+    "source": "https://www.mountsnow.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Epic Pass",
+      "type": "epic",
+      "access": "Unlimited",
+      "blackouts": "None",
+      "verifiedOn": "2026-08-24",
+      "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 1089,
+    "currency": "USD",
+    "notes": "2026-27 season. Vail prices day tickets dynamically by date and publishes no fixed window rate, so the ticket fields are null. The season pass figure is the full Epic Pass; Vail does not sell an unrestricted Mount Snow-only pass.",
+    "verifiedOn": "2026-08-24",
+    "source": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Mount Snow is two mountains wearing one name, and which one you came for decides everything. The main face is a wide, sunny, relentlessly intermediate mountain - 66% of the trails are blue, the grooming is thorough, and it is the closest serious Vermont skiing to New York and the Connecticut corridor, which is why it is busy in a way southern Vermont mountains generally are not. Then there is Carinthia: an entire 100-acre mountain face given over to nothing but terrain parks, eight of them, which makes it the largest park operation in the East by a distance and one of the few in the country that has produced Olympians in numbers. If you ride park, Mount Snow is not a compromise, it is the destination. The third piece is the North Face, a separate front of steep ungroomed trails including Ripcord, a 37-degree pitch of large unpredictable moguls that is among the steepest lift-served runs in the Northeast. It is small relative to the rest of the mountain and it does not open reliably, but it is real. What Mount Snow lacks is the middle ground between those extremes. The main face will not challenge a strong skier and the North Face will end a weak one, and there is not much in between except very good groomed cruising.",
+    "snowQuality": "At 150 inches Mount Snow gets the least natural snow of any major Vermont resort except Okemo, and its 1,900-foot base is high enough to help but not enough to save it in a warm storm. Snowmaking covers 83% and the operation is genuinely powerful - the resort makes a point of Carinthia’s Gulch being the only Eastern park open top to bottom five days after opening in 2022. The consequence is a mountain that is reliably open and reliably manufactured. The main face is wide and sun-exposed, so a February thaw softens it in the afternoon and refreezes it into fast hardpack overnight. The North Face is north-facing, as the name says, and holds cold snow considerably longer - it is the only part of the mountain where natural snow matters.",
+    "crowds": "The closest big Vermont mountain to the New York metro area, and the busiest southern Vermont resort on a Saturday. The Bluebird Express bubble chair from the main base is the pinch point, backing up hard between nine and eleven, and the main base lots fill early enough that the overflow is a genuine walk. Carinthia has its own base area and its own parking, and functions as a release valve for anyone not riding park as much as for those who are. Epic added destination traffic without adding lift capacity, the same pattern as every Vail property in the East. The compensation is 18 lifts, so the queues move even when they look bad, and a midweek visit is a different mountain entirely.",
+    "difficulty": "Mount Snow rates honestly but its ratings describe a narrow range. The blues are wide, well-groomed and long, and a nervous intermediate will have an excellent time. The North Face is the discontinuity: Ripcord is a genuine expert trail with a maximum pitch over 37 degrees and large, irregular moguls, and the surrounding North Face trails are kept ungroomed as policy. There is essentially nothing between the two - no long moderate blacks to bridge the gap - so an improving skier hits a wall. The other thing to know is that the North Face does not open early and does not open in a thin year, so it is entirely possible to visit Mount Snow twice and never see the difficult half of it.",
+    "keyTrails": [
+      {
+        "name": "Ripcord",
+        "note": "A 37-degree double black on the North Face and one of the steepest lift-served pitches in the Northeast. Large, unpredictable moguls, and short - regulars are blunt that it is steep but does not last long."
+      },
+      {
+        "name": "Fool’s Gold",
+        "note": "A mile-long progression park on Carinthia scattered with jumps, snow features, rails and boxes. The most popular park on the face for a reason."
+      },
+      {
+        "name": "Inferno",
+        "note": "Carinthia’s expert park, a legend since it hosted the 2000 X Games. XL rails and jumps upwards of 70 feet, and genuinely not for casual riders."
+      },
+      {
+        "name": "Nitro",
+        "note": "A full mile of medium jumps, rails and boxes directly under the Nitro Express Quad. The park most people actually lap."
+      },
+      {
+        "name": "Long John",
+        "note": "The archetypal Mount Snow cruiser off the summit - wide, endlessly groomed, and the trail that explains the 66% intermediate figure."
+      }
+    ],
+    "tidbits": [
+      "Carinthia is an entire 100-acre mountain face given over to eight terrain parks, the largest park operation in the East.",
+      "Carinthia’s parks have produced more Olympians and World Champions than any other terrain park programme in the United States, by the resort’s own account.",
+      "Inferno hosted the 2000 X Games.",
+      "The North Face is kept ungroomed as policy and holds the resort’s only genuinely expert terrain.",
+      "Mount Snow was one of the first ski resorts on the East Coast and is now a Vail property on the Epic Pass."
+    ],
+    "bestFor": [
+      "Terrain park riding, at any level",
+      "Wide intermediate cruising",
+      "Weekend trips from New York",
+      "Reliable manufactured snow"
+    ],
+    "watchOutFor": [
+      "Almost no moderate expert terrain",
+      "North Face opens late and unreliably",
+      "Bluebird Express weekend queues",
+      "Low natural snowfall"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.mountsnow.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+    "trailMap": "https://www.mountsnow.com/the-mountain/about-the-mountain/trail-maps.aspx",
+    "webcams": "https://www.mountsnow.com/the-mountain/mountain-conditions/mountain-cams.aspx",
+    "lodging": null,
+    "twitter": null,
+    "instagram": "https://www.instagram.com/carinthiaparks"
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Mount Snow mountain information (stat block, terrain split)",
+        "url": "https://www.mountsnow.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Mount Snow Carinthia terrain parks page",
+        "url": "https://www.mountsnow.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "OnTheSnow 2026/27 Epic Pass buyer’s guide",
+        "url": "https://www.onthesnow.com/news/epic-pass-buyers-guide/",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Vermont Ski + Ride, The Tough List (Ripcord pitch)",
+        "url": "https://vtskiandride.com/the-tough-list-vermonts-toughest-trails/",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Vermont night skiing list",
+        "url": "https://www.vermontlifttickets.com/night-skiing/",
+        "accessedOn": "2026-08-24"
+      }
+    ],
+    "verifiedOn": "2026-08-24",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "The Carinthia page notes features may include half pipes and quarter pipes but names no maintained pipe and publishes no dimensions"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "size.longestRun": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Neither the resort’s mountain information page nor OnTheSnow publishes a longest-run figure"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Vermont’s published list of areas operating at night"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Resort publishes a three-tier difficulty scheme, so no fourth-tier figure exists to source"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "The North Face is the bump terrain and is kept ungroomed as policy - the resort says so directly. Everything on the main face is groomed nightly, and Carinthia is a park face, so bumps at Mount Snow exist in exactly one place and nowhere else.",
+    "namedRuns": [
+      {
+        "name": "Ripcord",
+        "difficulty": "double-black",
+        "reliability": "reliable",
+        "note": "A 37-degree pitch of large, unpredictable moguls and one of the steepest lift-served runs in the Northeast. Short, and skier consensus is consistent that it is steeper than it is long."
+      },
+      {
+        "name": "Fallen Timbers",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "North Face ungroomed terrain that bumps up alongside Ripcord and offers a more sustained if less severe line."
+      },
+      {
+        "name": "Jaws of Death",
+        "difficulty": "double-black",
+        "reliability": "variable",
+        "note": "The other named North Face steep. Ungroomed by policy, but the whole face opens late and closes in a thin year."
+      }
+    ],
+    "quality": "Good when open, and that qualifier is doing real work. The North Face is north-facing and holds cold snow, so the bumps that form there are softer and better-shaped than anything on the main face would be, and because the pod is ungroomed as policy they build properly rather than being reset. The problem is availability: the North Face needs cover, opens later than the rest of the mountain, and in a lean season may not open at all. Ripcord’s reputation among bump skiers is genuine but so is the complaint that it is over almost as soon as it starts.",
+    "bestTiming": "Midwinter once the North Face has opened and the base is deep, and spring, when the pitch softens. Do not plan a bump trip here in December.",
+    "bumpCulture": "A modest but real scene: the annual Glade-iator competition is held on Ripcord’s 37-degree pitch. Nothing on the scale of Killington’s Bear Mountain Mogul Challenge, and the resort’s competitive identity is overwhelmingly freestyle rather than moguls.",
+    "source": "https://vtskiandride.com/the-tough-list-vermonts-toughest-trails/",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 8,
+    "parks": [
+      {
+        "name": "Grommet",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "XS features with its own covered surface lift - the place to learn the basics without sharing a park with anyone doing 70-foot jumps."
+      },
+      {
+        "name": "The Gulch",
+        "size": "small",
+        "level": "Progression",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Where Carinthia started in 1992. The early-season park, with a jump line and a rail line spread across the wide bottom section."
+      },
+      {
+        "name": "Fool’s Gold",
+        "size": "medium",
+        "level": "Progression to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A winding, flowing mile-long trail scattered with jumps, snow features, rails and boxes. The most popular park on the face."
+      },
+      {
+        "name": "Nitro",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A full mile directly under the Nitro Express Quad, stocked with medium jumps, rails and boxes."
+      },
+      {
+        "name": "The Farm",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Volcanoes, hips, jumps, rails, boxes and tanks. Ridden for its flow and variety rather than its size."
+      },
+      {
+        "name": "Prospector",
+        "size": "medium",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "All-natural features - log rails, rock drops, wooden wall rides. The most distinctive park on the mountain."
+      },
+      {
+        "name": "Junkyard",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Technical rail combos, big tanks and a stair set, at the bottom of the Nitro Express. Home of the Carinthia Classic rail jam and monthly night sessions."
+      },
+      {
+        "name": "Inferno",
+        "size": "large",
+        "level": "Expert only",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": 70,
+        "boxes": null,
+        "rails": null,
+        "note": "XL rails and jumps upwards of 70 feet. A legend since the 2000 X Games and explicitly not for the faint of heart."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": true,
+    "progression": "The most complete progression ladder in the East, and the reason Carinthia works for families as well as pros: Grommet with its own lift for absolute beginners, The Gulch and Fool’s Gold in the middle, Junkyard and Inferno at the top. You can spend a season moving up one face.",
+    "rebuildCadence": "Maintained across the whole face all season - the resort’s park crew treats Carinthia as its primary product rather than as an add-on to the ski mountain.",
+    "overview": "Not a terrain park but a terrain park mountain: 100 acres, eight parks, its own base area and its own parking. There is nothing else like it in the East, and it is the reason a large share of Mount Snow’s visitors come.",
+    "reputation": "The benchmark. Carinthia is the best terrain park operation in the East by common consent and one of the strongest in the country, and the resort’s claim to have produced more Olympians and World Champions than any other US park programme is not seriously disputed. If you ride park in New England, this is the standard everything else is measured against.",
+    "source": "https://www.mountsnow.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
+}

@@ -1,8 +1,49 @@
 {
-  "generatedAt": "2026-08-25T01:25:46.797Z",
+  "generatedAt": "2026-08-25T01:44:49.692Z",
   "schemaVersion": 3,
-  "count": 8,
+  "count": 12,
   "resorts": [
+    {
+      "slug": "burke",
+      "name": "Burke Mountain",
+      "state": "VT",
+      "region": "Northeast Kingdom",
+      "town": "East Burke",
+      "lat": 44.57,
+      "lon": -71.895,
+      "website": "https://www.skiburke.com",
+      "verticalDrop": 2011,
+      "skiableAcres": 178,
+      "trailCount": 56,
+      "liftCount": 5,
+      "annualSnowfallAvg": 137,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "2 days"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "mogulPresence": "common",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Empty lifts on a powder day",
+        "Unmarked glade skiing",
+        "Big vertical without crowds",
+        "Strong skiers on a budget"
+      ],
+      "officialSnowReport": "https://www.skiburke.com/mountain/conditions",
+      "verifiedOn": "2026-08-24"
+    },
     {
       "slug": "jay-peak",
       "name": "Jay Peak Resort",
@@ -138,6 +179,47 @@
       "verifiedOn": "2026-08-20"
     },
     {
+      "slug": "mount-snow",
+      "name": "Mount Snow",
+      "state": "VT",
+      "region": "Southern Vermont",
+      "town": "West Dover",
+      "lat": 42.9603,
+      "lon": -72.9204,
+      "website": "https://www.mountsnow.com",
+      "verticalDrop": 1700,
+      "skiableAcres": 601,
+      "trailCount": 86,
+      "liftCount": 18,
+      "annualSnowfallAvg": 150,
+      "snowmakingPercent": 83,
+      "nightSkiing": false,
+      "passTypes": [
+        "epic"
+      ],
+      "passes": [
+        {
+          "name": "Epic Pass",
+          "type": "epic",
+          "access": "Unlimited"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1089,
+      "mogulPresence": "common",
+      "parkCount": 8,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Terrain park riding, at any level",
+        "Wide intermediate cruising",
+        "Weekend trips from New York",
+        "Reliable manufactured snow"
+      ],
+      "officialSnowReport": "https://www.mountsnow.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-24"
+    },
+    {
       "slug": "okemo",
       "name": "Okemo Mountain Resort",
       "state": "VT",
@@ -177,6 +259,52 @@
       ],
       "officialSnowReport": "https://www.okemo.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
       "verifiedOn": "2026-08-22"
+    },
+    {
+      "slug": "pico",
+      "name": "Pico Mountain",
+      "state": "VT",
+      "region": "Central Vermont",
+      "town": "Mendon",
+      "lat": 43.6386,
+      "lon": -72.8343,
+      "website": "https://www.picomountain.com",
+      "verticalDrop": 1967,
+      "skiableAcres": 468,
+      "trailCount": 58,
+      "liftCount": 6,
+      "annualSnowfallAvg": 250,
+      "snowmakingPercent": 75,
+      "nightSkiing": false,
+      "passTypes": [
+        "ikon"
+      ],
+      "passes": [
+        {
+          "name": "Ikon Pass",
+          "type": "ikon",
+          "access": "7 days, shared across Killington and Pico"
+        },
+        {
+          "name": "Ikon Base Pass",
+          "type": "ikon",
+          "access": "5 days, shared across Killington and Pico"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "mogulPresence": "common",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Big vertical with no queue",
+        "Escaping Killington on a Saturday",
+        "Natural glade bumps",
+        "High base elevation in a thaw"
+      ],
+      "officialSnowReport": "https://www.picomountain.com/the-mountain/conditions-weather/mountain-report/",
+      "verifiedOn": "2026-08-24"
     },
     {
       "slug": "smugglers-notch",
@@ -259,6 +387,47 @@
       ],
       "officialSnowReport": "https://www.stowe.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
       "verifiedOn": "2026-08-22"
+    },
+    {
+      "slug": "stratton",
+      "name": "Stratton Mountain Resort",
+      "state": "VT",
+      "region": "Southern Vermont",
+      "town": "Stratton",
+      "lat": 43.085,
+      "lon": -72.9267,
+      "website": "https://www.stratton.com",
+      "verticalDrop": 2003,
+      "skiableAcres": 670,
+      "trailCount": 99,
+      "liftCount": 14,
+      "annualSnowfallAvg": 126,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "ikon"
+      ],
+      "passes": [
+        {
+          "name": "Ikon Pass",
+          "type": "ikon",
+          "access": "Unlimited"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1399,
+      "mogulPresence": "occasional",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Mixed-ability groups",
+        "Learning on wide terrain",
+        "Immaculate grooming",
+        "Ski-in ski-out village"
+      ],
+      "officialSnowReport": "https://www.stratton.com/the-mountain/conditions",
+      "verifiedOn": "2026-08-24"
     },
     {
       "slug": "sugarbush",

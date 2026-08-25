@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "burke",
+    "name": "Burke Mountain",
+    "aka": [
+      "Burke",
+      "Burke Mountain Resort"
+    ],
+    "state": "VT",
+    "region": "Northeast Kingdom",
+    "town": "East Burke",
+    "lat": 44.57,
+    "lon": -71.895,
+    "website": "https://www.skiburke.com"
+  },
+  "size": {
+    "verticalDrop": 2011,
+    "skiableAcres": 178,
+    "trailCount": 56,
+    "liftCount": 5,
+    "longestRun": 2.2,
+    "summitElevation": 3267,
+    "baseElevation": 1210,
+    "annualSnowfallAvg": 137,
+    "snowmakingPercent": null,
+    "nightSkiing": false,
+    "source": "https://www.onthesnow.com/vermont/burke-mountain/ski-resort",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 8,
+    "percentIntermediate": 48,
+    "percentAdvanced": 33,
+    "percentExpert": 12,
+    "glades": true,
+    "difficultyNotes": "Burke’s own site returned 404 on every statistics URL tried, so the stat block is OnTheSnow’s. The percentages sum to 101 after rounding. The 178-acre figure counts marked trails; Burke’s glade network is extensive and only partly signed - the eastside glades (Sasquatch, Throbulator, Caveman) fill in first and the westside ones (Birches, Jungle) last - and unmarked tree skiing off East Bowl is not in the acreage at all. The 8% beginner figure is the lowest of any Vermont resort on this site and is accurate: Burke is a hard mountain with a small learning area attached.",
+    "source": "https://www.onthesnow.com/vermont/burke-mountain/ski-resort",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "2 days",
+      "blackouts": "Indy Base and Indy AddOn Base are blacked out over the Christmas, MLK weekend and Presidents’ Week holiday periods; Indy+ has no blackouts. Exact 2026-27 dates are not published until autumn 2026.",
+      "verifiedOn": "2026-08-24",
+      "source": "https://www.indyskipass.com/blackout-dates-reservations"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "No adult ticket or season pass rate could be sourced: skiburke.com returned 404 on every pricing URL attempted, including the winter day tickets page linked from search results. Nothing here is estimated. Burke joined the Indy Pass for the 2025-26 season and remains on it; Indy Pass holders must redeem at Guest Relations in the Sherburne Lodge before riding.",
+    "verifiedOn": "2026-08-24",
+    "source": "https://www.indyskipass.com/our-resorts/burke-mountain",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Burke is the best ski mountain in New England that almost nobody skis. It has 2,011 feet of vertical - more than Stowe’s lift-served drop - a genuinely steep and varied trail network, one of the most extensive glade systems in the state, and on a normal Saturday you can lap the Mid-Burke Express without ever waiting. The reason is location: Burke sits in the Northeast Kingdom, three and a half hours from Boston and past the point where most day-trippers turn around, and it has spent decades as the training hill for Burke Mountain Academy rather than as a destination resort. The skiing is the draw and there is not much else. The base area is modest, the lodging is limited, and the mountain runs two high-speed quads and three surface lifts and nothing more. What you get in exchange is an 8% beginner mountain - the lowest share on this site - where nearly half the terrain is advanced or expert, the glades hold snow for days because so few people are in them, and East Bowl gives you a thousand feet of ungroomed, heavily featured fall line with nobody on it. Burke has also had a difficult ownership history, having been caught up in the same EB-5 fraud that put Jay Peak into receivership. The skiing was never the problem.",
+    "snowQuality": "Burke averages around 137 inches by independent measure, which is modest for northern Vermont and well behind Jay Peak forty minutes north. Snowmaking covers roughly 125 of 178 acres, so the marked trails are reliable, but the glades - which are the actual reason to ski Burke - are entirely natural and entirely dependent on cover. The eastside glades fill in first and the westside ones last, so in a marginal year the mountain skis considerably smaller than the trail map suggests. The compensation is traffic: with so few skiers on the hill, what falls stays skiable for days rather than hours, and a midweek visit three days after a storm still turns up untracked lines in the trees.",
+    "crowds": "There essentially are none, and that is the single best thing about the place. Two high-speed quads serving a mountain this size would produce queues anywhere else in Vermont; at Burke they produce empty chairs. The Mid-Burke Express is the workhorse and the Sherburne base is where everything starts. The one population that is always present is Burke Mountain Academy - the mountain is the academy’s training ground, so expect race courses on some trails and a lot of very fast teenagers. Weekends bring a modest Northeast Kingdom crowd and the occasional Indy Pass visitor since Burke joined for 2025-26, but nothing that approaches a lift line.",
+    "difficulty": "Burke rates honestly and is genuinely hard. Only 8% of the terrain is beginner and the mountain does not pretend otherwise - this is not a place to learn. Nearly half the trails are advanced or expert, there are half a dozen ungroomed single blacks ranging from short cut-throughs to long wooded pitches, and East Bowl is over a thousand vertical feet of ungroomed featured terrain covering most of the upper mountain. The glades are the real test and many are unmarked, which means route-finding is part of the skiing in a way it is not at a signed resort. A confident intermediate will find plenty; a nervous one will find the mountain unwelcoming.",
+    "keyTrails": [
+      {
+        "name": "East Bowl",
+        "note": "Over a thousand feet of ungroomed, heavily featured terrain covering almost the whole upper mountain, with unmarked glades off the sides where the untouched snow is."
+      },
+      {
+        "name": "Doug’s Drop",
+        "note": "A giant-slalom cruiser that holds the fall line down the front side, and one of the trails where moguls reliably form."
+      },
+      {
+        "name": "Willoughby",
+        "note": "The other front-side fall-line cruiser, named for the lake it looks out over. Fast and long."
+      },
+      {
+        "name": "Sasquatch",
+        "note": "The pick of the eastside glades - fills in first, holds bumps and trees, and is short enough to lap."
+      },
+      {
+        "name": "Fox’s Folly",
+        "note": "Bumps up under the chair, so the ride gives you a full preview of the line you are about to ski."
+      }
+    ],
+    "tidbits": [
+      "Burke’s 2,011-foot vertical drop is larger than Stowe’s lift-served drop, on a mountain with a fraction of the traffic.",
+      "The mountain is the training ground for Burke Mountain Academy, the oldest ski academy in the United States.",
+      "Only 8% of the terrain is rated beginner - the smallest share of any resort in this guide.",
+      "Burke joined the Indy Pass for the 2025-26 season; pass holders redeem at Guest Relations in the Sherburne Lodge before riding.",
+      "The resort was caught up in the same EB-5 investment fraud that placed Jay Peak into federal receivership."
+    ],
+    "bestFor": [
+      "Empty lifts on a powder day",
+      "Unmarked glade skiing",
+      "Big vertical without crowds",
+      "Strong skiers on a budget"
+    ],
+    "watchOutFor": [
+      "Three and a half hours from Boston",
+      "Almost no beginner terrain",
+      "Glades need real cover",
+      "Very limited base facilities"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.skiburke.com/mountain/conditions",
+    "trailMap": null,
+    "webcams": null,
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Burke resort overview (primary stat block)",
+        "url": "https://www.onthesnow.com/vermont/burke-mountain/ski-resort",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Indy Pass, Burke Mountain resort page",
+        "url": "https://www.indyskipass.com/our-resorts/burke-mountain",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Indy Pass blackout dates and reservations",
+        "url": "https://www.indyskipass.com/blackout-dates-reservations",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "PeakRankings Burke review (glade and ungroomed terrain detail)",
+        "url": "https://www.peakrankings.com/content/burke",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Vermont night skiing list",
+        "url": "https://www.vermontlifttickets.com/night-skiing/",
+        "accessedOn": "2026-08-24"
+      }
+    ],
+    "verifiedOn": "2026-08-24",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No terrain park page could be reached on skiburke.com and OnTheSnow lists no park detail"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No pipe is mentioned in any reachable source"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "skiburke.com returned 404 on every pricing URL tried"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "skiburke.com returned 404 on every pricing URL tried"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "skiburke.com returned 404 on every pricing URL tried, including the winter day tickets page"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "skiburke.com returned 404 on every pricing URL tried"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Vermont’s published list of areas operating at night"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Only an acreage (125 ac) is published; skiburke.com returned 404 on every statistics URL tried"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "Burke leaves a large share of its steep terrain ungroomed - skier accounts describe half a dozen ungroomed single blacks alongside the marked glades - and East Bowl is ungroomed across its full thousand-foot pitch. With almost no traffic to flatten what forms, bumps develop and survive far longer here than at a busier mountain.",
+    "namedRuns": [
+      {
+        "name": "Wilderness",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Named consistently by regulars as one of the reliable bump lines on the mountain."
+      },
+      {
+        "name": "Doug’s Drop",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "A fall-line cruiser that bumps up between grooming passes, and one of the few places at Burke where the bumps are on a wide trail."
+      },
+      {
+        "name": "Fox’s Folly",
+        "difficulty": "black",
+        "reliability": "reliable",
+        "note": "Bumps directly under the chair, so you get a full inspection of the line on the way up."
+      },
+      {
+        "name": "East Bowl",
+        "difficulty": "double-black",
+        "reliability": "variable",
+        "note": "Not a bump run so much as a thousand feet of ungroomed featured terrain where bumps are one of several things you will encounter."
+      }
+    ],
+    "quality": "Underrated, for the same reason everything at Burke is: nobody is there. Bumps that form survive for days rather than being skied out by lunchtime, so the lines are better developed and better preserved than at a resort with ten times the traffic. The limitation is cover - snowmaking reaches roughly 125 of 178 acres and none of the glades, so a thin season closes the interesting terrain outright. Skier consensus is that the eastside glades (Sasquatch, Throbulator, Caveman) offer the best combination of bumps and trees and fill in earliest.",
+    "bestTiming": "Two or three days after a storm, midweek, once the base is deep enough for the glades. Burke holds snow long enough that you do not need to chase the storm the way you do at a busier mountain.",
+    "bumpCulture": "No competitions and no organised bump scene. Burke’s competitive identity is alpine racing through Burke Mountain Academy, not freestyle.",
+    "source": "https://www.peakrankings.com/content/burke",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": null,
+    "reputation": null,
+    "source": "https://www.onthesnow.com/vermont/burke-mountain/ski-resort",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
+}

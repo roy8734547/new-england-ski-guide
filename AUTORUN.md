@@ -1,5 +1,41 @@
 # AUTORUN.md — the no-intervention run
 
+## ▶ THE ONLY PROMPT YOU NEED (re-pasteable)
+
+Part A (schema v3) is done. Paste this to run everything else. It is idempotent — if the
+session runs out of context, paste the exact same text again and it resumes correctly.
+
+```
+Resume the unattended autorun. Do not reply with a plan, do not ask me anything, do not
+stop for review. I am not watching.
+
+FIRST, orient yourself: read PROGRESS.md if it exists, list data/resorts/ to see which
+resorts are done, and run `git log --oneline | head -20`. Work out from that exactly what
+has already been completed and start from the next unfinished unit. Never redo a completed
+unit; never skip an unfinished one.
+
+THEN read AUTORUN.md and follow it — sections 1 (decisions already made), 2 (decision
+policy for anything unforeseen), 3 (the drift failure mode and its three defenses), 4
+(state files) and 6 (context exhaustion) all apply exactly as written. Part A is complete;
+your work is Parts B through G.
+
+Reminders that override anything in the older planning files:
+- There are no review stops anywhere in this run. Every "STOP and show me" is cancelled.
+- Anything not already decided, you decide, using section 2's policy. Log it to
+  DECISIONS.md and keep moving. Do not ask.
+- Never create a GitHub repo, add a remote, push, or deploy. Write the commands into
+  HANDOFF.md instead.
+- Update PROGRESS.md immediately after each unit, not at the end. It is the only thing that
+  makes this resumable.
+- If you run low on context: finish the current unit, commit, update PROGRESS.md, and print
+  "AUTORUN PAUSED". Do not start a unit you cannot finish.
+
+Begin now.
+```
+
+---
+
+
 One prompt. Runs schema v3, all 37 remaining resorts, the reviews pass, the two stub pages,
 and the public-site polish, without stopping to ask anything.
 

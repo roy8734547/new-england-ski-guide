@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "stratton",
+    "name": "Stratton Mountain Resort",
+    "aka": [
+      "Stratton"
+    ],
+    "state": "VT",
+    "region": "Southern Vermont",
+    "town": "Stratton",
+    "lat": 43.085,
+    "lon": -72.9267,
+    "website": "https://www.stratton.com"
+  },
+  "size": {
+    "verticalDrop": 2003,
+    "skiableAcres": 670,
+    "trailCount": 99,
+    "liftCount": 14,
+    "longestRun": 3,
+    "summitElevation": 3875,
+    "baseElevation": 1872,
+    "annualSnowfallAvg": 126,
+    "snowmakingPercent": null,
+    "nightSkiing": false,
+    "source": "https://www.onthesnow.com/vermont/stratton-mountain/ski-resort",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 41,
+    "percentIntermediate": 31,
+    "percentAdvanced": 17,
+    "percentExpert": 11,
+    "glades": null,
+    "difficultyNotes": "Stratton’s own statistics page is JavaScript-rendered and returned nothing to either the fetch tool or curl, so the whole stat block is OnTheSnow’s. The 41% beginner figure is the highest of any large Vermont resort and is worth reading literally: Stratton is a broad, gentle mountain with a small pocket of steep terrain rather than a mountain with a beginner area.",
+    "source": "https://www.onthesnow.com/vermont/stratton-mountain/ski-resort",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Ikon Pass",
+      "type": "ikon",
+      "access": "Unlimited",
+      "blackouts": "None",
+      "verifiedOn": "2026-08-24",
+      "source": "https://www.onthesnow.com/news/ikon-pass-buyers-guide/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 1399,
+    "currency": "USD",
+    "notes": "2026-27 season. Alterra prices day tickets dynamically and publishes no window rate, so the ticket fields are null rather than estimated. The season pass figure is the full Ikon Pass, which is how unlimited Stratton access is bought; the cheaper Ikon Base carries restrictions here.",
+    "verifiedOn": "2026-08-24",
+    "source": "https://www.onthesnow.com/news/ikon-pass-buyers-guide/",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Stratton is the most comfortable big mountain in southern Vermont and it has organised itself entirely around that. The trails are wide, the grooming is thorough, the gondola runs from a pedestrian village of shops and restaurants that would not look out of place at a European resort, and 41% of the terrain is rated beginner - the highest share of any large mountain in the state. That number is the mountain. Stratton is a place to cruise, to learn, and to ski comfortably with a group of mixed ability, and it does all of that better than its neighbours. What it is not is a mountain that will frighten you. The steep terrain exists and is genuinely steep - Upper Middlebrook and Test Pilot are real double blacks - but it amounts to a small pocket on a mountain whose character is set by the long, wide, immaculately maintained blue runs that make up the middle third of the trail map. Strong skiers tend to ski Stratton once, enjoy it, and go to Magic or Bromley next time. The other thing to know is the crowd. Stratton is the closest large mountain to New York City that is genuinely a destination rather than a day trip, and the weekend traffic reflects it - a second-home crowd, a lot of racing and freestyle programmes, and a village that is busier than the lift lines suggest.",
+    "snowQuality": "Stratton averages around 126 inches by independent measure, which is modest even by southern Vermont standards, and it compensates with snowmaking across the great majority of the trail network. The result is a predictable, manufactured surface that is very good at being consistent and not very good at being interesting. The mountain sits high enough - a 3,875-foot summit, the highest in southern Vermont - that the upper trails hold cold snow better than Mount Snow twenty miles south, and the top of the gondola is noticeably colder and firmer than the base village on the same morning. After a thaw the wide groomers set up hard and fast, which is precisely the surface Stratton’s regulars want and precisely the one a powder skier will complain about.",
+    "crowds": "The gondola is the bottleneck and everything about the base village funnels into it. On a Saturday between nine and eleven the queue is the longest in southern Vermont, and because the village is arranged around the gondola base there is no natural alternative for a first-time visitor. Regulars ride the Ursa or American Express six-packs instead and reach the same summit with a fraction of the wait. The second-home ownership around Stratton means the mountain fills on Friday evening rather than Saturday morning and empties late on Sunday. Midweek it is genuinely quiet. The village itself is the busiest part of the resort at any hour, which is unusual - most mountains have the opposite problem.",
+    "difficulty": "Stratton rates soft on the easy end and honestly at the top. The greens are genuinely gentle and the blues are wide and forgiving, which makes the beginner-to-intermediate progression one of the best in the region. Where it gets interesting is a narrow band: Upper Middlebrook, Test Pilot and Upper Spruce are real steeps with natural features, and Kidderbrook Ravine holds bumps. But there are only a handful of them, and a strong skier will have skied all the difficult terrain by lunchtime on day one. Compared with Killington an hour north, Stratton has perhaps a fifth of the genuinely hard skiing.",
+    "keyTrails": [
+      {
+        "name": "Upper Middlebrook",
+        "note": "The steepest sustained pitch on the mountain and one of the few places Stratton is genuinely demanding. Left ungroomed often enough to bump up."
+      },
+      {
+        "name": "Test Pilot",
+        "note": "A real double black with steep drops and tight turns, and the trail regulars name when defending Stratton’s expert credentials."
+      },
+      {
+        "name": "Kidderbrook Ravine",
+        "note": "Steeper than the map suggests, with natural features and a bump line when it is left alone. Quieter than the main face."
+      },
+      {
+        "name": "Upper Spruce",
+        "note": "The other advanced pitch worth doing, with a steeper fall line than anything on the gondola side."
+      },
+      {
+        "name": "Downtowner",
+        "note": "The archetypal Stratton cruiser - wide, long, perfectly groomed and completely unthreatening. Also one of the mogul learning areas."
+      }
+    ],
+    "tidbits": [
+      "Stratton’s 3,875-foot summit is the highest in southern Vermont.",
+      "The resort claims 41% beginner terrain, the largest share of any major Vermont mountain.",
+      "Snowboarding was effectively born here: Jake Burton Carpenter tested early boards at Stratton, and the resort was among the first in the East to allow them.",
+      "The base village is pedestrian-only and arranged around the gondola, which is why the gondola queue is worse than the mountain’s lift capacity would suggest."
+    ],
+    "bestFor": [
+      "Mixed-ability groups",
+      "Learning on wide terrain",
+      "Immaculate grooming",
+      "Ski-in ski-out village"
+    ],
+    "watchOutFor": [
+      "Gondola queues on weekends",
+      "Very little expert terrain",
+      "Low natural snowfall",
+      "New York weekend crowd"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.stratton.com/the-mountain/conditions",
+    "trailMap": "https://www.stratton.com/the-mountain/trail-maps",
+    "webcams": null,
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "OnTheSnow Stratton resort overview (primary stat block)",
+        "url": "https://www.onthesnow.com/vermont/stratton-mountain/ski-resort",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "OnTheSnow 2026/27 Ikon Pass buyer’s guide",
+        "url": "https://www.onthesnow.com/news/ikon-pass-buyers-guide/",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Vermont night skiing list",
+        "url": "https://www.vermontlifttickets.com/night-skiing/",
+        "accessedOn": "2026-08-24"
+      },
+      {
+        "label": "Vermont Ski + Ride, The Tough List (expert trails)",
+        "url": "https://vtskiandride.com/the-tough-list-vermonts-toughest-trails/",
+        "accessedOn": "2026-08-24"
+      }
+    ],
+    "verifiedOn": "2026-08-24",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Stratton’s terrain parks page is JavaScript-rendered and returned no content to the fetch tool or to curl, and OnTheSnow lists no park detail. Third-party summaries describe five parks but no citable list could be read directly"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "No pipe is listed in any source that could be read"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Dynamic date-based pricing; no fixed window or advance rate is published"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.vermontlifttickets.com/night-skiing/",
+      "verifiedOn": "2026-08-24",
+      "note": "Not on Vermont’s published list of areas operating at night"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-24",
+      "note": "Only an acreage (474 ac) is published; the resort’s own statistics page is JavaScript-rendered and could not be read"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Stratton grooms the great majority of its 99 trails nightly, which is the point of the place. Bumps form on a small set of ungroomed steeps on the upper mountain, and the resort separately builds dedicated mogul learning areas on gentler trails - White Birch, Daniel Webster and Downtowner - which is an unusual and genuinely useful thing to do.",
+    "namedRuns": [
+      {
+        "name": "Upper Middlebrook",
+        "difficulty": "double-black",
+        "reliability": "variable",
+        "note": "The steepest pitch on the mountain and the most likely place to find real bumps, when it is left ungroomed."
+      },
+      {
+        "name": "Kidderbrook Ravine",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Natural features and a bump line on a quieter part of the hill. Depends entirely on the grooming call."
+      },
+      {
+        "name": "Downtowner",
+        "difficulty": "blue",
+        "reliability": "reliable",
+        "note": "Not a bump run in the usual sense - one of the resort’s built mogul learning areas, seeded on gentle terrain so beginners can learn the movement safely."
+      }
+    ],
+    "quality": "Thin, and deliberately so. What natural bumps exist are on a handful of short upper-mountain steeps and are groomed away often enough that you cannot plan around them. The mogul learning areas are the more interesting story: seeded bumps on green and blue terrain are rare in New England and are a better introduction to the discipline than being sent down something steep. A skier who wants real bumps should go to Killington.",
+    "bestTiming": "Late in a weekend once traffic has built the upper-mountain lines, and spring, when the crew backs off the grooming. There is no reliable midwinter window.",
+    "bumpCulture": "No mogul competition. Stratton’s competitive energy goes into snowboarding and freestyle - it is one of the most important mountains in the history of the sport - rather than into bumps.",
+    "source": "https://www.onthesnow.com/vermont/stratton-mountain/ski-resort",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": null,
+    "reputation": "Stratton is historically one of the most significant freestyle and snowboarding mountains in the East - it is where Burton tested early boards - and it runs a substantial park programme and a well-known competition academy. The specifics could not be sourced for this entry, which is a gap rather than a judgement.",
+    "source": "https://www.stratton.com/the-mountain/terrain-parks",
+    "verifiedOn": "2026-08-24",
+    "fieldSources": {}
+  }
+}
