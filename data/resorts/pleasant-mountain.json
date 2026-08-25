@@ -137,7 +137,15 @@
       "Prices are behind a JavaScript selector"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Fortieth in the East — still listed under the name Shawnee Peak, which the mountain dropped in 2022. Their acreage matches the resort’s own exactly; the stale name is a fair warning about how current the rest of the entry is.",
+      "rating": 34.9,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.pleasantmountain.com/mountain-report",
     "trailMap": "https://www.pleasantmountain.com/trail-map",

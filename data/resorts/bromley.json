@@ -122,7 +122,22 @@
       "Abrupt step from blue to East Side"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/bromley",
+      "gist": "Facilities 9/10 and crowd flow 8/10, and they credit the south-facing aspect with genuinely warmer skiing than its neighbours plus a base-to-summit high-speed lift most mountains this size do not have. Challenge scores 3/10 with the verdict that a strong intermediate can ski everything here, and the glades are called short and inconsistently open.",
+      "rating": 49,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Thirty-fourth in the East, and the second-lowest Vermont mountain on their list.",
+      "rating": 38,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://bromley.com/snow-report",
     "trailMap": "https://bromley.com/trail-map",

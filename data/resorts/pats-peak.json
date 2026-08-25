@@ -123,7 +123,22 @@
       "Very little advanced terrain"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "The Storm Skiing Journal",
+      "url": "https://www.stormskiing.com/p/podcast-97-pats-peak-general-manager",
+      "gist": "Argues that Pats Peak is the clearest case in New England of operations beating geography: 770 feet of vertical, sixty miles from the ocean, no snowbelt, and routinely the first area in the region to open its entire trail map. Eleven lifts on 115 acres is the specific evidence, and the Indy Pass ranking of third out of eighty-two partners is the outside confirmation.",
+      "rating": null,
+      "ratingScale": null
+    },
+    {
+      "source": "DCSki",
+      "url": "https://www.dcski.com/articles/1538",
+      "gist": "A night-skiing review that treats the mountain’s limitations as the point — short runs, slow fixed doubles and triples, light crowds, and a bonfire. It is direct that this is not where you accumulate vertical, and notes the Cascade Basin glades are not lit.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.patspeak.com/the-mountain/mountain-info/snow-report/",
     "trailMap": "https://www.patspeak.com/the-mountain/mountain-info/trail-map/",

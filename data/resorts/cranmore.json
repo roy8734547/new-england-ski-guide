@@ -144,7 +144,22 @@
       "Busy over February vacation"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Forty-third in the East, near the bottom of a list that is fifty long. Both the snowfall and the acreage they use are above the figures this guide records, so their placing is generous rather than harsh.",
+      "rating": 34.3,
+      "ratingScale": 100
+    },
+    {
+      "source": "The Storm Skiing Journal",
+      "url": "https://www.stormskiing.com/p/podcast-202-jiminy-peak-gm-and-fairbank",
+      "gist": "Treats Cranmore as the Fairbank Group’s current project rather than a finished mountain — the new Fairbank Lodge is read as the first move in the same village-building playbook the family ran at Jiminy Peak decades earlier. The implied judgement is that what Cranmore is now matters less than what the base area is being built toward.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://cranmore.com/snow-report",
     "trailMap": "https://cranmore.com/trail-map",

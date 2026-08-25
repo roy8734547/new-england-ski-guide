@@ -168,8 +168,14 @@ const REVIEW_SPEC = {
   source: { type: 'string' },
   url: { type: 'url' },
   gist: { type: 'string' },
-  rating: { type: 'number', n: true, min: 0, max: 100 },
-  ratingScale: { type: 'number', n: true, min: 1, max: 100 },
+  // `noGap` because most publications do not publish a score at all. A null here
+  // means "this outlet does not rate mountains numerically", which is a finished
+  // answer, not a research task — and schema.md §9 forbids deriving one, so
+  // there is no work a worklist row could prompt. Listing every unscored review
+  // in UNVERIFIED.md would bury the rows that are real gaps under rows that can
+  // never be filled.
+  rating: { type: 'number', n: true, noGap: true, min: 0, max: 100 },
+  ratingScale: { type: 'number', n: true, noGap: true, min: 1, max: 100 },
 };
 
 // Editorial length guidance from schema.md §8, checked as warnings only.
@@ -295,7 +301,7 @@ function checkField(report, file, name, pathStr, spec, value, fieldNotes = {}) {
     // A null that somebody has already investigated is a finished state, not a
     // research task. schema.md §12.
     if (fieldNotes[pathStr]) report.note(file, name, pathStr, fieldNotes[pathStr]);
-    else report.gap(file, name, pathStr);
+    else if (!spec.noGap) report.gap(file, name, pathStr);
     return false;
   }
 

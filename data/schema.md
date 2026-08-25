@@ -346,6 +346,14 @@ paraphrase close enough to be one.
 | `rating` | number \| null | yes | Only where the source publishes a numeric rating. Never derive one. |
 | `ratingScale` | number \| null | yes | The maximum of that scale (`5`, `10`, `100`). |
 
+A null `rating` is the **only** null in this schema that the validator does not put in
+`UNVERIFIED.md`. Most publications do not score mountains numerically, so a null here means
+"this outlet does not publish a rating" rather than "nobody has looked" — and since deriving
+one is forbidden above, there is no work a worklist row could prompt. Listing every unscored
+review would bury the rows that are genuine gaps. `rating` and `ratingScale` are still
+required to be present, still required to be null or a number together, and a rating above
+its own scale is still an error.
+
 **Validator cross-check:** `rating` and `ratingScale` are both-or-neither, and
 `0 ≤ rating ≤ ratingScale`. A rating without its scale is unrenderable.
 

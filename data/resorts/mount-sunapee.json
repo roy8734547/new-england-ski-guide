@@ -124,7 +124,22 @@
       "Almost no expert terrain"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/mount-sunapee",
+      "gist": "Facilities 8/10 and a pair of high-speed quads under two hours from Boston, against challenge 3/10 and terrain diversity 3/10 — they say plainly that the advanced runs lack a sustained pitch. The specific weekend complaint is that both quads back up, and there is nowhere on the hill to stay.",
+      "rating": 47,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Thirty-eighth in the East, the lowest of the four New Hampshire mountains in this guide that they rank. Their acreage matches the resort’s own; their snowfall figure is about seven inches above it.",
+      "rating": 35.6,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.mountsunapee.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.mountsunapee.com/the-mountain/about-the-mountain/trail-maps.aspx",

@@ -127,7 +127,22 @@
       "Glades open rarely"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "SnowBrains",
+      "url": "https://snowbrains.com/crotched-mountain-stunning-fall-views-or-the-best-night-skiing-in-new-hampshire/",
+      "gist": "A straightforwardly favourable write-up that rests the case on the night operation — every acre lit, Tuesday through Saturday, with Midnight Madness on selected weekends — and on fan-gun snowmaking that runs without burning fuel. The nearest thing to a criticism is geographic: southern New Hampshire does not hold natural snow for long.",
+      "rating": null,
+      "ratingScale": null
+    },
+    {
+      "source": "DCSki",
+      "url": "https://www.dcski.com/articles/1725",
+      "gist": "Calls the snowmaking superb and makes the comparison concrete — Crotched open on fourteen or fifteen trails while Mount Sunapee sat on eight. Also notes it is quieter than Vail’s other New Hampshire properties. The caveat is that the black diamonds and the park are pitched at intermediates, so an advanced skier is not the audience.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.crotchedmtn.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.crotchedmtn.com/the-mountain/about-the-mountain/trail-maps.aspx",

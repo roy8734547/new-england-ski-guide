@@ -111,7 +111,15 @@
       "No season pass price published"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/magic-mountain",
+      "gist": "Crowd flow 8/10 and challenge 6/10 — they rate it the most demanding terrain in southern Vermont for its size, and unusually empty. Lifts score 3/10 and resiliency 3/10, and they do not soften either: limited snowmaking across every grade of trail, widespread thin cover, slow lifts, closed most weekdays outside peak season, and a base area they describe as run-down. Their conclusion is that it suits people who actively want that trade.",
+      "rating": 46,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.magicmtn.com/snow-report",
     "trailMap": "https://www.magicmtn.com/trail-map",

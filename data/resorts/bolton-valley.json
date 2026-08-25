@@ -131,7 +131,15 @@
       "Longest run is only 0.6 miles"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/bolton-valley",
+      "gist": "Crowd flow 9/10 is the highest score they give any mountain in this guide, and they rate the glades and the lift-served backcountry as the real draw alongside the night operation. Size 2/10 and challenge 2/10 go the other way, and every one of the six lifts is called slow. Note their footprint and snowmaking figures — 165 acres and 60% coverage — are both well below what other sources give Bolton; this guide stores 300 acres and no sourced coverage figure at all.",
+      "rating": 47,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.boltonvalley.com/winter/trail-maps-snow-reports/snow-reports/",
     "trailMap": "https://www.boltonvalley.com/winter/trail-maps-snow-reports/trail-maps/",

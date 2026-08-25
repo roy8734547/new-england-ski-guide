@@ -124,7 +124,15 @@
       "The pass price rises every quarter"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "The Storm Skiing Journal",
+      "url": "https://www.stormskiing.com/p/podcast-202-jiminy-peak-gm-and-fairbank",
+      "gist": "The most critical outside assessment of Jiminy this guide found, and the most interesting. It rates the mountain better in person than on paper — break left off the six-pack and the lines drop steeply off a ridge in a way that feels like an older ski area — while wishing for more glades and more lifts actually running. It is also blunt that Jiminy is priced and positioned as the country-club option, and that the Fairbank Group, ahead of everyone on snowmaking and lifts for decades, was strangely late to the multi-mountain pass.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.jiminypeak.com/the-mountain/mountain-information/snow-report/",
     "trailMap": "https://www.jiminypeak.com/the-mountain/mountain-information/jiminy-maps/",

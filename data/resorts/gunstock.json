@@ -122,7 +122,22 @@
       "Little genuinely expert terrain"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/gunstock",
+      "gist": "The best aesthetic score of any small New Hampshire mountain they rate, 7/10, on the strength of the Winnipesaukee view, plus snowmaking on all non-glade terrain. Size 2/10, terrain diversity 3/10, challenge 3/10 and no lodging: they treat it as a day trip from Boston and not much more. Their snowfall figure of about 100 inches is twenty short of the county-owned resort’s own.",
+      "rating": 48,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Thirty-seventh in the East, just above Mount Sunapee, on a snow-weighted score — which is a hard system for a mountain whose whole case is manufactured snow.",
+      "rating": 36.4,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.gunstock.com/winter/snow-report/",
     "trailMap": "https://www.gunstock.com/winter/trail-map/",

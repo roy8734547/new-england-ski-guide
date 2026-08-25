@@ -124,7 +124,15 @@
       "No trail information published"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Forty-eighth of fifty, and the higher-placed of the two Massachusetts areas they list. Treat the number carefully: their acreage figure is more than double what the mountain publishes and their snowfall figure is nearly twice what this guide records, so the score is built on a version of Berkshire East that does not exist.",
+      "rating": 31.8,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.berkshireeast.com/winter/mountain-conditions",
     "trailMap": "https://www.berkshireeast.com/plan/trail-maps",

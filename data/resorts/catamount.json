@@ -140,7 +140,15 @@
       "Indy visits need a reservation"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "Indy Pass (Natalie Akers)",
+      "url": "https://www.indyskipass.com/this-is-indy/news/dont-miss-mountain-catamount-ski-resort",
+      "gist": "A signed first-person piece published by the pass operator rather than an independent outlet, so read it as advocacy — but it is specific: Catapult as the double-black worth the trip, a beginner side concentrated enough that a learner never has to cross the mountain, and a stated turnaround in snow quality under the current owners from a reputation for ice on top and slush at the bottom.",
+      "rating": null,
+      "ratingScale": null
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.catamountski.com/winter/the-mountain/mountain-conditions",
     "trailMap": "https://www.catamountski.com/winter/the-mountain/trail-map",

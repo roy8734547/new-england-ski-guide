@@ -132,7 +132,15 @@
       "No stats page on the resort's site"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Thirty-ninth in the East, tied on their score with Pleasant Mountain. Their snowfall figure is twelve inches above the one this guide records and their acreage thirty below it, so the placing rests on numbers that do not quite match ours in either direction.",
+      "rating": 34.9,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.raggedmountainresort.com/mountain-report-cams/",
     "trailMap": "https://www.raggedmountainresort.com/mountain-report-cams/#trails",
