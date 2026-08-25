@@ -105,18 +105,24 @@ function statbar(r) {
 
 // --- live panels -------------------------------------------------------------
 
+/**
+ * These two headings are h2, not h3. They sit directly under the page h1 and
+ * before any section heading, so an h3 here skips a level — which is what axe
+ * flagged. The section headings elsewhere on this page are also h2, and these
+ * two are peers of those, not children of them.
+ */
 function livePanels(r) {
   return el('div', { class: 'panels' },
     el('div', { class: 'panel', id: 'weather-panel' },
       el('div', { class: 'panel__head' },
-        el('h3', {}, 'Weather at the summit'),
+        el('h2', {}, 'Weather at the summit'),
         el('span', { class: 'panel__stamp', id: 'weather-stamp' })),
       el('div', { class: 'panel__body', id: 'weather-body' },
         el('p', { class: 'is-unknown' }, 'Loading forecast…'))),
 
     el('div', { class: 'panel', id: 'snow-panel' },
       el('div', { class: 'panel__head' },
-        el('h3', {}, 'Snow report'),
+        el('h2', {}, 'Snow report'),
         el('span', { class: 'panel__stamp', id: 'snow-stamp' })),
       el('div', { class: 'panel__body', id: 'snow-body' },
         el('p', { class: 'is-unknown' }, 'Loading report…'))));

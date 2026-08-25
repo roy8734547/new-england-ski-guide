@@ -22,7 +22,11 @@
   --bg-inset: #f1f4f8;
   --text: #0d1620;
   --text-muted: #55636f;
-  --text-faint: #8695a3;
+  /* Raised from #8695a3, which was 3.07:1 on white — below AA for normal text,
+     and this token carries every small uppercase label on the site. The gap to
+     --text-muted is now narrow; size, weight and letter-spacing carry the
+     hierarchy instead, because contrast is not the place to spend it. */
+  --text-faint: #616e7a;
   --border: #d6dee7;
   --border-strong: #b4c1cf;
 
@@ -43,6 +47,10 @@
 
   /* Terrain difficulty bar. Standard trail-rating colours. */
   --diff-beginner: #2e9e57;
+  /* The bar-fill green is 3.42:1 on white, which is fine for a 6px band and not
+     fine for 10px bold text. Anywhere a difficulty colour is used as *ink*, use
+     the -ink variant. Only beginner needs one; the other three already pass. */
+  --diff-beginner-ink: #1f7a40;
   --diff-intermediate: #2b6fc4;
   --diff-advanced: #2a3440;
   --diff-expert: #8c2f3d;
@@ -74,7 +82,8 @@
     --bg-inset: #1a222c;
     --text: #e8eef5;
     --text-muted: #94a3b3;
-    --text-faint: #6b7a8a;
+    /* Same fix as light: #6b7a8a was 3.65:1 on --bg-inset. */
+    --text-faint: #8291a1;
     --border: #232d39;
     --border-strong: #38465a;
 
@@ -92,6 +101,7 @@
     --pass-tint: #0a0e13;
 
     --diff-beginner: #4dc07a;
+    --diff-beginner-ink: #4dc07a;  /* 7.6:1 on --bg-raised; no separate ink needed */
     --diff-intermediate: #5c9ee8;
     --diff-advanced: #c6d2df;
     --diff-expert: #e0697c;
@@ -1093,7 +1103,7 @@ table.data td:last-child { width: 100%; }
   white-space: nowrap;
 }
 .bump-tag { border: 1px solid currentColor; }
-.bump-tag--green { color: var(--diff-beginner); }
+.bump-tag--green { color: var(--diff-beginner-ink); }
 .bump-tag--blue { color: var(--diff-intermediate); }
 .bump-tag--black,
 .bump-tag--double-black { color: var(--text); }
@@ -1103,7 +1113,7 @@ table.data td:last-child { width: 100%; }
   color: var(--text-muted);
   font-weight: 600;
 }
-.bump-rel--reliable { color: var(--diff-beginner); }
+.bump-rel--reliable { color: var(--diff-beginner-ink); }
 .bump-rel--variable { color: var(--pass-other); }
 
 .park-list {
@@ -1142,7 +1152,7 @@ table.data td:last-child { width: 100%; }
   white-space: nowrap;
   flex: none;
 }
-.park__size--progression { color: var(--diff-beginner); }
+.park__size--progression { color: var(--diff-beginner-ink); }
 .park__size--small { color: var(--diff-intermediate); }
 .park__size--medium { color: var(--pass-other); }
 .park__size--large { color: var(--diff-expert); }
@@ -1520,4 +1530,26 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
   text-transform: uppercase;
   color: var(--text-muted);
   font-weight: 700;
+}
+
+/* The two live panels' headings are h2 for document outline reasons (they sit
+   directly under the page h1), but they are visually peers of the h3s inside
+   the sections below, so they take that size rather than a section heading's. */
+.panel__head h2 { font-size: 1rem; letter-spacing: -0.01em; }
+
+/* --- reduced motion ------------------------------------------------------- */
+
+/* There is very little motion on this site to begin with — a card lift on hover
+   and Leaflet's pan/zoom easing — but "very little" is not "none", and the
+   setting exists because for some people motion is not a preference. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card:hover { transform: none; }
+  .map-canvas .leaflet-fade-anim .leaflet-tile,
+  .map-canvas .leaflet-zoom-anim .leaflet-zoom-animated { transition: none !important; }
 }

@@ -152,7 +152,7 @@ function fitAll() {
 function focusResort(slug) {
   const marker = markers.get(slug);
   if (!marker) return;
-  map.setView(marker.getLatLng(), Math.max(map.getZoom(), 10), { animate: true });
+  map.setView(marker.getLatLng(), Math.max(map.getZoom(), 10), { animate: !map.__reduceMotion });
   marker.openPopup();
 }
 
@@ -240,12 +240,20 @@ async function main() {
 
   readPalette();
 
+  // Leaflet's pan and zoom easing is driven from JS, so the CSS media query in
+  // site.css cannot switch it off on its own.
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+
   map = L.map('map', {
     center: NEW_ENGLAND_CENTRE,
     zoom: 7,
     scrollWheelZoom: false, // a map that eats the page scroll on a phone is a bug
     worldCopyJump: false,
+    fadeAnimation: !reduceMotion,
+    zoomAnimation: !reduceMotion,
+    markerZoomAnimation: !reduceMotion,
   });
+  map.__reduceMotion = reduceMotion;
   map.attributionControl.setPrefix('');
 
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

@@ -170,7 +170,10 @@ function renderTable(records) {
 
   fill(qs('#compare-table thead'),
     el('tr', {},
-      el('th', { scope: 'col', class: 'col-name' }, ''),
+      // The corner cell. Empty to a sighted reader, but a screen reader
+      // announces every column header, so it needs a name.
+      el('th', { scope: 'col', class: 'col-name' },
+        el('span', { class: 'visually-hidden' }, 'Statistic')),
       records.map((r) => el('th', { scope: 'col', class: 'vs-head' },
         el('a', { href: `resort.html?r=${encodeURIComponent(r.identity.slug)}` }, r.identity.name),
         el('small', {}, [r.identity.town, r.identity.state].filter(Boolean).join(', '))))));
