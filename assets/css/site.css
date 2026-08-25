@@ -1553,3 +1553,37 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
   .map-canvas .leaflet-fade-anim .leaflet-tile,
   .map-canvas .leaflet-zoom-anim .leaflet-zoom-animated { transition: none !important; }
 }
+
+/* --- layout stability ----------------------------------------------------- */
+
+/* Every list on this site is rendered from JSON fetched after first paint, so
+   the footer starts just under the fold and then gets shoved thousands of pixels
+   down — which Lighthouse scores, correctly, as a large layout shift. Reserving
+   a viewport's worth of height puts the footer off-screen from the first frame,
+   so nothing the visitor can see moves when the data lands. A full viewport is
+   what it takes: at 78vh the footer still peeked in at the bottom of a 940px
+   window and then jumped away, which was the entire remaining layout shift on
+   the index. Over-reserving costs a short page one scroll; under-reserving costs
+   every page a visible jump. */
+#main { min-height: 100vh; }
+
+/* Same reasoning one level down: the weather and snow panels fill in after the
+   record renders, and they sit above the fold on a detail page. */
+.panel__body { min-height: 7.5rem; }
+
+/* The filter chips are built from the manifest after first paint, so their
+   containers start at zero width, the flex row wraps differently, and the whole
+   controls block changes height when the data lands. Reserving each group's
+   settled footprint makes the first frame's layout the final layout. The widths
+   are measured, not guessed, and `min()` caps them at the container so a narrow
+   phone does not gain a horizontal scrollbar to satisfy a reservation. */
+.chips { min-height: 1.75rem; }
+
+/* Only above the breakpoint where the row lays out side by side. Below it every
+   group already gets a line of its own, the reserved height alone is enough, and
+   a rem reservation wider than a phone would force a horizontal scrollbar. */
+@media (min-width: 720px) {
+  #filter-state { min-width: 14.75rem; }
+  #filter-pass { min-width: 22.25rem; }
+  #filter-features { min-width: 12.5rem; }
+}
