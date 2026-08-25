@@ -117,7 +117,22 @@
       "No published day-ticket price"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/stowe",
+      "gist": "Scores the expert terrain 8/10 and the lift network 8/10, calling the steeps some of the most demanding on the East Coast. The marks against it are crowd flow at 4/10 — the Mansfield gondola queue specifically — and a resort they judge conservative about opening its best expert runs. Size scores only 3/10.",
+      "rating": 61,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Ranks Stowe first in the East on its Pure Awesomeness Factor, a tenth of a point ahead of Jay Peak, on a system that weights snow quality above almost everything else. Their snowfall figure sits within ten inches of the resort’s own — the two agree here, which is not true of every mountain on their list.",
+      "rating": 67.7,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.stowe.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.stowe.com/the-mountain/about-the-mountain/trail-maps.aspx",

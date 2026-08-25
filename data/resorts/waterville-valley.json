@@ -136,7 +136,22 @@
       "Ticket prices a season out of date"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/waterville-valley",
+      "gist": "Facilities 8/10 and crowd flow 7/10, with the racing and freestyle heritage and the unusually wide upper-mountain intermediate terrain as the draws, plus a bubble lift on a cold summit. Against it: limited terrain at both ends of the ability range, snowmaking infrastructure they call outdated, no true ski-in ski-out lodging, and High Country reachable only by T-bar.",
+      "rating": 54,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Thirty-fifth in the East, well below where PeakRankings puts it. Their vertical figure for Waterville is a thousand feet short of the resort’s own, which is enough on its own to explain the gap.",
+      "rating": 37.3,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.waterville.com/snow-report-maps",
     "trailMap": "https://www.waterville.com/maps",

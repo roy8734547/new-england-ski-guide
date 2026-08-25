@@ -108,7 +108,22 @@
       "Low natural snowfall"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/mount-snow",
+      "gist": "Credits Carinthia’s hundred acres of park as a standout for the East and notes the mountain has real bump terrain, Beartrap included, which is unusual this far south. Navigation and aesthetic both score 3/10, they flag faded trail signage, and the two triples serving the North Face are named as the capacity problem.",
+      "rating": 52,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Twenty-ninth in the East and the lowest-placed Vermont mountain of any size on their list.",
+      "rating": 41.9,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.mountsnow.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.mountsnow.com/the-mountain/about-the-mountain/trail-maps.aspx",

@@ -123,7 +123,22 @@
       "Genuinely severe cold spells"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/sugarloaf",
+      "gist": "Rates Brackett Basin and Burnt Mountain among the best expert terrain on the East Coast and the one-of-a-kind snowfield above treeline as genuinely unlike anything else in the region — then notes that all of it needs a big snow year and rarely opens before mid-February. Resiliency scores 3/10, the front-face trails are called repetitive, and the high-speed quads are over twenty years old.",
+      "rating": 58,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Eighth in the East, the highest-placed Maine mountain, and the same position PeakRankings gives it — two systems with different weightings landing in the same spot.",
+      "rating": 53.2,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.sugarloaf.com/mountain-report",
     "trailMap": "https://www.sugarloaf.com/mountain-info/mountain-maps",

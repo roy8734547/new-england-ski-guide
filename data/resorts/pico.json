@@ -116,7 +116,22 @@
       "Giant Killer is genuinely icy"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/pico",
+      "gist": "Lifts and facilities both 8/10, with well-groomed cruisers across the mountain and the crowd relief that comes from sitting next to Killington. The operational catch is the one that matters: closed Tuesdays and Wednesdays outside holiday weeks, secondary lifts run inconsistently, and Forty Niner still gets congested despite the low visitation.",
+      "rating": 53,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Twelfth in the East, above Okemo, Stratton and Mount Snow — all three of them larger operations with more lifts. On a snow-weighted system Pico’s elevation is what carries it, and it is the highest base elevation in this guide.",
+      "rating": 50.5,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.picomountain.com/the-mountain/conditions-weather/mountain-report/",
     "trailMap": "https://www.picomountain.com/the-mountain/mountain-info/trail-map/",
@@ -153,7 +168,7 @@
         "accessedOn": "2026-08-24"
       }
     ],
-    "verifiedOn": "2026-08-24",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {

@@ -128,7 +128,22 @@
       "Busy over school holidays"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/attitash",
+      "gist": "The lowest score of any Tier A mountain in this guide: lifts 8/10 after the Mountaineer quad, and almost nothing else above 5. They report the resort leaving trail edges ungroomed and failing to get some runs into openable condition, and put its snowfall at barely 100 inches — a third independent figure, below the resort’s 120 and above OnTheSnow’s 88.",
+      "rating": 47,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Twenty-eighth in the East.",
+      "rating": 42,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.attitash.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.attitash.com/the-mountain/about-the-mountain/trail-map.aspx",

@@ -109,7 +109,22 @@
       "No published ticket price"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/jay-peak",
+      "gist": "Gives Jay the highest challenge score of any Vermont mountain they rate, 9/10, and singles out the tram-face chutes and the glades holding powder for days after a storm. Against it: lifts at 4/10, wind holds that leave the Jet chair carrying the mountain, grooming and snowmaking they call lacklustre, and a drive most people underestimate.",
+      "rating": 59,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Second in the East by a tenth of a point, on a system that weights snow quality above almost everything. Jay is the mountain that system is built to reward, so the placing says more about the snowfall than about the lifts or the base area.",
+      "rating": 67.6,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://jaypeakresort.com/skiing-riding/snow-report-maps/snow-report",
     "trailMap": "https://jaypeakresort.com/skiing-riding/snow-report-maps/trail-map",
@@ -141,7 +156,7 @@
         "accessedOn": "2026-08-22"
       }
     ],
-    "verifiedOn": "2026-08-22",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {

@@ -122,7 +122,22 @@
       "Weekends are genuinely packed"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/loon",
+      "gist": "Resiliency 7/10 on the strength of the snowmaking, and they rate it a genuinely good intermediate mountain two hours from Boston. Size scores 3/10 and terrain diversity 4/10; the gondola cabins are called comically tiny, North Peak fills on weekends, and there is still no trail linking the North and South Peak sides. Their conclusion is that other mountains do more with less crowding.",
+      "rating": 51,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Twenty-sixth in the East — the same position PeakRankings gives it, from an entirely different method.",
+      "rating": 43.2,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.loonmtn.com/mountain-report",
     "trailMap": "https://www.loonmtn.com/mountain-maps",

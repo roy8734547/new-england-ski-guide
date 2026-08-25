@@ -139,7 +139,22 @@
       "No published ticket prices"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/sunday-river",
+      "gist": "Describes the eight-peak spread as feeling like it goes on indefinitely, and rates the snowmaking and season length — sometimes open by Halloween — as its real strength. The knock is that the black diamonds are steep but on the easy side of steep, the trail pods are short, and Barker still bottlenecks.",
+      "rating": 56,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Ninth in the East, one place behind Sugarloaf, on a snow-weighted score — the natural-snowfall figure is the thing separating the two Maine mountains here, not the acreage.",
+      "rating": 52.6,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.sundayriver.com/mountain-report",
     "trailMap": "https://www.sundayriver.com/resort-maps",

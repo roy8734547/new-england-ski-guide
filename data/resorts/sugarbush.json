@@ -123,7 +123,22 @@
       "No published day-ticket price"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/sugarbush",
+      "gist": "Scores challenge 8/10 and terrain diversity 7/10, with the backcountry and the views doing most of the work, and credits it with a local feel its neighbours have lost. The complaints are concrete: patchy snowmaking on expert terrain, thin beginner terrain, the distance between Lincoln Peak and Mount Ellen, and some of Vermont’s highest ticket prices with no discount for children over five.",
+      "rating": 59,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Fifth in the East and effectively tied with Killington on their snow-weighted score.",
+      "rating": 61.3,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.sugarbush.com/mountain/conditions",
     "trailMap": "https://www.sugarbush.com/mountain/terrain-and-maps",

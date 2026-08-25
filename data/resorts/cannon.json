@@ -129,7 +129,22 @@
       "Few base facilities"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/cannon",
+      "gist": "Challenge 8/10 and crowd flow 8/10 — they call the steeps some of the best east of the Mississippi and name DJ’s Tramline and Kinsman Glade. The counterweight is resiliency at 3/10: wind exposure and thin natural cover mean more than half the advanced and expert trails can be shut, the bunny hill is a rope tow, and midweek lift operations are cut to save money.",
+      "rating": 53,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Twenty-second in the East, level with Bretton Woods and Mont-Sainte-Anne on their score.",
+      "rating": 45.1,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.cannonmt.com/mountain-report",
     "trailMap": "https://www.cannonmt.com/trail-map",

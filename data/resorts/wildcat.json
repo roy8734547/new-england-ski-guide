@@ -112,7 +112,22 @@
       "No lodging at the mountain"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/wildcat",
+      "gist": "Facilities 9/10 and a long consistent fall line facing Mount Washington, which they treat as the whole point of the place. Size scores 2/10 and resiliency 3/10: the wind exposure that gives it the view regularly shuts the summit quad, and the single upper-mountain green run congests. They read it as a day trip rather than a resort.",
+      "rating": 52,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Eighteenth in the East and the best-placed New Hampshire mountain on their list, above Stratton and every other NH area. Snow-weighted scoring rewards Wildcat’s elevation and its position in Pinkham Notch.",
+      "rating": 47.4,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.skiwildcat.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.skiwildcat.com/the-mountain/about-the-mountain/trail-map.aspx",

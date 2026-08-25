@@ -138,7 +138,22 @@
       "Glades need a real natural base"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/bretton-woods",
+      "gist": "Lifts 8/10, crowd flow 8/10 and an upscale operation they rate as one of the best family destinations in the region. Terrain diversity scores 3/10, and they are unusually blunt about the black runs: comparable to a Massachusetts hill rather than to a serious Eastern mountain.",
+      "rating": 58,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Twenty-fourth in the East, tied with Cannon twenty minutes away — two mountains with almost nothing in common arriving at the same number for opposite reasons.",
+      "rating": 45.1,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.brettonwoods.com/snow-trail-report/",
     "trailMap": "https://www.brettonwoods.com/plan-visit/maps/",

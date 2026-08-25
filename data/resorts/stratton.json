@@ -106,7 +106,22 @@
       "New York weekend crowd"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/stratton",
+      "gist": "Lifts 8/10 and facilities 8/10 against navigation 3/10 and aesthetic 3/10 — a resort they rate on its infrastructure rather than its mountain. The double blacks are called short and frequently groomed, and they are direct about weekend tickets approaching $200 being an unreasonable price for what is on offer.",
+      "rating": 56,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Nineteenth in the East, below Wildcat and Pico, which is what happens to a southern-Vermont mountain when snowfall carries most of the weight.",
+      "rating": 46.6,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.stratton.com/the-mountain/conditions",
     "trailMap": "https://www.stratton.com/the-mountain/trail-maps",

@@ -115,7 +115,22 @@
       "Very limited base facilities"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/saddleback",
+      "gist": "The highest-scoring small mountain in this guide by their reckoning: lifts 9/10 after the Rangeley high-speed quad, navigation 8/10, and lift lines they describe as essentially nonexistent, over a view of wilderness with nothing man-made in it. Size scores 2/10 and they are blunt that a competent skier covers the whole place in a day, eight hours from New York on roads with no phone signal.",
+      "rating": 57,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Twenty-first in the East. The gap between this and their tenth-place finish on PeakRankings is the clearest case on the roster of two rating systems disagreeing about what a ski area is for — one is measuring the experience, the other is measuring the snow.",
+      "rating": 45.4,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.saddlebackmaine.com/mountain-report/",
     "trailMap": "https://www.saddlebackmaine.com/trail-maps/",

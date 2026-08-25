@@ -116,7 +116,22 @@
       "Very limited base facilities"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/burke",
+      "gist": "Lifts 8/10 and low crowds are the case for Burke; size 2/10 and terrain diversity 3/10 are the case against, with several intermediate runs described as access routes rather than destinations. They rate the East Bowl’s thousand feet of ungroomed, featured advanced terrain as better than the acreage suggests, and record 136 inches of snow a year — well short of the northern-Vermont mountains it sits among.",
+      "rating": 53,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Thirty-first in the East. Burke is the clearest example on this roster of a mountain whose vertical drop flatters it: over two thousand feet of it, on 178 acres, in a corner of Vermont that does not get the snow the map implies.",
+      "rating": 40.9,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.skiburke.com/mountain/conditions",
     "trailMap": null,

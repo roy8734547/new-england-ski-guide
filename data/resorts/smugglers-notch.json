@@ -116,7 +116,22 @@
       "No published prices at all"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/smugglers-notch",
+      "gist": "Rates the terrain 8/10 for challenge and praises trails with genuinely winding, narrow profiles rather than cut-to-a-formula fall lines, naming Black Hole as the East’s only triple black. The lift score is 2/10 — every chair a fixed-grip double, some over fifteen minutes — and the beginner area is criticised for a flat catwalk that is the only way back to Morse.",
+      "rating": 53,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Third in the East, ahead of Killington and Sugarbush, on a snow-weighted composite. Their acreage figure is more than three times the 311 acres this guide records and their snowfall figure is around seventy inches higher, so read the placing as their verdict rather than as agreement about the mountain’s dimensions.",
+      "rating": 62.5,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.smuggs.com/conditions/winter-report/",
     "trailMap": "https://www.smuggs.com/conditions-stats/trail-map/",

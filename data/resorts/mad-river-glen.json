@@ -139,6 +139,13 @@
       "gist": "Praises the expert terrain and the uncommercialised, skier-owned feel, but marks it down hard for minimal snowmaking causing wide terrain closures and for slow, low-capacity lifts. Their conclusion is that the skiing is exceptional when the snow is good and that planning a trip in advance is a gamble.",
       "rating": 49,
       "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Sixth in the East, above Sugarloaf and Sunday River, on 115 acres. Nothing else on their list places that high on that little terrain.",
+      "rating": 55.8,
+      "ratingScale": 100
     }
   ],
   "links": {
@@ -187,7 +194,7 @@
         "accessedOn": "2026-08-20"
       }
     ],
-    "verifiedOn": "2026-08-20",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {

@@ -623,7 +623,12 @@ function reviewsSection(r) {
       el('div', { class: 'review__head' },
         el('strong', {}, el('a', { href: rev.url, rel: 'noopener' }, rev.source)),
         has(rev.rating)
-          ? el('span', { class: 'review__score' }, `${fmt(rev.rating)} / ${fmt(rev.ratingScale)}`)
+          // A published score keeps the precision it was published with.
+          // Rounding 45.4 to 45 is not a formatting choice when two mountains on
+          // this roster are separated by three tenths of a point.
+          ? el('span', { class: 'review__score' },
+            `${fmt(rev.rating, { digits: Number.isInteger(rev.rating) ? 0 : 1 })}`
+            + ` / ${fmt(rev.ratingScale)}`)
           : null),
       el('p', {}, rev.gist))),
     el('p', { class: 'provenance' },

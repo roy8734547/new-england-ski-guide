@@ -122,7 +122,22 @@
       "Hardpack after a thaw"
     ]
   },
-  "reviews": [],
+  "reviews": [
+    {
+      "source": "PeakRankings",
+      "url": "https://www.peakrankings.com/content/okemo",
+      "gist": "Confirms the reputation from both ends: lifts 7/10 and dependable grooming across every grade, challenge 4/10 and an explicit \"not your mountain\" for anyone chasing steeps. They also report a decline under Vail — snowmaking they no longer rate best in Vermont, and parking lots filling on ordinary weekends for the first time in memory.",
+      "rating": 52,
+      "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Fourteenth in the East, below Pico twenty minutes up the road, which is what a snow-weighted ranking does to a mountain whose case rests on snowmaking rather than snowfall.",
+      "rating": 49.1,
+      "ratingScale": 100
+    }
+  ],
   "links": {
     "officialSnowReport": "https://www.okemo.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
     "trailMap": "https://www.okemo.com/the-mountain/about-the-mountain/trail-maps.aspx",

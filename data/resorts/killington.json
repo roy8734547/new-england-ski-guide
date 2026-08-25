@@ -134,6 +134,13 @@
       "gist": "Rates Killington the top mountain in Vermont and the strongest all-round option on the East Coast, chiefly on size and snowmaking. Its main complaint is logistical: the mountain is awkward to navigate and moving between areas often costs several lift rides.",
       "rating": 61,
       "ratingScale": 100
+    },
+    {
+      "source": "ZRankings",
+      "url": "https://www.zrankings.com/ski-resorts/east",
+      "gist": "Fourth in the East, behind three northern-Vermont mountains that all out-snow it. On a system weighted toward snow quality, the biggest ski area in the East does not finish first — which is a fair summary of the argument about Killington.",
+      "rating": 61.4,
+      "ratingScale": 100
     }
   ],
   "links": {
@@ -182,7 +189,7 @@
         "accessedOn": "2026-08-20"
       }
     ],
-    "verifiedOn": "2026-08-20",
+    "verifiedOn": "2026-08-25",
     "lastEditedBy": "claude-code"
   },
   "fieldNotes": {
