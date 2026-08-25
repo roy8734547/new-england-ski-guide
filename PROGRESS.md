@@ -32,7 +32,7 @@ skipping a unit.
 | B | Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat | `2f8af90` | 111 / 126 | Two recorded research findings were wrong and were corrected against primary sources — see below. Also added `.claude/` to `.gitignore` at the user's request. |
 | B | Night-skiing negatives re-sourced off Ski NH | `72b5924` | — | Ski NH's list is a curated feature, not a registry. |
 | B | Batch 4: attitash, sunday-river, sugarloaf, saddleback | `12e9972` | 143 / 157 | 1 warning (Saddleback publishes a park count but no park names). |
-| B | Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched | `PENDING` | 180 / 189 | 2 warnings, both correct data. Vail still down, so Sunapee and Crotched lean on OnTheSnow. |
+| B | Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched | `3b41bea` | 180 / 189 | 2 warnings, both correct data. Vail still down, so Sunapee and Crotched lean on OnTheSnow. |
 
 **Part A complete. Batches 2 through 5 complete.** Next unfinished unit: **Part B, Batch 6** —
 pats-peak, magic-mountain, bromley, bolton-valley. No research gathered yet.
@@ -177,7 +177,7 @@ Roster of 37 remaining, from BATCHES.md:
 - [x] Batch 2: stratton, mount-snow, burke, pico — `efb2fde` — 80 unknown / 90 confirmed
 - [x] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat — `2f8af90` — 111 unknown / 126 confirmed
 - [x] Batch 4: attitash, sunday-river, sugarloaf, saddleback — `12e9972` — 143 unknown / 157 confirmed
-- [x] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched — 180 unknown / 189 confirmed
+- [x] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched — `3b41bea` — 180 unknown / 189 confirmed
 - [ ] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley
 - [ ] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount
 - [ ] Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway
