@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 17.
+**Roster target:** 45 resorts. **Current:** 21.
 
 ---
 
@@ -30,9 +30,54 @@ skipping a unit.
 | B | Batch 2: stratton, mount-snow, burke, pico | `efb2fde` | 80 / 90 | Stratton + Burke sites unreadable; both fall back to OnTheSnow. Carinthia's 8 parks recorded in full. |
 | B | Epic/Ikon season pass price correction (5 earlier files) | `ef1167e` | — | Spot-check failure, see INTEGRITY FAILURES. |
 | B | Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat | `2f8af90` | 111 / 126 | Two recorded research findings were wrong and were corrected against primary sources — see below. Also added `.claude/` to `.gitignore` at the user's request. |
+| B | Night-skiing negatives re-sourced off Ski NH | `72b5924` | — | Ski NH's list is a curated feature, not a registry. |
+| B | Batch 4: attitash, sunday-river, sugarloaf, saddleback | `PENDING` | 143 / 157 | 1 warning (Saddleback publishes a park count but no park names). |
 
-**Part A complete. Batches 2 and 3 complete.** Next unfinished unit: **Part B, Batch 4** —
-attitash, sunday-river, sugarloaf, saddleback. No research gathered yet; start from scratch.
+**Part A complete. Batches 2, 3 and 4 complete.** Next unfinished unit: **Part B, Batch 5** —
+mount-sunapee, cranmore, ragged, gunstock, crotched. No research gathered yet.
+
+### Carry into Batch 5
+
+- **Cranmore needs a White Mountains SuperPass entry** (`type: "other"`, unlimited across
+  Bretton Woods / Cannon / Cranmore / Waterville Valley, $1,589 adult through 31 Oct 2026,
+  source `waterville.com/wmsp-perks`). Cannon, Bretton Woods and Waterville already have it.
+- **Mount Sunapee and Crotched are Vail.** Both are on the Epic Local unlimited list. Vail's
+  entire web estate — epicpass.com, skiwildcat.com, attitash.com — was returning
+  site-down / JS-only errors on 2026-08-25, so budget for falling back to OnTheSnow and
+  check whether Vail is back up before writing.
+- **Check night skiing per resort from its own site.** Cranmore, Crotched, Gunstock and Pats
+  Peak are all on Ski NH's list and almost certainly `true`, but confirm from each resort's
+  own page — and see the note below on why Ski NH cannot settle a negative.
+- **Ragged and Pats Peak moved to Indy for 2026-27.** BATCHES.md flags this as high-value;
+  verify against indyskipass.com's own resort directory, which publishes a structured
+  per-resort block (vertical, trails, lifts, Night yes/no, terrain parks) that proved to be
+  the cleanest source in Batch 4.
+
+### Batch 4 notes
+
+- **Sunday River runs lit night skiing** and it was nearly missed. Ski NH does not cover
+  Maine, Ski Maine has no night-skiing page, and the resort's own navigation does not
+  surface it; the only trace was `/winter-activities/twilight-skiing` in its sitemap.
+  Fridays, Saturdays and select holidays, 3-6pm, Chondola and South Ridge Express, lit,
+  under the 2026/27 season. **That is the second night-skiing finding in two batches that
+  came from grepping a resort's sitemap for `night|twilight` — do that every time.**
+- **Attitash `nightSkiing` is null, deliberately.** attitash.com is JavaScript-rendered and
+  unreadable, OnTheSnow publishes an *empty* operating schedule for it so the `isNight`
+  check that settled the other four is unavailable, and Ski NH cannot support a negative.
+  No source either way, so no value. Revisit when Vail's site is back up.
+- **Saddleback's published stats do not reconcile.** The resort and OnTheSnow both give a
+  4,120 ft summit, a 2,460 ft base and a 2,000 ft vertical; 4,120 − 2,460 = 1,660. Stored
+  the summit and the vertical, nulled the base. The validator's summit/base/vertical cross
+  check would have errored on all three.
+- **Sugarloaf and Saddleback both have very large snowfall disputes** (200 vs 140, and 225
+  vs 141). Both are recorded in `dataDisputes`. These are the two biggest gaps on the roster
+  and both are central to how the resorts sell themselves.
+- **Attitash is the weakest file on the roster** — every figure from OnTheSnow, no park data,
+  no mogul data, no night-skiing answer. Named in the Part G report as one to redo.
+- Coordinates again from OSM peaks, elevation-probed. Sunday River's is Oz (3,136 ft probe
+  vs 3,150 published); Attitash's is the top station of The Mountaineer, found via an
+  Overpass `aerialway` query because no OSM peak node corresponds to the ski summit —
+  **that Overpass lift-top technique is the fallback to use when a peak node is missing.**
 
 ### Batch 3 corrections to the pre-gathered research
 
@@ -78,7 +123,7 @@ Roster of 37 remaining, from BATCHES.md:
 
 - [x] Batch 2: stratton, mount-snow, burke, pico — `efb2fde` — 80 unknown / 90 confirmed
 - [x] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat — `2f8af90` — 111 unknown / 126 confirmed
-- [ ] Batch 4: attitash, sunday-river, sugarloaf, saddleback
+- [x] Batch 4: attitash, sunday-river, sugarloaf, saddleback — 143 unknown / 157 confirmed
 - [ ] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched
 - [ ] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley
 - [ ] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount
@@ -151,3 +196,4 @@ number still matches.
 |---|---|---|
 | 2 | Okemo `size.snowmakingPercent` = 98 against `okemo.com/.../mountain-info.aspx` | **PASS** — source still reads "Snowmaking Coverage 98%" |
 | 3 | Stratton `pricing.seasonPassAdult` = 1399 against `onthesnow.com/news/ikon-pass-buyers-guide/` | **FAIL** — see INTEGRITY FAILURES 1. Widened to Epic as well; five files corrected. |
+| 4 | Burke `size.verticalDrop` = 2011, `skiableAcres` = 178, `trailCount` = 56 against `onthesnow.com/vermont/burke-mountain/ski-resort` | **PASS** — spec block still reads 2,011 ft / 178 ac / 56 runs. Note the same self-contradiction pattern as the pass guides: the page prose says "55 trails and 4 lifts" while its spec block says 56 and 5. The file uses the spec block, which is the correct half. |

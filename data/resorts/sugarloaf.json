@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "sugarloaf",
+    "name": "Sugarloaf",
+    "aka": [
+      "Sugarloaf Mountain",
+      "Sugarloaf/USA"
+    ],
+    "state": "ME",
+    "region": "Western Maine",
+    "town": "Carrabassett Valley",
+    "lat": 45.0318,
+    "lon": -70.3131,
+    "website": "https://www.sugarloaf.com"
+  },
+  "size": {
+    "verticalDrop": 2820,
+    "skiableAcres": 1360,
+    "trailCount": 176,
+    "liftCount": 15,
+    "longestRun": 3.5,
+    "summitElevation": 4237,
+    "baseElevation": 1417,
+    "annualSnowfallAvg": 200,
+    "snowmakingPercent": 95,
+    "nightSkiing": false,
+    "source": "https://www.sugarloaf.com/mountain-info",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "baseElevation": {
+        "source": "https://www.onthesnow.com/maine/sugarloaf/ski-resort",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 25,
+    "percentIntermediate": 31,
+    "percentAdvanced": 24,
+    "percentExpert": 20,
+    "glades": true,
+    "difficultyNotes": "Twenty percent expert is the highest share of any mountain in this guide, and unlike most such figures it is not inflated - Sugarloaf has 2,820 feet of continuous fall line and the only lift-served above-treeline terrain in the East. The 176 figure is trails and glades counted together, which is how the resort states it. Read the snowmaking number carefully: 95% is coverage of groomed trails, not of the 1,360 skiable acres, and the difference matters enormously here because the Snowfields and much of the glade network are outside the groomed footprint entirely and run on natural snow.",
+    "source": "https://www.onthesnow.com/maine/sugarloaf/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "glades": {
+        "source": "https://www.sugarloaf.com/mountain-info",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "passes": [
+    {
+      "name": "Ikon Pass",
+      "type": "ikon",
+      "access": "Sugarloaf is an Ikon destination. Neither Alterra's shop page nor Sugarloaf's own Ikon page publishes a per-tier day allocation for it.",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.sugarloaf.com/ikon-pass"
+    },
+    {
+      "name": "New England Pass",
+      "type": "other",
+      "access": "Boyne's own multi-mountain pass covering Sugarloaf, Sunday River and Loon, sold in Gold, Silver, Bronze and limited tiers with different access at each mountain",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.sugarloaf.com/lift-tickets"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 1449,
+    "currency": "USD",
+    "notes": "2026-27 season. Sugarloaf publishes no day-ticket rates as of the verified date - its lift tickets page says 2026/27 is available and that the earlier you buy the more you save, but shows no figures until you enter the shop - so all three ticket fields are null rather than estimated. The season pass figure is the full adult Ikon Pass from Alterra's own shop page; the Ikon Base Pass is $1,019. Boyne's own New England Pass also covers Sugarloaf, but no adult rate for it could be sourced.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.ikonpass.com/en/shop-passes",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Sugarloaf is the biggest mountain in New England by almost any measure that matters and the hardest one to actually get a good day on, and those two facts are the whole story. Two thousand eight hundred and twenty feet of continuous vertical - the largest lift-served drop in the East - on 1,360 acres, with 176 trails and glades and the only above-treeline skiing on this side of the Mississippi. Tote Road runs three and a half miles from the summit. Nothing else in the region is this big. The catch is that Sugarloaf is four and a half hours from Boston up increasingly small roads to Carrabassett Valley, and the terrain that makes it special is the terrain least likely to be open. The Snowfields, the above-treeline bowl that is the mountain's signature, are extraordinarily wind-exposed and closed far more often than they are open; when they are shut, and the wind holds have stopped the upper lifts, an enormous mountain becomes a normal one. What you get in exchange is the best snow preservation in the Northeast - it is cold up here, and the freeze-thaw cycles that wreck Vermont in January mostly do not happen. Plan several days, not one, and let the mountain decide which of them are the good ones.",
+    "snowQuality": "The best-preserved snow in the Northeast, and that is a different claim from the most snow. Sugarloaf advertises 200 inches; OnTheSnow's records say 140, and the gap is large enough to be recorded as a dispute rather than reconciled. What is not in dispute is the temperature: Carrabassett Valley is cold, significantly colder than northern Vermont, and the freeze-thaw cycles that turn other mountains to boilerplate in a January thaw largely do not reach here. Snow that falls tends to stay snow. Snowmaking covers 95% of groomed trails, which keeps the marked terrain dependable. The corollary is the cold spells - genuinely uncomfortable stretches where the wind chill on the upper mountain becomes the limiting factor rather than the snow.",
+    "crowds": "Among the least crowded big mountains anywhere in the East, for the obvious reason: it is four and a half hours from Boston and there is nothing else out here. The lift network has enough redundancy that lines are manageable even at peak times and never really get out of control. What Sugarloaf has instead of a crowd problem is a wind problem, and the two produce similar symptoms - regular wind holds on the upper-mountain lifts push everyone onto the lower half, and a mountain that feels enormous at nine can feel cramped by eleven. Sugarloaf is one of the most fickle resorts in the Northeast, and the fickleness is about lift status, not lift lines.",
+    "difficulty": "The most demanding mountain in New England on its day, with a caveat about what a day here actually looks like. Twenty percent of the terrain is rated expert, the fall line runs 2,820 feet without a flat spot, and the Snowfields above treeline are the only terrain of their kind in the East. But the Snowfields are rarely open - wind-scoured to the point where they function as exposed rock more often than as a bowl - and most trails, including the double-blacks, get regular grooming, so on a normal day the difficulty is about length and speed rather than survival. Glade terrain off the main face is the reliable hard skiing when conditions allow. Come expecting a very large fast mountain, and treat an open Snowfields day as the bonus it is.",
+    "keyTrails": [
+      {
+        "name": "The Snowfields",
+        "note": "The only lift-served above-treeline terrain east of the Mississippi, and the reason Sugarloaf has the reputation it does. Extraordinarily wind-exposed and closed far more often than open - when it goes, drop everything."
+      },
+      {
+        "name": "Tote Road",
+        "note": "Three and a half miles from the summit, the longest run in this guide. A cruiser rather than a challenge, and the best way to appreciate how much mountain there is."
+      },
+      {
+        "name": "Sidewinder",
+        "note": "The competition boardercross course, maintained as a permanent feature rather than built for an event. Very few mountains in the East keep one."
+      },
+      {
+        "name": "Upper Tote",
+        "note": "The advanced park, with medium and large jibs. Sits on the mountain's main artery, which is an unusual and welcome place to put serious features."
+      }
+    ],
+    "tidbits": [
+      "Sugarloaf's 2,820 feet is the largest lift-served vertical drop in the East.",
+      "The Snowfields are the only lift-served above-treeline terrain east of the Mississippi.",
+      "Tote Road is three and a half miles long, the longest run in this guide.",
+      "At 176 trails and glades on 1,360 acres, Sugarloaf is the largest ski area in this guide by acreage.",
+      "The snowmaking figure of 95% is coverage of groomed trails, not of total skiable acreage.",
+      "Sugarloaf runs eight named terrain parks plus a permanent boardercross course."
+    ],
+    "bestFor": [
+      "The biggest vertical in the East",
+      "Cold snow that stays snow",
+      "Multi-day trips, not day trips",
+      "Above-treeline skiing, when it opens"
+    ],
+    "watchOutFor": [
+      "Wind holds close the upper lifts",
+      "Snowfields are rarely open",
+      "Four and a half hours from Boston",
+      "Genuinely severe cold spells"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.sugarloaf.com/mountain-report",
+    "trailMap": "https://www.sugarloaf.com/mountain-info/mountain-maps",
+    "webcams": null,
+    "lodging": "https://www.sugarloaf.com/lodging",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Sugarloaf mountain info page (vertical, summit, acreage, trails, lifts, longest run, snowfall, snowmaking)",
+        "url": "https://www.sugarloaf.com/mountain-info",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Sugarloaf terrain parks page (eight named parks)",
+        "url": "https://www.sugarloaf.com/terrain-parks",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Sugarloaf lift tickets (no 2026-27 rates published; New England Pass products)",
+        "url": "https://www.sugarloaf.com/lift-tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Sugarloaf Ikon Pass page",
+        "url": "https://www.sugarloaf.com/ikon-pass",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Sugarloaf overview (base elevation, difficulty split, operating schedule, independent snowfall figure)",
+        "url": "https://www.onthesnow.com/maine/sugarloaf/ski-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ikon Pass shop page (2026-27 adult pass price)",
+        "url": "https://www.ikonpass.com/en/shop-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "PeakRankings Sugarloaf review (Snowfields, wind holds, grooming, crowds)",
+        "url": "https://www.peakrankings.com/content/sugarloaf",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.onthesnow.com/maine/sugarloaf/ski-resort",
+      "verifiedOn": "2026-08-25",
+      "note": "Published daily operating schedule runs 08:30-15:45 with no evening session on any day of the week, and sugarloaf.com has no night-skiing page in its sitemap. The evening entries there - Bullwinkle's at Night, the night sky gazing party - are dining and events, not lift-served skiing"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The terrain parks page names eight parks and a boardercross course but no pipe"
+    },
+    "passes[0].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither Alterra's shop page nor Sugarloaf's own Ikon page publishes a per-tier day allocation or blackout calendar for Sugarloaf"
+    },
+    "passes[1].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Boyne's New England Pass tiers carry different restrictions but no blackout dates are published for the adult products"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The lift tickets page routes buyers into a shop without publishing rates"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The lift tickets page routes buyers into a shop without publishing rates"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The lift tickets page routes buyers into a shop without publishing rates"
+    },
+    "links.webcams": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No standalone webcam page appears in sugarloaf.com's sitemap; cams are served inside the mountain report"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.annualSnowfallAvg",
+      "resortClaim": 200,
+      "independentClaim": 140,
+      "independentSource": "https://www.onthesnow.com/maine/sugarloaf/ski-resort",
+      "note": "A sixty-inch gap, one of the largest on the roster. Sugarloaf's 200-inch claim is central to how it sells itself and OnTheSnow's records are a long way short of it. The resort's figure is stored because CLAUDE.md prefers the resort's own site; a reader planning a natural-snow trip should weigh the lower number."
+    }
+  ],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "Sugarloaf grooms far more than its reputation suggests - most trails receive regular grooming, including the double-blacks. Bumps are not a maintained feature of this mountain and there is no trail set aside to build them. What ungroomed skiing exists is in the glades off the main face and, when it opens, the Snowfields, neither of which is bump terrain in the conventional sense.",
+    "namedRuns": [],
+    "quality": "This is the one place a mountain this big underdelivers. Sugarloaf's identity is length, speed and the above-treeline terrain, and its grooming policy reflects that - a skier who wants moguls will find the double-blacks corduroyed more often than not. Bump lines do form between passes on the steeper pitches, but they are a by-product rather than a product, and nobody drives four and a half hours to ski them. For genuinely reliable Maine bumps, Saddleback's ungroomed upper mountain is the better bet an hour down the road.",
+    "bestTiming": "Late season, when spring softening and reduced grooming let the steeper pitches build up between passes. There is no midwinter bump window here worth planning around.",
+    "bumpCulture": "None to speak of. Sugarloaf's competitive culture is alpine racing and its freestyle presence is in the parks and the boardercross course, not on a mogul trail.",
+    "source": "https://www.peakrankings.com/content/sugarloaf",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 8,
+    "parks": [
+      {
+        "name": "Upper Tote",
+        "size": "large",
+        "level": "Advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Medium and large jibs, described by the resort as the place to practise new skills. Sitting on the mountain's main artery makes it unusually visible for an advanced park."
+      },
+      {
+        "name": "Sidewinder",
+        "size": "large",
+        "level": "Intermediate to advanced",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "A competition boardercross course kept as a permanent feature. The resort pitches it as a roller coaster, and very few Eastern mountains maintain one year to year."
+      },
+      {
+        "name": "Drop Line",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The jump-focused park. The resort's own description is about air time rather than feature counts, and no counts are published."
+      },
+      {
+        "name": "The Yard",
+        "size": "medium",
+        "level": "Intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Described only as offering endless options. No level or feature detail is published, so nothing more is recorded."
+      },
+      {
+        "name": "Jill Poke",
+        "size": "medium",
+        "level": "Not published",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The resort describes creative lines and nothing else. Size here is an inference from its placement in the list rather than a published figure."
+      },
+      {
+        "name": "Cruiser",
+        "size": "medium",
+        "level": "Not published",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Described as a winding setup. No level or feature counts published."
+      },
+      {
+        "name": "Upper Double Bitter",
+        "size": "small",
+        "level": "Beginner to intermediate",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "Easier features and jumps - the step above the beginner park."
+      },
+      {
+        "name": "Skybound",
+        "size": "progression",
+        "level": "Beginner",
+        "jibs": null,
+        "jumps": null,
+        "largestJumpFt": null,
+        "boxes": null,
+        "rails": null,
+        "note": "The smallest features on a gentle pitch under the Whiffletree lift. A genuine entry point rather than a token beginner box."
+      }
+    ],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": "Eight parks is a lot, and they do form a ladder - Skybound under Whiffletree for beginners, Upper Double Bitter as the step up, a cluster of mid-sized parks in the middle, and Upper Tote for advanced riders. The resort does not label most of them by level, so the middle of the ladder has to be read from its descriptions rather than a published progression.",
+    "rebuildCadence": null,
+    "overview": "Eight named parks plus a permanent competition boardercross course, which is a serious commitment for a mountain whose reputation is built on vertical and above-treeline terrain rather than freestyle. The published detail is thin - the resort names the parks and describes their character in a phrase each, without feature counts - so most per-park fields here are null.",
+    "reputation": "Underrated, and largely because nobody talks about Sugarloaf's parks; the conversation about this mountain is always the Snowfields and the vertical. The boardercross course is the genuine differentiator - a permanent, maintained competition course is rare in the East, and it gives riders here something Loon and Waterville do not have.",
+    "source": "https://www.sugarloaf.com/terrain-parks",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

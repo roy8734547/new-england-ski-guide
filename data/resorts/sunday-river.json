@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "sunday-river",
+    "name": "Sunday River",
+    "aka": [
+      "Sunday River Resort"
+    ],
+    "state": "ME",
+    "region": "Western Maine",
+    "town": "Newry",
+    "lat": 44.4606,
+    "lon": -70.9061,
+    "website": "https://www.sundayriver.com"
+  },
+  "size": {
+    "verticalDrop": 2340,
+    "skiableAcres": 884,
+    "trailCount": 139,
+    "liftCount": 19,
+    "longestRun": 3,
+    "summitElevation": 3140,
+    "baseElevation": 800,
+    "annualSnowfallAvg": 119,
+    "snowmakingPercent": null,
+    "nightSkiing": true,
+    "source": "https://www.onthesnow.com/maine/sunday-river/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "skiableAcres": {
+        "source": "https://www.sundayriver.com/the-mountain",
+        "verifiedOn": "2026-08-25"
+      },
+      "trailCount": {
+        "source": "https://www.sundayriver.com/the-mountain",
+        "verifiedOn": "2026-08-25"
+      },
+      "liftCount": {
+        "source": "https://www.sundayriver.com/the-mountain",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.sundayriver.com/winter-activities/twilight-skiing",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 31,
+    "percentIntermediate": 32,
+    "percentAdvanced": 16,
+    "percentExpert": 21,
+    "glades": true,
+    "difficultyNotes": "Twenty-one percent expert against only 16% advanced is an unusual shape and it reflects how Sunday River is built: eight interconnected peaks, each with its own character, so the terrain arrives in pods rather than as a gradient. The hard skiing concentrates in the Aurora, Oz and Jordan Bowl pods at the western end; the beginner terrain is almost entirely at South Ridge and North Peak at the eastern end; and a skier can spend a day at one end without meeting the other. The resort states 139 trails and glades on 884 acres; OnTheSnow's 140 is the same count. The eight peaks, west to east, are Jordan (3,090'), Oz (3,150'), Aurora (2,765'), Spruce (2,690'), White Cap (2,425'), Locke (2,570'), Barker (2,540') and North Peak (2,140').",
+    "source": "https://www.onthesnow.com/maine/sunday-river/ski-resort",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "glades": {
+        "source": "https://www.sundayriver.com/the-mountain/8-peaks",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "passes": [
+    {
+      "name": "Ikon Pass",
+      "type": "ikon",
+      "access": "Sunday River is an Ikon destination and accepts Ikon passes for twilight skiing as well as day skiing. Neither Alterra nor the resort publishes a per-tier day allocation for it.",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.sundayriver.com/ikon-pass-redemption"
+    },
+    {
+      "name": "New England Pass",
+      "type": "other",
+      "access": "Boyne's own multi-mountain pass covering Sunday River, Sugarloaf and Loon, sold in Gold, Silver, Bronze and limited tiers with different access at each mountain",
+      "blackouts": null,
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.sundayriver.com/lift-tickets"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": 1449,
+    "currency": "USD",
+    "notes": "2026-27 season. Sunday River publishes no day-ticket rates as of the verified date - the full-day ticket page states tickets must be purchased online and shows a date and age picker with no figures attached - so all three ticket fields are null rather than estimated. The season pass figure is the full adult Ikon Pass from Alterra's own shop page; the Ikon Base Pass is $1,019. Boyne's own New England Pass also covers Sunday River, but no adult rate for it could be sourced.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.ikonpass.com/en/shop-passes",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Sunday River is the most reliably open big mountain in the East, and it got there by out-engineering the weather rather than by being lucky with it. One hundred and nineteen inches of natural snow is a poor total for a mountain of this size - less than Loon, barely half what Jay Peak gets - and Sunday River's answer has been more than two thousand snowguns and near-total coverage of its on-piste terrain. The result is 884 acres across eight interconnected peaks that open early, stay open, and hold a surface through thaws that shut down mountains with twice the natural snowfall. The layout is the other defining feature: eight distinct pods strung along a ridge, from the beginner terrain at South Ridge and North Peak in the east to the serious skiing at Aurora, Oz and Jordan Bowl in the west, connected end to end. It skis like several mountains that happen to share a lift ticket, and traversing the whole thing takes real time. Add lit twilight skiing on Fridays and Saturdays and it is one of the few Eastern resorts genuinely built for a long weekend rather than a day. What it is not is a powder mountain, and White Heat aside, the expert terrain is more about length than fear.",
+    "snowQuality": "The most engineered snow surface in New England. One hundred and nineteen inches is a genuinely modest natural total for a mountain this size, and Sunday River compensates with more than two thousand snowguns and near-total coverage of on-piste terrain - 552 acres of the 884 are under snowmaking. What that buys is reliability rather than quality: this is among the most dependable resorts on the East Coast for actually having a skiable surface in December and through a January thaw, and it is not where you go for soft snow. The glades and natural-cover terrain in the western pods are the exception and behave like everyone else's - they need a real storm, and storms here are less frequent than the mountain's size implies.",
+    "crowds": "Better than the Vermont mountains and noticeably so, partly because Newry is three hours from Boston and partly because 884 acres across eight peaks absorbs a lot of people. The problem is concentrated rather than general: the Barker Mountain Express is the only high-speed lift outside Jordan Bowl serving the upper mountain, which makes it a serious chokepoint at peak times while the rest of the resort stays comfortable. The fix is the same as at Loon - know where the bottleneck is and ski somewhere else through the middle of the day. The western pods in particular are quiet in a way the middle of the mountain is not.",
+    "difficulty": "Big, long and mostly not frightening, with one famous exception. White Heat on White Cap is Sunday River's signature double diamond and one of the steepest trails in the East - a genuinely serious pitch that lives up to its billing. Beyond it, the double-blacks in the Aurora, Oz and Jordan Bowl pods are long rather than steep, and the black diamonds are usefully arranged with ungroomed sections running alongside groomed ones, which makes this an unusually good mountain to learn moguls on without committing to a whole run of them. The beginner provision at the other end is excellent and well separated. The gap is in the middle-upper range: a strong skier will find plenty to do and not much to be scared by.",
+    "keyTrails": [
+      {
+        "name": "White Heat",
+        "note": "The resort's signature double diamond, on White Cap, and by reputation one of the steepest trails in the East. The one run here that is genuinely intimidating."
+      },
+      {
+        "name": "Jordan Bowl",
+        "note": "The western end of the resort - long scenic cruisers and wide-open glades, and the quietest good terrain on the mountain because it takes so long to reach."
+      },
+      {
+        "name": "Blind Ambition",
+        "note": "Glade skiing in the western pods, on natural cover. Where the mountain's tree skiing is at its best and least dependable."
+      },
+      {
+        "name": "Lollapalooza",
+        "note": "A green that runs a long way down through interesting terrain - proof that the beginner provision here is designed rather than tacked on."
+      },
+      {
+        "name": "South Ridge",
+        "note": "The learning area, and one of the two zones lit for twilight skiing. Kept deliberately separate from the through-traffic, which is why beginners have a good time here."
+      }
+    ],
+    "tidbits": [
+      "Sunday River is eight interconnected peaks: Jordan, Oz, Aurora, Spruce, White Cap, Locke, Barker and North Peak.",
+      "Oz is the high point at 3,150 feet by the resort's own reckoning.",
+      "More than two thousand snowguns cover 552 of the resort's 884 acres.",
+      "Twilight skiing runs Fridays, Saturdays and select holidays from 3pm to 6pm, under lights on South Ridge and North Peak.",
+      "North Peak has the East's only Chondola - a lift mixing chairs and gondola cabins.",
+      "White Heat has a long-standing claim to being among the steepest lift-served trails in the East.",
+      "At 119 inches, Sunday River gets less natural snow than any other 2,000-foot mountain in this guide."
+    ],
+    "bestFor": [
+      "Reliable cover in a bad winter",
+      "Long weekends, not day trips",
+      "Night skiing on a big mountain",
+      "Beginners who want space"
+    ],
+    "watchOutFor": [
+      "Low natural snowfall",
+      "Barker Express is the chokepoint",
+      "Traversing eight peaks eats time",
+      "No published ticket prices"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.sundayriver.com/mountain-report",
+    "trailMap": "https://www.sundayriver.com/resort-maps",
+    "webcams": null,
+    "lodging": "https://www.sundayriver.com/resort-lodging",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Sunday River the-mountain page (acres, trails and glades, lifts, snowgun count)",
+        "url": "https://www.sundayriver.com/the-mountain",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Sunday River eight peaks page (peak names and elevations, White Heat, South Ridge)",
+        "url": "https://www.sundayriver.com/the-mountain/8-peaks",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Sunday River twilight skiing page (lit night skiing: lifts, trails, nights, hours)",
+        "url": "https://www.sundayriver.com/winter-activities/twilight-skiing",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Sunday River full-day lift tickets (no rates published)",
+        "url": "https://www.sundayriver.com/lift-tickets/full-day",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Sunday River Ikon Pass redemption page",
+        "url": "https://www.sundayriver.com/ikon-pass-redemption",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Sunday River overview (vertical, elevations, longest run, snowfall, snowmaking acreage, difficulty split)",
+        "url": "https://www.onthesnow.com/maine/sunday-river/ski-resort",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Ikon Pass shop page (2026-27 adult pass price)",
+        "url": "https://www.ikonpass.com/en/shop-passes",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "PeakRankings Sunday River review (snowmaking, crowds, Barker chokepoint, park count, mogul arrangement)",
+        "url": "https://www.peakrankings.com/content/sunday-river",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The resort advertises more than 2,000 snowguns and one of the largest systems in the world but publishes no percentage; OnTheSnow gives 552 snowmaking acres against 884 skiable. PeakRankings describes near-100% coverage of on-piste trails, which is a different denominator again. No figure is derived from three sources that do not share one"
+    },
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "PeakRankings counts five parks - three for beginners and families, two advanced off the North Peak Express - but Sunday River's own site has no terrain park page in its sitemap, names no park, and publishes no count. Recorded null on the same basis as Stratton: a count read only from a third party is not a sourced count"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is mentioned on the resort's site or in the review consulted"
+    },
+    "passes[0].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither Alterra's shop page nor Sunday River's own Ikon redemption page publishes a per-tier day allocation or blackout calendar"
+    },
+    "passes[1].blackouts": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Boyne's New England Pass tiers carry different restrictions but no blackout dates are published for the adult products"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Tickets must be bought online through a date-and-age picker that shows no rates without a transaction"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No window rate is published; the resort states tickets must be purchased online"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No window rate is published; the resort states tickets must be purchased online"
+    },
+    "links.webcams": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No standalone webcam page appears in sundayriver.com's sitemap; cams are served inside the mountain report"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "common",
+    "policy": "Sunday River's arrangement is unusual and worth knowing: black diamond runs are cut wide and left with ungroomed strips running alongside groomed ones, so a skier can drop into bumps and bail onto corduroy on the same trail. That is a deliberate teaching layout rather than an accident of grooming, and it makes this one of the better mountains in the East to get comfortable in moguls without committing to a full ungroomed run.",
+    "namedRuns": [
+      {
+        "name": "White Heat",
+        "difficulty": "double-black",
+        "reliability": "variable",
+        "note": "The resort's signature double diamond on White Cap, and by reputation among the steepest trails in the East. It bumps up when left alone, but it is wide, heavily snowmade and groomed often enough that the bumps are not a given."
+      },
+      {
+        "name": "Blind Ambition",
+        "difficulty": "black",
+        "reliability": "variable",
+        "note": "Glade terrain in the western pods, on natural cover. Bumps form in the trees when there is enough base, which given Sunday River's modest natural snowfall is not every week."
+      }
+    ],
+    "quality": "Decent and unusually accessible rather than deep. The side-by-side groomed and ungroomed arrangement on the blacks is genuinely good design - it is the single best feature of this mountain for an intermediate trying to become an advanced skier, and almost nowhere else does it so consistently. What Sunday River does not have is a serious bump run with a reputation: the expert terrain in Aurora, Oz and Jordan Bowl is long rather than steep, so the moguls that form are shallow and well spaced rather than the deep troughs a sustained pitch builds. Heavy snowmaking works against bumps too, since a heavily made surface is groomed to stay usable.",
+    "bestTiming": "Late in a stretch of settled weather, when the ungroomed strips have had several days to shape up. Spring is better again. After a natural storm the glades in the western pods are the place to go instead.",
+    "bumpCulture": "No competitive mogul scene. Sunday River's freestyle identity is its parks, and its competitive identity is racing; the bumps here exist as a teaching resource rather than as a discipline.",
+    "source": "https://www.peakrankings.com/content/sunday-river",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Sunday River runs a real park programme and writes nothing about it. There is no terrain parks page in the site's sitemap, no park is named anywhere on the resort's own pages, and no count is published. The eight-peaks page confirms only that the parks are at North Peak. PeakRankings counts five - three aimed at beginners and families, two advanced ones served directly by the North Peak Express, with boxes, rails, jibs and jumps that are chiefly medium in size - but a count read from a third party is not a sourced count, so nothing numeric is stored.",
+    "reputation": "Solidly regarded without being a destination for park riders, and the medium-sized character of the advanced features is the recurring note - there is progression here and plenty to ride, but nothing on the scale of Carinthia at Mount Snow or Loon Mountain Park. The concentration at North Peak is a real convenience: the parks are lapped by one high-speed lift rather than scattered across eight peaks.",
+    "source": "https://www.peakrankings.com/content/sunday-river",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

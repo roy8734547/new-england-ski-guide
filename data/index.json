@@ -1,8 +1,54 @@
 {
-  "generatedAt": "2026-08-25T13:31:21.598Z",
+  "generatedAt": "2026-08-25T13:44:43.127Z",
   "schemaVersion": 3,
-  "count": 17,
+  "count": 21,
   "resorts": [
+    {
+      "slug": "attitash",
+      "name": "Attitash Mountain Resort",
+      "state": "NH",
+      "region": "Mount Washington Valley",
+      "town": "Bartlett",
+      "lat": 44.0687,
+      "lon": -71.2197,
+      "website": "https://www.attitash.com",
+      "verticalDrop": 1750,
+      "skiableAcres": 311,
+      "trailCount": 73,
+      "liftCount": 8,
+      "annualSnowfallAvg": 88,
+      "snowmakingPercent": null,
+      "nightSkiing": null,
+      "passTypes": [
+        "epic"
+      ],
+      "passes": [
+        {
+          "name": "Epic Pass",
+          "type": "epic",
+          "access": "Unlimited"
+        },
+        {
+          "name": "Epic Local Pass",
+          "type": "epic",
+          "access": "Unlimited - Attitash is on the Epic Local unlimited list alongside Crotched Mountain, Mount Snow, Mount Sunapee, Okemo and Wildcat"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1119,
+      "mogulPresence": "occasional",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Epic Local passholders",
+        "Families based in North Conway",
+        "Long intermediate cruising",
+        "A cold snap in midwinter"
+      ],
+      "officialSnowReport": "https://www.attitash.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-25"
+    },
     {
       "slug": "bretton-woods",
       "name": "Bretton Woods",
@@ -448,6 +494,47 @@
       "verifiedOn": "2026-08-24"
     },
     {
+      "slug": "saddleback",
+      "name": "Saddleback Mountain",
+      "state": "ME",
+      "region": "Western Maine",
+      "town": "Rangeley",
+      "lat": 44.9365,
+      "lon": -70.5046,
+      "website": "https://www.saddlebackmaine.com",
+      "verticalDrop": 2000,
+      "skiableAcres": 600,
+      "trailCount": 68,
+      "liftCount": 6,
+      "annualSnowfallAvg": 225,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "2 all-day or night lift tickets, as at every Indy partner resort"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1209,
+      "mogulPresence": "common",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "Glade skiing with nobody in it",
+        "Powder that lasts all day",
+        "Indy Pass holders",
+        "Skiers who will drive for terrain"
+      ],
+      "officialSnowReport": "https://www.saddlebackmaine.com/mountain-report/",
+      "verifiedOn": "2026-08-25"
+    },
+    {
       "slug": "smugglers-notch",
       "name": "Smugglers' Notch Resort",
       "state": "VT",
@@ -609,6 +696,100 @@
         "Skiers who plan around conditions"
       ],
       "officialSnowReport": "https://www.sugarbush.com/mountain/conditions",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "sugarloaf",
+      "name": "Sugarloaf",
+      "state": "ME",
+      "region": "Western Maine",
+      "town": "Carrabassett Valley",
+      "lat": 45.0318,
+      "lon": -70.3131,
+      "website": "https://www.sugarloaf.com",
+      "verticalDrop": 2820,
+      "skiableAcres": 1360,
+      "trailCount": 176,
+      "liftCount": 15,
+      "annualSnowfallAvg": 200,
+      "snowmakingPercent": 95,
+      "nightSkiing": false,
+      "passTypes": [
+        "ikon",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Ikon Pass",
+          "type": "ikon",
+          "access": "Sugarloaf is an Ikon destination. Neither Alterra's shop page nor Sugarloaf's own Ikon page publishes a per-tier day allocation for it."
+        },
+        {
+          "name": "New England Pass",
+          "type": "other",
+          "access": "Boyne's own multi-mountain pass covering Sugarloaf, Sunday River and Loon, sold in Gold, Silver, Bronze and limited tiers with different access at each mountain"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1449,
+      "mogulPresence": "occasional",
+      "parkCount": 8,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "The biggest vertical in the East",
+        "Cold snow that stays snow",
+        "Multi-day trips, not day trips",
+        "Above-treeline skiing, when it opens"
+      ],
+      "officialSnowReport": "https://www.sugarloaf.com/mountain-report",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "sunday-river",
+      "name": "Sunday River",
+      "state": "ME",
+      "region": "Western Maine",
+      "town": "Newry",
+      "lat": 44.4606,
+      "lon": -70.9061,
+      "website": "https://www.sundayriver.com",
+      "verticalDrop": 2340,
+      "skiableAcres": 884,
+      "trailCount": 139,
+      "liftCount": 19,
+      "annualSnowfallAvg": 119,
+      "snowmakingPercent": null,
+      "nightSkiing": true,
+      "passTypes": [
+        "ikon",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Ikon Pass",
+          "type": "ikon",
+          "access": "Sunday River is an Ikon destination and accepts Ikon passes for twilight skiing as well as day skiing. Neither Alterra nor the resort publishes a per-tier day allocation for it."
+        },
+        {
+          "name": "New England Pass",
+          "type": "other",
+          "access": "Boyne's own multi-mountain pass covering Sunday River, Sugarloaf and Loon, sold in Gold, Silver, Bronze and limited tiers with different access at each mountain"
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 1449,
+      "mogulPresence": "common",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Reliable cover in a bad winter",
+        "Long weekends, not day trips",
+        "Night skiing on a big mountain",
+        "Beginners who want space"
+      ],
+      "officialSnowReport": "https://www.sundayriver.com/mountain-report",
       "verifiedOn": "2026-08-25"
     },
     {

@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "saddleback",
+    "name": "Saddleback Mountain",
+    "aka": [
+      "Saddleback",
+      "Saddleback Maine"
+    ],
+    "state": "ME",
+    "region": "Western Maine",
+    "town": "Rangeley",
+    "lat": 44.9365,
+    "lon": -70.5046,
+    "website": "https://www.saddlebackmaine.com"
+  },
+  "size": {
+    "verticalDrop": 2000,
+    "skiableAcres": 600,
+    "trailCount": 68,
+    "liftCount": 6,
+    "longestRun": 3.1,
+    "summitElevation": 4120,
+    "baseElevation": null,
+    "annualSnowfallAvg": 225,
+    "snowmakingPercent": null,
+    "nightSkiing": false,
+    "source": "https://www.saddlebackmaine.com/the-stats/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "terrain": {
+    "percentBeginner": 34,
+    "percentIntermediate": 29,
+    "percentAdvanced": 27,
+    "percentExpert": 10,
+    "glades": true,
+    "difficultyNotes": "Saddleback publishes its difficulty split as trail counts rather than percentages - 23 green, 20 blue, 18 black and 7 double black out of 68 named runs - and the percentages here are those counts converted, rounded to sum to 100, the same treatment Pico gets for the same reason. The glades are the part of the mountain worth travelling for and they are not in the trail count at all: 88 acres of hand-cut tree skiing spread across the entire upper-mountain footprint, steep, and with enough natural snow to hold cover through most of the core season. Note also that ten percent double-black on a mountain this quiet means the hard terrain is genuinely skiable rather than tracked out by ten o'clock.",
+    "source": "https://www.saddlebackmaine.com/the-stats/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "2 all-day or night lift tickets, as at every Indy partner resort",
+      "blackouts": "No blackout dates",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/saddleback-mountain"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 139,
+    "windowTicketAdultLow": 139,
+    "advanceTypical": null,
+    "seasonPassAdult": 1209,
+    "currency": "USD",
+    "notes": "The $139 is a 2025-26 window rate, not a current one: as of the verified date the lift tickets page says 2026/27 tickets go on sale in late summer and shows only last season's day-of walk-up table. That table is labelled Window Rates and gives a single adult (19-64) one-day figure with no weekend/weekday split, so both window fields carry it; multi-day walk-up rates run $255 for two days up to $490 for five. The resort states you always save by buying online but publishes no online table, so advanceTypical is null. The season pass figure is the 2026-27 adult (30-64) Unlimited pass at $1,209, with no purchase-date tiering published; the new Flex Pass is $895, the midweek pass $769, the 19-29 Casablanca Pass $719, and Franklin County residents take 15% off the Unlimited, bringing it to $1,028.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.saddlebackmaine.com/season-passes/",
+    "fieldSources": {
+      "windowTicketAdultHigh": {
+        "source": "https://www.saddlebackmaine.com/lift-tickets",
+        "verifiedOn": "2026-08-25"
+      },
+      "windowTicketAdultLow": {
+        "source": "https://www.saddlebackmaine.com/lift-tickets",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Saddleback is the best argument in this guide for driving further than you meant to. It calls itself the largest independent mountain in the East and the claim holds up: 600 acres, 2,000 feet of vertical, 68 trails and 88 acres of hand-cut glades, in Rangeley, which is four and a half hours from Boston and further from anywhere else. It closed in 2015 and stayed shut for five years, reopening in 2020 under new ownership with a new quad, refreshed snowmaking and a genuine sense of having been rescued rather than merely reopened. What that history means for a skier now is a mountain with the terrain of a major resort and the crowding of a community hill - lift lines here are essentially nonexistent, even on peak days, which is not a thing that can be said about anywhere else this size. The skiing is real: 225 inches of natural snow, steep glades across the whole upper mountain, and double-blacks like Muleskinner that need precision rather than nerve. The price of all that is the drive, a small base area, and the fact that its own published stats do not quite add up. Worth it.",
+    "snowQuality": "Two hundred and twenty-five inches by the resort's reckoning, which if accurate is among the highest totals in this guide - though OnTheSnow's records say 141, and that gap is large enough to record as a dispute rather than reconcile. What is not in doubt is that Rangeley is cold and remote, and that the natural snow lasts: the review consensus is that there is enough of it to keep the glades in cover through most of the core season, which is a rare thing to be able to say about tree skiing anywhere in the East. Snowmaking has had serious recent investment - the resort cites $6.5 million of enhancements - and keeps the marked trails opening consistently, but no coverage figure is published. The honest caveat is the same as everywhere: the ungroomed and glade runs go variable after a dry spell, and thin cover and ice do turn up.",
+    "crowds": "The emptiest mountain of its size anywhere in this guide, and it is not close. Saddleback almost never sees a crowd, even on peak days, and lift lines are essentially nonexistent - a consequence of being four and a half hours from Boston in a town of about a thousand people. Six lifts for 600 acres would be thin capacity at a resort anyone could reach easily; here it is more than enough. The practical effect is that terrain which would be skied out by mid-morning at Sunday River stays good all day, which changes what a powder day is worth. The cost is everything that comes with remoteness: limited food, limited lodging, and a long way to the nearest anything.",
+    "difficulty": "Genuinely demanding, and the glades are where it lives. Eighteen blacks and seven double-blacks out of 68 runs is a serious top end for a mountain this size, and Muleskinner is the one people name - long, twisty and hard to execute without precision, which is a more interesting kind of difficult than simply steep. But the trails are not really the point. Saddleback's 88 acres of hand-cut glades run steeply across the entire upper-mountain footprint, and because almost nobody is here they hold snow and stay skiable in a way tree skiing at a busier resort does not. A strong skier should plan the day around the trees and treat the marked blacks as the way back to the lift.",
+    "keyTrails": [
+      {
+        "name": "Muleskinner",
+        "note": "The double-black people name, and rightly - long, twisty and unforgiving of sloppy skiing. Difficult in a technical way rather than simply steep."
+      },
+      {
+        "name": "The upper-mountain glades",
+        "note": "Eighty-eight acres of hand-cut trees spread across the whole top of the mountain. Steep, well cut, and skiable far longer into a dry spell than tree skiing has any right to be, because nobody is tracking them out."
+      },
+      {
+        "name": "Kennebago Quad terrain",
+        "note": "One of the four quads and the access to the upper-mountain steeps. Where a strong skier ends up spending the day."
+      },
+      {
+        "name": "Cupsuptic T-Bar",
+        "note": "A surviving T-bar on a mountain with four quads, and a reminder that Saddleback was rebuilt rather than replaced."
+      }
+    ],
+    "tidbits": [
+      "Saddleback calls itself the largest independent ski area in the East, at 600 acres.",
+      "The mountain closed in 2015 and stayed shut for five years before reopening in 2020.",
+      "Eighty-eight acres of the terrain is hand-cut glades, counted separately from the 68 named trails.",
+      "It is on the Indy Pass with two days and no blackout dates.",
+      "Franklin County residents take 15% off the adult unlimited season pass.",
+      "The resort's own stats do not reconcile: a 4,120-foot summit and 2,460-foot base cannot produce the 2,000 feet of vertical it advertises.",
+      "The lifts are named for the waters around Rangeley - Kennebago, Cupsuptic, Sandy, Molly Chunkamunk."
+    ],
+    "bestFor": [
+      "Glade skiing with nobody in it",
+      "Powder that lasts all day",
+      "Indy Pass holders",
+      "Skiers who will drive for terrain"
+    ],
+    "watchOutFor": [
+      "Four and a half hours from Boston",
+      "Published stats do not reconcile",
+      "Snowfall claim is disputed",
+      "Very limited base facilities"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.saddlebackmaine.com/mountain-report/",
+    "trailMap": "https://www.saddlebackmaine.com/trail-maps/",
+    "webcams": "https://www.saddlebackmaine.com/webcams/",
+    "lodging": "https://www.saddlebackmaine.com/lodging/",
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Saddleback the-stats page (vertical, summit, acres, trail counts by difficulty, lifts, longest run, snowfall, glade acreage, park count)",
+        "url": "https://www.saddlebackmaine.com/the-stats/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Saddleback season passes (2026-27 adult pass products and prices)",
+        "url": "https://www.saddlebackmaine.com/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Saddleback lift tickets (2025-26 window rate table; 2026-27 not yet on sale)",
+        "url": "https://www.saddlebackmaine.com/lift-tickets",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass Saddleback listing (two days, no blackouts, night skiing: no)",
+        "url": "https://www.indyskipass.com/our-resorts/saddleback-mountain",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "PeakRankings Saddleback review (glades, crowds, Muleskinner, snow consistency)",
+        "url": "https://www.peakrankings.com/content/saddleback",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Saddleback overview (independent snowfall figure; reproduces the same unreconciled elevation set)",
+        "url": "https://www.onthesnow.com/maine/saddleback-inc/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is mentioned on the stats page or in the review consulted"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The resort says buyers always save online but publishes only its window rate table, so there is no online figure to record"
+    },
+    "size.baseElevation": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Saddleback and OnTheSnow both publish a 4,120 ft summit, a 2,460 ft base and a 2,000 ft vertical drop, but 4,120 minus 2,460 is 1,660, not 2,000. The three cannot all be right. The summit is corroborated by an elevation probe of the peak (4,091 ft) and the 2,000 ft vertical is what every source advertises, so those two are stored and the base is left null rather than storing a figure that contradicts the drop"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "source": "https://www.indyskipass.com/our-resorts/saddleback-mountain",
+      "verifiedOn": "2026-08-25",
+      "note": "The Indy Pass resort directory publishes a structured Night field for every partner mountain and gives Saddleback \"No\". saddlebackmaine.com has no night-skiing page."
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The stats page cites $6.5 million of recent snowmaking investment but publishes neither a percentage nor an acreage"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.annualSnowfallAvg",
+      "resortClaim": 225,
+      "independentClaim": 141,
+      "independentSource": "https://www.onthesnow.com/maine/saddleback-inc/ski-resort",
+      "note": "An eighty-four-inch gap, the largest on the roster. Saddleback's 225-inch claim underpins its whole pitch - glades that hold cover on natural snow - and OnTheSnow's records are nowhere near it. The resort's figure is stored per CLAUDE.md's source order, but anyone planning a trip around natural snow should treat 225 as the optimistic end."
+    }
+  ],
+  "moguls": {
+    "presence": "common",
+    "policy": "Saddleback leaves its upper-mountain steeps and its 88 acres of hand-cut glades ungroomed, and the reviews consulted note that ungroomed and glade runs go variable after a dry spell - which is another way of saying they are genuinely left alone. The mountain publishes no grooming philosophy, so what is recorded here is the observed pattern rather than a stated policy.",
+    "namedRuns": [
+      {
+        "name": "Muleskinner",
+        "difficulty": "double-black",
+        "reliability": "variable",
+        "note": "Long and twisty, and described as tough to execute without precision. It bumps up when there is cover, and the twisting line means the moguls form in sections rather than one continuous field."
+      }
+    ],
+    "quality": "Good, and improved by the thing that makes everything here good - nobody is on it. Bumps that form on Saddleback's ungroomed terrain are shaped by a small number of skiers rather than scraped flat by a weekend crowd, so they stay well formed and the troughs do not glaze the way they do at a busy mountain. The limitation is documentation rather than skiing: Saddleback publishes very little, no source consulted names a bump run other than Muleskinner, and the mountain's own identity is built on glades rather than moguls. Treat the tree skiing as the main event and the bumps as what you find on the way out.",
+    "bestTiming": "Within a few days of a storm, when the natural cover is deep enough for the ungroomed upper mountain to be fully open. Late season, once the surface softens, is the other window - and unusually for a mountain this far north, spring here runs long.",
+    "bumpCulture": "None recorded. Saddleback has no competitions and no organised scene; it is a mountain that spent five years closed and is still rebuilding its community, and what culture exists is local and quiet.",
+    "source": "https://www.peakrankings.com/content/saddleback",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 2,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "The resort's stats page states two terrain parks and stops there - no names, no sizes, no feature counts - so the count is stored and the parks themselves are not described. The one independent account consulted describes a small park served by a rope tow, which suggests modest ambitions rather than a programme.",
+    "reputation": "Not a park mountain and not trying to be. Saddleback's draw is 88 acres of hand-cut glades and an empty hill; the parks exist so that local kids have somewhere to session. A rider choosing a Maine mountain for features would go to Sugarloaf, which runs eight parks and a boardercross course two hours away.",
+    "source": "https://www.saddlebackmaine.com/the-stats/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}
