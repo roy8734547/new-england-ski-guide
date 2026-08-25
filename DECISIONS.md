@@ -72,3 +72,42 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
   and AUTORUN.md section 2 rule 1 outranks the temptation.
 - **Attitash snowfall: stored the resort's 120 over OnTheSnow's 88**, per CLAUDE.md rule 3,
   with the 88 in `dataDisputes`.
+
+### Batch 7
+
+- **Pleasant Mountain trail count 44, not OnTheSnow's 43.** The resort's own homepage counts
+  "44 Trails and Glades" as one figure; OnTheSnow counts 43 runs. The resort is including its
+  glades and the aggregator is not, so 44 is stored with the reason in `difficultyNotes`.
+- **Pleasant Mountain terrain percentages all null.** No source publishes a difficulty split
+  for this resort in any form. Rule 1 applies with no ambiguity.
+- **Pleasant Mountain `parks.count` = 3 despite no published count.** The validator errors when
+  `parks[]` is populated and `count` is null, so the count records the number of parks this guide
+  could name from the resort's event pages. `parks.overview` says explicitly that this is the
+  number found rather than a figure the resort publishes and that there may be more.
+- **Berkshire East `liftCount` = 5, following OnTheSnow over the Indy directory's 6.** OnTheSnow's
+  figure is internally consistent with its own lift-type breakdown; Indy's is a bare number.
+- **Berkshire East `snowmakingPercent` = 100 from the resort over OnTheSnow's implied 92%.**
+  CLAUDE.md rule 3 prefers the resort, the resort's claim is newer (a 2021 upgrade), and the two
+  are not strictly comparable — one counts trails, the other acres. Not recorded as a dispute
+  for that last reason.
+- **Berkshire East `terrain.glades` = null.** The resort publishes no terrain information at all,
+  so there is no statement either way. Same for Jiminy Peak, whose six-tier breakdown counts
+  trails by difficulty and never mentions trees.
+- **Jiminy Peak terrain percentages derived from published trail counts.** 17/6/7/6/6/3 of 45
+  collapsed to 38/42/13/7. This is a faithful transformation of the resort's own numbers into the
+  schema's grades, not an estimate, and the raw counts are preserved in `difficultyNotes` so the
+  conversion is auditable. Distinguished from the Bolton snowmaking case, where dividing 90 acres
+  by 300 would have combined two separately-reported figures.
+- **Jiminy Peak `baseElevation` = null.** The resort gives a 2,380 ft summit and a 1,150 ft
+  vertical rise and no base. Subtracting is arithmetic. Same treatment as Saddleback in reverse.
+- **Jiminy Peak `seasonPassAdult` = 1356, the third rung of a four-step deadline ladder.** That is
+  the price an adult buying on the verified date pays. The whole ladder is in `pricing.notes` so
+  the number can be re-derived at any later date.
+- **Catamount recorded as `MA`.** It straddles the NY/MA line; the validator's state enum is New
+  England only, and the summit and part of the terrain are in South Egremont, Massachusetts. The
+  split is stated plainly in `difficultyNotes` rather than hidden.
+- **Catamount `parks.count` = 4 from four named park-carrying trails.** The resort enumerates
+  Bobcat, Panther, Sunrise and Turnpike, so this is a published list rather than an estimate —
+  but `parks.overview` notes it counts locations, which may not equal distinct designed parks.
+- **Berkshire East and Catamount ticket fields all null.** Both run demand-based flexible pricing
+  and publish no window rate at all. Estimating one would be fabrication.

@@ -4,7 +4,7 @@ The resume point. One line per completed unit, updated immediately on finishing 
 never at the end. If context resets, this file is how the run picks up without redoing or
 skipping a unit.
 
-**Roster target:** 45 resorts. **Current:** 30.
+**Roster target:** 45 resorts. **Current:** 34.
 
 ---
 
@@ -37,11 +37,13 @@ skipping a unit.
 | B | Batch 6 (part 2): bolton-valley — batch closed | `f150308` | 205 / 214 | Snowfall conflict resolved as the notes specified: stored OnTheSnow's 202, explained the resort's 312 in prose. `keyTrails` left empty. |
 | B | Validator: `advanceTypical` range check narrowed | `6874b1d` | — | Only flags advance rates ABOVE `windowTicketAdultHigh` now. Cleared 4 false-positive warnings. |
 | B | **Vail repair**: attitash, mount-sunapee, crotched rebuilt from Vail's own pages | `869bfc0` | 197 / 210 | Standing probe passed. See "Vail repair" below. |
+| B | Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount | `0fd6cf5` | 227 / 249 | No PeakRankings page for any of the four. See Batch 7 notes. |
 
-**Part A complete. Batches 2 through 6 complete.**
+**Part A complete. Batches 2 through 7 complete.**
 
-**RESUME HERE.** The next unfinished unit is **Batch 7** — pleasant-mountain, berkshire-east,
-jiminy-peak, catamount. Then batches 8, 9 and 10, then Parts C through G.
+**RESUME HERE.** The next unfinished unit is **Batch 8** — middlebury-snow-bowl,
+saskadena-six, black-mountain-nh, dartmouth-skiway. Then batches 9 and 10, then Parts C
+through G.
 
 ### STANDING CHECK AT THE START OF EVERY SESSION — Vail: DONE, no longer needed
 
@@ -135,6 +137,56 @@ outcome, not a sign to try harder.
 
 **Vail note:** superseded — the three Vail files were repaired in `869bfc0`. See the Vail
 repair section above.
+
+### Batch 7 notes
+
+- **A reusable technique: when a resort has no terrain-park page, grep its events calendar.**
+  Pleasant Mountain publishes no park page at all, but its event pages named three parks —
+  Playground Park (the Throwdown Showdown), Lower Grom Park and Lil Grommet Park (the free
+  Progression Sessions). This is the third such technique now: sitemap-grep for `night|twilight`
+  found Sunday River's and Bolton's night operations, the Overpass `aerialway` query finds a
+  summit when no peak node exists, and now the events calendar finds parks.
+- **Pleasant Mountain has no difficulty breakdown anywhere.** Not on the resort's site, not on
+  OnTheSnow, not at Ski Maine. All four terrain percentages are null — the only file on the
+  roster in that position. The renderer handles it (`terrainBreakdown` returns null and the
+  page prints "No published difficulty split"), which was checked.
+- **Berkshire East publishes no mountain statistics at all.** Its complete site was enumerated
+  from its own Joomla sitemap — no stats page, no terrain page, no trail list, no park page.
+  Every size figure comes from OnTheSnow. Its trail map is a PDF whose text is not extractable.
+  Two figures had to be adjudicated between third parties: the Indy directory says 45 trails and
+  6 lifts, OnTheSnow says 43 and 5, and OnTheSnow's lift count is internally consistent
+  (3 quads + 1 double + 1 surface), so it wins.
+- **Jiminy Peak publishes six difficulty grades**, splitting intermediate three ways: 17 Easy,
+  6 Low Intermediate, 7 Intermediate, 6 High Intermediate, 6 Black, 3 Double Black. Those counts
+  are collapsed to this schema's four grades and converted to 38/42/13/7; the arithmetic is
+  spelled out in `difficultyNotes` and the raw counts are preserved there, because the counts
+  are the more faithful record.
+- **Two cross-resort findings that affect files already written:**
+  1. **Berkshire East and Catamount sell one joint season pass** — AIM High, $699 adult until
+     31 Aug 2026 then $799, unlimited at both with no blackouts, plus two days each at **Burke**
+     and **Smugglers' Notch** and unlimited midweek at Burke in March. `burke.json` and
+     `smugglers-notch.json` do not mention this. **Part C should add it to both.**
+  2. **Jiminy Peak, Bromley and Cranmore are all Fairbank Group mountains.** A Jiminy Anytime or
+     Zephyr pass carries two free tickets at each of the other two, and a $471 three-mountain
+     college pass covers all three with no blackouts. `bromley.json` and `cranmore.json` mention
+     neither the ownership nor the reciprocal tickets. **Part C should add it to both.**
+- **Jiminy is an Ikon *Bonus* Mountain**, not a destination: 2 days, redeemed at the ticket
+  window rather than direct-to-lift, not valid on Ikon Base or Session. Its blackout dates are
+  published, so its `passes[].blackouts` is populated rather than null.
+- **Catamount straddles the NY/MA state line** — base lodge in Hillsdale NY, summit in South
+  Egremont MA. Recorded as `MA` (the validator's state enum is New England only) with the split
+  explained in `difficultyNotes`. Its OnTheSnow slug is `catamount-ski-ride-area` under
+  **new-york**, which is why the obvious URLs 404 — found by grepping OnTheSnow's New York index.
+- **Both Berkshire East and Catamount price day tickets dynamically and say so**, including that
+  days sell out entirely. All six ticket fields across the two files are null, correctly.
+- **Coordinates.** Pleasant Mountain (North Peak, −14 ft against published) and Jiminy Peak
+  (−34 ft) both probe cleanly against OSM peak nodes. Berkshire East and Catamount have no
+  usable peak node and were anchored to lift tops via the Overpass `aerialway` query: Berkshire
+  East to the Summit Quad / T-Bar Express top, which probes 1,450–1,509 ft against a published
+  1,720 ft summit, and Catamount to the Ridge Quad top at 1,880 ft against 2,000 ft. **Those two
+  gaps are DEM smoothing on narrow ridges, not bad coordinates** — the lift top is the ski summit
+  by definition regardless of what a 90 m elevation grid says about it. Recorded here rather than
+  as disputes.
 
 ### Batch 5 notes
 
@@ -242,7 +294,7 @@ Roster of 37 remaining, from BATCHES.md:
 - [x] Batch 4: attitash, sunday-river, sugarloaf, saddleback — `12e9972` — 143 unknown / 157 confirmed
 - [x] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched — `3b41bea` — 180 unknown / 189 confirmed
 - [x] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley — `c42e0c8` + `f150308` — 205 unknown / 214 confirmed
-- [ ] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount
+- [x] Batch 7: pleasant-mountain, berkshire-east, jiminy-peak, catamount — `0fd6cf5` — 227 unknown / 249 confirmed
 - [ ] Batch 8: middlebury-snow-bowl, saskadena-six, black-mountain-nh, dartmouth-skiway
 - [ ] Batch 9: mt-abram, black-mountain-maine, camden-snow-bowl, big-rock
 - [ ] Batch 10: butternut, bousquet, mohawk-mountain
@@ -368,3 +420,4 @@ number still matches.
 | 4 | Burke `size.verticalDrop` = 2011, `skiableAcres` = 178, `trailCount` = 56 against `onthesnow.com/vermont/burke-mountain/ski-resort` | **PASS** — spec block still reads 2,011 ft / 178 ac / 56 runs. Note the same self-contradiction pattern as the pass guides: the page prose says "55 trails and 4 lifts" while its spec block says 56 and 5. The file uses the spec block, which is the correct half. |
 | 5 | Waterville Valley `size.snowmakingPercent` = 100 and `skiableAcres` = 265 against `waterville.com/mountain-stats` | **PASS** — page still reads "SNOWMAKING 265 Aces 100% Coverage", plus Skiable Acres 265, Longest Run 1.9 mi and Summit 4,004 ft, all matching the file. |
 | 6 | Sunday River `size.skiableAcres` = 884, `trailCount` = 139, `liftCount` = 19 against `sundayriver.com/the-mountain` | **PASS** — The Numbers block still reads 8 Peaks / 884 Skiable Acres / 139 Trails & Glades / 19 Lifts. |
+| 7 | Mount Snow `parks.count` = 8 and all eight park names against `mountsnow.com/.../terrain-parks.aspx` | **PASS** — Grommet, Inferno, Junkyard, Fool's Gold, Nitro, The Gulch, Prospector and The Farm all still named and described. |
