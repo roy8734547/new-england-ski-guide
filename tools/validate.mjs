@@ -709,8 +709,10 @@ function crossChecks(report, file, name, r) {
   if (low !== null && high !== null && low > high) {
     report.err(file, `pricing: windowTicketAdultLow (${low}) is above windowTicketAdultHigh (${high}) — swapped?`);
   }
-  if (adv !== null && low !== null && high !== null && (adv < low || adv > high)) {
-    report.warn(file, `pricing: advanceTypical (${adv}) falls outside the window range ${low}–${high}`);
+  // Online advance rates legitimately undercut the window price — that is the normal case,
+  // not an anomaly. Only an advance rate ABOVE the top window rate is suspicious.
+  if (adv !== null && high !== null && adv > high) {
+    report.warn(file, `pricing: advanceTypical (${adv}) is above windowTicketAdultHigh (${high}) — advance rates should not exceed the window price`);
   }
   if (pricing.currency !== undefined && pricing.currency !== null && pricing.currency !== 'USD') {
     report.warn(file, `pricing.currency is "${pricing.currency}" — this project assumes USD`);
