@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-25T18:34:03.988Z",
+  "generatedAt": "2026-08-25T18:47:01.600Z",
   "schemaVersion": 3,
-  "count": 38,
+  "count": 42,
   "resorts": [
     {
       "slug": "attitash",
@@ -97,6 +97,47 @@
       "verifiedOn": "2026-08-25"
     },
     {
+      "slug": "big-rock",
+      "name": "Big Rock Mountain",
+      "state": "ME",
+      "region": "Northern Maine",
+      "town": "Mars Hill",
+      "lat": 46.5258,
+      "lon": -67.8154,
+      "website": "https://www.bigrockmaine.com",
+      "verticalDrop": 920,
+      "skiableAcres": 90,
+      "trailCount": 25,
+      "liftCount": 4,
+      "annualSnowfallAvg": 94,
+      "snowmakingPercent": null,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day lift tickets per season on the Indy Pass. Big Rock is the northernmost Indy partner in the eastern United States and one of very few reasons a pass holder would ever drive to Aroostook County."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 625,
+      "mogulPresence": "occasional",
+      "parkCount": null,
+      "hasPark": null,
+      "hasPipe": null,
+      "bestFor": [
+        "Midweek night skiing",
+        "Cold snow and a long season",
+        "Aroostook County and New Brunswick",
+        "Indy days with no blackouts"
+      ],
+      "officialSnowReport": "https://www.bigrockmaine.com/trails/",
+      "verifiedOn": "2026-08-25"
+    },
+    {
       "slug": "black-mountain-nh",
       "name": "Black Mountain",
       "state": "NH",
@@ -135,6 +176,47 @@
         "Indy Pass days with no blackouts"
       ],
       "officialSnowReport": "https://www.blackmt.com/conditions",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "black-mountain-maine",
+      "name": "Black Mountain of Maine",
+      "state": "ME",
+      "region": "Western Maine",
+      "town": "Rumford",
+      "lat": 44.5793,
+      "lon": -70.6296,
+      "website": "https://skiblackmountain.org",
+      "verticalDrop": 1380,
+      "skiableAcres": 600,
+      "trailCount": 31,
+      "liftCount": 3,
+      "annualSnowfallAvg": 100,
+      "snowmakingPercent": 70,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day lift tickets per season on the Indy Pass. The listing covers both the alpine mountain and the Nordic centre, which is unusual - Black Mountain's Indy entry carries a separate cross-country block with its own terrain split and trail statistics."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": null,
+      "mogulPresence": "common",
+      "parkCount": 0,
+      "hasPark": false,
+      "hasPipe": false,
+      "bestFor": [
+        "Free Wednesday ski nights",
+        "Boundary-to-boundary glades",
+        "The cheapest big vertical in Maine",
+        "Indy days with no blackouts"
+      ],
+      "officialSnowReport": "https://skiblackmountain.org/the-mountain",
       "verifiedOn": "2026-08-25"
     },
     {
@@ -306,6 +388,53 @@
       ],
       "officialSnowReport": "https://www.skiburke.com/mountain/conditions",
       "verifiedOn": "2026-08-24"
+    },
+    {
+      "slug": "camden-snow-bowl",
+      "name": "Camden Snow Bowl",
+      "state": "ME",
+      "region": "Midcoast Maine",
+      "town": "Camden",
+      "lat": 44.2116,
+      "lon": -69.1481,
+      "website": "https://camdensnowbowl.com",
+      "verticalDrop": 1000,
+      "skiableAcres": 105,
+      "trailCount": 15,
+      "liftCount": 3,
+      "annualSnowfallAvg": 41,
+      "snowmakingPercent": null,
+      "nightSkiing": true,
+      "passTypes": [
+        "indy",
+        "other"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day lift tickets per season on the 2026-27 Indy Pass, redeemed in person at the ticket window. First-time visitors need to buy a $5 Snow Bowl RFID card, which everything at this mountain runs on."
+        },
+        {
+          "name": "Uphill New England",
+          "type": "other",
+          "access": "Not lift access but worth recording: the Snow Bowl is one of 24 New England mountains on the Uphill New England multi-mountain uphill season pass, a non-profit product. It also sells its own uphill pass at $75 for the season or $15 a day."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 531,
+      "mogulPresence": "occasional",
+      "parkCount": 2,
+      "hasPark": true,
+      "hasPipe": null,
+      "bestFor": [
+        "The only ocean view in eastern skiing",
+        "Camden residents and taxpayers",
+        "Weeknight skiing until 7pm",
+        "Glades after a rare storm"
+      ],
+      "officialSnowReport": "https://camdensnowbowl.com/current-conditions/",
+      "verifiedOn": "2026-08-25"
     },
     {
       "slug": "cannon",
@@ -982,6 +1111,47 @@
         "First-timers on South Peak"
       ],
       "officialSnowReport": "https://www.mountsunapee.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx",
+      "verifiedOn": "2026-08-25"
+    },
+    {
+      "slug": "mt-abram",
+      "name": "Mt. Abram",
+      "state": "ME",
+      "region": "Western Maine",
+      "town": "Greenwood",
+      "lat": 44.3696,
+      "lon": -70.7131,
+      "website": "https://www.mtabram.com",
+      "verticalDrop": 1150,
+      "skiableAcres": 450,
+      "trailCount": 42,
+      "liftCount": 4,
+      "annualSnowfallAvg": 115,
+      "snowmakingPercent": null,
+      "nightSkiing": false,
+      "passTypes": [
+        "indy"
+      ],
+      "passes": [
+        {
+          "name": "Indy Pass",
+          "type": "indy",
+          "access": "Two all-day lift tickets per season on the Indy Pass, redeemed in person at any on-mountain ticket location. Mt. Abram states plainly that it has no way to pre-redeem Indy visits online."
+        }
+      ],
+      "advanceTypical": null,
+      "seasonPassAdult": 649,
+      "mogulPresence": "common",
+      "parkCount": 0,
+      "hasPark": false,
+      "hasPipe": false,
+      "bestFor": [
+        "A $42 day ticket, any day",
+        "Glades in the Bethel snow belt",
+        "Beginners with their own mountain",
+        "Indy days with no reservation"
+      ],
+      "officialSnowReport": "https://www.mtabram.com/winter/hours-info/",
       "verifiedOn": "2026-08-25"
     },
     {

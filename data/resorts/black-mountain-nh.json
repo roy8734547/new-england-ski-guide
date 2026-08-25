@@ -236,7 +236,7 @@
       "resortClaim": 140,
       "independentClaim": 600,
       "independentSource": "https://www.onthesnow.com/new-hampshire/black-mountain/ski-resort",
-      "note": "A factor of more than four, and the largest acreage disagreement on this roster. The resort says over 140 acres on both its own site and its Indy listing; OnTheSnow says 600. The most likely explanation is that OnTheSnow counts the gladed and backcountry terrain that Black keeps outside its trail acreage, which is the same pattern that produces three different trail counts for this mountain - but no source says so, and the conservative figure is stored."
+      "note": "A factor of more than four, and the largest acreage disagreement on this roster. The resort says over 140 acres on both its own site and its Indy listing; OnTheSnow says 600. Since this file was written, a likelier explanation than glade accounting has emerged: 600 acres is exactly the acreage of Black Mountain of MAINE, a different ski area with the same name a hundred miles away, and OnTheSnow in turn publishes THIS mountain’s summit, base and vertical (2,350 / 1,250 / 1,100) in its record for the Maine resort. The two OnTheSnow records appear to have contaminated each other. Treat every OnTheSnow figure for either Black Mountain with suspicion; the conservative resort figure is stored here."
     },
     {
       "field": "size.annualSnowfallAvg",

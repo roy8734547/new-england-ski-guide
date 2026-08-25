@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "black-mountain-maine",
+    "name": "Black Mountain of Maine",
+    "aka": [
+      "Black Mountain",
+      "Black Mountain of Maine, Rumford"
+    ],
+    "state": "ME",
+    "region": "Western Maine",
+    "town": "Rumford",
+    "lat": 44.5793,
+    "lon": -70.6296,
+    "website": "https://skiblackmountain.org"
+  },
+  "size": {
+    "verticalDrop": 1380,
+    "skiableAcres": 600,
+    "trailCount": 31,
+    "liftCount": 3,
+    "longestRun": null,
+    "summitElevation": 2280,
+    "baseElevation": 900,
+    "annualSnowfallAvg": 100,
+    "snowmakingPercent": 70,
+    "nightSkiing": true,
+    "source": "https://www.indyskipass.com/our-resorts/black-mountain-of-maine",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "verticalDrop": {
+        "source": "https://skiblackmountain.org/about-us",
+        "verifiedOn": "2026-08-25"
+      },
+      "snowmakingPercent": {
+        "source": "https://skiblackmountain.org/about-us",
+        "verifiedOn": "2026-08-25"
+      },
+      "liftCount": {
+        "source": "https://skiblackmountain.org/about-us",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://skiblackmountain.org/about-us",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 23,
+    "percentIntermediate": 40,
+    "percentAdvanced": 37,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "A serious warning attaches to third-party data for this mountain. OnTheSnow's record for Black Mountain of Maine gives a 2,350 ft summit, a 1,250 ft base and a 1,100 ft vertical on 600 acres - and those first three figures are byte-identical to its record for Black Mountain in Jackson, New Hampshire, a different ski area 100 miles away with the same name. OnTheSnow also gives Black Mountain NH 600 acres, which is this mountain's acreage and four times what the New Hampshire resort claims. The two records appear to have contaminated each other, so nothing from OnTheSnow is used here. The stored figures come from the resort, which states 1,380 ft of vertical and calls itself Maine's fourth-tallest operating ski area, and from its Indy Pass partner listing, whose 2,280 ft summit and 900 ft base reconcile with that vertical exactly. The trail count needs the same care the acreage does: the resort says \"over 50 trails & glades\" while Indy's alpine listing says 31 trails, which is the alpine-only count and the one stored. Boundary-to-boundary skiing across 600 acres is the resort's own framing and the glades are a headline feature rather than an afterthought. A terrain probe of the summit lift's top station returns about 2,057 ft against the published 2,280 ft; that is DEM smoothing on a narrow ridge rather than a bad coordinate.",
+    "source": "https://www.indyskipass.com/our-resorts/black-mountain-of-maine",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two all-day lift tickets per season on the Indy Pass. The listing covers both the alpine mountain and the Nordic centre, which is unusual - Black Mountain's Indy entry carries a separate cross-country block with its own terrain split and trail statistics.",
+      "blackouts": "None. The Indy partner page carries an explicit No Blackout Dates marker. The operating schedule is the real limit: Thursday to Sunday plus selected Wednesday evenings.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/black-mountain-of-maine"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": null,
+    "windowTicketAdultLow": null,
+    "advanceTypical": null,
+    "seasonPassAdult": null,
+    "currency": "USD",
+    "notes": "The only price Black Mountain publishes as plain text is the one that matters most to its mission: early-bird season passes start at $385, and children in second grade and under get a season pass free. As a 501(c)(3) whose stated purpose is keeping skiing affordable, the pricing structure is the product. Its other published offer is more unusual still - Free Ski Nights on selected Wednesday evenings, 5pm to 9pm, where skiing, riding and tubing all cost nothing and a full rental package is $40 plus tax. Adult day-ticket rates and the specific adult season pass price sit behind a store the site renders through JavaScript and could not be read, so all four price fields are null rather than estimated. Season passes bought before 15 April also carry two free buddy passes for the following season.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://skiblackmountain.org/about-us",
+    "fieldSources": {}
+  },
+  "editorial": {
+    "overview": "Black Mountain of Maine is a 501(c)(3) charity that happens to own the fourth-tallest operating ski area in the state, and the two facts explain each other. Thirteen hundred and eighty feet of vertical above Rumford, 600 acres of boundary-to-boundary skiing, two chairlifts and a T-bar, over 70% snowmaking, 17 kilometres of Nordic trails and a tubing park - all run by a non-profit whose stated mission is to keep skiing affordable enough that it has a future in Maine. That mission shows up in the operating model rather than the marketing: season passes start at $385, every child in second grade and under gets one free, and on selected Wednesday evenings the whole mountain - skiing, riding and tubing - is free to everybody, 5pm to 9pm, with rentals at $40. It opens Thursday through Sunday plus those Wednesday nights. The skiing itself is better than the price suggests, with 37% of the terrain in the top grade and glades that the resort talks about before it talks about its groomers. The catch is scale of operation, not scale of mountain: four and a half days a week, three lifts, and a snow record that no third party seems able to report accurately.",
+    "snowQuality": "The Indy Pass listing puts the average at 100 inches with a high of 210, which for the western Maine mountains is plausible and roughly in line with Mt. Abram down the road. OnTheSnow's 37 inches is not credible for this location and its whole record for this mountain appears to be contaminated by the identically named Black Mountain in New Hampshire, so it is disregarded here. What can be said with confidence is that snowmaking covers over 70% of the terrain - the resort's own figure - which is high for a non-profit and reflects where the charity has put its money. The glades are the part that waits for weather; 600 acres of boundary-to-boundary skiing is a lot of terrain to leave to natural snow, and the powder days the resort markets are real but not frequent.",
+    "crowds": "Structurally quiet. Rumford is a mill town of five thousand in western Maine, the mountain runs Thursday to Sunday, and the nearest competition for destination visitors is Sunday River an hour away with fifteen times the lift capacity. Three lifts on 600 acres is generous by any measure. The exceptions are the Free Ski Nights, which are the busiest sessions of the mountain's week by design, and the Chisholm Ski Club race weekends on the Nordic side, which have their own long-standing following. If you want a 1,380-foot mountain to yourself on a Thursday in January, this is where to find one.",
+    "difficulty": "Harder than a community mountain has any need to be. Thirty-seven percent of the terrain carries the top grade against 23% beginner, which is close to inverted for an area whose mission statement is about accessibility, and the 1,380 feet of vertical is real - only three operating Maine ski areas have more. What makes it interesting is the boundary-to-boundary policy: 600 acres of terrain with 31 marked trails means most of what is skiable here is not a trail, and the resort's own description leads with powder in the glades rather than with corduroy. That is a natural-snow proposition on a mountain that is open four days a week, so a good day requires timing. Beginners are well served on the lower mountain and the second-grade-and-under free pass means a lot of them start here.",
+    "keyTrails": [
+      {
+        "name": "The Summit Lift",
+        "note": "The chair that reaches the 2,280-foot summit and the full 1,380 feet of vertical - the fourth-largest of any operating ski area in Maine."
+      },
+      {
+        "name": "The Novice Lift",
+        "note": "The second chair, serving the lower mountain and the beginner terrain where a lot of Rumford children learn on a free second-grade pass."
+      },
+      {
+        "name": "The glades",
+        "note": "The resort leads its own description with powder in the glades, and with 600 acres of boundary-to-boundary skiing against 31 marked trails, most of the mountain is trees. No individual glade is named anywhere."
+      },
+      {
+        "name": "The Nordic network",
+        "note": "Seventeen kilometres of trails by the resort's count, home to the Chisholm Ski Club's race programme, and lit for night skiing even though the alpine mountain is not on a regular evening schedule."
+      },
+      {
+        "name": "The Edge Tubing Park",
+        "note": "Open Saturday and Sunday afternoons and on the free Wednesday evenings, and free to tube on those nights. Part of the same affordability mission as the pass pricing."
+      }
+    ],
+    "tidbits": [
+      "Black Mountain of Maine is a 501(c)(3) non-profit whose mission is keeping skiing affordable.",
+      "It is the fourth-tallest operating ski area in Maine, at 1,380 feet of vertical.",
+      "On selected Wednesday evenings, skiing, riding and tubing are all free, 5pm to 9pm.",
+      "Children in second grade and under get a free season pass.",
+      "Early-bird season passes start at $385.",
+      "Six hundred acres are open boundary to boundary against just 31 marked trails.",
+      "Snowmaking covers over 70% of the terrain.",
+      "It has 17 kilometres of Nordic trails, home to the Chisholm Ski Club.",
+      "OnTheSnow's record for this mountain appears to be mixed up with Black Mountain in New Hampshire.",
+      "The Last Run Pub has twelve beers on tap, eleven of them from Maine breweries."
+    ],
+    "bestFor": [
+      "Free Wednesday ski nights",
+      "Boundary-to-boundary glades",
+      "The cheapest big vertical in Maine",
+      "Indy days with no blackouts"
+    ],
+    "watchOutFor": [
+      "Open Thursday to Sunday only",
+      "Prices are behind a JavaScript store",
+      "Night skiing is event-based, not weekly",
+      "Third-party data is unreliable here"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://skiblackmountain.org/the-mountain",
+    "trailMap": "https://skiblackmountain.org/the-mountain",
+    "webcams": null,
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Black Mountain of Maine about page (1,380 ft vertical and the fourth-tallest claim, top-to-bottom night skiing, two chairs and a T-bar, over 50 trails and glades, over 70% snowmaking, 600 acres boundary to boundary, 501(c)(3) status, early-bird pass floor, free second-grade passes)",
+        "url": "https://skiblackmountain.org/about-us",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Black Mountain of Maine hours (alpine Thursday-Sunday 9-4 plus selected Wednesdays 5-9pm, Nordic and tubing schedules, 2026-27 holiday dates)",
+        "url": "https://skiblackmountain.org/hours",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Black Mountain of Maine free ski nights (selected Wednesday evenings 5-9pm, free skiing, riding and tubing, $40 rentals)",
+        "url": "https://skiblackmountain.org/free-ski-nights",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Black Mountain of Maine (summit and base elevations, terrain split, snowfall average and high, acreage, trail count, no blackout dates, and a separate cross-country block)",
+        "url": "https://www.indyskipass.com/our-resorts/black-mountain-of-maine",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. The mountain's competitive tradition is Nordic racing through the Chisholm Ski Club"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes the bump skiing here. The resort names no individual trail anywhere on its site and says nothing about grooming policy, and PeakRankings has no Black Mountain of Maine page"
+    },
+    "parks.count": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/black-mountain-of-maine",
+      "note": "The Indy Pass partner directory's structured Terrain Parks field reads No for the alpine area, and the resort's own site never mentions a terrain park on any page - it describes its glades, its Nordic network and its tubing park in detail and no freestyle terrain at all. Two lines pointing the same way, so this is recorded as a confirmed zero"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://skiblackmountain.org/about-us",
+      "note": "No day-ticket rate is published as text anywhere on the site; ticket sales run through a store that renders through JavaScript"
+    },
+    "pricing.seasonPassAdult": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://skiblackmountain.org/about-us",
+      "note": "The resort states that early-bird season passes start at $385, but that is a floor across all age bands rather than the adult rate. The specific adult price is on the JavaScript store only"
+    },
+    "pricing.windowTicketAdultHigh": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://skiblackmountain.org/about-us",
+      "note": "No day-ticket rate is published as text anywhere on the site"
+    },
+    "pricing.windowTicketAdultLow": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://skiblackmountain.org/about-us",
+      "note": "No day-ticket rate is published as text anywhere on the site"
+    },
+    "size.longestRun": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither the resort nor the Indy partner listing publishes a longest-run figure, and OnTheSnow's record for this mountain is not used because it appears contaminated by the identically named Black Mountain in New Hampshire"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/black-mountain-of-maine",
+      "note": "The Indy listing publishes a three-tier split, so there is no fourth-tier figure to source, and the resort publishes no difficulty breakdown of its own"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.verticalDrop",
+      "resortClaim": 1380,
+      "independentClaim": 1100,
+      "independentSource": "https://www.onthesnow.com/maine/black-mountain-of-maine/ski-resort",
+      "note": "A 280-foot gap, but this one is recorded as a caution rather than a genuine disagreement. OnTheSnow's 1,100 ft vertical, 2,350 ft summit and 1,250 ft base for this mountain are the same three numbers it publishes for Black Mountain in Jackson, New Hampshire - a different ski area with the same name - and it also credits that New Hampshire resort with 600 acres, which is this mountain's figure and four times what the New Hampshire resort claims. The two records look cross-contaminated. The resort's own 1,380 ft is stored, and it reconciles exactly with the summit and base on its Indy Pass listing."
+    }
+  ],
+  "moguls": {
+    "presence": "common",
+    "policy": "No grooming policy is published. The structural reading is straightforward though: 600 acres are open boundary to boundary against 31 marked trails, so most of what is skiable here is glade and tree terrain outside any grooming rotation, and the mountain operates four days a week plus selected Wednesday evenings rather than seven. Over 70% snowmaking coverage means the marked trail network is a manufactured surface that will be groomed to survive, but the terrain the resort actually leads with - powder in the glades - is not. Recorded as common on that basis and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://skiblackmountain.org/about-us",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 0,
+    "parks": [],
+    "pipe": false,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Black Mountain of Maine has no terrain park. The structured Terrain Parks field on its Indy Pass partner listing reads No for the alpine area, and the resort's own site never mentions freestyle terrain anywhere while describing its glades, its 17 kilometres of Nordic trails and The Edge Tubing Park at length. This is a confirmed absence rather than a gap in the record, and it fits a mountain whose money goes into snowmaking, a Nordic race programme and free ski nights rather than into features.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts/black-mountain-of-maine",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "mt-abram",
+    "name": "Mt. Abram",
+    "aka": [
+      "Mount Abram",
+      "Mt Abram Ski Area"
+    ],
+    "state": "ME",
+    "region": "Western Maine",
+    "town": "Greenwood",
+    "lat": 44.3696,
+    "lon": -70.7131,
+    "website": "https://www.mtabram.com"
+  },
+  "size": {
+    "verticalDrop": 1150,
+    "skiableAcres": 450,
+    "trailCount": 42,
+    "liftCount": 4,
+    "longestRun": null,
+    "summitElevation": 2000,
+    "baseElevation": null,
+    "annualSnowfallAvg": 115,
+    "snowmakingPercent": null,
+    "nightSkiing": false,
+    "source": "https://www.mtabram.com/winter/hours-info/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "summitElevation": {
+        "source": "https://www.indyskipass.com/our-resorts/mt-abram",
+        "verifiedOn": "2026-08-25"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.indyskipass.com/our-resorts/mt-abram",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.mtabram.com/winter/hours-info/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 35,
+    "percentIntermediate": 42,
+    "percentAdvanced": 23,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "The percentages are the resort's own and match the Indy Pass partner listing exactly, which is the best corroboration available for a mountain this size. They do not, however, match the resort's own trail counts on the same page: it describes \"10 easy, 21 Intermediate, and 13 expert trails\", which works out at 23/48/30 and totals 44 against the 42 in its own stat block. The published percentages are stored because two sources agree on them; the trail-count sentence is recorded here so the discrepancy is visible. Trail counts elsewhere run higher still - Indy says 43, OnTheSnow 54. The elevations are the harder problem. Mt. Abram publishes a 1,150 ft vertical and no summit or base at all; Indy gives 2,000/950 for a 1,050 ft vertical, and OnTheSnow gives 2,250/1,050 for 1,150 ft. A terrain probe of the Way Back Machine's top station returns about 1,975 ft, which supports Indy's summit and not OnTheSnow's, so Indy's 2,000 ft is stored alongside the resort's own 1,150 ft vertical and the base is left null rather than storing a triple that cannot reconcile. The resort is candid about this: its own history page notes the 1970 chairlift raised the vertical \"from 900 to 1,030 feet, depending upon the publication\". Mt. Abram is really two areas - Westside, the beginner zone with a double chair and a conveyor, and Mainside, served by the Way Back Machine double and the Maine T-Bar, which has wooded glades and no beginner terrain at all.",
+    "source": "https://www.mtabram.com/winter/hours-info/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two all-day lift tickets per season on the Indy Pass, redeemed in person at any on-mountain ticket location. Mt. Abram states plainly that it has no way to pre-redeem Indy visits online.",
+      "blackouts": "None. The resort states it requires no Indy reservations and has no blackout days, and the Indy partner page carries an explicit No Blackout Dates marker.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.mtabram.com/lift-tickets/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 42,
+    "windowTicketAdultLow": 42,
+    "advanceTypical": null,
+    "seasonPassAdult": 649,
+    "currency": "USD",
+    "notes": "One price, every day: $42 for a full-day ticket for anyone aged 6 to 79, with no blackout dates, no peak surcharge, no half-days and - the resort says so explicitly - no military or student discounts, on the grounds that the everyday price is already as low as they can make it. That is the cheapest unrestricted adult day ticket on this roster and the flattest pricing structure on it. The exception runs the other way: LL Bean Maine Day Thursdays put the ticket at $19.60 for Maine residents with proof, in person, outside holiday weeks. A magic carpet ticket is $10, uphill $15, and under-6s and over-80s are free. Tickets can sell out over holidays and the resort recommends buying ahead, but there is no separate advance rate. The season pass figure is the 2026-27 winter adult (19-64) rate of $649; Oxford County permanent residents pay $549, youth and seniors $549, and a bike-park-plus-winter combo runs $899. Passholders get 20% off retail.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.mtabram.com/lift-tickets/",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://www.mtabram.com/season-passes/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Mt. Abram has spent sixty-five years being the ski area in Sunday River's shadow, and it has turned that into an identity rather than a complaint. It sits eight miles down the road in Greenwood, family-owned and independent since three logging brothers named Cross cleared two slopes here in 1960, and its own copy is refreshingly direct about what it is not: no high-speed lifts, no luxury lodge. What it does have is 1,150 feet of vertical on 450 acres served by four lifts, a $42 day ticket that never changes price and never blacks out, and a layout that splits the mountain in two - Westside, the beginner zone with its own double chair, conveyor and ski school, and Mainside, which has wooded glades, a T-bar older than most of the people riding it, and no beginner terrain whatsoever. The Way Back Machine, the 1970 double chair, beat Sunday River to being the region's first chairlift-served ski area and is still the main lift. Every trail is named after Rocky and Bullwinkle - Dudley Do Right, Boris Badenov, Natasha's Niche - which tells you as much about the place as the statistics do. It opens Thursday to Sunday, 9 to 4.",
+    "snowQuality": "The Indy Pass partner listing puts Mt. Abram's average at 115 inches with a high of 160, which for western Maine is respectable and about double what the southern half of this roster gets; OnTheSnow's 51 inches is so far below every other estimate that it is hard to take seriously for a mountain in the Bethel snow belt. Snowmaking exists but the resort publishes no coverage figure at all, and OnTheSnow's 175 acres against 450 skiable would put it around 40% - low, and consistent with a mountain whose Mainside glades are a headline feature. The practical reading: Mt. Abram is a natural-snow mountain with a snowmade spine, four operating days a week, and glade terrain that needs a storm. Sunday River eight miles away will be open more reliably and will cost four times as much.",
+    "crowds": "Rarely an issue, and the four-day operating week is why. Mt. Abram runs Thursday to Sunday with extended hours over the holidays, and the visitors it draws are the ones who deliberately drove past Sunday River - locals, Oxford County residents on a $549 community pass, families who want a $42 ticket, and Indy Pass holders, who can turn up unannounced because the mountain requires no reservation. Four lifts on 450 acres is generous. The pinch points are holiday weeks, when the resort warns tickets can sell out, and the split-mountain layout, which concentrates every beginner on Westside and everyone else on the Way Back Machine.",
+    "difficulty": "Split down the middle by design. Westside is entirely beginner terrain with its own lift and ski school; Mainside, where almost everyone else skis, has no beginner terrain at all and carries the expert and intermediate trails plus the wooded glades. That is an unusually clean division and it makes Mt. Abram a better mountain than its size suggests for both ends of the ability range and a slightly awkward one for a family in the middle - the two halves genuinely do not mix. The published split is 35% beginner, 42% intermediate and 23% advanced, though the resort's own trail counts on the same page tell a harder story: 10 easy, 21 intermediate and 13 expert. The glades are the reason strong skiers come, and on 1,150 feet of vertical served by a fifty-year-old double chair they are also the reason the queue is short.",
+    "keyTrails": [
+      {
+        "name": "The Way Back Machine",
+        "note": "The 1970 double chair that made Mt. Abram the first chairlift-served ski area in the region, beating Sunday River to it. Still the lift that serves the whole Mainside."
+      },
+      {
+        "name": "The Maine T-Bar",
+        "note": "Installed for the mountain's second season in 1961 and still running - 3,350 feet of it. The resort calls it a throwback and a nod to its own history, which is exactly right."
+      },
+      {
+        "name": "Dudley Do Right",
+        "note": "Every trail here is named after the Rocky and Bullwinkle cartoon. This is the one everybody remembers."
+      },
+      {
+        "name": "Boris Badenov",
+        "note": "Another of the Rocky and Bullwinkle names, and one of very few Mt. Abram trails identified anywhere in the resort's own published material."
+      },
+      {
+        "name": "Natasha's Niche",
+        "note": "The third named trail on the resort's own site. Beyond these three, Mt. Abram publishes no trail list at all."
+      },
+      {
+        "name": "Westside",
+        "note": "Not a trail but the other half of the mountain: a separate beginner area with its own double chair, conveyor lift, base lodge and ski school. Mainside has no beginner terrain."
+      }
+    ],
+    "tidbits": [
+      "Every trail is named after the Rocky and Bullwinkle cartoon show.",
+      "A full-day adult lift ticket is $42 with no blackouts and no peak pricing.",
+      "LL Bean Maine Day Thursdays drop that to $19.60 for Maine residents.",
+      "The Way Back Machine, installed for 1970, beat Sunday River to being the region's first chairlift-served ski area.",
+      "The Maine T-Bar has been running since 1961.",
+      "Mainside has no beginner terrain at all; all of it is on Westside.",
+      "Mt. Abram has been family-owned and independent since it opened in 1960.",
+      "It opens Thursday through Sunday, with extended hours over holidays.",
+      "Oxford County residents pay $549 for a season pass rather than $649."
+    ],
+    "bestFor": [
+      "A $42 day ticket, any day",
+      "Glades in the Bethel snow belt",
+      "Beginners with their own mountain",
+      "Indy days with no reservation"
+    ],
+    "watchOutFor": [
+      "Open Thursday to Sunday only",
+      "No snowmaking figure published",
+      "No beginner terrain on Mainside",
+      "Published vertical figures disagree"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.mtabram.com/winter/hours-info/",
+    "trailMap": "https://www.mtabram.com/winter/hours-info/",
+    "webcams": null,
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Mt. Abram winter hours and info (mountain stats block, terrain breakdown, the Mainside/Westside split, lift names, the Rocky and Bullwinkle trail naming, operating days and holiday hours)",
+        "url": "https://www.mtabram.com/winter/hours-info/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Mt. Abram lift tickets (the flat $42 rate, the no-blackout and no-discount policy, LL Bean Maine Day Thursdays, Indy redemption terms)",
+        "url": "https://www.mtabram.com/lift-tickets/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Mt. Abram season passes (2026-27 winter, combo and community rates)",
+        "url": "https://www.mtabram.com/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Mt. Abram history (the Cross brothers and the 1960 opening, the 1961 Maine T-Bar, the 1970 Way Back Machine, and the resort's own note that its vertical varies by publication)",
+        "url": "https://www.mtabram.com/about-mt-abram/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Mt. Abram (summit and base elevations, snowfall average and high, acreage, terrain split, no blackout dates, structured park and night fields)",
+        "url": "https://www.indyskipass.com/our-resorts/mt-abram",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Mt. Abram (snowmaking acreage, longest run and the differing elevation, trail and snowfall figures recorded in the notes)",
+        "url": "https://www.onthesnow.com/maine/mt-abram-ski-resort/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented for Mt. Abram"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes Mt. Abram's bump skiing. The resort names three trails on its whole site and says nothing about grooming, and PeakRankings has no Mt. Abram page"
+    },
+    "parks.count": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/mt-abram",
+      "note": "The Indy Pass partner directory's structured Terrain Parks field reads No, and Mt. Abram's own site never mentions a terrain park anywhere - its mountain stats block lists vertical, acreage, trails, lifts and base lodges, and its ticket page enumerates every product it sells, with no park in either. Two lines pointing the same way, so this is a confirmed zero rather than an unknown"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.mtabram.com/lift-tickets/",
+      "note": "Mt. Abram sells one adult day ticket at one price through every channel. It recommends buying online to guarantee availability over holidays but offers no discount for doing so, so there is no advance rate distinct from the window rate"
+    },
+    "size.baseElevation": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.mtabram.com/winter/hours-info/",
+      "note": "The resort publishes a vertical drop and no elevations at all. The two third-party pairs available - Indy's 2,000/950 and OnTheSnow's 2,250/1,050 - imply different verticals from each other and from the resort's 1,150 ft, so storing a base alongside the stored summit and vertical would record an arithmetic contradiction. A terrain probe of the summit lift top supports Indy's summit figure, which is the one stored"
+    },
+    "size.longestRun": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "The resort publishes no longest-run figure and the Indy partner page does not carry one. OnTheSnow gives 0.5 mi, but the rest of its Mt. Abram record disagrees badly with both other sources and it is not relied on here"
+    },
+    "size.nightSkiing": {
+      "status": "absent",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.mtabram.com/winter/hours-info/",
+      "note": "The resort publishes its winter hours as 9:00am to 4:00pm, Thursday through Sunday, with extended hours over holidays and no evening session of any kind, and the Indy partner listing’s structured Night Skiing field reads No."
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.mtabram.com/winter/hours-info/",
+      "note": "The resort's stats block covers vertical, acreage, trails, lifts and base lodges and gives no snowmaking figure of any kind, and neither does the Indy partner listing. OnTheSnow records 175 snowmaking acres against 450 skiable, which would be about 39%, but that is arithmetic on two figures from a source whose other Mt. Abram numbers are unreliable"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.mtabram.com/winter/hours-info/",
+      "note": "Mt. Abram publishes a three-tier percentage split, so there is no fourth-tier figure to source - even though its own prose on the same page calls its top tier expert and counts 13 such trails"
+    }
+  },
+  "dataDisputes": [
+    {
+      "field": "size.verticalDrop",
+      "resortClaim": 1150,
+      "independentClaim": 1050,
+      "independentSource": "https://www.indyskipass.com/our-resorts/mt-abram",
+      "note": "A hundred-foot gap on a mountain of this size is nearly 10%. The resort's own stats block says 1,150 ft and is stored; the Indy partner listing says 1,050 ft and pairs it with a 2,000 ft summit and a 950 ft base that reconcile exactly and that a terrain probe of the summit lift supports. Mt. Abram itself acknowledges the ambiguity - its history page says the 1970 chairlift raised the vertical to somewhere between 900 and 1,030 feet \"depending upon the publication\"."
+    }
+  ],
+  "moguls": {
+    "presence": "common",
+    "policy": "Nothing about grooming is published, but the structure of the mountain points one way. Mt. Abram runs four days a week on 450 acres with four lifts and, by the only available estimate, snowmaking on well under half of it; the Mainside is explicitly the expert and intermediate half and carries wooded glades. A mountain that does not operate Monday to Wednesday is not grooming Monday to Wednesday either, and natural-snow glade terrain is outside any rotation regardless. Recorded as common on that basis rather than on any published statement, and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.mtabram.com/winter/hours-info/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 0,
+    "parks": [],
+    "pipe": false,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": false,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "Mt. Abram has no terrain park. The structured Terrain Parks field on its Indy Pass partner listing reads No, and the resort's own site - which lists its stats, enumerates every ticket product it sells and describes both halves of the mountain - never mentions one. This is a confirmed absence rather than a missing record. The freestyle energy here goes into the summer bike park instead, which the resort documents at considerably greater length than its winter terrain.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts/mt-abram",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

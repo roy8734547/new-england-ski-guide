@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "big-rock",
+    "name": "Big Rock Mountain",
+    "aka": [
+      "BigRock",
+      "Big Rock Ski Area",
+      "Mars Hill Skiway"
+    ],
+    "state": "ME",
+    "region": "Northern Maine",
+    "town": "Mars Hill",
+    "lat": 46.5258,
+    "lon": -67.8154,
+    "website": "https://www.bigrockmaine.com"
+  },
+  "size": {
+    "verticalDrop": 920,
+    "skiableAcres": 90,
+    "trailCount": 25,
+    "liftCount": 4,
+    "longestRun": null,
+    "summitElevation": 1590,
+    "baseElevation": 670,
+    "annualSnowfallAvg": 94,
+    "snowmakingPercent": null,
+    "nightSkiing": true,
+    "source": "https://www.indyskipass.com/our-resorts/big-rock-mountain",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "trailCount": {
+        "source": "https://www.bigrockmaine.com/trails/",
+        "verifiedOn": "2026-08-25"
+      },
+      "liftCount": {
+        "source": "https://www.bigrockmaine.com/trails/",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://www.bigrockmaine.com/information/hours/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 10,
+    "percentIntermediate": 66,
+    "percentAdvanced": 24,
+    "percentExpert": null,
+    "glades": null,
+    "difficultyNotes": "The split comes from the Indy Pass partner listing; Big Rock publishes no percentages of its own. Ten percent beginner is the lowest beginner share on this roster, which is a surprising figure for a community non-profit until you look at the layout - the South Star Triple serves a separate beginner pocket with about 229 feet of vertical, so the whole rest of the mountain sits above novice level. The trail count is the resort's own: its live trail report enumerates 25 named trails with a difficulty marker and a night-skiing flag for each, which is a better source than the 29 on the Indy listing or the 26 in Indy's own blurb on the same page. That report also confirms the lift fleet by name - the Sunrise quad, the Apollo triple, the Space Shuttle carpet and the Mercury handle tow - which supersedes the North Star Double and South Star Triple named on the resort's own history page, last updated in 2021. Eleven of the 25 trails are flagged for night skiing. The elevation figures reconcile exactly (1,590 less 670 is 920) and a terrain probe of the Sunrise quad's top station returns about 1,578 ft, within twelve feet of the published summit - the cleanest coordinate match in this batch.",
+    "source": "https://www.indyskipass.com/our-resorts/big-rock-mountain",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two all-day lift tickets per season on the Indy Pass. Big Rock is the northernmost Indy partner in the eastern United States and one of very few reasons a pass holder would ever drive to Aroostook County.",
+      "blackouts": "None. The Indy partner page carries an explicit No Blackout Dates marker. The operating schedule is the practical limit: Wednesday to Friday afternoons and evenings only, weekends 9 to 4.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/big-rock-mountain"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 60,
+    "windowTicketAdultLow": 60,
+    "advanceTypical": null,
+    "seasonPassAdult": 625,
+    "currency": "USD",
+    "notes": "Big Rock sells one adult day pass, for ages 18 to 75, at $60, and a student day pass for ages 5 to 17 at $50. Both high and low window fields carry $60 because that is the only adult day product in the store - though a February-break notice stating that ticket prices go to the \"weekend rate all week\" implies a cheaper midweek rate exists that is not published as a separate product, so treat the low figure as provisional. Multi-day packs bring the effective rate down substantially: a four-pass pack is $180, or $45 a day, and a seven-day share pass that can be split between people is $299. Uphill is $10. The season pass figure is the adult (18-64) rate of $625; a senior (65-74) pays $525, a lower-mountain-only pass is $275, a family of four is $1,595, and children four and under are free. Everything is sold through the mountain's own online store.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://www.bigrockmaine.com/day-pass/",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://www.bigrockmaine.com/collection/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "Big Rock Mountain sits on the western face of Mars Hill in Aroostook County, ten miles from New Brunswick, and it is the most remote ski area on this roster by a considerable margin - Bangor is two and a half hours south and there is nothing else of this size between here and Quebec. It is a 501(c)(3) non-profit run by a local board, which it became in 2013 after the Maine Winter Sports Center announced it was getting out of alpine skiing and the mountain was days from closing; a group formed a charity and took the transfer. What survived is 920 feet of vertical on 90 acres with 25 trails and four lifts - the Sunrise quad, the Apollo triple, the Space Shuttle carpet and the Mercury handle tow - almost all of them named for the space programme, and eleven of the trails lit. The operating pattern is the thing to understand before driving: Wednesday, Thursday and Friday it opens at 2pm and closes at 8pm, and only at weekends does it run 9 to 4. Mars Hill itself is the highest peak in northeastern Maine at 1,748 feet, carries the International Appalachian Trail and 28 wind turbines, and is - from 25 March to 13 September - the first place in the continental United States the rising sun touches.",
+    "snowQuality": "Ninety-four inches a year by the Indy listing, with a recorded high of 150, which is a decent northern Maine total and a good deal more than the coastal and southern mountains on this roster get. Aroostook County is cold in a way that matters more than the raw inches: the snowmaking window here opens early and stays open, and a February thaw that ruins a week in the Berkshires is a rarity this far north. Big Rock has invested in snowmaking repeatedly, most substantially under the Maine Winter Sports Center in 2002-03 when coverage and night-skiing terrain were both expanded, but publishes no coverage percentage - the only figure available is an ambiguous \"80 snowmaking\" in the Indy blurb that could be a percentage or an acreage. What can be said is that the season here starts earlier and holds later than almost anywhere else in this guide.",
+    "crowds": "Effectively a non-issue. Mars Hill has fifteen hundred residents, Presque Isle is half an hour away, and the mountain's realistic catchment is Aroostook County and adjacent New Brunswick. Four lifts on 90 acres serve that comfortably. What shapes a visit far more than crowding is the schedule: midweek the mountain does not open until 2pm and closes at 8, so a Wednesday visit is a night-skiing visit whether you planned one or not. Weekends run normal daytime hours. The one time it fills is February break, when it opens 9 to 4 Monday to Friday and charges weekend rates all week.",
+    "difficulty": "Intermediate almost all the way through - 66% of the terrain by Indy's split, against just 10% beginner and 24% advanced. That 10% is the lowest beginner share on this roster and it is a layout consequence rather than a philosophy: the beginner terrain is a separate pocket off the South Star Triple with roughly 229 feet of vertical, and everything above it is blue or black. The resort's own trail report marks five trails with a black diamond, including DON'T PANIC, Hooch and Daz's Way, on 920 feet of vertical, so nothing is long. The distinguishing feature is the night terrain: eleven of the 25 trails are lit and they are mostly the easier ones, which means the midweek evening mountain is materially gentler than the weekend daytime one.",
+    "keyTrails": [
+      {
+        "name": "DON'T PANIC",
+        "note": "A black diamond, capitalised on the resort's own trail report, and the best trail name in this guide. Not lit."
+      },
+      {
+        "name": "Milky Way",
+        "note": "One of the eleven lit trails and part of the space-programme naming that runs through the whole mountain - Comet, Aurora, Orion, Meteor, Outer Orbit, Re-entry, Galaxy, Little Dipper, Asteroid."
+      },
+      {
+        "name": "Space Walk",
+        "note": "A green trail, lit, and one of only two beginner runs on the whole mountain. Shares its name with the base-area carpet lift."
+      },
+      {
+        "name": "Sunrise",
+        "note": "The quad that serves the summit - and named, like the mountain's whole sunrise mythology, for Mars Hill being the first place in the continental US the sun touches from late March to mid-September."
+      },
+      {
+        "name": "Hooch",
+        "note": "One of the five black diamonds, off the upper mountain. Big Rock's steeper terrain is concentrated up here and none of it is lit."
+      },
+      {
+        "name": "Wendell's Way",
+        "note": "A green trail, lit, and presumably named for Wendell Pierce, who with his wife Marie bought the ski area in 1967 and renamed it Big Rock Mountain."
+      }
+    ],
+    "tidbits": [
+      "Mars Hill is the first place in the continental US the rising sun touches from 25 March to 13 September - the University of Maine's planetarium settled the question.",
+      "Big Rock is a 501(c)(3) non-profit, formed in 2013 to save the mountain from closure.",
+      "Almost every trail is named for the space programme.",
+      "Eleven of the 25 trails are lit for night skiing.",
+      "Midweek the mountain opens at 2pm and closes at 8pm; only weekends run 9 to 4.",
+      "The 1993-94 double chair here was the northeasternmost chairlift in the United States.",
+      "The first rope tow, in 1954, was driven by the rear tyres of a Coles Express truck.",
+      "The summit ridge of Mars Hill carries 28 wind turbines and the International Appalachian Trail.",
+      "A four-pass pack costs $180 - $45 a day."
+    ],
+    "bestFor": [
+      "Midweek night skiing",
+      "Cold snow and a long season",
+      "Aroostook County and New Brunswick",
+      "Indy days with no blackouts"
+    ],
+    "watchOutFor": [
+      "No daytime skiing Wednesday to Friday",
+      "Only 10% beginner terrain",
+      "Two and a half hours north of Bangor",
+      "No snowmaking figure published"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://www.bigrockmaine.com/trails/",
+    "trailMap": "https://www.bigrockmaine.com/trails/",
+    "webcams": null,
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Big Rock trail report (the live list of 25 named trails with difficulty markers and a night-skiing flag on each, plus the four lifts by name and type)",
+        "url": "https://www.bigrockmaine.com/trails/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Big Rock hours of operation (Wednesday to Friday 2pm-8pm, weekends 9am-4pm, holiday schedule)",
+        "url": "https://www.bigrockmaine.com/information/hours/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Big Rock history by Eric Hendrickson (Mars Hill's height and sunrise claim, the 1954 rope tow, the 1961 Mars Hill Skiway opening, the Pierce family years, the Maine Winter Sports Center period, the 2013 closure and non-profit rescue, the wind project)",
+        "url": "https://www.bigrockmaine.com/information/history/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Big Rock day passes (adult and student day rates, multi-day packs, share pass, uphill ticket, February break notice)",
+        "url": "https://www.bigrockmaine.com/day-pass/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Big Rock online store (adult, senior, lower-mountain, family and child season pass rates)",
+        "url": "https://www.bigrockmaine.com/collection/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Big Rock Mountain (elevations, vertical, terrain split, snowfall average and high, acreage, no blackout dates, structured park and night fields)",
+        "url": "https://www.indyskipass.com/our-resorts/big-rock-mountain",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. Big Rock's competitive programme is its youth ski race league"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.bigrockmaine.com/trails/",
+      "note": "No source describes Big Rock's bump skiing. The trail report names every trail and its difficulty but says nothing about grooming policy, and PeakRankings has no Big Rock page"
+    },
+    "parks.count": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/big-rock-mountain",
+      "note": "The Indy Pass partner directory's structured Terrain Parks field reads Yes, so Big Rock has at least one park. Nothing else is available: the resort's live trail report lists all 25 trails and four lifts and no park, no park is named anywhere on the site, and no count is published by any source"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No pipe is mentioned by any source. With no park information from the resort there is nothing to read either way"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.bigrockmaine.com/day-pass/",
+      "note": "Big Rock sells its day tickets through its own online store at one adult price with no separate window rate, so there is no advance rate distinct from the counter rate"
+    },
+    "size.longestRun": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither the resort nor the Indy partner listing publishes a longest-run figure, and OnTheSnow has no Big Rock Mountain page at all"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/big-rock-mountain",
+      "note": "The resort publishes no snowmaking figure. The only number available is \"80 snowmaking\" in the Indy listing's prose blurb, with no unit - it could be 80% or 80 acres, and on 90 skiable acres those are very different claims. Not stored either way"
+    },
+    "terrain.glades": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.bigrockmaine.com/trails/",
+      "note": "The live trail report enumerates 25 trails with difficulty markers and none is identified as a glade, and neither the resort nor the Indy listing mentions tree skiing. Left null rather than assumed either way"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/big-rock-mountain",
+      "note": "The Indy listing publishes a three-tier split, so there is no fourth-tier figure to source, and the resort publishes no percentages of its own"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "No grooming policy is published, and the operating schedule is the most informative thing available. Big Rock runs Wednesday to Friday from 2pm and weekends from 9am, which leaves long unattended stretches for a grooming fleet to work and also means the mountain is skied in short concentrated sessions rather than all day. Twenty-four percent of the terrain is in the top grade - five black-diamond trails on the upper mountain, none of them lit - and those are the ones a small non-profit's cat fleet is likeliest to leave alone on a midweek evening when the lit terrain is what needs resurfacing. Recorded as occasional on that basis and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.bigrockmaine.com/trails/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": null,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": null,
+    "rebuildCadence": null,
+    "overview": "The Indy Pass partner directory says Big Rock has terrain parks, and that is the whole record. The mountain's own live trail report is unusually complete - all 25 trails with difficulty markers and night-skiing flags, all four lifts with types and names - and lists no park; nothing on the site names one; and OnTheSnow has no page for this resort at all. So the existence is sourced and everything else is unknown.",
+    "reputation": null,
+    "source": "https://www.indyskipass.com/our-resorts/big-rock-mountain",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  }
+}

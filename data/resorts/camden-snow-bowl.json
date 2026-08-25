@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 3,
+  "identity": {
+    "slug": "camden-snow-bowl",
+    "name": "Camden Snow Bowl",
+    "aka": [
+      "The Snow Bowl",
+      "Ragged Mountain, Camden"
+    ],
+    "state": "ME",
+    "region": "Midcoast Maine",
+    "town": "Camden",
+    "lat": 44.2116,
+    "lon": -69.1481,
+    "website": "https://camdensnowbowl.com"
+  },
+  "size": {
+    "verticalDrop": 1000,
+    "skiableAcres": 105,
+    "trailCount": 15,
+    "liftCount": 3,
+    "longestRun": 1,
+    "summitElevation": null,
+    "baseElevation": null,
+    "annualSnowfallAvg": 41,
+    "snowmakingPercent": null,
+    "nightSkiing": true,
+    "source": "https://camdensnowbowl.com/about/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "skiableAcres": {
+        "source": "https://www.indyskipass.com/our-resorts/camden-snow-bowl",
+        "verifiedOn": "2026-08-25"
+      },
+      "liftCount": {
+        "source": "https://www.indyskipass.com/our-resorts/camden-snow-bowl",
+        "verifiedOn": "2026-08-25"
+      },
+      "annualSnowfallAvg": {
+        "source": "https://www.indyskipass.com/our-resorts/camden-snow-bowl",
+        "verifiedOn": "2026-08-25"
+      },
+      "longestRun": {
+        "source": "https://www.onthesnow.com/maine/camden-snow-bowl/ski-resort",
+        "verifiedOn": "2026-08-25"
+      },
+      "nightSkiing": {
+        "source": "https://camdensnowbowl.com/lift-ticket/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "terrain": {
+    "percentBeginner": 30,
+    "percentIntermediate": 60,
+    "percentAdvanced": 10,
+    "percentExpert": null,
+    "glades": true,
+    "difficultyNotes": "The split comes from the Indy Pass partner listing; the Snow Bowl publishes no difficulty breakdown of its own, only a three-number stat card reading 1,000 vertical feet, 15 ski trails and 2 terrain parks. Ten percent in the top grade on 15 trails means one or two runs, which is honest for a town-owned mountain that sells itself on family skiing and an ocean view. Indy also credits 11 glades on top of the 15 trails, which more than doubles what is skiable and is the reason `glades` is true. The elevations are the problem here and both are left null. The resort publishes a vertical and no elevations; Indy gives a 1,286 ft summit and a 216 ft base, which imply a 1,070 ft vertical; OnTheSnow gives 1,080 ft and 150 ft, which imply 930 ft. Neither pair matches the resort's own 1,000 ft, and a terrain probe of the triple chair's top station returns about 1,106 ft - between the two published summits and closer to OnTheSnow's - so storing either pair would record a contradiction. Note that the mountain here is Ragged Mountain, which is not the Ragged Mountain in Danbury, New Hampshire that also appears on this roster.",
+    "source": "https://www.indyskipass.com/our-resorts/camden-snow-bowl",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "passes": [
+    {
+      "name": "Indy Pass",
+      "type": "indy",
+      "access": "Two all-day lift tickets per season on the 2026-27 Indy Pass, redeemed in person at the ticket window. First-time visitors need to buy a $5 Snow Bowl RFID card, which everything at this mountain runs on.",
+      "blackouts": "None. The Snow Bowl states that no reservations are required and the Indy partner page carries an explicit No Blackout Dates marker. The operating schedule is the constraint: closed Mondays and Tuesdays.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://camdensnowbowl.com/season-passes/"
+    },
+    {
+      "name": "Uphill New England",
+      "type": "other",
+      "access": "Not lift access but worth recording: the Snow Bowl is one of 24 New England mountains on the Uphill New England multi-mountain uphill season pass, a non-profit product. It also sells its own uphill pass at $75 for the season or $15 a day.",
+      "blackouts": "Uphill travel is permitted from sunrise until closing on operating days, from sunrise to 4pm on Mondays and Tuesdays when the mountain is shut, and on Sunday nights from 5pm to midnight.",
+      "verifiedOn": "2026-08-25",
+      "source": "https://camdensnowbowl.com/season-passes/"
+    }
+  ],
+  "pricing": {
+    "windowTicketAdultHigh": 60,
+    "windowTicketAdultLow": 51,
+    "advanceTypical": null,
+    "seasonPassAdult": 531,
+    "currency": "USD",
+    "notes": "Adult (19-69) full day is $51 midweek - Wednesday, Thursday and Friday outside vacation weeks - and $60 on weekends, holidays and vacation weeks, with a half-day at $52 and a beginner-area-only Slipway ticket at $15. Night skiing, 3pm to 7pm, is $34. Buying online saves 10%, a stated percentage rather than a published rate, so advanceTypical is null. The season pass figure is the 2026-27 adult early-bird rate of $531 (rising to $625 in season), and the ladder underneath it is the interesting part, because this is a town-owned mountain and it prices like one: Camden property taxpayers and residents pay $425 early-bird against the general public's $531, a senior (70+) pays $149 or $119 as a resident, and a family pass covering up to two adults and all their dependent children up to age 23 is $1,488, or $1,190 for residents. Volunteer mountain ambassadors earn a free season pass. Holidays are 20 December to 4 January, 19 January and 16-21 February.",
+    "verifiedOn": "2026-08-25",
+    "source": "https://camdensnowbowl.com/lift-ticket/",
+    "fieldSources": {
+      "seasonPassAdult": {
+        "source": "https://camdensnowbowl.com/season-passes/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  },
+  "editorial": {
+    "overview": "The Camden Snow Bowl is the only ski area on the East Coast with an ocean view, and that is not a marketing line so much as the entire reason to come. It sits on Ragged Mountain above Penobscot Bay with roughly a thousand feet of vertical, 15 trails, 11 glades and three lifts, and from the summit you look down over the harbours and islands of midcoast Maine. It is owned by the town of Camden and run by its parks and recreation department, which is a rarer arrangement than it sounds and shapes everything about the place: a Camden taxpayer pays $425 for a season pass against the public's $531, a resident over 70 pays $119, volunteers who work as mountain ambassadors ski free, and the whole operation opened in 1936 with donated materials and volunteer labour during the Depression. It is also home to the country's only surviving original gravity-operated wooden toboggan chute - 400 feet of it - and to the U.S. National Toboggan Championships, which is the kind of fact that tells you what sort of mountain this is. What it is not is snowy: 41 inches a year on the Maine coast. Open Wednesday to Sunday, with lights until 7pm on the weekday evenings.",
+    "snowQuality": "Forty-one inches a year is the least natural snow of any mountain on this roster and the reason is geography rather than latitude - Ragged Mountain sits four miles from the open Atlantic, where storms that fall as snow inland arrive as rain or a mix. The Snow Bowl's answer is snowmaking on what OnTheSnow records as 48 of its 100 acres, which is not enough to cover the mountain and is aimed squarely at the trail network rather than the glades. So the glades, which are what makes 15 trails feel like more, are a genuine after-the-storm proposition here, and the trails are a manufactured surface for most of the season. The compensation is that midcoast Maine is cold enough at night to make snow reliably and that the ocean view does not depend on the weather.",
+    "crowds": "Comfortable, and shaped by a five-day operating week. The Snow Bowl closes Mondays and Tuesdays, opens Wednesday to Friday into the evening and runs 9 to 4 at weekends, and its catchment is Camden, Rockland and the midcoast rather than Portland or Boston. Three lifts on 105 acres is adequate for that and the pricing tilts hard toward locals, which keeps the weekday crowd small and residential. The exception is a genuine one: the U.S. National Toboggan Championships in February fills the place with several thousand people, most of whom are there for a wooden chute rather than the chairlift. Vacation weeks and the $60 weekend rate mark the busy end.",
+    "difficulty": "Modest and honest about it. Indy's split puts 10% of the terrain in the top grade, which on 15 trails is one or two runs, and 60% intermediate, which is what a town mountain with a strong ski school ought to look like. The 11 glades are what stop it being merely a beginner hill - they roughly double the skiable terrain and give a competent skier somewhere to go once the trails are learned, though on 41 inches of natural snow they open irregularly. A thousand feet of vertical is real for midcoast Maine and the mile-long longest run means the trails wind rather than plunge. The Snow Bowl's freestyle programme, which runs coached sessions four days a week including two weekday evenings, does more to develop skiers here than the terrain difficulty does.",
+    "keyTrails": [
+      {
+        "name": "The Triple Chair",
+        "note": "The summit lift, and the one that delivers the view - Penobscot Bay, the harbours and the islands, from the top of Ragged Mountain."
+      },
+      {
+        "name": "The glades",
+        "note": "Eleven of them by Indy's count, against 15 marked trails. They roughly double what is skiable here and they are the reason the mountain holds a good skier's interest."
+      },
+      {
+        "name": "The Slipway",
+        "note": "The beginner area, sold as a $15 ticket of its own. A town mountain that prices its learning terrain separately and cheaply is doing its job."
+      },
+      {
+        "name": "The toboggan chute",
+        "note": "Not a ski trail: 400 feet of original gravity-operated wooden chute, the only one of its kind left in the country, and the venue for the U.S. National Toboggan Championships."
+      }
+    ],
+    "tidbits": [
+      "The Snow Bowl is the only ski area on the East Coast with ocean views.",
+      "It is owned by the town of Camden and run by its parks and recreation department.",
+      "It opened in 1936, built by volunteers with donated materials during the Depression.",
+      "It has the country's only remaining original gravity-operated wooden toboggan chute, 400 feet long.",
+      "The U.S. National Toboggan Championships are held here.",
+      "Camden taxpayers pay $425 for a season pass against the public's $531; a resident over 70 pays $119.",
+      "Volunteer mountain ambassadors earn a free season pass.",
+      "At 41 inches a year, this is the driest mountain on this roster.",
+      "Eleven glades sit alongside just 15 marked trails.",
+      "The mountain is Ragged Mountain - not the Ragged Mountain in New Hampshire that also appears in this guide."
+    ],
+    "bestFor": [
+      "The only ocean view in eastern skiing",
+      "Camden residents and taxpayers",
+      "Weeknight skiing until 7pm",
+      "Glades after a rare storm"
+    ],
+    "watchOutFor": [
+      "Only 41 inches of natural snow",
+      "Closed Mondays and Tuesdays",
+      "Just 15 marked trails",
+      "No published elevations that agree"
+    ]
+  },
+  "reviews": [],
+  "links": {
+    "officialSnowReport": "https://camdensnowbowl.com/current-conditions/",
+    "trailMap": "https://camdensnowbowl.com/ski-trail-map/",
+    "webcams": "https://camdensnowbowl.com/web-cam/",
+    "lodging": null,
+    "twitter": null,
+    "instagram": null
+  },
+  "meta": {
+    "sources": [
+      {
+        "label": "Camden Snow Bowl about page (town ownership, the 1936 volunteer founding, the ocean-view and toboggan-chute claims, and the 1,000 ft / 15 trails / 2 parks stat card)",
+        "url": "https://camdensnowbowl.com/about/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Camden Snow Bowl lift tickets (midweek, weekend and holiday adult rates, the 3pm-7pm night ticket, the Slipway beginner ticket, uphill rates, the 10% online saving, holiday dates)",
+        "url": "https://camdensnowbowl.com/lift-ticket/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Camden Snow Bowl season passes (2026-27 adult, resident, senior and family rates, Indy Pass terms, Uphill New England's 24-mountain network)",
+        "url": "https://camdensnowbowl.com/season-passes/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Camden Snow Bowl freestyle programme (coached park sessions four days a week including Wednesday and Thursday evenings)",
+        "url": "https://camdensnowbowl.com/freestyle/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Camden Snow Bowl FAQ (operating days, the 7pm weekday and 4pm weekend closing times, uphill travel windows, the Snow Bowl RFID card)",
+        "url": "https://camdensnowbowl.com/faq/",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "Indy Pass partner page for Camden Snow Bowl (acreage, lift count, snowfall, terrain split, the 11 glades and 2 terrain parks, no blackout dates)",
+        "url": "https://www.indyskipass.com/our-resorts/camden-snow-bowl",
+        "accessedOn": "2026-08-25"
+      },
+      {
+        "label": "OnTheSnow Camden Snow Bowl (longest run, snowmaking and night-skiing acreage, and the differing elevation pair recorded in the notes)",
+        "url": "https://www.onthesnow.com/maine/camden-snow-bowl/ski-resort",
+        "accessedOn": "2026-08-25"
+      }
+    ],
+    "verifiedOn": "2026-08-25",
+    "lastEditedBy": "claude-code"
+  },
+  "fieldNotes": {
+    "moguls.bestTiming": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Follows from moguls.quality - with no account of the ungroomed terrain there is nothing to time"
+    },
+    "moguls.bumpCulture": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No mogul competitions or organised bump scene are documented. The Snow Bowl's freestyle programme is park- and glade-focused and its competitive tradition is alpine racing and toboggan"
+    },
+    "moguls.quality": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "No source describes the Snow Bowl's bump skiing. The resort names no trails anywhere on its site and says nothing about grooming, and PeakRankings has no Camden page"
+    },
+    "parks.pipe": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://camdensnowbowl.com/freestyle/",
+      "note": "No pipe is mentioned by the resort or on the Indy listing. The freestyle page describes boxes, rails and jumps and no pipe"
+    },
+    "pricing.advanceTypical": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://camdensnowbowl.com/lift-ticket/",
+      "note": "The Snow Bowl advertises a 10% saving for buying online but publishes only the window rates as figures. Taking 10% off each cell would be this guide's arithmetic rather than a published rate"
+    },
+    "size.baseElevation": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://camdensnowbowl.com/about/",
+      "note": "The resort publishes a vertical drop and no elevations. The two third-party pairs available - Indy's 1,286/216 and OnTheSnow's 1,080/150 - imply verticals of 1,070 and 930 respectively, neither matching the resort's own 1,000 ft, so no pair can be stored without recording a contradiction"
+    },
+    "size.snowmakingPercent": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "note": "Neither the resort nor the Indy listing publishes a snowmaking figure. OnTheSnow records 48 snowmaking acres against 100 skiable, which would be about half, but that is arithmetic on two separately reported figures"
+    },
+    "size.summitElevation": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://camdensnowbowl.com/about/",
+      "note": "See size.baseElevation - the two published summit figures, 1,286 ft and 1,080 ft, are 200 ft apart and belong to elevation pairs that imply different verticals from the resort's own. A terrain probe of the triple chair's top station returns about 1,106 ft, which sits between them"
+    },
+    "terrain.percentExpert": {
+      "status": "unpublished",
+      "checkedOn": "2026-08-25",
+      "source": "https://www.indyskipass.com/our-resorts/camden-snow-bowl",
+      "note": "The Indy listing publishes a three-tier split, so there is no fourth-tier figure to source, and the Snow Bowl publishes no difficulty breakdown at all"
+    }
+  },
+  "dataDisputes": [],
+  "moguls": {
+    "presence": "occasional",
+    "policy": "No grooming policy is published. The structure suggests a mountain that grooms its marked trails thoroughly - 15 trails on a manufactured surface with a strong ski school and a five-day week is a small job and the snow is too scarce to waste - and leaves the 11 glades entirely alone, because glades cannot be groomed and these have no snowmaking. So the bumps at Camden, such as they are, are in the trees and depend on a storm having happened recently. Recorded as occasional on that basis and flagged for re-checking against the live grooming report in January.",
+    "namedRuns": [],
+    "quality": null,
+    "bestTiming": null,
+    "bumpCulture": null,
+    "source": "https://www.indyskipass.com/our-resorts/camden-snow-bowl",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {}
+  },
+  "parks": {
+    "count": 2,
+    "parks": [],
+    "pipe": null,
+    "pipeType": null,
+    "pipeSpecs": null,
+    "nightPark": null,
+    "progression": "Not documented as a ladder, but the coaching is: the Snow Bowl runs a ten-week freestyle programme from January to early March, open to ages 8-18 and all ability levels, with separate ski and snowboard streams meeting four times a week including Wednesday and Thursday evenings. The stated progression runs from grinding a first box to grabbed spins and inverts, and the programme description is explicit about teaching park etiquette and safety alongside tricks. Scholarships are available.",
+    "rebuildCadence": null,
+    "overview": "Two terrain parks, confirmed by both the resort's own stat card and the Indy Pass listing, and neither names them or describes a single feature. What the Snow Bowl does document, at length, is the coaching around them - a freestyle programme running four sessions a week through the season with a dedicated coach and a competition director. So the count is solid and everything below it is unknown.",
+    "reputation": "Modest in scale and unusually deliberate in intent. The resort describes its freestyle programme as building a growing community of progressing riders, and running coached park sessions on two weekday evenings at a town-owned mountain with 15 trails is a real commitment of a small operation's resources. Nobody is driving to midcoast Maine for the features, but a local rider learning here is better supported than the two-park count suggests.",
+    "source": "https://camdensnowbowl.com/about/",
+    "verifiedOn": "2026-08-25",
+    "fieldSources": {
+      "progression": {
+        "source": "https://camdensnowbowl.com/freestyle/",
+        "verifiedOn": "2026-08-25"
+      }
+    }
+  }
+}
