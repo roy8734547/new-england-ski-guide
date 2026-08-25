@@ -1047,3 +1047,122 @@ table.data td:last-child { width: 100%; }
   .site-header, .controls, .site-footer, .viewtoggle { display: none; }
   body { background: #fff; color: #000; }
 }
+
+/* --- moguls and terrain parks (schema.md 14, 15) --------------------------- */
+
+.presence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+.presence__badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  border-radius: 100px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+/* Bumps as a defining feature is the headline case; none is a real answer. */
+.presence__badge--signature { color: var(--diff-expert); }
+.presence__badge--common { color: var(--accent); }
+.presence__badge--occasional,
+.presence__badge--rare { color: var(--text-muted); }
+.presence__badge--none { color: var(--text-faint); }
+
+.bump-runs h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.bump-tag,
+.bump-rel {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.bump-tag { border: 1px solid currentColor; }
+.bump-tag--green { color: var(--diff-beginner); }
+.bump-tag--blue { color: var(--diff-intermediate); }
+.bump-tag--black,
+.bump-tag--double-black { color: var(--text); }
+.bump-tag--triple-black { color: var(--diff-expert); }
+.bump-rel {
+  background: var(--bg-inset);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.bump-rel--reliable { color: var(--diff-beginner); }
+.bump-rel--variable { color: var(--pass-other); }
+
+.park-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  list-style: none;
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 640px) { .park-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .park-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.park {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.park__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.park__head h3 { font-size: 1rem; }
+.park__size {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+  flex: none;
+}
+.park__size--progression { color: var(--diff-beginner); }
+.park__size--small { color: var(--diff-intermediate); }
+.park__size--medium { color: var(--pass-other); }
+.park__size--large { color: var(--diff-expert); }
+.park__level {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 650;
+}
+.park__note { font-size: 0.9375rem; color: var(--text-muted); }
+.park__counts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+  margin-top: auto;
+  padding-top: 0.7rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.park__counts b { color: var(--text); font-variant-numeric: tabular-nums; }

@@ -372,8 +372,6 @@ function terrainSection(r) {
   const t = r.terrain;
   const features = dataTable([
     ['Glades', has(t.glades) ? (t.glades ? 'Yes' : 'No') : null],
-    ['Mogul runs', has(t.moguls) ? (t.moguls ? 'Yes' : 'No') : null],
-    ['Terrain parks', has(t.terrainParks) ? fmt(t.terrainParks) : null],
     // Checked and confirmed: say so outright rather than dropping the row.
     absentRow(r, 'size.nightSkiing', 'Night skiing', 'None — confirmed ') ??
       ['Night skiing', has(r.size.nightSkiing) ? (r.size.nightSkiing ? 'Yes' : 'No') : null],
@@ -394,6 +392,162 @@ function terrainSection(r) {
       features),
     has(t.difficultyNotes) ? el('p', { class: 'note' }, t.difficultyNotes) : null,
     provenance(t));
+}
+
+
+// --- moguls and parks (schema.md 14, 15) -----------------------------------
+
+const MOGUL_PRESENCE_LABEL = {
+  signature: 'A defining feature',
+  common: 'Common',
+  occasional: 'Occasional',
+  rare: 'Rare',
+  none: 'None',
+};
+
+const DIFFICULTY_LABEL = {
+  green: 'Green',
+  blue: 'Blue',
+  black: 'Black',
+  'double-black': 'Double black',
+  'triple-black': 'Triple black',
+};
+
+const RELIABILITY_LABEL = {
+  reliable: 'Reliably bumped',
+  'late-season': 'Late season only',
+  variable: 'Depends on grooming',
+};
+
+/** The named trails that bump up - the whole reason this section exists. */
+function namedRunList(runs) {
+  if (!runs?.length) return null;
+  return el('ul', { class: 'trails bump-runs' }, runs.map((r) =>
+    el('li', {},
+      el('h3', {},
+        r.name,
+        el('span', { class: `bump-tag bump-tag--${r.difficulty}` }, DIFFICULTY_LABEL[r.difficulty] ?? r.difficulty),
+        el('span', { class: `bump-rel bump-rel--${r.reliability}` }, RELIABILITY_LABEL[r.reliability] ?? r.reliability)),
+      el('p', {}, r.note))));
+}
+
+function mogulsSection(r) {
+  const m = r.moguls;
+  if (!m) return null;
+
+  const runs = namedRunList(m.namedRuns);
+  const prose = [
+    ['Grooming policy', m.policy],
+    ['What the bumps are like', m.quality],
+    ['When they are good', m.bestTiming],
+    ['Bump scene', m.bumpCulture],
+  ].filter(([, v]) => has(v));
+
+  if (!runs && !prose.length && !has(m.presence)) return null;
+
+  return section('Moguls',
+    el('p', { class: 'presence' },
+      el('span', { class: `presence__badge presence__badge--${m.presence}` },
+        MOGUL_PRESENCE_LABEL[m.presence] ?? m.presence),
+      m.namedRuns?.length
+        ? `${m.namedRuns.length} named bump ${m.namedRuns.length === 1 ? 'run' : 'runs'}`
+        : 'No bump runs recorded'),
+    runs,
+    prose.length
+      ? el('div', { class: 'prose-grid' }, prose.map(([label, text]) => prose2(label, text)))
+      : null,
+    provenance(m));
+}
+
+/** Small labelled prose block, distinct from the editorial `prose()` helper. */
+function prose2(heading, text) {
+  return el('div', { class: 'prose' },
+    el('h3', {}, heading),
+    ...String(text).split(/\n\s*\n/).map((para) => el('p', {}, para)));
+}
+
+const PARK_SIZE_LABEL = {
+  progression: 'Progression',
+  small: 'Small',
+  medium: 'Medium',
+  large: 'Large',
+};
+
+function parkCards(list) {
+  if (!list?.length) return null;
+  return el('ul', { class: 'park-list' }, list.map((p) => {
+    const counts = [
+      ['Jumps', p.jumps],
+      ['Rails', p.rails],
+      ['Boxes', p.boxes],
+      ['Jibs', p.jibs],
+      ['Biggest jump', p.largestJumpFt === null ? null : `${p.largestJumpFt} ft`],
+    ].filter(([, v]) => v !== null && v !== undefined);
+
+    return el('li', { class: 'park' },
+      el('div', { class: 'park__head' },
+        el('h3', {}, p.name),
+        el('span', { class: `park__size park__size--${p.size}` }, PARK_SIZE_LABEL[p.size] ?? p.size)),
+      el('p', { class: 'park__level' }, p.level),
+      el('p', { class: 'park__note' }, p.note),
+      counts.length
+        ? el('ul', { class: 'park__counts' }, counts.map(([label, v]) =>
+            el('li', {}, el('b', {}, String(v)), ' ', label)))
+        : null);
+  }));
+}
+
+function parksSection(r) {
+  const p = r.parks;
+  if (!p) return null;
+
+  const cards = parkCards(p.parks);
+
+  // A sourced zero is a statement, not a gap.
+  const noParks = noteFor(r, 'parks.count')?.status === 'absent' || p.count === 0;
+
+  const pipeRow = (() => {
+    const note = noteFor(r, 'parks.pipe');
+    if (note?.status === 'absent') {
+      return ['Halfpipe', el('span', { class: 'stated-absent', title: note.note ?? '' },
+        'None - confirmed ',
+        note.source ? el('a', { class: 'stated-absent__src', href: note.source, rel: 'noopener' }, 'source') : null)];
+    }
+    if (p.pipe === true) {
+      const label = p.pipeType === 'superpipe' ? 'Superpipe' : 'Halfpipe';
+      return ['Pipe', has(p.pipeSpecs) ? `${label} - ${p.pipeSpecs}` : label];
+    }
+    if (p.pipe === false) return ['Halfpipe', 'No'];
+    return ['Halfpipe', null];
+  })();
+
+  const facts = dataTable([
+    ['Parks', Number.isInteger(p.count) ? fmt(p.count) : null],
+    pipeRow,
+    ['Lit at night', has(p.nightPark) ? (p.nightPark ? 'Yes' : 'No') : null],
+    ['Rebuilt', p.rebuildCadence],
+  ]);
+
+  const prose = [
+    ['Who it is for', p.overview],
+    ['Reputation', p.reputation],
+    ['Progression', p.progression],
+  ].filter(([, v]) => has(v));
+
+  if (!cards && !facts && !prose.length && !noParks) return null;
+
+  return section('Terrain parks',
+    noParks && !cards
+      ? el('p', { class: 'presence' },
+          el('span', { class: 'presence__badge presence__badge--none' }, 'No terrain park'),
+          'This mountain runs none.')
+      : null,
+    cards,
+    facts,
+    prose.length
+      ? el('div', { class: 'prose-grid' }, prose.map(([label, text]) => prose2(label, text)))
+      : null,
+    provenance(p));
 }
 
 // --- editorial --------------------------------------------------------------
@@ -528,6 +682,9 @@ function renderResort(r) {
       : null,
 
     terrainSection(r),
+
+    mogulsSection(r),
+    parksSection(r),
 
     section('Trails worth knowing', keyTrails(ed.keyTrails)),
 
