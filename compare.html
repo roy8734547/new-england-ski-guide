@@ -3,34 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Compare &middot; New England Ski Guide</title>
-<meta name="description" content="A data-first guide to New England ski areas, roughly 650 ft vertical and up.">
+<title>Compare · New England Ski Guide</title>
+<meta name="description" content="Put two to four New England mountains side by side — vertical, acres, snowfall and price, plus what they actually ski like.">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <a class="site-title" href="index.html">New England Ski Guide</a>
-  <nav class="site-nav" aria-label="Primary">
-    <a href="index.html">Resorts</a>
-    <a href="conditions.html">Conditions</a>
-    <a href="compare.html">Compare</a>
-    <a href="map.html">Map</a>
-  </nav>
+  <div class="shell site-header__inner">
+    <a class="site-title" href="index.html">New England Ski Guide</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Resorts</a>
+      <a href="conditions.html">Conditions</a>
+      <a href="compare.html" aria-current="page">Compare</a>
+      <a href="map.html">Map</a>
+    </nav>
+  </div>
 </header>
 
 <main id="main">
-  <h1>Compare mountains</h1>
-  <p class="lede">Pick two to four and put them head to head.</p>
-  <section id="compare-picker" aria-label="Choose resorts"></section>
-  <div class="table-scroll"><table id="compare-table"><tbody></tbody></table></div>
-  <p id="status" role="status">Loading...</p>
+  <div class="shell page-head">
+    <h1>Head to head</h1>
+    <p class="lede">
+      Pick two to four mountains. The numbers are the easy part and they are all here — but
+      two mountains with the same vertical and the same acreage can ski nothing alike, so
+      the crowds, the difficulty, the bumps and the parks are underneath the table. The
+      URL updates as you choose, so a comparison is a link you can send someone.
+    </p>
+  </div>
+
+  <div class="controls">
+    <div class="shell">
+      <div class="controls__row controls__row--picker" id="compare-picker"
+           role="group" aria-label="Choose up to four mountains"></div>
+      <p class="controls__meta">
+        <span id="result-count">&nbsp;</span>
+        <button type="button" class="btn-reset" id="clear-all" hidden>Clear all</button>
+      </p>
+    </div>
+  </div>
+
+  <div class="shell">
+    <section id="numbers" aria-labelledby="numbers-head" hidden>
+      <h2 id="numbers-head">By the numbers</h2>
+      <p class="note" id="winner-legend">
+        A <b class="is-winner-key">highlighted</b> figure is the biggest in its row, or the
+        cheapest where the row is a price. Bigger is not automatically better — the most
+        acreage in the row is not much use to somebody who wanted a short lift queue.
+        A dash means we could not source the figure, and an unsourced figure never wins.
+      </p>
+      <div class="table-scroll">
+        <table class="compare compare--vs" id="compare-table">
+          <caption class="visually-hidden">Selected mountains compared, one row per statistic.</caption>
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="editorial" aria-labelledby="editorial-head" hidden>
+      <h2 id="editorial-head">What the table cannot tell you</h2>
+      <p class="note">
+        Our own read on each mountain, written before we knew what it would be compared
+        against. These are opinions and they are meant to be.
+      </p>
+      <div class="vs-grid" id="editorial-grid"></div>
+    </section>
+
+    <p class="empty" id="empty" hidden>
+      Pick at least two mountains above to compare them.
+      <br><a href="index.html">Or browse all forty-five &rarr;</a>
+    </p>
+  </div>
+
+  <p id="status" role="status">Loading resorts…</p>
 </main>
 
 <footer class="site-footer">
-  <p>Snow reports are fetched from each resort's official report and linked back to the source.</p>
-  <p>Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
-     used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</p>
+  <div class="shell">
+    <p>
+      Every figure on this page carries a source and a verification date on the mountain's
+      own page. Where the resort and an independent source disagree, the detail page shows
+      both. Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
+      used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.
+    </p>
+  </div>
 </footer>
 
 <script type="module" src="assets/js/render-compare.js"></script>

@@ -1298,3 +1298,145 @@ table.data td:last-child { width: 100%; }
   cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
 }
 .map-list__locate:hover { color: var(--accent-hover); }
+
+/* --- compare page --------------------------------------------------------- */
+
+.controls__row--picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem 1rem;
+  align-items: end;
+}
+
+#numbers, #editorial { margin-block: 2rem; }
+#numbers > h2, #editorial > h2 { font-size: 1.25rem; }
+#numbers > .note, #editorial > .note { margin-top: 0.35rem; max-width: var(--measure); }
+
+/* The vs table is at most five columns, so it does not need the index table's
+   58rem floor — that would force a scrollbar on a two-way comparison. It gets
+   `table-layout: fixed` instead, and render-compare.js sets a min-width from the
+   column count. Fixed layout is what stops one long park name or a wide pass
+   badge from dragging a column out to its intrinsic width and pushing the
+   table's layout overflow onto the document. Cells wrap rather than nowrap for
+   the same reason. */
+table.compare--vs {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 0;
+}
+table.compare--vs :is(th, td) { vertical-align: top; white-space: normal; }
+table.compare--vs th.col-name {
+  font-weight: 550;
+  color: var(--text-muted);
+  width: 10rem;
+}
+table.compare--vs thead th { padding: 0.7rem 0.8rem; text-transform: none; letter-spacing: 0; }
+table.compare--vs th.vs-head {
+  text-align: right;
+  font-size: 0.9375rem;
+  color: var(--text);
+  vertical-align: bottom;
+}
+table.compare--vs th.vs-head a { color: inherit; }
+table.compare--vs th.vs-head small {
+  display: block;
+  font-weight: 550;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+table.compare--vs tbody td { font-variant-numeric: tabular-nums; font-weight: 550; }
+
+tr.vs-group th {
+  background: var(--bg-inset);
+  text-align: left;
+  font-size: 0.625rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 700;
+  position: static;
+}
+table.compare--vs tbody tr.vs-group:hover th { background: var(--bg-inset); }
+
+/* The winner marker is a weight and a rule, not only a colour — the same cell
+   has to read as "the biggest one" in greyscale and to a colour-blind eye. */
+td.is-winner {
+  font-weight: 750;
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 38%, transparent);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+td.is-winner::before {
+  content: "▸ ";
+  color: var(--accent);
+  font-weight: 700;
+}
+.is-winner-key {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 38%, transparent);
+  border-radius: var(--radius);
+  padding: 0 0.25rem;
+}
+
+.vs-terrain__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem 0.5rem;
+  margin-top: 0.35rem;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.vs-terrain__legend i {
+  display: inline-block;
+  width: 0.5rem; height: 0.5rem;
+  border-radius: 1px;
+  margin-right: 0.2rem;
+}
+table.compare--vs td .terrain-bar { min-width: 7rem; }
+
+.vs-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  margin-top: 1.25rem;
+  align-items: start;
+}
+
+.vs-col {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  padding: 1.1rem 1.15rem 1.25rem;
+  box-shadow: var(--shadow-card);
+}
+.vs-col > h3 { font-size: 1.1rem; letter-spacing: -0.01em; }
+.vs-col > h3 a { color: inherit; text-decoration: none; }
+.vs-col > h3 a:hover { text-decoration: underline; }
+.vs-col__where { color: var(--text-muted); font-size: 0.8125rem; margin-top: 0.1rem; }
+.vs-col__more { margin-top: 1rem; font-size: 0.875rem; font-weight: 650; }
+
+.vs-prose { margin-top: 1rem; }
+.vs-prose h4 {
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.vs-prose p { font-size: 0.9375rem; color: var(--text-muted); }
+.vs-prose .presence__badge { margin-right: 0.15rem; }
+
+.vs-parklist { list-style: none; display: grid; gap: 0.25rem; margin-top: 0.4rem; }
+.vs-parklist li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+}
+.vs-parklist b { font-weight: 650; }
