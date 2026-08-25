@@ -29,7 +29,7 @@ skipping a unit.
 | B | State files: PROGRESS, DECISIONS, HANDOFF | `211e247` | — | |
 | B | Batch 2: stratton, mount-snow, burke, pico | `efb2fde` | 80 / 90 | Stratton + Burke sites unreadable; both fall back to OnTheSnow. Carinthia's 8 parks recorded in full. |
 | B | Epic/Ikon season pass price correction (5 earlier files) | `ef1167e` | — | Spot-check failure, see INTEGRITY FAILURES. |
-| B | Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat | `PENDING` | 111 / 126 | Two recorded research findings were wrong and were corrected against primary sources — see below. Also added `.claude/` to `.gitignore` at the user's request. |
+| B | Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat | `2f8af90` | 111 / 126 | Two recorded research findings were wrong and were corrected against primary sources — see below. Also added `.claude/` to `.gitignore` at the user's request. |
 
 **Part A complete. Batches 2 and 3 complete.** Next unfinished unit: **Part B, Batch 4** —
 attitash, sunday-river, sugarloaf, saddleback. No research gathered yet; start from scratch.
@@ -77,7 +77,7 @@ i.e. it points at Mount Mansfield's true summit rather than the lift-served top.
 Roster of 37 remaining, from BATCHES.md:
 
 - [x] Batch 2: stratton, mount-snow, burke, pico — `efb2fde` — 80 unknown / 90 confirmed
-- [x] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat — 111 unknown / 126 confirmed
+- [x] Batch 3: cannon, loon, bretton-woods, waterville-valley, wildcat — `2f8af90` — 111 unknown / 126 confirmed
 - [ ] Batch 4: attitash, sunday-river, sugarloaf, saddleback
 - [ ] Batch 5: mount-sunapee, cranmore, ragged, gunstock, crotched
 - [ ] Batch 6: pats-peak, magic-mountain, bromley, bolton-valley
