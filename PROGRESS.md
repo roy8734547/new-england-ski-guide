@@ -46,13 +46,19 @@ skipping a unit.
 | **C** | Overpass retries cleared: Bolton `keyTrails`, Stowe coordinate | `037937f` | 324 / 345 | Main endpoint answered on the third try. See "Overpass, resolved" below. |
 | **D** | `map.html` — Leaflet 1.9.4 + SRI, 45 pins coloured by pass | `3c7003a` | — | Plus a plain grouped link list under the map as the accessible equivalent. |
 | **D** | `compare.html` — 2–4 mountains, numbers + editorial | `b1da25e` | — | Found and fixed a real sideways-scroll bug at 768px. |
+| **D** | PROGRESS reorder | `2f8a0f5` | — | |
+| **E** | `about.html` | `2515d47` | — | Contact line is a deliberate placeholder — HANDOFF item 5, blocks publishing. |
+| **E** | Real 404 + unknown-slug path on `resort.html` | `c1133c9` | — | New `assets/js/suggest.js`; `aka` added to `index.json`. |
+| **E** | SEO: canonical, OG, JSON-LD, sitemap, robots | `f0101ae` | — | No domain anywhere in the repo; `sitemap.xml`/`robots.txt` gitignored and generated per deploy. |
+| **E** | Accessibility pass | `1c9ea3c` | — | 31 AA contrast failures, almost all one token. axe clean on every page, both themes. |
+| **E** | Layout stability + Lighthouse | `f8ca08c` | — | CLS 0.36 → 0.05; performance 82 → 99. Numbers below. |
 
 **Parts A and B are COMPLETE. All 45 resort files are written.** `npm run check` reports
 45 files, 0 errors, 4 warnings — all four warnings are correct data, not defects.
 
-**RESUME HERE — Parts D and E were pulled ahead of the rest of Part C.** The roster was
-complete but the site still had two stub pages and no public-site polish, so the order for
-this session is: Overpass retries → Part D → Part E → the rest of Part C → Part G.
+**RESUME HERE — Parts D and E are COMPLETE.** They were pulled ahead of the rest of Part C
+because the roster was finished but the site still had two stub pages and no public-site
+polish. What remains: **the reviews pass (Part C item 1)**, then Part F, then Part G.
 
 ### Overpass, resolved (`037937f`)
 
@@ -72,6 +78,43 @@ GET `?data=` rather than a POST body.
   FourRunner Quad's upper terminus. The old point was Mount Mansfield's true summit ridge,
   660 ft above any lift, which is the wrong place to forecast weather from. The new one
   probes at 3,606 ft against a published 3,625 ft summit. The Wikipedia source is dropped.
+
+### Lighthouse (recorded 2026-08-25, Part E)
+
+Headless Chrome, mobile emulation, against `node tools/serve.mjs`. Lighthouse and axe-core
+were installed **outside the repo**, in the session scratchpad, so `package.json` still has
+exactly one devDependency.
+
+| | `index.html` | `resort.html?r=killington` |
+|---|---|---|
+| Performance | **99** | **99** |
+| Accessibility | **100** | **100** |
+| Best practices | **100** | **100** |
+| SEO | **100** | **100** |
+
+Before the layout-stability commit those performance scores were 82 and 90, with CLS 0.363
+and 0.199. Measured CLS afterwards: index 0 at 360/420/720/1024/1350px, resort 0.036,
+compare 0.004, map and about 0, conditions 0.073 (the one page that still visibly settles,
+inside the "good" threshold).
+
+**What is deliberately left failing:** unminified CSS and JS, and unused CSS rules — about
+50 KiB across the two pages. Those are precisely what a bundler fixes, and CLAUDE.md forbids
+one. Also "render-blocking requests, est. savings 300-450ms", which is the single stylesheet;
+inlining it to win that back would mean generating HTML, which is the same rule.
+
+### Accessibility findings worth remembering
+
+- **One token caused ~31 of the AA failures.** `--text-faint` was `#8695a3`, 3.07:1 on white,
+  and it carries every small uppercase label on the site. Now `#616e7a` / `#8291a1`.
+- **The audit tool was wrong before the site was.** Its first run reported six failures in
+  the sticky header that did not exist: Chrome returns `color-mix()` as
+  `color(srgb 0.96 0.97 0.98 / 0.88)` — 0-to-1 channels — and reading those as bytes makes
+  every translucent surface look near-black. Same failure mode as a bad data source: it
+  looked right and was confidently wrong.
+- **Difficulty colours needed an ink variant.** `--diff-beginner` is fine as a 6px bar fill
+  and 3.42:1 as 10px bold text.
+- axe-core found exactly two real defects across eleven page states in both themes: an h3
+  under an h1 on `resort.html`, and an empty `<th scope="col">` on `compare.html`.
 
 ### Still to do in Part C, after Part E
 
