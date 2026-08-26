@@ -812,11 +812,25 @@ async function renderUnknownSlug(slug) {
 async function main() {
   // Mounted with a placeholder crumb: the resort's name is not known until
   // its record loads, and the shell should not wait on that.
+  // The slug is in the URL, so the compare link can be built before the record
+  // has loaded — no reason to make the top bar wait on a fetch.
+  const slugForActions = param('r');
   await mountShell({
     page: 'resorts',
     breadcrumb: [{ label: 'Guide', href: 'index.html' }, 'Resort'],
     layout: 'document',
     ownHeading: true,
+    actions: slugForActions
+      ? [
+        {
+          label: 'Compare this mountain',
+          icon: 'M3 2v12M8 2v12M13 2v12',
+          href: `compare.html?r=${encodeURIComponent(slugForActions)}`,
+        },
+        { separator: true },
+        { label: 'Conditions', href: 'conditions.html', primary: true },
+      ]
+      : [{ label: 'All resorts', href: 'index.html', primary: true }],
   });
 
   const slug = param('r');

@@ -26,6 +26,7 @@ async function main() {
     breadcrumb: ['Guide', 'About'],
     layout: 'document',
     ownHeading: true,
+    actions: [{ label: 'All resorts', href: 'index.html', primary: true }],
   });
 
   const index = await getIndex();

@@ -2288,3 +2288,43 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
 .app #numbers, .app #editorial { padding-inline: 16px; }
 .app #numbers { margin-top: 16px; }
 .app #empty { padding: 3rem 16px; }
+
+/* --- document layout typography --------------------------------------------
+
+   REDESIGN.md 2a: the shell is right for the data views and wrong for the two
+   pages people actually read. These get the same sidebar and top bar and then
+   behave like a document — a bounded column, a reading measure on the prose,
+   and room to breathe at the top and bottom.
+
+   The measure is the point. At 1,200px a paragraph of editorial runs to about
+   190 characters a line, which is roughly three times what anybody reads
+   comfortably, and the app shell would otherwise have made that worse by
+   removing the page's old centred container.
+   --------------------------------------------------------------------------- */
+
+/* A descendant selector, not a child one: .shell sits two levels down inside
+   resort.html's sections and three inside its head, so a `> *` chain silently
+   missed most of the page. */
+.app[data-layout="document"] .view .shell,
+.app[data-layout="document"] .view > .prose {
+  max-width: 74rem;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.app[data-layout="document"] .view :is(.section, .prose) p,
+.app[data-layout="document"] .view .lede,
+.app[data-layout="document"] .view .facts,
+.app[data-layout="document"] .view .numbered {
+  max-width: var(--measure);
+}
+
+.app[data-layout="document"] .resort-head { padding-block: 2.5rem 1.5rem; }
+.app[data-layout="document"] .view > :last-child { margin-bottom: 3rem; }
+
+@media (max-width: 899px) {
+  .app[data-layout="document"] .view .shell,
+  .app[data-layout="document"] .view > .prose {
+    padding-inline: 16px;
+  }
+}
