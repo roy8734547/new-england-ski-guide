@@ -9,6 +9,10 @@
  * deployed site is unaffected - it is still nothing but static files.
  *
  * Usage: node tools/serve.mjs [port]
+ *
+ * The default port is 8137, which is what README.md, start-site.bat and the
+ * desktop shortcut all expect. It used to be 8080 while the README said 8137,
+ * so `npm run dev` and the documentation disagreed with each other.
  */
 
 import { createServer } from 'node:http';
@@ -17,7 +21,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const PORT = Number(process.argv[2]) || 8080;
+const PORT = Number(process.argv[2]) || 8137;
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8',

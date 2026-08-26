@@ -1,0 +1,11 @@
+# Batch files are launched by double-clicking on Windows, and cmd.exe is fragile
+# about LF-only line endings — labels and multi-line if blocks are where it shows
+# up. Pin them to CRLF so a clone with any core.autocrlf setting still works.
+*.bat text eol=crlf
+
+# Everything else is normalised to LF in the repository and checked out as-is.
+* text=auto eol=lf
+
+# Generated binaries. Never diffed, never line-ending-converted.
+*.png binary
+*.ico binary

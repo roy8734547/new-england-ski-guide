@@ -69,7 +69,29 @@ placeholder.
 
 The single definition lives in `tools/bot-identity.mjs`; nothing else defines a User-Agent.
 
-## Running the site locally (Windows)
+## Running it locally
+
+### The short way: double-click `start-site.bat`
+
+No terminal required. It starts the local server, waits until the port is genuinely accepting
+connections, and opens <http://localhost:8137/> in your default browser.
+
+**Leave the window it opens alone.** That window *is* the server — closing it stops the site.
+The window says so itself, in a box, because it is the one thing about this that is not
+obvious.
+
+If Node is missing, or npm is missing, or the dependencies have never been installed, it says
+which one and what to do about it instead of printing a stack trace.
+
+To get it onto your Desktop, run `create-shortcut.bat` once. It creates a
+**New England Ski Guide** shortcut pointing at `start-site.bat`, using the site's own favicon
+as the icon. Running it again just overwrites the shortcut, so it is safe to repeat.
+
+> `favicon.ico` is BMP-encoded rather than PNG-encoded specifically so Explorer will render it
+> on that shortcut — Windows is unreliable about PNG-compressed 16x16 and 32x32 icon entries.
+> See the note at the top of `tools/build-icons.mjs`.
+
+### The terminal way
 
 ```powershell
 npm run dev
@@ -88,6 +110,15 @@ To use a different port:
 
 ```powershell
 node tools/serve.mjs 3000
+```
+
+`tools/wait-for-server.mjs` is what `start-site.bat` uses to know when to open the browser. It
+polls the port with a TCP connect rather than sleeping for a fixed few seconds, which is wrong
+in both directions — too short on a cold start and the browser lands on a connection error, too
+long on a warm one. It is usable on its own:
+
+```powershell
+node tools/wait-for-server.mjs http://localhost:8137/ --open --timeout 30
 ```
 
 ## Working with resort data
@@ -201,17 +232,30 @@ file, and `tools/serve.mjs` returns 404 for any request under `/private/`.
 ## Layout
 
 ```
+start-site.bat      double-click to run the site; no terminal needed
+create-shortcut.bat run once to put start-site.bat on the Desktop
 index.html          comparison table + card grid
 resort.html         detail page, reads ?r=<slug>
 conditions.html     every resort's forecast, ranked by 7-day snowfall
 compare.html        side by side, 2-4 resorts
 map.html            Leaflet map, pins coloured by pass
+about.html          data sources, refresh cadence, attribution, contact
+404.html            real not-found page; guesses at renamed resort slugs
+favicon.ico         GENERATED from assets/favicon.svg
+apple-touch-icon.png  GENERATED - iOS "Add to Home Screen"
+site.webmanifest    name, theme colour, 192/512/maskable icons
+assets/favicon.svg  the source of truth for every icon and the OG card
 assets/css/site.css single stylesheet, CSS custom properties, light + dark
-assets/js/          data.js, weather.js, util.js, render-*.js
+assets/js/          data.js, weather.js, util.js, seo.js, render-*.js
 data/schema.md      the data contract
 data/resorts/       one JSON file per resort, the source of truth
-tools/              build-index, validate, fetch-snow, adapters, serve
+tools/              build-index, build-icons, build-seo, validate,
+                    fetch-snow, adapters, serve, wait-for-server
 ```
+
+`favicon.ico`, `apple-touch-icon.png`, `assets/icon-*.png` and `assets/og-card.png` are all
+generated — never hand-edit them. `npm run build:icons` rewrites the set from
+`assets/favicon.svg`; `node tools/build-icons.mjs --check` fails if any of them has drifted.
 
 ## Attribution
 

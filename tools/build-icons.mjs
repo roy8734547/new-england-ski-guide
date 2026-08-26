@@ -25,9 +25,14 @@
  *            survives Android's mask, whatever shape that mask turns out to be.
  *
  * ICO is written here rather than by a library because the format is a six-byte
- * header, a sixteen-byte directory entry per image, and then the images. The
- * payloads are PNGs, which every browser released this century accepts inside an
- * ICO, and which keeps the file a tenth the size of the BMP encoding.
+ * header, a sixteen-byte directory entry per image, and then the images.
+ *
+ * The payloads are BMP, not PNG, and that is deliberate. PNG-inside-ICO is a
+ * tenth the size and every browser accepts it — but this file also ends up as
+ * the desktop shortcut's icon, and Windows Explorer renders PNG-compressed
+ * 16x16 and 32x32 entries unreliably. BMP is the original encoding and is the
+ * one both audiences read without complaint. The cost is a few kilobytes on a
+ * file that is fetched once.
  */
 
 import { readFile, writeFile } from 'node:fs/promises';
@@ -146,7 +151,53 @@ function ogSvg(art) {
 
 // --- ICO ---------------------------------------------------------------------
 
-/** ICONDIR + one ICONDIRENTRY per image + the PNG payloads, in that order. */
+/**
+ * One BITMAPINFOHEADER + XOR pixels + AND mask, which is what an ICO entry
+ * contains when it is not a PNG.
+ *
+ * Two things catch people out. The header's height is *doubled*, because it
+ * describes the colour bitmap and the mask stacked together. And both bitmaps
+ * are stored bottom-up, so the rows come out in reverse.
+ *
+ * The AND mask is redundant for a 32-bit image — the alpha channel already says
+ * what is transparent — but it is not optional, and filling it correctly rather
+ * than zeroing it means the icon still masks properly anywhere the alpha channel
+ * is ignored.
+ */
+function bmpEntry(rgba, size) {
+  const rowXor = size * 4;
+  const rowAnd = Math.ceil(size / 8 / 4) * 4; // 1bpp, rows padded to 4 bytes
+  const xor = Buffer.alloc(rowXor * size);
+  const and = Buffer.alloc(rowAnd * size);
+
+  for (let y = 0; y < size; y += 1) {
+    const src = y * size * 4;
+    const dst = (size - 1 - y) * rowXor; // bottom-up
+    const maskRow = (size - 1 - y) * rowAnd;
+    for (let x = 0; x < size; x += 1) {
+      const i = src + x * 4;
+      const o = dst + x * 4;
+      xor[o] = rgba[i + 2];     // B
+      xor[o + 1] = rgba[i + 1]; // G
+      xor[o + 2] = rgba[i];     // R
+      xor[o + 3] = rgba[i + 3]; // A
+      if (rgba[i + 3] === 0) and[maskRow + (x >> 3)] |= 0x80 >> (x & 7);
+    }
+  }
+
+  const header = Buffer.alloc(40);
+  header.writeUInt32LE(40, 0);            // biSize
+  header.writeInt32LE(size, 4);           // biWidth
+  header.writeInt32LE(size * 2, 8);       // biHeight — colour + mask
+  header.writeUInt16LE(1, 12);            // biPlanes
+  header.writeUInt16LE(32, 14);           // biBitCount
+  header.writeUInt32LE(0, 16);            // biCompression = BI_RGB
+  header.writeUInt32LE(xor.length + and.length, 20); // biSizeImage
+
+  return Buffer.concat([header, xor, and]);
+}
+
+/** ICONDIR + one ICONDIRENTRY per image + the payloads, in that order. */
 function packIco(images) {
   const header = Buffer.alloc(6);
   header.writeUInt16LE(0, 0); // reserved
@@ -174,6 +225,13 @@ function packIco(images) {
 
 // --- build -------------------------------------------------------------------
 
+/** Raw RGBA pixels at one size, which is what the ICO encoder needs. */
+const rgba = (svg, size) => sharp(Buffer.from(svg))
+  .resize(size, size)
+  .ensureAlpha()
+  .raw()
+  .toBuffer();
+
 const png = (svg, size) => sharp(Buffer.from(svg))
   .resize(size, size, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
   .png({ compressionLevel: 9 })
@@ -185,11 +243,11 @@ async function build() {
   const square = squareSvg(art);
   const maskable = maskableSvg(art);
 
-  const ico16 = await png(rounded, 16);
-  const ico32 = await png(rounded, 32);
-
   const files = {
-    'favicon.ico': packIco([{ size: 16, data: ico16 }, { size: 32, data: ico32 }]),
+    'favicon.ico': packIco([
+      { size: 16, data: bmpEntry(await rgba(rounded, 16), 16) },
+      { size: 32, data: bmpEntry(await rgba(rounded, 32), 32) },
+    ]),
     // Flattened onto the brand colour: iOS renders a home-screen icon over an
     // unknown background and a transparent PNG comes out looking broken.
     'apple-touch-icon.png': await sharp(Buffer.from(square))
