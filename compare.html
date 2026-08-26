@@ -46,60 +46,42 @@
 <a class="skip-link" href="#view">Skip to content</a>
 
 <main id="main">
+  <div class="toolbar" id="toolbar">
+    <div class="toolbar__row toolbar__row--picker" id="compare-picker"
+         role="group" aria-label="Choose up to four mountains"></div>
+  </div>
+
   <div class="view" id="view">
-    <div class="shell page-head">
-      <h1>Head to head</h1>
-      <p class="lede">
-        Pick two to four mountains. The numbers are the easy part and they are all here — but
-        two mountains with the same vertical and the same acreage can ski nothing alike, so
-        the crowds, the difficulty, the bumps and the parks are underneath the table. The
-        URL updates as you choose, so a comparison is a link you can send someone.
+    <section id="numbers" aria-labelledby="numbers-head" hidden>
+      <h2 id="numbers-head">By the numbers</h2>
+      <p class="note" id="winner-legend">
+        A <b class="is-winner-key">highlighted</b> figure is the biggest in its row, or the
+        cheapest where the row is a price. Bigger is not automatically better — the most
+        acreage in the row is not much use to somebody who wanted a short lift queue.
+        A dash means we could not source the figure, and an unsourced figure never wins.
       </p>
-    </div>
-
-    <div class="controls">
-      <div class="shell">
-        <div class="controls__row controls__row--picker" id="compare-picker"
-             role="group" aria-label="Choose up to four mountains"></div>
-        <p class="controls__meta">
-          <span id="result-count">&nbsp;</span>
-          <button type="button" class="btn-reset" id="clear-all" hidden>Clear all</button>
-        </p>
+      <div class="table-scroll">
+        <table class="compare compare--vs" id="compare-table">
+          <caption class="visually-hidden">Selected mountains compared, one row per statistic.</caption>
+          <thead></thead>
+          <tbody></tbody>
+        </table>
       </div>
-    </div>
+    </section>
 
-    <div class="shell">
-      <section id="numbers" aria-labelledby="numbers-head" hidden>
-        <h2 id="numbers-head">By the numbers</h2>
-        <p class="note" id="winner-legend">
-          A <b class="is-winner-key">highlighted</b> figure is the biggest in its row, or the
-          cheapest where the row is a price. Bigger is not automatically better — the most
-          acreage in the row is not much use to somebody who wanted a short lift queue.
-          A dash means we could not source the figure, and an unsourced figure never wins.
-        </p>
-        <div class="table-scroll">
-          <table class="compare compare--vs" id="compare-table">
-            <caption class="visually-hidden">Selected mountains compared, one row per statistic.</caption>
-            <thead></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="editorial" aria-labelledby="editorial-head" hidden>
-        <h2 id="editorial-head">What the table cannot tell you</h2>
-        <p class="note">
-          Our own read on each mountain, written before we knew what it would be compared
-          against. These are opinions and they are meant to be.
-        </p>
-        <div class="vs-grid" id="editorial-grid"></div>
-      </section>
-
-      <p class="empty" id="empty" hidden>
-        Pick at least two mountains above to compare them.
-        <br><a href="index.html">Or browse all forty-five &rarr;</a>
+    <section id="editorial" aria-labelledby="editorial-head" hidden>
+      <h2 id="editorial-head">What the table cannot tell you</h2>
+      <p class="note">
+        Our own read on each mountain, written before we knew what it would be compared
+        against. These are opinions and they are meant to be.
       </p>
-    </div>
+      <div class="vs-grid" id="editorial-grid"></div>
+    </section>
+
+    <p class="empty" id="empty" hidden>
+      Pick at least two mountains above to compare them.
+      <br><a href="index.html">Or browse all forty-five &rarr;</a>
+    </p>
 
     <p id="status" role="status">Loading resorts…</p>
   </div>

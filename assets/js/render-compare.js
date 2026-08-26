@@ -25,7 +25,7 @@ import { applyCanonical } from './seo.js';
 import {
   el, fill, fmt, money, qs, setStatus, STATE_NAMES, PASS_LABELS,
 } from './util.js';
-import { mountShell } from './shell.js';
+import { mountShell, setStatusStats } from './shell.js';
 
 const MAX = 4;
 const MIN = 2;
@@ -336,30 +336,38 @@ function writeUrl() {
   history.replaceState(null, '', query || location.pathname);
 }
 
+function clearAll() {
+  slots = Array.from({ length: MAX }, () => null);
+  writeUrl();
+  render();
+}
+
 // --- render -----------------------------------------------------------------
 
 async function render() {
   const list = chosen();
   syncPicker();
 
-  const count = qs('#result-count');
   const numbers = qs('#numbers');
   const editorial = qs('#editorial');
   const empty = qs('#empty');
-
-  qs('#clear-all').hidden = list.length === 0;
+  const clear = qs('#clear-all');
+  if (clear) clear.disabled = list.length === 0;
 
   if (list.length < MIN) {
     numbers.hidden = true;
     editorial.hidden = true;
     empty.hidden = false;
-    count.textContent = list.length === 1
-      ? 'One picked — choose at least one more'
-      : `${index.length} mountains to choose from`;
+    setStatusStats([
+      {
+        value: list.length === 1
+          ? 'One picked — choose at least one more'
+          : `${index.length} mountains to choose from`,
+      },
+    ]);
     return;
   }
 
-  count.textContent = `Comparing ${list.length} mountains`;
   setStatus('Loading the full records…');
 
   const records = await Promise.all(list.map(async (slug) => {
@@ -375,6 +383,33 @@ async function render() {
   editorial.hidden = false;
   empty.hidden = true;
   setStatus('');
+  renderStatusbar(records);
+}
+
+/**
+ * The status bar carries what a side-by-side table makes you scan for: the
+ * biggest and snowiest of the mountains actually on screen, and how far apart
+ * the extremes are. It is the one summary a comparison cannot show in a column.
+ */
+function renderStatusbar(records) {
+  const pick = (get) => {
+    const scored = records
+      .map((r) => ({ r, v: get(r) }))
+      .filter((x) => Number.isFinite(x.v))
+      .sort((a, b) => b.v - a.v);
+    return scored.length ? scored[0] : null;
+  };
+  const tallest = pick((r) => r.size?.verticalDrop);
+  const snowiest = pick((r) => r.size?.annualSnowfallAvg);
+  const verticals = records.map((r) => r.size?.verticalDrop).filter(Number.isFinite);
+  const spread = verticals.length > 1 ? Math.max(...verticals) - Math.min(...verticals) : null;
+
+  setStatusStats([
+    { value: `Comparing ${records.length}` },
+    tallest ? { label: 'Tallest', value: `${tallest.r.identity.name} ${fmt(tallest.v)} ft` } : null,
+    snowiest ? { label: 'Snowiest', value: `${snowiest.r.identity.name} ${fmt(snowiest.v)}"`, tone: 'up' } : null,
+    spread === null ? null : { label: 'Vertical spread', value: `${fmt(spread)} ft` },
+  ]);
 }
 
 // --- boot -------------------------------------------------------------------
@@ -384,6 +419,11 @@ async function main() {
     page: 'compare',
     breadcrumb: ['Guide', 'Compare'],
     layout: 'app',
+    actions: [
+      { id: 'clear-all', label: 'Clear all', icon: 'M4 4l8 8M12 4l-8 8', onClick: clearAll },
+      { separator: true },
+      { label: 'All resorts', href: 'index.html', primary: true },
+    ],
   });
 
   const manifest = await getIndex();
@@ -395,12 +435,6 @@ async function main() {
 
   readUrl();
   buildPicker();
-
-  qs('#clear-all').addEventListener('click', () => {
-    slots = Array.from({ length: MAX }, () => null);
-    writeUrl();
-    render();
-  });
 
   // Back and forward through comparisons behave the way the URL implies.
   window.addEventListener('popstate', () => { readUrl(); render(); });

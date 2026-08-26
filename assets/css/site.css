@@ -2273,3 +2273,18 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
   margin-right: 0.4rem;
   vertical-align: -0.02rem;
 }
+
+/* --- compare page in the shell --------------------------------------------- */
+
+.toolbar__row--picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 8px 12px;
+  align-items: end;
+  padding-block: 10px;
+}
+.toolbar__row--picker .field { gap: 0.25rem; }
+.toolbar__row--picker .label { font-size: 10px; }
+.app #numbers, .app #editorial { padding-inline: 16px; }
+.app #numbers { margin-top: 16px; }
+.app #empty { padding: 3rem 16px; }
