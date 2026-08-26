@@ -55,8 +55,8 @@ skipping a unit.
 | **C** | Reviews — Tier A (20 files) | `a917823` | 306 / 345 | PeakRankings + ZRankings on each. |
 | **C** | Reviews — Tier B (13 files) | `f86d5a4` | 293 / 345 | Validator change: an unpublished review rating is no longer a worklist row. |
 | **C** | Reviews — Tier C (6 files) + Wachusett | `c602842` | 281 / 350 | 5 areas genuinely uncovered, each with a search recorded in fieldNotes. |
-| **C** | Bromley / Black Mountain NH southern-exposure cross-check | `bda30ff` | — | Last open Part C item. |
-| **F** | SEASONAL.md addendum | `2c7ee79` | — | Park-count warnings, the never-rendered snow panel, Lighthouse on a real host. |
+| **C** | Bromley / Black Mountain NH southern-exposure cross-check | `69bfeec` | — | Last open Part C item. |
+| **F** | SEASONAL.md addendum | `033d768` | — | Park-count warnings, the never-rendered snow panel, Lighthouse on a real host. |
 
 **Parts A and B are COMPLETE. All 45 resort files are written.** `npm run check` reports
 45 files, 0 errors, 4 warnings — all four warnings are correct data, not defects.
