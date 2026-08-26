@@ -73,6 +73,16 @@
   --accent-soft: #e8eff8;
   --focus: #1a7fd4;
 
+  /* Editorial emphasis. Two channels and never colour alone: <strong> carries a
+     verdict on weight, <mark> carries a named thing on a tint plus an underline
+     rule. The tint is deliberately quiet against white (1.11:1) — it is there to
+     be found while scanning, not to shout — and the underline is what survives
+     greyscale, a colour-blind reader and a printer. Ink stays the body colour,
+     so there is no contrast risk from the tint at all. */
+  --mark-bg: #eef4fb;
+  --mark-rule: #0e5b9e;
+  --mark-ink: inherit;
+
   /* Snow up / snow down. The reference's gain/loss treatment, reassigned to the
      one dimension on this site where more and less genuinely rank. */
   --green: #0c6b0c;
@@ -163,6 +173,9 @@
     --accent-ink: #04121e;
     --accent-soft: #1c2530;
     --focus: #7cc2ff;
+
+    --mark-bg: #1e2a35;
+    --mark-rule: #5cb0f2;
 
     --green: #5bc85b;
     --green-bg: #16261a;
@@ -2561,3 +2574,48 @@ table.data-table tbody tr.is-selected td.col-resort { background: var(--bg-selec
 /* The skip link's target takes focus programmatically; it should not then draw a
    focus ring around the entire content pane. */
 .view:focus { outline: none; }
+
+/* --- editorial emphasis ----------------------------------------------------
+
+   Two tokens in the data, two treatments here, and neither relies on colour
+   alone. See assets/js/emphasis.js for the syntax and data/schema.md §16 for the
+   rules about when to use them.
+   --------------------------------------------------------------------------- */
+
+/* The verdict. Weight against the body's 400, inheriting colour — nothing to
+   check for contrast because nothing changes but the stroke. */
+.view :is(.section, .prose, .vs-prose) strong,
+.trails strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* A named thing: a trail, a lift, a glade, or a number that carries the
+   argument. Tint plus a rule under it, so the emphasis survives greyscale and a
+   colour-blind reader; the slight weight bump means weight and colour agree
+   rather than fighting. */
+.ne-mark {
+  background: var(--mark-bg);
+  color: var(--mark-ink);
+  font-weight: 550;
+  border-radius: 2px;
+  padding: 0.05em 0.22em;
+  margin-inline: -0.05em;
+  box-shadow: inset 0 -1px 0 0 var(--mark-rule);
+  /* Keeps a mark that wraps across two lines looking like one mark. */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* In print the tint is the first thing a printer throws away, so the emphasis
+   moves entirely onto weight and a real underline. */
+@media print {
+  .ne-mark {
+    background: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 700;
+  }
+  .view strong { font-weight: 700; }
+}

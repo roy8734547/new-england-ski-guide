@@ -155,7 +155,10 @@ export function skiResortJsonLd(r, { url = canonicalUrl(), description } = {}) {
   if (id.aka?.length) data.alternateName = id.aka.filter((n) => n && n !== id.name);
   // The trimmed description, not the whole overview. A structured-data block is
   // a summary for a machine, not a second copy of the page.
-  const summary = description ?? r.editorial?.overview;
+  // Structured data is machine-read and must never contain the mini-syntax.
+  // The caller normally passes an already-stripped description; the fallback
+  // strips defensively so a future caller cannot leak tokens into JSON-LD.
+  const summary = stripEmphasis(description ?? r.editorial?.overview ?? '');
   if (summary) data.description = summary;
   if (social.length) data.sameAs = [...new Set(social)];
 

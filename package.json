@@ -14,6 +14,7 @@
     "build:icons": "node tools/build-icons.mjs",
     "build:seo": "node tools/build-seo.mjs",
     "validate": "node tools/validate.mjs",
+    "check:drift": "node tools/check-emphasis-drift.mjs",
     "fetch:snow": "node tools/fetch-snow.mjs",
     "fetch:trailmaps": "node tools/fetch-trailmaps.mjs",
     "check": "node tools/build-index.mjs && node tools/validate.mjs"

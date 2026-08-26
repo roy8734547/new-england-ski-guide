@@ -118,7 +118,7 @@ negative signal on a detail page.
 
 ```json
 {
-  "schemaVersion": 3,
+  "schemaVersion is `4`,
   "identity": { },
   "size": { },
   "terrain": { },
@@ -137,7 +137,7 @@ negative signal on a detail page.
 
 | key | type | null? | notes |
 |---|---|---|---|
-| `schemaVersion` | integer | no | Currently `3`. Bump only on a breaking change; the validator refuses versions it doesn't know. |
+| `schemaVersion` | integer | no | Currently `4`. Bump only on a breaking change; the validator refuses versions it doesn't know. |
 | `fieldNotes` | object | no (may be `{}`) | Why a field is empty. See §12. |
 | `dataDisputes` | array | no (may be `[]`) | Where we think a resort's own figure is wrong. See §13. |
 | `moguls` | object | no | Bump terrain. See §14. |
@@ -577,14 +577,116 @@ actually built on the hill this week.
 
 ---
 
-## 16. Complete example
+## 16. Editorial emphasis — the mini-syntax (schema v4)
+
+The resort pages were walls of undifferentiated prose. The writing was fine and nothing
+guided the eye, so somebody skimming six resorts on a Thursday night got nothing from any of
+them. Schema v4 adds typographic emphasis to the editorial fields.
+
+### The two tokens, and there are only two
+
+| token | renders as | for |
+|---|---|---|
+| `**text**` | `<strong>` | **the verdict** — the load-bearing judgement of a passage |
+| `==text==` | `<mark class="ne-mark">` | **a named thing** — a trail, lift, glade, park or peak, or a number that carries the argument |
+
+Nothing else is markup. `*single asterisks*`, `_underscores_`, backticks, links and raw HTML
+are all just characters, and the parser will emit them as literal text.
+
+### Where they are allowed
+
+Only these seven paths. A token anywhere else is a validator **error**, which is what keeps
+markup out of every field that feeds a machine — the manifest, structured data, the CSV.
+
+```
+editorial.overview
+editorial.snowQuality
+editorial.crowds
+editorial.difficulty
+editorial.keyTrails[].note
+moguls.policy
+moguls.quality
+```
+
+### Why a mini-syntax and not the obvious alternatives
+
+**Raw HTML in the JSON** puts markup in the data layer, opens an injection hole, and means
+the validator can never say what a field contains. **A `highlights[]` array of phrases matched
+at render** duplicates the content and breaks silently the first time anybody edits the prose
+— the phrase stops matching and the emphasis just vanishes with no error. A constrained
+syntax is auditable: `tools/validate.mjs` can prove a field is well-formed, and
+`tools/check-emphasis-drift.mjs` can prove the prose underneath it never changed.
+
+### Rendering, and the safety story
+
+`assets/js/emphasis.js` is the only thing on the site permitted to turn a token into markup.
+It **never builds an HTML string**. The parser returns a list of `{type, text}` pieces and the
+renderer puts each one into a DOM text node inside a `<strong>` or a `<mark>`, so editorial
+prose only ever reaches the page through `textContent`. That is stricter than escaping before
+transforming: there is no concatenation step in which an escape could be forgotten or applied
+in the wrong order, and `createElement` + `textContent` cannot produce markup no matter what
+the string contains.
+
+The same module exports `stripEmphasis()`. **Every exit that is not the rendered page must use
+it** — the meta description, `og:description`, JSON-LD, any CSV, any `title` attribute. A `==`
+in a search result is the failure this rule exists to prevent.
+
+### The discipline rules
+
+Emphasis is a budget. If everything is marked, nothing is.
+
+| rule | enforced by |
+|---|---|
+| No more than **2 marks per 100 words** in any sliding window | validator, error |
+| No more than **12% of a field's words** carry a mark | validator, error |
+| Never mark a whole sentence — a mark is a clause or a phrase | validator, error |
+| A mark may not span a sentence boundary | validator, error |
+| No nesting, no unclosed and no empty tokens | validator, error |
+| Never mark generic filler — if a phrase could appear on any of the 45 pages, it is not a verdict | judgement |
+| A passage with nothing load-bearing gets **zero** marks | judgement |
+
+The 2-per-100-words window is how "no more than two marks per paragraph" is enforced on prose
+that has no paragraphs: every editorial field in this repo is a single string with no
+newlines, so a literal per-field cap of two would be far stricter for a 250-word overview than
+for a 30-word trail note. The window applies the same restraint at any length and stops marks
+clustering.
+
+### What to mark
+
+Four categories, and the last one is the one this site exists for.
+
+- **The verdict** (`**`). The clause a reader would quote back. *"Remoteness is Jay's crowd
+  control and it works."* At most one per passage, often zero.
+- **Named features** (`==`). Real trails, glades, lifts, peaks, parks — `==Outer Limits==`,
+  `==the Front Four==`, `==Carinthia==`. What a reader is actually hunting for, and trivially
+  scannable once marked.
+- **Load-bearing numbers** (`==`). A figure only when it carries the argument —
+  `==347 inches==`, `==a 1,750-foot base==`. Not every number in the sentence.
+- **The honest caveat** (`**`). The trade-off or the weakness. This guide's whole premise is
+  saying the unflattering thing out loud, so when a passage does, that clause should be the
+  one that catches the eye.
+
+### Adding markup to a file that already has prose
+
+This is a markup-only operation. Not one word of prose changes. Prove it:
+
+```powershell
+node tools/check-emphasis-drift.mjs
+```
+
+It strips every token from every emphasis-capable field and compares the result byte for byte
+against the `emphasis-baseline` tag. Any difference means prose was edited, not marked up.
+
+---
+
+## 17. Complete example
 
 Values below are **illustrative placeholders**, not verified data. Do not copy them into a
 real resort file.
 
 ```json
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "identity": {
     "slug": "example-mountain",
     "name": "Example Mountain",
@@ -741,7 +843,7 @@ real resort file.
 
 ---
 
-## 17. Generated files — do not hand-edit
+## 18. Generated files — do not hand-edit
 
 ### `data/index.json`
 
@@ -753,7 +855,7 @@ page shows it.
 ```json
 {
   "generatedAt": "2026-08-20T12:00:00.000Z",
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "count": 1,
   "resorts": [
     {
@@ -818,7 +920,7 @@ visible in review.
 
 ---
 
-## 18. Checklist for adding a resort
+## 19. Checklist for adding a resort
 
 1. Copy the shape from §12. Every key present; unknowns `null`.
 2. Fill `identity` from the resort's own site. Summit coordinates, not the base lodge.

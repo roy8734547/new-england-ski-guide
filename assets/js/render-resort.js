@@ -17,6 +17,7 @@ import {
   STATE_NAMES, PASS_LABELS,
 } from './util.js';
 import { suggestResorts, tokens } from './suggest.js';
+import { renderEmphasis, stripEmphasis } from './emphasis.js';
 import {
   applyCanonical, applyPageMeta, applyJsonLd, skiResortJsonLd, setNoIndex,
 } from './seo.js';
@@ -39,7 +40,8 @@ function prose(heading, text, modifier = '') {
   if (!has(text)) return null;
   return el('div', { class: `prose ${modifier}`.trim() },
     heading ? el('h3', {}, heading) : null,
-    ...String(text).split(/\n\s*\n/).map((para) => el('p', {}, para)));
+    ...String(text).split(/\n\s*\n/)
+      .map((para) => el('p', {}, ...renderEmphasis(para))));
 }
 
 /** Rows whose value is null are dropped entirely rather than shown as dashes. */
@@ -568,7 +570,8 @@ function parksSection(r) {
 function keyTrails(list) {
   if (!list?.length) return null;
   return el('ul', { class: 'trails' }, list.map((trail) =>
-    el('li', {}, el('h3', {}, trail.name), el('p', {}, trail.note))));
+    el('li', {}, el('h3', {}, trail.name),
+      el('p', {}, ...renderEmphasis(trail.note)))));
 }
 
 function pillList(items, modifier) {
@@ -739,7 +742,10 @@ function renderResort(r) {
  * stats if a file somehow has no overview.
  */
 function describe(r) {
-  const overview = r.editorial?.overview?.trim();
+  // stripEmphasis first: this string becomes <meta name="description">,
+  // og:description and the JSON-LD description, and "==" leaking into a search
+  // result is exactly the failure schema.md §16 warns about.
+  const overview = stripEmphasis(r.editorial?.overview ?? '').trim();
   if (overview) {
     if (overview.length <= 160) return overview;
     const cut = overview.slice(0, 160);

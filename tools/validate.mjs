@@ -17,12 +17,17 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+// The same parser the browser uses, so the validator and the page can never
+// disagree about what a token means.
+import {
+  analyseEmphasis, hasEmphasis, EMPHASIS_FIELDS,
+} from '../assets/js/emphasis.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const RESORTS_DIR = path.join(ROOT, 'data', 'resorts');
 const UNVERIFIED_PATH = path.join(ROOT, 'data', 'UNVERIFIED.md');
 
-const SCHEMA_VERSION = 3;
+const SCHEMA_VERSION = 4;
 
 const STATES = ['VT', 'NH', 'ME', 'MA', 'CT', 'RI'];
 
@@ -859,6 +864,67 @@ function crossChecks(report, file, name, r) {
 
 // ---------------------------------------------------------------------------
 
+// --- editorial emphasis (schema v4) -----------------------------------------
+
+/** The 12% ceiling from schema.md §16. Emphasis is a budget, not a decoration. */
+const MARKED_PERCENT_MAX = 12;
+
+/** "No more than 2 marks per paragraph", applied to prose that has no
+ *  paragraphs — see the note on analyseEmphasis(). */
+const MARKS_PER_100_WORDS_MAX = 2;
+
+/** Walks a record and yields [path, string] for every string it holds. */
+function* everyString(record) {
+  const walk = function* walk(node, path) {
+    if (typeof node === 'string') {
+      yield [path, node];
+      return;
+    }
+    if (Array.isArray(node)) {
+      for (const item of node) yield* walk(item, `${path}[]`);
+      return;
+    }
+    if (isPlainObject(node)) {
+      for (const [k, v] of Object.entries(node)) yield* walk(v, path ? `${path}.${k}` : k);
+    }
+  };
+  yield* walk(record, '');
+}
+
+function checkEmphasis(report, file, record) {
+  for (const [path, value] of everyString(record)) {
+    if (!hasEmphasis(value)) continue;
+
+    if (!EMPHASIS_FIELDS.includes(path)) {
+      report.err(file, `${path} contains emphasis markup, but only these fields may: `
+        + EMPHASIS_FIELDS.join(', '));
+      continue;
+    }
+
+    const a = analyseEmphasis(value);
+
+    for (const e of a.errors) report.err(file, `${path}: ${e}`);
+
+    for (const m of a.spansSentence) {
+      report.err(file, `${path}: a mark runs across a sentence boundary — `
+        + `${JSON.stringify(m.text.slice(0, 60))}`);
+    }
+    for (const m of a.wholeSentence) {
+      report.err(file, `${path}: a mark swallows a whole sentence; mark a clause `
+        + `— ${JSON.stringify(m.text.slice(0, 60))}`);
+    }
+    if (a.markedPercent > MARKED_PERCENT_MAX) {
+      report.err(file, `${path}: ${a.markedWords} of ${a.totalWords} words are marked `
+        + `(${a.markedPercent.toFixed(1)}%), over the ${MARKED_PERCENT_MAX}% ceiling`);
+    }
+    if (a.worstWindow > MARKS_PER_100_WORDS_MAX) {
+      report.err(file, `${path}: ${a.worstWindow} marks inside one 100-word stretch, `
+        + `over the limit of ${MARKS_PER_100_WORDS_MAX}`);
+    }
+  }
+}
+
+
 async function main() {
   const report = new Report();
 
@@ -904,6 +970,7 @@ async function main() {
 
     const fieldNotes = checkFieldNotes(report, file, name, r);
     checkDataDisputes(report, file, r);
+    checkEmphasis(report, file, r);
 
     for (const [groupName, spec] of Object.entries(SPEC)) {
       checkGroup(report, file, name, groupName, spec, r[groupName], fieldNotes);

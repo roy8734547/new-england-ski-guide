@@ -22,7 +22,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const RESORTS_DIR = path.join(ROOT, 'data', 'resorts');
 const INDEX_PATH = path.join(ROOT, 'data', 'index.json');
 
-const SCHEMA_VERSION = 3;
+const SCHEMA_VERSION = 4;
 
 /** Reads a nested value without throwing on a missing group. */
 const get = (obj, group, field) =>

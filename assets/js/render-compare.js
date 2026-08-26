@@ -22,6 +22,7 @@
 
 import { getIndex, getResort } from './data.js';
 import { applyCanonical } from './seo.js';
+import { renderEmphasis } from './emphasis.js';
 import {
   el, fill, fmt, money, qs, setStatus, STATE_NAMES, PASS_LABELS,
 } from './util.js';
@@ -206,11 +207,16 @@ function renderTable(records) {
 
 // --- the editorial columns --------------------------------------------------
 
+/**
+ * The comparison columns render emphasis too. They are the same editorial
+ * fields, and a mark that appears on the resort page and not here would make the
+ * two pages disagree about which clause matters.
+ */
 function prose(title, text) {
   if (!text) return null;
   return el('div', { class: 'vs-prose' },
     el('h4', {}, title),
-    el('p', {}, text));
+    el('p', {}, ...renderEmphasis(text)));
 }
 
 function chips(title, items, modifier) {
@@ -263,7 +269,9 @@ function editorialColumn(r) {
       el('p', {},
         el('span', { class: `presence__badge presence__badge--${m.presence ?? 'none'}` },
           MOGUL_SHORT[m.presence] ?? '—'),
-        m.quality ? ` ${m.quality}` : m.policy ? ` ${m.policy}` : null)),
+        ...(m.quality || m.policy
+          ? [' ', ...renderEmphasis(m.quality || m.policy)]
+          : []))),
 
     parksBlock(r),
 
