@@ -122,6 +122,9 @@ function drawPins() {
     });
     marker.bindPopup(() => popupContent(r), { minWidth: 220, maxWidth: 280 });
     marker.bindTooltip(r.name, { direction: 'top', offset: [0, -4] });
+    // The resting style, kept so highlight() has something to restore. Reading it
+    // back off the marker would give whatever the highlight last set.
+    marker.__base = { radius: radiusFor(r.verticalDrop), color: palette.tint, weight: 1.5 };
     marker.addTo(layer);
     markers.set(r.slug, marker);
   }
@@ -162,12 +165,33 @@ function fitAll() {
   map.fitBounds(bounds, { padding: [36, 36], maxZoom: 11 });
 }
 
-/** Opens a pin from the list below, which is how a keyboard reaches the map. */
+/**
+ * Raises one pin while its name is hovered or focused in the list beside it.
+ *
+ * Size and stroke, not colour: the pin's fill already encodes pass affiliation,
+ * and recolouring it to mean "you are pointing at this" would collide with the
+ * one thing the colour is for.
+ */
+function highlight(slug, on) {
+  const marker = markers.get(slug);
+  if (!marker) return;
+  const base = marker.__base ?? {};
+  marker.setStyle(on
+    ? { radius: (base.radius ?? 6) + 4, weight: 3, color: cssVar('--text-primary', '#1a1a18') }
+    : { radius: base.radius, weight: base.weight, color: base.color });
+  if (on) marker.bringToFront();
+
+  const row = document.querySelector(`.map-list__items li[data-slug="${slug}"]`);
+  if (row) row.classList.toggle('is-highlighted', on);
+}
+
+/** Opens a pin from the list, which is how a keyboard reaches the map. */
 function focusResort(slug) {
   const marker = markers.get(slug);
   if (!marker) return;
   map.setView(marker.getLatLng(), Math.max(map.getZoom(), 10), { animate: !map.__reduceMotion });
   marker.openPopup();
+  highlight(slug, true);
 }
 
 // --- legend -----------------------------------------------------------------
@@ -213,21 +237,35 @@ function buildList() {
     const list = byState.get(code).sort((a, b) => a.name.localeCompare(b.name, 'en'));
     return el('div', { class: 'map-list__state' },
       el('h3', {}, STATE_NAMES[code] ?? code, ' ', el('small', {}, `(${list.length})`)),
-      el('ul', { class: 'map-list__items' }, list.map((r) => el('li', {},
-        el('span', {
-          class: `map-list__dot map-list__dot--${primaryPass(r)}`,
-          'aria-hidden': 'true',
-        }),
-        el('a', { href: `resort.html?r=${encodeURIComponent(r.slug)}` }, r.name),
-        Number.isFinite(r.lat) && Number.isFinite(r.lon)
-          ? el('button', {
-            type: 'button',
-            class: 'map-list__locate',
-            onclick: () => focusResort(r.slug),
-          }, 'Show on map', el('span', { class: 'visually-hidden' }, `: ${r.name}`))
-          : el('span', { class: 'is-unknown' }, 'no coordinate'),
-        el('span', { class: 'map-list__vert' },
-          r.verticalDrop === null ? '—' : `${fmt(r.verticalDrop)} ft`))))
+      el('ul', { class: 'map-list__items' }, list.map((r) => {
+        const placed = Number.isFinite(r.lat) && Number.isFinite(r.lon);
+        const row = el('li', { dataset: { slug: r.slug } },
+          el('span', {
+            class: `map-list__dot map-list__dot--${primaryPass(r)}`,
+            'aria-hidden': 'true',
+          }),
+          // Still a real link to the detail page: this is the crawlable content
+          // and the no-JS route, and the button beside it only moves the map.
+          el('a', { href: `resort.html?r=${encodeURIComponent(r.slug)}` }, r.name),
+          placed
+            ? el('button', {
+              type: 'button',
+              class: 'map-list__locate',
+              onclick: () => focusResort(r.slug),
+            }, 'Show on map', el('span', { class: 'visually-hidden' }, `: ${r.name}`))
+            : el('span', { class: 'is-unknown' }, 'no coordinate'),
+          el('span', { class: 'map-list__vert' },
+            r.verticalDrop === null ? '—' : `${fmt(r.verticalDrop)} ft`));
+
+        if (placed) {
+          // Focus as well as hover, so the highlight is not mouse-only.
+          row.addEventListener('mouseenter', () => highlight(r.slug, true));
+          row.addEventListener('mouseleave', () => highlight(r.slug, false));
+          row.addEventListener('focusin', () => highlight(r.slug, true));
+          row.addEventListener('focusout', () => highlight(r.slug, false));
+        }
+        return row;
+      }))
     );
   }));
 }
@@ -298,6 +336,19 @@ async function main() {
   fitAll();
 
   qs('#fit-all').addEventListener('click', fitAll);
+
+  // The pane's shape changes at the 1100px breakpoint, and Leaflet caches its
+  // size. Without this the map keeps the old aspect ratio after a resize and
+  // fitBounds keeps solving for a box that is no longer there.
+  const refit = () => {
+    map.invalidateSize({ animate: false });
+    fitAll();
+  };
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(refit, 150);
+  });
 
   // The palette flips with the OS theme; the pins have to flip with it.
   window.matchMedia?.('(prefers-color-scheme: dark)')

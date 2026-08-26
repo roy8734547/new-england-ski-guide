@@ -66,18 +66,32 @@
   </div>
 
   <div class="view" id="view">
-    <div id="map" class="map-canvas" role="application"
-         aria-label="Map of New England ski areas. An equivalent list of every mountain follows below the map."></div>
-    <p class="note" id="map-note" hidden></p>
+    <div class="map-split">
+      <div class="map-split__map">
+        <div id="map" class="map-canvas" role="application"
+             aria-label="Map of New England ski areas. An equivalent list of every mountain is beside it."></div>
+        <p class="note" id="map-note" hidden></p>
+      </div>
 
-    <section class="map-list" aria-labelledby="map-list-head">
-      <h2 id="map-list-head">Every mountain on the map</h2>
-      <p class="note">
-        The same forty-five areas as plain links, grouped by state — for keyboard users,
-        for screen readers, and for anything that cannot run the map.
-      </p>
-      <div id="map-list"></div>
-    </section>
+      <!-- The right column is the accessible equivalent of the map, not a second
+           navigation. Every entry is a real link to the detail page; the button
+           beside it only moves the map.
+
+           A div, not an aside: the <section> inside already carries the landmark
+           and its accessible name, and a second unlabelled complementary landmark
+           collides with the shell's sidebar. -->
+      <div class="map-split__list">
+        <section class="map-list" aria-labelledby="map-list-head">
+          <h2 id="map-list-head">Every mountain on the map</h2>
+          <p class="note">
+            The same forty-five areas as plain links, grouped by state — for keyboard users,
+            for screen readers, and for anything that cannot run the map. Hover or focus a
+            name to find it on the map.
+          </p>
+          <div id="map-list"></div>
+        </section>
+      </div>
+    </div>
 
     <p id="status" role="status">Loading the map…</p>
   </div>

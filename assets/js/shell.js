@@ -27,10 +27,21 @@
 import { getIndex } from './data.js';
 import { el, fill, fmt, formatDate, qs, STATE_NAMES } from './util.js';
 
+/**
+ * The pass groups, in the same order the map legend uses.
+ *
+ * `other` — reciprocal arrangements — was missing here while the map legend
+ * showed it, so the two disagreed. It is a real category, not a legend bug: 23
+ * of the 45 records carry it, and schema.md is explicit that it can sit
+ * alongside `none` (Mad River Glen belongs to no mega-pass and still has a
+ * reciprocal with Plattekill). The counts sum to more than 45 because a resort
+ * can be in several groups, which was already true of the other four.
+ */
 const PASS_LABELS_SIDEBAR = {
   epic: 'Epic',
   ikon: 'Ikon',
   indy: 'Indy',
+  other: 'Reciprocal',
   none: 'Independent',
 };
 
@@ -186,7 +197,14 @@ function buildSidebar(index, config) {
     ? `Data rebuilt ${formatDate(index.generatedAt.slice(0, 10))}`
     : null;
 
-  return el('aside', { class: 'sidebar', id: 'sidebar', 'data-open': 'false' },
+  return el('aside', {
+    class: 'sidebar',
+    id: 'sidebar',
+    'data-open': 'false',
+    // Named, so it stays distinguishable from any other complementary
+    // landmark a page puts on screen.
+    'aria-label': 'Site navigation and filters',
+  },
     el('div', { class: 'sidebar__head' },
       el('a', { class: 'sl', href: 'index.html' },
         el('span', { class: 'sl-mark', 'aria-hidden': 'true' }),
