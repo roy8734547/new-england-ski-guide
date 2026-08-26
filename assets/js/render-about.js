@@ -13,6 +13,7 @@
 import { getIndex } from './data.js';
 import { applyCanonical } from './seo.js';
 import { fmt, formatDate, qs, STATE_NAMES } from './util.js';
+import { mountShell } from './shell.js';
 
 function set(name, value) {
   const node = qs(`[data-stat="${name}"]`);
@@ -20,6 +21,12 @@ function set(name, value) {
 }
 
 async function main() {
+  await mountShell({
+    page: 'about',
+    breadcrumb: ['Guide', 'About'],
+    layout: 'document',
+  });
+
   const index = await getIndex();
   const resorts = index.resorts ?? [];
   if (!resorts.length) return;

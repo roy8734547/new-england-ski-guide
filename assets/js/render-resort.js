@@ -20,6 +20,7 @@ import { suggestResorts, tokens } from './suggest.js';
 import {
   applyCanonical, applyPageMeta, applyJsonLd, skiResortJsonLd, setNoIndex,
 } from './seo.js';
+import { mountShell, setBreadcrumb } from './shell.js';
 
 const has = (v) => v !== null && v !== undefined && v !== '';
 const hasAny = (...vals) => vals.some(has);
@@ -809,6 +810,14 @@ async function renderUnknownSlug(slug) {
 // --- boot -------------------------------------------------------------------
 
 async function main() {
+  // Mounted with a placeholder crumb: the resort's name is not known until
+  // its record loads, and the shell should not wait on that.
+  await mountShell({
+    page: 'resorts',
+    breadcrumb: [{ label: 'Guide', href: 'index.html' }, 'Resort'],
+    layout: 'document',
+  });
+
   const slug = param('r');
   if (!slug) {
     // resort.html with no ?r= is a bare URL somebody typed or a link that lost
@@ -843,6 +852,7 @@ async function main() {
   // Title, description, og:*, canonical and the SkiResort JSON-LD all come off
   // the record. This is the only page on the site whose head is per-content, and
   // it is the only page a search result should ever land on for a resort name.
+  setBreadcrumb([{ label: 'Guide', href: 'index.html' }, r.identity.name]);
   applyPageMeta({
     title: `${r.identity.name} · New England Ski Guide`,
     description: describe(r),

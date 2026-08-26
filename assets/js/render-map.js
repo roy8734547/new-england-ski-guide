@@ -18,6 +18,7 @@
 import { getIndex } from './data.js';
 import { applyCanonical } from './seo.js';
 import { el, fill, fmt, qs, setStatus, STATE_NAMES, PASS_LABELS } from './util.js';
+import { mountShell } from './shell.js';
 
 /** Highest-priority pass wins the pin colour. A mountain on both Epic and Indy
  *  reads as Epic, because that is the pass someone chose it for. */
@@ -221,6 +222,12 @@ function buildList() {
 // --- boot -------------------------------------------------------------------
 
 async function main() {
+  await mountShell({
+    page: 'map',
+    breadcrumb: ['Guide', 'Map'],
+    layout: 'app',
+  });
+
   if (typeof L === 'undefined') {
     setStatus('The map library did not load. Every mountain is still listed below.', { error: true });
     const index = await getIndex();

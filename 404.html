@@ -44,61 +44,41 @@
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="shell site-header__inner">
-    <a class="site-title" href="index.html">New England Ski Guide</a>
-    <nav class="site-nav" aria-label="Primary">
-      <a href="index.html">Resorts</a>
-      <a href="conditions.html">Conditions</a>
-      <a href="compare.html">Compare</a>
-      <a href="map.html">Map</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-</header>
+<a class="skip-link" href="#view">Skip to content</a>
 
 <main id="main">
-  <div class="shell notfound">
-    <p class="notfound__code">Error 404</p>
-    <h1>Nothing here</h1>
-    <p class="lede">
-      That address does not match a page on this site. If you followed a link from somewhere
-      else it has probably gone stale — this guide is a set of static files and the paths do
-      not move on their own.
-    </p>
+  <div class="view" id="view">
+    <div class="shell notfound">
+      <p class="notfound__code">Error 404</p>
+      <h1>Nothing here</h1>
+      <p class="lede">
+        That address does not match a page on this site. If you followed a link from somewhere
+        else it has probably gone stale — this guide is a set of static files and the paths do
+        not move on their own.
+      </p>
 
-    <p class="notfound__requested" id="requested" hidden></p>
+      <p class="notfound__requested" id="requested" hidden></p>
 
-    <section class="notfound__suggest" id="suggestions" hidden aria-labelledby="suggest-head">
-      <h2 id="suggest-head">Did you mean one of these?</h2>
-      <ul class="pill-list" id="suggestion-list"></ul>
-    </section>
+      <section class="notfound__suggest" id="suggestions" hidden aria-labelledby="suggest-head">
+        <h2 id="suggest-head">Did you mean one of these?</h2>
+        <ul class="pill-list" id="suggestion-list"></ul>
+      </section>
 
-    <section class="notfound__suggest" aria-labelledby="everything-head">
-      <h2 id="everything-head">Everything on this site</h2>
-      <div class="linkgrid">
-        <a href="index.html"><b>All the mountains</b><span>The full table and card grid, filterable by state, pass, vertical and features.</span></a>
-        <a href="conditions.html"><b>Conditions</b><span>Every summit's seven-day forecast, ranked by who is about to get hit.</span></a>
-        <a href="compare.html"><b>Compare</b><span>Two to four mountains head to head, numbers and opinions.</span></a>
-        <a href="map.html"><b>Map</b><span>All of them pinned and coloured by pass.</span></a>
-        <a href="about.html"><b>About</b><span>Where the data comes from and how to tell us it is wrong.</span></a>
-      </div>
-    </section>
+      <section class="notfound__suggest" aria-labelledby="everything-head">
+        <h2 id="everything-head">Everything on this site</h2>
+        <div class="linkgrid">
+          <a href="index.html"><b>All the mountains</b><span>The full table and card grid, filterable by state, pass, vertical and features.</span></a>
+          <a href="conditions.html"><b>Conditions</b><span>Every summit's seven-day forecast, ranked by who is about to get hit.</span></a>
+          <a href="compare.html"><b>Compare</b><span>Two to four mountains head to head, numbers and opinions.</span></a>
+          <a href="map.html"><b>Map</b><span>All of them pinned and coloured by pass.</span></a>
+          <a href="about.html"><b>About</b><span>Where the data comes from and how to tell us it is wrong.</span></a>
+        </div>
+      </section>
+    </div>
+
+    <p id="status" role="status" hidden></p>
   </div>
-
-  <p id="status" role="status" hidden></p>
 </main>
-
-<footer class="site-footer">
-  <div class="shell">
-    <p>
-      Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
-      used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.
-    </p>
-  </div>
-</footer>
 
 <script type="module" src="assets/js/render-404.js"></script>
 </body>

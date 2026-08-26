@@ -43,237 +43,216 @@
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="shell site-header__inner">
-    <a class="site-title" href="index.html">New England Ski Guide</a>
-    <nav class="site-nav" aria-label="Primary">
-      <a href="index.html">Resorts</a>
-      <a href="conditions.html">Conditions</a>
-      <a href="compare.html">Compare</a>
-      <a href="map.html">Map</a>
-      <a href="about.html" aria-current="page">About</a>
-    </nav>
-  </div>
-</header>
+<a class="skip-link" href="#view">Skip to content</a>
 
 <main id="main">
-  <div class="shell page-head">
-    <h1>About this guide</h1>
-    <p class="lede">
-      A catalogue of New England ski areas from roughly 650 feet of vertical upward, built
-      on one rule: every number on this site either has a source and a date attached to it,
-      or it is a dash. There is no third category, and nothing here has been rounded into
-      existence to fill a gap.
-    </p>
+  <div class="view" id="view">
+    <div class="shell page-head">
+      <h1>About this guide</h1>
+      <p class="lede">
+        A catalogue of New England ski areas from roughly 650 feet of vertical upward, built
+        on one rule: every number on this site either has a source and a date attached to it,
+        or it is a dash. There is no third category, and nothing here has been rounded into
+        existence to fill a gap.
+      </p>
+    </div>
+
+    <div class="shell">
+      <dl class="statbar" id="about-stats">
+        <div><dt>Mountains</dt><dd data-stat="count">—</dd></div>
+        <div><dt>States</dt><dd data-stat="states">—</dd></div>
+        <div><dt>Smallest vertical</dt><dd data-stat="minVert">—</dd></div>
+        <div><dt>Largest vertical</dt><dd data-stat="maxVert">—</dd></div>
+        <div><dt>Data last rebuilt</dt><dd data-stat="generated">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="shell prose">
+
+      <section aria-labelledby="what">
+        <h2 id="what">What this is</h2>
+        <p>
+          Most ski-resort listings are one of two things: a marketing page written by the
+          resort, or an aggregator that scraped the marketing page. Both will tell you a
+          mountain has excellent terrain for all abilities. Neither will tell you that the
+          black diamonds ski like blues, that the summit lift goes on wind hold most
+          Saturdays, or that the bumps you came for get groomed flat at nine in the evening.
+        </p>
+        <p>
+          So this guide keeps two kinds of content strictly apart and labels which is which.
+          <strong>Facts</strong> — vertical, acreage, trail counts, snowfall averages,
+          snowmaking coverage, pass affiliation, prices — carry a source URL and the date
+          somebody last checked them. <strong>Editorial</strong> — the overview, the crowd
+          notes, the difficulty read, the mogul and park write-ups, the best-for and
+          watch-out-for lists — are opinions, written in our own words, and are meant to read
+          like opinions. If a mountain is icy, crowded or overpriced, the editorial says so.
+        </p>
+        <p>
+          The cutoff is roughly 650 feet of vertical, which is where a New England hill starts
+          being somewhere you drive to rather than somewhere you learn on. That line is a
+          judgement call and a few areas sit near it either way.
+        </p>
+      </section>
+
+      <section aria-labelledby="sources">
+        <h2 id="sources">Where the numbers come from</h2>
+        <p>Sources are used in this order, and every resort record says which one supplied each figure:</p>
+        <ol class="numbered">
+          <li>
+            <b>The resort's own site.</b> Its mountain-stats or about page is the primary
+            source for elevations, acreage, trail and lift counts, snowmaking and terrain
+            splits. It is also the source most likely to be flattering — several of the
+            disputes noted on detail pages exist because a resort's own figure is larger than
+            anyone else's.
+          </li>
+          <li>
+            <b>State ski associations</b> — Ski Vermont, Ski New Hampshire, Ski Maine and the
+            rest — for figures a resort does not publish, and for cross-checks such as which
+            areas actually operate at night.
+          </li>
+          <li>
+            <b>Independent aggregators</b>, chiefly OnTheSnow, plus ZRankings and PeakRankings
+            where they cover a mountain. Used when the first two have nothing, and used with
+            care: an aggregator page that quotes two different values for the same figure is
+            common, and at least one pair of same-named mountains has had its records mixed
+            together at the source.
+          </li>
+          <li>
+            <b>OpenStreetMap</b> for lift geometry and summit coordinates, via the Overpass
+            API. Where a resort publishes no usable summit coordinate, the top station of its
+            highest chairlift is used instead — which is the point a forecast should be
+            anchored to anyway.
+          </li>
+        </ol>
+        <p>
+          Where a resort and an independent source disagree and both are defensible, the
+          detail page shows <em>both</em> figures side by side rather than quietly picking a
+          winner. Where nothing could be sourced, the field is a dash — never a guess, never a
+          number carried over from a similar mountain. Fields that are blank because the
+          resort genuinely does not publish them are marked as such and distinguished from
+          fields nobody has checked yet.
+        </p>
+      </section>
+
+      <section aria-labelledby="weather">
+        <h2 id="weather">Weather</h2>
+        <p>
+          Forecasts come from <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a>
+          and are fetched by your browser, live, each time you open a page — nothing is stored
+          on a server, because there is no server. Results are cached in your browser for
+          thirty minutes so that moving between pages does not re-request the same forecast.
+        </p>
+        <p>
+          Every forecast is anchored to the <strong>summit</strong> rather than the base
+          lodge. On a New England mountain two thousand feet of elevation is routinely the
+          difference between snow and rain, and a base-lodge forecast will tell you the wrong
+          one on exactly the days you care most.
+        </p>
+      </section>
+
+      <section aria-labelledby="snow">
+        <h2 id="snow">Snow reports, and how they are fetched</h2>
+        <p>
+          Where a mountain publishes a machine-readable report, a scheduled job reads it and
+          stores the figures. That job runs <strong>every two hours from November through
+          April</strong> and does not run at all in summer. It follows a few rules, and they
+          are not negotiable:
+        </p>
+        <ul class="facts">
+          <li>Every request identifies this project by name and links to this page, so a
+            resort's operations team can tell what the traffic is and ask us to stop rather
+            than silently blocking an address.</li>
+          <li><code>robots.txt</code> is honoured, and no host is contacted more than once
+            every two hours. Requests are never made to one host in parallel.</li>
+          <li>Only <strong>numbers and short condition labels</strong> are stored — base
+            depth, new snow, lifts and trails open. Prose from a resort's report is never
+            stored and never displayed.</li>
+          <li>Every figure shown carries a relative "as of" time and a link to the report it
+            came from. Anything older than twenty-four hours is not shown as a number at all;
+            the page links out to the official report instead.</li>
+          <li>When a fetch fails, the site says so and links to the resort's own report. A
+            stale base depth presented as today's is worse than no base depth.</li>
+        </ul>
+        <p>
+          Not every mountain has an automated report. Smaller areas frequently publish
+          conditions only on social media, and those are linked rather than parsed.
+        </p>
+      </section>
+
+      <section aria-labelledby="editorial">
+        <h2 id="editorial">The opinions</h2>
+        <p>
+          Editorial text is written for this site and is not copied, paraphrased or
+          machine-rewritten from a resort's marketing copy or from any review site. Where the
+          guide summarises somebody else's review, it says whose, links to it, and gives the
+          gist in our words with their published rating if they publish one.
+        </p>
+        <p>
+          Some of it reports what skiers say rather than what can be verified — that a
+          mountain's ratings run soft, that a particular liftline bumps up first. Anything in
+          that category is attributed as consensus, not stated as fact.
+        </p>
+        <p>
+          Nobody pays to be here and nothing on this site is an affiliate link. There are no
+          photographs, which is deliberate: a resort's own photography is its own, and a stock
+          picture of a chairlift tells you nothing a number does not.
+        </p>
+      </section>
+
+      <section aria-labelledby="corrections">
+        <h2 id="corrections">Corrections</h2>
+        <p>
+          Figures go out of date every autumn, resorts get bought, lifts get replaced, and
+          some of what is here is simply wrong. Corrections are welcome and a source link is
+          worth more than an argument.
+        </p>
+        <p class="contact-block" id="contact">
+          <b>Contact:</b>
+          <span class="contact-placeholder" data-contact-placeholder>
+            not yet set — this line must be replaced with a real address or issue-tracker link
+            before the site is published, because the automated fetcher points every resort's
+            server at it.
+          </span>
+        </p>
+        <p>
+          If you run a mountain listed here and want the automated fetching to stop, say so at
+          that address and it will stop. You can also block the user agent
+          <code>NewEnglandSkiGuideBot</code> in your <code>robots.txt</code>, which this
+          project already honours.
+        </p>
+      </section>
+
+      <section aria-labelledby="attribution">
+        <h2 id="attribution">Attribution</h2>
+        <ul class="facts">
+          <li>Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
+            used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</li>
+          <li>Map data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>
+            contributors, under the <a href="https://opendatacommons.org/licenses/odbl/" rel="noopener">ODbL</a>.
+            Coordinates and lift names are derived from it via the Overpass API.</li>
+          <li>Map rendering by <a href="https://leafletjs.com/" rel="noopener">Leaflet</a>,
+            which is the only third-party script on this site and loads only on the map page.</li>
+          <li>Snow report figures belong to the resorts that publish them and are always shown
+            with a link back to the original report.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="colophon">
+        <h2 id="colophon">Colophon</h2>
+        <p>
+          Static HTML, one stylesheet and a handful of ES modules. No framework, no bundler,
+          no build step, no tracking, no cookies, no analytics, and no server — the pages you
+          are reading are files, and everything dynamic on them happens in your browser. The
+          resort data is a directory of JSON files that the pages read directly; the site
+          cannot show you a figure that is not in one of them.
+        </p>
+      </section>
+
+    </div>
+
+    <p id="status" role="status" hidden></p>
   </div>
-
-  <div class="shell">
-    <dl class="statbar" id="about-stats">
-      <div><dt>Mountains</dt><dd data-stat="count">—</dd></div>
-      <div><dt>States</dt><dd data-stat="states">—</dd></div>
-      <div><dt>Smallest vertical</dt><dd data-stat="minVert">—</dd></div>
-      <div><dt>Largest vertical</dt><dd data-stat="maxVert">—</dd></div>
-      <div><dt>Data last rebuilt</dt><dd data-stat="generated">—</dd></div>
-    </dl>
-  </div>
-
-  <div class="shell prose">
-
-    <section aria-labelledby="what">
-      <h2 id="what">What this is</h2>
-      <p>
-        Most ski-resort listings are one of two things: a marketing page written by the
-        resort, or an aggregator that scraped the marketing page. Both will tell you a
-        mountain has excellent terrain for all abilities. Neither will tell you that the
-        black diamonds ski like blues, that the summit lift goes on wind hold most
-        Saturdays, or that the bumps you came for get groomed flat at nine in the evening.
-      </p>
-      <p>
-        So this guide keeps two kinds of content strictly apart and labels which is which.
-        <strong>Facts</strong> — vertical, acreage, trail counts, snowfall averages,
-        snowmaking coverage, pass affiliation, prices — carry a source URL and the date
-        somebody last checked them. <strong>Editorial</strong> — the overview, the crowd
-        notes, the difficulty read, the mogul and park write-ups, the best-for and
-        watch-out-for lists — are opinions, written in our own words, and are meant to read
-        like opinions. If a mountain is icy, crowded or overpriced, the editorial says so.
-      </p>
-      <p>
-        The cutoff is roughly 650 feet of vertical, which is where a New England hill starts
-        being somewhere you drive to rather than somewhere you learn on. That line is a
-        judgement call and a few areas sit near it either way.
-      </p>
-    </section>
-
-    <section aria-labelledby="sources">
-      <h2 id="sources">Where the numbers come from</h2>
-      <p>Sources are used in this order, and every resort record says which one supplied each figure:</p>
-      <ol class="numbered">
-        <li>
-          <b>The resort's own site.</b> Its mountain-stats or about page is the primary
-          source for elevations, acreage, trail and lift counts, snowmaking and terrain
-          splits. It is also the source most likely to be flattering — several of the
-          disputes noted on detail pages exist because a resort's own figure is larger than
-          anyone else's.
-        </li>
-        <li>
-          <b>State ski associations</b> — Ski Vermont, Ski New Hampshire, Ski Maine and the
-          rest — for figures a resort does not publish, and for cross-checks such as which
-          areas actually operate at night.
-        </li>
-        <li>
-          <b>Independent aggregators</b>, chiefly OnTheSnow, plus ZRankings and PeakRankings
-          where they cover a mountain. Used when the first two have nothing, and used with
-          care: an aggregator page that quotes two different values for the same figure is
-          common, and at least one pair of same-named mountains has had its records mixed
-          together at the source.
-        </li>
-        <li>
-          <b>OpenStreetMap</b> for lift geometry and summit coordinates, via the Overpass
-          API. Where a resort publishes no usable summit coordinate, the top station of its
-          highest chairlift is used instead — which is the point a forecast should be
-          anchored to anyway.
-        </li>
-      </ol>
-      <p>
-        Where a resort and an independent source disagree and both are defensible, the
-        detail page shows <em>both</em> figures side by side rather than quietly picking a
-        winner. Where nothing could be sourced, the field is a dash — never a guess, never a
-        number carried over from a similar mountain. Fields that are blank because the
-        resort genuinely does not publish them are marked as such and distinguished from
-        fields nobody has checked yet.
-      </p>
-    </section>
-
-    <section aria-labelledby="weather">
-      <h2 id="weather">Weather</h2>
-      <p>
-        Forecasts come from <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a>
-        and are fetched by your browser, live, each time you open a page — nothing is stored
-        on a server, because there is no server. Results are cached in your browser for
-        thirty minutes so that moving between pages does not re-request the same forecast.
-      </p>
-      <p>
-        Every forecast is anchored to the <strong>summit</strong> rather than the base
-        lodge. On a New England mountain two thousand feet of elevation is routinely the
-        difference between snow and rain, and a base-lodge forecast will tell you the wrong
-        one on exactly the days you care most.
-      </p>
-    </section>
-
-    <section aria-labelledby="snow">
-      <h2 id="snow">Snow reports, and how they are fetched</h2>
-      <p>
-        Where a mountain publishes a machine-readable report, a scheduled job reads it and
-        stores the figures. That job runs <strong>every two hours from November through
-        April</strong> and does not run at all in summer. It follows a few rules, and they
-        are not negotiable:
-      </p>
-      <ul class="facts">
-        <li>Every request identifies this project by name and links to this page, so a
-          resort's operations team can tell what the traffic is and ask us to stop rather
-          than silently blocking an address.</li>
-        <li><code>robots.txt</code> is honoured, and no host is contacted more than once
-          every two hours. Requests are never made to one host in parallel.</li>
-        <li>Only <strong>numbers and short condition labels</strong> are stored — base
-          depth, new snow, lifts and trails open. Prose from a resort's report is never
-          stored and never displayed.</li>
-        <li>Every figure shown carries a relative "as of" time and a link to the report it
-          came from. Anything older than twenty-four hours is not shown as a number at all;
-          the page links out to the official report instead.</li>
-        <li>When a fetch fails, the site says so and links to the resort's own report. A
-          stale base depth presented as today's is worse than no base depth.</li>
-      </ul>
-      <p>
-        Not every mountain has an automated report. Smaller areas frequently publish
-        conditions only on social media, and those are linked rather than parsed.
-      </p>
-    </section>
-
-    <section aria-labelledby="editorial">
-      <h2 id="editorial">The opinions</h2>
-      <p>
-        Editorial text is written for this site and is not copied, paraphrased or
-        machine-rewritten from a resort's marketing copy or from any review site. Where the
-        guide summarises somebody else's review, it says whose, links to it, and gives the
-        gist in our words with their published rating if they publish one.
-      </p>
-      <p>
-        Some of it reports what skiers say rather than what can be verified — that a
-        mountain's ratings run soft, that a particular liftline bumps up first. Anything in
-        that category is attributed as consensus, not stated as fact.
-      </p>
-      <p>
-        Nobody pays to be here and nothing on this site is an affiliate link. There are no
-        photographs, which is deliberate: a resort's own photography is its own, and a stock
-        picture of a chairlift tells you nothing a number does not.
-      </p>
-    </section>
-
-    <section aria-labelledby="corrections">
-      <h2 id="corrections">Corrections</h2>
-      <p>
-        Figures go out of date every autumn, resorts get bought, lifts get replaced, and
-        some of what is here is simply wrong. Corrections are welcome and a source link is
-        worth more than an argument.
-      </p>
-      <p class="contact-block" id="contact">
-        <b>Contact:</b>
-        <span class="contact-placeholder" data-contact-placeholder>
-          not yet set — this line must be replaced with a real address or issue-tracker link
-          before the site is published, because the automated fetcher points every resort's
-          server at it.
-        </span>
-      </p>
-      <p>
-        If you run a mountain listed here and want the automated fetching to stop, say so at
-        that address and it will stop. You can also block the user agent
-        <code>NewEnglandSkiGuideBot</code> in your <code>robots.txt</code>, which this
-        project already honours.
-      </p>
-    </section>
-
-    <section aria-labelledby="attribution">
-      <h2 id="attribution">Attribution</h2>
-      <ul class="facts">
-        <li>Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
-          used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</li>
-        <li>Map data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>
-          contributors, under the <a href="https://opendatacommons.org/licenses/odbl/" rel="noopener">ODbL</a>.
-          Coordinates and lift names are derived from it via the Overpass API.</li>
-        <li>Map rendering by <a href="https://leafletjs.com/" rel="noopener">Leaflet</a>,
-          which is the only third-party script on this site and loads only on the map page.</li>
-        <li>Snow report figures belong to the resorts that publish them and are always shown
-          with a link back to the original report.</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="colophon">
-      <h2 id="colophon">Colophon</h2>
-      <p>
-        Static HTML, one stylesheet and a handful of ES modules. No framework, no bundler,
-        no build step, no tracking, no cookies, no analytics, and no server — the pages you
-        are reading are files, and everything dynamic on them happens in your browser. The
-        resort data is a directory of JSON files that the pages read directly; the site
-        cannot show you a figure that is not in one of them.
-      </p>
-    </section>
-
-  </div>
-
-  <p id="status" role="status" hidden></p>
 </main>
-
-<footer class="site-footer">
-  <div class="shell">
-    <p>
-      Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
-      used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.
-      Snow reports come from each resort's own report and link back to it.
-    </p>
-  </div>
-</footer>
 
 <script type="module" src="assets/js/render-about.js"></script>
 </body>

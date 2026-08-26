@@ -25,6 +25,7 @@ import { applyCanonical } from './seo.js';
 import {
   el, fill, fmt, money, qs, setStatus, STATE_NAMES, PASS_LABELS,
 } from './util.js';
+import { mountShell } from './shell.js';
 
 const MAX = 4;
 const MIN = 2;
@@ -379,6 +380,12 @@ async function render() {
 // --- boot -------------------------------------------------------------------
 
 async function main() {
+  await mountShell({
+    page: 'compare',
+    breadcrumb: ['Guide', 'Compare'],
+    layout: 'app',
+  });
+
   const manifest = await getIndex();
   index = manifest.resorts ?? [];
   if (!index.length) {

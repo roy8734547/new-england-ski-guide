@@ -43,38 +43,14 @@
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="shell site-header__inner">
-    <a class="site-title" href="index.html">New England Ski Guide</a>
-    <nav class="site-nav" aria-label="Primary">
-      <a href="index.html">Resorts</a>
-      <a href="conditions.html">Conditions</a>
-      <a href="compare.html">Compare</a>
-      <a href="map.html">Map</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-</header>
+<a class="skip-link" href="#view">Skip to content</a>
 
 <main id="main">
-  <article id="resort" hidden></article>
-  <p id="status" role="status">Loading resort…</p>
-</main>
-
-<footer class="site-footer">
-  <div class="shell">
-    <p>
-      Every figure on this page carries the source it came from and the date it was checked.
-      Editorial is written for this site and is nobody's marketing copy.
-    </p>
-    <p>
-      Weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>,
-      used under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.
-    </p>
+  <div class="view" id="view">
+    <article id="resort" hidden></article>
+    <p id="status" role="status">Loading resort…</p>
   </div>
-</footer>
+</main>
 
 <script type="module" src="assets/js/render-resort.js"></script>
 </body>

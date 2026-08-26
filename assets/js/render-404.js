@@ -13,8 +13,14 @@ import { getIndex } from './data.js';
 import { applyCanonical } from './seo.js';
 import { el, fill, qs, STATE_NAMES } from './util.js';
 import { suggestResorts, urlTokens } from './suggest.js';
+import { mountShell } from './shell.js';
 
 async function main() {
+  await mountShell({
+    breadcrumb: [{ label: 'Guide', href: 'index.html' }, 'Not found'],
+    layout: 'document',
+  });
+
   const requested = qs('#requested');
   const path = decodeURIComponent(location.pathname + location.search);
   if (path && path !== '/404.html' && path !== '/') {

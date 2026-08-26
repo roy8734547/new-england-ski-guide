@@ -17,6 +17,7 @@ import {
 import {
   el, fill, fmt, relativeTime, compareNullsLast, qs, setStatus, PASS_LABELS,
 } from './util.js';
+import { mountShell } from './shell.js';
 
 const COLUMNS = [
   { key: 'name', label: 'Resort', cls: 'col-name', type: 'text' },
@@ -234,6 +235,12 @@ async function loadForecasts() {
 }
 
 async function main() {
+  await mountShell({
+    page: 'conditions',
+    breadcrumb: ['Guide', 'Conditions'],
+    layout: 'app',
+  });
+
   const [index, reports] = await Promise.all([getIndex(), getSnowReports()]);
   resorts = index.resorts ?? [];
   snowReports = reports?.reports ?? {};

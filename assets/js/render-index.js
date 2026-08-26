@@ -12,6 +12,7 @@ import {
   el, fill, fmt, money, formatDate, compareNullsLast,
   qs, qsa, setStatus, STATE_NAMES, PASS_LABELS,
 } from './util.js';
+import { mountShell } from './shell.js';
 
 const PASS_ORDER = ['epic', 'ikon', 'indy', 'other', 'none'];
 
@@ -354,6 +355,12 @@ function writeUrl() {
 // --- boot -------------------------------------------------------------------
 
 async function main() {
+  await mountShell({
+    page: 'resorts',
+    breadcrumb: ['Guide', 'All resorts'],
+    layout: 'app',
+  });
+
   const index = await getIndex();
   resorts = index.resorts ?? [];
 

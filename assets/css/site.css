@@ -287,71 +287,388 @@ button, input, select { font: inherit; color: inherit; }
   padding-inline: var(--gap);
 }
 
-/* --- header / footer ------------------------------------------------------ */
+/* --- app shell -------------------------------------------------------------
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+   Two layouts off the same chrome, per REDESIGN.md 2a. `data-layout="app"` is
+   the reference's fixed grid: 100vh, nothing outside the panes scrolls, the
+   table owns the viewport. `data-layout="document"` keeps the sidebar and the
+   top bar but lets the content column scroll normally, because 45 resorts of
+   editorial does not belong in a viewport-height pane.
+   --------------------------------------------------------------------------- */
+
+.app {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
 }
+.app[data-layout="app"] { height: 100dvh; overflow: hidden; }
 
-.site-header__inner {
+.app > main {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: var(--topbar-h) auto 1fr auto;
+}
+.app[data-layout="app"] > main { overflow: hidden; }
+/* No fixed height on a document page, so 1fr and auto behave identically and
+   the content column simply grows. */
+.app[data-layout="document"] > main { grid-template-rows: var(--topbar-h) auto auto auto; }
+
+/* Rows are assigned explicitly rather than by source order. A page with no
+   toolbar would otherwise drop its content into the toolbar's row and leave the
+   1fr row empty, which is exactly what happened the first time. */
+.app > main > .topbar { grid-row: 1; }
+.app > main > .toolbar { grid-row: 2; }
+.app > main > .view { grid-row: 3; }
+.app > main > .statusbar { grid-row: 4; }
+
+/* --- sidebar --- */
+
+.sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 1.25rem;
-  padding-block: 0.7rem;
+  flex-direction: column;
+  padding: 12px 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
+.app[data-layout="document"] .sidebar { height: 100dvh; position: sticky; top: 0; }
 
-.site-title {
-  font-weight: 750;
-  font-size: 0.98rem;
-  letter-spacing: -0.015em;
-  color: var(--text);
-  text-decoration: none;
-  display: inline-flex;
+.sidebar__head {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-right: auto;
+  gap: 8px;
+  padding: 6px 10px 16px;
 }
-.site-title::before {
-  /* A ridge line, drawn in CSS so there is no asset to load. */
-  content: "";
+.sl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  min-width: 0;
+}
+.sl-mark {
   width: 22px;
-  height: 12px;
-  background: currentColor;
-  clip-path: polygon(0 100%, 27% 26%, 44% 62%, 68% 0, 100% 100%);
-  opacity: 0.85;
+  height: 22px;
+  border-radius: 5px;
+  background: var(--accent);
+  flex-shrink: 0;
+  display: block;
+  padding: 5px;
+}
+.sl-mark::after {
+  /* The favicon's ridge line, drawn in CSS so there is no asset to load. */
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-ink);
+  clip-path: polygon(0 100%, 35% 8%, 56% 46%, 70% 22%, 100% 100%);
+}
+.sl-name {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
-.site-nav {
-  display: flex;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-}
-.site-nav a {
-  color: var(--text-muted);
-  text-decoration: none;
-  padding: 0.3rem 0.6rem;
+.sidebar__close {
+  margin-left: auto;
+  display: none;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--text-secondary);
+  padding: 4px;
   border-radius: var(--radius);
+  cursor: pointer;
+}
+.sidebar__close:hover { background: var(--border-light); color: var(--text-primary); }
+
+.ss-section { margin-bottom: 18px; }
+.ss-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: 4px 10px;
+  margin-bottom: 2px;
+}
+.ss-items { display: block; }
+
+.ss-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: background 100ms, color 100ms;
+}
+.ss-item:hover { background: var(--border-light); color: var(--text-primary); }
+.ss-item.is-active {
+  background: var(--bg-selected);
+  color: var(--text-primary);
   font-weight: 550;
 }
-.site-nav a:hover { color: var(--text); background: var(--bg-sunken); }
-.site-nav a[aria-current="page"] { color: var(--text); background: var(--bg-sunken); }
-
-.site-footer {
-  margin-top: 4rem;
-  border-top: 1px solid var(--border);
-  background: var(--bg-sunken);
-  color: var(--text-muted);
-  font-size: 0.8125rem;
+.ss-icon { width: 16px; height: 16px; opacity: 0.65; flex-shrink: 0; }
+.ss-item.is-active .ss-icon { opacity: 0.9; }
+.ss-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ss-badge {
+  margin-left: auto;
+  background: var(--border);
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
 }
-.site-footer .shell { padding-block: 1.75rem 2.5rem; }
-.site-footer p { max-width: var(--measure); }
+.ss-item.is-active .ss-badge { background: var(--border-strong); color: var(--text-primary); }
+
+.sidebar__foot {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.sidebar__stamp {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  padding: 6px 10px 2px;
+  margin: 0;
+}
+
+/* --- top bar --- */
+
+.topbar {
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 12px;
+  min-width: 0;
+  background: var(--bg);
+}
+.topbar__menu {
+  display: none;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--text-secondary);
+  padding: 5px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.topbar__menu:hover { background: var(--bg-hover); color: var(--text-primary); }
+
+.crumbs { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.crumb {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+a.crumb:hover { color: var(--text-primary); }
+.crumb.current {
+  color: var(--text-primary);
+  font-weight: 550;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.crumb-sep { color: var(--text-tertiary); font-size: 12px; }
+
+.topbar__actions { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+.tb-btn {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 550;
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: none;
+  color: var(--text-secondary);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 100ms, color 100ms;
+}
+.tb-btn:hover:not(:disabled) { background: var(--bg-hover); color: var(--text-primary); }
+.tb-btn:disabled { opacity: 0.45; cursor: default; }
+.tb-btn.primary { background: var(--accent); color: var(--accent-ink); }
+.tb-btn.primary:hover:not(:disabled) { background: var(--accent-hover); color: var(--accent-ink); }
+.tb-icon { width: 13px; height: 13px; flex-shrink: 0; }
+.tb-sep { width: 1px; height: 18px; background: var(--border); margin: 0 4px; }
+
+/* --- toolbar --- */
+
+.toolbar {
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: var(--bg);
+  min-height: var(--toolbar-h);
+}
+.search-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 100ms, background 100ms;
+  background: var(--bg-hover);
+}
+.search-inline:focus-within { border-color: var(--border-strong); background: var(--bg); }
+.si-icon { color: var(--text-tertiary); display: flex; }
+.si-icon svg { width: 14px; height: 14px; display: block; }
+.si-input {
+  border: none;
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: transparent;
+  width: 172px;
+  max-width: 40vw;
+}
+.si-input::placeholder { color: var(--text-placeholder); }
+.toolbar-sep { width: 1px; height: 18px; background: var(--border); }
+
+.filter-tag {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 550;
+  padding: 4px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  white-space: nowrap;
+  transition: background 100ms, color 100ms;
+}
+.filter-tag:hover { background: var(--bg-hover); color: var(--text-primary); }
+.filter-tag[aria-pressed="true"] { background: var(--bg-selected); color: var(--text-primary); }
+
+.toolbar-right { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+.sort-label {
+  font: inherit;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.sort-label:hover { background: var(--bg-hover); color: var(--text-secondary); }
+.sort-label b { color: var(--text-secondary); font-weight: 550; }
+
+/* --- view pane --- */
+
+.view { min-width: 0; }
+.app[data-layout="app"] .view { overflow: auto; overscroll-behavior: contain; }
+.app[data-layout="document"] .view { padding-bottom: 4rem; }
+
+.view::-webkit-scrollbar { width: 8px; height: 8px; }
+.view::-webkit-scrollbar-track { background: transparent; }
+.view::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+
+/* --- status bar --- */
+
+.statusbar {
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  min-height: var(--footer-h);
+  background: var(--bg);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.statusbar::-webkit-scrollbar { display: none; }
+.statusbar__stats { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.foot-stat { display: inline-flex; align-items: center; gap: 4px; }
+.foot-stat strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.foot-stat.is-up strong { color: var(--green); }
+.foot-stat.is-down strong { color: var(--red); }
+.statusbar__dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  flex-shrink: 0;
+}
+.statusbar__right { margin-left: auto; padding-left: 12px; }
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--green);
+  white-space: nowrap;
+}
+.live[data-tone="stale"] { color: var(--text-tertiary); }
+.live[data-tone="error"] { color: var(--red); }
+.live__dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+/* --- mobile: the sidebar becomes a drawer ---------------------------------- */
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(26, 26, 24, 0.45);
+}
+
+@media (max-width: 899px) {
+  .app { grid-template-columns: 1fr; }
+  .topbar__menu { display: inline-flex; }
+  .sidebar__close { display: inline-flex; }
+
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(var(--sidebar-w), 84vw);
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 160ms ease;
+    box-shadow: var(--shadow-pop);
+  }
+  .sidebar[data-open="true"] { transform: translateX(0); }
+  .app[data-layout="document"] .sidebar { position: fixed; }
+
+  /* While the drawer is open it is the only thing that scrolls. */
+  body.is-drawer-open { overflow: hidden; }
+}
+
+@media (min-width: 900px) {
+  .scrim { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar { transition: none; }
+}
 
 /* --- page furniture ------------------------------------------------------- */
 
@@ -1638,36 +1955,26 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
   .map-canvas .leaflet-zoom-anim .leaflet-zoom-animated { transition: none !important; }
 }
 
-/* --- layout stability ----------------------------------------------------- */
+/* --- layout stability -----------------------------------------------------
 
-/* Every list on this site is rendered from JSON fetched after first paint, so
-   the footer starts just under the fold and then gets shoved thousands of pixels
-   down — which Lighthouse scores, correctly, as a large layout shift. Reserving
-   a viewport's worth of height puts the footer off-screen from the first frame,
-   so nothing the visitor can see moves when the data lands. A full viewport is
-   what it takes: at 78vh the footer still peeked in at the bottom of a 940px
-   window and then jumped away, which was the entire remaining layout shift on
-   the index. Over-reserving costs a short page one scroll; under-reserving costs
-   every page a visible jump. */
-#main { min-height: 100vh; }
+   The old page was a document: content rendered from JSON after first paint and
+   shoved the footer thousands of pixels down, which is what took CLS to 0.36.
+   The fix then was to reserve a viewport of height on #main.
 
-/* Same reasoning one level down: the weather and snow panels fill in after the
-   record renders, and they sit above the fold on a detail page. */
+   The app shell removes the cause rather than compensating for it. The grid is
+   100dvh with fixed top-bar, toolbar and status-bar rows, so the chrome is at
+   its final position on the first frame and only the table pane fills in — and
+   that pane scrolls inside itself, so nothing below it can move. The #main
+   reservation is gone with the problem it solved.
+
+   What still needs reserving is anything that lands *inside* a pane above the
+   fold.
+   --------------------------------------------------------------------------- */
+
+/* The weather and snow panels fill in after the record renders, above the fold
+   on a detail page. */
 .panel__body { min-height: 7.5rem; }
 
-/* The filter chips are built from the manifest after first paint, so their
-   containers start at zero width, the flex row wraps differently, and the whole
-   controls block changes height when the data lands. Reserving each group's
-   settled footprint makes the first frame's layout the final layout. The widths
-   are measured, not guessed, and `min()` caps them at the container so a narrow
-   phone does not gain a horizontal scrollbar to satisfy a reservation. */
+/* Filter chips are built from the manifest after first paint, so their rows
+   start at zero height and the toolbar grows when the data lands. */
 .chips { min-height: 1.75rem; }
-
-/* Only above the breakpoint where the row lays out side by side. Below it every
-   group already gets a line of its own, the reserved height alone is enough, and
-   a rem reservation wider than a phone would force a horizontal scrollbar. */
-@media (min-width: 720px) {
-  #filter-state { min-width: 14.75rem; }
-  #filter-pass { min-width: 22.25rem; }
-  #filter-features { min-width: 12.5rem; }
-}
