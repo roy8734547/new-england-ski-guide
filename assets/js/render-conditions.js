@@ -15,29 +15,30 @@ import {
   snowfallTotal, snowfallToday,
 } from './weather.js';
 import {
-  el, fill, fmt, relativeTime, compareNullsLast, qs, setStatus, PASS_LABELS,
+  el, fill, fmt, relativeTime, compareNullsLast, qs, qsa, setStatus, STATE_NAMES,
 } from './util.js';
-import { mountShell } from './shell.js';
+import { mountShell, setStatusStats, setLive } from './shell.js';
+import { sparkline, peakDay } from './sparkline.js';
 
 const COLUMNS = [
-  { key: 'name', label: 'Resort', cls: 'col-name', type: 'text' },
-  { key: 'state', label: 'State', type: 'text', sortable: false },
-  // Forecast columns are kept contiguous so a row with no forecast can span
+  { key: 'name', label: 'Resort', type: 'resort', w: '220px' },
+  { key: 'town', label: 'Town', type: 'town', w: '180px', sortable: false },
+  // The forecast columns stay contiguous so a row with no forecast can span
   // exactly them and still show its reported snow figures.
-  { key: 'snow7d', label: 'Forecast 7d', group: 'forecast' },
-  { key: 'snow24h', label: 'Forecast 24h', group: 'forecast' },
-  { key: 'temp', label: 'Temp', group: 'forecast' },
-  { key: 'wind', label: 'Wind', group: 'forecast' },
-  { key: 'conditions', label: 'Conditions', type: 'text', cls: 'col-text', sortable: false, group: 'forecast' },
+  { key: 'spark', label: '7-day snow', type: 'spark', num: true, w: '128px', group: 'forecast', sortKey: 'snow7d' },
+  { key: 'snow24h', label: 'Next 24h', num: true, w: '82px', group: 'forecast' },
+  { key: 'temp', label: 'Temp', num: true, w: '66px', group: 'forecast' },
+  { key: 'wind', label: 'Wind', num: true, w: '86px', group: 'forecast' },
+  { key: 'conditions', label: 'Conditions', type: 'text', w: '150px', sortable: false, group: 'forecast' },
   // Reported = what the resort itself published, fetched by tools/fetch-snow.mjs.
-  { key: 'reportedNew24h', label: 'Reported 24h' },
-  { key: 'baseDepth', label: 'Base' },
-  { key: 'report', label: 'Official report', type: 'text', cls: 'col-text', sortable: false },
+  { key: 'reportedNew24h', label: 'Reported 24h', num: true, w: '96px' },
+  { key: 'baseDepth', label: 'Base', num: true, w: '72px' },
+  { key: 'report', label: 'Official report', type: 'report', w: '130px', sortable: false },
 ];
 
 const FORECAST_COLSPAN = 5;
 
-const state = { sortBy: 'snow7d', sortDir: 'desc' };
+const state = { sortBy: 'snow7d', sortDir: 'desc', q: '', states: new Set() };
 
 let resorts = [];
 let forecasts = new Map();
@@ -108,17 +109,25 @@ function snowCell(value, max, { emphasis = false } = {}) {
 }
 
 function nameCell(r) {
-  return el('td', { class: 'col-name' },
-    el('a', { href: `resort.html?r=${encodeURIComponent(r.slug)}` }, r.name));
+  return el('td', { class: 'col-resort' },
+    el('div', { class: 'ticker-row' },
+      el('span', { class: 'tick-icon', 'aria-hidden': 'true' }, r.state),
+      el('a', { class: 'ticker', href: `resort.html?r=${encodeURIComponent(r.slug)}` }, r.name)));
+}
+
+function townCell(r) {
+  return el('td', { class: 'col-town' },
+    el('span', { class: 'name-cell' },
+      [r.town, STATE_NAMES[r.state] ?? r.state].filter(Boolean).join(', ')));
 }
 
 function reportCell(r) {
-  if (!r.officialSnowReport) return el('td', { class: 'col-text is-unknown' }, 'No link on record');
-  return el('td', { class: 'col-text' },
-    el('a', { href: r.officialSnowReport, rel: 'noopener' }, 'Official report ↗'));
+  if (!r.officialSnowReport) return el('td', { class: 'is-unknown' }, 'No link');
+  return el('td', {},
+    el('a', { class: 'report-link', href: r.officialSnowReport, rel: 'noopener' }, 'Report ↗'));
 }
 
-function row(model, max) {
+function row(model, peak) {
   const { r, report } = model;
 
   // Reported figures come from the resort's own report and are independent of
@@ -129,12 +138,12 @@ function row(model, max) {
   ];
 
   if (!model.ok) {
-    // Still a full row: name, state, reported figures and the link out. The
-    // table never grows a hole because one request failed.
+    // Still a full row: name, town, reported figures and the link out. The table
+    // never grows a hole because one request failed.
     return el('tr', { class: 'is-degraded' },
       nameCell(r),
-      el('td', {}, r.state),
-      el('td', { class: 'col-text is-unknown', colspan: String(FORECAST_COLSPAN) },
+      townCell(r),
+      el('td', { class: 'is-unknown', colspan: String(FORECAST_COLSPAN) },
         'Weather unavailable — ', model.reason),
       ...reportedCells,
       reportCell(r));
@@ -142,14 +151,15 @@ function row(model, max) {
 
   return el('tr', { class: isSnowing(model.code) ? 'is-snowing' : '' },
     nameCell(r),
-    el('td', {}, r.state),
-    snowCell(model.snow7d, max, { emphasis: true }),
-    snowCell(model.snow24h, max, { emphasis: true }),
+    townCell(r),
+    el('td', { class: 'num col-spark' },
+      sparkline(forecasts.get(r.slug), peak, model.snow7d)),
+    el('td', { class: 'num' }, model.snow24h === null ? '—' : inches(model.snow24h)),
     el('td', { class: 'num' }, model.temp === null ? '—' : `${Math.round(model.temp)}°`),
     el('td', { class: 'num' },
       model.wind === null ? '—' : `${Math.round(model.wind)}`,
       model.gust !== null ? el('small', { class: 'is-unknown' }, ` g${Math.round(model.gust)}`) : null),
-    el('td', { class: 'col-text' }, conditionLabel(model.code)),
+    el('td', {}, conditionLabel(model.code)),
     ...reportedCells,
     reportCell(r));
 }
@@ -169,52 +179,61 @@ function reportedCell(value, report) {
 
 function headerRow() {
   return el('tr', {}, COLUMNS.map((col) => {
+    const sortKey = col.sortKey ?? col.key;
+    const isSort = state.sortBy === sortKey;
     const th = el('th', {
       scope: 'col',
-      class: [col.cls, col.sortable === false ? '' : 'sortable'].filter(Boolean).join(' '),
+      class: [col.num ? 'num' : '', isSort ? 'sort-active' : ''].filter(Boolean).join(' '),
+      style: col.w ? `width:${col.w}` : null,
     });
-    if (state.sortBy === col.key) {
-      th.setAttribute('aria-sort', state.sortDir === 'asc' ? 'ascending' : 'descending');
-    }
+    if (isSort) th.setAttribute('aria-sort', state.sortDir === 'asc' ? 'ascending' : 'descending');
+
     if (col.sortable === false) {
-      th.append(el('span', {
-        style: `display:block;padding:.6rem .8rem;text-align:${col.cls === 'col-text' ? 'left' : 'right'}`,
-      }, col.label));
+      th.append(el('span', { class: 'th-label' }, col.label));
     } else {
       th.append(el('button', {
         type: 'button',
+        class: 'th-sort',
         onclick: () => {
-          if (state.sortBy === col.key) {
+          if (state.sortBy === sortKey) {
             state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
           } else {
-            state.sortBy = col.key;
-            state.sortDir = col.type === 'text' ? 'asc' : 'desc';
+            state.sortBy = sortKey;
+            state.sortDir = col.num ? 'desc' : 'asc';
           }
-          qs('#sort-by').value = state.sortBy;
-          qs('#sort-dir').value = state.sortDir;
+          syncControls();
           render();
         },
-      }, col.label));
+      }, col.label, isSort ? el('span', { class: 'th-arrow' }, state.sortDir === 'asc' ? '↑' : '↓') : null));
     }
     return th;
   }));
 }
 
+/** Name, town and former names — the same haystack the index searches. */
+const haystack = (r) => `${r.name} ${r.town ?? ''} ${(r.aka ?? []).join(' ')}`.toLowerCase();
+
+function matches(r) {
+  if (state.q && !haystack(r).includes(state.q)) return false;
+  if (state.states.size && !state.states.has(r.state)) return false;
+  return true;
+}
+
 function render() {
-  const models = resorts.map(rowModel);
-  const max = Math.max(0, ...models.filter((m) => m.ok && m.snow7d !== null).map((m) => m.snow7d));
+  const models = resorts.filter(matches).map(rowModel);
+  const peak = peakDay(forecasts, models.map((m) => m.r.slug));
   const ordered = sortRows(models);
 
   fill(qs('#conditions-table thead'), headerRow());
-  fill(qs('#conditions-table tbody'), ordered.map((m) => row(m, max)));
+  fill(qs('#conditions-table tbody'), ordered.map((m) => row(m, peak)));
 
   const ok = models.filter((m) => m.ok);
   const failed = models.length - ok.length;
   const newest = ok.map((m) => m.fetchedAt).sort().at(-1);
 
-  qs('#result-count').textContent = ok.length
-    ? `${ok.length} of ${models.length} mountains · forecast as of ${relativeTime(newest)}`
-    : `${models.length} mountains · no forecast data`;
+  qs('#result-count').textContent = models.length === resorts.length
+    ? `${resorts.length} mountains`
+    : `${models.length} of ${resorts.length}`;
 
   const note = qs('#failure-note');
   note.hidden = failed === 0;
@@ -223,6 +242,67 @@ function render() {
       ? 'No forecasts loaded. Open-Meteo may be rate limiting or unreachable; the official report links still work.'
       : `${failed} ${failed === 1 ? 'mountain' : 'mountains'} could not be forecast. Those rows link to the resort's own report instead.`;
   }
+
+  renderStatusbar(models, ok, newest);
+}
+
+function renderStatusbar(models, ok, newest) {
+  const totals = ok.map((m) => m.snow7d).filter((v) => typeof v === 'number');
+  const deepest = ok
+    .filter((m) => typeof m.snow7d === 'number')
+    .sort((a, b) => b.snow7d - a.snow7d)[0];
+  const snowing = ok.filter((m) => isSnowing(m.code)).length;
+  const sum = totals.reduce((a, b) => a + b, 0);
+
+  setStatusStats([
+    { value: `${fmt(models.length)} ${models.length === 1 ? 'mountain' : 'mountains'}` },
+    deepest && deepest.snow7d > 0
+      ? {
+        label: 'Most snow this week',
+        value: `${deepest.r.name} ${inches(deepest.snow7d)}`,
+        tone: 'up',
+      }
+      : { label: 'Most snow this week', value: 'nothing forecast' },
+    sum > 0 ? { label: 'Region total', value: inches(sum) } : null,
+    snowing ? { label: 'Snowing now', value: fmt(snowing), tone: 'up' } : null,
+  ]);
+
+  setLive(
+    ok.length ? `Forecast ${relativeTime(newest)}` : 'Forecast unavailable',
+    { tone: ok.length ? 'ok' : 'error' },
+  );
+}
+
+function syncControls() {
+  qsa('#filter-state .filter-tag').forEach((b) => {
+    const pressed = b.dataset.value === '' ? state.states.size === 0 : state.states.has(b.dataset.value);
+    b.setAttribute('aria-pressed', String(pressed));
+  });
+  qs('#sort-by').value = state.sortBy;
+  const dir = qs('#sort-dir');
+  dir.dataset.dir = state.sortDir;
+  dir.textContent = state.sortDir === 'asc' ? '↑' : '↓';
+  dir.setAttribute('aria-label', `Sort direction: ${state.sortDir === 'asc' ? 'low to high' : 'high to low'}`);
+}
+
+function buildStateTags() {
+  const states = [...new Set(resorts.map((r) => r.state))].sort();
+  fill(qs('#filter-state'), [
+    el('button', {
+      type: 'button', class: 'filter-tag', 'aria-pressed': 'true', dataset: { value: '' },
+      onclick: () => { state.states.clear(); syncControls(); render(); },
+    }, 'All'),
+    ...states.map((code) => el('button', {
+      type: 'button', class: 'filter-tag', 'aria-pressed': 'false', dataset: { value: code },
+      title: STATE_NAMES[code] ?? code,
+      onclick: () => {
+        if (state.states.has(code)) state.states.delete(code);
+        else state.states.add(code);
+        syncControls();
+        render();
+      },
+    }, code)),
+  ]);
 }
 
 // --- boot -------------------------------------------------------------------
@@ -239,6 +319,19 @@ async function main() {
     page: 'conditions',
     breadcrumb: ['Guide', 'Conditions'],
     layout: 'app',
+    actions: [
+      {
+        id: 'refresh',
+        label: 'Refresh',
+        icon: 'M13 8a5 5 0 1 1-1.5-3.5M13 2v3h-3',
+        onClick: () => {
+          clearForecastCache();
+          loadForecasts().catch(() => setStatus('Could not refresh the forecast.', { error: true }));
+        },
+      },
+      { separator: true },
+      { label: 'All resorts', href: 'index.html', primary: true },
+    ],
   });
 
   const [index, reports] = await Promise.all([getIndex(), getSnowReports()]);
@@ -250,16 +343,23 @@ async function main() {
     return;
   }
 
-  // Draw the table with every row already present, then fill in the forecasts.
-  // The page is useful - names, states, links to official reports - before a
-  // single network call has come back.
+  buildStateTags();
+  syncControls();
+
+  // Drawn with every row already present, then the forecasts fill in. The page
+  // is useful — names, towns, links to official reports — before a single
+  // network call has come back.
   render();
 
+  qs('#search').addEventListener('input', (e) => {
+    state.q = e.target.value.trim().toLowerCase();
+    render();
+  });
   qs('#sort-by').addEventListener('change', (e) => { state.sortBy = e.target.value; render(); });
-  qs('#sort-dir').addEventListener('change', (e) => { state.sortDir = e.target.value; render(); });
-  qs('#refresh').addEventListener('click', () => {
-    clearForecastCache();
-    loadForecasts().catch(() => setStatus('Could not refresh the forecast.', { error: true }));
+  qs('#sort-dir').addEventListener('click', () => {
+    state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+    syncControls();
+    render();
   });
 
   await loadForecasts();

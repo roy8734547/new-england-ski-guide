@@ -20,6 +20,7 @@
 
 import { getIndex } from './data.js';
 import { getForecasts, snowfallTotal } from './weather.js';
+import { sparkline, peakDay } from './sparkline.js';
 import {
   el, fill, fmt, money, formatDate, relativeTime, compareNullsLast,
   qs, qsa, setStatus, STATE_NAMES, PASS_LABELS,
@@ -132,47 +133,6 @@ function passTags(list, { limit = 2 } = {}) {
       : null);
 }
 
-/**
- * The 7-day snowfall sparkline: one bar per forecast day, height scaled against
- * the deepest single day currently on screen rather than against the row's own
- * maximum. A per-row scale would make a mountain expecting one inch look like a
- * mountain expecting twenty, which is the opposite of what a sparkline is for.
- */
-function sparkline(slug, peak) {
-  const hit = forecasts.get(slug);
-  if (!hit) return el('span', { class: 'spark spark--pending', 'aria-hidden': 'true' });
-  if (hit.status !== 'ok') return el('span', { class: 'spark is-unknown', title: hit.reason ?? 'No forecast' }, '—');
-
-  const days = (hit.data.days ?? []).slice(0, 7);
-  const total = snow7d(slug) ?? 0;
-  const scale = peak > 0 ? peak : 1;
-
-  return el('span', { class: 'snowcell' },
-    el('span', {
-      class: `spark${total > 0 ? ' is-snowy' : ''}`,
-      role: 'img',
-      'aria-label': `${fmt(total, { digits: 1 })} inches forecast over seven days`,
-    }, days.map((d) => {
-      const inches = Number.isFinite(d.snow) ? d.snow : 0;
-      const pct = Math.max(4, Math.round((inches / scale) * 100));
-      return el('span', {
-        class: `sp${inches > 0 ? ' is-snow' : ''}`,
-        style: `height:${pct}%`,
-      });
-    })),
-    total > 0
-      ? el('span', { class: 'snow-pill snow-pill--snow', dataset: { depth: depthBand(total) } },
-        `${fmt(total, { digits: total < 10 ? 1 : 0 })}"`)
-      : el('span', { class: 'snow-pill snow-pill--flat' }, '0"'));
-}
-
-/** Three bands, so the pill's weight tracks the forecast without a gradient. */
-function depthBand(inches) {
-  if (inches >= 12) return 'deep';
-  if (inches >= 4) return 'some';
-  return 'trace';
-}
-
 function resortCell(r) {
   return el('div', { class: 'ticker-row' },
     el('span', { class: 'tick-icon', 'aria-hidden': 'true' }, r.state),
@@ -197,7 +157,10 @@ function cell(r, col, peak) {
         [r.town, STATE_NAMES[r.state] ?? r.state].filter(Boolean).join(', ')));
   }
   if (col.type === 'pass') return el('td', { class: 'col-pass' }, passTags(r.passes));
-  if (col.type === 'spark') return el('td', { class: 'num col-spark' }, sparkline(r.slug, peak));
+  if (col.type === 'spark') {
+    return el('td', { class: 'num col-spark' },
+      sparkline(forecasts.get(r.slug), peak, snow7d(r.slug)));
+  }
 
   const value = r[col.key];
   if (value === null || value === undefined) {
@@ -322,11 +285,7 @@ function card(r) {
 
 function render() {
   const rows = visible();
-  const peak = Math.max(0, ...rows.flatMap((r) => {
-    const hit = forecasts.get(r.slug);
-    if (!hit || hit.status !== 'ok') return [];
-    return (hit.data.days ?? []).slice(0, 7).map((d) => (Number.isFinite(d.snow) ? d.snow : 0));
-  }));
+  const peak = peakDay(forecasts, rows.map((r) => r.slug));
 
   fill(qs('#resort-table thead'), headerRow(rows));
   fill(qs('#resort-table tbody'), rows.map((r) => bodyRow(r, peak)));
