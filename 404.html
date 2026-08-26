@@ -7,7 +7,18 @@
 <meta name="description" content="That page does not exist. Here is where everything else is.">
 <meta name="robots" content="noindex">
 
+<!-- Icons. The .ico is listed first and the SVG second on purpose: a browser that
+     understands SVG icons prefers the later, higher-fidelity declaration, and one
+     that does not falls back to the .ico rather than showing nothing. Everything
+     here is generated from assets/favicon.svg by tools/build-icons.mjs.
+     All paths are relative so the site still works deployed under a subpath. -->
+<link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Ski Guide">
+<meta name="theme-color" content="#0e5b9e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0e13" media="(prefers-color-scheme: dark)">
 
 <!-- Open Graph. og:url and rel=canonical are set at runtime by assets/js/seo.js:
      this repo has no domain baked into it anywhere, and a canonical URL pointing

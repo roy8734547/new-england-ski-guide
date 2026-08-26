@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "node tools/serve.mjs",
     "build:index": "node tools/build-index.mjs",
+    "build:icons": "node tools/build-icons.mjs",
     "build:seo": "node tools/build-seo.mjs",
     "validate": "node tools/validate.mjs",
     "fetch:snow": "node tools/fetch-snow.mjs",
@@ -18,6 +19,7 @@
     "check": "node tools/build-index.mjs && node tools/validate.mjs"
   },
   "devDependencies": {
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "sharp": "^0.35.3"
   }
 }
