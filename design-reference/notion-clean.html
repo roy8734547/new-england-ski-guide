@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Notion Clean</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-hover: #F7F7F5;
+    --bg-selected: #F1F1EF;
+    --sidebar: #F7F7F5;
+    --border: #E8E8E5;
+    --border-light: #F0F0ED;
+    --text-primary: #1A1A18;
+    --text-secondary: #6B6B68;
+    --text-tertiary: #9B9B97;
+    --text-placeholder: #B8B8B4;
+    --green: #0F7B0F;
+    --green-bg: #EDFAED;
+    --red: #C44240;
+    --red-bg: #FBE9E9;
+    --blue: #2E6FD0;
+    --accent: #4D9EF8;
+    --tag-bg: #F0F0EE;
+    --tag-text: #6B6B68;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    height: 100vh;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 12px 8px;
+    overflow-y: auto;
+  }
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px 16px;
+    margin-bottom: 4px;
+  }
+  .sl-mark {
+    width: 24px; height: 24px;
+    background: var(--text-primary);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+  }
+  .sl-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.2px;
+  }
+  .sidebar-section { margin-bottom: 20px; }
+  .ss-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    padding: 4px 10px;
+    margin-bottom: 2px;
+  }
+  .ss-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 100ms;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .ss-item:hover { background: var(--border-light); color: var(--text-primary); }
+  .ss-item.active { background: var(--bg-selected); color: var(--text-primary); font-weight: 500; }
+  .ss-item-icon {
+    width: 16px; height: 16px;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  .ss-badge {
+    margin-left: auto;
+    background: var(--border);
+    color: var(--text-tertiary);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+  .ss-item.active .ss-badge { background: rgba(0,0,0,0.08); color: var(--text-secondary); }
+
+  .sidebar-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 8px 10px;
+  }
+
+  .sidebar-bottom {
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── MAIN ── */
+  .main {
+    display: grid;
+    grid-template-rows: 52px 48px 1fr 44px;
+    overflow: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+  }
+  .page-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.2px;
+  }
+  .breadcrumb-sep { color: var(--text-tertiary); font-size: 12px; }
+  .breadcrumb-item { font-size: 13px; color: var(--text-tertiary); cursor: pointer; }
+  .breadcrumb-item:hover { color: var(--text-primary); }
+  .breadcrumb-item.current { color: var(--text-primary); font-weight: 500; }
+  .topbar-actions { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+  .tb-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 100ms;
+    border: none;
+    color: var(--text-secondary);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tb-btn:hover { background: var(--bg-hover); color: var(--text-primary); }
+  .tb-btn.primary {
+    background: var(--text-primary);
+    color: white;
+  }
+  .tb-btn.primary:hover { background: #333; }
+  .tb-sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+
+  /* ── TOOLBAR ── */
+  .toolbar {
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 8px;
+  }
+  .search-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 100ms;
+    min-width: 200px;
+  }
+  .search-inline:focus-within {
+    border-color: var(--border);
+    background: var(--bg);
+  }
+  .si-icon { color: var(--text-tertiary); }
+  .si-icon svg { width: 14px; height: 14px; display: block; }
+  .si-input {
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-primary);
+    background: transparent;
+    width: 180px;
+  }
+  .si-input::placeholder { color: var(--text-placeholder); }
+  .toolbar-sep { width: 1px; height: 18px; background: var(--border); }
+  .filter-tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 100ms;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    white-space: nowrap;
+  }
+  .filter-tag:hover { background: var(--bg-hover); color: var(--text-primary); }
+  .filter-tag.active { background: var(--bg-selected); color: var(--text-primary); }
+  .toolbar-right { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+  .sort-label {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .sort-label:hover { background: var(--bg-hover); color: var(--text-secondary); }
+  .sort-label span { color: var(--text-secondary); font-weight: 500; }
+
+  /* ── TABLE ── */
+  .table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .table-container::-webkit-scrollbar { width: 6px; }
+  .table-container::-webkit-scrollbar-track { background: transparent; }
+  .table-container::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  thead tr {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    padding: 8px 12px;
+    text-align: left;
+    white-space: nowrap;
+    border-right: 1px solid var(--border-light);
+    letter-spacing: 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  th:last-child { border-right: none; }
+  th:hover { background: var(--bg-hover); color: var(--text-secondary); }
+  th.num { text-align: right; }
+  th.sort-active { color: var(--text-primary); }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: background 80ms;
+  }
+  tbody tr:hover { background: var(--bg-hover); }
+  tbody tr.selected { background: var(--bg-selected); }
+  tbody tr:last-child { border-bottom: none; }
+
+  td {
+    padding: 9px 12px;
+    font-size: 13px;
+    border-right: 1px solid var(--border-light);
+    vertical-align: middle;
+  }
+  td:last-child { border-right: none; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .ticker-row { display: flex; align-items: center; gap: 8px; }
+  .tick-icon {
+    width: 20px; height: 20px;
+    border-radius: 3px;
+    background: var(--tag-bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 7px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+    letter-spacing: -0.3px;
+  }
+  .ticker { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+  .name-cell { font-size: 13px; color: var(--text-secondary); font-weight: 400; }
+  .price { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+  .gain { color: var(--green); font-weight: 500; }
+  .loss { color: var(--red); font-weight: 500; }
+
+  .gain-pill, .loss-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  .gain-pill { background: var(--green-bg); color: var(--green); }
+  .loss-pill { background: var(--red-bg); color: var(--red); }
+
+  .vol { color: var(--text-tertiary); font-size: 12px; }
+  .mkcap { color: var(--text-secondary); font-size: 12px; font-weight: 500; }
+
+  .sparkline { display: flex; align-items: flex-end; gap: 2px; height: 18px; }
+  .sp { width: 3px; border-radius: 1px; }
+  .sp.up { background: var(--green); opacity: 0.5; }
+  .sp.dn { background: var(--red); opacity: 0.5; }
+  tbody tr:hover .sp.up, tbody tr.selected .sp.up { opacity: 0.8; }
+  tbody tr:hover .sp.dn, tbody tr.selected .sp.dn { opacity: 0.8; }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+  .foot-stat { display: flex; align-items: center; gap: 4px; }
+  .foot-stat strong { color: var(--text-secondary); font-weight: 500; }
+  .foot-stat.up strong { color: var(--green); }
+  .foot-stat.dn strong { color: var(--red); }
+  .foot-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border); }
+  .foot-right { margin-left: auto; }
+  .live-indicator { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--green); }
+  .ld { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sl-mark">P</div>
+      <span class="sl-name">Portfolio</span>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="ss-label">Workspace</div>
+      <div class="ss-item active">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/>
+        </svg>
+        All Stocks
+        <span class="ss-badge">8</span>
+      </div>
+      <div class="ss-item">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 12L6 7l3 3 5-7"/>
+        </svg>
+        Watchlist
+        <span class="ss-badge">12</span>
+      </div>
+      <div class="ss-item">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/>
+        </svg>
+        Recent
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="ss-label">Views</div>
+      <div class="ss-item">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="3" width="12" height="2" rx="0.5"/><rect x="2" y="7" width="12" height="2" rx="0.5"/><rect x="2" y="11" width="12" height="2" rx="0.5"/>
+        </svg>
+        Table
+      </div>
+      <div class="ss-item">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="2" width="12" height="9" rx="1"/><path d="M5 14h6"/>
+        </svg>
+        Board
+      </div>
+      <div class="ss-item">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 13l3-4 3 2 3-5 3 3"/>
+        </svg>
+        Charts
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="ss-label">Filters saved</div>
+      <div class="ss-item">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="8" cy="8" r="3"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2"/>
+        </svg>
+        Top Gainers
+      </div>
+      <div class="ss-item">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 12L12 4M4 4h8v8"/>
+        </svg>
+        Tech Sector
+      </div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="ss-item">
+        <svg class="ss-item-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3 2.7-5 6-5s6 2 6 5"/></svg>
+        Roy Barkley
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <span class="breadcrumb-item">Workspace</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item current">All Stocks</span>
+      <div class="topbar-actions">
+        <button class="tb-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>
+          Add stock
+        </button>
+        <div class="tb-sep"></div>
+        <button class="tb-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M3 4h10M3 12h6"/></svg>
+          Filter
+        </button>
+        <button class="tb-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12V5l4-3 4 3v7M6 12V9h4v3"/></svg>
+          Sort
+        </button>
+        <div class="tb-sep"></div>
+        <button class="tb-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2h8v12H4zM7 6h2M7 9h2M6 12h4"/></svg>
+          Export
+        </button>
+        <button class="tb-btn primary">Share</button>
+      </div>
+    </div>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <div class="search-inline">
+        <span class="si-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+        <input class="si-input" type="text" placeholder="Filter stocks…">
+      </div>
+      <div class="toolbar-sep"></div>
+      <button class="filter-tag active">All</button>
+      <button class="filter-tag">Gainers</button>
+      <button class="filter-tag">Losers</button>
+      <button class="filter-tag">Tech</button>
+      <button class="filter-tag">Finance</button>
+      <div class="toolbar-right">
+        <span class="sort-label">Sort: <span>Change %</span> ↓</span>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:44px; padding-left:24px;"></th>
+            <th style="width:130px;">Ticker</th>
+            <th>Name</th>
+            <th class="num sort-active" style="width:100px;">Price ↓</th>
+            <th class="num" style="width:80px;">Change</th>
+            <th class="num" style="width:80px;">Chg %</th>
+            <th class="num" style="width:80px;">Volume</th>
+            <th class="num" style="width:90px;">Mkt Cap</th>
+            <th style="width:70px; padding-right:24px;">7-Day</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding-left:24px;"><input type="checkbox" style="width:13px;height:13px;cursor:pointer;accent-color:var(--text-primary);"></td>
+            <td><div class="ticker-row"><div class="tick-icon">AAPL</div><span class="ticker">AAPL</span></div></td>
+            <td><span class="name-cell">Apple Inc.</span></td>
+            <td class="num price">$213.45</td>
+            <td class="num"><span class="gain">+2.34</span></td>
+            <td class="num"><span class="gain-pill">+1.11%</span></td>
+            <td class="num vol">58.2M</td>
+            <td class="num mkcap">$3.28T</td>
+            <td style="padding-right:24px;"><div class="sparkline"><div class="sp up" style="height:40%"></div><div class="sp up" style="height:55%"></div><div class="sp up" style="height:45%"></div><div class="sp up" style="height:70%"></div><div class="sp up" style="height:60%"></div><div class="sp up" style="height:80%"></div><div class="sp up" style="height:100%"></div></div></td>
+          </tr>
+          <tr>
+            <td style="padding-left:24px;"><input type="checkbox" style="width:13px;height:13px;cursor:pointer;accent-color:var(--text-primary);"></td>
+            <td><div class="ticker-row"><div class="tick-icon">NVDA</div><span class="ticker">NVDA</span></div></td>
+            <td><span class="name-cell">NVIDIA Corp.</span></td>
+            <td class="num price">$875.20</td>
+            <td class="num"><span class="gain">+15.40</span></td>
+            <td class="num"><span class="gain-pill">+1.79%</span></td>
+            <td class="num vol">41.1M</td>
+            <td class="num mkcap">$2.16T</td>
+            <td style="padding-right:24px;"><div class="sparkline"><div class="sp up" style="height:50%"></div><div class="sp up" style="height:65%"></div><div class="sp up" style="height:55%"></div><div class="sp up" style="height:75%"></div><div class="sp up" style="height:70%"></div><div class="sp up" style="height:90%"></div><div class="sp up" style="height:100%"></div></div></td>
+          </tr>
+          <tr class="selected">
+            <td style="padding-left:24px;"><input type="checkbox" checked style="width:13px;height:13px;cursor:pointer;accent-color:var(--text-primary);"></td>
+            <td><div class="ticker-row"><div class="tick-icon">MSFT</div><span class="ticker">MSFT</span></div></td>
+            <td><span class="name-cell">Microsoft Corp.</span></td>
+            <td class="num price">$421.80</td>
+            <td class="num"><span class="loss">−3.20</span></td>
+            <td class="num"><span class="loss-pill">−0.75%</span></td>
+            <td class="num vol">22.4M</td>
+            <td class="num mkcap">$3.13T</td>
+            <td style="padding-right:24px;"><div class="sparkline"><div class="sp dn" style="height:100%"></div><div class="sp dn" style="height:80%"></div><div class="sp dn" style="height:90%"></div><div class="sp dn" style="height:70%"></div><div class="sp dn" style="height:75%"></div><div class="sp dn" style="height:60%"></div><div class="sp dn" style="height:50%"></div></div></td>
+          </tr>
+          <tr>
+            <td style="padding-left:24px;"><input type="checkbox" style="width:13px;height:13px;cursor:pointer;accent-color:var(--text-primary);"></td>
+            <td><div class="ticker-row"><div class="tick-icon">TSLA</div><span class="ticker">TSLA</span></div></td>
+            <td><span class="name-cell">Tesla Inc.</span></td>
+            <td class="num price">$248.30</td>
+            <td class="num"><span class="loss">−8.90</span></td>
+            <td class="num"><span class="loss-pill">−3.46%</span></td>
+            <td class="num vol">94.7M</td>
+            <td class="num mkcap">$791B</td>
+            <td style="padding-right:24px;"><div class="sparkline"><div class="sp dn" style="height:100%"></div><div class="sp dn" style="height:85%"></div><div class="sp dn" style="height:75%"></div><div class="sp dn" style="height:80%"></div><div class="sp dn" style="height:60%"></div><div class="sp dn" style="height:50%"></div><div class="sp dn" style="height:40%"></div></div></td>
+          </tr>
+          <tr>
+            <td style="padding-left:24px;"><input type="checkbox" style="width:13px;height:13px;cursor:pointer;accent-color:var(--text-primary);"></td>
+            <td><div class="ticker-row"><div class="tick-icon">GOOGL</div><span class="ticker">GOOGL</span></div></td>
+            <td><span class="name-cell">Alphabet Inc.</span></td>
+            <td class="num price">$178.60</td>
+            <td class="num"><span class="gain">+1.20</span></td>
+            <td class="num"><span class="gain-pill">+0.68%</span></td>
+            <td class="num vol">18.3M</td>
+            <td class="num mkcap">$2.19T</td>
+            <td style="padding-right:24px;"><div class="sparkline"><div class="sp up" style="height:45%"></div><div class="sp up" style="height:50%"></div><div class="sp up" style="height:60%"></div><div class="sp up" style="height:55%"></div><div class="sp up" style="height:70%"></div><div class="sp up" style="height:85%"></div><div class="sp up" style="height:100%"></div></div></td>
+          </tr>
+          <tr>
+            <td style="padding-left:24px;"><input type="checkbox" style="width:13px;height:13px;cursor:pointer;accent-color:var(--text-primary);"></td>
+            <td><div class="ticker-row"><div class="tick-icon">META</div><span class="ticker">META</span></div></td>
+            <td><span class="name-cell">Meta Platforms</span></td>
+            <td class="num price">$524.40</td>
+            <td class="num"><span class="gain">+6.80</span></td>
+            <td class="num"><span class="gain-pill">+1.31%</span></td>
+            <td class="num vol">15.9M</td>
+            <td class="num mkcap">$1.33T</td>
+            <td style="padding-right:24px;"><div class="sparkline"><div class="sp up" style="height:55%"></div><div class="sp up" style="height:60%"></div><div class="sp up" style="height:50%"></div><div class="sp up" style="height:65%"></div><div class="sp up" style="height:75%"></div><div class="sp up" style="height:90%"></div><div class="sp up" style="height:100%"></div></div></td>
+          </tr>
+          <tr>
+            <td style="padding-left:24px;"><input type="checkbox" style="width:13px;height:13px;cursor:pointer;accent-color:var(--text-primary);"></td>
+            <td><div class="ticker-row"><div class="tick-icon">AMZN</div><span class="ticker">AMZN</span></div></td>
+            <td><span class="name-cell">Amazon.com Inc.</span></td>
+            <td class="num price">$192.70</td>
+            <td class="num"><span class="loss">−1.40</span></td>
+            <td class="num"><span class="loss-pill">−0.72%</span></td>
+            <td class="num vol">32.6M</td>
+            <td class="num mkcap">$2.01T</td>
+            <td style="padding-right:24px;"><div class="sparkline"><div class="sp dn" style="height:90%"></div><div class="sp dn" style="height:100%"></div><div class="sp dn" style="height:85%"></div><div class="sp dn" style="height:75%"></div><div class="sp dn" style="height:80%"></div><div class="sp dn" style="height:65%"></div><div class="sp dn" style="height:55%"></div></div></td>
+          </tr>
+          <tr>
+            <td style="padding-left:24px;"><input type="checkbox" style="width:13px;height:13px;cursor:pointer;accent-color:var(--text-primary);"></td>
+            <td><div class="ticker-row"><div class="tick-icon">JPM</div><span class="ticker">JPM</span></div></td>
+            <td><span class="name-cell">JPMorgan Chase</span></td>
+            <td class="num price">$198.50</td>
+            <td class="num"><span class="gain">+0.90</span></td>
+            <td class="num"><span class="gain-pill">+0.46%</span></td>
+            <td class="num vol">8.4M</td>
+            <td class="num mkcap">$571B</td>
+            <td style="padding-right:24px;"><div class="sparkline"><div class="sp up" style="height:40%"></div><div class="sp up" style="height:50%"></div><div class="sp up" style="height:60%"></div><div class="sp up" style="height:55%"></div><div class="sp up" style="height:65%"></div><div class="sp up" style="height:75%"></div><div class="sp up" style="height:100%"></div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span class="foot-stat">8 properties</span>
+      <span class="foot-dot"></span>
+      <span class="foot-stat">Value <strong>$847,392</strong></span>
+      <span class="foot-dot"></span>
+      <span class="foot-stat up">Day P&L <strong>+$4,218</strong></span>
+      <span class="foot-dot"></span>
+      <span class="foot-stat up">Return <strong>+0.50%</strong></span>
+      <span class="foot-dot"></span>
+      <span class="foot-stat up">Gainers <strong>5</strong></span>
+      <span class="foot-dot"></span>
+      <span class="foot-stat dn">Losers <strong>3</strong></span>
+      <div class="foot-right">
+        <div class="live-indicator"><div class="ld"></div> Live · 14:32:07 EST</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll('tbody tr').forEach(row => {
+    row.addEventListener('click', () => {
+      document.querySelectorAll('tbody tr').forEach(r => r.classList.remove('selected'));
+      row.classList.add('selected');
+    });
+  });
+  document.querySelectorAll('.filter-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

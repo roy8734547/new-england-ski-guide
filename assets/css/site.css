@@ -10,40 +10,90 @@
    Mobile-first. Every colour is a custom property, redefined once for dark.
    =========================================================================== */
 
-/* --- tokens --------------------------------------------------------------- */
+/* --- tokens ---------------------------------------------------------------
+
+   The palette is the Notion-style one from design-reference/notion-clean.html:
+   warm near-neutral greys, hairline borders, white ground, colour reserved for
+   meaning. Three corrections were made to it deliberately, all measured:
+
+   1. The reference's --text-tertiary (#9B9B97) is 2.79:1 on white. It fails AA
+      for body text and the reference uses it for column headers, footer text
+      and volume figures — small text, where it matters most. The whole ink ramp
+      is shifted darker so tertiary clears 4.5:1 on every surface it lands on,
+      including the selected-row background, and secondary moves with it so the
+      three-step hierarchy survives. Weight and size carry the rest.
+   2. --text-placeholder (#B8B8B4, 1.99:1) is text a user has to read to know
+      what a field does. Darkened to clear AA too.
+   3. The reference's red (#C44240 on #FBE9E9) is 4.27:1 — just under. Darkened.
+
+   Pass affiliation keeps this project's own hues rather than the reference's
+   green/red, because green/red on a pass name would read as good/bad. Green and
+   red are reserved for snow, where up and down genuinely mean something.
+
+   Every colour is defined on bare :root first; the dark block only redefines.
+   --------------------------------------------------------------------------- */
 
 :root {
   color-scheme: light dark;
 
-  /* Ground and ink. Cool greys, never neutral - this is a winter site. */
-  --bg: #f7f9fb;
-  --bg-sunken: #eaeff5;
+  /* Ground. The reference's warm greys. */
+  --bg: #ffffff;
+  --bg-hover: #f7f7f5;
+  --bg-selected: #f1f1ef;
+  --bg-sunken: #f1f1ef;
   --bg-raised: #ffffff;
-  --bg-inset: #f1f4f8;
-  --text: #0d1620;
-  --text-muted: #55636f;
-  /* Raised from #8695a3, which was 3.07:1 on white — below AA for normal text,
-     and this token carries every small uppercase label on the site. The gap to
-     --text-muted is now narrow; size, weight and letter-spacing carry the
-     hierarchy instead, because contrast is not the place to spend it. */
-  --text-faint: #616e7a;
-  --border: #d6dee7;
-  --border-strong: #b4c1cf;
+  --bg-inset: #f7f7f5;
+  --sidebar-bg: #f7f7f5;
 
-  /* Deep alpine blue. Structural, not decorative. */
+  /* Ink ramp, shifted darker from the reference so every step clears AA.
+     Measured worst cases: secondary 6.95:1, tertiary 4.54:1, both on
+     --bg-selected, which is the darkest surface any of them sits on. */
+  --text-primary: #1a1a18;
+  --text-secondary: #52524c;
+  --text-tertiary: #6e6e68;
+  --text-placeholder: #73736d;
+
+  /* Legacy aliases. Every component written before the redesign refers to these,
+     and they are kept pointing at the new ramp rather than being renamed across
+     1,600 lines in one commit. They are not a second palette. */
+  --text: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --text-faint: var(--text-tertiary);
+
+  --border: #e8e8e5;
+  --border-light: #f0f0ed;
+  --border-strong: #d5d5d0;
+
+  /* The brand blue, unchanged: it is in the favicon, the manifest theme colour
+     and the OG card, and desynchronising those to match a reference file would
+     be the tail wagging the dog. It replaces the reference's --blue. */
   --accent: #0e5b9e;
   --accent-hover: #0a4678;
   --accent-ink: #ffffff;
-  --accent-soft: #e4eef8;
+  --accent-soft: #e8eff8;
   --focus: #1a7fd4;
 
-  /* Categorical - pass affiliation is the only thing colour-coded. */
+  /* Snow up / snow down. The reference's gain/loss treatment, reassigned to the
+     one dimension on this site where more and less genuinely rank. */
+  --green: #0c6b0c;
+  --green-bg: #edfaed;
+  --red: #b3302e;
+  --red-bg: #fbe9e9;
+
+  /* Categorical. Flat tag, one hue each, never green or red. */
   --pass-epic: #1d5fb0;
-  --pass-ikon: #7a35a6;
-  --pass-indy: #12704a;
-  --pass-other: #8a6410;
-  --pass-none: #4d5a68;
+  --pass-epic-bg: #e8eff8;
+  --pass-ikon: #6a2b93;
+  --pass-ikon-bg: #f1e9f7;
+  --pass-indy: #0f6040;
+  --pass-indy-bg: #e6f2ec;
+  --pass-other: #7a5809;
+  --pass-other-bg: #f6efe0;
+  --pass-none: #414d5a;
+  --pass-none-bg: #edeff1;
   --pass-tint: #ffffff;
+  --tag-bg: #f0f0ee;
+  --tag-text: #52524c;
 
   /* Terrain difficulty bar. Standard trail-rating colours. */
   --diff-beginner: #2e9e57;
@@ -60,45 +110,78 @@
   --snow: #0b6ea8;
   --snow-tint: #d8ecf9;
 
-  --measure: 64ch;
+  /* Shell geometry, from the reference. */
+  --sidebar-w: 240px;
+  --topbar-h: 52px;
+  --toolbar-h: 48px;
+  --footer-h: 44px;
+  --row-h: 13px;
+
+  --measure: 68ch;
   --radius: 4px;
   --radius-lg: 8px;
   --gap: 1rem;
   --shell: 1240px;
 
+  /* System stack, not Inter. See DECISIONS.md: the reference loads Inter from
+     Google Fonts, CLAUDE.md forbids CDN dependencies, and a self-hosted subset
+     costs a request and a FOUT on a site whose Lighthouse performance is 99 and
+     whose CLS took real work to get to 0.05. On Windows this resolves to Segoe
+     UI and on macOS to SF Pro, both of which sit in the same grotesque family as
+     Inter. The density, the hairlines and the tabular figures carry this design,
+     not the typeface. */
   --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "Cascadia Mono", "Segoe UI Mono",
     Consolas, monospace;
 
-  --shadow-card: 0 1px 2px rgba(13, 22, 32, 0.06), 0 4px 12px rgba(13, 22, 32, 0.04);
+  --shadow-card: 0 1px 2px rgba(26, 26, 24, 0.05), 0 4px 12px rgba(26, 26, 24, 0.04);
+  --shadow-pop: 0 4px 16px rgba(26, 26, 24, 0.12), 0 1px 3px rgba(26, 26, 24, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0a0e13;
-    --bg-sunken: #06090d;
-    --bg-raised: #131a22;
-    --bg-inset: #1a222c;
-    --text: #e8eef5;
-    --text-muted: #94a3b3;
-    /* Same fix as light: #6b7a8a was 3.65:1 on --bg-inset. */
-    --text-faint: #8291a1;
-    --border: #232d39;
-    --border-strong: #38465a;
+    --bg: #191917;
+    --bg-hover: #212120;
+    --bg-selected: #2a2a28;
+    --bg-sunken: #101010;
+    --bg-raised: #1e1e1c;
+    --bg-inset: #212120;
+    --sidebar-bg: #151514;
+
+    --text-primary: #ededeb;
+    --text-secondary: #afafa8;
+    --text-tertiary: #93938c;
+    --text-placeholder: #8a8a83;
+
+    --border: #313130;
+    --border-light: #262625;
+    --border-strong: #43433f;
 
     --accent: #5cb0f2;
     --accent-hover: #8ac8fa;
     --accent-ink: #04121e;
-    --accent-soft: #0e2334;
+    --accent-soft: #1c2530;
     --focus: #7cc2ff;
 
-    --pass-epic: #6ba9ea;
-    --pass-ikon: #b585dd;
-    --pass-indy: #4fbe8b;
-    --pass-other: #d3ab4f;
-    --pass-none: #93a2b2;
-    --pass-tint: #0a0e13;
+    --green: #5bc85b;
+    --green-bg: #16261a;
+    --red: #f0716e;
+    --red-bg: #2a1a1a;
+
+    --pass-epic: #7fb4ee;
+    --pass-epic-bg: #1c2530;
+    --pass-ikon: #c293e0;
+    --pass-ikon-bg: #261c2e;
+    --pass-indy: #5cc395;
+    --pass-indy-bg: #152621;
+    --pass-other: #d9b45f;
+    --pass-other-bg: #2a2317;
+    --pass-none: #a3b0be;
+    --pass-none-bg: #1f2429;
+    --pass-tint: #191917;
+    --tag-bg: #262625;
+    --tag-text: #afafa8;
 
     --diff-beginner: #4dc07a;
     --diff-beginner-ink: #4dc07a;  /* 7.6:1 on --bg-raised; no separate ink needed */
@@ -110,6 +193,7 @@
     --snow-tint: #0d2b3d;
 
     --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 0, 0, 0.35);
+    --shadow-pop: 0 4px 18px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.45);
   }
 }
 

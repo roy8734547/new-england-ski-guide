@@ -235,3 +235,31 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
   popularity would be a ranking claim dressed up as metadata, and this guide does not make one.
 - **The contact line on `about.html` ships as a visible placeholder.** Publishing an email
   address is the owner's call (policy rule 3); logged as HANDOFF item 5.
+
+### Redesign — Notion-style app shell
+
+- **System font stack, not a self-hosted Inter subset.** REDESIGN.md 2e offered either. The
+  reference's Inter comes from Google Fonts, which CLAUDE.md forbids, and a self-hosted woff2
+  subset costs a request plus a FOUT on a site whose Lighthouse performance is 99 and whose CLS
+  took real work to reach 0.05. There is also no subsetting tool on this machine, so the
+  alternative was committing a full-weight face. On Windows the stack resolves to Segoe UI and
+  on macOS to SF Pro, both in the same grotesque family as Inter. The density, the hairline
+  rules and the tabular figures carry this design; the typeface is not what makes it read as
+  Notion.
+- **The whole ink ramp was shifted darker, not just `--text-tertiary`.** The reference's
+  tertiary is 2.79:1 on white. Darkening it alone to clear 4.5:1 lands it on top of the
+  reference's `--text-secondary` (#6B6B68) and collapses the three-step hierarchy, so secondary
+  moved with it. Measured worst cases are now secondary 6.95:1 and tertiary 4.54:1, both on
+  `--bg-selected`, the darkest surface either sits on.
+- **`--text-placeholder` was darkened too** (1.99:1 to 4.77:1). WCAG does not exempt placeholder
+  text, and a placeholder is text somebody has to read to know what a field does.
+- **The reference's red is 4.27:1 on its own tint** — just under AA. Darkened to #b3302e (5.31).
+  Its green passes at 5.05 and was kept, then darkened slightly anyway for headroom at 11px.
+- **The brand blue stays `--accent`, replacing the reference's `--blue`.** #0e5b9e is in the
+  favicon, the manifest `theme_color`, the `<meta name="theme-color">` and the OG card. Adopting
+  the reference's #2E6FD0 would have desynchronised all of those to match a reference file.
+- **Legacy token names are kept as aliases** (`--text` → `--text-primary`, `--text-muted` →
+  `--text-secondary`, `--text-faint` → `--text-tertiary`) rather than renamed across 1,600 lines
+  of CSS in the first commit. They resolve through `var()`, so the dark block redefining the new
+  names flows through to the old ones automatically. This is one palette with two sets of names,
+  not two palettes.
