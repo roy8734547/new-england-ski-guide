@@ -595,7 +595,7 @@ are all just characters, and the parser will emit them as literal text.
 
 ### Where they are allowed
 
-Only these seven paths. A token anywhere else is a validator **error**, which is what keeps
+Only these six paths. A token anywhere else is a validator **error**, which is what keeps
 markup out of every field that feeds a machine — the manifest, structured data, the CSV.
 
 ```
@@ -603,7 +603,6 @@ editorial.overview
 editorial.snowQuality
 editorial.crowds
 editorial.difficulty
-editorial.keyTrails[].note
 moguls.policy
 moguls.quality
 ```
@@ -637,7 +636,7 @@ Emphasis is a budget. If everything is marked, nothing is.
 
 | rule | enforced by |
 |---|---|
-| No more than **2 marks per 100 words** in any sliding window | validator, error |
+| No more than **2 marks in any sliding 60-word window** — about a paragraph of this prose | validator, error |
 | No more than **12% of a field's words** carry a mark | validator, error |
 | Never mark a whole sentence — a mark is a clause or a phrase | validator, error |
 | A mark may not span a sentence boundary | validator, error |
@@ -645,11 +644,13 @@ Emphasis is a budget. If everything is marked, nothing is.
 | Never mark generic filler — if a phrase could appear on any of the 45 pages, it is not a verdict | judgement |
 | A passage with nothing load-bearing gets **zero** marks | judgement |
 
-The 2-per-100-words window is how "no more than two marks per paragraph" is enforced on prose
-that has no paragraphs: every editorial field in this repo is a single string with no
-newlines, so a literal per-field cap of two would be far stricter for a 250-word overview than
-for a 30-word trail note. The window applies the same restraint at any length and stops marks
-clustering.
+The 60-word window is how "no more than two marks per paragraph" is enforced on prose that has
+no paragraphs: every editorial field in this repo is a single string with no newlines, so a
+literal per-field cap of two would be far stricter for a 250-word overview than for a 90-word
+mogul note. Sixty words is about a paragraph of this prose, so the rule lands where it was
+aimed. `editorial.keyTrails[].note` is not on the list because those notes average 27 words —
+one marked clause is a third of the field, which no percentage ceiling can accommodate — and
+they do not need it: the trail name already heads each entry.
 
 ### What to mark
 

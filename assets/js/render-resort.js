@@ -474,11 +474,21 @@ function mogulsSection(r) {
     provenance(m));
 }
 
-/** Small labelled prose block, distinct from the editorial `prose()` helper. */
+/**
+ * Small labelled prose block, distinct from the editorial `prose()` helper.
+ *
+ * This renders emphasis too. moguls.policy and moguls.quality are on the
+ * permitted list and arrive here, not through prose() — which is how two `==`
+ * tokens reached the screen as literal characters on the first Jay Peak render.
+ * The parks fields that also use this helper are not on the list, so they never
+ * carry tokens; passing them through the same renderer costs nothing and means
+ * there is no path out of a resort record that neither renders nor strips.
+ */
 function prose2(heading, text) {
   return el('div', { class: 'prose' },
     el('h3', {}, heading),
-    ...String(text).split(/\n\s*\n/).map((para) => el('p', {}, para)));
+    ...String(text).split(/\n\s*\n/)
+      .map((para) => el('p', {}, ...renderEmphasis(para))));
 }
 
 const PARK_SIZE_LABEL = {

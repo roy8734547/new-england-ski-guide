@@ -870,8 +870,8 @@ function crossChecks(report, file, name, r) {
 const MARKED_PERCENT_MAX = 12;
 
 /** "No more than 2 marks per paragraph", applied to prose that has no
- *  paragraphs — see the note on analyseEmphasis(). */
-const MARKS_PER_100_WORDS_MAX = 2;
+ *  paragraphs, over a 60-word window — see the note on analyseEmphasis(). */
+const MARKS_PER_WINDOW_MAX = 2;
 
 /** Walks a record and yields [path, string] for every string it holds. */
 function* everyString(record) {
@@ -917,9 +917,9 @@ function checkEmphasis(report, file, record) {
       report.err(file, `${path}: ${a.markedWords} of ${a.totalWords} words are marked `
         + `(${a.markedPercent.toFixed(1)}%), over the ${MARKED_PERCENT_MAX}% ceiling`);
     }
-    if (a.worstWindow > MARKS_PER_100_WORDS_MAX) {
-      report.err(file, `${path}: ${a.worstWindow} marks inside one 100-word stretch, `
-        + `over the limit of ${MARKS_PER_100_WORDS_MAX}`);
+    if (a.worstWindow > MARKS_PER_WINDOW_MAX) {
+      report.err(file, `${path}: ${a.worstWindow} marks inside one 60-word stretch, `
+        + `over the limit of ${MARKS_PER_WINDOW_MAX}`);
     }
   }
 }

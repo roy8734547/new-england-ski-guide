@@ -17,6 +17,8 @@
  * resort.html has a per-record title and description, and it sets those here.
  */
 
+import { stripEmphasis } from './emphasis.js';
+
 /**
  * Query parameters that identify the content rather than the view. Only
  * resort.html has one: `?r=` there names the mountain the page is about.

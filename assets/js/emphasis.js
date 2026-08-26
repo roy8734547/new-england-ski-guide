@@ -37,13 +37,20 @@ export const TOKENS = [
   { open: '==', close: '==', type: 'mark' },
 ];
 
-/** Fields allowed to carry emphasis. Anywhere else a token is a mistake. */
+/**
+ * Fields allowed to carry emphasis. Anywhere else a token is a validator error.
+ *
+ * `editorial.keyTrails[].note` is deliberately absent. Those notes average 27
+ * words, so a single marked clause is a third of the field and no percentage
+ * ceiling can accommodate one — and they do not need emphasis anyway: the trail
+ * name already heads each entry and the list is scannable by construction. The
+ * six fields here are the ones that render as walls of prose.
+ */
 export const EMPHASIS_FIELDS = [
   'editorial.overview',
   'editorial.snowQuality',
   'editorial.crowds',
   'editorial.difficulty',
-  'editorial.keyTrails[].note',
   'moguls.policy',
   'moguls.quality',
 ];
@@ -148,6 +155,17 @@ export function emphasised(tag, props, input) {
 
 const WORDS = (s) => String(s).trim().split(/\s+/).filter(Boolean);
 
+/**
+ * The width of the density window, in words — roughly one paragraph.
+ *
+ * "No more than 2 marks per paragraph" needs a paragraph, and these fields have
+ * none. 100 words was tried first and was too tight: it rejects the worked
+ * example in the brief, which marks three things across the first three
+ * sentences of Jay Peak's overview. 60 words is about a paragraph of this prose,
+ * so the rule lands where it was aimed.
+ */
+const WINDOW_WORDS = 60;
+
 /** Sentence boundary: terminal punctuation followed by a space. */
 const SENTENCE_BREAK = /[.!?]["')\]]?\s/;
 
@@ -180,7 +198,7 @@ export function analyseEmphasis(input) {
 
   let worstWindow = 0;
   for (let i = 0; i < positions.length; i += 1) {
-    const inWindow = positions.filter((v) => v >= positions[i] && v < positions[i] + 100).length;
+    const inWindow = positions.filter((v) => v >= positions[i] && v < positions[i] + WINDOW_WORDS).length;
     if (inWindow > worstWindow) worstWindow = inWindow;
   }
 
