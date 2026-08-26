@@ -1,60 +1,64 @@
 /**
- * render-index.js - comparison table + card grid + filters for index.html.
+ * render-index.js — the table view, which is now the primary view of the site.
  *
- * Everything is client-side over data/index.json. Filter and sort state lives in
- * the querystring so a filtered view is a shareable URL, which is the whole
- * reason the site uses real links rather than a router.
+ * Everything is client-side over data/index.json. Filter, sort and selection
+ * state all live in the querystring, so any view of this table is a link you can
+ * send someone — which is the whole reason the site uses real URLs rather than a
+ * router, and the reason shell.js's sidebar can be nothing but a list of `<a>`s.
+ *
+ * Three things arrived with the redesign:
+ *
+ *   Selection.  Checking two to four rows enables "Compare selected" in the top
+ *               bar, which is just a link to compare.html?r=a,b,c. The selection
+ *               is in the URL too (?sel=), so a half-built comparison survives a
+ *               reload and can be handed over.
+ *   Sparklines. The 7-day column is the Open-Meteo snowfall forecast, one bar
+ *               per day, scaled against the deepest day on screen so the column
+ *               is comparable down its own length rather than row by row.
+ *   Status bar. Count, average vertical, and who is about to get the most snow.
  */
 
 import { getIndex } from './data.js';
-import { applyCanonical } from './seo.js';
+import { getForecasts, snowfallTotal } from './weather.js';
 import {
-  el, fill, fmt, money, formatDate, compareNullsLast,
+  el, fill, fmt, money, formatDate, relativeTime, compareNullsLast,
   qs, qsa, setStatus, STATE_NAMES, PASS_LABELS,
 } from './util.js';
-import { mountShell } from './shell.js';
+import { applyCanonical } from './seo.js';
+import { mountShell, setStatusStats, setLive } from './shell.js';
 
 const PASS_ORDER = ['epic', 'ikon', 'indy', 'other', 'none'];
-
-const COLUMNS = [
-  { key: 'name', label: 'Resort', cls: 'col-name', type: 'text' },
-  { key: 'state', label: 'State', type: 'text' },
-  { key: 'verticalDrop', label: 'Vertical', unit: ' ft' },
-  { key: 'skiableAcres', label: 'Acres' },
-  { key: 'trailCount', label: 'Trails' },
-  { key: 'liftCount', label: 'Lifts' },
-  { key: 'annualSnowfallAvg', label: 'Snowfall', unit: '"' },
-  { key: 'snowmakingPercent', label: 'Snowmaking', unit: '%' },
-  { key: 'nightSkiing', label: 'Night' },
-  { key: 'parkCount', label: 'Parks' },
-  { key: 'mogulPresence', label: 'Bumps', type: 'text', cls: 'col-text' },
-  { key: 'passes', label: 'Pass', type: 'passes', sortable: false, cls: 'col-text' },
-  { key: 'advanceTypical', label: 'Advance', type: 'money' },
-  { key: 'seasonPassAdult', label: 'Season pass', type: 'money' },
-];
+const MAX_COMPARE = 4;
+const MIN_COMPARE = 2;
 
 /**
- * Trip-planning filters over the two v3 sections. Each is a flat test against a
- * field build-index.mjs precomputes, for the same reason passTypes exists.
+ * The column set from REDESIGN.md, in its order. `num` right-aligns and applies
+ * tabular figures; `w` is a fixed width so the header row cannot shift when the
+ * body renders.
  */
+const COLUMNS = [
+  { key: 'select', label: '', type: 'select', w: '40px', sortable: false },
+  { key: 'name', label: 'Resort', type: 'resort', w: '210px' },
+  { key: 'town', label: 'Town', type: 'town', w: '190px' },
+  { key: 'verticalDrop', label: 'Vertical', num: true, unit: ' ft', w: '86px' },
+  { key: 'skiableAcres', label: 'Acres', num: true, w: '72px' },
+  { key: 'trailCount', label: 'Trails', num: true, w: '64px' },
+  { key: 'liftCount', label: 'Lifts', num: true, w: '58px' },
+  { key: 'annualSnowfallAvg', label: 'Snowfall', num: true, unit: '"', w: '78px' },
+  { key: 'passTypes', label: 'Pass', type: 'pass', w: '158px', sortable: false },
+  { key: 'snow7d', label: '7-day snow', type: 'spark', num: true, w: '124px' },
+];
+
 const FEATURES = {
   park: { label: 'Park', test: (r) => r.hasPark === true },
   pipe: { label: 'Halfpipe', test: (r) => r.hasPipe === true },
   bumps: { label: 'Bumps', test: (r) => ['signature', 'common'].includes(r.mogulPresence) },
 };
 
-/** Bumps ordered worst to best so the column sorts meaningfully. */
 const MOGUL_RANK = { none: 0, rare: 1, occasional: 2, common: 3, signature: 4 };
 
-const MOGUL_SHORT = {
-  signature: 'Signature',
-  common: 'Common',
-  occasional: 'Occasional',
-  rare: 'Rare',
-  none: 'None',
-};
-
 const state = {
+  q: '',
   states: new Set(),
   passes: new Set(),
   features: new Set(),
@@ -62,54 +66,234 @@ const state = {
   nightOnly: false,
   sortBy: 'verticalDrop',
   sortDir: 'desc',
-  view: 'cards',
+  view: 'table',
+  selected: new Set(),
 };
 
 let resorts = [];
+/** slug -> {status:'ok', data} | {status:'error'}; filled after first paint. */
+let forecasts = new Map();
 
 // --- filtering and sorting --------------------------------------------------
 
+const haystack = (r) => `${r.name} ${r.town ?? ''} ${(r.aka ?? []).join(' ')}`.toLowerCase();
+
 function matches(r) {
+  if (state.q && !haystack(r).includes(state.q)) return false;
   if (state.states.size && !state.states.has(r.state)) return false;
   if (state.passes.size && !r.passTypes.some((t) => state.passes.has(t))) return false;
   if (state.nightOnly && r.nightSkiing !== true) return false;
-  // Features are additive: every selected chip must hold.
-  for (const key of state.features) {
-    if (!FEATURES[key]?.test(r)) return false;
-  }
-  // A null vertical can never satisfy a minimum, but it is visible at "Any".
+  for (const key of state.features) if (!FEATURES[key]?.test(r)) return false;
   if (state.minVertical > 0 && !(r.verticalDrop >= state.minVertical)) return false;
   return true;
 }
 
+/** Forecast total for a resort, or null while the fetch is still in flight. */
+function snow7d(slug) {
+  const hit = forecasts.get(slug);
+  if (!hit || hit.status !== 'ok') return null;
+  const total = snowfallTotal(hit.data, 7);
+  return Number.isFinite(total) ? total : null;
+}
+
+function sortValue(r) {
+  if (state.sortBy === 'mogulPresence') return MOGUL_RANK[r.mogulPresence] ?? null;
+  if (state.sortBy === 'snow7d') return snow7d(r.slug);
+  if (state.sortBy === 'town') return r.town ?? null;
+  return r[state.sortBy];
+}
+
 function sorted(list) {
   const dir = state.sortDir === 'asc' ? 1 : -1;
-  // "signature" beats "rare"; alphabetical order would say the opposite.
-  const value = (r) => (state.sortBy === 'mogulPresence'
-    ? MOGUL_RANK[r.mogulPresence] ?? null
-    : r[state.sortBy]);
   return [...list].sort((a, b) => {
-    const cmp = compareNullsLast(value(a), value(b), dir);
-    // Name is the stable tiebreak so equal rows never shuffle between renders.
+    const cmp = compareNullsLast(sortValue(a), sortValue(b), dir);
     return cmp !== 0 ? cmp : a.name.localeCompare(b.name, 'en');
   });
 }
 
-// --- shared bits ------------------------------------------------------------
+const visible = () => sorted(resorts.filter(matches));
 
-function passBadges(list) {
-  const seen = new Set();
-  return list
-    .filter((p) => p.type && !seen.has(p.type) && seen.add(p.type))
-    .map((p) => el('li', {}, el('span', {
-      class: `pass pass--${p.type}`,
-      title: p.access ? `${p.name} — ${p.access}` : p.name,
-    }, PASS_LABELS[p.type] ?? p.type)));
-}
+// --- cells ------------------------------------------------------------------
 
 const detailHref = (slug) => `resort.html?r=${encodeURIComponent(slug)}`;
 
-// --- card grid --------------------------------------------------------------
+function passTags(list, { limit = 2 } = {}) {
+  const seen = new Set();
+  const types = (list ?? [])
+    .map((p) => p.type)
+    .filter((t) => t && !seen.has(t) && seen.add(t))
+    .sort((a, b) => PASS_ORDER.indexOf(a) - PASS_ORDER.indexOf(b));
+  const shown = types.slice(0, limit);
+  return el('span', { class: 'tags' },
+    shown.map((t) => el('span', { class: `tag tag--${t}` }, PASS_LABELS[t] ?? t)),
+    types.length > shown.length
+      ? el('span', { class: 'tag tag--more', title: types.slice(limit).map((t) => PASS_LABELS[t]).join(', ') },
+        `+${types.length - shown.length}`)
+      : null);
+}
+
+/**
+ * The 7-day snowfall sparkline: one bar per forecast day, height scaled against
+ * the deepest single day currently on screen rather than against the row's own
+ * maximum. A per-row scale would make a mountain expecting one inch look like a
+ * mountain expecting twenty, which is the opposite of what a sparkline is for.
+ */
+function sparkline(slug, peak) {
+  const hit = forecasts.get(slug);
+  if (!hit) return el('span', { class: 'spark spark--pending', 'aria-hidden': 'true' });
+  if (hit.status !== 'ok') return el('span', { class: 'spark is-unknown', title: hit.reason ?? 'No forecast' }, '—');
+
+  const days = (hit.data.days ?? []).slice(0, 7);
+  const total = snow7d(slug) ?? 0;
+  const scale = peak > 0 ? peak : 1;
+
+  return el('span', { class: 'snowcell' },
+    el('span', {
+      class: `spark${total > 0 ? ' is-snowy' : ''}`,
+      role: 'img',
+      'aria-label': `${fmt(total, { digits: 1 })} inches forecast over seven days`,
+    }, days.map((d) => {
+      const inches = Number.isFinite(d.snow) ? d.snow : 0;
+      const pct = Math.max(4, Math.round((inches / scale) * 100));
+      return el('span', {
+        class: `sp${inches > 0 ? ' is-snow' : ''}`,
+        style: `height:${pct}%`,
+      });
+    })),
+    total > 0
+      ? el('span', { class: 'snow-pill snow-pill--snow', dataset: { depth: depthBand(total) } },
+        `${fmt(total, { digits: total < 10 ? 1 : 0 })}"`)
+      : el('span', { class: 'snow-pill snow-pill--flat' }, '0"'));
+}
+
+/** Three bands, so the pill's weight tracks the forecast without a gradient. */
+function depthBand(inches) {
+  if (inches >= 12) return 'deep';
+  if (inches >= 4) return 'some';
+  return 'trace';
+}
+
+function resortCell(r) {
+  return el('div', { class: 'ticker-row' },
+    el('span', { class: 'tick-icon', 'aria-hidden': 'true' }, r.state),
+    el('a', { class: 'ticker', href: detailHref(r.slug) }, r.name));
+}
+
+function cell(r, col, peak) {
+  if (col.type === 'select') {
+    const box = el('input', {
+      type: 'checkbox',
+      class: 'row-check',
+      checked: state.selected.has(r.slug),
+      'aria-label': `Select ${r.name} for comparison`,
+      dataset: { slug: r.slug },
+    });
+    return el('td', { class: 'col-select' }, box);
+  }
+  if (col.type === 'resort') return el('td', { class: 'col-resort' }, resortCell(r));
+  if (col.type === 'town') {
+    return el('td', { class: 'col-town' },
+      el('span', { class: 'name-cell' },
+        [r.town, STATE_NAMES[r.state] ?? r.state].filter(Boolean).join(', ')));
+  }
+  if (col.type === 'pass') return el('td', { class: 'col-pass' }, passTags(r.passes));
+  if (col.type === 'spark') return el('td', { class: 'num col-spark' }, sparkline(r.slug, peak));
+
+  const value = r[col.key];
+  if (value === null || value === undefined) {
+    return el('td', { class: 'num is-unknown', title: 'Not sourced' }, '—');
+  }
+  return el('td', { class: 'num' }, `${fmt(value)}${col.unit ?? ''}`);
+}
+
+// --- table ------------------------------------------------------------------
+
+function headerRow(rows) {
+  const allSelected = rows.length > 0 && rows.every((r) => state.selected.has(r.slug));
+  const someSelected = rows.some((r) => state.selected.has(r.slug));
+
+  return el('tr', {}, COLUMNS.map((col) => {
+    if (col.type === 'select') {
+      const box = el('input', {
+        type: 'checkbox',
+        id: 'select-all',
+        class: 'row-check',
+        checked: allSelected,
+        'aria-label': 'Select every mountain shown',
+      });
+      box.indeterminate = someSelected && !allSelected;
+      box.addEventListener('change', () => {
+        if (box.checked) {
+          for (const r of rows) {
+            if (state.selected.size >= MAX_COMPARE) break;
+            state.selected.add(r.slug);
+          }
+        } else {
+          for (const r of rows) state.selected.delete(r.slug);
+        }
+        render();
+      });
+      return el('th', { scope: 'col', class: 'col-select', style: `width:${col.w}` }, box);
+    }
+
+    const isSort = state.sortBy === col.key;
+    const th = el('th', {
+      scope: 'col',
+      class: [col.num ? 'num' : '', isSort ? 'sort-active' : ''].filter(Boolean).join(' '),
+      style: col.w ? `width:${col.w}` : null,
+    });
+    if (isSort) th.setAttribute('aria-sort', state.sortDir === 'asc' ? 'ascending' : 'descending');
+
+    if (col.sortable === false) {
+      th.append(el('span', { class: 'th-label' }, col.label));
+    } else {
+      th.append(el('button', {
+        type: 'button',
+        class: 'th-sort',
+        onclick: () => {
+          if (state.sortBy === col.key) {
+            state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+          } else {
+            state.sortBy = col.key;
+            state.sortDir = col.num || col.type === 'spark' ? 'desc' : 'asc';
+          }
+          syncControls();
+          render();
+        },
+      }, col.label, isSort ? el('span', { class: 'th-arrow' }, state.sortDir === 'asc' ? '↑' : '↓') : null));
+    }
+    return th;
+  }));
+}
+
+function bodyRow(r, peak) {
+  const row = el('tr', {
+    class: state.selected.has(r.slug) ? 'is-selected' : '',
+    dataset: { slug: r.slug },
+  }, COLUMNS.map((col) => cell(r, col, peak)));
+
+  // The reference selects on row click. Here the row also contains a link, so
+  // the link wins inside its own hit area and the rest of the row toggles.
+  row.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    if (e.target.matches('input.row-check')) return; // its own change handler
+    toggleSelected(r.slug);
+  });
+  return row;
+}
+
+function toggleSelected(slug) {
+  if (state.selected.has(slug)) state.selected.delete(slug);
+  else if (state.selected.size < MAX_COMPARE) state.selected.add(slug);
+  else {
+    setStatus(`Four is the most you can compare at once. Clear one first.`);
+    setTimeout(() => setStatus(''), 2600);
+    return;
+  }
+  render();
+}
+
+// --- cards (kept: the table is primary, not exclusive) ----------------------
 
 function card(r) {
   return el('li', { class: 'card' },
@@ -117,11 +301,9 @@ function card(r) {
     el('p', { class: 'card__where' },
       [r.town, STATE_NAMES[r.state] ?? r.state].filter(Boolean).join(', '),
       r.region ? ` · ${r.region}` : null),
-
     el('p', { class: 'card__vert' },
       el('b', { class: 'num' }, r.verticalDrop === null ? '—' : fmt(r.verticalDrop)),
       el('span', {}, 'ft vertical')),
-
     el('dl', { class: 'card__stats' },
       el('div', {}, el('dt', {}, 'Acres'),
         el('dd', { class: r.skiableAcres === null ? 'is-unknown' : '' }, fmt(r.skiableAcres))),
@@ -130,104 +312,171 @@ function card(r) {
       el('div', {}, el('dt', {}, 'Snowfall'),
         el('dd', { class: r.annualSnowfallAvg === null ? 'is-unknown' : '' },
           r.annualSnowfallAvg === null ? '—' : `${fmt(r.annualSnowfallAvg)}"`))),
-
     r.bestFor?.length
       ? el('ul', { class: 'tags' }, r.bestFor.slice(0, 3).map((t) => el('li', { class: 'tag' }, t)))
       : null,
-
-    el('div', { class: 'card__foot' },
-      el('ul', { class: 'pass-list' }, passBadges(r.passes)),
-      r.nightSkiing === true ? el('span', { class: 'tag' }, 'Night skiing') : null)
-  );
-}
-
-// --- comparison table -------------------------------------------------------
-
-function headerRow() {
-  return el('tr', {}, COLUMNS.map((col) => {
-    const isSort = state.sortBy === col.key;
-    const th = el('th', {
-      scope: 'col',
-      class: [col.cls, col.sortable === false ? '' : 'sortable'].filter(Boolean).join(' '),
-    });
-    if (isSort) th.setAttribute('aria-sort', state.sortDir === 'asc' ? 'ascending' : 'descending');
-
-    if (col.sortable === false) {
-      th.append(el('span', { style: 'display:block;padding:.6rem .8rem;text-align:left' }, col.label));
-    } else {
-      th.append(el('button', {
-        type: 'button',
-        onclick: () => {
-          if (state.sortBy === col.key) {
-            state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
-          } else {
-            state.sortBy = col.key;
-            state.sortDir = col.type === 'text' ? 'asc' : 'desc';
-          }
-          syncControls();
-          render();
-        },
-      }, col.label));
-    }
-    return th;
-  }));
-}
-
-function cell(r, col) {
-  const value = r[col.key];
-
-  if (col.type === 'passes') {
-    return el('td', { class: col.cls },
-      el('ul', { class: 'pass-list' }, passBadges(r.passes)));
-  }
-  if (col.key === 'name') {
-    return el('td', { class: 'col-name' }, el('a', { href: detailHref(r.slug) }, r.name));
-  }
-  if (value === null || value === undefined) {
-    return el('td', { class: `${col.cls ?? ''} is-unknown`.trim(), title: 'Not sourced' }, '—');
-  }
-  if (col.key === 'mogulPresence') {
-    return el('td', { class: col.cls },
-      el('span', { class: `presence__badge presence__badge--${value}` }, MOGUL_SHORT[value] ?? value));
-  }
-  if (col.type === 'money') return el('td', { class: col.cls }, money(value));
-  if (typeof value === 'boolean') return el('td', { class: col.cls }, value ? 'Yes' : 'No');
-  return el('td', { class: col.cls }, `${fmt(value)}${col.unit ?? ''}`);
+    el('div', { class: 'card__foot' }, passTags(r.passes, { limit: 3 })));
 }
 
 // --- render -----------------------------------------------------------------
 
 function render() {
-  const visible = sorted(resorts.filter(matches));
+  const rows = visible();
+  const peak = Math.max(0, ...rows.flatMap((r) => {
+    const hit = forecasts.get(r.slug);
+    if (!hit || hit.status !== 'ok') return [];
+    return (hit.data.days ?? []).slice(0, 7).map((d) => (Number.isFinite(d.snow) ? d.snow : 0));
+  }));
 
-  const cards = qs('#resort-cards');
-  const tableWrap = qs('#resort-table-wrap');
-  const empty = qs('#empty');
+  fill(qs('#resort-table thead'), headerRow(rows));
+  fill(qs('#resort-table tbody'), rows.map((r) => bodyRow(r, peak)));
+  fill(qs('#resort-cards'), rows.map(card));
 
-  fill(cards, visible.map(card));
-  fill(qs('#resort-table thead'), headerRow());
-  fill(qs('#resort-table tbody'),
-    visible.map((r) => el('tr', {}, COLUMNS.map((col) => cell(r, col)))));
+  const none = rows.length === 0;
+  qs('#empty').hidden = !none;
+  qs('#resort-table-wrap').hidden = none || state.view !== 'table';
+  qs('#resort-cards').hidden = none || state.view !== 'cards';
 
-  const none = visible.length === 0;
-  empty.hidden = !none;
-  cards.hidden = none || state.view !== 'cards';
-  tableWrap.hidden = none || state.view !== 'table';
-
-  const total = resorts.length;
-  qs('#result-count').textContent = visible.length === total
-    ? `${total} ${total === 1 ? 'mountain' : 'mountains'}`
-    : `${visible.length} of ${total} mountains`;
-
+  qs('#result-count').textContent = rows.length === resorts.length
+    ? `${resorts.length} mountains`
+    : `${rows.length} of ${resorts.length}`;
   qs('#reset-filters').hidden = !isFiltered();
+
+  syncSelectionUi();
+  renderStatusbar(rows);
   writeUrl();
 }
 
-const isFiltered = () =>
-  state.states.size > 0 || state.passes.size > 0 || state.features.size > 0 ||
-  state.minVertical > 0 || state.nightOnly;
+const isFiltered = () => state.q !== '' || state.states.size > 0 || state.passes.size > 0
+  || state.features.size > 0 || state.minVertical > 0 || state.nightOnly;
+
+function renderStatusbar(rows) {
+  const verticals = rows.map((r) => r.verticalDrop).filter(Number.isFinite);
+  const avg = verticals.length
+    ? Math.round(verticals.reduce((a, b) => a + b, 0) / verticals.length)
+    : null;
+
+  let best = null;
+  for (const r of rows) {
+    const total = snow7d(r.slug);
+    if (total !== null && (best === null || total > best.total)) best = { r, total };
+  }
+
+  setStatusStats([
+    { value: `${fmt(rows.length)} ${rows.length === 1 ? 'mountain' : 'mountains'}` },
+    avg === null ? null : { label: 'Avg vertical', value: `${fmt(avg)} ft` },
+    best && best.total > 0
+      ? { label: 'Most snow this week', value: `${best.r.name} ${fmt(best.total, { digits: best.total < 10 ? 1 : 0 })}"`, tone: 'up' }
+      : null,
+    state.selected.size ? { label: 'Selected', value: fmt(state.selected.size) } : null,
+  ]);
+}
+
+// --- selection and the top bar ----------------------------------------------
+
+function syncSelectionUi() {
+  const btn = qs('#compare-selected');
+  if (!btn) return;
+  const n = state.selected.size;
+  const ok = n >= MIN_COMPARE && n <= MAX_COMPARE;
+  btn.disabled = !ok;
+  btn.querySelector('span:last-child').textContent =
+    n === 0 ? 'Compare selected' : `Compare ${n} selected`;
+  btn.dataset.href = ok
+    ? `compare.html?r=${[...state.selected].map(encodeURIComponent).join(',')}`
+    : '';
+}
+
+/**
+ * CSV of exactly what is on screen — same rows, same order, same columns. An
+ * export that quietly gives you all 45 when the table shows 8 is a bug report
+ * waiting to happen.
+ */
+function exportCsv() {
+  const rows = visible();
+  const cols = COLUMNS.filter((c) => c.type !== 'select' && c.type !== 'spark');
+  const header = [...cols.map((c) => (c.type === 'town' ? 'Town' : c.label)), 'State', '7-day snow (in)'];
+
+  const value = (r, c) => {
+    if (c.type === 'resort') return r.name;
+    if (c.type === 'town') return r.town ?? '';
+    if (c.type === 'pass') return (r.passTypes ?? []).map((t) => PASS_LABELS[t] ?? t).join(' / ');
+    const v = r[c.key];
+    return v === null || v === undefined ? '' : v;
+  };
+  const esc = (v) => {
+    const s = String(v);
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+
+  const lines = [header.map(esc).join(',')];
+  for (const r of rows) {
+    const snow = snow7d(r.slug);
+    lines.push([...cols.map((c) => value(r, c)), r.state, snow === null ? '' : snow.toFixed(1)]
+      .map(esc).join(','));
+  }
+
+  // A BOM, because the single likeliest destination for this file is Excel on
+  // Windows, which reads UTF-8 without one as Latin-1 and mangles every accent
+  // and every en dash in a resort name.
+  const blob = new Blob(
+    ['﻿', lines.join('\r\n'), '\r\n'],
+    { type: 'text/csv;charset=utf-8' },
+  );
+  const url = URL.createObjectURL(blob);
+  const a = el('a', { href: url, download: `new-england-ski-guide-${new Date().toISOString().slice(0, 10)}.csv` });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+const TOPBAR_ACTIONS = [
+  {
+    id: 'compare-selected',
+    label: 'Compare selected',
+    icon: 'M3 2v12M8 2v12M13 2v12',
+    disabled: true,
+    onClick: (e) => {
+      const href = e.currentTarget.dataset.href;
+      if (href) location.href = href;
+    },
+  },
+  { separator: true },
+  {
+    id: 'toggle-filters',
+    label: 'Filters',
+    icon: 'M2 4h12M4 8h8M6 12h4',
+    onClick: () => {
+      const more = qs('#more-filters');
+      more.hidden = !more.hidden;
+      qs('#toggle-filters').setAttribute('aria-expanded', String(!more.hidden));
+    },
+  },
+  {
+    id: 'toggle-view',
+    label: 'Cards',
+    icon: 'M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM9 9h5v5H9z',
+    onClick: () => setView(state.view === 'table' ? 'cards' : 'table'),
+  },
+  { separator: true },
+  {
+    id: 'export-csv',
+    label: 'Export CSV',
+    icon: 'M8 2v8M5 7l3 3 3-3M3 13h10',
+    onClick: exportCsv,
+  },
+  { label: 'Conditions', href: 'conditions.html', primary: true },
+];
 
 // --- controls ---------------------------------------------------------------
+
+function setView(view) {
+  state.view = view;
+  const btn = qs('#toggle-view');
+  if (btn) btn.querySelector('span:last-child').textContent = view === 'table' ? 'Cards' : 'Table';
+  render();
+}
 
 function toggleChip(set, value) {
   if (set.has(value)) set.delete(value); else set.add(value);
@@ -238,75 +487,69 @@ function toggleChip(set, value) {
 function buildChips() {
   const states = [...new Set(resorts.map((r) => r.state))].sort();
   fill(qs('#filter-state'), states.map((code) => el('button', {
-    type: 'button',
-    class: 'chip',
-    'aria-pressed': 'false',
-    dataset: { value: code },
-    title: STATE_NAMES[code] ?? code,
+    type: 'button', class: 'chip', 'aria-pressed': 'false',
+    dataset: { value: code }, title: STATE_NAMES[code] ?? code,
     onclick: () => toggleChip(state.states, code),
   }, code)));
 
   fill(qs('#filter-features'), Object.entries(FEATURES).map(([key, f]) => el('button', {
-    type: 'button',
-    class: 'chip',
-    'aria-pressed': 'false',
+    type: 'button', class: 'chip', 'aria-pressed': 'false',
     dataset: { value: key },
     onclick: () => toggleChip(state.features, key),
   }, f.label)));
 
+  // The toolbar's pass row is the reference's filter-tag strip, so it gets an
+  // explicit "All" that clears rather than a chip you have to un-press.
   const passes = PASS_ORDER.filter((t) => resorts.some((r) => r.passTypes.includes(t)));
-  fill(qs('#filter-pass'), passes.map((type) => el('button', {
-    type: 'button',
-    class: 'chip',
-    style: `--chip-accent: var(--pass-${type})`,
-    'aria-pressed': 'false',
-    dataset: { value: type },
-    onclick: () => toggleChip(state.passes, type),
-  }, PASS_LABELS[type])));
+  fill(qs('#filter-pass'), [
+    el('button', {
+      type: 'button', class: 'filter-tag', 'aria-pressed': 'true', dataset: { value: '' },
+      onclick: () => { state.passes.clear(); syncControls(); render(); },
+    }, 'All'),
+    ...passes.map((type) => el('button', {
+      type: 'button', class: 'filter-tag', 'aria-pressed': 'false', dataset: { value: type },
+      onclick: () => toggleChip(state.passes, type),
+    }, PASS_LABELS[type])),
+  ]);
 }
 
 function syncControls() {
-  qsa('#filter-state .chip').forEach((b) => {
-    b.setAttribute('aria-pressed', String(state.states.has(b.dataset.value)));
-  });
-  qsa('#filter-pass .chip').forEach((b) => {
-    b.setAttribute('aria-pressed', String(state.passes.has(b.dataset.value)));
-  });
-  qsa('#filter-features .chip').forEach((b) => {
-    b.setAttribute('aria-pressed', String(state.features.has(b.dataset.value)));
+  qsa('#filter-state .chip').forEach((b) => b.setAttribute('aria-pressed', String(state.states.has(b.dataset.value))));
+  qsa('#filter-features .chip').forEach((b) => b.setAttribute('aria-pressed', String(state.features.has(b.dataset.value))));
+  qsa('#filter-pass .filter-tag').forEach((b) => {
+    const pressed = b.dataset.value === '' ? state.passes.size === 0 : state.passes.has(b.dataset.value);
+    b.setAttribute('aria-pressed', String(pressed));
   });
   qs('#filter-vertical').value = String(state.minVertical);
-  qs('#filter-vertical-out').textContent =
-    state.minVertical === 0 ? 'Any' : `${fmt(state.minVertical)} ft`;
+  qs('#filter-vertical-out').textContent = state.minVertical === 0 ? 'Any' : `${fmt(state.minVertical)} ft`;
   qs('#filter-night').checked = state.nightOnly;
   qs('#sort-by').value = state.sortBy;
-  qs('#sort-dir').value = state.sortDir;
-  qs('#view-cards').setAttribute('aria-pressed', String(state.view === 'cards'));
-  qs('#view-table').setAttribute('aria-pressed', String(state.view === 'table'));
+  const dir = qs('#sort-dir');
+  dir.dataset.dir = state.sortDir;
+  dir.textContent = state.sortDir === 'asc' ? '↑' : '↓';
+  dir.setAttribute('aria-label', `Sort direction: ${state.sortDir === 'asc' ? 'low to high' : 'high to low'}`);
+  if (qs('#search').value !== state.q) qs('#search').value = state.q;
 }
 
 function wireControls() {
+  qs('#search').addEventListener('input', (e) => {
+    state.q = e.target.value.trim().toLowerCase();
+    render();
+  });
   qs('#filter-vertical').addEventListener('input', (e) => {
     state.minVertical = Number(e.target.value);
-    qs('#filter-vertical-out').textContent =
-      state.minVertical === 0 ? 'Any' : `${fmt(state.minVertical)} ft`;
+    qs('#filter-vertical-out').textContent = state.minVertical === 0 ? 'Any' : `${fmt(state.minVertical)} ft`;
     render();
   });
-  qs('#filter-night').addEventListener('change', (e) => {
-    state.nightOnly = e.target.checked;
+  qs('#filter-night').addEventListener('change', (e) => { state.nightOnly = e.target.checked; render(); });
+  qs('#sort-by').addEventListener('change', (e) => { state.sortBy = e.target.value; render(); });
+  qs('#sort-dir').addEventListener('click', () => {
+    state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+    syncControls();
     render();
   });
-  qs('#sort-by').addEventListener('change', (e) => {
-    state.sortBy = e.target.value;
-    render();
-  });
-  qs('#sort-dir').addEventListener('change', (e) => {
-    state.sortDir = e.target.value;
-    render();
-  });
-  qs('#view-cards').addEventListener('click', () => setView('cards'));
-  qs('#view-table').addEventListener('click', () => setView('table'));
   qs('#reset-filters').addEventListener('click', () => {
+    state.q = '';
     state.states.clear();
     state.passes.clear();
     state.features.clear();
@@ -315,31 +558,50 @@ function wireControls() {
     syncControls();
     render();
   });
+
+  // Delegated so it survives every re-render of the tbody.
+  qs('#resort-table').addEventListener('change', (e) => {
+    const box = e.target.closest('input.row-check[data-slug]');
+    if (box) toggleSelected(box.dataset.slug);
+  });
 }
 
-function setView(view) {
-  state.view = view;
+/**
+ * The hook shell.js's sidebar calls. Applying a sidebar link means replacing the
+ * filter state with what that link encodes, exactly as if it had been followed.
+ */
+function applyQuery(query) {
+  state.q = '';
+  state.states.clear();
+  state.passes.clear();
+  state.features.clear();
+  state.minVertical = 0;
+  state.nightOnly = false;
+  readParams(new URLSearchParams(query));
   syncControls();
   render();
+  qs('#view').scrollTo({ top: 0 });
 }
 
 // --- URL round-trip ---------------------------------------------------------
 
-function readUrl() {
-  const p = new URLSearchParams(location.search);
+function readParams(p) {
+  if (p.has('q')) state.q = p.get('q').toLowerCase();
   p.get('state')?.split(',').filter(Boolean).forEach((s) => state.states.add(s));
   p.get('pass')?.split(',').filter(Boolean).forEach((s) => state.passes.add(s));
-  p.get('feat')?.split(',').filter(Boolean)
-    .forEach((s) => { if (FEATURES[s]) state.features.add(s); });
+  p.get('feat')?.split(',').filter(Boolean).forEach((s) => { if (FEATURES[s]) state.features.add(s); });
   if (p.has('vert')) state.minVertical = Number(p.get('vert')) || 0;
   if (p.get('night') === '1') state.nightOnly = true;
   if (p.has('sort')) state.sortBy = p.get('sort');
-  if (p.get('dir') === 'asc') state.sortDir = 'asc';
-  if (p.get('view') === 'table') state.view = 'table';
+  if (p.has('dir')) state.sortDir = p.get('dir') === 'asc' ? 'asc' : 'desc';
+  if (p.has('view')) state.view = p.get('view') === 'cards' ? 'cards' : 'table';
+  p.get('sel')?.split(',').filter(Boolean).slice(0, MAX_COMPARE)
+    .forEach((s) => state.selected.add(s));
 }
 
 function writeUrl() {
   const p = new URLSearchParams();
+  if (state.q) p.set('q', state.q);
   if (state.states.size) p.set('state', [...state.states].join(','));
   if (state.passes.size) p.set('pass', [...state.passes].join(','));
   if (state.features.size) p.set('feat', [...state.features].join(','));
@@ -347,9 +609,34 @@ function writeUrl() {
   if (state.nightOnly) p.set('night', '1');
   if (state.sortBy !== 'verticalDrop') p.set('sort', state.sortBy);
   if (state.sortDir !== 'desc') p.set('dir', state.sortDir);
-  if (state.view !== 'cards') p.set('view', state.view);
+  if (state.view !== 'table') p.set('view', state.view);
+  if (state.selected.size) p.set('sel', [...state.selected].join(','));
   const query = p.toString();
   history.replaceState(null, '', query ? `?${query}` : location.pathname);
+}
+
+// --- forecasts --------------------------------------------------------------
+
+/**
+ * Fetched after the table is on screen, never before it. The sparkline column
+ * has a fixed width and its bars have a reserved height, so filling 45 of them
+ * in moves nothing.
+ */
+async function loadForecasts() {
+  const withCoords = resorts.filter((r) => Number.isFinite(r.lat) && Number.isFinite(r.lon));
+  if (!withCoords.length) return;
+  setLive('Loading forecast…', { tone: 'stale' });
+  try {
+    forecasts = await getForecasts(withCoords);
+    const ok = [...forecasts.values()].filter((v) => v.status === 'ok').length;
+    const stamp = [...forecasts.values()].find((v) => v.status === 'ok')?.data?.fetchedAt;
+    setLive(ok
+      ? `Forecast ${stamp ? relativeTime(stamp) : 'loaded'}`
+      : 'Forecast unavailable', { tone: ok ? 'ok' : 'error' });
+    render();
+  } catch (e) {
+    setLive('Forecast unavailable', { tone: 'error' });
+  }
 }
 
 // --- boot -------------------------------------------------------------------
@@ -359,28 +646,27 @@ async function main() {
     page: 'resorts',
     breadcrumb: ['Guide', 'All resorts'],
     layout: 'app',
+    actions: TOPBAR_ACTIONS,
   });
 
   const index = await getIndex();
   resorts = index.resorts ?? [];
-
   if (!resorts.length) {
     setStatus('No resorts in data/index.json yet. Run: node tools/build-index.mjs');
     return;
   }
 
-  readUrl();
+  readParams(new URLSearchParams(location.search));
   buildChips();
   wireControls();
   syncControls();
+  qs('#toggle-filters')?.setAttribute('aria-expanded', 'false');
+  if (isFiltered()) qs('#more-filters').hidden = false;
   render();
   setStatus('');
 
-  if (index.generatedAt) {
-    qs('.site-footer .shell').append(
-      el('p', { class: 'provenance' }, `Resort data last rebuilt ${formatDate(index.generatedAt.slice(0, 10))}.`)
-    );
-  }
+  window.__skiApplyQuery = applyQuery;
+  loadForecasts();
 }
 
 main().catch((e) => setStatus(`Could not load resorts: ${e.message}`, { error: true }));

@@ -131,13 +131,22 @@ function buildSidebar(index, config) {
 
   const passCount = (t) => resorts.filter((r) => r.passTypes?.includes(t)).length;
 
-  /** Applies a filter link on the index without a reload; navigates elsewhere. */
-  const apply = (query) => (onIndex() && window.__skiApplyQuery
-    ? (node) => {
-      window.__skiApplyQuery(query);
-      markActive(node);
+  /**
+   * Applies a filter link in place on the index, and navigates anywhere else.
+   *
+   * The lookup is deliberately deferred to click time. render-index.js registers
+   * its handler after the shell has mounted — the shell is what it renders
+   * into — so a handler captured here at build time is always undefined, and
+   * every sidebar filter silently full-page-navigated instead.
+   */
+  const apply = (query) => (node) => {
+    if (!onIndex() || typeof window.__skiApplyQuery !== 'function') {
+      location.href = node.getAttribute('href');
+      return;
     }
-    : null);
+    window.__skiApplyQuery(query);
+    markActive(node);
+  };
 
   const nav = el('nav', { class: 'sidebar__nav', 'aria-label': 'Filters and views' },
     section('Workspace', WORKSPACE.map((w) => sidebarItem({
@@ -216,15 +225,30 @@ function markActive(node) {
 
 // --- top bar ----------------------------------------------------------------
 
-function buildTopbar(config) {
-  const crumbs = [];
-  (config.breadcrumb ?? ['Guide']).forEach((label, i, all) => {
-    if (i) crumbs.push(el('span', { class: 'crumb-sep', 'aria-hidden': 'true' }, '/'));
+/**
+ * The trail, with the final crumb as the page's h1 unless the page renders its
+ * own. The reference puts a page title in the top bar and this is that title;
+ * without it a data view has no level-one heading at all, which is what axe
+ * caught the moment the old page-head block went away.
+ */
+function crumbTrail(parts, ownHeading) {
+  const nodes = [];
+  parts.forEach((label, i, all) => {
+    if (i) nodes.push(el('span', { class: 'crumb-sep', 'aria-hidden': 'true' }, '/'));
     const last = i === all.length - 1;
-    crumbs.push(typeof label === 'string'
-      ? el('span', { class: `crumb${last ? ' current' : ''}` }, label)
-      : el('a', { class: 'crumb', href: label.href }, label.label));
+    if (typeof label !== 'string') {
+      nodes.push(el('a', { class: 'crumb', href: label.href }, label.label));
+    } else if (last && !ownHeading) {
+      nodes.push(el('h1', { class: 'crumb current' }, label));
+    } else {
+      nodes.push(el('span', { class: `crumb${last ? ' current' : ''}` }, label));
+    }
   });
+  return nodes;
+}
+
+function buildTopbar(config) {
+  const crumbs = crumbTrail(config.breadcrumb ?? ['Guide'], config.ownHeading);
 
   const actions = (config.actions ?? []).map((a) => {
     if (a.separator) return el('span', { class: 'tb-sep', 'aria-hidden': 'true' });
@@ -287,18 +311,10 @@ export function setStatusStats(parts) {
  * Replaces the breadcrumb trail. resort.html only learns its own name after the
  * record loads, so it mounts with a placeholder and calls this.
  */
-export function setBreadcrumb(parts) {
+export function setBreadcrumb(parts, { ownHeading = true } = {}) {
   const host = qs('.crumbs');
   if (!host) return;
-  const nodes = [];
-  parts.forEach((label, i, all) => {
-    if (i) nodes.push(el('span', { class: 'crumb-sep', 'aria-hidden': 'true' }, '/'));
-    const last = i === all.length - 1;
-    nodes.push(typeof label === 'string'
-      ? el('span', { class: `crumb${last ? ' current' : ''}` }, label)
-      : el('a', { class: 'crumb', href: label.href }, label.label));
-  });
-  fill(host, nodes);
+  fill(host, crumbTrail(parts, ownHeading));
 }
 
 /** The live dot and its timestamp. Hidden until a page has something to say. */

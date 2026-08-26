@@ -46,100 +46,79 @@
 <a class="skip-link" href="#view">Skip to content</a>
 
 <main id="main">
-  <div class="view" id="view">
-    <div class="shell page-head">
-      <h1>Every mountain worth the drive</h1>
-      <p class="lede">
-        New England ski areas from roughly 650 feet of vertical up. Real numbers with a source
-        and a date against each one, and an opinion that is willing to say a mountain is icy,
-        crowded or overpriced.
-      </p>
+  <div class="toolbar" id="toolbar">
+    <div class="toolbar__row">
+      <div class="search-inline">
+        <span class="si-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+        <input class="si-input" type="search" id="search" placeholder="Filter mountains…"
+               aria-label="Filter by resort or town name" autocomplete="off">
+      </div>
+      <span class="toolbar-sep" aria-hidden="true"></span>
+      <div class="chips chips--tags" id="filter-pass" role="group" aria-label="Pass"></div>
+      <div class="toolbar-right">
+        <span class="result-count" id="result-count">&nbsp;</span>
+        <label class="sort-label" for="sort-by">Sort
+          <select id="sort-by">
+            <option value="name">Name</option>
+            <option value="verticalDrop" selected>Vertical</option>
+            <option value="skiableAcres">Acres</option>
+            <option value="trailCount">Trails</option>
+            <option value="liftCount">Lifts</option>
+            <option value="annualSnowfallAvg">Snowfall</option>
+            <option value="snow7d">7-day snow</option>
+            <option value="seasonPassAdult">Season pass</option>
+            <option value="advanceTypical">Advance ticket</option>
+          </select>
+        </label>
+        <button type="button" class="sort-dir" id="sort-dir" aria-label="Sort direction: high to low" data-dir="desc">↓</button>
+      </div>
     </div>
 
-    <div class="controls">
-      <div class="shell">
-        <div class="controls__row">
-          <div class="field">
-            <span class="label" id="lbl-state">State</span>
-            <div class="chips" id="filter-state" role="group" aria-labelledby="lbl-state"></div>
-          </div>
-
-          <div class="field">
-            <span class="label" id="lbl-pass">Pass</span>
-            <div class="chips" id="filter-pass" role="group" aria-labelledby="lbl-pass"></div>
-          </div>
-
-          <div class="field range-field">
-            <label class="label" for="filter-vertical">Min vertical</label>
-            <div style="display:flex;align-items:center;gap:.6rem">
-              <input type="range" id="filter-vertical" min="0" max="3000" step="100" value="0">
-              <output for="filter-vertical" id="filter-vertical-out" class="num">Any</output>
-            </div>
-          </div>
-
-          <div class="field">
-            <span class="label" id="lbl-features">Features</span>
-            <div class="chips" id="filter-features" role="group" aria-labelledby="lbl-features"></div>
-          </div>
-
-          <div class="field">
-            <span class="label">Options</span>
-            <label class="switch">
-              <input type="checkbox" id="filter-night">
-              Night skiing only
-            </label>
-          </div>
-
-          <div class="field">
-            <label class="label" for="sort-by">Sort</label>
-            <div style="display:flex;gap:.4rem">
-              <select id="sort-by">
-                <option value="name">Name</option>
-                <option value="verticalDrop" selected>Vertical drop</option>
-                <option value="skiableAcres">Skiable acres</option>
-                <option value="annualSnowfallAvg">Annual snowfall</option>
-                <option value="seasonPassAdult">Season pass price</option>
-                <option value="advanceTypical">Advance ticket price</option>
-              </select>
-              <select id="sort-dir" aria-label="Sort direction">
-                <option value="desc" selected>High to low</option>
-                <option value="asc">Low to high</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field field--end">
-            <span class="label" id="lbl-view">View</span>
-            <div class="viewtoggle" role="group" aria-labelledby="lbl-view">
-              <button type="button" id="view-cards" aria-pressed="true">Cards</button>
-              <button type="button" id="view-table" aria-pressed="false">Table</button>
-            </div>
-          </div>
+    <div class="toolbar__row toolbar__row--more" id="more-filters" hidden>
+      <div class="field">
+        <span class="label" id="lbl-state">State</span>
+        <div class="chips" id="filter-state" role="group" aria-labelledby="lbl-state"></div>
+      </div>
+      <div class="field">
+        <span class="label" id="lbl-features">Features</span>
+        <div class="chips" id="filter-features" role="group" aria-labelledby="lbl-features"></div>
+      </div>
+      <div class="field range-field">
+        <label class="label" for="filter-vertical">Min vertical</label>
+        <div class="range-row">
+          <input type="range" id="filter-vertical" min="0" max="3000" step="100" value="0">
+          <output for="filter-vertical" id="filter-vertical-out" class="num">Any</output>
         </div>
-
-        <p class="controls__meta">
-          <span id="result-count">&nbsp;</span>
-          <button type="button" class="btn-reset" id="reset-filters" hidden>Clear filters</button>
-        </p>
+      </div>
+      <div class="field">
+        <span class="label">Options</span>
+        <label class="switch">
+          <input type="checkbox" id="filter-night">
+          Night skiing only
+        </label>
+      </div>
+      <div class="field field--end">
+        <span class="label">&nbsp;</span>
+        <button type="button" class="btn-reset" id="reset-filters" hidden>Clear filters</button>
       </div>
     </div>
+  </div>
 
-    <div class="shell">
-      <ul class="cards" id="resort-cards" hidden></ul>
-
-      <div class="table-scroll" id="resort-table-wrap" hidden>
-        <table class="compare" id="resort-table">
-          <caption class="visually-hidden">
-            Comparison of New England ski areas. Column headers sort the table.
-          </caption>
-          <thead></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-
-      <p class="empty" id="empty" hidden>No mountains match those filters.</p>
+  <div class="view" id="view">
+    <div class="table-wrap" id="resort-table-wrap">
+      <table class="data-table" id="resort-table">
+        <caption class="visually-hidden">
+          Every New England ski area. Column headers sort the table; the checkbox in each
+          row adds that mountain to a comparison.
+        </caption>
+        <thead></thead>
+        <tbody></tbody>
+      </table>
     </div>
 
+    <ul class="cards" id="resort-cards" hidden></ul>
+
+    <p class="empty" id="empty" hidden>No mountains match those filters.</p>
     <p id="status" role="status">Loading resorts…</p>
   </div>
 </main>

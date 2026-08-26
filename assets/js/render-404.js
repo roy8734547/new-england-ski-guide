@@ -19,6 +19,7 @@ async function main() {
   await mountShell({
     breadcrumb: [{ label: 'Guide', href: 'index.html' }, 'Not found'],
     layout: 'document',
+    ownHeading: true,
   });
 
   const requested = qs('#requested');

@@ -25,6 +25,7 @@ async function main() {
     page: 'about',
     breadcrumb: ['Guide', 'About'],
     layout: 'document',
+    ownHeading: true,
   });
 
   const index = await getIndex();

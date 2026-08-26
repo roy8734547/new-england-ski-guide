@@ -468,9 +468,13 @@ button, input, select { font: inherit; color: inherit; }
 .crumbs { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .crumb {
   font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
   color: var(--text-tertiary);
   text-decoration: none;
   white-space: nowrap;
+  margin: 0;
 }
 a.crumb:hover { color: var(--text-primary); }
 .crumb.current {
@@ -970,6 +974,270 @@ input[type="range"] {
 }
 .tag--warn { background: color-mix(in srgb, var(--diff-expert) 13%, transparent); color: var(--diff-expert); }
 
+/* --- the data table -------------------------------------------------------
+
+   The reference's density, more or less exactly: 13px body, 9px/12px cells,
+   hairline column separators in --border-light, a sticky header, and tabular
+   figures in every numeric column so the digits line up down the page.
+
+   It scrolls inside .table-wrap rather than on the page. Ten columns do not fit
+   a phone and never will, and CLAUDE.md is explicit that the body must not
+   scroll sideways.
+   --------------------------------------------------------------------------- */
+
+.table-wrap {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  min-width: 0;
+}
+
+table.data-table {
+  width: 100%;
+  min-width: 60rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+table.data-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border-light);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-align: left;
+  white-space: nowrap;
+  padding: 0;
+  vertical-align: middle;
+}
+table.data-table thead th:last-child { border-right: 0; }
+table.data-table thead th.num { text-align: right; }
+table.data-table thead th.sort-active { color: var(--text-primary); }
+
+.th-label { display: block; padding: 8px 12px; }
+.th-sort {
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-align: left;
+}
+th.num .th-sort { justify-content: flex-end; text-align: right; }
+.th-sort:hover { color: var(--text-primary); background: var(--bg-hover); }
+.th-arrow { color: var(--accent); font-size: 0.9em; }
+
+table.data-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: background 80ms;
+}
+table.data-table tbody tr:hover { background: var(--bg-hover); }
+table.data-table tbody tr.is-selected { background: var(--bg-selected); }
+table.data-table tbody tr:has(a:focus-visible) { background: var(--bg-hover); }
+
+table.data-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+  vertical-align: middle;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+table.data-table td:last-child { border-right: 0; }
+table.data-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.data-table td.is-unknown { color: var(--text-tertiary); }
+
+.col-select { width: 40px; padding-left: 16px !important; padding-right: 0 !important; }
+.row-check {
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  accent-color: var(--accent);
+  display: block;
+}
+
+.ticker-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.tick-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: var(--tag-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+.ticker {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ticker:hover { color: var(--accent); text-decoration: underline; }
+.name-cell { color: var(--text-secondary); }
+
+/* --- pass tags ------------------------------------------------------------
+   Flat, one hue each, never green or red — green on a pass name would read as
+   "good pass", which is a claim this guide does not make.
+   --------------------------------------------------------------------------- */
+
+.tags { display: inline-flex; flex-wrap: wrap; gap: 3px; list-style: none; }
+/* In a table cell the tags stay on one line: a wrapped second tag doubles the
+   height of every row that has two passes, and row height is the whole point of
+   this design. The card grid keeps wrapping, where there is room. */
+table.data-table .tags { flex-wrap: nowrap; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  white-space: nowrap;
+}
+.tag--epic { background: var(--pass-epic-bg); color: var(--pass-epic); }
+.tag--ikon { background: var(--pass-ikon-bg); color: var(--pass-ikon); }
+.tag--indy { background: var(--pass-indy-bg); color: var(--pass-indy); }
+.tag--other { background: var(--pass-other-bg); color: var(--pass-other); }
+.tag--none { background: var(--pass-none-bg); color: var(--pass-none); }
+.tag--more { background: transparent; color: var(--text-tertiary); }
+
+/* --- the snowfall sparkline ------------------------------------------------
+   The reference's price sparkline, reassigned to the seven-day forecast. Bars
+   are scaled against the deepest day anywhere on screen, not against the row's
+   own maximum: a per-row scale makes one inch and twenty inches draw identically
+   and turns the column into decoration.
+   --------------------------------------------------------------------------- */
+
+.snowcell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.spark {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  /* Fixed: the bars arrive one HTTP request after the table does, and a column
+     that grows when they land is a layout shift on every row at once. */
+  height: 18px;
+  width: 37px;
+  flex-shrink: 0;
+}
+.spark--pending { display: inline-block; }
+.sp {
+  width: 3px;
+  min-height: 1px;
+  border-radius: 1px;
+  background: var(--border-strong);
+}
+.sp.is-snow { background: var(--green); opacity: 0.55; }
+tbody tr:hover .sp.is-snow,
+tbody tr.is-selected .sp.is-snow { opacity: 0.85; }
+
+.snow-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-variant-numeric: tabular-nums;
+  min-width: 38px;
+  justify-content: flex-end;
+}
+.snow-pill--flat { background: transparent; color: var(--text-tertiary); }
+.snow-pill--snow { background: var(--green-bg); color: var(--green); }
+.snow-pill--snow[data-depth="trace"] { background: transparent; }
+.snow-pill--snow[data-depth="deep"] { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--green) 35%, transparent); }
+
+/* --- toolbar rows ---------------------------------------------------------- */
+
+.toolbar { flex-direction: column; align-items: stretch; gap: 0; padding: 0 16px; }
+.toolbar__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-height: var(--toolbar-h);
+  padding-block: 6px;
+}
+.toolbar__row--more {
+  border-top: 1px solid var(--border-light);
+  gap: 8px 20px;
+  padding-block: 10px;
+}
+.toolbar__row--more .field { gap: 0.3rem; }
+.toolbar__row--more .label { font-size: 10px; }
+.range-row { display: flex; align-items: center; gap: 0.6rem; }
+
+.result-count {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.sort-label select {
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 550;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0 2px;
+}
+.sort-dir {
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: var(--radius);
+}
+.sort-dir:hover { background: var(--bg-hover); color: var(--text-primary); }
+
+.chips--tags { display: flex; gap: 2px; flex-wrap: wrap; min-height: 0; }
+
+/* --- cards, kept as the secondary view ------------------------------------- */
+
+.cards { padding: 16px; }
+
+@media (max-width: 899px) {
+  .toolbar { padding: 0 12px; }
+  .toolbar__row { min-height: 0; }
+  .search-inline { flex: 1 1 100%; }
+  .si-input { width: 100%; max-width: none; }
+  .toolbar-right { margin-left: 0; width: 100%; justify-content: space-between; }
+  .col-select { padding-left: 12px !important; }
+}
+
 /* --- comparison table ----------------------------------------------------- */
 
 .table-scroll {
@@ -1046,13 +1314,13 @@ th.sortable button {
 }
 th.col-name.sortable button { justify-content: flex-start; text-align: left; }
 th.sortable button:hover { color: var(--text); }
-th.sortable button::after {
+table.compare th.sortable button::after {
   content: "↕";
   opacity: 0.35;
   font-size: 0.85em;
 }
-th[aria-sort="ascending"] button::after { content: "↑"; opacity: 1; color: var(--accent); }
-th[aria-sort="descending"] button::after { content: "↓"; opacity: 1; color: var(--accent); }
+table.compare th[aria-sort="ascending"] button::after { content: "↑"; opacity: 1; color: var(--accent); }
+table.compare th[aria-sort="descending"] button::after { content: "↓"; opacity: 1; color: var(--accent); }
 
 .empty {
   padding: 3rem var(--gap);

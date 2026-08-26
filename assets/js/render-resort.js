@@ -816,6 +816,7 @@ async function main() {
     page: 'resorts',
     breadcrumb: [{ label: 'Guide', href: 'index.html' }, 'Resort'],
     layout: 'document',
+    ownHeading: true,
   });
 
   const slug = param('r');
