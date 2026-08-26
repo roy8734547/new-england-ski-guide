@@ -2246,3 +2246,30 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
 /* Filter chips are built from the manifest after first paint, so their rows
    start at zero height and the toolbar grows when the data lands. */
 .chips { min-height: 1.75rem; }
+
+/* --- map page in the shell -------------------------------------------------
+   The map fills the pane it is given rather than a fixed pixel height: in the
+   app layout the pane is already a known size, and a map that ends halfway down
+   its own container looks like a bug. The accessible list scrolls underneath.
+   --------------------------------------------------------------------------- */
+
+.app[data-layout="app"] .map-canvas {
+  height: clamp(20rem, 58vh, 34rem);
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+.app .map-list { padding-inline: 16px; }
+.app #map-note { padding: 12px 16px 0; }
+
+/* The legend's colour dot, on the reference's filter tag rather than a chip. */
+.filter-tag--dot::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--chip-accent, currentColor);
+  display: inline-block;
+  margin-right: 0.4rem;
+  vertical-align: -0.02rem;
+}

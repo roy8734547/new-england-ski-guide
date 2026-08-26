@@ -55,48 +55,29 @@
 <a class="skip-link" href="#view">Skip to content</a>
 
 <main id="main">
-  <div class="view" id="view">
-    <div class="shell page-head">
-      <h1>Where they all are</h1>
-      <p class="lede">
-        Forty-five mountains, pinned at the top of the highest lift rather than at the base
-        lodge, and coloured by which pass gets you on it. Pin size tracks vertical drop, so
-        the map reads as a rough terrain survey as well as a road atlas.
-      </p>
-    </div>
-
-    <div class="controls">
-      <div class="shell">
-        <div class="controls__row">
-          <div class="field">
-            <span class="label" id="legend-label">Pass</span>
-            <div class="chips" id="map-legend" role="group" aria-labelledby="legend-label"></div>
-          </div>
-          <div class="field field--end">
-            <span class="label">View</span>
-            <button type="button" class="btn-refresh" id="fit-all">Zoom to fit</button>
-          </div>
-        </div>
-        <p class="controls__meta"><span id="result-count">&nbsp;</span></p>
+  <div class="toolbar" id="toolbar">
+    <div class="toolbar__row">
+      <span class="label" id="legend-label">Pass</span>
+      <div class="chips chips--tags" id="map-legend" role="group" aria-labelledby="legend-label"></div>
+      <div class="toolbar-right">
+        <span class="result-count" id="result-count">&nbsp;</span>
       </div>
     </div>
+  </div>
 
-    <div class="shell">
-      <div id="map" class="map-canvas" role="application"
-           aria-label="Map of New England ski areas. An equivalent list of every mountain follows below the map."></div>
-      <p class="note" id="map-note" hidden></p>
-    </div>
+  <div class="view" id="view">
+    <div id="map" class="map-canvas" role="application"
+         aria-label="Map of New England ski areas. An equivalent list of every mountain follows below the map."></div>
+    <p class="note" id="map-note" hidden></p>
 
-    <div class="shell">
-      <section class="map-list" aria-labelledby="map-list-head">
-        <h2 id="map-list-head">Every mountain on the map</h2>
-        <p class="note">
-          The same forty-five areas as plain links, grouped by state — for keyboard users,
-          for screen readers, and for anything that cannot run the map.
-        </p>
-        <div id="map-list"></div>
-      </section>
-    </div>
+    <section class="map-list" aria-labelledby="map-list-head">
+      <h2 id="map-list-head">Every mountain on the map</h2>
+      <p class="note">
+        The same forty-five areas as plain links, grouped by state — for keyboard users,
+        for screen readers, and for anything that cannot run the map.
+      </p>
+      <div id="map-list"></div>
+    </section>
 
     <p id="status" role="status">Loading the map…</p>
   </div>

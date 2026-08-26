@@ -18,7 +18,7 @@
 import { getIndex } from './data.js';
 import { applyCanonical } from './seo.js';
 import { el, fill, fmt, qs, setStatus, STATE_NAMES, PASS_LABELS } from './util.js';
-import { mountShell } from './shell.js';
+import { mountShell, setStatusStats } from './shell.js';
 
 /** Highest-priority pass wins the pin colour. A mountain on both Epic and Indy
  *  reads as Epic, because that is the pass someone chose it for. */
@@ -129,7 +129,20 @@ function drawPins() {
   const total = resorts.length;
   qs('#result-count').textContent = shown.length === total
     ? `${total} mountains`
-    : `${shown.length} of ${total} mountains`;
+    : `${shown.length} of ${total}`;
+
+  const verticals = shown.map((r) => r.verticalDrop).filter(Number.isFinite);
+  const states = new Set(shown.map((r) => r.state));
+  setStatusStats([
+    { value: `${fmt(shown.length)} pinned` },
+    { label: 'States', value: fmt(states.size) },
+    verticals.length
+      ? { label: 'Tallest', value: `${fmt(Math.max(...verticals))} ft` }
+      : null,
+    verticals.length
+      ? { label: 'Shortest', value: `${fmt(Math.min(...verticals))} ft` }
+      : null,
+  ]);
 
   const unplaced = resorts.filter((r) => !Number.isFinite(r.lat) || !Number.isFinite(r.lon));
   const note = qs('#map-note');
@@ -165,7 +178,7 @@ function buildLegend() {
     const count = resorts.filter((r) => r.passTypes?.includes(type)).length;
     return el('button', {
       type: 'button',
-      class: 'chip chip--dot',
+      class: 'filter-tag filter-tag--dot',
       style: `--chip-accent: var(--pass-${type})`,
       'aria-pressed': 'false',
       dataset: { value: type },
@@ -180,7 +193,7 @@ function buildLegend() {
 }
 
 function syncLegend() {
-  for (const button of document.querySelectorAll('#map-legend .chip')) {
+  for (const button of document.querySelectorAll('#map-legend .filter-tag')) {
     button.setAttribute('aria-pressed', String(state.passes.has(button.dataset.value)));
   }
 }
@@ -226,6 +239,11 @@ async function main() {
     page: 'map',
     breadcrumb: ['Guide', 'Map'],
     layout: 'app',
+    actions: [
+      { id: 'fit-all', label: 'Zoom to fit', icon: 'M2 6V2h4M14 6V2h-4M2 10v4h4M14 10v4h-4' },
+      { separator: true },
+      { label: 'All resorts', href: 'index.html', primary: true },
+    ],
   });
 
   if (typeof L === 'undefined') {
