@@ -73,6 +73,30 @@ The public site keeps linking to each resort's own `links.trailMap` URL.
 - **Re-check `parks` feature counts.** Parks are marketed in autumn and built in December;
   the counts recorded in August are what the resort *planned*. Forum consensus in January is
   the only way to know whether the published feature list matches what is on the hill.
+- **Three files claim parks they cannot name.** `camden-snow-bowl` (2), `mount-sunapee` (4)
+  and `saddleback` (2) each publish a park *count* with no park page listing them, which is
+  the validator's three standing warnings. All three are correct data, not defects — but a
+  park page usually appears in November when the count becomes real, and that is when the
+  named entries can be filled in and the warnings cleared honestly.
 - **`pricing.advanceTypical`** is null almost everywhere because Vail and Alterra publish no
   window rate out of season. Real advance prices become observable on the booking pages once
   the season is on sale.
+
+---
+
+## Added 2026-08-25, after Parts D and E
+
+- **The snow-report panel has never rendered a real report.** `resort.html` and
+  `conditions.html` both fall back to a link when `isReportUsable()` says no, and in August
+  that is the only branch either page has ever taken. The first live fetch is the first time
+  the populated layout will be seen by anybody — check the relative "as of" timestamp, the
+  source link, and that a report going stale past 24 hours flips the page back to the
+  fallback without a reload artefact.
+- **Re-run Lighthouse against the deployed site.** The recorded scores (99/100/100/100 on
+  index and on a detail page) were measured against `tools/serve.mjs` on localhost, which has
+  no network latency, no CDN and no compression. The accessibility, best-practices and SEO
+  scores should hold; performance will move, and the layout-shift reservations in `site.css`
+  should be re-checked at real load times rather than local ones.
+- **`sitemap.xml` and `robots.txt` do not exist until something generates them.** They are
+  gitignored and `tools/build-seo.mjs` refuses to guess a domain. Nothing about this is
+  seasonal, but it is the one deploy-time step that has no fallback — see HANDOFF.md item 3.
