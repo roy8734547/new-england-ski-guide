@@ -4,9 +4,11 @@
  * This site has no domain baked into it anywhere. That is deliberate: a
  * canonical URL or an og:url hardcoded to the wrong host is worse than none at
  * all, and this repo has been built to be deployable to any static host without
- * a find-and-replace pass. So the two tags that need an absolute URL —
- * `<link rel="canonical">` and `og:url` — are written at runtime from
- * `location`, which is the one place the real host is guaranteed to be correct.
+ * a find-and-replace pass. So the tags that need an absolute URL —
+ * `<link rel="canonical">`, `og:url`, and the absolute form of `og:image` — are
+ * written at runtime from `location`, which is the one place the real host is
+ * guaranteed to be correct. `og:image` also ships as a working relative path, so
+ * a scraper that never runs JavaScript still resolves it against the page.
  *
  * `sitemap.xml` is the exception; it genuinely cannot be built without knowing
  * the host, so tools/build-seo.mjs takes it as an argument.
@@ -67,6 +69,26 @@ export function canonicalUrl(loc = location, params = DEFAULT_CANONICAL_PARAMS) 
 }
 
 /**
+ * Rewrites the relative og:image / twitter:image into an absolute URL.
+ *
+ * The tag ships relative because this repo has no domain in it. Facebook and
+ * Twitter both resolve a relative og:image against the page URL, so the static
+ * tag already works for the two that matter — but the Open Graph specification
+ * asks for an absolute URL and the smaller scrapers enforce it. Doing this here
+ * costs nothing and leaves neither camp guessing.
+ *
+ * Idempotent: once a value is absolute, calling this again is a no-op.
+ */
+function absolutiseImages() {
+  for (const [attr, name] of [['property', 'og:image'], ['name', 'twitter:image']]) {
+    const node = document.head.querySelector(`meta[${attr}="${name}"]`);
+    const value = node?.getAttribute('content');
+    if (!value || /^https?:\/\//i.test(value)) continue;
+    node.setAttribute('content', new URL(value, location.href).href);
+  }
+}
+
+/**
  * Called by every page. Safe to call again after the title changes. `params` is
  * the list of query parameters that belong in the canonical URL; pass `[]` for a
  * page whose querystring is view state rather than content.
@@ -79,6 +101,7 @@ export function applyCanonical(params = DEFAULT_CANONICAL_PARAMS) {
     return link;
   }).setAttribute('href', href);
   setMeta('og:url', href);
+  absolutiseImages();
 }
 
 /**

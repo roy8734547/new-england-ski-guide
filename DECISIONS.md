@@ -222,8 +222,15 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
 - **`compare.html?r=…` is disallowed in robots.txt.** It is deep-linkable by design, which is
   ~160,000 URLs of 2-to-4 combinations assembled from pages already indexed individually. The
   bare page stays crawlable because robots.txt prefix matching leaves it alone.
-- **No `og:image`.** There are no photographs on this site by decision, and a generated card
-  image would be the only raster asset in the repo. Social cards will render text-only.
+- ~~**No `og:image`.**~~ **Reversed 2026-08-25.** The original reasoning was that a card would be
+  the only raster asset in the repo. Completing the favicon set made that false — there are now
+  six generated PNGs — so the objection evaporated and the card was added. It still carries no
+  photography: it is the site mark and two lines of type, generated from `assets/favicon.svg`
+  by the same tool as the icons. `twitter:card` moved from `summary` to `summary_large_image`.
+- **`og:image` ships as a relative path and is absolutised at runtime.** Facebook and Twitter
+  both resolve a relative `og:image` against the page URL, so the static tag works for the two
+  that matter; `seo.js` rewrites it to an absolute URL as well, for the smaller scrapers that
+  enforce the specification. Neither approach requires a domain in the repo.
 - **Sitemap `priority` is uniform at 0.8 across all 45 resorts.** Varying it by size or
   popularity would be a ranking claim dressed up as metadata, and this guide does not make one.
 - **The contact line on `about.html` ships as a visible placeholder.** Publishing an email

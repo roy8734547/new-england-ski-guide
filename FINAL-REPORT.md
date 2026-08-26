@@ -222,8 +222,10 @@ not and the correct value may be a sourced "none" rather than a date list.
 - **`compare.html?r=…` is disallowed in `robots.txt`.** 45 mountains taken two-to-four at a time
   is roughly 160,000 URLs. If you want those indexed, remove the Disallow *and* change
   `applyCanonical([])` in `render-compare.js`, because right now the two agree deliberately.
-- **No `og:image`.** There are no photographs on this site by decision, so social cards will
-  render text-only. A generated card image would be the only raster asset in the repo.
+- ~~**No `og:image`.**~~ **Reversed after this report was first written.** The objection was
+  that a card would be the only raster asset in the repo; completing the favicon set made that
+  false, so the card was added. It carries no photography — the site mark and two lines of
+  type, generated from `assets/favicon.svg`. `twitter:card` is now `summary_large_image`.
 
 **One I would not change but will flag anyway**
 
