@@ -246,7 +246,8 @@ apple-touch-icon.png  GENERATED - iOS "Add to Home Screen"
 site.webmanifest    name, theme colour, 192/512/maskable icons
 assets/favicon.svg  the source of truth for every icon and the OG card
 assets/css/site.css single stylesheet, CSS custom properties, light + dark
-assets/js/          data.js, weather.js, util.js, seo.js, render-*.js
+assets/js/          data.js, weather.js, util.js, seo.js, shell.js,
+                    sparkline.js, render-*.js
 data/schema.md      the data contract
 data/resorts/       one JSON file per resort, the source of truth
 tools/              build-index, build-icons, build-seo, validate,
@@ -256,6 +257,34 @@ tools/              build-index, build-icons, build-seo, validate,
 `favicon.ico`, `apple-touch-icon.png`, `assets/icon-*.png` and `assets/og-card.png` are all
 generated — never hand-edit them. `npm run build:icons` rewrites the set from
 `assets/favicon.svg`; `node tools/build-icons.mjs --check` fails if any of them has drifted.
+
+## The UI
+
+A Notion-style app shell: a 240px sidebar, a breadcrumb top bar, a toolbar, a dense bordered
+table and a status bar. `design-reference/notion-clean.html` is the reference it was built
+against; `REDESIGN.md` is the brief.
+
+`assets/js/shell.js` builds the sidebar, top bar and status bar and wraps each page's own
+`#main`, so the chrome exists once rather than seven times. Pages author their content and
+their toolbar in HTML as before.
+
+Two layouts. `layout: 'app'` is a fixed 100dvh grid where only the content pane scrolls — the
+index, conditions, map and compare, where the table is the page. `layout: 'document'` keeps
+the same chrome and lets the column scroll with a reading measure on the prose — resort,
+about and 404, which are for reading.
+
+The sidebar's filters are not a second filter system. Every entry is an `<a href>` at a URL
+`render-index.js` already read (`?state=VT`, `?pass=epic`, `?feat=bumps`, `?night=1`), so
+they work without JavaScript, and on the index a click applies them without a reload.
+
+Three things worth knowing before changing it:
+
+- **The palette is not the reference's.** Its `--text-tertiary` is 2.79:1 on white and its
+  `--text-placeholder` is 1.99:1; the whole ink ramp was shifted darker so every step clears
+  AA on every surface it lands on. Re-check with the contrast pass before changing a colour.
+- **Green and red mean snow, never pass affiliation.** Passes get a flat tag with one hue
+  each.
+- **The font is the system stack, not Inter.** Reasoning in `DECISIONS.md`.
 
 ## Attribution
 
