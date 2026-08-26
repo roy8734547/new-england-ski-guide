@@ -57,11 +57,15 @@ skipping a unit.
 | **C** | Reviews — Tier C (6 files) + Wachusett | `c602842` | 281 / 350 | 5 areas genuinely uncovered, each with a search recorded in fieldNotes. |
 | **C** | Bromley / Black Mountain NH southern-exposure cross-check | `69bfeec` | — | Last open Part C item. |
 | **F** | SEASONAL.md addendum | `033d768` | — | Park-count warnings, the never-rendered snow panel, Lighthouse on a real host. |
+| **G** | FINAL-REPORT.md | `cd73892` | 281 / 350 | **AUTORUN COMPLETE.** |
 
 **Parts A and B are COMPLETE. All 45 resort files are written.** `npm run check` reports
 45 files, 0 errors, 4 warnings — all four warnings are correct data, not defects.
 
-**Parts A, B, C, D, E and F are COMPLETE.** Only Part G, the final report, remains.
+**THE AUTORUN IS COMPLETE.** Parts A through G are all done. Read `FINAL-REPORT.md` — it
+names the files worth re-checking and the decisions worth arguing with. Nothing has been
+pushed or deployed; `HANDOFF.md` has five items, and item 5 (a real contact address on
+`about.html`) blocks publishing.
 
 `npm run check` reports 45 files, 0 errors, 3 warnings, **281 unknown / 350 confirmed
 unpublished**. All three warnings are correct data — a published park count with no park
