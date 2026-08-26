@@ -52,13 +52,20 @@ skipping a unit.
 | **E** | SEO: canonical, OG, JSON-LD, sitemap, robots | `f0101ae` | — | No domain anywhere in the repo; `sitemap.xml`/`robots.txt` gitignored and generated per deploy. |
 | **E** | Accessibility pass | `1c9ea3c` | — | 31 AA contrast failures, almost all one token. axe clean on every page, both themes. |
 | **E** | Layout stability + Lighthouse | `f8ca08c` | — | CLS 0.36 → 0.05; performance 82 → 99. Numbers below. |
+| **C** | Reviews — Tier A (20 files) | `a917823` | 306 / 345 | PeakRankings + ZRankings on each. |
+| **C** | Reviews — Tier B (13 files) | `f86d5a4` | 293 / 345 | Validator change: an unpublished review rating is no longer a worklist row. |
+| **C** | Reviews — Tier C (6 files) + Wachusett | `c602842` | 281 / 350 | 5 areas genuinely uncovered, each with a search recorded in fieldNotes. |
+| **C** | Bromley / Black Mountain NH southern-exposure cross-check | `bda30ff` | — | Last open Part C item. |
+| **F** | SEASONAL.md addendum | `2c7ee79` | — | Park-count warnings, the never-rendered snow panel, Lighthouse on a real host. |
 
 **Parts A and B are COMPLETE. All 45 resort files are written.** `npm run check` reports
 45 files, 0 errors, 4 warnings — all four warnings are correct data, not defects.
 
-**RESUME HERE — Parts D and E are COMPLETE.** They were pulled ahead of the rest of Part C
-because the roster was finished but the site still had two stub pages and no public-site
-polish. What remains: **the reviews pass (Part C item 1)**, then Part F, then Part G.
+**Parts A, B, C, D, E and F are COMPLETE.** Only Part G, the final report, remains.
+
+`npm run check` reports 45 files, 0 errors, 3 warnings, **281 unknown / 350 confirmed
+unpublished**. All three warnings are correct data — a published park count with no park
+page to name the parks — and all three are logged in SEASONAL.md for November.
 
 ### Overpass, resolved (`037937f`)
 
@@ -116,25 +123,30 @@ inlining it to win that back would mean generating HTML, which is the same rule.
 - axe-core found exactly two real defects across eleven page states in both themes: an h3
   under an h1 on `resort.html`, and an empty `<th scope="col">` on `compare.html`.
 
-### Still to do in Part C, after Part E
+### Part C — what the reviews pass found
 
-1. **reviews[] for all 45 resorts** — three commits, Tier A / B / C. This is the largest
-   remaining unit. Every `reviews` array is currently empty. Tier A first. Do not pad:
-   where a small area genuinely has no substantive coverage, leave `reviews` empty with an
-   `unpublished` fieldNotes entry and move on. Known 404s on PeakRankings (checked
-   individually, all Tier B/C from batches 7–10): berkshire-east, catamount, jiminy-peak,
-   pleasant-mountain, middlebury-snow-bowl, saskadena-six, black-mountain-nh,
-   dartmouth-skiway, mt-abram, black-mountain-maine, camden-snow-bowl, big-rock, butternut,
-   bousquet, mohawk-mountain.
-2. ~~Three cross-resort backfills~~ — **DONE, `a01ae52`.**
-3. ~~`bolton-valley.editorial.keyTrails`~~ — **DONE, `037937f`.**
-4. ~~Stowe's coordinate~~ — **DONE, `037937f`.**
-5. One more cross-check worth doing: **Bromley claims to be "the only major ski area in New
-   England with a southern exposure"**, and `black-mountain-nh` publishes its primary exposure
-   as south. Bromley's "major" gives it an out, but the two files should acknowledge each
-   other. (Cannon publishes north/northeast, for what it is worth.)
+67 review entries across 40 of the 45 files. Five areas — Mt. Abram, Black Mountain of
+Maine, Camden Snow Bowl, Big Rock and Butternut — have no substantive coverage anywhere and
+carry an `unpublished` fieldNote recording the search rather than a padded entry.
 
-Then Parts F and G as written in AUTORUN.md.
+Three things worth carrying forward:
+
+1. **One fetch of ZRankings' Eastern list supplied scores for 28 resorts.** Their per-resort
+   pages need an ID lookup each; the list page does not. That single fetch is the reason the
+   Tier A reviews were one unit rather than a session.
+2. **ZRankings' underlying figures are unreliable often enough that a score must never be
+   quoted bare.** Berkshire East is scored on more than double its published acreage;
+   Pleasant Mountain is still filed under the name it dropped in 2022; their Waterville
+   vertical is a thousand feet short of the resort's own. Every gist leaning on one of their
+   numbers says so.
+3. **PeakRankings coverage is wider than Batch 7-10 suggested.** Bolton Valley, Magic and
+   Bromley all have pages. The 404 list from those batches is about those specific Tier B/C
+   resorts, not roster-wide — check before assuming.
+
+A validator change came out of this pass: a null `reviews[].rating` no longer counts as an
+unknown field. Most outlets do not score mountains numerically, so a null there is a finished
+answer and `schema.md` §9 already forbids deriving one. Left alone it would have put twenty-odd
+permanently-unfillable rows into `UNVERIFIED.md`.
 
 ### STANDING CHECK AT THE START OF EVERY SESSION — Vail: DONE, no longer needed
 
