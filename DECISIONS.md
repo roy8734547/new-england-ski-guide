@@ -263,3 +263,27 @@ the repo; (4) reversible and in-repo, just decide; (5) prefer momentum over marg
   of CSS in the first commit. They resolve through `var()`, so the dark block redefining the new
   names flows through to the old ones automatically. This is one palette with two sets of names,
   not two palettes.
+- **The shell is injected by JS rather than duplicated into seven HTML files.** REDESIGN.md
+  asked for this, and the cost is real: the sidebar's nav is not in the served HTML. It is
+  mitigated rather than ignored — every sidebar entry is a real `<a href>` at a URL the index
+  already understood, the `<head>` (title, description, Open Graph, JSON-LD, canonical) is
+  still static per page, `sitemap.xml` lists all 45 detail pages, and map.html still renders
+  all 45 as plain links in the document. The pages were already JavaScript-rendered below the
+  chrome, so this does not change what a crawler without JS can see by much.
+- **The table is the default view and the card grid is kept behind a toggle.** REDESIGN.md
+  made the table primary; deleting the cards would have removed a working feature the brief
+  said to keep. `?view=cards` still round-trips through the URL.
+- **Row checkboxes are custom-drawn at 24x24 with a 13px visual.** The reference's 13px
+  checkbox fails WCAG 2.2's target size, and Lighthouse measures the input's own box, so
+  enlarging the hit area with a pseudo-element changed nothing — that was tried first. The
+  input is `appearance: none` at 24px with the box, tick and indeterminate dash drawn in CSS,
+  which also means both themes are ours rather than the platform's.
+- **The status bar's contents are the page's business, not the shell's.** `setStatusStats()`
+  takes whatever the renderer wants to say. The index reports count, average vertical and who
+  is getting the most snow; conditions reports the region total and how many are snowing; the
+  map reports how many are pinned and across how many states; compare reports the tallest,
+  the snowiest and the vertical spread. A shared status bar with a fixed schema would have
+  forced three of those four into the wrong shape.
+- **Green and red are reserved for snow.** The reference uses them for gain/loss. Applied to
+  pass affiliation they would read as "good pass" and "bad pass", which is a claim this guide
+  does not make; passes get a flat tag with one hue each instead.

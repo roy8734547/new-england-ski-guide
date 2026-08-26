@@ -38,7 +38,7 @@ const MIN_COMPARE = 2;
  * body renders.
  */
 const COLUMNS = [
-  { key: 'select', label: '', type: 'select', w: '40px', sortable: false },
+  { key: 'select', label: '', type: 'select', w: '44px', sortable: false },
   { key: 'name', label: 'Resort', type: 'resort', w: '210px' },
   { key: 'town', label: 'Town', type: 'town', w: '190px' },
   { key: 'verticalDrop', label: 'Vertical', num: true, unit: ' ft', w: '86px' },
@@ -339,8 +339,10 @@ function syncSelectionUi() {
   const n = state.selected.size;
   const ok = n >= MIN_COMPARE && n <= MAX_COMPARE;
   btn.disabled = !ok;
-  btn.querySelector('span:last-child').textContent =
-    n === 0 ? 'Compare selected' : `Compare ${n} selected`;
+  const label = n === 0 ? 'Compare selected' : `Compare ${n} selected`;
+  btn.querySelector('.tb-btn__text').textContent = label;
+  // The text is hidden below 720px, so the accessible name has to move with it.
+  btn.setAttribute('aria-label', label);
   btn.dataset.href = ok
     ? `compare.html?r=${[...state.selected].map(encodeURIComponent).join(',')}`
     : '';
@@ -433,7 +435,11 @@ const TOPBAR_ACTIONS = [
 function setView(view) {
   state.view = view;
   const btn = qs('#toggle-view');
-  if (btn) btn.querySelector('span:last-child').textContent = view === 'table' ? 'Cards' : 'Table';
+  if (btn) {
+    const label = view === 'table' ? 'Cards' : 'Table';
+    btn.querySelector('.tb-btn__text').textContent = label;
+    btn.setAttribute('aria-label', label);
+  }
   render();
 }
 

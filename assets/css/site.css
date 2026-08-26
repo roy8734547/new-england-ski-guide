@@ -1058,13 +1058,60 @@ table.data-table td:last-child { border-right: 0; }
 table.data-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
 table.data-table td.is-unknown { color: var(--text-tertiary); }
 
-.col-select { width: 40px; padding-left: 16px !important; padding-right: 0 !important; }
+.col-select { width: 44px; padding: 3px 0 3px 14px !important; }
+/* The reference draws a 13px checkbox and at this row density that is the right
+   size to look at. It is the wrong size to hit: WCAG 2.2 asks for 24px, and
+   Lighthouse measures the input's own box, so an expanded pseudo-element does
+   not count — that was the first attempt and it changed nothing.
+
+   So the input is a real 24x24 target with the checkbox drawn inside it at 13px.
+   That also means the box, the tick and the indeterminate dash are ours in both
+   themes rather than whatever the platform paints. */
 .row-check {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  position: relative;
+  background: none;
+  border: 0;
+}
+.row-check::before {
+  content: "";
   width: 13px;
   height: 13px;
-  cursor: pointer;
-  accent-color: var(--accent);
-  display: block;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  background: var(--bg);
+  transition: background 80ms, border-color 80ms;
+}
+.row-check:hover::before { border-color: var(--text-tertiary); }
+.row-check:is(:checked, :indeterminate)::before {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+/* The tick: two borders of a small box, rotated. No asset, no font. */
+.row-check:checked::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 7px;
+  border: solid var(--accent-ink);
+  border-width: 0 1.5px 1.5px 0;
+  transform: translateY(-1px) rotate(45deg);
+}
+.row-check:indeterminate::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 1.5px;
+  background: var(--accent-ink);
+  border-radius: 1px;
 }
 
 .ticker-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
@@ -1235,7 +1282,7 @@ tbody tr.is-selected .sp.is-snow { opacity: 0.85; }
   .search-inline { flex: 1 1 100%; }
   .si-input { width: 100%; max-width: none; }
   .toolbar-right { margin-left: 0; width: 100%; justify-content: space-between; }
-  .col-select { padding-left: 12px !important; }
+  .col-select { padding-left: 10px !important; }
 }
 
 /* --- comparison table ----------------------------------------------------- */
@@ -2328,3 +2375,57 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
     padding-inline: 16px;
   }
 }
+
+/* --- narrow screens: the top bar collapses to icons -------------------------
+   Five text buttons do not fit a 375px top bar. The labels go and the icons
+   stay; shell.js mirrors every label into aria-label precisely so this can
+   happen without the buttons losing their names. The primary action keeps its
+   text, because it is the one thing on the bar worth reading.
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 719px) {
+  .tb-btn:not(.primary) .tb-btn__text { display: none; }
+  .tb-btn:not(.primary) { padding: 6px; }
+  .topbar { padding: 0 12px; gap: 8px; }
+  .topbar__actions { gap: 2px; }
+  .tb-sep { display: none; }
+}
+
+/* Four stacked pickers cost 252px of a phone screen before the comparison even
+   starts. Two columns halves that. */
+@media (max-width: 599px) {
+  .toolbar__row--picker { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* The resort column pins while the table scrolls sideways. Ten columns never fit
+   a phone, and a horizontally scrolled row with no name on it is unreadable —
+   this is the same treatment the old comparison table had, kept. */
+table.data-table :is(th, td).col-resort {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+}
+table.data-table thead th.col-resort { z-index: 6; }
+table.data-table tbody tr:hover td.col-resort { background: var(--bg-hover); }
+table.data-table tbody tr.is-selected td.col-resort { background: var(--bg-selected); }
+
+/* The checkbox column pins with it on wide screens, where there is room for
+   both; on a phone the name alone is worth more than the name plus a checkbox. */
+@media (min-width: 900px) {
+  table.data-table :is(th, td).col-select {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--bg);
+  }
+  table.data-table thead th.col-select { z-index: 6; }
+  table.data-table :is(th, td).col-resort { left: 44px; }
+  table.data-table tbody tr:hover td.col-select { background: var(--bg-hover); }
+  table.data-table tbody tr.is-selected td.col-select { background: var(--bg-selected); }
+}
+
+/* The skip link's target takes focus programmatically; it should not then draw a
+   focus ring around the entire content pane. */
+.view:focus { outline: none; }

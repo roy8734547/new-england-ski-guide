@@ -260,8 +260,13 @@ function buildTopbar(config) {
         id: a.id ?? null,
         disabled: a.disabled ?? null,
       });
-    if (a.icon) node.append(icon(a.icon, 'tb-icon'));
-    node.append(el('span', {}, a.label));
+    if (a.icon) {
+      node.append(icon(a.icon, 'tb-icon'));
+      // The label is hidden on narrow screens, where five buttons of text do not
+      // fit, so the accessible name has to survive independently of it.
+      node.setAttribute('aria-label', a.label);
+    }
+    node.append(el('span', { class: 'tb-btn__text' }, a.label));
     if (a.onClick) node.addEventListener('click', a.onClick);
     return node;
   });
@@ -382,6 +387,12 @@ export async function mountShell(config = {}) {
   if (!main) throw new Error('shell: the page has no #main to wrap');
 
   document.documentElement.dataset.layout = layout;
+
+  // The skip link points here. A div is not focusable, and following a link to
+  // an unfocusable target moves the scroll position without moving focus, which
+  // leaves a keyboard user still inside the sidebar they were trying to skip.
+  const view = qs('#view');
+  if (view && !view.hasAttribute('tabindex')) view.setAttribute('tabindex', '-1');
 
   const app = el('div', { class: 'app', 'data-layout': layout });
   main.parentNode.insertBefore(app, main);
