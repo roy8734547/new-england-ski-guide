@@ -991,9 +991,49 @@ input[type="range"] {
   min-width: 0;
 }
 
+/* In the fixed shell the table pane scrolls, not the view around it.
+
+   This is what makes the sticky header work. A sticky thead pins to its nearest
+   scrolling ancestor, which is .table-wrap — and .table-wrap was only scrolling
+   horizontally, so vertically it grew to the table's full height and scrolled
+   away inside .view, taking the "pinned" header with it. The header never
+   actually pinned in the redesigned shell; it only looked like it might.
+
+   So .table-wrap takes both axes and the view stops scrolling. The card grid
+   gets the same treatment because it is the same pane by another name. */
+.app[data-layout="app"] .view:has(> .table-wrap) {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.app[data-layout="app"] .view > .table-wrap,
+.app[data-layout="app"] .view > .cards {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.app[data-layout="app"] .view > .table-wrap[hidden],
+.app[data-layout="app"] .view > .cards[hidden] { display: none; }
+.app[data-layout="app"] .view:has(> .table-wrap) > :is(p, .empty) { flex: 0 0 auto; }
+
+.app[data-layout="app"] .view > .table-wrap::-webkit-scrollbar,
+.app[data-layout="app"] .view > .cards::-webkit-scrollbar { width: 8px; height: 8px; }
+.app[data-layout="app"] .view > .table-wrap::-webkit-scrollbar-thumb,
+.app[data-layout="app"] .view > .cards::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
 table.data-table {
   width: 100%;
-  min-width: 60rem;
+  /* max-content, not a fixed rem floor. Every cell in this table is nowrap, so
+     max-content is exactly the width at which nothing truncates — the browser
+     works it out per column instead of the widths being hand-tuned and then
+     going stale the first time a resort name changes. Wider than the pane, the
+     surrounding .table-wrap scrolls; narrower, the declared th widths shape the
+     proportions and the table fills the space. */
+  min-width: max-content;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 13px;
@@ -1196,7 +1236,18 @@ table.data-table .tags { flex-wrap: nowrap; }
 .spark--pending { display: inline-block; }
 .sp {
   width: 3px;
-  min-height: 1px;
+  min-height: 2px;
+  border-radius: 1px;
+  background: var(--border-strong);
+}
+
+/* The out-of-season state: one rule across the full bar width, at the height a
+   zero-snow day would sit at, so the column occupies exactly the space it will
+   occupy in January. */
+.spark--flat { align-items: center; }
+.sp-flat {
+  width: 100%;
+  height: 2px;
   border-radius: 1px;
   background: var(--border-strong);
 }
@@ -2487,7 +2538,13 @@ table.data-table tbody tr:hover td.col-resort { background: var(--bg-hover); }
 table.data-table tbody tr.is-selected td.col-resort { background: var(--bg-selected); }
 
 /* The checkbox column pins with it on wide screens, where there is room for
-   both; on a phone the name alone is worth more than the name plus a checkbox. */
+   both; on a phone the name alone is worth more than the name plus a checkbox.
+
+   The 44px offset on .col-resort is what clears that pinned checkbox, so it is
+   conditional on the table actually having one. Applied unconditionally it
+   shifted conditions.html's Resort column 44px right of the table's own left
+   edge and painted it over the start of every Town cell — "eld, Massachusetts"
+   instead of "Sheffield, Massachusetts", on every row, scrolled or not. */
 @media (min-width: 900px) {
   table.data-table :is(th, td).col-select {
     position: sticky;
@@ -2496,7 +2553,7 @@ table.data-table tbody tr.is-selected td.col-resort { background: var(--bg-selec
     background: var(--bg);
   }
   table.data-table thead th.col-select { z-index: 6; }
-  table.data-table :is(th, td).col-resort { left: 44px; }
+  table.data-table:has(th.col-select) :is(th, td).col-resort { left: 44px; }
   table.data-table tbody tr:hover td.col-select { background: var(--bg-hover); }
   table.data-table tbody tr.is-selected td.col-select { background: var(--bg-selected); }
 }

@@ -56,20 +56,33 @@ export function sparkline(hit, peak, total) {
     : days.reduce((a, d) => a + (Number.isFinite(d.snow) ? d.snow : 0), 0);
   const scale = peak > 0 ? peak : 1;
 
+  // The all-dry case is drawn as one flat rule rather than seven near-zero bars.
+  // Seven 1px stubs read as a rendering fault, and out of season that is every
+  // row on the page at once — which is what made the column look like dead space
+  // in August. A single rule says "flat week" unambiguously, and it says it at
+  // the same width the bars occupy, so nothing moves when real snow arrives.
+  if (sum <= 0) {
+    return el('span', { class: 'snowcell' },
+      el('span', {
+        class: 'spark spark--flat',
+        role: 'img',
+        'aria-label': `No snow forecast in the next ${SPARK_DAYS} days`,
+      }, el('span', { class: 'sp-flat' })),
+      el('span', { class: 'snow-pill snow-pill--flat' }, '0"'));
+  }
+
   return el('span', { class: 'snowcell' },
     el('span', {
-      class: `spark${sum > 0 ? ' is-snowy' : ''}`,
+      class: 'spark is-snowy',
       role: 'img',
       'aria-label': `${inches(sum)} forecast over ${SPARK_DAYS} days`,
     }, days.map((d) => {
       const snow = Number.isFinite(d.snow) ? d.snow : 0;
-      // A floor of 4%, so a dry day is a visible baseline rather than nothing.
-      // A column of gaps reads as broken; a flat line reads as no snow, which is
-      // what it means — and in August that is every row on the page.
-      const pct = Math.max(4, Math.round((snow / scale) * 100));
+      // A dry day inside a snowy week keeps a visible stub, so the shape of the
+      // week reads as "nothing Tuesday" rather than as a gap in the chart.
+      const pct = Math.max(8, Math.round((snow / scale) * 100));
       return el('span', { class: `sp${snow > 0 ? ' is-snow' : ''}`, style: `height:${pct}%` });
     })),
-    sum > 0
-      ? el('span', { class: 'snow-pill snow-pill--snow', dataset: { depth: depthBand(sum) } }, inches(sum))
-      : el('span', { class: 'snow-pill snow-pill--flat' }, '0"'));
+    el('span', { class: 'snow-pill snow-pill--snow', dataset: { depth: depthBand(sum) } },
+      inches(sum)));
 }

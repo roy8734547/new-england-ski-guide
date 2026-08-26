@@ -21,19 +21,19 @@ import { mountShell, setStatusStats, setLive } from './shell.js';
 import { sparkline, peakDay } from './sparkline.js';
 
 const COLUMNS = [
-  { key: 'name', label: 'Resort', type: 'resort', w: '220px' },
-  { key: 'town', label: 'Town', type: 'town', w: '180px', sortable: false },
+  { key: 'name', label: 'Resort', type: 'resort', w: '240px' },
+  { key: 'town', label: 'Town', type: 'town', w: '210px', sortable: false },
   // The forecast columns stay contiguous so a row with no forecast can span
   // exactly them and still show its reported snow figures.
-  { key: 'spark', label: '7-day snow', type: 'spark', num: true, w: '128px', group: 'forecast', sortKey: 'snow7d' },
+  { key: 'spark', label: '7-day snow', type: 'spark', num: true, w: '108px', group: 'forecast', sortKey: 'snow7d' },
   { key: 'snow24h', label: 'Next 24h', num: true, w: '82px', group: 'forecast' },
   { key: 'temp', label: 'Temp', num: true, w: '66px', group: 'forecast' },
   { key: 'wind', label: 'Wind', num: true, w: '86px', group: 'forecast' },
-  { key: 'conditions', label: 'Conditions', type: 'text', w: '150px', sortable: false, group: 'forecast' },
+  { key: 'conditions', label: 'Conditions', type: 'text', w: '120px', sortable: false, group: 'forecast' },
   // Reported = what the resort itself published, fetched by tools/fetch-snow.mjs.
   { key: 'reportedNew24h', label: 'Reported 24h', num: true, w: '96px' },
   { key: 'baseDepth', label: 'Base', num: true, w: '72px' },
-  { key: 'report', label: 'Official report', type: 'report', w: '130px', sortable: false },
+  { key: 'report', label: 'Report', type: 'report', w: '92px', sortable: false },
 ];
 
 const FORECAST_COLSPAN = 5;
