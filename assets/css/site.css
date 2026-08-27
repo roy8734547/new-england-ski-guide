@@ -802,6 +802,12 @@ main { display: block; }
   margin-inline: auto;
 }
 #status.is-error { color: var(--diff-expert); font-weight: 600; }
+/* Cleared rather than emptied: the status line carries 3rem of padding, so
+   emptying its text left a 48px box behind and the pane below it moved. Padding
+   rather than display:none, because this is a role="status" live region and a
+   region that is display:none is not announced when it fills again. With no
+   text and no padding it takes no space and stays in the accessibility tree. */
+#status:empty { padding: 0; }
 
 /* --- controls ------------------------------------------------------------- */
 
@@ -1529,6 +1535,11 @@ tbody tr.is-selected .sp.is-snow { opacity: 0.85; }
   color: var(--text-tertiary);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+  /* Space for "45 mountains" from the first paint. This element starts as a
+     non-breaking space and grows when the count lands, which pushed the sort
+     control sideways - the one layout shift index.html had left. */
+  min-width: 7.5em;
+  text-align: right;
 }
 .sort-label select {
   appearance: none;
