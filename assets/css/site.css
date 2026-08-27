@@ -2259,15 +2259,25 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
   display: grid;
   gap: 0.7rem;
 }
+/* The marker used to be a grid column on the <li>, and that quietly split every
+   item in two. Per CSS Grid an element child becomes its own grid item while the
+   text run after it becomes a separate anonymous one, so an item written as
+   "<b>lead-in.</b> sentence…" produced three items for two columns: the bold ran
+   in the 1fr track and the sentence dropped into the next row's 1.6rem marker
+   track, wrapping one word per line for a thousand pixels. The marker is
+   positioned out of flow instead, so the content stays in ordinary inline flow
+   however an item begins. */
 .numbered li {
   counter-increment: step;
-  display: grid;
-  grid-template-columns: 1.6rem 1fr;
-  gap: 0.6rem;
+  position: relative;
+  padding-left: 2.2rem;
   color: var(--text-muted);
 }
 .numbered li::before {
   content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.15em;
   font-variant-numeric: tabular-nums;
   font-weight: 700;
   font-size: 0.8125rem;
@@ -2499,6 +2509,20 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
   max-width: 74rem;
   margin-inline: auto;
   padding-inline: 32px;
+}
+
+/* A block sitting directly in the view, with no <section> around it, is a page
+   that is nothing but document: about.html and 404.html. Its column is the
+   reading measure plus the shell's own 32px gutters, centred in the pane, so the
+   text is not a ribbon down the left of a 1,185px content area.
+
+   resort.html deliberately does not match. It nests every .shell inside a
+   <section> because it also carries furniture that needs the width - the two
+   forecast panels, the terrain table, the two-column prose grid - so it keeps
+   the 74rem shell above. */
+.app[data-layout="document"] .view > .shell,
+.app[data-layout="document"] .view > .prose {
+  max-width: calc(var(--measure) + 4rem);
 }
 
 .app[data-layout="document"] .view :is(.section, .prose) p,
