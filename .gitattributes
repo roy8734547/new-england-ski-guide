@@ -3,9 +3,12 @@
 # Normalise to LF in the repository, check out as-is.
 * text=auto eol=lf
 
-# Generated binaries. Never diffed, never line-ending-converted.
+# Binaries. Never diffed, never line-ending-converted. text=auto above would
+# detect these correctly on its own; saying so explicitly means a future
+# .gitattributes edit cannot quietly put a .docx through LF normalisation.
 *.png binary
 *.ico binary
+*.docx binary
 
 # Batch files are launched by double-clicking on Windows, and cmd.exe is fragile
 # about LF-only line endings — labels and multi-line if blocks are where it shows
