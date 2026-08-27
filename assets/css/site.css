@@ -375,6 +375,7 @@ button, input, select { font: inherit; color: inherit; }
   gap: 8px;
   text-decoration: none;
   min-width: 0;
+  min-height: 24px;
 }
 .sl-mark {
   width: 22px;
@@ -432,6 +433,7 @@ button, input, select { font: inherit; color: inherit; }
   align-items: center;
   gap: 8px;
   padding: 6px 10px;
+  min-height: 24px;
   border-radius: var(--radius);
   font-size: 13px;
   color: var(--text-secondary);
@@ -470,6 +472,15 @@ button, input, select { font: inherit; color: inherit; }
   color: var(--text-tertiary);
   padding: 6px 10px 2px;
   margin: 0;
+  line-height: 1.6;
+}
+/* The attribution links are inline in a sentence, which is WCAG 2.5.8's own
+   exception to the 24px floor - but they are 11px type at the bottom of a
+   drawer, and padding the boxes to 24px costs nothing and keeps the sentence
+   flowing. */
+.sidebar__stamp a {
+  display: inline-block;
+  padding-block: 5px;
 }
 
 /* --- top bar --- */
@@ -503,6 +514,12 @@ button, input, select { font: inherit; color: inherit; }
   padding: 5px;
   border-radius: var(--radius);
   cursor: pointer;
+  /* The one control that opens everything else on a phone, and it was 23x23.
+     WCAG 2.2 target size is measured on the element's own box, so the box gets
+     the size rather than a padded ::after. */
+  min-width: 32px;
+  min-height: 32px;
+  place-items: center;
 }
 .topbar__menu:hover { background: var(--bg-hover); color: var(--text-primary); }
 
@@ -616,6 +633,7 @@ a.crumb:hover { color: var(--text-primary); }
   align-items: center;
   gap: 4px;
   padding: 4px 8px;
+  min-height: 24px;
   border-radius: var(--radius);
   border: 0;
   background: none;
@@ -699,7 +717,7 @@ a.crumb:hover { color: var(--text-primary); }
 
 @media (max-width: 899px) {
   .app { grid-template-columns: 1fr; }
-  .topbar__menu { display: inline-flex; }
+  .topbar__menu { display: grid; }
   .sidebar__close { display: inline-flex; }
 
   .sidebar {
@@ -712,6 +730,8 @@ a.crumb:hover { color: var(--text-primary); }
     box-shadow: var(--shadow-pop);
   }
   .sidebar[data-open="true"] { transform: translateX(0); }
+  /* A drawer is touched, not clicked. */
+  .ss-item { min-height: 34px; font-size: 14px; }
   .app[data-layout="document"] .sidebar { position: fixed; }
 
   /* While the drawer is open it is the only thing that scrolls. */
@@ -1520,6 +1540,9 @@ tbody tr.is-selected .sp.is-snow { opacity: 0.85; }
   color: var(--text-secondary);
   cursor: pointer;
   padding: 0 2px;
+  /* The select is the target, not the label around it: 19px tall was under the
+     24px floor even though the label it sits in was not. */
+  min-height: 24px;
 }
 .sort-dir {
   appearance: none;
@@ -1531,6 +1554,8 @@ tbody tr.is-selected .sp.is-snow { opacity: 0.85; }
   cursor: pointer;
   padding: 4px 6px;
   border-radius: var(--radius);
+  min-width: 24px;
+  min-height: 24px;
 }
 .sort-dir:hover { background: var(--bg-hover); color: var(--text-primary); }
 
@@ -1554,6 +1579,14 @@ tbody tr.is-selected .sp.is-snow { opacity: 0.85; }
 .table-scroll {
   overflow-x: auto;
   overscroll-behavior-x: contain;
+  /* Paint containment, because without it the table's scrollable overflow
+     reached the initial containing block: at 375px the compare table made
+     window.innerWidth report 721px, which on a phone is the browser deciding
+     the page is wider than the screen and offering to zoom out to empty space.
+     The body could not actually be scrolled sideways - the shell clips - but
+     the viewport was still being sized for a table that lives inside its own
+     scroller. Containment keeps the overflow where it belongs. */
+  contain: paint;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--bg-raised);
@@ -2408,6 +2441,40 @@ td.is-winner::before {
 }
 table.compare--vs td .terrain-bar { min-width: 7rem; }
 
+/* --- compare.html on a phone -------------------------------------------------
+
+   Four columns do not fit a 375px screen, and the choice is between dropping
+   mountains and scrolling. This scrolls.
+
+   Capping at two would silently discard mountains the visitor picked and would
+   make a shared ?r=a,b,c,d link show something other than what it says. The
+   table already has the one thing that makes a wide table work on a phone: the
+   statistic column is sticky, so the row label stays put while the mountains
+   move past it. What it needed was columns wide enough to read one at a time -
+   at 128px the mountain names were shredding into three lines - and something
+   that says out loud that it scrolls.
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 899px) {
+  table.compare--vs { table-layout: auto; }
+  table.compare--vs th.col-name { width: 7.5rem; }
+  table.compare--vs :is(th, td):not(.col-name) { min-width: 9.5rem; }
+  table.compare--vs th.vs-head { font-size: 0.875rem; }
+  .table-scroll { margin-block: 1rem; }
+  /* Scrolls one mountain at a time rather than stopping mid-column. */
+  .table-scroll { scroll-snap-type: x proximity; }
+  table.compare--vs :is(th, td):not(.col-name) { scroll-snap-align: end; }
+}
+.scroll-hint { display: none; }
+@media (max-width: 899px) {
+  .scroll-hint {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+  }
+}
+
 .vs-grid {
   display: grid;
   gap: 1.25rem;
@@ -2607,6 +2674,15 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
   border: 0;
   border-bottom: 1px solid var(--border);
   border-radius: 0;
+}
+
+/* On a phone the same 58vh filled everything below the toolbar, so the only
+   thing under a thumb was the map: a swipe meant to scroll the page panned it
+   instead, and the list underneath was unreachable without finding the few
+   pixels of chrome at the top. 42vh keeps the map big enough to read and leaves
+   a screenful of list in view to swipe on. */
+@media (max-width: 899px) {
+  .app[data-layout="app"] .map-canvas { height: clamp(14rem, 42vh, 22rem); }
 }
 .app .map-list { padding-inline: 16px; }
 .app #map-note { padding: 12px 16px 0; }

@@ -359,11 +359,19 @@ function wireDrawer() {
   const scrim = el('div', { class: 'scrim', id: 'scrim', hidden: true });
   document.body.append(scrim);
 
+  const main = qs('#main');
+
   const setOpen = (isOpen) => {
     sidebar.dataset.open = String(isOpen);
     open.setAttribute('aria-expanded', String(isOpen));
     scrim.hidden = !isOpen;
     document.body.classList.toggle('is-drawer-open', isOpen);
+    // The trap. Everything that is not the drawer is inert while it is open, so
+    // Tab cannot walk out of it into a table nobody can see, and a screen
+    // reader cannot either. One attribute does what a keydown cycle does, and
+    // it also covers pointer and virtual-cursor access, which the cycle does
+    // not. The scrim and the sidebar are outside #main, so both stay live.
+    if (main) main.inert = isOpen;
 
     if (isOpen) {
       close.focus();
