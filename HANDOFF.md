@@ -133,9 +133,11 @@ adapter development.
 
 ## 5. ~~Put a real contact address on about.html~~ — DONE
 
-`about.html` now publishes an address in the Corrections section, alongside a paragraph
-naming `NewEnglandSkiGuideBot`, stating that it honours `robots.txt` and contacts no host
-more than once every two hours, and inviting anyone at a resort to write about that traffic.
+`about.html` now points its Corrections section at
+<https://github.com/roy8734547/new-england-ski-guide/issues> — the issue tracker rather than
+an email address, so nothing personal is published — alongside a paragraph naming
+`NewEnglandSkiGuideBot`, stating that it honours `robots.txt` and contacts no host more than
+once every two hours, and inviting anyone at a resort to raise that traffic there.
 The amber placeholder styling is gone; the box keeps the accent border because the bot's
 User-Agent points every resort's server at that line.
 
