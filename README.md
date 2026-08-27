@@ -27,36 +27,40 @@ downloader make to a resort's server carries a User-Agent naming this project an
 pointing at a contact page:
 
 ```
-NewEnglandSkiGuideBot/0.1 (+https://your-site.example/about; static site, snow reports)
+NewEnglandSkiGuideBot/0.1 (+https://new-england-ski-guide.netlify.app/about; static site, snow reports)
 ```
 
 That URL is the entire basis on which automated fetching against somebody else's server is
 defensible. It is how a resort's operations team identifies unfamiliar traffic, and how they
-ask us to stop instead of silently blocking the IP. Out of the box it points at
-`https://example.invalid/about`, which is **not a real host**, and every tool prints a warning
-saying so.
+ask us to stop instead of silently blocking the IP. It points at
+[about.html](https://new-england-ski-guide.netlify.app/about), which names the bot, states the
+crawl rules and carries an address to write to.
 
-1. **Locally** — copy `.env.example` to `.env` and set the value. `.env` is gitignored.
+1. **Locally** — copy `.env.example` to `.env`. It already carries the live URL, and
+   `tools/bot-identity.mjs` loads that file, so no export is needed. `.env` is gitignored.
 
    ```powershell
    Copy-Item .env.example .env
-   # then edit .env
-   ```
-
-   PowerShell does not read `.env` automatically, so for a one-off run:
-
-   ```powershell
-   $env:SKI_BOT_CONTACT_URL = "https://your-site.example/about"
    npm run fetch:snow
    ```
 
-2. **In CI** — add a repository variable named `SKI_BOT_CONTACT_URL` under
-   **Settings → Secrets and variables → Actions → Variables**. The workflow already reads it
-   into the job environment. It is a variable rather than a secret: it is a public URL, and
-   masking it in logs would make debugging harder for no benefit.
+   A real environment variable still wins over `.env`, for a one-off run against a
+   different deployment:
 
-3. **Point it at a page that exists** and explains what the bot does. The site's `/about`
-   page is the obvious target once it is built.
+   ```powershell
+   $env:SKI_BOT_CONTACT_URL = "https://your-other-site.example/about"
+   npm run fetch:snow
+   ```
+
+2. **In CI** — `.github/workflows/snow.yml` sets the same URL as a literal default, so a
+   scheduled run cannot advertise a host that does not exist. To point it somewhere else, add
+   a repository variable named `SKI_BOT_CONTACT_URL` under **Settings → Secrets and variables
+   → Actions → Variables**; it overrides the default. It is a variable rather than a secret:
+   it is a public URL, and masking it in logs would make debugging harder for no benefit.
+
+3. **Point it at a page that exists** and explains what the bot does. If you deploy this guide
+   somewhere else, change it in both places above — the warning only fires when the value is
+   missing entirely, not when it is stale.
 
 Check what the tools will send:
 

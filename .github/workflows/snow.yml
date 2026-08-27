@@ -31,11 +31,13 @@ concurrency:
 
 # Every request to a resort's server carries a User-Agent naming this project
 # and pointing at this URL, so their ops team can identify the traffic and reach
-# us. Set it as a repository variable (Settings > Secrets and variables >
-# Actions > Variables) named SKI_BOT_CONTACT_URL. Unset, the bot advertises
-# example.invalid, which is not a real host - see tools/bot-identity.mjs.
+# us. It defaults to the live site's about page; override it with a repository
+# variable (Settings > Secrets and variables > Actions > Variables) named
+# SKI_BOT_CONTACT_URL if this guide is deployed somewhere else. The default is
+# spelled out here rather than left to tools/bot-identity.mjs so that a run
+# never advertises example.invalid to a resort's server.
 env:
-  SKI_BOT_CONTACT_URL: ${{ vars.SKI_BOT_CONTACT_URL }}
+  SKI_BOT_CONTACT_URL: ${{ vars.SKI_BOT_CONTACT_URL || 'https://new-england-ski-guide.netlify.app/about' }}
 
 jobs:
   fetch:

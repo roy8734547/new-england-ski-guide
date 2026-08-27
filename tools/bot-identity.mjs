@@ -11,11 +11,24 @@
  * That is why the contact URL is required configuration rather than a constant
  * somebody can forget to change. Set it before this repository goes public:
  *
- *     SKI_BOT_CONTACT_URL=https://your-site.example/about
+ *     SKI_BOT_CONTACT_URL=https://new-england-ski-guide.netlify.app/about
  *
- * Locally, put it in .env (gitignored; copy .env.example). In CI it is set in
- * the workflow's env block from a repository variable.
+ * Locally, put it in .env (gitignored; copy .env.example) - this module loads
+ * that file itself, because .env.example told people to copy it and nothing was
+ * reading it. In CI it is set in the workflow's env block, which carries the
+ * same URL as a literal default so a scheduled run cannot advertise a host that
+ * does not exist. A real environment variable always wins over .env.
  */
+
+// Path-relative, not cwd-relative: an adapter debugged from tools/ must get the
+// same identity as `npm run fetch:snow` from the repo root. Missing file, older
+// Node without loadEnvFile, unreadable file - all fall through to the warning
+// below rather than failing a fetch.
+try {
+  if (typeof process.loadEnvFile === 'function') {
+    process.loadEnvFile(new URL('../.env', import.meta.url));
+  }
+} catch { /* no .env: the placeholder warning covers it */ }
 
 export const BOT_NAME = 'NewEnglandSkiGuideBot';
 export const BOT_VERSION = '0.1';

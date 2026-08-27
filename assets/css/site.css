@@ -2281,15 +2281,18 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
 }
 .numbered li b { color: var(--text); font-weight: 650; }
 
+/* Amber while the address was still a placeholder; the accent now that it is a
+   real one. The box stays, because this is the line the bot's User-Agent points
+   every resort's server at and it should be the easiest thing on the page to
+   find. */
 .contact-block {
   border: 1px solid var(--border-strong);
-  border-left: 3px solid var(--pass-other);
+  border-left: 3px solid var(--accent);
   border-radius: var(--radius);
   padding: 0.75rem 0.9rem;
   background: var(--bg-inset);
   max-width: var(--measure);
 }
-.contact-placeholder { color: var(--pass-other); font-weight: 550; }
 
 /* --- 404 ------------------------------------------------------------------ */
 

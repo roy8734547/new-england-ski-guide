@@ -1,12 +1,27 @@
 # HANDOFF.md — everything that needs you, not me
 
-Nothing in this file has been done. Each item was declined under AUTORUN.md policy rule 3:
-anything touching accounts, money, publishing, third-party services, or large binary
-installs is prepared here and left for you to run.
+Each item was declined under AUTORUN.md policy rule 3: anything touching accounts, money,
+publishing, third-party services, or large binary installs is prepared here and left for you
+to run.
+
+**Items 1 and 5 are now done** — the site is live at
+<https://new-england-ski-guide.netlify.app> and both were completed against that address.
+Items 2 and 3 were evidently done by you (the `origin` remote exists and the site is
+deployed); their instructions are left in place as a record. Item 4, Playwright, is still
+open — the `sunday-river` adapter fails soft without it.
 
 ---
 
-## 1. Set the bot contact URL — do this before anything is published
+## 1. ~~Set the bot contact URL~~ — DONE
+
+The contact URL is `https://new-england-ski-guide.netlify.app/about`. It is the value in
+`.env.example`, and it is a literal default in the workflow's `env:` block, so a scheduled
+run cannot advertise a host that does not exist. `tools/bot-identity.mjs` now loads `.env`
+itself, so copying `.env.example` to `.env` is all a local run needs — the repository
+variable below is only needed to point a deployment somewhere else.
+
+<details><summary>Original item</summary>
+
 
 Every request the snow fetcher makes to a resort's server carries a User-Agent naming this
 project and pointing at a contact page. It currently points at `https://example.invalid/about`,
@@ -32,6 +47,8 @@ Verify with:
 node tools/report-broken-adapters.mjs --human
 ```
 The first line prints the exact User-Agent that will be sent.
+
+</details>
 
 ---
 
@@ -114,7 +131,16 @@ adapter development.
 
 ---
 
-## 5. Put a real contact address on about.html — blocks publishing
+## 5. ~~Put a real contact address on about.html~~ — DONE
+
+`about.html` now publishes an address in the Corrections section, alongside a paragraph
+naming `NewEnglandSkiGuideBot`, stating that it honours `robots.txt` and contacts no host
+more than once every two hours, and inviting anyone at a resort to write about that traffic.
+The amber placeholder styling is gone; the box keeps the accent border because the bot's
+User-Agent points every resort's server at that line.
+
+<details><summary>Original item</summary>
+
 
 `about.html` now exists and is the page `SKI_BOT_CONTACT_URL` should point at (item 1).
 Its **Corrections** section deliberately ships with a placeholder rather than an address,
@@ -143,3 +169,5 @@ It renders in a bordered amber box until you do, so it is not something you can 
 live page. Nothing else on the site depends on it, but the fetcher's User-Agent points every
 resort's server at this page, and a contact page with no contact on it defeats the point of
 identifying the bot at all.
+
+</details>
