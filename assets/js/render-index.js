@@ -67,9 +67,21 @@ const state = {
   nightOnly: false,
   sortBy: 'verticalDrop',
   sortDir: 'desc',
-  view: 'table',
+  /**
+   * null means "let the viewport decide" - the stylesheet shows cards below
+   * 900px and the table above, and nothing here overrides it. A string is an
+   * explicit choice made by the toggle, restored from storage, or carried in
+   * ?view=; it goes on <html data-view> and the same stylesheet obeys it.
+   */
+  view: null,
   selected: new Set(),
 };
+
+const VIEW_KEY = 'ne-ski-view';
+const PHONE = '(max-width: 899px)';
+
+/** What is actually on screen right now, explicit choice or media query. */
+const effectiveView = () => state.view ?? (matchMedia(PHONE).matches ? 'cards' : 'table');
 
 let resorts = [];
 /** slug -> {status:'ok', data} | {status:'error'}; filled after first paint. */
@@ -258,8 +270,47 @@ function toggleSelected(slug) {
 
 // --- cards (kept: the table is primary, not exclusive) ----------------------
 
+/**
+ * Whatever the table is sorted by, shown on the card when the card does not
+ * already show it. Ordering 45 cards by a number none of them displays is the
+ * kind of thing that looks fine on a desktop next to the table and is baffling
+ * on a phone, where the cards are all there is.
+ */
+const CARD_STATS = new Set(['name', 'verticalDrop', 'skiableAcres', 'trailCount', 'annualSnowfallAvg']);
+
+const SORT_NOTE = {
+  town: (r) => r.town ?? null,
+  liftCount: (r) => (r.liftCount === null ? null : fmt(r.liftCount)),
+  snow7d: (r) => { const v = snow7d(r.slug); return v === null ? null : `${v.toFixed(1)}"`; },
+  seasonPassAdult: (r) => (r.seasonPassAdult === null ? null : `$${fmt(r.seasonPassAdult)}`),
+  advanceTypical: (r) => (r.advanceTypical === null ? null : `$${fmt(r.advanceTypical)}`),
+  mogulPresence: (r) => r.mogulPresence ?? null,
+};
+
+function sortNote(r) {
+  const format = CARD_STATS.has(state.sortBy) ? null : SORT_NOTE[state.sortBy];
+  if (!format) return null;
+  // The label comes off the sort control itself, so the card cannot end up
+  // naming the figure differently from the menu that asked for it.
+  const label = qs('#sort-by')?.selectedOptions?.[0]?.textContent?.trim() ?? '';
+  const value = format(r);
+  return el('p', { class: 'card__sortnote' },
+    el('span', {}, label),
+    el('b', { class: value === null ? 'is-unknown' : 'num' }, value ?? '—'));
+}
+
 function card(r) {
-  return el('li', { class: 'card' },
+  const picked = state.selected.has(r.slug);
+  return el('li', { class: `card${picked ? ' is-selected' : ''}` },
+    // Above the card's full-bleed link overlay, or it would never receive a tap.
+    el('label', { class: 'card__pick' },
+      el('input', {
+        type: 'checkbox',
+        class: 'row-check',
+        checked: picked,
+        'aria-label': `Select ${r.name} for comparison`,
+        dataset: { slug: r.slug },
+      })),
     el('h2', { class: 'card__name' }, el('a', { href: detailHref(r.slug) }, r.name)),
     el('p', { class: 'card__where' },
       [r.town, STATE_NAMES[r.state] ?? r.state].filter(Boolean).join(', '),
@@ -275,6 +326,7 @@ function card(r) {
       el('div', {}, el('dt', {}, 'Snowfall'),
         el('dd', { class: r.annualSnowfallAvg === null ? 'is-unknown' : '' },
           r.annualSnowfallAvg === null ? '—' : `${fmt(r.annualSnowfallAvg)}"`))),
+    sortNote(r),
     r.bestFor?.length
       ? el('ul', { class: 'tags' }, r.bestFor.slice(0, 3).map((t) => el('li', { class: 'tag' }, t)))
       : null,
@@ -291,10 +343,11 @@ function render() {
   fill(qs('#resort-table tbody'), rows.map((r) => bodyRow(r, peak)));
   fill(qs('#resort-cards'), rows.map(card));
 
+  // Which view shows is the stylesheet's business; the only thing JS decides
+  // here is whether there is anything at all to show.
   const none = rows.length === 0;
   qs('#empty').hidden = !none;
-  qs('#resort-table-wrap').hidden = none || state.view !== 'table';
-  qs('#resort-cards').hidden = none || state.view !== 'cards';
+  qs('#view').classList.toggle('is-empty', none);
 
   qs('#result-count').textContent = rows.length === resorts.length
     ? `${resorts.length} mountains`
@@ -418,7 +471,7 @@ const TOPBAR_ACTIONS = [
     id: 'toggle-view',
     label: 'Cards',
     icon: 'M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM9 9h5v5H9z',
-    onClick: () => setView(state.view === 'table' ? 'cards' : 'table'),
+    onClick: () => setView(effectiveView() === 'table' ? 'cards' : 'table'),
   },
   { separator: true },
   {
@@ -434,13 +487,24 @@ const TOPBAR_ACTIONS = [
 
 function setView(view) {
   state.view = view;
+  document.documentElement.setAttribute('data-view', view);
+  try { localStorage.setItem(VIEW_KEY, view); } catch { /* private window */ }
+  syncViewButton();
+  writeUrl();
+}
+
+/**
+ * The button says what it will switch you to, so it has to track what is
+ * currently showing - including when that changed because the window was
+ * resized past 900px rather than because anybody pressed anything.
+ */
+function syncViewButton() {
   const btn = qs('#toggle-view');
-  if (btn) {
-    const label = view === 'table' ? 'Cards' : 'Table';
-    btn.querySelector('.tb-btn__text').textContent = label;
-    btn.setAttribute('aria-label', label);
-  }
-  render();
+  if (!btn) return;
+  const label = effectiveView() === 'table' ? 'Cards' : 'Table';
+  btn.querySelector('.tb-btn__text').textContent = label;
+  btn.setAttribute('aria-label', `Switch to ${label.toLowerCase()} view`);
+  btn.title = `Switch to ${label.toLowerCase()} view`;
 }
 
 function toggleChip(set, value) {
@@ -524,11 +588,15 @@ function wireControls() {
     render();
   });
 
-  // Delegated so it survives every re-render of the tbody.
-  qs('#resort-table').addEventListener('change', (e) => {
-    const box = e.target.closest('input.row-check[data-slug]');
-    if (box) toggleSelected(box.dataset.slug);
-  });
+  // Delegated so it survives every re-render of the tbody - and of the card
+  // grid, which is the same selection by another shape.
+  for (const id of ['#resort-table', '#resort-cards']) {
+    qs(id).addEventListener('change', (e) => {
+      const box = e.target.closest('input.row-check[data-slug]');
+      if (box) toggleSelected(box.dataset.slug);
+    });
+  }
+
 }
 
 /**
@@ -559,7 +627,8 @@ function readParams(p) {
   if (p.get('night') === '1') state.nightOnly = true;
   if (p.has('sort')) state.sortBy = p.get('sort');
   if (p.has('dir')) state.sortDir = p.get('dir') === 'asc' ? 'asc' : 'desc';
-  if (p.has('view')) state.view = p.get('view') === 'cards' ? 'cards' : 'table';
+  const view = p.get('view');
+  if (view === 'cards' || view === 'table') state.view = view;
   p.get('sel')?.split(',').filter(Boolean).slice(0, MAX_COMPARE)
     .forEach((s) => state.selected.add(s));
 }
@@ -574,7 +643,7 @@ function writeUrl() {
   if (state.nightOnly) p.set('night', '1');
   if (state.sortBy !== 'verticalDrop') p.set('sort', state.sortBy);
   if (state.sortDir !== 'desc') p.set('dir', state.sortDir);
-  if (state.view !== 'table') p.set('view', state.view);
+  if (state.view) p.set('view', state.view);
   if (state.selected.size) p.set('sel', [...state.selected].join(','));
   const query = p.toString();
   history.replaceState(null, '', query ? `?${query}` : location.pathname);
@@ -606,6 +675,29 @@ async function loadForecasts() {
 
 // --- boot -------------------------------------------------------------------
 
+/**
+ * Picks up whatever the inline <head> script already decided. That script has
+ * run before the stylesheet painted, so <html data-view> is the single source
+ * of truth for an explicit preference and reading it back here cannot disagree
+ * with what is on screen. ?view= in the URL beats storage, and readParams has
+ * already applied it, so it only remains to write it back.
+ */
+function restoreView() {
+  if (state.view) {
+    document.documentElement.setAttribute('data-view', state.view);
+    return;
+  }
+  const attr = document.documentElement.getAttribute('data-view');
+  if (attr === 'cards' || attr === 'table') state.view = attr;
+
+  // Crossing 900px changes what is on screen without anybody pressing
+  // anything, so the toggle's label has to follow. Only relevant while the
+  // view is automatic; an explicit choice does not care about the viewport.
+  matchMedia(PHONE).addEventListener('change', () => {
+    if (!state.view) syncViewButton();
+  });
+}
+
 async function main() {
   await mountShell({
     page: 'resorts',
@@ -622,9 +714,11 @@ async function main() {
   }
 
   readParams(new URLSearchParams(location.search));
+  restoreView();
   buildChips();
   wireControls();
   syncControls();
+  syncViewButton();
   qs('#toggle-filters')?.setAttribute('aria-expanded', 'false');
   if (isFiltered()) qs('#more-filters').hidden = false;
   render();

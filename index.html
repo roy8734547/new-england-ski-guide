@@ -40,6 +40,22 @@
 <meta name="twitter:image" content="assets/og-card.png">
 <meta name="twitter:title" content="New England Ski Guide">
 <meta name="twitter:description" content="Every New England ski area from roughly 650 feet of vertical up, with the numbers side by side and an honest opinion about each one.">
+<!-- Which view index.html opens in. The default is a media query in the
+     stylesheet - cards below 900px, the table above - so the very first paint is
+     already correct and no script flips anything afterwards. A visitor who has
+     chosen a view explicitly gets it as data-view on <html>, applied here,
+     before the stylesheet paints, so a returning phone user who prefers the
+     table never sees cards first. localStorage throws in a private window and
+     when site data is blocked; the catch leaves the media query in charge. -->
+<script>
+  (function () {
+    try {
+      var v = new URLSearchParams(location.search).get('view');
+      if (v !== 'cards' && v !== 'table') v = localStorage.getItem('ne-ski-view');
+      if (v === 'cards' || v === 'table') document.documentElement.setAttribute('data-view', v);
+    } catch (e) { /* nothing stored, or storage refused: the media query decides */ }
+  })();
+</script>
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -116,7 +132,10 @@
       </table>
     </div>
 
-    <ul class="cards" id="resort-cards" hidden></ul>
+    <!-- No hidden attribute: which of these two the visitor sees is decided by
+         the stylesheet, and an attribute here would outrank it. Empty until the
+         data arrives, and .cards:empty is not displayed. -->
+    <ul class="cards" id="resort-cards"></ul>
 
     <p class="empty" id="empty" hidden>No mountains match those filters.</p>
     <p id="status" role="status">Loading resorts…</p>
