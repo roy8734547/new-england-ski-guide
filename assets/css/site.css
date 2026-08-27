@@ -313,17 +313,31 @@ button, input, select { font: inherit; color: inherit; }
   display: grid;
   grid-template-columns: var(--sidebar-w) 1fr;
 }
-.app[data-layout="app"] { height: 100dvh; overflow: hidden; }
+/* 100vh first, then 100dvh for anything that understands it.
+
+   On iOS Safari 100vh is the height the viewport has when the URL bar is
+   hidden, which is taller than what you can actually see while it is showing -
+   so a fixed-height grid puts its last row, the status bar, below the fold and
+   the bottom of every scrolling pane with it. dvh is the visible height and it
+   tracks the bar sliding away. The vh line stays for iOS before 15.4, where it
+   is wrong in a way that at least fills the screen. */
+.app[data-layout="app"] { height: 100vh; height: 100dvh; overflow: hidden; }
 
 .app > main {
   min-width: 0;
   display: grid;
-  grid-template-rows: var(--topbar-h) auto 1fr auto;
+  /* The top row carries the notch inset as height, not just as padding: the row
+     is a fixed track, so padding inside it would squeeze the breadcrumb and the
+     buttons into whatever was left rather than pushing them clear. The status
+     bar's row is auto, so its own safe-area padding grows it on its own. */
+  grid-template-rows: calc(var(--topbar-h) + env(safe-area-inset-top, 0px)) auto 1fr auto;
 }
 .app[data-layout="app"] > main { overflow: hidden; }
 /* No fixed height on a document page, so 1fr and auto behave identically and
    the content column simply grows. */
-.app[data-layout="document"] > main { grid-template-rows: var(--topbar-h) auto auto auto; }
+.app[data-layout="document"] > main {
+  grid-template-rows: calc(var(--topbar-h) + env(safe-area-inset-top, 0px)) auto auto auto;
+}
 
 /* Rows are assigned explicitly rather than by source order. A page with no
    toolbar would otherwise drop its content into the toolbar's row and leave the
@@ -341,10 +355,13 @@ button, input, select { font: inherit; color: inherit; }
   display: flex;
   flex-direction: column;
   padding: 12px 8px;
+  padding-top: max(12px, env(safe-area-inset-top, 0px));
+  padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  padding-left: max(8px, env(safe-area-inset-left, 0px));
   overflow-y: auto;
   overscroll-behavior: contain;
 }
-.app[data-layout="document"] .sidebar { height: 100dvh; position: sticky; top: 0; }
+.app[data-layout="document"] .sidebar { height: 100vh; height: 100dvh; position: sticky; top: 0; }
 
 .sidebar__head {
   display: flex;
@@ -457,11 +474,22 @@ button, input, select { font: inherit; color: inherit; }
 
 /* --- top bar --- */
 
+/* --- safe areas ------------------------------------------------------------
+
+   With viewport-fit=cover the page runs edge to edge, under the notch and under
+   the home indicator, and it is on us to keep content out of both. max() rather
+   than a bare env(): on every device without a cutout the inset is 0 and the
+   normal padding has to survive it.
+   --------------------------------------------------------------------------- */
+
 .topbar {
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   padding: 0 16px;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
   gap: 12px;
   min-width: 0;
   background: var(--bg);
@@ -530,6 +558,8 @@ a.crumb:hover { color: var(--text-primary); }
   display: flex;
   align-items: center;
   padding: 8px 16px;
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
   gap: 8px;
   flex-wrap: wrap;
   background: var(--bg);
@@ -598,7 +628,13 @@ a.crumb:hover { color: var(--text-primary); }
 
 .view { min-width: 0; }
 .app[data-layout="app"] .view { overflow: auto; overscroll-behavior: contain; }
-.app[data-layout="document"] .view { padding-bottom: 4rem; }
+.app[data-layout="document"] .view { padding-bottom: max(4rem, env(safe-area-inset-bottom, 0px)); }
+
+/* Landscape on a notched phone: the sidebar is a drawer at this width, so the
+   panes start at the screen edge and the cutout is over them. */
+@media (max-width: 899px) {
+  .app > main > .view { padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px); }
+}
 
 .view::-webkit-scrollbar { width: 8px; height: 8px; }
 .view::-webkit-scrollbar-track { background: transparent; }
@@ -611,6 +647,9 @@ a.crumb:hover { color: var(--text-primary); }
   display: flex;
   align-items: center;
   padding: 0 16px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
   gap: 12px;
   font-size: 12px;
   color: var(--text-tertiary);
