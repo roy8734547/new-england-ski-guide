@@ -73,7 +73,11 @@
   </div>
 
   <div class="view" id="view">
-    <div class="table-wrap">
+    <!-- Two shapes of the same rows. Which one shows is decided by a media query
+         in the stylesheet — the thirteen-column table above 900px, the stacked
+         list below it — and both are always rendered, so nothing has to run
+         after first paint to correct the choice. -->
+    <div class="table-wrap" id="conditions-table-wrap">
       <table class="data-table" id="conditions-table">
         <caption class="visually-hidden">
           Current summit conditions and the seven-day snowfall forecast for every ski area.
@@ -82,6 +86,9 @@
         <tbody></tbody>
       </table>
     </div>
+
+    <ul class="wx-list" id="conditions-list"></ul>
+
     <p class="note" id="failure-note" hidden></p>
     <p id="status" role="status">Loading resorts…</p>
   </div>

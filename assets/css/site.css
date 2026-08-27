@@ -1091,7 +1091,8 @@ input[type="range"] {
   flex-direction: column;
 }
 .app[data-layout="app"] .view > .table-wrap,
-.app[data-layout="app"] .view > .cards {
+.app[data-layout="app"] .view > .cards,
+.app[data-layout="app"] .view > .wx-list {
   flex: 1 1 auto;
   min-height: 0;
   overflow: auto;
@@ -1099,6 +1100,102 @@ input[type="range"] {
 }
 .app[data-layout="app"] .view > .table-wrap[hidden],
 .app[data-layout="app"] .view > .cards[hidden] { display: none; }
+
+/* --- conditions.html on a phone ---------------------------------------------
+
+   The table is thirteen columns and no amount of horizontal scrolling makes
+   that usable one-handed, so below 900px it is replaced by a stacked list.
+   Both are rendered; the media query picks. Same reasoning as index.html
+   below: the choice is CSS, so first paint is already right.
+   --------------------------------------------------------------------------- */
+
+.wx-list { list-style: none; }
+@media (max-width: 899px) { #conditions-table-wrap { display: none; } }
+@media (min-width: 900px) { .wx-list { display: none; } }
+
+.wx-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 2px 14px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.wx-card:last-child { border-bottom: 0; }
+.wx-card.is-snowing { background: var(--accent-soft); }
+.wx-card:has(.wx-card__name:focus-visible) { outline: 2px solid var(--focus); outline-offset: -2px; }
+
+.wx-card__head { grid-column: 1; display: flex; align-items: center; gap: 8px; min-width: 0; }
+.wx-card__name {
+  font-weight: 650;
+  /* 16px, 14px and 13px down the card. The table's 13px is fine at a desk and
+     too small held at arm's length in a lift queue, and this list only ever
+     renders on a phone, so it sets its own scale rather than inheriting the
+     table's. */
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+/* The card is the tap target; the report link below sits above this overlay. */
+.wx-card__name::after { content: ""; position: absolute; inset: 0; }
+
+.wx-card__meta {
+  grid-column: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-top: 2px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+.wx-card__cond { color: var(--text-secondary); }
+
+/* The 7-day total is the figure the page sorts by, so it is the one thing on
+   the card that reads at arm's length. */
+.wx-card__snow {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: grid;
+  justify-items: end;
+  gap: 1px;
+}
+.wx-card__total { font-size: 1.375rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+/* The shared sparkline carries its own total pill, which is the right thing in
+   a table cell and a duplicate here - the card already says the number twice
+   the size. Bars only. */
+.wx-card__snow .snow-pill { display: none; }
+.wx-card__snow .snowcell { display: block; }
+.wx-card__snow .spark { width: 68px; height: 22px; justify-content: flex-end; }
+.wx-card__snow .sp { flex: 1 1 auto; }
+.wx-card__snow .spark--flat { height: 22px; }
+.wx-card__total.is-snowy { color: var(--accent); }
+.wx-card__label { font-size: 0.625rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-faint); font-weight: 650; }
+
+.wx-card__foot {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  margin-top: 4px;
+  font-size: 0.8125rem;
+  color: var(--text-tertiary);
+}
+.wx-card__foot b { color: var(--text-secondary); font-weight: 650; font-variant-numeric: tabular-nums; }
+.wx-card__report {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding-inline: 2px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.wx-card.is-degraded .wx-card__head { opacity: 0.85; }
 
 /* --- index.html: which view is showing --------------------------------------
 
@@ -1132,7 +1229,9 @@ input[type="range"] {
 .app[data-layout="app"] .view:has(> .table-wrap) > :is(p, .empty) { flex: 0 0 auto; }
 
 .app[data-layout="app"] .view > .table-wrap::-webkit-scrollbar,
+.app[data-layout="app"] .view > .wx-list::-webkit-scrollbar,
 .app[data-layout="app"] .view > .cards::-webkit-scrollbar { width: 8px; height: 8px; }
+.app[data-layout="app"] .view > .wx-list::-webkit-scrollbar-thumb,
 .app[data-layout="app"] .view > .table-wrap::-webkit-scrollbar-thumb,
 .app[data-layout="app"] .view > .cards::-webkit-scrollbar-thumb {
   background: var(--border-strong);

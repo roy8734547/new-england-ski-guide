@@ -175,6 +175,59 @@ function reportedCell(value, report) {
   }, inches(value));
 }
 
+// --- phone list ---------------------------------------------------------------
+
+/**
+ * The same rows, shaped for a lift line.
+ *
+ * Thirteen columns cannot be made to work on a 375px screen by scrolling them
+ * better, so below 900px the table is replaced rather than squeezed. What
+ * survives is what the page is for: who is getting the most snow this week, how
+ * much is coming in the next day, and what it is like up there right now.
+ * Everything else - wind gusts, the resort's own reported base, the link to its
+ * report - is on the second line or a tap away on the resort page.
+ *
+ * The whole card is a link to the mountain, with the report link raised above
+ * that overlay so it stays its own target.
+ */
+function phoneCard(model, peak) {
+  const { r, report } = model;
+  const href = `resort.html?r=${encodeURIComponent(r.slug)}`;
+
+  const head = el('p', { class: 'wx-card__head' },
+    el('span', { class: 'tick-icon', 'aria-hidden': 'true' }, r.state),
+    el('a', { class: 'wx-card__name', href }, r.name));
+
+  const reportLink = r.officialSnowReport
+    ? el('a', { class: 'wx-card__report', href: r.officialSnowReport, rel: 'noopener' }, 'Report ↗')
+    : null;
+
+  if (!model.ok) {
+    return el('li', { class: 'wx-card is-degraded' },
+      head,
+      el('p', { class: 'wx-card__meta is-unknown' }, 'Weather unavailable'),
+      el('p', { class: 'wx-card__foot' },
+        el('span', {}, 'Reported 24h ', el('b', {}, inches(model.reportedNew24h))),
+        el('span', {}, 'Base ', el('b', {}, inches(model.baseDepth))),
+        reportLink));
+  }
+
+  return el('li', { class: `wx-card${isSnowing(model.code) ? ' is-snowing' : ''}` },
+    head,
+    el('p', { class: 'wx-card__meta' },
+      el('span', { class: 'wx-card__cond' }, conditionLabel(model.code)),
+      model.temp === null ? null : el('span', {}, `${Math.round(model.temp)}°`),
+      model.wind === null ? null : el('span', {}, `wind ${Math.round(model.wind)}`)),
+    el('div', { class: 'wx-card__snow' },
+      el('b', { class: `wx-card__total${model.snow7d >= 1 ? ' is-snowy' : ''}` }, inches(model.snow7d)),
+      el('span', { class: 'wx-card__label' }, '7-day'),
+      sparkline(forecasts.get(r.slug), peak, model.snow7d)),
+    el('p', { class: 'wx-card__foot' },
+      el('span', {}, 'Next 24h ', el('b', {}, inches(model.snow24h))),
+      model.baseDepth === null ? null : el('span', {}, 'Base ', el('b', {}, inches(model.baseDepth))),
+      reportLink));
+}
+
 // --- table ------------------------------------------------------------------
 
 function headerRow() {
@@ -226,6 +279,7 @@ function render() {
 
   fill(qs('#conditions-table thead'), headerRow());
   fill(qs('#conditions-table tbody'), ordered.map((m) => row(m, peak)));
+  fill(qs('#conditions-list'), ordered.map((m) => phoneCard(m, peak)));
 
   const ok = models.filter((m) => m.ok);
   const failed = models.length - ok.length;
