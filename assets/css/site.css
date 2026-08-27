@@ -1460,9 +1460,14 @@ table.compare th[aria-sort="descending"] button::after { content: "↓"; opacity
   font-weight: 550;
 }
 
+/* Flex rather than an auto-fit grid. The strip holds five cards on about.html
+   and up to six on a resort page, and a fixed track count leaves empty tracks
+   whenever the count does not divide - at 587px the old 8.5rem grid fitted four
+   of the five and left a blank panel three cards wide. Wrapped flex items grow
+   into whatever room the row has, so the last row fills instead of gapping. */
 .statbar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -1471,9 +1476,15 @@ table.compare th[aria-sort="descending"] button::after { content: "↓"; opacity
   margin-top: 1.5rem;
 }
 .statbar > div {
+  flex: 1 1 7rem;
+  min-width: 0;
   background: var(--bg-raised);
   padding: 0.9rem 1rem;
 }
+/* Two across on a phone, not three: at 7rem a 343px strip fits three 113px
+   cards and every label wraps to two lines. The wider basis also keeps the
+   mobile row count where it was, which is what CLS is measured against. */
+@media (max-width: 559px) { .statbar > div { flex-basis: 8.5rem; } }
 .statbar dt { font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); font-weight: 650; }
 .statbar dd {
   margin: 0.25rem 0 0;
@@ -1801,7 +1812,10 @@ table.data td:last-child { width: 100%; }
 }
 .linkgrid a:hover { border-color: var(--accent); }
 
-.sources { list-style: none; display: grid; gap: 0.5rem; font-size: 0.8125rem; }
+/* Capped like every other block of running text: a citation line set across
+   1,120px is 160 characters, which is twice a comfortable measure and reads
+   worse than the sources it lists. */
+.sources { list-style: none; display: grid; gap: 0.5rem; font-size: 0.8125rem; max-width: var(--measure); }
 .sources li { color: var(--text-muted); }
 .provenance {
   margin-top: 1.25rem;
@@ -2098,9 +2112,15 @@ table.data td:last-child { width: 100%; }
   align-items: end;
 }
 
-#numbers, #editorial { margin-block: 2rem; }
-#numbers > h2, #editorial > h2 { font-size: 1.25rem; }
-#numbers > .note, #editorial > .note { margin-top: 0.35rem; max-width: var(--measure); }
+/* Typed selectors, because these two ids belong to compare.html's sections and
+   about.html happens to give a heading id="editorial". A bare #editorial gave
+   that heading compare's 2rem block margins, its 1.25rem size and, further down,
+   16px of inline padding - one heading out of eight sitting off the page's
+   rhythm for no visible reason. */
+section#numbers, section#editorial { margin-block: 2rem; }
+section#numbers > h2, section#editorial > h2 { font-size: 1.25rem; }
+section#numbers > .note,
+section#editorial > .note { margin-top: 0.35rem; max-width: var(--measure); }
 
 /* The vs table is at most five columns, so it does not need the index table's
    58rem floor — that would force a scrollbar on a two-way comparison. It gets
@@ -2245,6 +2265,9 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
 .prose p + p { margin-top: 0.8rem; }
 .prose p strong, .prose p b { color: var(--text); font-weight: 650; }
 .prose :is(ul, ol) { margin-top: 0.8rem; max-width: var(--measure); }
+/* A list is a paragraph-level block, so what follows it gets paragraph spacing.
+   The gap was invisible while .numbered was a thousand pixels tall. */
+.prose :is(ul, ol) + :is(p, .contact-block) { margin-top: 0.8rem; }
 .prose code {
   font-family: var(--font-mono);
   font-size: 0.875em;
@@ -2484,7 +2507,7 @@ table.compare--vs td .terrain-bar { min-width: 7rem; }
 }
 .toolbar__row--picker .field { gap: 0.25rem; }
 .toolbar__row--picker .label { font-size: 10px; }
-.app #numbers, .app #editorial { padding-inline: 16px; }
+.app section#numbers, .app section#editorial { padding-inline: 16px; }
 .app #numbers { margin-top: 16px; }
 .app #empty { padding: 3rem 16px; }
 
