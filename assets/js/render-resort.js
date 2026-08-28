@@ -22,6 +22,7 @@ import {
   applyCanonical, applyPageMeta, applyJsonLd, skiResortJsonLd, setNoIndex,
 } from './seo.js';
 import { mountShell, setBreadcrumb } from './shell.js';
+import { supportCard, supportLink, wireDismiss } from './support.js';
 
 const has = (v) => v !== null && v !== undefined && v !== '';
 const hasAny = (...vals) => vals.some(has);
@@ -678,7 +679,54 @@ function sourcesSection(r) {
     el('p', { class: 'provenance' },
       `Record last verified ${formatDate(verifiedOn)}`,
       lastEditedBy ? ` · edited by ${lastEditedBy}` : ''),
-    el('a', { class: 'backlink', href: 'index.html' }, '← All mountains'));
+    // This row is the page's footer. A document-layout page has no status bar -
+    // the fixed shell only puts one under the four data views - so the line
+    // under the sources is where a resort page's footer links go.
+    el('div', { class: 'record-foot' },
+      el('a', { class: 'backlink', href: 'index.html' }, '← All mountains'),
+      supportLink()));
+}
+
+// --- support ----------------------------------------------------------------
+
+/**
+ * The end-of-page card, after the last content section.
+ *
+ * Shorter than about.html's version of the same card, and dismissible: this one
+ * appears on 45 pages and somebody reading four of them in a row should be able
+ * to make it stop. The close button writes a flag that resort.html's inline head
+ * script reads on the next visit, before anything paints.
+ *
+ * `others` is the rest of the roster, from the generated manifest, so the
+ * sentence stays true when the roster changes. It falls back to a phrasing with
+ * no number in it rather than to a guess.
+ */
+function supportSection(r, others) {
+  const rest = Number.isFinite(others) && others > 0
+    ? `the other ${fmt(others)} mountains`
+    : 'the rest of the guide';
+  // One name on the roster ends in an s and "Bretton Woods's own site" reads
+  // like a typo. Newspaper style: a trailing s takes the apostrophe alone.
+  const name = r.identity.name;
+  const whose = /s$/i.test(name) ? `${name}'` : `${name}'s`;
+
+  return el('section', { class: 'section' },
+    el('div', { class: 'shell' },
+      supportCard({
+        title: 'Found this useful?',
+        titleTag: 'h2',
+        dismissible: true,
+        body: [
+          el('p', {},
+            'Every figure on this page was checked by hand against ',
+            whose,
+            ' own site, and the write-up is original — ',
+            el('a', { href: 'about.html#supporting' },
+              'no ads, no affiliate links, nothing sponsored'),
+            '. A coffee helps keep ', rest, ' current.'),
+        ],
+        note: 'One-off, from $5. No account needed.',
+      })));
 }
 
 /** "Source: … · verified 20 Aug 2026" for a factual group. */
@@ -693,7 +741,7 @@ function provenance(group) {
 
 // --- assemble ---------------------------------------------------------------
 
-function renderResort(r) {
+function renderResort(r, { others } = {}) {
   const ed = r.editorial;
 
   return [
@@ -742,6 +790,7 @@ function renderResort(r) {
     reviewsSection(r),
     linksSection(r),
     sourcesSection(r),
+    supportSection(r, others),
   ].filter(Boolean);
 }
 
@@ -890,9 +939,20 @@ async function main() {
   });
   applyJsonLd(skiResortJsonLd(r, { description: describe(r) }));
 
+  // The manifest is already cached - mountShell awaited it for the sidebar's
+  // counts - so this costs no request. A failure here only changes one clause
+  // of one sentence in the support card, so it is swallowed rather than shown.
+  let others;
+  try {
+    others = ((await getIndex()).resorts ?? []).length - 1;
+  } catch {
+    others = undefined;
+  }
+
   const article = document.getElementById('resort');
-  fill(article, renderResort(r));
+  fill(article, renderResort(r, { others }));
   article.hidden = false;
+  wireDismiss(article.querySelector('#support-card'));
   setStatus('');
 
   // The record renders first; the panels fill in afterwards. Neither a failed

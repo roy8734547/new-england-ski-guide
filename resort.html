@@ -40,6 +40,31 @@
 <meta name="twitter:image" content="assets/og-card.png">
 <meta name="twitter:title" content="Resort · New England Ski Guide">
 <meta name="twitter:description" content="Stats, passes, pricing and an honest opinion for a New England ski area.">
+<!-- Whether the support card at the foot of this page has been dismissed. This
+     is the same pattern index.html uses for the view preference, and it is here
+     for the same reason: the flag is read before the stylesheet paints and
+     written onto <html>, where a rule in site.css hides the card outright. The
+     alternative - letting the card paint and then removing it from a module -
+     takes a 200px block out of the page after first paint and shifts everything
+     under it, which is precisely the layout shift this site spent two sessions
+     getting rid of.
+
+     One script, not two: anything else this page needs to know before paint
+     belongs in this block rather than in a second one.
+
+     localStorage throws in a private window and when site data is blocked. The
+     catch leaves the attribute unset and the card shows, which is the correct
+     fallback in both directions - a visitor who has never made a choice sees it,
+     and a visitor whose choice could not be stored sees it again. -->
+<script>
+  (function () {
+    try {
+      if (localStorage.getItem('ne-ski-support') === 'dismissed') {
+        document.documentElement.setAttribute('data-support', 'dismissed');
+      }
+    } catch (e) { /* nothing stored, or storage refused: the card shows */ }
+  })();
+</script>
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
