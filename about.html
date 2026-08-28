@@ -94,6 +94,55 @@
         </p>
       </section>
 
+      <!-- The support section. Static markup on purpose: this page paints its own
+           content out of the HTML, and a card injected into the middle of it by a
+           module would push everything below down the screen after first paint.
+           resort.html has the opposite problem and gets the same card built by
+           assets/js/support.js; the presentation is defined once, in site.css.
+
+           The link is an <a href> and nothing else. No Buy Me a Coffee widget, no
+           button script, no iframe, no pixel - the guide loads no third-party
+           anything except Leaflet, on the map page, and it stays that way. -->
+      <section aria-labelledby="supporting">
+        <h2 id="supporting">Supporting the guide</h2>
+
+        <div class="support-card">
+          <h3 class="support-card__title">Free, no ads, nothing sponsored</h3>
+          <p>
+            Nobody pays to appear in this guide. There are no advertisements, no affiliate
+            links and no sponsored placements &mdash; nothing on any page here earns anything
+            if you click it. In a category where most listings are either a resort's own
+            marketing or an aggregator with a booking link stapled to the side, that is the
+            whole difference, and it is the real argument for supporting this one.
+          </p>
+          <p>
+            Hosting costs nothing. <strong>What it costs is time.</strong> Every one of the
+            <span data-stat="count">45</span> mountains here was researched by hand against
+            the resort's own site, and every number on it carries the source it came from and
+            the date somebody checked it.
+          </p>
+          <p>
+            The work is seasonal and it is never finished. Each <b>December</b> the snow
+            report adapters have to be re-verified, because resorts redesign their pages when
+            the season opens and a parser written in August quietly stops matching. Each
+            <b>January</b> every mogul run is checked against live grooming reports, which are
+            the only objective record of which trails actually get left ungroomed.
+          </p>
+          <p>
+            If the guide has been useful, a coffee is a way of saying so. Nothing on this site
+            changes if you don't: no paywall, no gated figures, no account, ever.
+          </p>
+
+          <div class="support-card__cta">
+            <a class="bmc-btn"
+               href="https://buymeacoffee.com/roy8734547a"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Buy me a coffee (opens in a new tab)">Buy me a coffee <span class="ext" aria-hidden="true">&#8599;</span></a>
+            <p class="support-card__note">One-off, from $5. No account needed.</p>
+          </div>
+        </div>
+      </section>
+
       <section aria-labelledby="sources">
         <h2 id="sources">Where the numbers come from</h2>
         <p>Sources are used in this order, and every resort record says which one supplied each figure:</p>

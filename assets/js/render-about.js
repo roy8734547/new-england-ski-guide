@@ -12,12 +12,20 @@
 
 import { getIndex } from './data.js';
 import { applyCanonical } from './seo.js';
-import { fmt, formatDate, qs, STATE_NAMES } from './util.js';
+import { fmt, formatDate, qs, qsa, STATE_NAMES } from './util.js';
 import { mountShell } from './shell.js';
+import { supportAction } from './support.js';
 
+/**
+ * Every match, not the first. The mountain count appears twice on this page now
+ * — in the stat bar and in the sentence about what the guide costs to make —
+ * and a hand-typed second copy is exactly the fact-with-no-source this project
+ * does not allow. The one in the markup is a fallback that reads correctly if
+ * this never runs.
+ */
 function set(name, value) {
-  const node = qs(`[data-stat="${name}"]`);
-  if (node && value !== null && value !== undefined) node.textContent = value;
+  if (value === null || value === undefined) return;
+  for (const node of qsa(`[data-stat="${name}"]`)) node.textContent = value;
 }
 
 async function main() {
@@ -26,7 +34,11 @@ async function main() {
     breadcrumb: ['Guide', 'About'],
     layout: 'document',
     ownHeading: true,
-    actions: [{ label: 'All resorts', href: 'index.html', primary: true }],
+    // The one action on this page. "All resorts" came off the bar rather than
+    // sitting beside a second coloured button: it is the first item in the
+    // sidebar on every page, including this one, and the bar reads better with
+    // one thing on it.
+    actions: [supportAction()],
   });
 
   const index = await getIndex();
