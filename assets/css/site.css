@@ -147,6 +147,27 @@
 
   --shadow-card: 0 1px 2px rgba(26, 26, 24, 0.05), 0 4px 12px rgba(26, 26, 24, 0.04);
   --shadow-pop: 0 4px 16px rgba(26, 26, 24, 0.12), 0 1px 3px rgba(26, 26, 24, 0.08);
+
+  /* Buy Me a Coffee. The yellow is one value in both themes - it is a mark, and
+     dimming it for dark reads as disabled. What changes is what it sits against.
+
+       --bmc       the button fill. Near-black ink on it is ~14:1 either way.
+       --bmc-edge  the button's boundary and the card's left rule. On white the
+                   fill alone is 1.3:1 against the page, failing 1.4.11, so the
+                   edge is what carries the 3:1 a component boundary needs.
+       --bmc-ink   coffee-coloured *text* on the page ground. Yellow ink on white
+                   is 1.3:1, so light gets a deep gold at 5.1:1 instead. */
+  --bmc: #ffdd00;
+  --bmc-hover: #ffe94d;
+  --bmc-text: #14100a;
+  --bmc-edge: #a37d00;
+  --bmc-ink: #8a6a00;
+
+  /* The cup, as a mask, so the card title and the button share one definition
+     instead of two inline <svg>s. Same glyph and stroke as the sidebar's icons;
+     support.js keeps the path too, because shell.js builds icons as elements.
+     The stroke colour is irrelevant - a mask reads only the alpha channel. */
+  --icon-coffee: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 5.5h8v5a2.5 2.5 0 0 1-2.5 2.5H5a2.5 2.5 0 0 1-2.5-2.5zM10.5 6.5h1.25a1.75 1.75 0 0 1 0 3.5H10.5M5 1.75v1.5M8 1.75v1.5M2 14.75h9'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -207,6 +228,12 @@
 
     --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 0, 0, 0.35);
     --shadow-pop: 0 4px 18px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.45);
+
+    /* --bmc and --bmc-text do not move: the mark is the mark. On this ground the
+       fill is already 13:1, so the edge can be the brand yellow itself and the
+       ink can be too. */
+    --bmc-edge: #ffdd00;
+    --bmc-ink: #ffdd00;
   }
 }
 
@@ -2955,4 +2982,201 @@ table.data-table tbody tr.is-selected td.col-resort { background: var(--bg-selec
     font-weight: 700;
   }
   .view strong { font-weight: 700; }
+}
+
+/* --- support: one card, one button -----------------------------------------
+
+   Everything here is a plain <a href>, styled by this stylesheet. There is no
+   Buy Me a Coffee widget, button script, iframe or pixel in this repo: the
+   no-CDN rule is the smaller half of it, the larger being that no page but the
+   map makes a third-party request at all, and a donation button is a poor thing
+   to spend that on.
+
+   Two instances, one definition. about.html writes the card as static markup
+   (it paints from HTML, and a card injected afterwards would push three
+   sections down the page); resort.html has support.js build the same structure
+   (its article comes from JSON, and static markup below it would move on every
+   load). Same class names either way.
+
+   Last in the file on purpose: .prose owns `p + p` on about.html, and the card
+   overrides it at equal specificity.
+   --------------------------------------------------------------------------- */
+
+.bmc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* The tap target on a phone, where this goes full width. */
+  min-height: 40px;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--bmc-edge);
+  border-radius: var(--radius);
+  background: var(--bmc);
+  color: var(--bmc-text);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 100ms;
+}
+.bmc-btn:hover { background: var(--bmc-hover); color: var(--bmc-text); }
+.bmc-btn::before {
+  content: "";
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--icon-coffee) center / contain no-repeat;
+  mask: var(--icon-coffee) center / contain no-repeat;
+}
+/* The site's outbound arrow: lighter than the label, but at full ink - an
+   arrow at 70% on this yellow is 2.9:1, and it is text. */
+.ext { font-weight: 500; }
+
+.support-card {
+  position: relative;
+  /* Wider than the measure its paragraphs keep, so it reads as a panel. */
+  max-width: min(100%, 46rem);
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--bmc-edge);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+}
+
+.support-card__title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  /* The right margin clears the close button; the other instance pays nothing. */
+  margin: 0 2.25rem 0.8rem 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+.support-card__title::before {
+  content: "";
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+  background: var(--bmc-ink);
+  -webkit-mask: var(--icon-coffee) center / contain no-repeat;
+  mask: var(--icon-coffee) center / contain no-repeat;
+}
+
+.support-card p {
+  max-width: var(--measure);
+  margin: 0 0 0.8rem;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+.support-card p + p { margin-top: 0; }
+.support-card p:last-child { margin-bottom: 0; }
+.support-card :is(strong, b) { color: var(--text); font-weight: 650; }
+
+.support-card__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.1rem;
+  margin-top: 1.25rem;
+}
+.support-card .support-card__note {
+  max-width: 34ch;
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--text-faint);
+}
+
+.support-card__close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 32px, past the 24px minimum, in a corner with nothing else tappable. */
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--text-faint);
+  cursor: pointer;
+}
+.support-card__close:hover { background: var(--bg-selected); color: var(--text-primary); }
+.support-card__close svg { width: 13px; height: 13px; }
+
+/* The dismissal. resort.html's inline head script reads the flag and writes
+   this attribute before anything paints, so a returning visitor who closed the
+   card never renders it - rather than painting a 200px block and having a
+   module take it away again. Nothing here waits on a fetch. */
+:root[data-support="dismissed"] .support-card--dismissible { display: none; }
+
+/* A resort page's footer. The fixed shell only puts a status bar under the four
+   data views, so this row under the sources is where its footer links go. */
+.record-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.5rem;
+}
+.record-foot .backlink { margin-top: 0; }
+
+.support-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--bmc-ink);
+}
+.support-link:hover { color: var(--bmc-ink); }
+.support-link::before {
+  content: "";
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--icon-coffee) center / contain no-repeat;
+  mask: var(--icon-coffee) center / contain no-repeat;
+}
+
+/* The sidebar item, in the accent rather than in BMC yellow: the sidebar is
+   nine-tenths grey and one accent, and a yellow row in it reads as a warning. */
+.ss-item--support { color: var(--accent); }
+.ss-item--support:hover { background: var(--border-light); color: var(--accent-hover); }
+.ss-item--support .ss-icon { opacity: 0.9; }
+.ss-item--support .ext { font-size: 11px; }
+
+/* The top-bar button on about.html. Below 720px it loses its label with every
+   other non-primary button and stays a yellow square with an aria-label. */
+.tb-btn--coffee {
+  background: var(--bmc);
+  border: 1px solid var(--bmc-edge);
+  color: var(--bmc-text);
+  font-weight: 650;
+}
+.tb-btn--coffee:hover:not(:disabled) { background: var(--bmc-hover); color: var(--bmc-text); }
+
+@media (max-width: 560px) {
+  .support-card { padding: 1.15rem 1.15rem 1.25rem; }
+  /* One column, and the button is the full width of it. */
+  .support-card__cta { display: grid; gap: 0.75rem; }
+  .bmc-btn { width: 100%; }
+  .support-card .support-card__note { max-width: none; }
+}
+
+/* A donation ask is not part of a printed page. */
+@media print {
+  .support-card, .support-link, .ss-item--support { display: none; }
 }

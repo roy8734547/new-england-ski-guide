@@ -26,6 +26,7 @@
 
 import { getIndex } from './data.js';
 import { el, fill, fmt, formatDate, qs, STATE_NAMES } from './util.js';
+import { NEW_TAB, supportNavItem } from './support.js';
 
 /**
  * The pass groups, in the same order the map legend uses.
@@ -78,14 +79,21 @@ function icon(path, cls = 'ss-icon') {
 
 // --- sidebar ----------------------------------------------------------------
 
-function sidebarItem({ href, label, iconPath, count, active, onActivate }) {
+function sidebarItem({
+  href, label, iconPath, count, active, onActivate, external, className,
+}) {
   const node = el('a', {
-    class: `ss-item${active ? ' is-active' : ''}`,
+    class: `ss-item${active ? ' is-active' : ''}${className ? ` ${className}` : ''}`,
     href,
     'aria-current': active ? 'page' : null,
+    // An outbound item opens in a new tab, so it says so in its name as well as
+    // in the arrow — the arrow is aria-hidden and a screen reader would
+    // otherwise get no warning at all.
+    ...(external ? { ...NEW_TAB, 'aria-label': `${label} (opens in a new tab)` } : {}),
   },
   iconPath ? icon(iconPath) : null,
   el('span', { class: 'ss-text' }, label),
+  external ? el('span', { class: 'ext', 'aria-hidden': 'true' }, '↗') : null,
   count === null || count === undefined
     ? null
     : el('span', { class: 'ss-badge' }, fmt(count)));
@@ -218,6 +226,10 @@ function buildSidebar(index, config) {
     nav,
     el('div', { class: 'sidebar__foot' },
       sidebarItem({ href: 'about.html', label: 'About', iconPath: ICON.info, active: config.page === 'about' }),
+      // Directly under About, on every page, in the accent rather than in BMC
+      // yellow. The URL and the cup live in support.js; this file only places
+      // them. It is an ordinary link — no widget, no script, no third party.
+      sidebarItem(supportNavItem()),
       // Open-Meteo is CC BY 4.0, which requires attribution wherever the data is
       // shown. The old page footer carried it; in a fixed shell there is no page
       // footer, so it lives here and is on every page for that reason.
@@ -270,11 +282,17 @@ function buildTopbar(config) {
 
   const actions = (config.actions ?? []).map((a) => {
     if (a.separator) return el('span', { class: 'tb-sep', 'aria-hidden': 'true' });
+    const cls = `tb-btn${a.primary ? ' primary' : ''}${a.variant ? ` tb-btn--${a.variant}` : ''}`;
     const node = a.href
-      ? el('a', { class: `tb-btn${a.primary ? ' primary' : ''}`, href: a.href, id: a.id ?? null })
+      ? el('a', {
+        class: cls,
+        href: a.href,
+        id: a.id ?? null,
+        ...(a.external ? NEW_TAB : {}),
+      })
       : el('button', {
         type: 'button',
-        class: `tb-btn${a.primary ? ' primary' : ''}`,
+        class: cls,
         id: a.id ?? null,
         disabled: a.disabled ?? null,
       });
@@ -282,9 +300,13 @@ function buildTopbar(config) {
       node.append(icon(a.icon, 'tb-icon'));
       // The label is hidden on narrow screens, where five buttons of text do not
       // fit, so the accessible name has to survive independently of it.
-      node.setAttribute('aria-label', a.label);
+      node.setAttribute('aria-label', a.external ? `${a.label} (opens in a new tab)` : a.label);
     }
-    node.append(el('span', { class: 'tb-btn__text' }, a.label));
+    // The arrow rides inside the label span so it collapses with it rather than
+    // being left behind on a button that is now an icon.
+    node.append(el('span', { class: 'tb-btn__text' },
+      a.label,
+      a.external ? el('span', { class: 'ext', 'aria-hidden': 'true' }, ' ↗') : null));
     if (a.onClick) node.addEventListener('click', a.onClick);
     return node;
   });
